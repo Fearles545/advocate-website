@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(./assets/reset.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+  --font-main-light: normal 300 16px/20px 'Lora', serif;
+  --font-main: normal 400 16px/20px 'Lora', serif;
+  --font-main-medium: normal 500 16px/20px 'Lora', serif;
+  --font-main-semibold: normal 600 16px/20px 'Lora', serif;
+  --font-main-bold: normal 700 16px/20px 'Lora', serif;
+  --font-family-main: 'Lora', serif;
+
+  /* --color-green: #4c9c2e; */
+  --color-green: #002706;
+  --color-light-green: #7bc24e;
+  --color-purple: #5d4b9f;
+  --color-black: #404040;
+
+  --color-dark-cyan: #098a89;
+  --color-grey: #a3a2a3;
+  --color-lightgrey: #c9c9c9;
+  --color-dark-white: #ececec;
+  --color-red: #cc0000;
+}
+
+html,
+body {
+  font: var(--font-main);
+  scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
