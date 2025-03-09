@@ -30,7 +30,6 @@ import { SocialIconData } from '../core/icons.data';
   
   .social-icon-link:hover svg {
     fill: #fff;
-    // fill: #002706;
   }
   `,
 })

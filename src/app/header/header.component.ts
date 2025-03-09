@@ -9,11 +9,18 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
   template: `
     <header>
       <div class="container">
-        <img
-          class="logo"
-          src="assets/logo/logo-white-transparent.png"
-          alt="Адвокат Поддяча Юлія Юріївна"
-        />
+        <div class="left-content">
+          <img
+            class="logo"
+            src="assets/logo/logo-white-transparent.png"
+            alt="Адвокат Поддяча Юлія Юріївна"
+          />
+          <div class="center-content">
+            <p>Адвокат по пенсіях</p>
+
+            <p>Поддяча Юлія Юріївна</p>
+          </div>
+        </div>
 
         <div class="social-icons">
           @for (iconData of iconsData; track iconData) {
@@ -21,14 +28,28 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
           }
         </div>
 
-        <div class="contacts">
+        <a class="contacts" href="tel:+380999426056" target="_blank">
           <app-social-icon-link [iconData]="phoneData"></app-social-icon-link>
           +38 (099) 942-60-56
-        </div>
+        </a>
       </div>
     </header>
   `,
   styles: `
+
+.left-content {
+    display: flex;
+    gap: 1rem;
+}
+
+  .center-content {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   color: white;
+   font-size: 1rem;
+  }
+
   .container {
     background-color: #000;
     display: flex;
@@ -44,7 +65,7 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
 
   .social-icons {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .social-icon-link {
@@ -62,6 +83,7 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
     gap: 0.5rem;
     align-items: center;
     color: white;
+    text-decoration: none;
   }
   `,
 })
