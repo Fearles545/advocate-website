@@ -36,11 +36,10 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
     </header>
   `,
   styles: `
-
-.left-content {
-    display: flex;
-    gap: 1rem;
-}
+  .left-content {
+      display: flex;
+      gap: 1rem;
+  }
 
   .center-content {
    display: flex;
