@@ -28,7 +28,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         </li>
         |
         <li>
-          <a>Контакти</a>
+          <a routerLink="contacts" routerLinkActive="active">Контакти</a>
         </li>
       </nav>
     </section>

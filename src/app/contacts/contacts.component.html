@@ -1,0 +1,91 @@
+<div class="contact-container">
+  <div class="contact-info">
+    <div class="left-content">
+      <img
+        class="logo"
+        src="assets/logo/logo-black-transparent-cut.png"
+        alt="Адвокат Поддяча Юлія Юріївна"
+      />
+
+      <div class="center-content">
+        <p>Адвокат по пенсіях</p>
+
+        <p>Поддяча Юлія Юріївна</p>
+      </div>
+    </div>
+
+    <a
+      class="contact-info-item-container"
+      href="tel:+380999426056"
+      target="_blank"
+    >
+      <p class="contact-info-item-header">Телефон</p>
+
+      <p class="contact-info-item-value">+38 (099) 942-60-56</p>
+    </a>
+
+    <a
+      class="contact-info-item-container"
+      href="mailto:yuliapoddyacha@gmail.com"
+      target="_blank"
+    >
+      <p class="contact-info-item-header">E-mail</p>
+
+      <p class="contact-info-item-value">yuliapoddyacha&#64;gmail.com</p>
+    </a>
+
+    <div class="social-icons">
+      @for (iconData of iconsData; track iconData) {
+        <app-social-icon-link [iconData]="iconData"></app-social-icon-link>
+      }
+    </div>
+  </div>
+
+  <div class="feedback-form">
+    <h2>Зворотній звʼязок</h2>
+
+    <form autocomplete="on">
+      <label for="name">Імʼя</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Іван Іванович"
+        autocomplete="name"
+        required
+      />
+
+      <label for="phone">Номер телефону</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="050-12-34-567"
+        autocomplete="tel"
+        required
+      />
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="example@email.com"
+        autocomplete="email"
+        required
+      />
+
+      <label for="message">Повідомлення</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        placeholder="Потрібна допомога з призначенням пенсії"
+        autocomplete="off"
+        required
+      ></textarea>
+
+      <button type="submit">Надіслати</button>
+    </form>
+  </div>
+</div>

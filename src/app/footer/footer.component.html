@@ -1,0 +1,31 @@
+<footer class="footer">
+  <div class="container">
+    <div class="left-content">
+      <img
+        class="logo"
+        src="assets/logo/logo-white-transparent.png"
+        alt="Адвокат Поддяча Юлія Юріївна"
+      />
+      <div class="center-content">
+        <p>Адвокат по пенсіях</p>
+
+        <p>Поддяча Юлія Юріївна</p>
+      </div>
+    </div>
+
+    <div class="social-icons">
+      @for (iconData of iconsData(); track iconData) {
+        <app-social-icon-link [iconData]="iconData"></app-social-icon-link>
+      }
+    </div>
+
+    <a class="contacts" href="tel:+380999426056" target="_blank">
+      <app-social-icon-link [iconData]="phoneData()"></app-social-icon-link>
+      +38 (099) 942-60-56
+    </a>
+  </div>
+
+  <p class="copyright">
+    &copy; 2025 Адвокат Поддяча Юлія Юріївна. Всі права захищені.
+  </p>
+</footer>
