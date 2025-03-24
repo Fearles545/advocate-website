@@ -39,6 +39,18 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
     </header>
   `,
   styles: `
+    header {
+      background-color: #000;
+    }
+
+    .container {
+      max-width: var(--container-max-width);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
     .left-content {
       display: flex;
       gap: 1rem;
@@ -50,14 +62,6 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
       gap: 0.5rem;
       color: white;
       font-size: 1rem;
-    }
-
-    .container {
-      background-color: #000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
     }
 
     .logo {

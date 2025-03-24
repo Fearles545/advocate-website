@@ -1,7 +1,12 @@
+:host {}
+
 .profile-container {
   display: flex;
   gap: 1rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
 }
 
 .profile-photo {
