@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { AboutMeComponent } from './about-me/about-me.component';
-import { MainComponent } from './main/main.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { DocumentsComponent } from './documents/documents.component';
+import { MainComponent } from './main/main.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,11 @@ export const routes: Routes = [
     path: 'contacts',
     title: 'Контакти',
     component: ContactsComponent,
+  },
+  {
+    path: 'documents',
+    title: 'Документи',
+    component: DocumentsComponent,
   },
   {
     path: '',

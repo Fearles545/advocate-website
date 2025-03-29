@@ -50,13 +50,14 @@
 
 .logo {
   width: 5rem;
-  height: auto;
+  height: fit-content;
+  align-self: center;
 }
 
 .social-icons {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .social-icon-link {

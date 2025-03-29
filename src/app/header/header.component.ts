@@ -25,7 +25,17 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
 
         <div class="social-icons">
           @for (iconData of iconsData(); track iconData) {
-            <app-social-icon-link [iconData]="iconData"></app-social-icon-link>
+            <app-social-icon-link
+              iconColor="#000"
+              [iconData]="iconData"
+              [iconStyles]="{
+                width: '2.5rem',
+                height: '2.5rem',
+                backgroundColor: '#fff',
+                borderRadius: '50%',
+                padding: '0.3rem',
+              }"
+            ></app-social-icon-link>
           }
         </div>
 

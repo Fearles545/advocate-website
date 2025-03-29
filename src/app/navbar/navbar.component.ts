@@ -20,7 +20,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         </li>
         |
         <li>
-          <a>Мої документи</a>
+          <a routerLink="documents" routerLinkActive="active">Мої документи</a>
         </li>
         |
         <li>
@@ -36,10 +36,16 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styles: `
     .nav-container {
       /* background-color: var(--color-green); */
-      background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 39, 6, 1) 20%);
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 39, 6, 1) 20%
+      );
       width: 100%;
       padding: 1rem;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+      box-shadow:
+        rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
       padding: 2rem 0 1.5rem;
     }
 
@@ -56,7 +62,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       cursor: pointer;
     }
 
-    .navbar li:hover, .active {
+    .navbar li:hover,
+    .active {
       cursor: pointer;
       text-decoration: underline;
     }
