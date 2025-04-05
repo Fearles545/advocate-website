@@ -30,7 +30,9 @@ import { SocialIconData } from '../core/icons.data';
     }
 
     svg {
-      transition: fill 0.3s ease;
+      transition:
+        fill,
+        box-shadow 0.5s ease;
     }
 
     .social-icon-link:hover svg {
@@ -54,6 +56,7 @@ export class SocialIconLinkComponent {
     padding: '0',
   });
   iconColor = input<string | null>(null);
+  hoverColor = input<string | null>(null);
 
   #sanitizer = inject(DomSanitizer);
 

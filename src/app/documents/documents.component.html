@@ -1,1 +1,29 @@
-<p>documents works!</p>
+<!-- <section class="education-container">
+  <div>
+    <p>
+      2010-2014 роки - навчання для здобуття ступеня бакалавра в НЮУ імені
+      Ярослава Мудрого
+    </p>
+
+    <gallery gallerize [items]="bachelorImages"></gallery>
+  </div>
+
+  <div>
+    <p>
+      2014-2015 роки - навчання для здобуття ступеня магістра в НЮУ імені
+      Ярослава Мудрого
+    </p>
+
+    <gallery gallerize [items]="images"></gallery>
+  </div>
+</section> -->
+
+@if (bachelorImages.length) {
+  <div class="grid">
+    @for (item of bachelorImages; track item; let i = $index) {
+      <button class="grid-item" [lightbox]="i" [gallery]="galleryId">
+        <img class="grid-image" loading="lazy" [src]="item.data!.thumb" />
+      </button>
+    }
+  </div>
+}
