@@ -18,12 +18,29 @@
   </div>
 </section> -->
 
-@if (bachelorImages.length) {
-  <div class="grid">
-    @for (item of bachelorImages; track item; let i = $index) {
-      <button class="grid-item" [lightbox]="i" [gallery]="galleryId">
-        <img class="grid-image" loading="lazy" [src]="item.data!.thumb" />
-      </button>
-    }
-  </div>
-}
+<section class="documents-container">
+  <section class="documents-item-container">
+    <h6 class="documents-item-title">Моя освіта</h6>
+
+    <p>
+      2010-2014 роки - навчання для здобуття ступеня бакалавра в НЮУ імені
+      Ярослава Мудрого
+    </p>
+
+    <div class="document-images">
+      @for (item of bachelorImages; track item; let i = $index) {
+        <button
+          class="document-images-item"
+          [lightbox]="i"
+          [gallery]="galleryId"
+        >
+          <img
+            class="document-images-image"
+            loading="lazy"
+            [src]="item.data!.thumb"
+          />
+        </button>
+      }
+    </div>
+  </section>
+</section>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 
 import { Gallery, GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { Lightbox, LIGHTBOX_CONFIG, LightboxModule } from 'ng-gallery/lightbox';
@@ -48,12 +48,8 @@ export class DocumentsComponent implements OnInit {
     }),
   ];
 
-  constructor(
-    public gallery: Gallery,
-    public lightbox: Lightbox
-  ) {
-    console.log(this.bachelorImages);
-  }
+  gallery = inject(Gallery);
+  lightbox = inject(Lightbox);
 
   ngOnInit() {
     this.bachelorImages = [
@@ -62,7 +58,7 @@ export class DocumentsComponent implements OnInit {
         thumb: 'assets/documents/bachelor-diploma-1.jpg',
       }),
       new ImageItem({
-        src: 'assets/documents/bachelor-diploma-2.jpg',
+        src: '/assets/documents/bachelor-diploma-2.jpg',
         thumb: 'assets/documents/bachelor-diploma-2.jpg',
       }),
     ];
