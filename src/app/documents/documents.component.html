@@ -1,26 +1,6 @@
-<!-- <section class="education-container">
-  <div>
-    <p>
-      2010-2014 роки - навчання для здобуття ступеня бакалавра в НЮУ імені
-      Ярослава Мудрого
-    </p>
-
-    <gallery gallerize [items]="bachelorImages"></gallery>
-  </div>
-
-  <div>
-    <p>
-      2014-2015 роки - навчання для здобуття ступеня магістра в НЮУ імені
-      Ярослава Мудрого
-    </p>
-
-    <gallery gallerize [items]="images"></gallery>
-  </div>
-</section> -->
-
 <section class="documents-container">
   <section class="documents-item-container">
-    <h6 class="documents-item-title">Моя освіта</h6>
+    <h6 class="documents-item-title">Освіта</h6>
 
     <p>
       2010-2014 роки - навчання для здобуття ступеня бакалавра в НЮУ імені
@@ -32,7 +12,57 @@
         <button
           class="document-images-item"
           [lightbox]="i"
-          [gallery]="galleryId"
+          [gallery]="bachelorImagesId"
+        >
+          <img
+            class="document-images-image"
+            loading="lazy"
+            [src]="item.data!.thumb"
+          />
+        </button>
+      }
+    </div>
+  </section>
+
+  <section class="documents-item-container">
+    <p>
+      2014-2015 роки - навчання для здобуття ступеня магістра в НЮУ імені
+      Ярослава Мудрого
+    </p>
+
+    <div class="document-images">
+      @for (item of masterImages; track item; let i = $index) {
+        <button
+          class="document-images-item"
+          [lightbox]="i"
+          [gallery]="masterImagesId"
+        >
+          <img
+            class="document-images-image"
+            loading="lazy"
+            [src]="item.data!.thumb"
+          />
+        </button>
+      }
+    </div>
+  </section>
+</section>
+
+<section class="documents-container">
+  <section class="documents-item-container">
+    <h6 class="documents-item-title">Адвокатура</h6>
+
+    <p>
+      23.06.2021 - отримала свідоцтво про право на заняття адвокатською
+      діяльністю
+    </p>
+
+    <div class="document-images">
+      @for (item of barImages; track item; let i = $index) {
+        <button
+          class="document-images-item"
+          [lightbox]="i"
+          [gallery]="barImagesId"
         >
           <img
             class="document-images-image"

@@ -30,23 +30,23 @@
   #002406 темно зелений */
 
   /* Primary Colors */
-  --color-navy: #1A365D;
-  --color-gold: #C9A55C;
-  --color-brown: #8A6D3B;
+  --color-navy: #1a365d;
+  --color-gold: #c9a55c;
+  --color-brown: #8a6d3b;
 
   /* Secondary Colors */
-  --color-cream: #F8F5ED;
-  --color-light-gray: #E9E9E7;
+  --color-cream: #f8f5ed;
+  --color-light-gray: #e9e9e7;
   --color-charcoal: #333333;
-  --color-white: #FFFFFF;
+  --color-white: #ffffff;
 
   /* Functional Colors */
-  --color-success: #4A7B58;
-  --color-error: #A83C3C;
+  --color-success: #4a7b58;
+  --color-error: #a83c3c;
 
   /* Color Variants */
-  --color-navy-dark: #152D4F;
-  --color-gold-light: #E0D6C1;
+  --color-navy-dark: #152d4f;
+  --color-gold-light: #e0d6c1;
 
   /* Typography */
   --font-heading: 'Cormorant Garamond', serif;
@@ -165,16 +165,21 @@
   --breakpoint-desktop: 1200px;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: var(--font-main);
   scroll-behavior: smooth;
-  height: 100%;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(204, 228, 247, 1) 11.2%,
+    rgba(237, 246, 250, 1) 100.2%
+  );
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  /* background-color: #f3f3f3; */
-  /* background-image: linear-gradient(109.6deg, rgba(223, 234, 247, 1) 11.2%, rgba(244, 248, 252, 1) 91.1%); */
-  background-image: linear-gradient(109.6deg, rgba(204, 228, 247, 1) 11.2%, rgba(237, 246, 250, 1) 100.2%);
 }
 
 h1,

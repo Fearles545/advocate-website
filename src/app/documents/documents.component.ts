@@ -22,31 +22,12 @@ export class DocumentsComponent implements OnInit {
   // images!: GalleryItem[];
   bachelorImages!: GalleryItem[];
   masterImages!: GalleryItem[];
+  barImages!: GalleryItem[];
 
-  galleryId = 'myLightbox';
+  bachelorImagesId = 'bachelorImages';
+  masterImagesId = 'masterImages';
+  barImagesId = 'barImages';
   // Set items array
-  images = [
-    new ImageItem({
-      src: 'https://legaldesire.com/wp-content/uploads/2021/04/AdobeStock_205600667.jpeg',
-      thumb:
-        'https://legaldesire.com/wp-content/uploads/2021/04/AdobeStock_205600667.jpeg',
-    }),
-    new ImageItem({
-      src: 'https://thenationaltriallawyers.org/wp-content/uploads/KRN9bQUaOmq_e50p21vq2A1XMV07Lb1RZpW6_vtzJRj6wr7fMF0B9j8CbYZLGcKSoLxfcweCMr2PgsE678GDOaQeLCxnXsVTKmR52BTncWtKTgpuY_yOQZQ6jbsaE2zJuizEHPJ3.jpeg',
-      thumb:
-        'https://legaldesire.com/wp-content/uploads/2021/04/AdobeStock_205600667.jpeg',
-    }),
-    new ImageItem({
-      src: 'https://legaldesire.com/wp-content/uploads/2021/04/AdobeStock_205600667.jpeg',
-      thumb:
-        'https://legaldesire.com/wp-content/uploads/2021/04/AdobeStock_205600667.jpeg',
-    }),
-    new ImageItem({
-      src: 'https://legaldesire.com/wp-content/uploads/2021/04/AdobeStock_205600667.jpeg',
-      thumb:
-        'https://legaldesire.com/wp-content/uploads/2021/04/AdobeStock_205600667.jpeg',
-    }),
-  ];
 
   gallery = inject(Gallery);
   lightbox = inject(Lightbox);
@@ -54,21 +35,61 @@ export class DocumentsComponent implements OnInit {
   ngOnInit() {
     this.bachelorImages = [
       new ImageItem({
-        src: 'assets/documents/bachelor-diploma-1.jpg',
-        thumb: 'assets/documents/bachelor-diploma-1.jpg',
+        src: 'assets/documents/bachelor-diploma-1.webp',
+        thumb: 'assets/documents/bachelor-diploma-1-thumb.webp',
       }),
       new ImageItem({
-        src: '/assets/documents/bachelor-diploma-2.jpg',
-        thumb: 'assets/documents/bachelor-diploma-2.jpg',
+        src: '/assets/documents/bachelor-diploma-2.webp',
+        thumb: 'assets/documents/bachelor-diploma-2-thumb.webp',
+      }),
+    ];
+
+    this.masterImages = [
+      new ImageItem({
+        src: 'assets/documents/master-diploma-1.webp',
+        thumb: 'assets/documents/master-diploma-1-thumb.webp',
+      }),
+      new ImageItem({
+        src: '/assets/documents/master-diploma-2.webp',
+        thumb: 'assets/documents/master-diploma-2-thumb.webp',
+      }),
+    ];
+
+    this.barImages = [
+      new ImageItem({
+        src: 'assets/documents/lawyer-license-1.webp',
+        thumb: 'assets/documents/lawyer-license-1-thumb.webp',
+      }),
+      new ImageItem({
+        src: '/assets/documents/lawyer-license-2.webp',
+        thumb: 'assets/documents/lawyer-license-2-thumb.webp',
       }),
     ];
     // Load images into gallery
-    const galleryRef = this.gallery
-      .ref(this.galleryId, {
+    // const bachelorGalleryRef =
+    this.gallery
+      .ref(this.bachelorImagesId, {
         thumbPosition: 'top',
         imageSize: 'cover',
         autoHeight: false,
       })
       .load(this.bachelorImages);
+
+    // const masterGalleryRef =
+    this.gallery
+      .ref(this.masterImagesId, {
+        thumbPosition: 'top',
+        imageSize: 'cover',
+        autoHeight: false,
+      })
+      .load(this.masterImages);
+
+    this.gallery
+      .ref(this.barImagesId, {
+        thumbPosition: 'top',
+        imageSize: 'cover',
+        autoHeight: false,
+      })
+      .load(this.barImages);
   }
 }
