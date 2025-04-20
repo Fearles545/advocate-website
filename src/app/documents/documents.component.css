@@ -13,7 +13,28 @@
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  /* border: 0.1px solid var(--color-green); */
+  border-radius: 0.5rem;
+  padding-bottom: 1rem;
+  box-shadow: #00270626 0 0 0.25rem;
+  position: relative;
+  /* background: #00270626; */
 }
+
+.education-logo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 120px;
+  height: auto;
+  filter: opacity(0.5);
+  z-index: -1;
+}
+
+/* .documents-item-container--education {
+  background: url('/assets/icons/nlu-logo.webp') no-repeat bottom right;
+  filter: grayscale(100%);
+} */
 
 .documents-item-container {
   display: flex;
