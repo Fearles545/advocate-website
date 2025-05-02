@@ -19,6 +19,7 @@
   box-shadow: #00270626 0 0 0.25rem;
   position: relative;
   /* background: #00270626; */
+  background-color: #00270612;
 }
 
 .education-logo {
@@ -51,7 +52,8 @@
 }
 
 .document-images {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   flex-wrap: wrap;
 }

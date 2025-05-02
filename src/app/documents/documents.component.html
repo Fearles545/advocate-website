@@ -76,5 +76,31 @@
         </button>
       }
     </div>
+
+    <p>
+      <a href="https://erau.unba.org.ua/profile/82725" target="_blank">
+        Профіль у Єдиному реєстрі адвокатів України
+      </a>
+    </p>
+
+    <h6 class="documents-item-title">
+      Щорічне підвищення професійного рівня адвоката
+    </h6>
+
+    <div class="document-images">
+      @for (item of qualificationImages; track item; let i = $index) {
+        <button
+          class="document-images-item"
+          [lightbox]="i"
+          [gallery]="qualificationImagesId"
+        >
+          <img
+            class="document-images-image"
+            loading="lazy"
+            [src]="item.data!.thumb"
+          />
+        </button>
+      }
+    </div>
   </section>
 </section>

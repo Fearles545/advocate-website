@@ -1,13 +1,38 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { inject } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+
+import { BreakpointObserver } from '@angular/cdk/layout';
+
+import { map } from 'rxjs';
+
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { iconsData } from './core/icons.data';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { DrawerContentComponent } from './drawer-content/drawer-content.component';
+
+const breakpoints = {
+  xs: '(max-width: 479px)',
+  sm: '(max-width: 767px)',
+  md: '(max-width: 1023px)',
+  lg: '(max-width: 1279px)',
+  xl: '(max-width: 1535px)',
+  xxl: '(max-width: 1919px)',
+};
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, RouterOutlet, FooterComponent],
+  imports: [
+    HeaderComponent,
+    RouterOutlet,
+    FooterComponent,
+    AsyncPipe,
+    MatSidenavModule,
+    DrawerContentComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -19,4 +44,29 @@ export class AppComponent {
     alt: 'Phone',
     color: '#fff',
   };
+
+  customBreakpoints = breakpoints;
+  currentScreenSize!: string;
+
+  breakpointObserver = inject(BreakpointObserver);
+
+  breakpointSubscription$ = this.breakpointObserver
+    .observe(Object.values(this.customBreakpoints))
+    .pipe(
+      map((result) =>
+        Object.entries(this.customBreakpoints).find(
+          ([, query]) => result.breakpoints[query] || null
+        )
+      )
+    );
+  // breakpointSubscription = this.breakpointObserver
+  //   .observe(Object.values(this.customBreakpoints))
+  //   .pipe(takeUntilDestroyed())
+  //   .subscribe((result) => {
+  //     const matched = Object.entries(this.customBreakpoints).find(
+  //       ([, query]) => result.breakpoints[query]
+  //     );
+  //     this.currentScreenSize = matched ? matched[0] : 'unknown';
+  //     console.log('Current screen size:', this.currentScreenSize);
+  //   });
 }

@@ -1,12 +1,21 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 import { SocialIconData } from '../core/icons.data';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.component';
+import { JsonPipe } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
-  imports: [SocialIconLinkComponent, NavbarComponent],
+  imports: [
+    SocialIconLinkComponent,
+    NavbarComponent,
+    JsonPipe,
+    MatButtonModule,
+    MatIconModule,
+  ],
   template: `
     <header>
       <div class="container">
@@ -22,6 +31,15 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
             <p>Поддяча Юлія Юріївна</p>
           </div>
         </div>
+
+        <button
+          mat-icon-button
+          [disableRipple]="false"
+          color="accent"
+          (click)="toggleDrawer.emit()"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
 
         <div class="social-icons">
           @for (iconData of iconsData(); track iconData) {
@@ -47,6 +65,8 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
 
       <app-navbar></app-navbar>
     </header>
+
+    <p>{{ screenSize() | json }}</p>
   `,
   styles: `
     header {
@@ -101,9 +121,41 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
       color: white;
       text-decoration: none;
     }
+
+    @media (max-width: 479px) {
+      .container {
+        padding: 1rem;
+      }
+      .social-icons,
+      .contacts {
+        display: none;
+      }
+
+      app-navbar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+    }
+
+    @media (max-width: 1023px) {
+    }
+
+    @media (max-width: 1279px) {
+    }
+
+    @media (max-width: 1535px) {
+    }
+
+    @media (max-width: 1919px) {
+    }
   `,
 })
 export class HeaderComponent {
   iconsData = input.required<SocialIconData[]>();
   phoneData = input.required<SocialIconData>();
+  screenSize = input.required<[string, string] | undefined>();
+
+  toggleDrawer = output<void>();
 }

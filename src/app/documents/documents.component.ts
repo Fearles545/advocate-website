@@ -23,10 +23,12 @@ export class DocumentsComponent implements OnInit {
   bachelorImages!: GalleryItem[];
   masterImages!: GalleryItem[];
   barImages!: GalleryItem[];
+  qualificationImages!: GalleryItem[];
 
   bachelorImagesId = 'bachelorImages';
   masterImagesId = 'masterImages';
   barImagesId = 'barImages';
+  qualificationImagesId = 'qualificationImages';
   // Set items array
 
   gallery = inject(Gallery);
@@ -65,8 +67,28 @@ export class DocumentsComponent implements OnInit {
         thumb: 'assets/documents/lawyer-license-2-thumb.webp',
       }),
     ];
+
+    this.qualificationImages = [
+      new ImageItem({
+        src: 'assets/documents/qual-2021.webp',
+        thumb: 'assets/documents/qual-2021.webp',
+      }),
+      new ImageItem({
+        src: '/assets/documents/qual-2022.webp',
+        thumb: 'assets/documents/qual-2022.webp',
+      }),
+      new ImageItem({
+        src: '/assets/documents/qual-2023.webp',
+        thumb: 'assets/documents/qual-2023.webp',
+      }),
+      new ImageItem({
+        src: '/assets/documents/qual-2024.webp',
+        thumb: 'assets/documents/qual-2024.webp',
+      }),
+    ];
+
     // Load images into gallery
-    // const bachelorGalleryRef =
+
     this.gallery
       .ref(this.bachelorImagesId, {
         thumbPosition: 'top',
@@ -91,5 +113,13 @@ export class DocumentsComponent implements OnInit {
         autoHeight: false,
       })
       .load(this.barImages);
+
+    this.gallery
+      .ref(this.qualificationImagesId, {
+        thumbPosition: 'top',
+        imageSize: 'cover',
+        autoHeight: false,
+      })
+      .load(this.qualificationImages);
   }
 }

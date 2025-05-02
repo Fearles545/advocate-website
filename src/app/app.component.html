@@ -1,5 +1,19 @@
-<app-header [iconsData]="iconsData" [phoneData]="phoneData"></app-header>
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+  <mat-drawer #drawer [mode]="'over'" position="end">
+    <app-drawer-content></app-drawer-content>
+  </mat-drawer>
+  <mat-drawer-content>
+    <!-- <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button> -->
 
-<router-outlet></router-outlet>
+    <app-header
+      [iconsData]="iconsData"
+      [phoneData]="phoneData"
+      [screenSize]="(breakpointSubscription$ | async)!"
+      (toggleDrawer)="drawer.toggle()"
+    ></app-header>
 
-<app-footer [iconsData]="iconsData" [phoneData]="phoneData"></app-footer>
+    <router-outlet></router-outlet>
+
+    <app-footer [iconsData]="iconsData" [phoneData]="phoneData"></app-footer>
+  </mat-drawer-content>
+</mat-drawer-container>

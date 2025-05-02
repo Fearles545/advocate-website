@@ -53,6 +53,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       font-size: 1.2rem;
       list-style-type: none;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
       color: white;

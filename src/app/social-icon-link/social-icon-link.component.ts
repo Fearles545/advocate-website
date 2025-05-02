@@ -35,9 +35,9 @@ import { SocialIconData } from '../core/icons.data';
         box-shadow 0.5s ease;
     }
 
-    // .social-icon-link:hover svg {
-    //    fill: var(--color-green);
-    // }
+    /*.social-icon-link:hover svg {
+       fill: var(--color-green);
+    }*/
   `,
 })
 export class SocialIconLinkComponent {
