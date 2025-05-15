@@ -2,88 +2,80 @@
   display: block;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
-  color: #333;
-  /* font-family: Arial, sans-serif; */
+  padding: 1rem;
+}
+/* grey-marble-column-details-building.webp */
+
+.main-container {
+  display: flex;
+  align-items: center;
+
+  background-image: url('/assets/grey-marble-column-details-building.webp');
+  background-size: cover; /* зображення покриває всю секцію */
+  background-position: center; /* фокус по центру */
+  background-repeat: no-repeat; /* не повторюється */
+  background-attachment: scroll; /* або fixed для паралаксу */
+  position: relative;
+  z-index: 1;
+  border-radius: 2rem;
 }
 
-h1 {
-  text-align: center;
-  margin: 30px 0;
-  font-size: 28px;
-  font-weight: bold;
+.main-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    109.6deg,
+    rgba(204, 228, 247, 0.9) 11.2%,
+    rgba(237, 246, 250, 0.9) 100.2%
+  ); /* світлий прозорий шар для читабельності тексту */
+  z-index: -1;
+  filter: blur(px); /* розмиття фону */
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.service-box {
+.description-container {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 0 1rem;
 }
 
-.service-title {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+.main-photo-container {
+  flex: 1;
+  overflow: hidden;
 }
 
-.icon-container {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #1e5e20;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 15px;
-  flex-shrink: 0;
+.main-photo {
+  min-width: 400px;
+  overflow: hidden;
 }
 
-.icon {
-  width: 75%;
-  margin: 0 auto;
+@media (max-width: 1919px) {
 }
 
-h2 {
-  font-size: 20px;
-  font-weight: bold;
+@media (max-width: 1535px) {
 }
 
-.service-description {
-  color: #666;
-  line-height: 1.5;
-  margin-bottom: 20px;
-  padding-left: 65px;
+@media (max-width: 1279px) {
 }
 
-.contact-link {
-  margin-top: auto;
-  padding-left: 65px;
-}
-
-.contact-link a {
-  color: #1e5e20;
-  text-decoration: none;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-}
-
-.contact-link a:hover {
-  text-decoration: underline;
-}
-
-.arrow {
-  margin-left: 5px;
-}
-
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 1023px) {
+  .description-container {
+    flex: 0;
   }
+
+  .main-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 800px) {
+}
+
+@media (max-width: 479px) {
+}
+
+@media (max-width: 320px) {
 }

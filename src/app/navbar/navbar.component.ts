@@ -66,7 +66,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     .navbar li:hover,
     .active {
       cursor: pointer;
-      text-decoration: underline;
+      // text-decoration: underline;
+      color: #bb925c;
     }
 
     a {

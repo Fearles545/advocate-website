@@ -16,111 +16,6 @@ html {
 
 @include mat.core();
 
-$primary-purple: (
-  50 : #ece9f3,
-  100 : #cec9e2,
-  200 : #aea5cf,
-  300 : #8e81bc,
-  400 : #7566ad,
-  500 : #5d4b9f,
-  600 : #554497,
-  700 : #4b3b8d,
-  800 : #413383,
-  900 : #302372,
-  A100 : #beb3ff,
-  A200 : #9280ff,
-  A400 : #674dff,
-  A700 : #5134ff,
-  contrast: (50 : #000000,
-    100 : #000000,
-    200 : #000000,
-    300 : #000000,
-    400 : #ffffff,
-    500 : #ffffff,
-    600 : #ffffff,
-    700 : #ffffff,
-    800 : #ffffff,
-    900 : #ffffff,
-    A100 : #000000,
-    A200 : #000000,
-    A400 : #ffffff,
-    A700 : #ffffff,
-  )
-);
-
-$primary-light-green: (
-  50 : #eff8ea,
-  100 : #d7edca,
-  200 : #bde1a7,
-  300 : #a3d483,
-  400 : #8fcb69,
-  500 : #7bc24e,
-  600 : #73bc47,
-  700 : #68b43d,
-  800 : #5eac35,
-  900 : #4b9f25,
-  A100 : #e7ffdd,
-  A200 : #c3ffaa,
-  A400 : #9eff77,
-  A700 : #8cff5d,
-  contrast: (50 : #000000,
-    100 : #000000,
-    200 : #000000,
-    300 : #000000,
-    400 : #000000,
-    500 : #000000,
-    600 : #000000,
-    700 : #000000,
-    800 : #000000,
-    900 : #ffffff,
-    A100 : #000000,
-    A200 : #000000,
-    A400 : #000000,
-    A700 : #000000,
-  )
-);
-
-$warn: (
-  50 : #f9e0e0,
-  100 : #f0b3b3,
-  200 : #e68080,
-  300 : #db4d4d,
-  400 : #d42626,
-  500 : #cc0000,
-  600 : #c70000,
-  700 : #c00000,
-  800 : #b90000,
-  900 : #ad0000,
-  A100 : #ffd7d7,
-  A200 : #ffa4a4,
-  A400 : #ff7171,
-  A700 : #ff5858,
-  contrast: (50 : #000000,
-    100 : #000000,
-    200 : #000000,
-    300 : #ffffff,
-    400 : #ffffff,
-    500 : #ffffff,
-    600 : #ffffff,
-    700 : #ffffff,
-    800 : #ffffff,
-    900 : #ffffff,
-    A100 : #000000,
-    A200 : #000000,
-    A400 : #000000,
-    A700 : #000000,
-  )
-);
-
-$greenbax-payroll-primary: mat.m2-define-palette($primary-purple);
-$greenbax-payroll-accent: mat.m2-define-palette($primary-light-green);
-$greenbax-payroll-warn: mat.m2-define-palette($warn);
-$greenbax-payroll-theme: mat.m2-define-light-theme((color: (primary: $greenbax-payroll-primary,
-        accent: $greenbax-payroll-accent,
-        warn: $greenbax-payroll-warn,
-      )));
-@include mat.all-component-themes($greenbax-payroll-theme);
-
 // Custom palettes for your brand (all required hues)
 $custom-primary: (
   50: #002706,
@@ -178,7 +73,6 @@ $my-theme: mat.m2-define-light-theme((
   color: (
     primary: $my-primary,
     accent: $my-accent,
-    warn: $greenbax-payroll-warn,
   )
 ));
 

@@ -1,27 +1,63 @@
 <section class="nav-container">
   <nav class="navbar">
     <li>
-      <a routerLink="main" routerLinkActive="active">Головна</a>
+      <a
+        routerLink="main"
+        routerLinkActive="active"
+        (click)="onLinkClick.emit()"
+      >
+        Головна
+      </a>
     </li>
 
     <li>
-      <a routerLink="about-me" routerLinkActive="active">Про мене</a>
+      <a
+        routerLink="about-me"
+        routerLinkActive="active"
+        (click)="onLinkClick.emit()"
+      >
+        Про мене
+      </a>
     </li>
 
     <li>
-      <a>Послуги</a>
+      <a
+        routerLink="about-me"
+        routerLinkActive="active"
+        (click)="onLinkClick.emit()"
+      >
+        Послуги
+      </a>
     </li>
 
     <li>
-      <a routerLink="documents" routerLinkActive="active">Мої документи</a>
+      <a
+        routerLink="documents"
+        routerLinkActive="active"
+        (click)="onLinkClick.emit()"
+      >
+        Мої документи
+      </a>
     </li>
 
     <li>
-      <a>Блог</a>
+      <a
+        routerLink="about-me"
+        routerLinkActive="active"
+        (click)="onLinkClick.emit()"
+      >
+        Блог
+      </a>
     </li>
 
     <li>
-      <a routerLink="contacts" routerLinkActive="active">Контакти</a>
+      <a
+        routerLink="contacts"
+        routerLinkActive="active"
+        (click)="onLinkClick.emit()"
+      >
+        Контакти
+      </a>
     </li>
   </nav>
 </section>

@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
 
-import { map } from 'rxjs';
+import { fromEvent, map, startWith } from 'rxjs';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 
@@ -29,7 +30,6 @@ const breakpoints = {
     HeaderComponent,
     RouterOutlet,
     FooterComponent,
-    AsyncPipe,
     MatSidenavModule,
     DrawerContentComponent,
   ],
@@ -48,25 +48,25 @@ export class AppComponent {
   customBreakpoints = breakpoints;
   currentScreenSize!: string;
 
-  breakpointObserver = inject(BreakpointObserver);
+  // breakpointObserver = inject(BreakpointObserver);
 
-  breakpointSubscription$ = this.breakpointObserver
-    .observe(Object.values(this.customBreakpoints))
-    .pipe(
-      map((result) =>
-        Object.entries(this.customBreakpoints).find(
-          ([, query]) => result.breakpoints[query] || null
-        )
-      )
-    );
-  // breakpointSubscription = this.breakpointObserver
+  // breakpointSubscription$ = this.breakpointObserver
   //   .observe(Object.values(this.customBreakpoints))
-  //   .pipe(takeUntilDestroyed())
-  //   .subscribe((result) => {
-  //     const matched = Object.entries(this.customBreakpoints).find(
-  //       ([, query]) => result.breakpoints[query]
-  //     );
-  //     this.currentScreenSize = matched ? matched[0] : 'unknown';
-  //     console.log('Current screen size:', this.currentScreenSize);
-  //   });
+  //   .pipe(
+  //     map((result) =>
+  //       Object.entries(this.customBreakpoints).find(
+  //         ([, query]) => result.breakpoints[query] || null
+  //       )
+  //     )
+  //   );
+
+  isDesktop = toSignal(
+    fromEvent(window, 'resize').pipe(
+      startWith(0),
+      map(() => ({
+        innerWidth: window.innerWidth,
+        innerHeight: window.innerHeight,
+      }))
+    )
+  );
 }

@@ -11,6 +11,9 @@
 npm-debug.log
 yarn-error.log
 
+#GitHub
+/.github/copilot-instructions.md
+
 # IDEs and editors
 .idea/
 .project

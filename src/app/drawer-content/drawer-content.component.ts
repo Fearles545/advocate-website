@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, output } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-drawer-content',
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './drawer-content.component.html',
   styleUrl: './drawer-content.component.css',
 })
-export class DrawerContentComponent {}
+export class DrawerContentComponent {
+  onLinkClick = output<void>();
+}

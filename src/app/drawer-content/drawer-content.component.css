@@ -27,12 +27,15 @@
 
 .navbar li {
   cursor: pointer;
+  padding: 0 1.5rem;
 }
 
 .navbar li:hover,
 .active {
   cursor: pointer;
-  text-decoration: underline;
+  /* text-decoration: underline; */
+
+  color: #bb925c;
 }
 
 a {

@@ -3,7 +3,6 @@ import { Component, input, output } from '@angular/core';
 import { SocialIconData } from '../core/icons.data';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.component';
-import { JsonPipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -12,7 +11,6 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     SocialIconLinkComponent,
     NavbarComponent,
-    JsonPipe,
     MatButtonModule,
     MatIconModule,
   ],
@@ -33,6 +31,7 @@ import { MatIconModule } from '@angular/material/icon';
         </div>
 
         <button
+          class="menu-button"
           mat-icon-button
           [disableRipple]="false"
           color="accent"
@@ -65,8 +64,6 @@ import { MatIconModule } from '@angular/material/icon';
 
       <app-navbar></app-navbar>
     </header>
-
-    <p>{{ screenSize() | json }}</p>
   `,
   styles: `
     header {
@@ -122,10 +119,23 @@ import { MatIconModule } from '@angular/material/icon';
       text-decoration: none;
     }
 
-    @media (max-width: 479px) {
-      .container {
-        padding: 1rem;
-      }
+    .menu-button {
+      display: none;
+    }
+
+    @media (max-width: 1919px) {
+    }
+
+    @media (max-width: 1535px) {
+    }
+
+    @media (max-width: 1279px) {
+    }
+
+    @media (max-width: 1023px) {
+    }
+
+    @media (max-width: 800px) {
       .social-icons,
       .contacts {
         display: none;
@@ -134,28 +144,33 @@ import { MatIconModule } from '@angular/material/icon';
       app-navbar {
         display: none;
       }
+
+      .menu-button {
+        display: block;
+      }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 479px) {
+      .container {
+        padding: 1rem;
+      }
     }
 
-    @media (max-width: 1023px) {
-    }
+    @media (max-width: 320px) {
+      .container {
+        padding: 0.5rem 0.25rem;
+      }
 
-    @media (max-width: 1279px) {
-    }
-
-    @media (max-width: 1535px) {
-    }
-
-    @media (max-width: 1919px) {
+      .left-content,
+      .center-content {
+        gap: 0.25rem;
+      }
     }
   `,
 })
 export class HeaderComponent {
   iconsData = input.required<SocialIconData[]>();
   phoneData = input.required<SocialIconData>();
-  screenSize = input.required<[string, string] | undefined>();
 
   toggleDrawer = output<void>();
 }
