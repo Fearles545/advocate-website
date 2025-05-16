@@ -63,9 +63,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-main);
   line-height: var(--line-height-heading);
-  color: var(--color-navy);
+  color: var(--color-green);
   margin-bottom: var(--spacing-md);
 }
 

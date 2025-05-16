@@ -35,7 +35,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   `,
   styles: `
     .nav-container {
-      /* background-color: var(--color-green); */
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 1) 0%,
@@ -46,11 +45,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       box-shadow:
         rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
         rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-      padding: 2rem 0 1.5rem;
+      padding: 1rem 0 0.5rem;
     }
 
     .navbar {
-      font-size: 1.2rem;
+      font-size: 1rem;
       list-style-type: none;
       display: flex;
       flex-wrap: wrap;
@@ -66,7 +65,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     .navbar li:hover,
     .active {
       cursor: pointer;
-      // text-decoration: underline;
       color: #bb925c;
     }
 

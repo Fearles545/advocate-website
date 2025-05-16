@@ -27,3 +27,26 @@ mat-drawer-content {
   gap: 1rem;
   align-items: center;
 }
+
+mat-drawer-content {
+  background-image: url('/assets/grey-marble-column-details-building.webp');
+  background-size: cover; /* зображення покриває всю секцію */
+  background-position: center; /* фокус по центру */
+  background-repeat: no-repeat; /* не повторюється */
+  background-attachment: scroll; /* або fixed для паралаксу */
+  position: relative;
+  z-index: 1;
+  /* border-radius: 2rem; */
+}
+
+mat-drawer-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    109.6deg,
+    rgba(204, 228, 247, 0.75) 11.2%,
+    rgba(237, 246, 250, 0.75) 100.2%
+  );
+  z-index: -1;
+}

@@ -2,6 +2,7 @@
   <mat-drawer #drawer [mode]="'over'" position="end" [opened]="false">
     <app-drawer-content (onLinkClick)="drawer.close()"></app-drawer-content>
   </mat-drawer>
+
   <mat-drawer-content>
     <app-header
       [iconsData]="iconsData"
@@ -13,7 +14,9 @@
       <p>innerWidth - {{ isDesktop()?.innerWidth }}</p>
     </div>
 
-    <router-outlet style="display: none"></router-outlet>
+    <div>
+      <router-outlet style="display: none"></router-outlet>
+    </div>
 
     <app-footer [iconsData]="iconsData" [phoneData]="phoneData"></app-footer>
   </mat-drawer-content>
