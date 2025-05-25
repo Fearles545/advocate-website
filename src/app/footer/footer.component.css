@@ -101,13 +101,9 @@
 @media (max-width: 1023px) {
 }
 
-@media (max-width: 767px) {
-  .description {
-    display: none;
-  }
-
+@media (max-width: 950px) {
   .left-content {
-    flex: none;
+    flex: auto;
   }
 
   .container {
@@ -117,7 +113,26 @@
 
   div.social-icons {
     flex: auto;
+    justify-content: flex-end;
+  }
+
+  .phone {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .description {
+    display: none;
+  }
+
+  div.social-icons {
+    flex: auto;
     justify-content: space-between;
+  }
+
+  .left-content {
+    flex: none;
   }
 }
 
