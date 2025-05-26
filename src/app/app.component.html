@@ -1,14 +1,26 @@
-<mat-drawer-container class="example-container" [hasBackdrop]="true">
-  <mat-drawer #drawer [mode]="'over'" position="end" [opened]="false">
-    <app-drawer-content (onLinkClick)="drawer.close()"></app-drawer-content>
-  </mat-drawer>
+<app-header
+  [iconsData]="iconsData"
+  [phoneData]="phoneData"
+  (toggleDrawer)="drawer.toggle()"
+></app-header>
 
-  <mat-drawer-content>
-    <app-header
+<mat-sidenav-container class="example-container" [hasBackdrop]="true">
+  <mat-sidenav
+    #drawer
+    [mode]="'over'"
+    position="end"
+    [opened]="false"
+    [fixedInViewport]="true"
+  >
+    <app-drawer-content (onLinkClick)="drawer.close()"></app-drawer-content>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- <app-header
       [iconsData]="iconsData"
       [phoneData]="phoneData"
       (toggleDrawer)="drawer.toggle()"
-    ></app-header>
+    ></app-header> -->
     <div style="position: absolute; bottom: 0; left: 0; color: #fff">
       <p>innerHeight - {{ isDesktop()?.innerHeight }}</p>
       <p>innerWidth - {{ isDesktop()?.innerWidth }}</p>
@@ -19,5 +31,5 @@
     </div>
 
     <app-footer [iconsData]="iconsData" [phoneData]="phoneData"></app-footer>
-  </mat-drawer-content>
-</mat-drawer-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>
