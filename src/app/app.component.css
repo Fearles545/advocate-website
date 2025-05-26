@@ -43,7 +43,7 @@ mat-sidenav-content {
 }
 
 mat-sidenav-content {
-  background-image: url('/assets/grey-marble-column-details-building.webp');
+  /* background-image: url('/assets/grey-marble-column-details-building.webp'); */
   background-size: cover; /* зображення покриває всю секцію */
   background-position: center; /* фокус по центру */
   background-repeat: no-repeat; /* не повторюється */

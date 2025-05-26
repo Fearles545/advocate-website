@@ -14,8 +14,10 @@
   >
     <app-drawer-content (onLinkClick)="drawer.close()"></app-drawer-content>
   </mat-sidenav>
-
-  <mat-sidenav-content>
+  @let navigatedItems = navigatedItems$ | async;
+  <mat-sidenav-content
+    [ngStyle]="{ 'background-image': 'url(' + navigatedItems + ')' }"
+  >
     <!-- <app-header
       [iconsData]="iconsData"
       [phoneData]="phoneData"

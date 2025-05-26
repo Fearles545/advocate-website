@@ -2,7 +2,7 @@
   display: block;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem 1rem 1rem;
 }
 /* grey-marble-column-details-building.webp */
 
@@ -100,7 +100,7 @@
 .main-photo-container {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -135,6 +135,7 @@
   .main-photo-container {
     border-bottom: 1px solid var(--color-gold);
     margin-top: 1.5rem;
+    justify-content: center;
   }
 
   .description-text-container {

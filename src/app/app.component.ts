@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { inject } from '@angular/core';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgStyle } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
 
-import { fromEvent, map, startWith } from 'rxjs';
+import { filter, fromEvent, map, startWith } from 'rxjs';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 
@@ -24,6 +24,11 @@ const breakpoints = {
   xxl: '(max-width: 1919px)',
 };
 
+const bgs: Record<string, string> = {
+  main: '/assets/grey-marble-column-details-building.webp',
+  'about-me': '/assets/library-bookshelves.webp',
+};
+
 @Component({
   selector: 'app-root',
   imports: [
@@ -32,6 +37,8 @@ const breakpoints = {
     FooterComponent,
     MatSidenavModule,
     DrawerContentComponent,
+    AsyncPipe,
+    NgStyle,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -44,6 +51,7 @@ export class AppComponent {
     alt: 'Phone',
     color: '#fff',
   };
+  #router = inject(Router);
 
   customBreakpoints = breakpoints;
   currentScreenSize!: string;
@@ -69,4 +77,18 @@ export class AppComponent {
       }))
     )
   );
+
+  navigatedItems$ = this.#router.events.pipe(
+    startWith(new NavigationEnd(0, this.#router.url, this.#router.url)),
+    filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+    map(
+      () =>
+        this.#router
+          .parseUrl(this.#router.url)
+          .root.children['primary']?.segments.map((segment) => segment.path) ||
+        []
+    ),
+    map((segments) => bgs[segments[0]])
+  );
+  // .subscribe(console.log);
 }

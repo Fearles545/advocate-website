@@ -1,12 +1,17 @@
 <div class="profile-container">
-  <img
-    src="/assets/Yuliia-photo.jpg"
-    alt="Юлія Поддяча"
-    class="profile-photo"
-  />
+  <div class="main-photo-container">
+    <img
+      ngSrc="/assets/about-me.webp"
+      alt="Юлія Поддяча"
+      class="profile-photo"
+      width="300"
+      height="472"
+      priority
+    />
+  </div>
 
   <section class="profile-content">
-    <p class="profile-name">Поддяча Юлія Юріївна</p>
+    <h1 class="profile-name">Поддяча Юлія Юріївна</h1>
 
     <div class="info-container">
       <div class="profile-header">
@@ -70,9 +75,9 @@
     </div>
 
     <div class="buttons-container">
-      <button class="button button-primary">Біографія</button>
+      <button mat-flat-button color="primary">Біографія</button>
 
-      <a routerLink="/documents" class="button button-secondary">Документи</a>
+      <a routerLink="/documents" mat-flat-button color="primary">Документи</a>
     </div>
   </section>
 </div>
