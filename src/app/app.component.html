@@ -12,7 +12,10 @@
     [opened]="false"
     [fixedInViewport]="true"
   >
-    <app-drawer-content (onLinkClick)="drawer.close()"></app-drawer-content>
+    <app-drawer-content
+      [phoneData]="phoneData"
+      (onLinkClick)="drawer.close()"
+    ></app-drawer-content>
   </mat-sidenav>
   @let navigatedItems = navigatedItems$ | async;
   <mat-sidenav-content

@@ -8,14 +8,12 @@
 }
 
 .nav-container {
-  /* background-color: var(--color-green); */
+  display: flex;
   width: 100%;
-  /* padding: 1rem;
-  box-shadow:
-    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
+  height: 100%;
   padding: 2rem 0 1.5rem;
-  /* height: 100vh; */
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .navbar {
@@ -37,12 +35,19 @@
 .navbar li:hover,
 .active {
   cursor: pointer;
-  /* text-decoration: underline; */
-
   color: #bb925c;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.contacts {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 0 0.5rem;
 }
