@@ -5,6 +5,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { GALLERY_CONFIG, GalleryConfig } from 'ng-gallery';
 
 import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,5 +19,6 @@ export const appConfig: ApplicationConfig = {
         imageSize: 'cover',
       } as GalleryConfig,
     },
+    provideHttpClient(),
   ],
 };

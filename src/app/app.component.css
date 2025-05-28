@@ -14,15 +14,15 @@ app-header {
 
 mat-sidenav,
 mat-sidenav-content {
-  margin-top: 124px;
+  margin-top: 140px;
 }
 
 mat-sidenav-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100% - 124px);
-  min-height: calc(100vh - 124px);
+  height: calc(100% - 140px);
+  min-height: calc(100vh - 140px);
 
   /* background: #002706; */
   background-image: linear-gradient(
@@ -63,6 +63,12 @@ mat-sidenav-content::before {
     rgba(237, 246, 250, 0.75) 100.2%
   );
   z-index: -1;
+}
+
+.main-content {
+  flex: auto;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 800px) {

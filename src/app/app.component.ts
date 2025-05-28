@@ -27,6 +27,9 @@ const breakpoints = {
 const bgs: Record<string, string> = {
   main: '/assets/grey-marble-column-details-building.webp',
   'about-me': '/assets/library-bookshelves.webp',
+  services: '/assets/office-chair-still-life.webp',
+  documents:
+    '/assets/business-concept-with-copy-space-office-desk-table-with-pen-focus-analysis-chart-computer-notebook-cup-coffee-desk-vintage-tone-retro-filter-selective-focus.jpg',
 };
 
 @Component({

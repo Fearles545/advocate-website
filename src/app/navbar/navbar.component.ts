@@ -16,7 +16,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         </li>
         |
         <li>
-          <a>Послуги</a>
+          <a routerLink="services" routerLinkActive="active">Послуги</a>
         </li>
         |
         <li>
@@ -24,7 +24,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         </li>
         |
         <li>
-          <a>Блог</a>
+          <a routerLink="blog" routerLinkActive="active">Блог</a>
         </li>
         |
         <li>
@@ -41,15 +41,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         rgba(0, 39, 6, 1) 20%
       );
       width: 100%;
-      padding: 1rem;
       box-shadow:
         rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
         rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-      padding: 1rem 0 0.5rem;
+      padding: 1.5rem 0 1rem;
     }
 
     .navbar {
-      font-size: 1rem;
+      font-size: 1.4rem;
       list-style-type: none;
       display: flex;
       flex-wrap: wrap;
@@ -71,6 +70,20 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    @media (max-width: 1000px) {
+      .navbar {
+        font-size: 1.25rem;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        font-size: 1rem;
+        // gap: 1rem;
+      }
     }
   `,
 })

@@ -3,6 +3,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { MainComponent } from './main/main.component';
+import { ServicesComponent } from './services/services.component';
+import { BlogComponent } from './blog/blog.component';
 
 export const routes: Routes = [
   {
@@ -16,14 +18,24 @@ export const routes: Routes = [
     component: AboutMeComponent,
   },
   {
-    path: 'contacts',
-    title: 'Контакти',
-    component: ContactsComponent,
+    path: 'services',
+    title: 'Послуги',
+    component: ServicesComponent,
   },
   {
     path: 'documents',
     title: 'Документи',
     component: DocumentsComponent,
+  },
+  {
+    path: 'blog',
+    title: 'Блог',
+    component: BlogComponent,
+  },
+  {
+    path: 'contacts',
+    title: 'Контакти',
+    component: ContactsComponent,
   },
   {
     path: '',

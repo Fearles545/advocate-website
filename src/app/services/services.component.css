@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1rem 1rem;
+}
+
+.main-title {
+  text-align: center;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--container-max-width);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-green);
+  box-shadow: var(--color-green) 0 0 0.25rem;
+  background-color: #bb925c1c;
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.service-category {
+  flex: 1;
+}
+
+.list {
+  color: var(--color-green);
+}
