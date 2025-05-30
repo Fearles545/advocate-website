@@ -82,7 +82,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     @media (max-width: 900px) {
       .navbar {
         font-size: 1rem;
-        // gap: 1rem;
       }
     }
   `,

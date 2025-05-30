@@ -1,79 +1,21 @@
 <h1 class="main-title">Послуги</h1>
 
-<section class="services-container">
-  <div class="service-category">
-    <h2 class="category-title">[ пенсійні ]</h2>
-    <mat-list role="list">
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="handshake"></mat-icon>
-        <span matListItemTitle>Консультації з пенсійних питань</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="mail"></mat-icon>
-        <span>Звернення з адвокатським запитом</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="people"></mat-icon>
-        <span>Допомога у зборі необхідних довідок</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="lock"></mat-icon>
-        <span>Оформлення різних видів пенсій</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="calculator"></mat-icon>
-        <span>Перерахунок/допризначення пенсій</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="card"></mat-icon>
-        <span>Оформлення пенсійного посвідчення</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="checklist"></mat-icon>
-        <span>Розрахунок стажу</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="check"></mat-icon>
-        <span>Перевірка документів для призначення пенсії</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="question"></mat-icon>
-        <span>Інші пенсійні питання</span>
-      </mat-list-item>
-    </mat-list>
-  </div>
+<div class="services-container">
+  @for (category of serviceCategories; track category.name) {
+    <section class="service-category">
+      <h2 class="category-title">{{ category.name }}</h2>
 
-  <div class="service-category">
-    <h2 class="category-title">[ судові ]</h2>
-    <mat-list role="list">
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="person"></mat-icon>
-        <span>Інші пенсійні питання</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="legal-case"></mat-icon>
-        <span>Інші пенсійні питання</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="letter"></mat-icon>
-        <span>Інші пенсійні питання</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="document"></mat-icon>
-        <span>Інші пенсійні питання</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="document-appeal"></mat-icon>
-        <span>Інші пенсійні питання</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="executive"></mat-icon>
-        <span>Інші пенсійні питання</span>
-      </mat-list-item>
-      <mat-list-item role="listitem">
-        <mat-icon matListItemIcon svgIcon="question-1"></mat-icon>
-        <span>Інші пенсійні питання</span>
-      </mat-list-item>
-    </mat-list>
-  </div>
-</section>
+      <div class="list">
+        @for (item of category.items; track item.title) {
+          <div class="listitem">
+            <div class="icon-container">
+              <mat-icon svgIcon="{{ item.icon }}"></mat-icon>
+            </div>
+
+            <span class="listitem-text">{{ item.title }}</span>
+          </div>
+        }
+      </div>
+    </section>
+  }
+</div>
