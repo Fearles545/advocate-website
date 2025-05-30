@@ -93,7 +93,7 @@ export class DocumentsComponent implements OnInit {
       .ref(this.bachelorImagesId, {
         thumbPosition: 'top',
         imageSize: 'cover',
-        autoHeight: false,
+        autoHeight: true,
       })
       .load(this.bachelorImages);
 
@@ -102,7 +102,7 @@ export class DocumentsComponent implements OnInit {
       .ref(this.masterImagesId, {
         thumbPosition: 'top',
         imageSize: 'cover',
-        autoHeight: false,
+        autoHeight: true,
       })
       .load(this.masterImages);
 
@@ -110,7 +110,7 @@ export class DocumentsComponent implements OnInit {
       .ref(this.barImagesId, {
         thumbPosition: 'top',
         imageSize: 'cover',
-        autoHeight: false,
+        autoHeight: true,
       })
       .load(this.barImages);
 
@@ -118,7 +118,7 @@ export class DocumentsComponent implements OnInit {
       .ref(this.qualificationImagesId, {
         thumbPosition: 'top',
         imageSize: 'cover',
-        autoHeight: false,
+        autoHeight: true,
       })
       .load(this.qualificationImages);
   }

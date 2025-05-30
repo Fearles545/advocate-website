@@ -5,6 +5,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,11 +14,12 @@ import { MatIconModule } from '@angular/material/icon';
     NavbarComponent,
     MatButtonModule,
     MatIconModule,
+    RouterLink,
   ],
   template: `
     <header>
       <div class="container">
-        <div class="left-content">
+        <a routerLink="/main" class="left-content">
           <img
             class="logo"
             src="assets/logo/logo-white-transparent.png"
@@ -28,7 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
 
             <p>Поддяча Юлія Юріївна</p>
           </div>
-        </div>
+        </a>
 
         <button
           class="menu-button"
