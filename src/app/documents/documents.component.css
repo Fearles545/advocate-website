@@ -65,6 +65,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.03);
+  box-shadow: rgb(41, 41, 41) 0px 5px 15px 0px;
 }
 
 .document-images-image {
@@ -115,13 +116,18 @@ a {
     border: 0;
   }
 
+  .documents-item-container {
+    gap: 1rem;
+  }
+
   .documents-item-title {
     margin-top: 1rem;
   }
 
   .document-images {
     grid-template-columns: 1fr;
-    max-width: 85vw;
+    max-width: 100vw;
+    padding: 1rem;
   }
 
   .document-images-item {

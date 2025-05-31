@@ -82,6 +82,10 @@ export class DocumentsComponent implements OnInit {
         src: 'assets/documents/qual-2024.webp',
         thumb: 'assets/documents/qual-2024.webp',
       }),
+      new ImageItem({
+        src: 'assets/documents/qual-2025.webp',
+        thumb: 'assets/documents/qual-2025.webp',
+      }),
     ];
 
     this.gallery

@@ -13,7 +13,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ServicesComponent {
   serviceCategories = [
     {
-      name: 'Пенсійні',
+      name: 'ПЕНСІЙНІ',
       items: [
         { icon: 'handshake', title: 'Консультації з пенсійних питань' },
         { icon: 'mail', title: 'Звернення з адвокатським запитом' },
@@ -27,7 +27,7 @@ export class ServicesComponent {
       ],
     },
     {
-      name: 'Судові',
+      name: 'СУДОВІ',
       items: [
         { icon: 'person', title: 'Представництво інтересів у судах' },
         {
