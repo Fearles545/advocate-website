@@ -18,8 +18,6 @@ import { Lightbox, LIGHTBOX_CONFIG, LightboxModule } from 'ng-gallery/lightbox';
   ],
 })
 export class DocumentsComponent implements OnInit {
-  //TODO format images to .webp; create thumb images
-  // images!: GalleryItem[];
   bachelorImages!: GalleryItem[];
   masterImages!: GalleryItem[];
   barImages!: GalleryItem[];
@@ -29,7 +27,6 @@ export class DocumentsComponent implements OnInit {
   masterImagesId = 'masterImages';
   barImagesId = 'barImages';
   qualificationImagesId = 'qualificationImages';
-  // Set items array
 
   gallery = inject(Gallery);
   lightbox = inject(Lightbox);
@@ -87,8 +84,6 @@ export class DocumentsComponent implements OnInit {
       }),
     ];
 
-    // Load images into gallery
-
     this.gallery
       .ref(this.bachelorImagesId, {
         thumbPosition: 'top',
@@ -97,12 +92,11 @@ export class DocumentsComponent implements OnInit {
       })
       .load(this.bachelorImages);
 
-    // const masterGalleryRef =
     this.gallery
       .ref(this.masterImagesId, {
         thumbPosition: 'top',
         imageSize: 'cover',
-        autoHeight: false,
+        autoHeight: true,
       })
       .load(this.masterImages);
 

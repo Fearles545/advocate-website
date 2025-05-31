@@ -13,16 +13,10 @@
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  /* border: 0.1px solid var(--color-green); */
   border-radius: 0.5rem;
   padding-bottom: 1rem;
-  box-shadow: #00270626 0 0 0.25rem;
   position: relative;
-  /* background: #00270626; */
-  background-color: #00270612;
-
   border-radius: 0.5rem;
-  /* border: 1px solid var(--color-green); */
   box-shadow: var(--color-green) 0 0 0.25rem;
   background-color: #bb925c1c;
 }
@@ -37,15 +31,10 @@
   z-index: -1;
 }
 
-/* .documents-item-container--education {
-  background: url('/assets/icons/nlu-logo.webp') no-repeat bottom right;
-  filter: grayscale(100%);
-} */
-
 .documents-item-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
   width: 100%;
 }
@@ -63,6 +52,7 @@
   gap: 1rem;
   width: 100%;
   max-width: 100%;
+  padding: 2rem;
 }
 
 .document-images-item {
@@ -71,7 +61,6 @@
   overflow: hidden;
   width: 100%;
   padding: 0;
-  aspect-ratio: 0.7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,6 +105,20 @@ a {
 }
 
 @media (max-width: 600px) {
+  :host {
+    gap: 0;
+    padding: 0;
+  }
+
+  .documents-container {
+    box-shadow: none;
+    border: 0;
+  }
+
+  .documents-item-title {
+    margin-top: 1rem;
+  }
+
   .document-images {
     grid-template-columns: 1fr;
     max-width: 85vw;
@@ -128,5 +131,9 @@ a {
   .text {
     font-size: 1.1rem;
     padding: 0 0.5rem;
+  }
+
+  .education-logo {
+    width: 4rem;
   }
 }
