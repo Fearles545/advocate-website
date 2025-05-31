@@ -19,18 +19,17 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": [
-              "src/custom-theme.scss",
-              "src/styles.css"
-            ],
+            "styles": ["src/custom-theme.scss", "src/styles.css"],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "baseHref": "/advocate-website/",
+              "outputPath": "dist/advocate-website",
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "1500kB",
                   "maximumError": "1MB"
                 },
                 {
