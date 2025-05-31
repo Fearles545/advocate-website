@@ -77,3 +77,10 @@ mat-sidenav-content::before {
     margin-top: 80px;
   }
 }
+
+@media (max-width: 320px) {
+  mat-sidenav,
+  mat-sidenav-content {
+    margin-top: 64px;
+  }
+}

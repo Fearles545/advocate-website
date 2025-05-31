@@ -102,7 +102,7 @@ export class DocumentsComponent implements OnInit {
       .ref(this.masterImagesId, {
         thumbPosition: 'top',
         imageSize: 'cover',
-        autoHeight: true,
+        autoHeight: false,
       })
       .load(this.masterImages);
 

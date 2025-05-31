@@ -74,6 +74,27 @@
     rgba(0, 39, 6, 0.1) 0%,
     rgba(187, 146, 92, 0.1) 100%
   );
+
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(204, 228, 247, 1) 11.2%,
+    rgba(237, 246, 250, 1) 100.2%
+  );
+}
+
+.icon-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+mat-icon {
+  width: 30px;
+  height: auto;
+}
+
+.listitem-text {
+  flex: auto;
 }
 
 @media (max-width: 800px) {
