@@ -25,10 +25,16 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build -- --configuration production
+        run: npm run build -- --configuration production --base-href /advocate-website/
+
+      - name: Create 404 page for SPA routing
+        run: cp dist/advocate-website/browser/index.html dist/advocate-website/browser/404.html
+
+      - name: Add .nojekyll file
+        run: touch dist/advocate-website/browser/.nojekyll
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
         with:
           folder: dist/advocate-website/browser
           branch: gh-pages

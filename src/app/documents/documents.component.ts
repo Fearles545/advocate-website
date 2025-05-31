@@ -38,7 +38,7 @@ export class DocumentsComponent implements OnInit {
         thumb: 'assets/documents/bachelor-diploma-1-thumb.webp',
       }),
       new ImageItem({
-        src: '/assets/documents/bachelor-diploma-2.webp',
+        src: 'assets/documents/bachelor-diploma-2.webp',
         thumb: 'assets/documents/bachelor-diploma-2-thumb.webp',
       }),
     ];
@@ -49,7 +49,7 @@ export class DocumentsComponent implements OnInit {
         thumb: 'assets/documents/master-diploma-1-thumb.webp',
       }),
       new ImageItem({
-        src: '/assets/documents/master-diploma-2.webp',
+        src: 'assets/documents/master-diploma-2.webp',
         thumb: 'assets/documents/master-diploma-2-thumb.webp',
       }),
     ];
@@ -60,7 +60,7 @@ export class DocumentsComponent implements OnInit {
         thumb: 'assets/documents/lawyer-license-1-thumb.webp',
       }),
       new ImageItem({
-        src: '/assets/documents/lawyer-license-2.webp',
+        src: 'assets/documents/lawyer-license-2.webp',
         thumb: 'assets/documents/lawyer-license-2-thumb.webp',
       }),
     ];
@@ -71,15 +71,15 @@ export class DocumentsComponent implements OnInit {
         thumb: 'assets/documents/qual-2021.webp',
       }),
       new ImageItem({
-        src: '/assets/documents/qual-2022.webp',
+        src: 'assets/documents/qual-2022.webp',
         thumb: 'assets/documents/qual-2022.webp',
       }),
       new ImageItem({
-        src: '/assets/documents/qual-2023.webp',
+        src: 'assets/documents/qual-2023.webp',
         thumb: 'assets/documents/qual-2023.webp',
       }),
       new ImageItem({
-        src: '/assets/documents/qual-2024.webp',
+        src: 'assets/documents/qual-2024.webp',
         thumb: 'assets/documents/qual-2024.webp',
       }),
     ];

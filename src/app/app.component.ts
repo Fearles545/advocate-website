@@ -25,10 +25,10 @@ const breakpoints = {
 };
 
 const bgs: Record<string, string> = {
-  main: '/assets/grey-marble-column-details-building.webp',
-  'about-me': '/assets/library-bookshelves.webp',
-  services: '/assets/office-chair-still-life.webp',
-  documents: '/assets/abstract-blur-defocused-bookshelf-library.webp',
+  main: 'assets/grey-marble-column-details-building.webp',
+  'about-me': 'assets/library-bookshelves.webp',
+  services: 'assets/office-chair-still-life.webp',
+  documents: 'assets/abstract-blur-defocused-bookshelf-library.webp',
 };
 
 @Component({

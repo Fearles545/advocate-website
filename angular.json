@@ -32,6 +32,7 @@
           "configurations": {
             "production": {
               "baseHref": "/advocate-website/",
+              "deployUrl": "/advocate-website/",
               "outputPath": "dist/advocate-website",
               "budgets": [
                 {
