@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, computed, input, output } from '@angular/core';
 
 import { SocialIconData } from '../core/icons.data';
 import { NavbarComponent } from '../navbar/navbar.component';
@@ -65,6 +65,26 @@ import { RouterLink } from '@angular/router';
       </div>
 
       <app-navbar></app-navbar>
+
+      <div class="contacts--sm">
+        <a href="tel:+380999426056" target="_blank"> +38 (099) 942-60-56 </a>
+
+        <div class="social-icons">
+          @for (iconData of messengersData(); track iconData) {
+            <app-social-icon-link
+              iconColor="#fff"
+              [iconData]="iconData"
+              [iconStyles]="{
+                width: '2rem',
+                height: '2rem',
+                backgroundColor: 'transparent',
+                borderRadius: '0',
+                padding: '0.3rem',
+              }"
+            ></app-social-icon-link>
+          }
+        </div>
+      </div>
     </header>
   `,
   styles: `
@@ -125,6 +145,10 @@ import { RouterLink } from '@angular/router';
       display: none;
     }
 
+    .contacts--sm {
+      display: none;
+    }
+
     @media (max-width: 1919px) {
     }
 
@@ -150,6 +174,35 @@ import { RouterLink } from '@angular/router';
       .menu-button {
         display: block;
       }
+
+      .contacts--sm {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(0, 39, 6, 1) 20%
+        );
+        width: 100%;
+        box-shadow:
+          rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+          rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        padding: 1rem 1rem 0.5rem;
+      }
+
+      .contacts--sm a {
+        font-weight: 600;
+        color: white;
+      }
+
+      .contacts--sm .social-icons {
+        display: flex;
+        gap: 0.5rem;
+      }
     }
 
     @media (max-width: 479px) {
@@ -173,6 +226,15 @@ import { RouterLink } from '@angular/router';
 export class HeaderComponent {
   iconsData = input.required<SocialIconData[]>();
   phoneData = input.required<SocialIconData>();
+
+  messengersData = computed(() =>
+    this.iconsData().filter(
+      (icon) =>
+        icon.alt === 'Telegram' ||
+        icon.alt === 'Viber' ||
+        icon.alt === 'WhatsApp'
+    )
+  );
 
   toggleDrawer = output<void>();
 }

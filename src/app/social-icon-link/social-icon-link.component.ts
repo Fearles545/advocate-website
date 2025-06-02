@@ -25,6 +25,10 @@ import { SocialIconData } from '../core/icons.data';
     </a>
   `,
   styles: `
+    :host {
+      display: flex;
+    }
+
     .social-icon-link {
       display: inline-block;
     }

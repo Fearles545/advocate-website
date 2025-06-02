@@ -80,14 +80,6 @@
   overflow: hidden;
 }
 
-.contacts {
-  background-color: #000;
-  color: #fff;
-  padding: 0.5rem 0;
-  margin: 0 -1rem;
-  width: 100vw;
-}
-
 @media (max-width: 1919px) {
 }
 
@@ -97,7 +89,6 @@
 @media (max-width: 1279px) {
 }
 
-/* @media (max-width: 800px) { */
 @media (max-width: 1023px) {
   :host {
     padding: 0 2rem;
@@ -140,6 +131,12 @@
     border: 1px solid var(--color-gold);
     padding: 0.5rem;
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 800px) {
+  :host {
+    margin-top: 2rem;
   }
 }
 
