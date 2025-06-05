@@ -15,7 +15,7 @@ import { SocialIconData } from '../core/icons.data';
       [ngStyle]="iconStyles()"
     >
       <svg
-        viewBox="0 0 24 24"
+        [attr.viewBox]="iconData().viewBox"
         xmlns="http://www.w3.org/2000/svg"
         [style.color]="iconColor() || iconData().color"
         fill="currentColor"
@@ -29,19 +29,21 @@ import { SocialIconData } from '../core/icons.data';
       display: flex;
     }
 
+    :host:hover svg {
+      fill: var(--color-gold);
+    }
+
     .social-icon-link {
-      display: inline-block;
+      display: flex;
     }
 
     svg {
-      transition:
-        fill,
-        box-shadow 0.5s ease;
+      transition: fill 0.3s ease;
     }
 
-    /*.social-icon-link:hover svg {
-       fill: var(--color-green);
-    }*/
+    svg:hover {
+      fill: var(--color-gold);
+    }
   `,
 })
 export class SocialIconLinkComponent {

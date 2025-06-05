@@ -1,10 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, isDevMode } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { inject } from '@angular/core';
 import { AsyncPipe, NgStyle } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
-
-import { BreakpointObserver } from '@angular/cdk/layout';
 
 import { filter, fromEvent, map, startWith } from 'rxjs';
 
@@ -14,15 +12,6 @@ import { iconsData } from './core/icons.data';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DrawerContentComponent } from './drawer-content/drawer-content.component';
-
-const breakpoints = {
-  xs: '(max-width: 479px)',
-  sm: '(max-width: 767px)',
-  md: '(max-width: 1023px)',
-  lg: '(max-width: 1279px)',
-  xl: '(max-width: 1535px)',
-  xxl: '(max-width: 1919px)',
-};
 
 const bgs: Record<string, string> = {
   main: 'assets/grey-marble-column-details-building.webp',
@@ -54,21 +43,7 @@ export class AppComponent {
     color: '#fff',
   };
   #router = inject(Router);
-
-  customBreakpoints = breakpoints;
-  currentScreenSize!: string;
-
-  // breakpointObserver = inject(BreakpointObserver);
-
-  // breakpointSubscription$ = this.breakpointObserver
-  //   .observe(Object.values(this.customBreakpoints))
-  //   .pipe(
-  //     map((result) =>
-  //       Object.entries(this.customBreakpoints).find(
-  //         ([, query]) => result.breakpoints[query] || null
-  //       )
-  //     )
-  //   );
+  isDevMode = isDevMode();
 
   isDesktop = toSignal(
     fromEvent(window, 'resize').pipe(
@@ -92,5 +67,4 @@ export class AppComponent {
     ),
     map((segments) => bgs[segments[0]])
   );
-  // .subscribe(console.log);
 }

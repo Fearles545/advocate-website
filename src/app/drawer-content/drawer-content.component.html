@@ -36,7 +36,7 @@
         routerLinkActive="active"
         (click)="onLinkClick.emit()"
       >
-        Мої документи
+        Документи
       </a>
     </li>
 
@@ -61,8 +61,19 @@
     </li>
   </nav>
 
-  <!-- <a class="contacts" href="tel:+380999426056" target="_blank">
-    <app-social-icon-link [iconData]="phoneData()"></app-social-icon-link>
-    +38 (099) 942-60-56
-  </a> -->
+  <div class="social-icons">
+    @for (iconData of socialMediaIconsData(); track iconData) {
+      <app-social-icon-link
+        iconColor="#fff"
+        [iconData]="iconData"
+        [iconStyles]="{
+          width: '2rem',
+          height: '2rem',
+          backgroundColor: 'transparent',
+          borderRadius: '0',
+          padding: '0.3rem',
+        }"
+      />
+    }
+  </div>
 </section>

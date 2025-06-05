@@ -39,6 +39,7 @@
 
 .container {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
@@ -59,7 +60,7 @@
   flex: 1;
   display: flex;
   gap: 1rem;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .social-icon-link {
@@ -128,7 +129,8 @@
 
   div.social-icons {
     flex: auto;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 2rem;
   }
 
   .left-content {
@@ -151,7 +153,7 @@
     display: none;
   }
 
-  .social-icons {
+  div.social-icons {
     width: 100%;
     justify-content: space-evenly;
   }

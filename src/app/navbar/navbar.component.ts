@@ -49,6 +49,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
     .navbar {
       font-size: 1.4rem;
+      font-weight: 500;
       list-style-type: none;
       display: flex;
       flex-wrap: wrap;

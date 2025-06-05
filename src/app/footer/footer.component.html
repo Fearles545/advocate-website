@@ -2,30 +2,35 @@
   <div class="container">
     <div class="left-content">
       <div class="left-top-content">
-        <img
-          class="logo"
-          src="assets/logo/logo-white-transparent.png"
-          alt="Адвокат Поддяча Юлія Юріївна"
-        />
-
         <div class="center-content">
           <p class="description">
             Консультації з пенсійних питань. Професійна допомога на всіх етапах:
             від перевірки документів до судового захисту (за потреби).
           </p>
         </div>
+
+        <img
+          class="logo"
+          src="assets/logo/logo-white-transparent.png"
+          alt="Адвокат Поддяча Юлія Юріївна"
+        />
       </div>
     </div>
 
     <div class="social-icons">
-      @for (iconData of iconsData(); track iconData) {
-        <app-social-icon-link [iconData]="iconData" />
+      @for (iconData of socialMediaIconsData(); track iconData) {
+        <app-social-icon-link
+          [iconData]="iconData"
+          [matTooltip]="iconData.alt | titlecase"
+          [matTooltipShowDelay]="300"
+          [matTooltipPosition]="'above'"
+        />
       }
 
-      <a class="contacts" href="tel:+380999426056" target="_blank">
+      <!-- <a class="contacts" href="tel:+380999426056" target="_blank">
         <app-social-icon-link [iconData]="phoneData()"></app-social-icon-link>
         <span class="phone">+38 (099) 942-60-56</span>
-      </a>
+      </a> -->
     </div>
   </div>
 

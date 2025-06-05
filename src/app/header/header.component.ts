@@ -6,6 +6,8 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +17,8 @@ import { RouterLink } from '@angular/router';
     MatButtonModule,
     MatIconModule,
     RouterLink,
+    MatTooltipModule,
+    TitleCasePipe,
   ],
   template: `
     <header>
@@ -43,7 +47,7 @@ import { RouterLink } from '@angular/router';
         </button>
 
         <div class="social-icons">
-          @for (iconData of iconsData(); track iconData) {
+          @for (iconData of messengersData(); track iconData) {
             <app-social-icon-link
               iconColor="#000"
               [iconData]="iconData"
@@ -54,12 +58,23 @@ import { RouterLink } from '@angular/router';
                 borderRadius: '50%',
                 padding: '0.3rem',
               }"
+              [matTooltip]="iconData.alt | titlecase"
+              [matTooltipShowDelay]="300"
             ></app-social-icon-link>
           }
         </div>
 
         <a class="contacts" href="tel:+380999426056" target="_blank">
-          <app-social-icon-link [iconData]="phoneData()"></app-social-icon-link>
+          <!-- <app-social-icon-link
+            [iconData]="phoneData()"
+            [iconStyles]="{
+              width: '1.5rem',
+              height: '1.5rem',
+              backgroundColor: 'transparent',
+              borderRadius: '0',
+              padding: '0',
+            }"
+          ></app-social-icon-link> -->
           +38 (099) 942-60-56
         </a>
       </div>
@@ -138,7 +153,12 @@ import { RouterLink } from '@angular/router';
       gap: 0.5rem;
       align-items: center;
       color: white;
+      font-weight: 600;
       text-decoration: none;
+    }
+
+    .contacts:hover {
+      color: var(--color-gold);
     }
 
     .menu-button {
@@ -227,14 +247,23 @@ export class HeaderComponent {
   iconsData = input.required<SocialIconData[]>();
   phoneData = input.required<SocialIconData>();
 
-  messengersData = computed(() =>
-    this.iconsData().filter(
-      (icon) =>
-        icon.alt === 'Telegram' ||
-        icon.alt === 'Viber' ||
-        icon.alt === 'WhatsApp'
-    )
-  );
+  messengersData = computed(() => {
+    const desiredOrder = ['e-mail', 'viber', 'telegram', 'whatsApp'];
+
+    return this.iconsData()
+      .filter(
+        (icon) =>
+          icon.alt === 'e-mail' ||
+          icon.alt === 'telegram' ||
+          icon.alt === 'viber' ||
+          icon.alt === 'whatsApp'
+      )
+      .sort((a, b) => {
+        const indexA = desiredOrder.indexOf(a.alt);
+        const indexB = desiredOrder.indexOf(b.alt);
+        return indexA - indexB;
+      });
+  });
 
   toggleDrawer = output<void>();
 }

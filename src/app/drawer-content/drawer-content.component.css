@@ -9,27 +9,39 @@
 
 .nav-container {
   display: flex;
+  gap: 0;
   width: 100%;
   height: 100%;
-  padding: 2rem 0 1.5rem;
+  padding: 0;
   flex-direction: column;
-  justify-content: space-between;
+  border-top: 0.1px solid #c9a55c4d;
 }
 
 .navbar {
   font-size: 1.2rem;
   list-style-type: none;
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.25rem;
   color: white;
+  padding: 1rem 1.3rem;
+  border-bottom: 0.1px solid #c9a55c4d;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 10px 15px 6px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  box-shadow:
+    inset rgba(0, 0, 0, 0.1) 0px -20px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 .navbar li {
+  font-weight: 600;
   cursor: pointer;
-  padding: 0 1.5rem;
+  padding: 0;
+  width: 100%;
 }
 
 .navbar li:hover,
@@ -41,6 +53,7 @@
 a {
   color: inherit;
   text-decoration: none;
+  width: 100%;
 }
 
 .contacts {
@@ -50,4 +63,12 @@ a {
   color: white;
   text-decoration: none;
   padding: 0 0.5rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-bottom: 0.1px solid #c9a55c4d;
 }

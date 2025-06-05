@@ -13,7 +13,7 @@
     [fixedInViewport]="true"
   >
     <app-drawer-content
-      [phoneData]="phoneData"
+      [iconsData]="iconsData"
       (onLinkClick)="drawer.close()"
     ></app-drawer-content>
   </mat-sidenav>
@@ -21,18 +21,20 @@
   <mat-sidenav-content
     [ngStyle]="{ 'background-image': 'url(' + navigatedItems + ')' }"
   >
-    <div
-      style="
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        color: #fff;
-        font-size: 0.75rem;
-      "
-    >
-      <span>h:{{ isDesktop()?.innerHeight }}</span>
-      <span>w:{{ isDesktop()?.innerWidth }}</span>
-    </div>
+    @if (isDevMode) {
+      <div
+        style="
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          color: #fff;
+          font-size: 0.75rem;
+        "
+      >
+        <span>h:{{ isDesktop()?.innerHeight }}</span>
+        <span>w:{{ isDesktop()?.innerWidth }}</span>
+      </div>
+    }
 
     <div class="main-content">
       <router-outlet style="display: none"></router-outlet>
