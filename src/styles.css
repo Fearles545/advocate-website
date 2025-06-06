@@ -27,6 +27,7 @@
   --color-gold: #c9a55c;
   --color-navy-dark: #152d4f;
   --color-gold-light: #e0d6c1;
+  --color-container-bg: #bb925c1c;
   --border-thin: 1px solid var(--color-gold-light);
   --border-accent: 2px solid var(--color-gold);
   --border-radius-sm: 0.25rem;
