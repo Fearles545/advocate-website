@@ -1,6 +1,5 @@
 <app-header
   [iconsData]="iconsData"
-  [phoneData]="phoneData"
   (toggleDrawer)="drawer.toggle()"
 ></app-header>
 
@@ -17,10 +16,8 @@
       (onLinkClick)="drawer.close()"
     ></app-drawer-content>
   </mat-sidenav>
-  @let navigatedItems = navigatedItems$ | async;
-  <mat-sidenav-content
-    [ngStyle]="{ 'background-image': 'url(' + navigatedItems + ')' }"
-  >
+  @let navigatedItem = navigatedItems$ | async;
+  <mat-sidenav-content [ngClass]="navigatedItem">
     @if (isDevMode) {
       <div
         style="
@@ -40,6 +37,6 @@
       <router-outlet style="display: none"></router-outlet>
     </div>
 
-    <app-footer [iconsData]="iconsData" [phoneData]="phoneData"></app-footer>
+    <app-footer [iconsData]="iconsData"></app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -245,7 +245,6 @@ import { TitleCasePipe } from '@angular/common';
 })
 export class HeaderComponent {
   iconsData = input.required<SocialIconData[]>();
-  phoneData = input.required<SocialIconData>();
 
   messengersData = computed(() => {
     const desiredOrder = ['e-mail', 'viber', 'telegram', 'whatsApp'];

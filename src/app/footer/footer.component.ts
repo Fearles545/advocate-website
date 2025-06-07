@@ -14,7 +14,6 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
 })
 export class FooterComponent {
   iconsData = input.required<SocialIconData[]>();
-  phoneData = input.required<SocialIconData>();
 
   socialMediaIconsData = computed(() => {
     const desiredOrder = ['tikTok', 'youtube', 'facebook', 'instagram'];

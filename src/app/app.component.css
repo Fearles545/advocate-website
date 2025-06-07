@@ -65,6 +65,22 @@ mat-sidenav-content::before {
   z-index: -1;
 }
 
+mat-sidenav-content.main {
+  background-image: url('/assets/grey-marble-column-details-building.webp');
+}
+
+mat-sidenav-content.about-me {
+  background-image: url('/assets/library-bookshelves.webp');
+}
+
+mat-sidenav-content.services {
+  background-image: url('/assets/office-chair-still-life.webp');
+}
+
+mat-sidenav-content.documents {
+  background-image: url('/assets/abstract-blur-defocused-bookshelf-library.webp');
+}
+
 .main-content {
   flex: auto;
   display: flex;
