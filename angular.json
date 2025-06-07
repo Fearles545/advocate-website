@@ -27,7 +27,13 @@
               }
             ],
             "styles": ["src/custom-theme.scss", "src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "externalDependencies": [
+              "assets/grey-marble-column-details-building.webp",
+              "assets/library-bookshelves.webp",
+              "assets/office-chair-still-life.webp",
+              "assets/abstract-blur-defocused-bookshelf-library.webp"
+            ]
           },
           "configurations": {
             "production": {
