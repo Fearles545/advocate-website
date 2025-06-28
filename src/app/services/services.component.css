@@ -101,7 +101,10 @@ mat-icon {
     flex-direction: column;
     gap: 2.5rem;
     border-radius: 0;
-    border: 1px solid var(--color-green);
+    border-top-width: 1px;
+    border-right-width: 0;
+    border-bottom-width: 1px;
+    border-left-width: 0;
     box-shadow: none;
     padding: 0.5rem 2rem 2rem;
   }

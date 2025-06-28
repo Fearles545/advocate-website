@@ -29,7 +29,6 @@ const bgs: Record<string, string> = {
     MatSidenavModule,
     DrawerContentComponent,
     AsyncPipe,
-    NgStyle,
     NgClass,
   ],
   templateUrl: './app.component.html',

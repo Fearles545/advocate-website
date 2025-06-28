@@ -77,7 +77,11 @@ mat-sidenav-content.services {
   background-image: url('assets/office-chair-still-life.webp');
 }
 
-mat-sidenav-content.documents {
+/* mat-sidenav-content.documents {
+  background-image: url('assets/front-view-stacked-books-earth-globe-open-book-education-day.webp');
+} */
+
+mat-sidenav-content.contacts {
   background-image: url('assets/abstract-blur-defocused-bookshelf-library.webp');
 }
 
