@@ -21,7 +21,7 @@ export class ServicesComponent {
         { icon: 'lock', title: 'Оформлення різних видів пенсій' },
         { icon: 'calculator', title: 'Перерахунок/допризначення пенсій' },
         { icon: 'card', title: 'Оформлення пенсійного посвідчення' },
-        { icon: 'checklist', title: 'Розрахунок стажу' },
+        { icon: 'checklist', title: 'Розрахунки різних видів стажу' },
         { icon: 'check', title: 'Перевірка документів для призначення пенсії' },
         { icon: 'question', title: 'Інші пенсійні питання' },
       ],

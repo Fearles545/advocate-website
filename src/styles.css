@@ -101,6 +101,10 @@ a:hover {
   padding: 0 var(--container-padding);
 }
 
+mat-dialog-content.mat-mdc-dialog-content {
+  max-height: inherit;
+}
+
 @media (max-width: 1919px) {
 }
 

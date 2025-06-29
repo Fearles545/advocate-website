@@ -69,6 +69,6 @@ a {
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border-bottom: 0.1px solid #c9a55c4d;
 }
