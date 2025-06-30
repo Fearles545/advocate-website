@@ -37,7 +37,8 @@
 }
 
 .buttons-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-between;
@@ -143,6 +144,10 @@
 @media (max-width: 479px) {
   :host {
     padding: 0 1rem;
+  }
+
+  .buttons-container {
+    grid-template-columns: 1fr;
   }
 }
 

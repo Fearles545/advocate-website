@@ -20,7 +20,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         </li>
         |
         <li>
-          <a routerLink="documents" routerLinkActive="active">Мої документи</a>
+          <a routerLink="documents" routerLinkActive="active">Документи</a>
         </li>
         |
         <li>

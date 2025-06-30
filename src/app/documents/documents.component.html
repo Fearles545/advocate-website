@@ -1,3 +1,58 @@
+<section class="documents-container">
+  <img class="education-logo" src="assets/icons/unba-logo.png" />
+
+  <section class="documents-item-container">
+    <h6 class="documents-item-title">Адвокатура</h6>
+
+    <p class="text">
+      <a href="https://erau.unba.org.ua/profile/82725" target="_blank">
+        Профіль у Єдиному реєстрі адвокатів України
+      </a>
+    </p>
+
+    <p class="text">
+      23.06.2021 - отримала свідоцтво про право на заняття адвокатською
+      діяльністю
+    </p>
+
+    <div class="document-images">
+      @for (item of barImages; track item; let i = $index) {
+        <button
+          class="document-images-item"
+          [lightbox]="i"
+          [gallery]="barImagesId"
+        >
+          <img
+            class="document-images-image"
+            loading="lazy"
+            [src]="item.data!.thumb"
+          />
+        </button>
+      }
+    </div>
+
+    <h6 class="documents-item-title">
+      Щорічне підвищення професійного рівня адвоката
+    </h6>
+
+    <div class="document-images">
+      @for (item of qualificationImages; track item; let i = $index) {
+        <button
+          class="document-images-item"
+          [lightbox]="i"
+          [gallery]="qualificationImagesId"
+        >
+          <img
+            class="document-images-image"
+            loading="lazy"
+            [src]="item.data!.thumb"
+          />
+        </button>
+      }
+    </div>
+  </section>
+</section>
+
 <section class="documents-container documents-item-container--education">
   <img class="education-logo" src="assets/icons/nlu-logo.webp" />
 
@@ -38,61 +93,6 @@
           class="document-images-item"
           [lightbox]="i"
           [gallery]="masterImagesId"
-        >
-          <img
-            class="document-images-image"
-            loading="lazy"
-            [src]="item.data!.thumb"
-          />
-        </button>
-      }
-    </div>
-  </section>
-</section>
-
-<section class="documents-container">
-  <img class="education-logo" src="assets/icons/unba-logo.png" />
-
-  <section class="documents-item-container">
-    <h6 class="documents-item-title">Адвокатура</h6>
-
-    <p class="text">
-      23.06.2021 - отримала свідоцтво про право на заняття адвокатською
-      діяльністю
-    </p>
-
-    <div class="document-images">
-      @for (item of barImages; track item; let i = $index) {
-        <button
-          class="document-images-item"
-          [lightbox]="i"
-          [gallery]="barImagesId"
-        >
-          <img
-            class="document-images-image"
-            loading="lazy"
-            [src]="item.data!.thumb"
-          />
-        </button>
-      }
-    </div>
-
-    <p class="text">
-      <a href="https://erau.unba.org.ua/profile/82725" target="_blank">
-        Профіль у Єдиному реєстрі адвокатів України
-      </a>
-    </p>
-
-    <h6 class="documents-item-title">
-      Щорічне підвищення професійного рівня адвоката
-    </h6>
-
-    <div class="document-images">
-      @for (item of qualificationImages; track item; let i = $index) {
-        <button
-          class="document-images-item"
-          [lightbox]="i"
-          [gallery]="qualificationImagesId"
         >
           <img
             class="document-images-image"

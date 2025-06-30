@@ -1,11 +1,11 @@
-import { Component, inject, viewChild } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MAT_SELECT_CONFIG, MatSelectModule } from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
-import { CdkTextareaAutosize, TextFieldModule } from '@angular/cdk/text-field';
+import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatIconModule } from '@angular/material/icon';
 
 import { iconsData } from '../core/icons.data';
@@ -16,14 +16,6 @@ import { fromEvent, startWith, map } from 'rxjs';
 
 @Component({
   selector: 'app-contacts',
-  // providers: [
-  //   {
-  //     provide: MAT_SELECT_CONFIG,
-  //     useValue: {
-  //       appearance: 'outline',
-  //     },
-  //   },
-  // ],
   imports: [
     MatButtonModule,
     MatIconModule,
@@ -38,8 +30,6 @@ import { fromEvent, startWith, map } from 'rxjs';
 })
 export class ContactsComponent {
   private dialog = inject(MatDialog);
-  // @ViewChild('autosize') autosize!: CdkTextareaAutosize;
-  autosize = viewChild<CdkTextareaAutosize>('autosize');
 
   iconsData = iconsData;
   isDesktop = toSignal(

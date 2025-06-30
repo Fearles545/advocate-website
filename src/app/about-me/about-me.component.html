@@ -13,9 +13,6 @@
   <section class="profile-content">
     <h1 class="profile-name">Поддяча Юлія Юріївна</h1>
 
-    <!-- TODO
-      справа снизу добавить стрелочку "Детальніше" -> открыть диалог з біографією "Біографія" 
-    -->
     <div class="info-container">
       <div class="profile-header">
         <h1 class="profile-name profile-name--sm">Поддяча Юлія Юріївна</h1>
@@ -77,10 +74,14 @@
           Отримала свідоцтво адвоката в 2021 році
         </li>
       </ul>
+
+      <p (click)="openDialog()" class="profile-more-button">
+        Детальніше
+        <mat-icon>chevron_right</mat-icon>
+      </p>
     </div>
 
     <div class="buttons-container">
-      <!-- <button mat-flat-button color="primary">Біографія</button> -->
       <a routerLink="/services" mat-flat-button color="primary">Послуги</a>
 
       <a routerLink="/documents" mat-flat-button color="primary">Документи</a>
