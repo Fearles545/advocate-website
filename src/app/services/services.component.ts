@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { SeoService } from '../core/services/seo.service';
 
 @Component({
   selector: 'app-services',
@@ -10,7 +11,19 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './services.component.html',
   styleUrl: './services.component.css',
 })
-export class ServicesComponent {
+export class ServicesComponent implements OnInit {
+  private seoService = inject(SeoService);
+
+  ngOnInit(): void {
+    this.seoService.updatePageSEO({
+      title: 'Послуги адвоката по пенсіях | Поддяча Юлія Юріївна',
+      description:
+        'Повний спектр адвокатських послуг з пенсійних питань: оформлення пенсії, перерахунок, судовий захист, консультації з пенсійного права в Україні.',
+      keywords:
+        'послуги адвоката пенсії, оформлення пенсії, перерахунок пенсії, судовий захист пенсія, консультації пенсійне право, адвокат пенсійний фонд',
+      canonical: 'https://www.advocate-pensia.com.ua/services',
+    });
+  }
   serviceCategories = [
     {
       name: 'ПЕНСІЙНІ',

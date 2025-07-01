@@ -14,7 +14,16 @@
   border: 1px solid var(--color-green);
   box-shadow: var(--color-green) 0 0 0.25rem;
   background-color: var(--color-container-bg);
-  padding: 1rem;
+  padding: 1rem 0 0 1rem;
+}
+
+.contact-container > * {
+  flex: 1;
+}
+
+.contact-photo-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .contact-container .consultation-container,
@@ -38,6 +47,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin-left: 2rem;
 }
 
 .contact-info .logo {
@@ -141,6 +151,19 @@
   font-size: 1rem;
 }
 
+@media (max-width: 1024px) {
+  .contact-container {
+    padding: 1rem;
+  }
+
+  .contact-info {
+    margin-left: 0;
+  }
+
+  .contact-photo-container {
+    display: none;
+  }
+}
 @media (max-width: 800px) {
   :host {
     padding: 0;

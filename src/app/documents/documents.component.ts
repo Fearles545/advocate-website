@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 
 import { Gallery, GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { Lightbox, LIGHTBOX_CONFIG, LightboxModule } from 'ng-gallery/lightbox';
+import { SeoService } from '../core/services/seo.service';
 
 @Component({
   selector: 'app-documents',
@@ -18,6 +19,8 @@ import { Lightbox, LIGHTBOX_CONFIG, LightboxModule } from 'ng-gallery/lightbox';
   ],
 })
 export class DocumentsComponent implements OnInit {
+  private seoService = inject(SeoService);
+
   bachelorImages!: GalleryItem[];
   masterImages!: GalleryItem[];
   barImages!: GalleryItem[];
@@ -32,6 +35,15 @@ export class DocumentsComponent implements OnInit {
   lightbox = inject(Lightbox);
 
   ngOnInit() {
+    this.seoService.updatePageSEO({
+      title: 'Документи та кваліфікація | Поддяча Юлія Юріївна',
+      description:
+        'Офіційні документи адвоката: свідоцтво про право на заняття адвокатською діяльністю, дипломи про освіту НЮУ, сертифікати підвищення кваліфікації.',
+      keywords:
+        'документи адвоката, свідоцтво адвоката, диплом НЮУ, кваліфікація адвокат, сертифікати підвищення кваліфікації',
+      canonical: 'https://www.advocate-pensia.com.ua/documents',
+    });
+
     this.bachelorImages = [
       new ImageItem({
         src: 'assets/documents/bachelor-diploma-1.webp',

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                           http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Homepage / Main Page -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Main Page (explicit route) -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/main</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- About Me Page -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/about-me</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Services Page -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/services</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Documents Page -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/documents</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>rarely</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Contacts Page -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/contacts</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Page (if enabled in future) -->
+  <!-- <url>
+    <loc>https://www.advocate-pensia.com.ua/blog</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url> -->
+
+</urlset>
