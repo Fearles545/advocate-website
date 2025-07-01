@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build -- --configuration production --base-href /advocate-website/
+        run: npm run build -- --configuration production --base-href /
 
       - name: Create 404 page for SPA routing
         run: cp dist/advocate-website/browser/index.html dist/advocate-website/browser/404.html
