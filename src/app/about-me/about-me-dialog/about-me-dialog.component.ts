@@ -97,18 +97,6 @@ import { MatIconModule } from '@angular/material/icon';
 
           <span class="profile-list-value"> адвокат з пенсійних справ </span>
         </li>
-
-        <!-- 
-
-**2015** - Національний юридичний університет імені Ярослава Мудрого
-
-**2015-2016** - Східне міжрегіональне управління Міністерства юстиції
-
-**2016-2017** - Недригайлівська районна рада
-
-**2018-2021** - Головне управління Пенсійного фонду України в Харківській області
-
-**червень 2021** - Національна асоціація адвокатів України /Ukrainian National Bar Association -->
       </ul>
     </mat-dialog-content>
   `,
@@ -123,9 +111,6 @@ import { MatIconModule } from '@angular/material/icon';
     }
 
     .profile-list-item {
-      // display: flex;
-      // align-items: center;
-      // font-family: var(--font-heading);
       color: var(--color-green);
       font-size: 1.2rem;
       font-weight: 500;
