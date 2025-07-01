@@ -8,7 +8,7 @@ import { BlogComponent } from './blog/blog.component';
 
 export const routes: Routes = [
   {
-    path: 'main',
+    path: '',
     title: 'Головна',
     component: MainComponent,
   },
@@ -38,12 +38,7 @@ export const routes: Routes = [
     component: ContactsComponent,
   },
   {
-    path: '',
-    redirectTo: 'main',
-    pathMatch: 'full',
-  },
-  {
     path: '**',
-    redirectTo: 'main',
+    redirectTo: '',
   },
 ];

@@ -8,7 +8,12 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     <section class="nav-container">
       <nav class="navbar">
         <li>
-          <a routerLink="main" routerLinkActive="active">Головна</a>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Головна</a
+          >
         </li>
         |
         <li>

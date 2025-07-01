@@ -23,7 +23,7 @@ import { TitleCasePipe } from '@angular/common';
   template: `
     <header>
       <div class="container">
-        <a routerLink="/main" class="left-content">
+        <a routerLink="/" class="left-content">
           <img
             class="logo"
             src="assets/logo/logo-white-transparent.png"

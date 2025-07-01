@@ -56,10 +56,11 @@ export class AppComponent {
       () =>
         this.#router
           .parseUrl(this.#router.url)
-          .root.children['primary']?.segments.map((segment) => segment.path) ||
-        []
+          .root.children[
+            'primary'
+          ]?.segments.map((segment) => segment.path) || ['main']
     ),
-    map((segments) => segments[0])
+    map((segments) => segments[0] || 'main')
     // map((segments) => `url(${bgs[segments[0]]})`)
   );
 }

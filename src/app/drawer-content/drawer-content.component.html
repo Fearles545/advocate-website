@@ -2,8 +2,9 @@
   <nav class="navbar">
     <li>
       <a
-        routerLink="main"
+        routerLink="/"
         routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
         (click)="onLinkClick.emit()"
       >
         Головна
