@@ -13,6 +13,11 @@
   gap: 1rem;
 }
 
+.description-title {
+  font-size: var(--font-size-h1);
+  font-weight: var(--weight-bold);
+}
+
 .description-title,
 .description-title--sm {
   text-align: center;

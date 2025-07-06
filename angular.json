@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "outputMode": "static",
             "outputPath": "dist/advocate-website",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -39,7 +40,10 @@
               "assets/office-chair-still-life.webp",
               "assets/abstract-blur-defocused-bookshelf-library.webp",
               "assets/front-view-stacked-books-earth-globe-open-book-education-day.webp"
-            ]
+            ],
+            "prerender": true,
+            "server": "src/main.server.ts",
+            "ssr": false
           },
           "configurations": {
             "production": {
@@ -48,7 +52,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",

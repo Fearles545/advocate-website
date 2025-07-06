@@ -11,10 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { iconsData } from '../core/icons.data';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactFormDialogComponent } from './contact-form-dialog/contact-form-dialog.component';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { fromEvent, startWith, map } from 'rxjs';
-import { SeoService } from '../core/services/seo.service';
 import { NgOptimizedImage } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contacts',
@@ -32,40 +30,46 @@ import { NgOptimizedImage } from '@angular/common';
   styleUrl: './contacts.component.css',
 })
 export class ContactsComponent implements OnInit {
-  private seoService = inject(SeoService);
+  private meta = inject(Meta);
+  private title = inject(Title);
+
+  setSeo() {
+    this.title.setTitle('Контакти | Поддяча Юлія Юріївна');
+
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Контактна інформація адвоката Поддяча Юлії Юріївни. Телефон, email, адреса офісу. Записатися на консультацію онлайн.',
+    });
+
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Контакти | Поддяча Юлія Юріївна',
+    });
+
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Контактна інформація адвоката. Записатися на консультацію онлайн.',
+    });
+  }
 
   ngOnInit(): void {
-    this.seoService.updatePageSEO({
-      title: "Контакти - Поддяча Юлія Юріївна | Зв'язок з адвокатом",
-      description:
-        'Контактна інформація адвоката з пенсійних питань. Телефон: +38 (099) 942-60-56. Консультація з пенсійного права в Україні.',
-      keywords:
-        "контакти адвокат пенсії, телефон адвокат, консультація адвокат, зв'язок адвокат пенсійні питання",
-      canonical: 'https://www.advocate-pensia.com.ua/contacts',
-    });
+    this.setSeo();
   }
   private dialog = inject(MatDialog);
 
   iconsData = iconsData;
-  isDesktop = toSignal(
-    fromEvent(window, 'resize').pipe(
-      startWith(0),
-      map(() => ({
-        innerWidth: window.innerWidth,
-        innerHeight: window.innerHeight,
-      }))
-    )
-  );
 
   openContactForm() {
     this.dialog.open(ContactFormDialogComponent, {
       data: {
-        width: this.isDesktop()?.innerWidth,
-        height: this.isDesktop()?.innerHeight,
+        width: 'fit-content',
+        height: 'auto',
       },
-      width: this.isDesktop()?.innerWidth! > 500 ? '640px' : '100vw',
+      width: '-webkit-fill-available',
       maxWidth: '100vw',
-      height: this.isDesktop()?.innerWidth! > 500 ? '80vh' : '100vh',
+      height: 'auto',
       panelClass: 'contact-form-dialog',
       autoFocus: false,
     });

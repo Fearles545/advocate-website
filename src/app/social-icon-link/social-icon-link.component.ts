@@ -1,27 +1,36 @@
-import { NgStyle } from '@angular/common';
-import { Component, computed, inject, input } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, computed, inject, input, PLATFORM_ID } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 import { SocialIconData } from '../core/icons.data';
 
 @Component({
   selector: 'app-social-icon-link',
-  imports: [NgStyle],
+  imports: [],
   template: `
     <a
       class="social-icon-link"
       [href]="iconData().link"
       target="_blank"
-      [ngStyle]="iconStyles()"
+      [style]="iconStyles()"
     >
-      <svg
-        [attr.viewBox]="iconData().viewBox"
-        xmlns="http://www.w3.org/2000/svg"
-        [style.color]="iconColor() || iconData().color"
-        fill="currentColor"
-      >
-        <g [innerHTML]="sanitizedSvg()"></g>
-      </svg>
+      @if (isBrowser) {
+        <svg
+          [attr.viewBox]="iconData().viewBox"
+          xmlns="http://www.w3.org/2000/svg"
+          [style.color]="iconColor() || iconData().color"
+          fill="currentColor"
+        >
+          <g [innerHTML]="sanitizedSvg()"></g>
+        </svg>
+      } @else {
+        <!-- Fallback for SSR -->
+        <div
+          class="svg-placeholder"
+          [style.width]="iconStyles().width"
+          [style.height]="iconStyles().height"
+        ></div>
+      }
     </a>
   `,
   styles: `
@@ -63,6 +72,10 @@ export class SocialIconLinkComponent {
   });
   iconColor = input<string | null>(null);
   hoverColor = input<string | null>(null);
+
+  private platformId = inject(PLATFORM_ID);
+
+  isBrowser = isPlatformBrowser(this.platformId);
 
   #sanitizer = inject(DomSanitizer);
 

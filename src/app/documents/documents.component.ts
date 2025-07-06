@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Gallery, GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { Lightbox, LIGHTBOX_CONFIG, LightboxModule } from 'ng-gallery/lightbox';
 import { SeoService } from '../core/services/seo.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-documents',
@@ -19,7 +20,9 @@ import { SeoService } from '../core/services/seo.service';
   ],
 })
 export class DocumentsComponent implements OnInit {
-  private seoService = inject(SeoService);
+  // private seoService = inject(SeoService);
+  private meta = inject(Meta);
+  private title = inject(Title);
 
   bachelorImages!: GalleryItem[];
   masterImages!: GalleryItem[];
@@ -34,15 +37,29 @@ export class DocumentsComponent implements OnInit {
   gallery = inject(Gallery);
   lightbox = inject(Lightbox);
 
-  ngOnInit() {
-    this.seoService.updatePageSEO({
-      title: 'Документи та кваліфікація | Поддяча Юлія Юріївна',
-      description:
-        'Офіційні документи адвоката: свідоцтво про право на заняття адвокатською діяльністю, дипломи про освіту НЮУ, сертифікати підвищення кваліфікації.',
-      keywords:
-        'документи адвоката, свідоцтво адвоката, диплом НЮУ, кваліфікація адвокат, сертифікати підвищення кваліфікації',
-      canonical: 'https://www.advocate-pensia.com.ua/documents',
+  setSeo() {
+    this.title.setTitle('Документи | Адвокат Поддяча Юлія Юріївна');
+
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Документи та сертифікати адвоката Поддяча Юлії Юріївни. Ліцензії, дипломи, посвідчення про кваліфікацію.',
     });
+
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Документи | Адвокат Поддяча Юлія Юріївна',
+    });
+
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Документи та сертифікати адвоката. Ліцензії, дипломи, посвідчення про кваліфікацію.',
+    });
+  }
+
+  ngOnInit() {
+    this.setSeo();
 
     this.bachelorImages = [
       new ImageItem({

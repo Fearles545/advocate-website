@@ -39,15 +39,15 @@ export class AppComponent {
   #router = inject(Router);
   isDevMode = isDevMode();
 
-  isDesktop = toSignal(
-    fromEvent(window, 'resize').pipe(
-      startWith(0),
-      map(() => ({
-        innerWidth: window.innerWidth,
-        innerHeight: window.innerHeight,
-      }))
-    )
-  );
+  // isDesktop = toSignal(
+  //   fromEvent(window, 'resize').pipe(
+  //     startWith(0),
+  //     map(() => ({
+  //       innerWidth: window.innerWidth,
+  //       innerHeight: window.innerHeight,
+  //     }))
+  //   )
+  // );
 
   navigatedItems$ = this.#router.events.pipe(
     startWith(new NavigationEnd(0, this.#router.url, this.#router.url)),

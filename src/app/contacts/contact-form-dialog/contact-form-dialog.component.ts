@@ -77,11 +77,16 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
         display: none;
       }
 
+      .iframe-container {
+        height: 100vh;
+      }
+
       .loading-spinner {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
+        max-height: 100vh;
         width: 100%;
         position: absolute;
         top: 0;

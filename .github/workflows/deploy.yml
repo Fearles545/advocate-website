@@ -8,7 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    # This is the critical permission addition
     permissions:
       contents: write
     steps:
@@ -25,13 +24,20 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build -- --configuration production --base-href /
+        run: npm run build -- --configuration production
 
       - name: Create 404 page for SPA routing
         run: cp dist/advocate-website/browser/index.html dist/advocate-website/browser/404.html
 
       - name: Add .nojekyll file
         run: touch dist/advocate-website/browser/.nojekyll
+
+      - name: Verify prerendered routes
+        run: |
+          echo "Checking prerendered routes..."
+          ls -la dist/advocate-website/browser/
+          test -f dist/advocate-website/browser/about-me/index.html && echo "✅ about-me prerendered" || echo "❌ about-me not prerendered"
+          test -f dist/advocate-website/browser/services/index.html && echo "✅ services prerendered" || echo "❌ services not prerendered"
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.7.3

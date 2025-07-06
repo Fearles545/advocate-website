@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { AboutMeDialogComponent } from './about-me-dialog/about-me-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
-import { SeoService } from '../core/services/seo.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about-me',
@@ -17,17 +17,32 @@ import { SeoService } from '../core/services/seo.service';
 })
 export class AboutMeComponent implements OnInit {
   private dialog = inject(MatDialog);
-  private seoService = inject(SeoService);
+  private meta = inject(Meta);
+  private title = inject(Title);
+
+  setSeo() {
+    this.title.setTitle('Про мене | Поддяча Юлія Юріївна');
+
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Досвід роботи адвокатом більше 10 років. Спеціалізація на пенсійних питаннях та соціальному захисті. Кваліфікована юридична допомога.',
+    });
+
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Про мене | Поддяча Юлія Юріївна',
+    });
+
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Досвід роботи адвокатом більше 10 років. Спеціалізація на пенсійних питаннях та соціальному захисті.',
+    });
+  }
 
   ngOnInit(): void {
-    this.seoService.updatePageSEO({
-      title: 'Про мене - Поддяча Юлія Юріївна | Адвокат по пенсіях',
-      description:
-        'Досвідчений адвокат з пенсійних питань. Випускниця НЮУ ім. Ярослава Мудрого, 10+ років досвіду, свідоцтво адвоката з 2021 року. Професійна допомога з пенсійного права.',
-      keywords:
-        'Поддяча Юлія Юріївна, адвокат біографія, освіта адвокат, досвід роботи пенсійний фонд, НЮУ Ярослава Мудрого, свідоцтво адвоката',
-      canonical: 'https://www.advocate-pensia.com.ua/about-me',
-    });
+    this.setSeo();
   }
 
   openDialog() {

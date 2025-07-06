@@ -1,26 +1,58 @@
+import { Component, OnInit, inject } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { NgOptimizedImage } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
-import { SeoService } from '../core/services/seo.service';
 
 @Component({
   selector: 'app-main',
   imports: [NgOptimizedImage, MatButtonModule, RouterLink],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.css',
+  styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
-  private seoService = inject(SeoService);
+  private meta = inject(Meta);
+  private title = inject(Title);
 
-  ngOnInit(): void {
-    this.seoService.updatePageSEO({
-      title: 'Поддяча Юлія Юріївна | Адвокат по пенсіях в Україні',
-      description:
+  ngOnInit() {
+    // Set page title
+    this.title.setTitle('Поддяча Юлія Юріївна | Адвокат по пенсіях в Україні');
+
+    // Set meta description
+    this.meta.updateTag({
+      name: 'description',
+      content:
         'Професійні адвокатські послуги з пенсійних питань. Оформлення пенсії без вашої присутності в ПФУ. Кваліфікована юридична допомога, досвід 10+ років.',
-      keywords:
-        'адвокат по пенсіях, Поддяча Юлія Юріївна, пенсійні питання України, оформлення пенсії без присутності, пенсійне право',
-      canonical: 'https://www.advocate-pensia.com.ua/',
+    });
+
+    // Set keywords
+    this.meta.updateTag({
+      name: 'keywords',
+      content:
+        'адвокат, пенсія, пенсійні послуги, юридична допомога, ПФУ, Україна',
+    });
+
+    // Open Graph tags
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Поддяча Юлія Юріївна | Адвокат по пенсіях в Україні',
+    });
+
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Професійні адвокатські послуги з пенсійних питань. Оформлення пенсії без вашої присутності в ПФУ.',
+    });
+
+    this.meta.updateTag({
+      property: 'og:type',
+      content: 'website',
+    });
+
+    this.meta.updateTag({
+      property: 'og:image',
+      content:
+        'https://www.advocate-pensia.com.ua/assets/main_photo_lower_size copy.webp',
     });
   }
 }

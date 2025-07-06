@@ -1,8 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
-import { SeoService } from '../core/services/seo.service';
+import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-services',
@@ -12,18 +11,36 @@ import { SeoService } from '../core/services/seo.service';
   styleUrl: './services.component.css',
 })
 export class ServicesComponent implements OnInit {
-  private seoService = inject(SeoService);
+  private meta = inject(Meta);
+  private title = inject(Title);
 
   ngOnInit(): void {
-    this.seoService.updatePageSEO({
-      title: 'Послуги адвоката по пенсіях | Поддяча Юлія Юріївна',
-      description:
-        'Повний спектр адвокатських послуг з пенсійних питань: оформлення пенсії, перерахунок, судовий захист, консультації з пенсійного права в Україні.',
-      keywords:
-        'послуги адвоката пенсії, оформлення пенсії, перерахунок пенсії, судовий захист пенсія, консультації пенсійне право, адвокат пенсійний фонд',
-      canonical: 'https://www.advocate-pensia.com.ua/services',
+    this.title.setTitle('Послуги | Адвокат по пенсіях');
+
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Повний спектр послуг з пенсійних питань: оформлення пенсій, перерахунок, апеляції, юридичні консультації. Професійна допомога без вашої присутності.',
+    });
+
+    this.meta.updateTag({
+      name: 'keywords',
+      content:
+        'оформлення пенсії, перерахунок пенсії, пенсійні послуги, юридична консультація, ПФУ',
+    });
+
+    this.meta.updateTag({
+      property: 'og:title',
+      content: 'Послуги | Адвокат по пенсіях',
+    });
+
+    this.meta.updateTag({
+      property: 'og:description',
+      content:
+        'Повний спектр послуг з пенсійних питань: оформлення пенсій, перерахунок, апеляції, юридичні консультації.',
     });
   }
+
   serviceCategories = [
     {
       name: 'ПЕНСІЙНІ',
