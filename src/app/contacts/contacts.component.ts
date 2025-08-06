@@ -67,7 +67,7 @@ export class ContactsComponent implements OnInit {
         width: 'fit-content',
         height: 'auto',
       },
-      width: '-webkit-fill-available',
+      width: '100%',
       maxWidth: '100vw',
       height: 'auto',
       panelClass: 'contact-form-dialog',
