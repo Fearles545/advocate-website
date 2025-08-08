@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -12,7 +12,6 @@ import { iconsData } from '../core/icons.data';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactFormDialogComponent } from './contact-form-dialog/contact-form-dialog.component';
 import { NgOptimizedImage } from '@angular/common';
-import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contacts',
@@ -29,34 +28,7 @@ import { Meta, Title } from '@angular/platform-browser';
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.css',
 })
-export class ContactsComponent implements OnInit {
-  private meta = inject(Meta);
-  private title = inject(Title);
-
-  setSeo() {
-    this.title.setTitle('Контакти | Поддяча Юлія Юріївна');
-
-    this.meta.updateTag({
-      name: 'description',
-      content:
-        'Контактна інформація адвоката Поддяча Юлії Юріївни. Телефон, email, адреса офісу. Записатися на консультацію онлайн.',
-    });
-
-    this.meta.updateTag({
-      property: 'og:title',
-      content: 'Контакти | Поддяча Юлія Юріївна',
-    });
-
-    this.meta.updateTag({
-      property: 'og:description',
-      content:
-        'Контактна інформація адвоката. Записатися на консультацію онлайн.',
-    });
-  }
-
-  ngOnInit(): void {
-    this.setSeo();
-  }
+export class ContactsComponent {
   private dialog = inject(MatDialog);
 
   iconsData = iconsData;

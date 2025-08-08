@@ -5,37 +5,47 @@ import { DocumentsComponent } from './documents/documents.component';
 import { MainComponent } from './main/main.component';
 import { ServicesComponent } from './services/services.component';
 import { BlogComponent } from './blog/blog.component';
+import { SEO_DATA } from './core/config/seo.config';
 
 export const routes: Routes = [
   {
     path: '',
-    title: 'Головна',
     component: MainComponent,
+    data: {
+      seo: SEO_DATA['main'],
+    },
   },
   {
     path: 'about-me',
-    title: 'Про мене',
     component: AboutMeComponent,
+    data: {
+      seo: SEO_DATA['about-me'],
+    },
   },
   {
     path: 'services',
-    title: 'Послуги',
     component: ServicesComponent,
+    data: {
+      seo: SEO_DATA['services'],
+    },
   },
   {
     path: 'documents',
-    title: 'Документи',
     component: DocumentsComponent,
+    data: {
+      seo: SEO_DATA['documents'],
+    },
   },
   {
     path: 'blog',
-    title: 'Блог',
     component: BlogComponent,
   },
   {
     path: 'contacts',
-    title: 'Контакти',
     component: ContactsComponent,
+    data: {
+      seo: SEO_DATA['contacts'],
+    },
   },
   {
     path: '**',

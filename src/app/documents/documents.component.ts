@@ -2,9 +2,6 @@ import { Component, inject, OnInit } from '@angular/core';
 
 import { Gallery, GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { Lightbox, LIGHTBOX_CONFIG, LightboxModule } from 'ng-gallery/lightbox';
-import { SeoService } from '../core/services/seo.service';
-import { Meta, Title } from '@angular/platform-browser';
-
 @Component({
   selector: 'app-documents',
   imports: [GalleryModule, LightboxModule],
@@ -20,10 +17,6 @@ import { Meta, Title } from '@angular/platform-browser';
   ],
 })
 export class DocumentsComponent implements OnInit {
-  // private seoService = inject(SeoService);
-  private meta = inject(Meta);
-  private title = inject(Title);
-
   bachelorImages!: GalleryItem[];
   masterImages!: GalleryItem[];
   barImages!: GalleryItem[];
@@ -37,30 +30,7 @@ export class DocumentsComponent implements OnInit {
   gallery = inject(Gallery);
   lightbox = inject(Lightbox);
 
-  setSeo() {
-    this.title.setTitle('Документи | Адвокат Поддяча Юлія Юріївна');
-
-    this.meta.updateTag({
-      name: 'description',
-      content:
-        'Документи та сертифікати адвоката Поддяча Юлії Юріївни. Ліцензії, дипломи, посвідчення про кваліфікацію.',
-    });
-
-    this.meta.updateTag({
-      property: 'og:title',
-      content: 'Документи | Адвокат Поддяча Юлія Юріївна',
-    });
-
-    this.meta.updateTag({
-      property: 'og:description',
-      content:
-        'Документи та сертифікати адвоката. Ліцензії, дипломи, посвідчення про кваліфікацію.',
-    });
-  }
-
-  ngOnInit() {
-    this.setSeo();
-
+  ngOnInit(): void {
     this.bachelorImages = [
       new ImageItem({
         src: 'assets/documents/bachelor-diploma-1.webp',

@@ -1,10 +1,13 @@
-import { Injectable, inject } from '@angular/core';
+import { Inject, Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 
 export interface PageSEO {
   title: string;
   description: string;
   keywords?: string;
+  image?: string; // For og:image
+  type?: string; // For og:type
   canonical?: string;
 }
 
@@ -14,8 +17,15 @@ export interface PageSEO {
 export class SeoService {
   private meta = inject(Meta);
   private titleService = inject(Title);
+  // Inject DOCUMENT in a platform-safe way for SSG/SSR
+  private document = inject(DOCUMENT);
+  private readonly siteUrl = 'https://www.advocate-pensia.com.ua';
 
   updatePageSEO(seo: PageSEO): void {
+    const url = seo.canonical
+      ? `${this.siteUrl}${seo.canonical}`
+      : this.document.location.href;
+
     // Update title
     this.titleService.setTitle(seo.title);
 
@@ -23,6 +33,8 @@ export class SeoService {
     this.meta.updateTag({ name: 'description', content: seo.description });
     if (seo.keywords) {
       this.meta.updateTag({ name: 'keywords', content: seo.keywords });
+    } else {
+      this.meta.removeTag("name='keywords'");
     }
 
     // Update Open Graph tags
@@ -31,23 +43,39 @@ export class SeoService {
       property: 'og:description',
       content: seo.description,
     });
+    this.meta.updateTag({ property: 'og:url', content: url });
     this.meta.updateTag({
-      property: 'og:url',
-      content: seo.canonical || window.location.href,
+      property: 'og:type',
+      content: seo.type || 'website',
     });
 
+    if (seo.image) {
+      this.meta.updateTag({
+        property: 'og:image',
+        content: `${this.siteUrl}${seo.image}`,
+      });
+    } else {
+      // It's good practice to have a default fallback image
+      this.meta.updateTag({
+        property: 'og:image',
+        content: `${this.siteUrl}/assets/default-og-image.png`,
+      });
+    }
+
     // Update canonical URL
-    this.updateCanonical(seo.canonical || window.location.href);
+    this.updateCanonical(url);
   }
 
   private updateCanonical(url: string): void {
-    let link = document.querySelector(
+    // This approach is safer for server-side rendering
+    let link: HTMLLinkElement | null = this.document.querySelector(
       "link[rel='canonical']"
-    ) as HTMLLinkElement;
+    );
+
     if (!link) {
-      link = document.createElement('link');
+      link = this.document.createElement('link');
       link.setAttribute('rel', 'canonical');
-      document.head.appendChild(link);
+      this.document.head.appendChild(link);
     }
     link.setAttribute('href', url);
   }

@@ -12,6 +12,7 @@ import { iconsData } from './core/icons.data';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DrawerContentComponent } from './drawer-content/drawer-content.component';
+import { RouteSeoService } from './core/services/route-seo.service';
 
 const bgs: Record<string, string> = {
   main: 'assets/grey-marble-column-details-building.webp',
@@ -29,7 +30,6 @@ const bgs: Record<string, string> = {
     MatSidenavModule,
     DrawerContentComponent,
     AsyncPipe,
-    NgClass,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -38,6 +38,7 @@ export class AppComponent {
   iconsData = iconsData;
   #router = inject(Router);
   isDevMode = isDevMode();
+  private routeSeoService = inject(RouteSeoService);
 
   // isDesktop = toSignal(
   //   fromEvent(window, 'resize').pipe(
@@ -63,4 +64,9 @@ export class AppComponent {
     map((segments) => segments[0] || 'main')
     // map((segments) => `url(${bgs[segments[0]]})`)
   );
+
+  constructor() {
+    // Start listening for route changes to update SEO tags automatically.
+    this.routeSeoService.init();
+  }
 }

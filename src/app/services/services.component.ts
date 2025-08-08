@@ -1,46 +1,15 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-services',
-  standalone: true,
   imports: [MatListModule, MatIconModule],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css',
 })
-export class ServicesComponent implements OnInit {
-  private meta = inject(Meta);
-  private title = inject(Title);
-
-  ngOnInit(): void {
-    this.title.setTitle('Послуги | Адвокат по пенсіях');
-
-    this.meta.updateTag({
-      name: 'description',
-      content:
-        'Повний спектр послуг з пенсійних питань: оформлення пенсій, перерахунок, апеляції, юридичні консультації. Професійна допомога без вашої присутності.',
-    });
-
-    this.meta.updateTag({
-      name: 'keywords',
-      content:
-        'оформлення пенсії, перерахунок пенсії, пенсійні послуги, юридична консультація, ПФУ',
-    });
-
-    this.meta.updateTag({
-      property: 'og:title',
-      content: 'Послуги | Адвокат по пенсіях',
-    });
-
-    this.meta.updateTag({
-      property: 'og:description',
-      content:
-        'Повний спектр послуг з пенсійних питань: оформлення пенсій, перерахунок, апеляції, юридичні консультації.',
-    });
-  }
-
+export class ServicesComponent {
   serviceCategories = [
     {
       name: 'ПЕНСІЙНІ',
