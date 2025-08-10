@@ -6,6 +6,7 @@ import { MainComponent } from './main/main.component';
 import { ServicesComponent } from './services/services.component';
 import { BlogComponent } from './blog/blog.component';
 import { SEO_DATA } from './core/config/seo.config';
+import { blogRoutes } from './blog/routes';
 
 export const routes: Routes = [
   {
@@ -38,7 +39,7 @@ export const routes: Routes = [
   },
   {
     path: 'blog',
-    component: BlogComponent,
+    loadChildren: () => import('./blog/routes').then((m) => m.blogRoutes),
   },
   {
     path: 'contacts',
