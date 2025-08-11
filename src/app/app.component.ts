@@ -62,7 +62,6 @@ export class AppComponent {
           ]?.segments.map((segment) => segment.path) || ['main']
     ),
     map((segments) => segments[0] || 'main')
-    // map((segments) => `url(${bgs[segments[0]]})`)
   );
 
   constructor() {

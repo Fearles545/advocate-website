@@ -21,3 +21,7 @@ Tasks
 Так, ви можете задавати og:image з посиланням на основне зображення на сайті. Часто це є найкращою практикою, оскільки це забезпечує консистентність і привабливість поширеного контенту.
 
 - add breadcrumbs (learn more about seo it adds)
+
+- change image at contact to one of Yuliia sent
+
+- create og images with native mac preview app

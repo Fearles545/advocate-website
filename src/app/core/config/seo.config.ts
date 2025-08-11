@@ -21,7 +21,6 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       'Досвід роботи адвокатом більше 10 років. Спеціалізація на пенсійних питаннях та соціальному захисті. Кваліфікована юридична допомога.',
     keywords:
       'адвокат про себе, юрист, пенсійні питання, соціальний захист, Юлія Поддяча, досвід роботи',
-    // It's good practice to have a specific OG image for key pages.
     image: '/assets/about-me-og-image.webp',
     canonical: '/about-me',
   },
@@ -31,7 +30,7 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       'Повний спектр послуг з пенсійних питань: оформлення та перерахунок пенсій, судові спори з ПФУ, юридичні консультації. Професійна допомога без вашої присутності.',
     keywords:
       'послуги адвоката, оформлення пенсії, перерахунок пенсії, пенсійні послуги, юридична консультація, ПФУ, судові спори',
-    image: '/assets/services-og-image.webp', // A specific image for sharing this page
+    image: '/assets/services-og-image.webp',
     canonical: '/services',
   },
   documents: {
@@ -40,7 +39,7 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       'Документи та сертифікати, що підтверджують кваліфікацію адвоката Поддяча Юлії Юріївни. Дипломи, свідоцтво про право на заняття адвокатською діяльністю та сертифікати.',
     keywords:
       'документи адвоката, ліцензія адвоката, диплом юриста, сертифікати, кваліфікація, Юлія Поддяча',
-    image: '/assets/documents-og-image.webp', // A representative image for social sharing
+    image: '/assets/documents-og-image.webp',
     canonical: '/documents',
   },
   contacts: {
@@ -49,7 +48,7 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       'Контактна інформація адвоката Поддяча Юлії Юріївни. Телефон, email, Viber, Telegram. Запишіться на консультацію онлайн.',
     keywords:
       'контакти адвоката, телефон адвоката, email адвоката, записатися на консультацію, Юлія Поддяча',
-    image: '/assets/contacts-og-image.webp', // A specific image for sharing this page
+    image: '/assets/contacts-og-image.webp',
     canonical: '/contacts',
   },
 };

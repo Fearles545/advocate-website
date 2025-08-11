@@ -24,7 +24,6 @@ export class RouteSeoService {
           (event): event is NavigationEnd => event instanceof NavigationEnd
         ),
         map(() => {
-          // Traverse the route tree to find the most specific activated route
           let route = this.activatedRoute;
           while (route.firstChild) {
             route = route.firstChild;
@@ -35,7 +34,6 @@ export class RouteSeoService {
         map((data) => data['seo'])
       )
       .subscribe((seoData) => {
-        console.log('Updating SEO for route:', seoData);
         if (seoData) {
           this.seoService.updatePageSEO(seoData);
         }
