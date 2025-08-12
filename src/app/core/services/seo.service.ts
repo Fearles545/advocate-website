@@ -49,18 +49,18 @@ export class SeoService {
       content: seo.type || 'website',
     });
 
-    if (seo.image) {
-      this.meta.updateTag({
-        property: 'og:image',
-        content: `${this.siteUrl}${seo.image}`,
-      });
-    } else {
-      // It's good practice to have a default fallback image
-      this.meta.updateTag({
-        property: 'og:image',
-        content: `${this.siteUrl}/assets/default-og-image.png`,
-      });
-    }
+    // if (seo.image) {
+    //   this.meta.updateTag({
+    //     property: 'og:image',
+    //     content: `${this.siteUrl}${seo.image}`,
+    //   });
+    // } else {
+    // It's good practice to have a default fallback image
+    this.meta.updateTag({
+      property: 'og:image',
+      content: `${this.siteUrl}/assets/images/og/default-og-image.webp`,
+    });
+    // }
 
     // Update canonical URL
     this.updateCanonical(url);
