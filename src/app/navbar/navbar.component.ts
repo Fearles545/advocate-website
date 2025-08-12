@@ -27,10 +27,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         <li>
           <a routerLink="documents" routerLinkActive="active">Документи</a>
         </li>
-        |
+        <!-- |
         <li>
           <a routerLink="blog" routerLinkActive="active">Блог</a>
-        </li>
+        </li> -->
         |
         <li>
           <a routerLink="contacts" routerLinkActive="active">Контакти</a>

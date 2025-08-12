@@ -29,6 +29,7 @@ import { blogs } from '@assets/blog';
       align-items: center;
       gap: 1rem;
       margin: 0 auto;
+      padding: 1rem 0;
     }
 
     section {

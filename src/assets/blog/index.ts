@@ -1,17 +1,17 @@
 export const blogs = [
   {
     id: 1,
-    title: '❗ ПЕТИЦІЯ УБД, АТО, ООС  до СТАЖУ у кратності 1 : 3 ❗',
+    title: 'ПЕТИЦІЯ УБД, АТО, ООС  до СТАЖУ у кратності 1 : 3',
     slug: '2025-01-07',
-    description: 'This is the first blog post.',
+    description: '',
     src: 'https://www.youtube.com/embed/Y3Knuv9Rnew',
     date: new Date('2025-01-07'),
   },
   {
     id: 2,
-    title: '➡️ Чи зараховується декрет до стажу ❓',
+    title: 'Чи зараховується декрет до стажу',
     slug: '2025-30-06',
-    description: 'This is the second blog post.',
+    description: '',
     src: 'https://www.youtube.com/embed/WWbhJBQJRmA',
     date: new Date('2025-30-06'),
   },
