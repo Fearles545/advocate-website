@@ -17,7 +17,7 @@
     ></app-drawer-content>
   </mat-sidenav>
   @let navigatedItem = navigatedItems$ | async;
-  <mat-sidenav-content [ngClass]="navigatedItem">
+  <mat-sidenav-content [class]="navigatedItem">
     @if (isDevMode) {
       <div
         style="
