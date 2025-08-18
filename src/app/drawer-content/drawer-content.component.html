@@ -1,65 +1,17 @@
 <section class="nav-container">
   <nav class="navbar">
-    <li>
-      <a
-        routerLink="/"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        (click)="onLinkClick.emit()"
-      >
-        Головна
-      </a>
-    </li>
-
-    <li>
-      <a
-        routerLink="about-me"
-        routerLinkActive="active"
-        (click)="onLinkClick.emit()"
-      >
-        Про мене
-      </a>
-    </li>
-
-    <li>
-      <a
-        routerLink="services"
-        routerLinkActive="active"
-        (click)="onLinkClick.emit()"
-      >
-        Послуги
-      </a>
-    </li>
-
-    <li>
-      <a
-        routerLink="documents"
-        routerLinkActive="active"
-        (click)="onLinkClick.emit()"
-      >
-        Документи
-      </a>
-    </li>
-
-    <!-- <li>
-      <a
-        routerLink="blog"
-        routerLinkActive="active"
-        (click)="onLinkClick.emit()"
-      >
-        Блог
-      </a>
-    </li> -->
-
-    <li>
-      <a
-        routerLink="contacts"
-        routerLinkActive="active"
-        (click)="onLinkClick.emit()"
-      >
-        Контакти
-      </a>
-    </li>
+    @for (navItem of navItems; track navItem.route) {
+      <li>
+        <a
+          [routerLink]="navItem.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: navItem.exact || false }"
+          (click)="onLinkClick.emit()"
+        >
+          {{ navItem.label }}
+        </a>
+      </li>
+    }
   </nav>
 
   <div class="social-icons">

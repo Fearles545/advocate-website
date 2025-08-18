@@ -4,6 +4,7 @@ import { SocialIconData } from '../core/icons.data';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.component';
+import { NavItem, NAV_ITEMS } from '../core/config/nav-items.config';
 
 @Component({
   selector: 'app-drawer-content',
@@ -21,6 +22,7 @@ export class DrawerContentComponent {
   iconsData = input.required<SocialIconData[]>();
   onLinkClick = output<void>();
 
+  readonly navItems: NavItem[] = NAV_ITEMS;
   socialMediaIconsData = computed(() => {
     const desiredOrder = ['tikTok', 'youtube-white', 'facebook', 'instagram'];
 

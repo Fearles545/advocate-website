@@ -1,40 +1,28 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, CommonModule],
   template: `
     <section class="nav-container">
       <nav class="navbar">
-        <li>
-          <a
-            routerLink="/"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >Головна</a
-          >
-        </li>
-        |
-        <li>
-          <a routerLink="about-me" routerLinkActive="active">Про мене</a>
-        </li>
-        |
-        <li>
-          <a routerLink="services" routerLinkActive="active">Послуги</a>
-        </li>
-        |
-        <li>
-          <a routerLink="documents" routerLinkActive="active">Документи</a>
-        </li>
-        <!-- |
-        <li>
-          <a routerLink="blog" routerLinkActive="active">Блог</a>
-        </li> -->
-        |
-        <li>
-          <a routerLink="contacts" routerLinkActive="active">Контакти</a>
-        </li>
+        @for (navItem of navItems; track navItem.route) {
+          <li>
+            <a
+              [routerLink]="navItem.route"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: navItem.exact || false }"
+            >
+              {{ navItem.label }}
+            </a>
+          </li>
+          @if (!$last) {
+            |
+          }
+        }
       </nav>
     </section>
   `,
@@ -92,4 +80,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     }
   `,
 })
-export class NavbarComponent {}
+export class NavbarComponent {
+  readonly navItems: NavItem[] = NAV_ITEMS;
+}
