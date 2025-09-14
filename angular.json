@@ -27,6 +27,11 @@
               },
               {
                 "glob": "**/*",
+                "input": "src/app/blog/blog-posts/posts",
+                "output": "posts/"
+              },
+              {
+                "glob": "**/*",
                 "input": "public",
                 "output": "/"
               }

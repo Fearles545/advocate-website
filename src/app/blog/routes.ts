@@ -1,19 +1,15 @@
 import { Routes } from '@angular/router';
 
-import { BlogListComponent } from './blog-list.component';
-import { BlogPost } from './blog-post';
+import { BlogPostComponent } from './components/blog-post.component';
+import { BlogListComponent } from './components/blog-list.component';
 
 export const blogRoutes: Routes = [
   {
-    path: 'list',
+    path: '',
     component: BlogListComponent,
   },
   {
     path: ':slug',
-    component: BlogPost,
-  },
-  {
-    path: '**',
-    redirectTo: 'list',
+    component: BlogPostComponent,
   },
 ];

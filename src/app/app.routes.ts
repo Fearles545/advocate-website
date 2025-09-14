@@ -4,9 +4,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { MainComponent } from './main/main.component';
 import { ServicesComponent } from './services/services.component';
-import { BlogComponent } from './blog/blog.component';
 import { SEO_DATA } from './core/config/seo.config';
-import { blogRoutes } from './blog/routes';
 
 export const routes: Routes = [
   {
