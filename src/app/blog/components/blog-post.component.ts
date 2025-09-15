@@ -9,8 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { BlogIframeComponent } from './blog-iframe.component';
 import { blogs } from '../blog-posts';
 import { HttpClient } from '@angular/common/http';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, DatePipe } from '@angular/common';
 import { SpinnerComponent } from '@core/components/spinner/spinner.component';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog-post',
@@ -21,6 +22,7 @@ import { SpinnerComponent } from '@core/components/spinner/spinner.component';
     MatButtonModule,
     AsyncPipe,
     SpinnerComponent,
+    DatePipe,
   ],
   template: `
     <app-spinner [show]="isLoading()" />
@@ -38,13 +40,21 @@ import { SpinnerComponent } from '@core/components/spinner/spinner.component';
             <mat-icon>arrow_back_ios_new</mat-icon>
           </a>
 
-          <h1>{{ blog()!.title }}</h1>
+          <h1 class="main-title">{{ blog()!.title }}</h1>
+
+          <h2 class="subtitle-date">
+            @let formattedDate = blog()!.date | date: 'dd-MM-yyyy';
+
+            <time [attr.datetime]="formattedDate">{{ formattedDate }}</time>
+          </h2>
         </header>
 
         <section
           style="
-            margin: 0;
-          "
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.25;
+            margin: 0;"
           [innerHTML]="blogHtml() | async"
         ></section>
         <!-- <p>{{ blog()!.description }}</p> -->
@@ -61,7 +71,7 @@ import { SpinnerComponent } from '@core/components/spinner/spinner.component';
       gap: 1rem;
       margin: 0 auto;
       padding: 1rem;
-      width: 800px;
+      width: var(--container-max-width);
       max-width: var(--container-max-width);
 
       border-left: 1px solid var(--color-green);
@@ -70,47 +80,54 @@ import { SpinnerComponent } from '@core/components/spinner/spinner.component';
       // background-image:
       //   radial-gradient(circle 600px at 0% 200px, #bfdbfe, transparent),
       //   radial-gradient(circle 600px at 100% 200px, #bfdbfe, transparent);
-      background-image:
-        repeating-linear-gradient(
-          22.5deg,
-          transparent,
-          transparent 2px,
-          rgba(75, 85, 99, 0.06) 2px,
-          rgba(75, 85, 99, 0.06) 3px,
-          transparent 3px,
-          transparent 8px
-        ),
-        repeating-linear-gradient(
-          67.5deg,
-          transparent,
-          transparent 2px,
-          rgba(107, 114, 128, 0.05) 2px,
-          rgba(107, 114, 128, 0.05) 3px,
-          transparent 3px,
-          transparent 8px
-        ),
-        repeating-linear-gradient(
-          112.5deg,
-          transparent,
-          transparent 2px,
-          rgba(55, 65, 81, 0.04) 2px,
-          rgba(55, 65, 81, 0.04) 3px,
-          transparent 3px,
-          transparent 8px
-        ),
-        repeating-linear-gradient(
-          157.5deg,
-          transparent,
-          transparent 2px,
-          rgba(31, 41, 55, 0.03) 2px,
-          rgba(31, 41, 55, 0.03) 3px,
-          transparent 3px,
-          transparent 8px
-        );
+      // background-image:
+      //   repeating-linear-gradient(
+      //     22.5deg,
+      //     transparent,
+      //     transparent 2px,
+      //     rgba(75, 85, 99, 0.06) 2px,
+      //     rgba(75, 85, 99, 0.06) 3px,
+      //     transparent 3px,
+      //     transparent 8px
+      //   ),
+      //   repeating-linear-gradient(
+      //     67.5deg,
+      //     transparent,
+      //     transparent 2px,
+      //     rgba(107, 114, 128, 0.05) 2px,
+      //     rgba(107, 114, 128, 0.05) 3px,
+      //     transparent 3px,
+      //     transparent 8px
+      //   ),
+      //   repeating-linear-gradient(
+      //     112.5deg,
+      //     transparent,
+      //     transparent 2px,
+      //     rgba(55, 65, 81, 0.04) 2px,
+      //     rgba(55, 65, 81, 0.04) 3px,
+      //     transparent 3px,
+      //     transparent 8px
+      //   ),
+      //   repeating-linear-gradient(
+      //     157.5deg,
+      //     transparent,
+      //     transparent 2px,
+      //     rgba(31, 41, 55, 0.03) 2px,
+      //     rgba(31, 41, 55, 0.03) 3px,
+      //     transparent 3px,
+      //     transparent 8px
+      //   );
     }
 
-    h1 {
+    h1.main-title {
       text-align: center;
+      margin: 0;
+    }
+
+    h2.subtitle-date {
+      font-size: 1rem;
+      text-align: right;
+      color: grey;
     }
 
     .back-link {
@@ -121,6 +138,16 @@ import { SpinnerComponent } from '@core/components/spinner/spinner.component';
 
     .header-container {
       position: relative;
+    }
+
+    app-blog-iframe {
+      display: block;
+      width: fit-content;
+      margin: 2rem auto;
+    }
+
+    .blog-post-container {
+      width: 950px;
     }
 
     @media (max-width: 479px) {
@@ -135,6 +162,7 @@ import { SpinnerComponent } from '@core/components/spinner/spinner.component';
   `,
 })
 export class BlogPostComponent {
+  sanitizer = inject(DomSanitizer);
   route = inject(ActivatedRoute);
   http = inject(HttpClient);
   blogs = blogs;
@@ -158,6 +186,9 @@ export class BlogPostComponent {
       .get(`posts/${slug}.html`, {
         responseType: 'text',
       })
-      .pipe(finalize(() => this.isLoading.set(false)));
+      .pipe(
+        map((html) => this.sanitizer.bypassSecurityTrustHtml(html)),
+        finalize(() => this.isLoading.set(false))
+      );
   }
 }

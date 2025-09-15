@@ -1,3 +1,7 @@
+# Links
+
+Blog draft - https://docs.google.com/document/d/1rEme7bCg6W6PnBFMJL2nQ9NG2osWwGIdcCOIqexZGJY/edit?tab=t.0
+
 # Tasks
 
 - think about blog implementation
