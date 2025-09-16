@@ -43,11 +43,14 @@ import { DomSanitizer } from '@angular/platform-browser';
           <h1 class="main-title">{{ blog()!.title }}</h1>
 
           <h2 class="subtitle-date">
+            <p>2хв читання</p>
             @let formattedDate = blog()!.date | date: 'dd-MM-yyyy';
 
             <time [attr.datetime]="formattedDate">{{ formattedDate }}</time>
           </h2>
         </header>
+
+        <app-blog-iframe [src]="blog()!.src" [title]="blog()!.title" />
 
         <section
           style="
@@ -57,9 +60,6 @@ import { DomSanitizer } from '@angular/platform-browser';
             margin: 0;"
           [innerHTML]="blogHtml() | async"
         ></section>
-        <!-- <p>{{ blog()!.description }}</p> -->
-
-        <app-blog-iframe [src]="blog()!.src" [title]="blog()!.title" />
       </section>
     }
   `,
@@ -70,53 +70,12 @@ import { DomSanitizer } from '@angular/platform-browser';
       align-items: center;
       gap: 1rem;
       margin: 0 auto;
-      padding: 1rem;
+      padding: 1rem 1rem 2rem;
       width: var(--container-max-width);
       max-width: var(--container-max-width);
-
       border-left: 1px solid var(--color-green);
       border-right: 1px solid var(--color-green);
       background-color: var(--color-container-bg);
-      // background-image:
-      //   radial-gradient(circle 600px at 0% 200px, #bfdbfe, transparent),
-      //   radial-gradient(circle 600px at 100% 200px, #bfdbfe, transparent);
-      // background-image:
-      //   repeating-linear-gradient(
-      //     22.5deg,
-      //     transparent,
-      //     transparent 2px,
-      //     rgba(75, 85, 99, 0.06) 2px,
-      //     rgba(75, 85, 99, 0.06) 3px,
-      //     transparent 3px,
-      //     transparent 8px
-      //   ),
-      //   repeating-linear-gradient(
-      //     67.5deg,
-      //     transparent,
-      //     transparent 2px,
-      //     rgba(107, 114, 128, 0.05) 2px,
-      //     rgba(107, 114, 128, 0.05) 3px,
-      //     transparent 3px,
-      //     transparent 8px
-      //   ),
-      //   repeating-linear-gradient(
-      //     112.5deg,
-      //     transparent,
-      //     transparent 2px,
-      //     rgba(55, 65, 81, 0.04) 2px,
-      //     rgba(55, 65, 81, 0.04) 3px,
-      //     transparent 3px,
-      //     transparent 8px
-      //   ),
-      //   repeating-linear-gradient(
-      //     157.5deg,
-      //     transparent,
-      //     transparent 2px,
-      //     rgba(31, 41, 55, 0.03) 2px,
-      //     rgba(31, 41, 55, 0.03) 3px,
-      //     transparent 3px,
-      //     transparent 8px
-      //   );
     }
 
     h1.main-title {
@@ -125,9 +84,12 @@ import { DomSanitizer } from '@angular/platform-browser';
     }
 
     h2.subtitle-date {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-size: 1rem;
-      text-align: right;
       color: grey;
+      margin: 1rem 0;
     }
 
     .back-link {
@@ -142,17 +104,26 @@ import { DomSanitizer } from '@angular/platform-browser';
 
     app-blog-iframe {
       display: block;
-      width: fit-content;
-      margin: 2rem auto;
+      width: 100%;
     }
 
     .blog-post-container {
       width: 950px;
     }
 
+    @media (max-width: 950px) {
+      .back-link {
+        display: none;
+      }
+
+      .blog-post-container {
+        width: fit-content;
+      }
+    }
+
     @media (max-width: 479px) {
       :host {
-        padding: 1rem;
+        padding: 1rem 1rem 2rem;
       }
 
       .back-link {
