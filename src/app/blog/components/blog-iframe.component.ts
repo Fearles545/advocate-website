@@ -1,24 +1,27 @@
 import { Component, computed, inject, input, signal } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { SpinnerComponent } from '@core/components/spinner/spinner.component';
+import { DomSanitizer } from '@angular/platform-browser';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { LoaderDirective } from '@core/directives/loader.directive';
+import { toSignal } from '@angular/core/rxjs-interop';
+import {
+  fromEvent,
+  startWith,
+  debounceTime,
+  map,
+  distinctUntilChanged,
+} from 'rxjs';
+import { SpinnerComponent } from '@core/components/spinner/spinner.component';
 
 @Component({
   selector: 'app-blog-iframe',
-  imports: [
-    MatProgressSpinnerModule,
-    // SpinnerComponent,
-    MatExpansionModule,
-    // LoaderDirective,
-  ],
+  imports: [MatProgressSpinnerModule, MatExpansionModule, SpinnerComponent],
   template: `
     <mat-expansion-panel
+      [expanded]="isDesktop()"
       style="
         background-color: var(--color-container-bg);
         border: 1px solid var(--color-green);
-        border-radius: 0.5rem;
+        border-radius: 0.1rem;
         box-shadow: var(--color-green) 0 0 0.05rem;
         margin: 0 auto;
         width: fit-content;
@@ -28,8 +31,7 @@ import { LoaderDirective } from '@core/directives/loader.directive';
         <mat-panel-title> Відео версія блогу </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <!-- <ng-template matExpansionPanelContent> -->
-      <!-- <app-spinner [show]="isIframeLoaded() === false" /> -->
+      <app-spinner [show]="isIframeLoading()" />
 
       <iframe
         style="
@@ -46,7 +48,6 @@ import { LoaderDirective } from '@core/directives/loader.directive';
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
-      <!-- </ng-template> -->
     </mat-expansion-panel>
   `,
   styles: ``,
@@ -63,8 +64,16 @@ export class BlogIframeComponent {
     this.sanitizer.bypassSecurityTrustResourceUrl(this.src())
   );
 
-  isIframeLoaded = signal(false);
   isIframeLoading = signal(true);
+
+  isDesktop = toSignal(
+    fromEvent(window, 'resize').pipe(
+      startWith(0),
+      debounceTime(200),
+      map(() => window.innerWidth > 768),
+      distinctUntilChanged()
+    )
+  );
 
   x = (event: Event) => {
     // this.isIframeLoading.set(true);
@@ -73,8 +82,6 @@ export class BlogIframeComponent {
     // This is a safe way to check if the iframe has been given a URL to load.
     if (iframe.src && iframe.src !== 'about:blank') {
       this.isIframeLoading.set(false);
-    } else {
-      console.log('Initial load event. Ignoring.');
     }
   };
 }

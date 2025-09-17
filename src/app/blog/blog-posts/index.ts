@@ -5,7 +5,7 @@ export const blogs = [
     slug: 'minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti',
     description: '',
     src: 'https://www.youtube.com/embed/52AMmLjUiFk',
-    date: new Date('2024-11-25'),
+    date: new Date('2025-04-01'),
   },
   {
     id: 1,
