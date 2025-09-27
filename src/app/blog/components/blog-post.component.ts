@@ -12,45 +12,50 @@ import { HttpClient } from '@angular/common/http';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { SpinnerComponent } from '@core/components/spinner/spinner.component';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MatMenuModule } from '@angular/material/menu';
+import { SocialShareComponent } from './social-share/social-share.component';
 
 @Component({
   selector: 'app-blog-post',
   imports: [
-    BlogIframeComponent,
+    AsyncPipe,
+    DatePipe,
     RouterLink,
     MatIconModule,
     MatButtonModule,
-    AsyncPipe,
+    MatMenuModule,
+    BlogIframeComponent,
     SpinnerComponent,
-    DatePipe,
+    SocialShareComponent,
   ],
   template: `
-    <app-spinner [show]="isLoading()" />
-
     @if (blog()) {
       <section class="blog-post-container">
         <header class="header-container">
           <a
             class="back-link"
-            mat-icon-button
+            mat-button
             color="primary"
             [routerLink]="['/blog']"
-            aria-label="Back to Blog"
+            aria-label="Назад до блогу"
           >
+            Блог
             <mat-icon>arrow_back_ios_new</mat-icon>
           </a>
+          <h1 class="main-title">
+            {{ blog()!.title }}
+          </h1>
 
-          <h1 class="main-title">{{ blog()!.title }}</h1>
-
-          <h2 class="subtitle-date">
-            <p>2хв читання</p>
+          <div class="subtitle">
             @let formattedDate = blog()!.date | date: 'dd-MM-yyyy';
 
             <time [attr.datetime]="formattedDate">{{ formattedDate }}</time>
-          </h2>
+
+            <app-social-share [blog]="blog()!" />
+          </div>
         </header>
 
-        <app-blog-iframe [src]="blog()!.src" [title]="blog()!.title" />
+        <!-- <app-blog-iframe [src]="blog()!.src" [title]="blog()!.title" /> -->
 
         <section
           style="
@@ -62,6 +67,8 @@ import { DomSanitizer } from '@angular/platform-browser';
         ></section>
       </section>
     }
+
+    <app-spinner [show]="isLoading()" />
   `,
   styles: `
     :host {
@@ -83,7 +90,7 @@ import { DomSanitizer } from '@angular/platform-browser';
       margin: 0;
     }
 
-    h2.subtitle-date {
+    .subtitle {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -93,9 +100,9 @@ import { DomSanitizer } from '@angular/platform-browser';
     }
 
     .back-link {
-      position: absolute;
-      transform: translateY(50%);
-      left: 0;
+      // position: absolute;
+      // transform: translateY(50%);
+      // left: 0;
     }
 
     .header-container {
@@ -112,10 +119,6 @@ import { DomSanitizer } from '@angular/platform-browser';
     }
 
     @media (max-width: 950px) {
-      .back-link {
-        display: none;
-      }
-
       .blog-post-container {
         width: fit-content;
       }
@@ -127,7 +130,6 @@ import { DomSanitizer } from '@angular/platform-browser';
       }
 
       .back-link {
-        display: none;
       }
     }
   `,

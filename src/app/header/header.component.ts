@@ -7,7 +7,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +17,6 @@ import { TitleCasePipe } from '@angular/common';
     MatIconModule,
     RouterLink,
     MatTooltipModule,
-    TitleCasePipe,
   ],
   template: `
     <header>
@@ -58,7 +56,7 @@ import { TitleCasePipe } from '@angular/common';
                 borderRadius: '50%',
                 padding: '0.3rem',
               }"
-              [matTooltip]="iconData.alt | titlecase"
+              [matTooltip]="iconData.name"
               [matTooltipShowDelay]="300"
             ></app-social-icon-link>
           }

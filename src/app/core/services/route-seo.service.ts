@@ -25,21 +25,21 @@ export class RouteSeoService {
         filter(
           (event): event is NavigationEnd => event instanceof NavigationEnd
         ),
-        map(() => {
-          let route = this.activatedRoute;
-          while (route.firstChild) {
-            route = route.firstChild;
-          }
-          return route;
-        }),
-        switchMap((route) => route.data),
-        map((data) => data['seo']),
+        // map(() => {
+        //   let route = this.activatedRoute;
+        //   while (route.firstChild) {
+        //     route = route.firstChild;
+        //   }
+        //   return route;
+        // }),
+        // switchMap((route) => route.data),
+        // map((data) => data['seo']),
         takeUntilDestroyed(this.destroyRef)
       )
       .subscribe((seoData) => {
-        if (seoData) {
-          this.seoService.updatePageSEO(seoData);
-        }
+        const lastPathSegment = seoData.url.replace(/^.*\//, '');
+
+        this.seoService.updatePageSEO(lastPathSegment);
       });
   }
 }

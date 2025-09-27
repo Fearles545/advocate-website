@@ -24,7 +24,7 @@ import { SpinnerComponent } from '@core/components/spinner/spinner.component';
         border-radius: 0.1rem;
         box-shadow: var(--color-green) 0 0 0.05rem;
         margin: 0 auto;
-        width: fit-content;
+        width: 100%;
       "
     >
       <mat-expansion-panel-header>

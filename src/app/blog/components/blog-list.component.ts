@@ -67,7 +67,7 @@ import { DatePipe } from '@angular/common';
       li {
         flex: 1;
         border-bottom: 1px solid var(--color-green);
-        padding: 1rem;
+        padding: 0;
         font-weight: 600;
         width: 100%;
 
@@ -75,7 +75,8 @@ import { DatePipe } from '@angular/common';
           display: flex;
           justify-content: space-between;
           overflow: visible;
-          color: var(--color-green)
+          color: var(--color-green);
+          padding: 1rem;
           width: 100%;
 
           mat-icon {

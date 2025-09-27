@@ -44,4 +44,20 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog Page -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/blog</loc>
+    <lastmod>2025-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti</loc>
+    <lastmod>2025-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
