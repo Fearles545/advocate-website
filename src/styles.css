@@ -95,10 +95,42 @@ a:hover {
   color: var(--color-gold);
 }
 
-.blog-quote {
-  border-left: 5px solid var(--color-gold-accent);
-  padding: 6px;
-  background: #ffffff73;
+.blog-post-section {
+  article,
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  .blog-quote {
+    border-left: 5px solid var(--color-gold-accent);
+    padding: 6px;
+    background: #ffffff73;
+  }
+
+  .footer-quote {
+    font-size: smaller;
+    border-right: 5px solid var(--color-green);
+    padding: 6px;
+    background: #ffffff73;
+
+    p {
+      font-size: 14px;
+    }
+
+    address {
+      text-align: right;
+      margin-top: 10px;
+    }
+  }
 }
 
 /* Container class */
@@ -109,6 +141,10 @@ a:hover {
 
 mat-dialog-content.mat-mdc-dialog-content {
   max-height: inherit;
+}
+
+mat-paginator div.mat-mdc-paginator-range-label {
+  margin: 0;
 }
 
 @media (max-width: 1919px) {

@@ -55,6 +55,7 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       'блог адвоката, статті про пенсії, поради юриста, новини пенсійного законодавства, Юлія Поддяча',
     canonical: '/blog',
     type: 'website',
+    robots: 'noindex,follow',
     schema: {
       '@context': 'https://schema.org',
       '@graph': [

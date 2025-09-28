@@ -10,30 +10,18 @@ export const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    data: {
-      seo: SEO_DATA['main'],
-    },
   },
   {
     path: 'about-me',
     component: AboutMeComponent,
-    data: {
-      seo: SEO_DATA['about-me'],
-    },
   },
   {
     path: 'services',
     component: ServicesComponent,
-    data: {
-      seo: SEO_DATA['services'],
-    },
   },
   {
     path: 'documents',
     component: DocumentsComponent,
-    data: {
-      seo: SEO_DATA['documents'],
-    },
   },
   {
     path: 'blog',
@@ -42,9 +30,6 @@ export const routes: Routes = [
   {
     path: 'contacts',
     component: ContactsComponent,
-    data: {
-      seo: SEO_DATA['contacts'],
-    },
   },
   {
     path: '**',

@@ -33,7 +33,6 @@ export class SeoService {
     if (!seo) {
       seo = DEFAULT_SEO_CONFIG;
     }
-    console.log(seo);
 
     const url = seo.canonical
       ? `${this.siteUrl}${seo.canonical}`

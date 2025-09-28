@@ -1,6 +1,5 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, input, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { toSignal } from '@angular/core/rxjs-interop';
 
 import { finalize, map, of } from 'rxjs';
 
@@ -55,9 +54,10 @@ import { SocialShareComponent } from './social-share/social-share.component';
           </div>
         </header>
 
-        <!-- <app-blog-iframe [src]="blog()!.src" [title]="blog()!.title" /> -->
+        <app-blog-iframe [src]="blog()!.src" [title]="blog()!.title" />
 
         <section
+          class="blog-post-section"
           style="
             font-size: 1.25rem;
             font-weight: 500;
@@ -96,13 +96,7 @@ import { SocialShareComponent } from './social-share/social-share.component';
       align-items: center;
       font-size: 1rem;
       color: grey;
-      margin: 1rem 0;
-    }
-
-    .back-link {
-      // position: absolute;
-      // transform: translateY(50%);
-      // left: 0;
+      margin: 1rem 0 -1rem;
     }
 
     .header-container {
@@ -116,6 +110,9 @@ import { SocialShareComponent } from './social-share/social-share.component';
 
     .blog-post-container {
       width: 950px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
 
     @media (max-width: 950px) {
@@ -140,13 +137,16 @@ export class BlogPostComponent {
   http = inject(HttpClient);
   blogs = blogs;
 
+  slug = input.required<string>();
+
   isLoading = signal(true);
-  blog = toSignal(
-    this.route.params.pipe(
-      map((params) => params['slug']),
-      map((slug) => this.blogs.find((blog) => blog.slug === slug))
-    )
-  );
+  blog = computed(() => this.blogs.find((blog) => blog.slug === this.slug()));
+  // blog = toSignal(
+  //   this.route.params.pipe(
+  //     map((params) => params['slug']),
+  //     map((slug) => this.blogs.find((blog) => blog.slug === slug))
+  //   )
+  // );
 
   blogHtml = computed(() =>
     this.blog() ? this.getPost(this.blog()?.slug!) : of('')

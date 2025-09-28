@@ -28,7 +28,7 @@ import { SpinnerComponent } from '@core/components/spinner/spinner.component';
       "
     >
       <mat-expansion-panel-header>
-        <mat-panel-title> Відео версія блогу </mat-panel-title>
+        <mat-panel-title> Відео-версія блогу </mat-panel-title>
       </mat-expansion-panel-header>
 
       <app-spinner [show]="isIframeLoading()" />
