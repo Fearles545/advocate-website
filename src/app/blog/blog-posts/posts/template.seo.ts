@@ -21,6 +21,7 @@ export const slug_in_snake_case = {
     type: 'article',
     publishedTime: '<YYYY-MM-DDThh:mm:ss+03:00>',
     modifiedTime: '<YYYY-MM-DDThh:mm:ss+03:00>',
+    dateCreated: '<YYYY-MM-DDThh:mm:ss+03:00>',
     canonical: '/blog/<slug-in-kebab-case>',
     schema: {
       '@context': 'https://schema.org',

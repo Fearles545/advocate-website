@@ -54,9 +54,30 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti</loc>
-    <lastmod>2025-09-27</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 

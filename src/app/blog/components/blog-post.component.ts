@@ -65,6 +65,15 @@ import { SocialShareComponent } from './social-share/social-share.component';
             margin: 0;"
           [innerHTML]="blogHtml() | async"
         ></section>
+        <section
+          class="blog-post-section"
+          style="
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.25;
+            margin: 0;"
+          [innerHTML]="footerCard() | async"
+        ></section>
       </section>
     }
 
@@ -150,6 +159,10 @@ export class BlogPostComponent {
 
   blogHtml = computed(() =>
     this.blog() ? this.getPost(this.blog()?.slug!) : of('')
+  );
+
+  footerCard = computed(() =>
+    this.blog() ? this.getPost('footer-card') : of('')
   );
 
   getPost(slug: string) {

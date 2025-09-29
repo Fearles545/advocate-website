@@ -73,7 +73,7 @@ import { BlogPaginationService } from '../services/blog-pagination.service';
       background-color: var(--color-container-bg);
       max-width: 800px;
       margin: 0 auto;
-      overflow: hidden; /* Ensures border-radius is respected by children */
+      overflow: hidden;
     }
 
     .blog-list {
@@ -84,9 +84,6 @@ import { BlogPaginationService } from '../services/blog-pagination.service';
       padding: 0;
       margin: 0;
 
-      // li:last-child {
-      //   border-bottom: none;
-      // }
       li:hover {
         background-color: #0027060f;
         transition: background-color 0.3s ease;
