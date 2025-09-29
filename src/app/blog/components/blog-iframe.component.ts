@@ -1,4 +1,4 @@
-import { Component, computed, inject, input, signal } from '@angular/core';
+import { Component, PLATFORM_ID, computed, inject, input, signal } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -9,8 +9,10 @@ import {
   debounceTime,
   map,
   distinctUntilChanged,
+  of,
 } from 'rxjs';
 import { SpinnerComponent } from '@core/components/spinner/spinner.component';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-blog-iframe',
@@ -54,6 +56,9 @@ import { SpinnerComponent } from '@core/components/spinner/spinner.component';
 })
 export class BlogIframeComponent {
   sanitizer = inject(DomSanitizer);
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly isBrowser = isPlatformBrowser(this.platformId);
+  private readonly initialDesktop = this.isBrowser ? window.innerWidth > 768 : false;
 
   width = input<number>(350);
   height = input<number>(600);
@@ -67,12 +72,15 @@ export class BlogIframeComponent {
   isIframeLoading = signal(true);
 
   isDesktop = toSignal(
-    fromEvent(window, 'resize').pipe(
-      startWith(0),
-      debounceTime(200),
-      map(() => window.innerWidth > 768),
-      distinctUntilChanged()
-    )
+    this.isBrowser
+      ? fromEvent(window, 'resize').pipe(
+          startWith(0),
+          debounceTime(200),
+          map(() => window.innerWidth > 768),
+          distinctUntilChanged()
+        )
+      : of(this.initialDesktop),
+    { initialValue: this.initialDesktop }
   );
 
   x = (event: Event) => {
