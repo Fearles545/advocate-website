@@ -1,0 +1,36 @@
+.transparent-block {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050;
+  backdrop-filter: blur(1px);
+}
+
+.loading-indicator {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1051;
+  overflow: show;
+}
+
+.spinner-label {
+  text-align: center;
+  color: #e4e2e2;
+  margin-top: 1rem;
+}
+
+.non-blocking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}

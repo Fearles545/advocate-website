@@ -1,5 +1,4 @@
 import { Component, computed, input } from '@angular/core';
-import { TitleCasePipe } from '@angular/common';
 
 import { MatTooltipModule } from '@angular/material/tooltip';
 
@@ -8,12 +7,14 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
 
 @Component({
   selector: 'app-footer',
-  imports: [SocialIconLinkComponent, TitleCasePipe, MatTooltipModule],
+  imports: [SocialIconLinkComponent, MatTooltipModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
 })
 export class FooterComponent {
   iconsData = input.required<SocialIconData[]>();
+
+  readonly currentYear = new Date().getFullYear();
 
   socialMediaIconsData = computed(() => {
     const desiredOrder = ['tikTok', 'youtube', 'facebook', 'instagram'];

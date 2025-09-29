@@ -21,7 +21,7 @@
       @for (iconData of socialMediaIconsData(); track iconData) {
         <app-social-icon-link
           [iconData]="iconData"
-          [matTooltip]="iconData.alt | titlecase"
+          [matTooltip]="iconData.name"
           [matTooltipShowDelay]="300"
           [matTooltipPosition]="'above'"
         />
@@ -35,6 +35,6 @@
   </div>
 
   <p class="copyright">
-    &copy; 2025 Адвокат Поддяча Юлія Юріївна. Всі права захищені.
+    &copy; {{ currentYear }} Адвокат Поддяча Юлія Юріївна. Всі права захищені.
   </p>
 </footer>

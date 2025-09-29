@@ -4,6 +4,7 @@ export interface SocialIconData {
   alt: string;
   color: string;
   viewBox?: string;
+  name: string;
 }
 
 export const iconsData: SocialIconData[] = [
@@ -13,6 +14,7 @@ export const iconsData: SocialIconData[] = [
     alt: 'facebook',
     color: 'blue',
     viewBox: '0 0 24 24',
+    name: 'Facebook',
   },
   {
     link: 'https://www.instagram.com/advocate_pensia',
@@ -22,6 +24,7 @@ export const iconsData: SocialIconData[] = [
     alt: 'instagram',
     color: '#ff005e',
     viewBox: '0 0 24 24',
+    name: 'Instagram',
   },
   {
     link: 'https://t.me/yuliyuri',
@@ -29,6 +32,7 @@ export const iconsData: SocialIconData[] = [
     alt: 'telegram',
     color: '#249dd5',
     viewBox: '0 0 24 24',
+    name: 'Telegram',
   },
   {
     link: 'viber://chat?number=380999426056',
@@ -36,6 +40,7 @@ export const iconsData: SocialIconData[] = [
     alt: 'viber',
     color: '#7353db',
     viewBox: '0 0 24 24',
+    name: 'Viber',
   },
   {
     link: 'https://wa.me/380999426056',
@@ -43,6 +48,7 @@ export const iconsData: SocialIconData[] = [
     alt: 'whatsApp',
     color: '#25d366',
     viewBox: '0 0 24 24',
+    name: 'WhatsApp',
   },
   {
     link: 'https://www.tiktok.com/@advocate_pensia',
@@ -53,6 +59,7 @@ export const iconsData: SocialIconData[] = [
     alt: 'tikTok',
     color: '#edeeef',
     viewBox: '0 0 24 24',
+    name: 'TikTok',
   },
   {
     link: 'mailto:yuliapoddyacha@gmail.com',
@@ -60,6 +67,7 @@ export const iconsData: SocialIconData[] = [
     alt: 'e-mail',
     color: '#edeeef',
     viewBox: '0 0 24 24',
+    name: 'E-mail',
   },
   {
     link: 'https://youtube.com/@advocate_pensia?si=rLaTYbVES70_OCk4',
@@ -67,6 +75,7 @@ export const iconsData: SocialIconData[] = [
     alt: 'youtube',
     color: '#ff0033',
     viewBox: '0 0 29 20',
+    name: 'YouTube',
   },
   {
     link: 'https://youtube.com/@advocate_pensia?si=rLaTYbVES70_OCk4',
@@ -74,6 +83,7 @@ export const iconsData: SocialIconData[] = [
     alt: 'youtube-white',
     color: '#ff0033',
     viewBox: '0 0 29 20',
+    name: 'YouTube',
   },
   {
     link: 'tel:+380999426056',
@@ -81,5 +91,6 @@ export const iconsData: SocialIconData[] = [
     alt: 'phone',
     color: '#fff',
     viewBox: '0 0 24 24',
+    name: 'Phone',
   },
 ];

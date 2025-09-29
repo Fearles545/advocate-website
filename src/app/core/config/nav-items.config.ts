@@ -33,10 +33,10 @@ export const NAV_ITEMS: NavItem[] = [
     label: 'Документи',
     route: 'documents',
   },
-  // {
-  //   label: 'Блог',
-  //   route: 'blog',
-  // },
+  {
+    label: 'Блог',
+    route: 'blog',
+  },
   {
     label: 'Контакти',
     route: 'contacts',

@@ -1,0 +1,11 @@
+<!-- || (loadingService.isLoading$ | async) -->
+@if (show) {
+  <div>
+    <div [class]="blocking ? 'transparent-block' : ''"></div>
+    <div [class]="blocking ? 'loading-indicator' : 'non-blocking'">
+      <mat-progress-spinner mode="indeterminate" color="accent">
+      </mat-progress-spinner>
+      <p [class]="blocking ? 'spinner-label' : ''">Loading...</p>
+    </div>
+  </div>
+}
