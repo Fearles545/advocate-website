@@ -7,76 +7,68 @@
   <!-- Homepage / Main Page -->
   <url>
     <loc>https://www.advocate-pensia.com.ua/</loc>
-    <lastmod>2025-07-01</lastmod>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- About Me Page -->
   <url>
-    <loc>https://www.advocate-pensia.com.ua/about-me</loc>
-    <lastmod>2025-07-01</lastmod>
+    <loc>https://www.advocate-pensia.com.ua/about-me/</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Services Page -->
   <url>
-    <loc>https://www.advocate-pensia.com.ua/services</loc>
-    <lastmod>2025-07-01</lastmod>
+    <loc>https://www.advocate-pensia.com.ua/services/</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <!-- Documents Page -->
   <url>
-    <loc>https://www.advocate-pensia.com.ua/documents</loc>
-    <lastmod>2025-07-01</lastmod>
+    <loc>https://www.advocate-pensia.com.ua/documents/</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <!-- Contacts Page -->
   <url>
-    <loc>https://www.advocate-pensia.com.ua/contacts</loc>
-    <lastmod>2025-07-01</lastmod>
+    <loc>https://www.advocate-pensia.com.ua/contacts/</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Blog Page -->
-  <url>
-    <loc>https://www.advocate-pensia.com.ua/blog</loc>
-    <lastmod>2025-09-27</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Blog Posts -->
   <url>
-    <loc>https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025</loc>
-    <lastmod>2025-09-29</lastmod>
+    <loc>https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025</loc>
-    <lastmod>2025-09-29</lastmod>
+    <loc>https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025/</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti</loc>
-    <lastmod>2025-09-29</lastmod>
+    <loc>https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025</loc>
-    <lastmod>2025-09-29</lastmod>
+    <loc>https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025/</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

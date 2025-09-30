@@ -9,7 +9,7 @@ export const yaka_maksymalna_pensiia_u_2025 = {
     publishedTime: '2025-09-28T19:30:00+03:00',
     modifiedTime: '2025-09-28T19:30:00+03:00',
     dateCreated: '2025-04-18T19:00:00+03:00',
-    canonical: '/blog/yaka-maksymalna-pensiia-u-2025',
+    canonical: '/blog/yaka-maksymalna-pensiia-u-2025/',
     schema: {
       '@context': 'https://schema.org',
       '@graph': [
@@ -24,22 +24,14 @@ export const yaka_maksymalna_pensiia_u_2025 = {
           author: {
             '@type': 'Person',
             name: 'Поддяча Юлія Юріївна',
-            url: 'https://www.advocate-pensia.com.ua/about-me',
+            url: 'https://www.advocate-pensia.com.ua/about-me/',
           },
-          publisher: {
-            '@type': 'Organization',
-            name: 'Поддяча Юлія Юріївна',
-            logo: {
-              '@type': 'ImageObject',
-              url: 'https://www.advocate-pensia.com.ua/assets/logo/logo-black-cut.png',
-              width: 512,
-              height: 512,
-            },
-          },
+          publisher: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
           image: [
             'https://www.advocate-pensia.com.ua/assets/images/og/default-og-image.webp',
           ],
           inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
           keywords: [
             'максимальна пенсія 2025',
             '23 610 грн',
@@ -55,9 +47,9 @@ export const yaka_maksymalna_pensiia_u_2025 = {
           mainEntityOfPage: {
             '@type': 'WebPage',
             '@id':
-              'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025',
+              'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/',
           },
-          url: 'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025',
+          url: 'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/',
         },
         {
           '@type': 'BreadcrumbList',
@@ -66,13 +58,13 @@ export const yaka_maksymalna_pensiia_u_2025 = {
               '@type': 'ListItem',
               position: 1,
               name: 'Блог',
-              item: 'https://www.advocate-pensia.com.ua/blog',
+              item: 'https://www.advocate-pensia.com.ua/blog/',
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'Яка максимальна пенсія у 2025 році?',
-              item: 'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025',
+              item: 'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/',
             },
           ],
         },
