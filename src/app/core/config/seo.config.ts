@@ -6,46 +6,196 @@ import { PageSEO } from '../services/seo.service';
  * Using a single source of truth like this makes maintenance and updates much simpler.
  * The keys should correspond to the route paths for easy mapping.
  */
+// Canonicals use trailing slash for directory-like routes to match server 301 behavior.
 export const SEO_DATA: { [key: string]: PageSEO } = {
   main: {
     title: 'Поддяча Юлія Юріївна | Адвокат по пенсіях в Україні',
     description:
-      'Професійні адвокатські послуги з пенсійних питань. Оформлення пенсії без вашої присутності в ПФУ. Кваліфікована юридична допомога, досвід 10+ років.',
+      'Адвокат Поддяча Юлія Юріївна — спеціаліст з пенсійного права в Україні. Допоможу оформити чи перерахувати пенсію (за віком, по інвалідності, пільгову) без вашої присутності у ПФУ. Онлайн-консультації та професійний супровід. Більше 10 років досвіду у галузі.',
     keywords:
-      'адвокат по пенсії, адвокат по пенсіях, пенсійний адвокат, юрист по пенсіях, юрист по пенсії, пенсійний юрист, адвокат Поддяча, юрист Поддяча, Поддяча Юлія Юріївна, пенсійні питання, пенсійна допомога, юридичні послуги з пенсій, оформлення пенсії, перерахунок пенсії, пенсійні виплати, правова допомога пенсіонерам, консультація по пенсії, пенсійні спори, допомога по пенсіях',
+      'адвокат по пенсії, адвокат по пенсіях, пенсійний адвокат, юрист по пенсіях, пенсійний юрист, адвокат Поддяча Юлія Юріївна, пенсійне право, пенсійні питання, пенсійна допомога, оформлення та перерахунок пенсії, юридичні послуги з пенсій, консультація адвоката онлайн, правова допомога пенсіонерам',
     canonical: '/',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: 'https://www.advocate-pensia.com.ua/',
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id': 'https://www.advocate-pensia.com.ua/#webpage',
+          name: 'Поддяча Юлія Юріївна | Адвокат по пенсіях в Україні',
+          url: 'https://www.advocate-pensia.com.ua/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+        },
+      ],
+    },
   },
   'about-me': {
     title: 'Про мене | Адвокат Поддяча Юлія Юріївна',
     description:
-      'Досвід роботи адвокатом більше 10 років. Спеціалізація на пенсійних питаннях та соціальному захисті. Кваліфікована юридична допомога.',
+      'Адвокат Поддяча Юлія Юріївна — фахівець з пенсійного права. Більше 10 років досвіду, успішні справи з оформлення та перерахунку пенсій. Індивідуальний підхід, відповідальність та професійна репутація.',
     keywords:
-      'адвокат про себе, юрист, пенсійні питання, соціальний захист, Юлія Поддяча, досвід роботи',
-    canonical: '/about-me',
+      'адвокат Поддяча Юлія Юріївна, адвокат по пенсіях, адвокат по пенсіях онлайн, адвокат по пенсіях Київ, адвокат по пенсіях Харків, адвокат по пенсіях Львів, адвокат по пенсіях Дніпро, адвокат по пенсіях Одеса, адвокат по пенсіях Запоріжжя, адвокат по пенсіях Вінниця, адвокат по пенсіях Полтава, адвокат по пенсіях Черкаси, адвокат по пенсіях Чернігів, адвокат по пенсіях Житомир, адвокат по пенсіях Кропивницький, адвокат по пенсіях Суми, адвокат по пенсіях Рівне, адвокат по пенсіях Тернопіль, адвокат по пенсіях Івано-Франківськ, адвокат по пенсіях Луцьк, адвокат по пенсіях Ужгород, досвідчений адвокат по пенсійних справах, фахівець з пенсійного права, юридична допомога пенсіонерам',
+    canonical: '/about-me/',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: 'https://www.advocate-pensia.com.ua/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Про мене',
+              item: 'https://www.advocate-pensia.com.ua/about-me/',
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id': 'https://www.advocate-pensia.com.ua/about-me/#webpage',
+          name: 'Про мене | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/about-me/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+        },
+      ],
+    },
   },
   services: {
     title: 'Послуги | Адвокат по пенсіях в Україні',
     description:
-      'Повний спектр послуг з пенсійних питань: оформлення та перерахунок пенсій, судові спори з ПФУ, юридичні консультації. Професійна допомога без вашої присутності.',
+      'Адвокат Поддяча Юлія Юріївна надає повний спектр послуг з пенсійних питань: оформлення пенсії за віком, за вислугу років, по інвалідності, пільгових пенсій (Список №1, №2), перерахунок виплат, індексація пенсій, судові спори з ПФУ. Допомога онлайн та без відвідування Пенсійного фонду.',
     keywords:
-      'послуги адвоката, оформлення пенсії, перерахунок пенсії, пенсійні послуги, юридична консультація, ПФУ, судові спори',
-    canonical: '/services',
+      'оформлення пенсії, перерахунок пенсії, пенсія за віком, пенсія по інвалідності, пільгова пенсія Список №1, пільгова пенсія Список №2, військова пенсія, пенсія за вислугу років, підтвердження стажу, довідка про заробітну плату, суд з Пенсійним фондом, оскарження рішення ПФУ, консультація адвоката онлайн, допомога з пенсійними виплатами',
+    canonical: '/services/',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: 'https://www.advocate-pensia.com.ua/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Послуги',
+              item: 'https://www.advocate-pensia.com.ua/services/',
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id': 'https://www.advocate-pensia.com.ua/services/#webpage',
+          name: 'Послуги | Адвокат по пенсіях в Україні',
+          url: 'https://www.advocate-pensia.com.ua/services/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+        },
+      ],
+    },
   },
   documents: {
     title: 'Документи | Адвокат Поддяча Юлія Юріївна',
     description:
-      'Документи та сертифікати, що підтверджують кваліфікацію адвоката Поддяча Юлії Юріївни. Дипломи, свідоцтво про право на заняття адвокатською діяльністю та сертифікати.',
+      'Документи адвоката Поддяча Юлії Юріївни: свідоцтво про право на заняття адвокатською діяльністю, диплом юриста, професійні сертифікати. Підтвердження кваліфікації та відповідність вимогам адвокатської етики.',
     keywords:
-      'документи адвоката, ліцензія адвоката, диплом юриста, сертифікати, кваліфікація, Юлія Поддяча',
-    canonical: '/documents',
+      'документи адвоката, свідоцтво адвоката, свідоцтво про право на заняття адвокатською діяльністю, диплом юриста, сертифікати адвоката, підтвердження кваліфікації, кваліфікація адвоката, досвід адвоката, офіційні документи адвоката, адвокат Поддяча Юлія Юріївна',
+    canonical: '/documents/',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: 'https://www.advocate-pensia.com.ua/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Документи',
+              item: 'https://www.advocate-pensia.com.ua/documents/',
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id': 'https://www.advocate-pensia.com.ua/documents/#webpage',
+          name: 'Документи | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/documents/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+        },
+      ],
+    },
   },
   contacts: {
     title: 'Контакти | Адвокат Поддяча Юлія Юріївна',
     description:
-      'Контактна інформація адвоката Поддяча Юлії Юріївни. Телефон, email, Viber, Telegram. Запишіться на консультацію онлайн.',
+      'Зв’язок з адвокатом Поддячою Юлією Юріївною: телефон, email, Viber, Telegram. Онлайн-консультації з пенсійних питань по всій Україні. Запишіться на зручний час уже сьогодні.',
     keywords:
-      'контакти адвоката, телефон адвоката, email адвоката, записатися на консультацію, Юлія Поддяча',
-    canonical: '/contacts',
+      'контакти адвоката, телефон адвоката, email адвоката, консультація адвоката онлайн, запис на консультацію, адвокат по пенсіях, зв’язатися з адвокатом, Вайбер адвокат, Телеграм адвокат, консультація по пенсії',
+    canonical: '/contacts/',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: 'https://www.advocate-pensia.com.ua/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Контакти',
+              item: 'https://www.advocate-pensia.com.ua/contacts/',
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id': 'https://www.advocate-pensia.com.ua/contacts/#webpage',
+          name: 'Контакти | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/contacts/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+        },
+      ],
+    },
   },
   blog: {
     title: 'Блог | Адвокат Поддяча Юлія Юріївна',
@@ -53,7 +203,7 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       'Корисні статті та поради адвоката Поддячої Юлії Юріївни з питань пенсійного права. Останні новини, роз’яснення та практичні кейси.',
     keywords:
       'блог адвоката, статті про пенсії, поради юриста, новини пенсійного законодавства, Юлія Поддяча',
-    canonical: '/blog',
+    canonical: '/blog/',
     type: 'website',
     robots: 'noindex,follow',
     schema: {
@@ -66,15 +216,15 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
               '@type': 'ListItem',
               position: 1,
               name: 'Блог',
-              item: 'https://www.advocate-pensia.com.ua/blog',
+              item: 'https://www.advocate-pensia.com.ua/blog/',
             },
           ],
         },
         {
           '@type': 'WebPage',
-          '@id': 'https://www.advocate-pensia.com.ua/blog',
+          '@id': 'https://www.advocate-pensia.com.ua/blog/',
           name: 'Блог',
-          url: 'https://www.advocate-pensia.com.ua/blog',
+          url: 'https://www.advocate-pensia.com.ua/blog/',
           inLanguage: 'uk-UA',
         },
       ],

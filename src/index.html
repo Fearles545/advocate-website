@@ -104,42 +104,110 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LegalService",
-        "name": "Поддяча Юлія Юріївна",
-        "url": "https://www.advocate-pensia.com.ua",
-        "description": "Професійні адвокатські послуги з пенсійних питань в Україні",
-        "telephone": "+380999426056",
-        "email": "yuliapoddyacha@gmail.com",
-        "areaServed": {
-          "@type": "Country",
-          "name": "Україна"
-        },
-        "image": "https://www.advocate-pensia.com.ua/assets/images/og/default-og-image.webp",
-        "logo": "https://www.advocate-pensia.com.ua/favicon-32x32.png",
-        "knowsAbout": [
-          "пенсійне право",
-          "пенсійні виплати",
-          "соціальне право",
-          "пенсійна допомога",
-          "Пенсійний фонд України"
-        ],
-        "memberOf": {
-          "@type": "Organization",
-          "name": "Національна асоціація адвокатів України"
-        },
-        "serviceType": [
-          "Пенсійне право",
-          "Оформлення пенсії",
-          "Перерахунок пенсії",
-          "Судовий захист",
-          "Юридичні консультації"
-        ],
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Свідоцтво адвоката",
-          "dateCreated": "2021"
-        },
-        "sameAs": []
+        "@graph": [
+          {
+            "@type": "LegalService",
+            "@id": "https://www.advocate-pensia.com.ua/#org",
+            "name": "Поддяча Юлія Юріївна",
+            "url": "https://www.advocate-pensia.com.ua/",
+            "description": "Професійні адвокатські послуги з пенсійних питань в Україні",
+            "telephone": "+380999426056",
+            "email": "yuliapoddyacha@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "вул. Валентинівська, буд. 7, кв. 24",
+              "addressLocality": "Харків",
+              "addressRegion": "Харківська область",
+              "postalCode": "61168",
+              "addressCountry": "UA"
+            },
+            "areaServed": { "@type": "Country", "name": "Україна" },
+            "image": "https://www.advocate-pensia.com.ua/assets/images/og/default-og-image.webp",
+            "logo": "https://www.advocate-pensia.com.ua/favicon-32x32.png",
+            "knowsAbout": [
+              "пенсійне право",
+              "пенсійні виплати",
+              "соціальне право",
+              "пенсійна допомога",
+              "Пенсійний фонд України"
+            ],
+            "memberOf": {
+              "@type": "Organization",
+              "name": "Національна асоціація адвокатів України",
+              "url": "https://unba.org.ua/"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Пенсійні послуги",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Оформлення пенсії за віком"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Перерахунок пенсії"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Пільгові пенсії (Список №1, №2)"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Пенсія по інвалідності"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Пенсія за вислугу років"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Пенсія УБД"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Супровід спорів з ПФУ"
+                  }
+                }
+              ]
+            },
+            "sameAs": [
+              "https://erau.unba.org.ua/profile/82725",
+              "https://www.facebook.com/yuliapoddyacha",
+              "https://www.instagram.com/advocate_pensia",
+              "https://www.youtube.com/@advocate_pensia",
+              "https://www.tiktok.com/@advocate_pensia"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.advocate-pensia.com.ua/#website",
+            "name": "Адвокат по пенсіях — Поддяча Юлія Юріївна",
+            "url": "https://www.advocate-pensia.com.ua/",
+            "inLanguage": "uk-UA",
+            "publisher": { "@id": "https://www.advocate-pensia.com.ua/#org" }
+          }
+        ]
       }
     </script>
 

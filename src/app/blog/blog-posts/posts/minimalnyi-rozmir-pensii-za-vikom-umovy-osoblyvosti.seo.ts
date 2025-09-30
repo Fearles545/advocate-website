@@ -10,7 +10,7 @@ export const minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti = {
     publishedTime: '2025-09-27T09:00:00+03:00',
     modifiedTime: '2025-09-27T18:00:00+03:00',
     dateCreated: '2025-04-01T19:00:00+03:00',
-    canonical: '/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti',
+    canonical: '/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/',
     schema: {
       '@context': 'https://schema.org',
       '@graph': [
@@ -25,22 +25,14 @@ export const minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti = {
           author: {
             '@type': 'Person',
             name: 'Поддяча Юлія Юріївна',
-            url: 'https://www.advocate-pensia.com.ua/about-me',
+            url: 'https://www.advocate-pensia.com.ua/about-me/',
           },
-          publisher: {
-            '@type': 'Organization',
-            name: 'Поддяча Юлія Юріївна',
-            logo: {
-              '@type': 'ImageObject',
-              url: 'https://www.advocate-pensia.com.ua/assets/logo/logo-black-cut.png',
-              width: 512,
-              height: 512,
-            },
-          },
+          publisher: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
           image: [
             'https://www.advocate-pensia.com.ua/assets/images/og/default-og-image.webp',
           ],
           inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
           keywords: [
             'мінімальна пенсія 2025',
             'мінімальний розмір пенсії в Україні',
@@ -54,9 +46,9 @@ export const minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti = {
           mainEntityOfPage: {
             '@type': 'WebPage',
             '@id':
-              'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti',
+              'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/',
           },
-          url: 'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti',
+          url: 'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/',
         },
         {
           '@type': 'BreadcrumbList',
@@ -65,13 +57,13 @@ export const minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti = {
               '@type': 'ListItem',
               position: 1,
               name: 'Блог',
-              item: 'https://www.advocate-pensia.com.ua/blog',
+              item: 'https://www.advocate-pensia.com.ua/blog/',
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'Мінімальний розмір пенсії за віком: умови та особливості',
-              item: 'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti',
+              item: 'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/',
             },
           ],
         },

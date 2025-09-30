@@ -4,7 +4,6 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { MainComponent } from './main/main.component';
 import { ServicesComponent } from './services/services.component';
-import { SEO_DATA } from './core/config/seo.config';
 
 export const routes: Routes = [
   {

@@ -4,6 +4,13 @@ Blog draft - https://docs.google.com/document/d/1rEme7bCg6W6PnBFMJL2nQ9NG2osWwGI
 
 # Tasks
 
+Мета-теги
+• Title у межах ~50–60 символів.
+• Description у межах ~140–160 символів, унікальний для кожної сторінки.
+• Keywords — без дублів, різні для кожної сторінки.
+
+- h1 на кожній сторінці
+
 ## Blog
 
 - add link to next and previous blog-post

@@ -12,6 +12,6 @@ export class BlogBaseUrlPipe implements PipeTransform {
       return blogBaseUrl;
     }
 
-    return `${blogBaseUrl}/${value}`;
+    return `${blogBaseUrl}/${value}/`;
   }
 }
