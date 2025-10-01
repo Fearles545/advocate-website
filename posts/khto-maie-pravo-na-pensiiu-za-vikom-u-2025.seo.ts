@@ -15,7 +15,60 @@ export const khto_maie_pravo_na_pensiiu_za_vikom_u_2025 = {
       '@context': 'https://schema.org',
       '@graph': [
         {
+          '@type': 'BreadcrumbList',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025/#breadcrumbs',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Блог',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/blog/',
+                name: 'Блог',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: 'Хто має право на пенсію за віком у 2025 році?',
+              item: {
+                '@type': 'WebPage',
+                '@id':
+                  'https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025/',
+                name: 'Хто має право на пенсію за віком у 2025 році?',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025/#webpage',
+          name: 'Хто має право на пенсію за віком у 2025 році?',
+          url: 'https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          breadcrumb: {
+            '@id':
+              'https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025/#breadcrumbs',
+          },
+        },
+        {
           '@type': 'BlogPosting',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025/#article',
           headline: 'Хто має право на пенсію за віком у 2025 році?',
           description:
             'Хто має право на пенсію за віком у 2025 році: який страховий стаж потрібен для виходу у 60, 63 або 65 років. Що робити у разі відмови Пенсійним фондом призначити пенсію.',
@@ -44,28 +97,10 @@ export const khto_maie_pravo_na_pensiiu_za_vikom_u_2025 = {
           ],
           articleSection: 'Пенсійне право',
           mainEntityOfPage: {
-            '@type': 'WebPage',
             '@id':
-              'https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025/',
+              'https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025/#webpage',
           },
           url: 'https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025/',
-        },
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Блог',
-              item: 'https://www.advocate-pensia.com.ua/blog/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'Хто має право на пенсію за віком у 2025 році?',
-              item: 'https://www.advocate-pensia.com.ua/blog/khto-maie-pravo-na-pensiiu-za-vikom-u-2025/',
-            },
-          ],
         },
       ],
     },

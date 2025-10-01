@@ -15,7 +15,60 @@ export const komu_pererakhuiut_pensii_1_kvitnia_2025 = {
       '@context': 'https://schema.org',
       '@graph': [
         {
+          '@type': 'BreadcrumbList',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025/#breadcrumbs',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Блог',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/blog/',
+                name: 'Блог',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: 'Кому перерахують пенсію з 1 квітня 2025 року?',
+              item: {
+                '@type': 'WebPage',
+                '@id':
+                  'https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025/',
+                name: 'Кому перерахують пенсію з 1 квітня 2025 року?',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025/#webpage',
+          name: 'Кому перерахують пенсію з 1 квітня 2025 року?',
+          url: 'https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          breadcrumb: {
+            '@id':
+              'https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025/#breadcrumbs',
+          },
+        },
+        {
           '@type': 'BlogPosting',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025/#article',
           headline: 'Кому перерахують пенсію з 1 квітня 2025 року?',
           description:
             'Дізнайтесь, кому і за яких умов ПФУ зробить автоматичний перерахунок пенсії з 1 квітня 2025 року, як враховуються стаж і зарплата, строки виплат та коли варто подати заяву.',
@@ -44,28 +97,10 @@ export const komu_pererakhuiut_pensii_1_kvitnia_2025 = {
           ],
           articleSection: 'Пенсійне право',
           mainEntityOfPage: {
-            '@type': 'WebPage',
             '@id':
-              'https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025/',
+              'https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025/#webpage',
           },
           url: 'https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025/',
-        },
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Блог',
-              item: 'https://www.advocate-pensia.com.ua/blog/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'Кому перерахують пенсію з 1 квітня 2025 року?',
-              item: 'https://www.advocate-pensia.com.ua/blog/komu-pererakhuiut-pensii-1-kvitnia-2025/',
-            },
-          ],
         },
       ],
     },

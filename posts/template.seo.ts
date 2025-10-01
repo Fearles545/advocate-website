@@ -28,12 +28,66 @@ export const slug_in_snake_case = {
       '@context': 'https://schema.org',
       '@graph': [
         {
+          '@type': 'BreadcrumbList',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/<slug-in-kebab-case>/#breadcrumbs',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Блог',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/blog/',
+                name: 'Блог',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: '<H1>',
+              item: {
+                '@type': 'WebPage',
+                '@id':
+                  'https://www.advocate-pensia.com.ua/blog/<slug-in-kebab-case>/',
+                name: '<H1>',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/<slug-in-kebab-case>/#webpage',
+          name: '<H1> | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/blog/<slug-in-kebab-case>/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          breadcrumb: {
+            '@id':
+              'https://www.advocate-pensia.com.ua/blog/<slug-in-kebab-case>/#breadcrumbs',
+          },
+        },
+        {
           '@type': 'BlogPosting',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/<slug-in-kebab-case>/#article',
           headline: '<H1>',
           description:
             '<як у description, але можна трохи інакше сформулювати>',
           datePublished: '<YYYY-MM-DDThh:mm:ss+03:00>',
           dateModified: '<YYYY-MM-DDThh:mm:ss+03:00>',
+          dateCreated: '<YYYY-MM-DDThh:mm:ss+03:00>',
           author: {
             '@type': 'Person',
             name: 'Поддяча Юлія Юріївна',
@@ -48,28 +102,10 @@ export const slug_in_snake_case = {
           keywords: ['<ключ1>', '<ключ2>', '<ключ3>'],
           articleSection: 'Пенсійне право',
           mainEntityOfPage: {
-            '@type': 'WebPage',
             '@id':
-              'https://www.advocate-pensia.com.ua/blog/<slug-in-kebab-case>/',
+              'https://www.advocate-pensia.com.ua/blog/<slug-in-kebab-case>/#webpage',
           },
           url: 'https://www.advocate-pensia.com.ua/blog/<slug-in-kebab-case>/',
-        },
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Блог',
-              item: 'https://www.advocate-pensia.com.ua/blog/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: '<H1>',
-              item: 'https://www.advocate-pensia.com.ua/blog/<slug-in-kebab-case>/',
-            },
-          ],
         },
       ],
     },
@@ -103,37 +139,51 @@ export interface PostSeoConfig {
 
 export interface BlogJsonLd {
   '@context': 'https://schema.org';
-  '@graph': [BlogPosting, BreadcrumbList];
+  '@graph': [BreadcrumbListNode, WebPageNode, BlogPostingNode];
 }
 
-export interface BlogPosting {
+export interface BlogPostingNode {
   '@type': 'BlogPosting';
+  '@id': string;
   headline: string;
   description: string;
   datePublished: IsoDateTime;
   dateModified: IsoDateTime;
+  dateCreated?: IsoDateTime;
   author: Person;
   publisher: OrganizationRef;
-  image: string[]; // масив URL
+  image: string[];
   inLanguage: string;
   isPartOf?: { '@id': string };
-  keywords: string[]; // масив ключових слів
+  keywords: string[];
   articleSection?: string;
-  mainEntityOfPage: {
-    '@type': 'WebPage';
-    '@id': string; // абсолютний URL
-  };
-  url: string; // абсолютний URL
+  mainEntityOfPage: { '@id': string };
+  url: string;
 }
 
-export interface BreadcrumbList {
+export interface BreadcrumbListNode {
   '@type': 'BreadcrumbList';
+  '@id': string;
   itemListElement: Array<{
     '@type': 'ListItem';
     position: number;
     name: string;
-    item: string; // абсолютний URL
+    item: {
+      '@type': 'WebPage';
+      '@id': string;
+      name: string;
+    };
   }>;
+}
+
+export interface WebPageNode {
+  '@type': 'WebPage';
+  '@id': string;
+  name: string;
+  url: string;
+  inLanguage: string;
+  isPartOf?: { '@id': string };
+  breadcrumb?: { '@id': string };
 }
 
 export interface Person {
