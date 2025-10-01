@@ -14,7 +14,60 @@ export const yaka_maksymalna_pensiia_u_2025 = {
       '@context': 'https://schema.org',
       '@graph': [
         {
+          '@type': 'BreadcrumbList',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/#breadcrumbs',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Блог',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/blog/',
+                name: 'Блог',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: 'Яка максимальна пенсія у 2025 році?',
+              item: {
+                '@type': 'WebPage',
+                '@id':
+                  'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/',
+                name: 'Яка максимальна пенсія у 2025 році?',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/#webpage',
+          name: 'Яка максимальна пенсія у 2025 році? | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          breadcrumb: {
+            '@id':
+              'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/#breadcrumbs',
+          },
+        },
+        {
           '@type': 'BlogPosting',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/#article',
           headline: 'Яка максимальна пенсія у 2025 році?',
           description:
             'Максимальна пенсія в Україні у 2025 році. Як обчислюється максимальний росмір пенсії. Дізнайтеся, кого не стосуються обмеження, як їх оскаржити та коли можна підвищити виплати.',
@@ -45,28 +98,10 @@ export const yaka_maksymalna_pensiia_u_2025 = {
           ],
           articleSection: 'Пенсійне право',
           mainEntityOfPage: {
-            '@type': 'WebPage',
             '@id':
-              'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/',
+              'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/#webpage',
           },
           url: 'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/',
-        },
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Блог',
-              item: 'https://www.advocate-pensia.com.ua/blog/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'Яка максимальна пенсія у 2025 році?',
-              item: 'https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/',
-            },
-          ],
         },
       ],
     },

@@ -20,12 +20,17 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       '@graph': [
         {
           '@type': 'BreadcrumbList',
+          '@id': 'https://www.advocate-pensia.com.ua/#breadcrumbs-home',
           itemListElement: [
             {
               '@type': 'ListItem',
               position: 1,
               name: 'Головна',
-              item: 'https://www.advocate-pensia.com.ua/',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
             },
           ],
         },
@@ -37,6 +42,9 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
           inLanguage: 'uk-UA',
           isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
           about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+          breadcrumb: {
+            '@id': 'https://www.advocate-pensia.com.ua/#breadcrumbs-home',
+          },
         },
       ],
     },
@@ -53,29 +61,41 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       '@graph': [
         {
           '@type': 'BreadcrumbList',
+          '@id': 'https://www.advocate-pensia.com.ua/about-me/#breadcrumbs',
           itemListElement: [
             {
               '@type': 'ListItem',
               position: 1,
               name: 'Головна',
-              item: 'https://www.advocate-pensia.com.ua/',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'Про мене',
-              item: 'https://www.advocate-pensia.com.ua/about-me/',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/about-me/',
+                name: 'Про мене',
+              },
             },
           ],
         },
         {
-          '@type': 'WebPage',
+          '@type': 'AboutPage',
           '@id': 'https://www.advocate-pensia.com.ua/about-me/#webpage',
           name: 'Про мене | Адвокат Поддяча Юлія Юріївна',
           url: 'https://www.advocate-pensia.com.ua/about-me/',
           inLanguage: 'uk-UA',
           isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
           about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+          breadcrumb: {
+            '@id': 'https://www.advocate-pensia.com.ua/about-me/#breadcrumbs',
+          },
         },
       ],
     },
@@ -92,29 +112,41 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       '@graph': [
         {
           '@type': 'BreadcrumbList',
+          '@id': 'https://www.advocate-pensia.com.ua/services/#breadcrumbs',
           itemListElement: [
             {
               '@type': 'ListItem',
               position: 1,
               name: 'Головна',
-              item: 'https://www.advocate-pensia.com.ua/',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'Послуги',
-              item: 'https://www.advocate-pensia.com.ua/services/',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/services/',
+                name: 'Послуги',
+              },
             },
           ],
         },
         {
-          '@type': 'WebPage',
+          '@type': 'CollectionPage',
           '@id': 'https://www.advocate-pensia.com.ua/services/#webpage',
           name: 'Послуги | Адвокат по пенсіях в Україні',
           url: 'https://www.advocate-pensia.com.ua/services/',
           inLanguage: 'uk-UA',
           isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
           about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+          breadcrumb: {
+            '@id': 'https://www.advocate-pensia.com.ua/services/#breadcrumbs',
+          },
         },
       ],
     },
@@ -131,18 +163,27 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       '@graph': [
         {
           '@type': 'BreadcrumbList',
+          '@id': 'https://www.advocate-pensia.com.ua/documents/#breadcrumbs',
           itemListElement: [
             {
               '@type': 'ListItem',
               position: 1,
               name: 'Головна',
-              item: 'https://www.advocate-pensia.com.ua/',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'Документи',
-              item: 'https://www.advocate-pensia.com.ua/documents/',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/documents/',
+                name: 'Документи',
+              },
             },
           ],
         },
@@ -154,6 +195,9 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
           inLanguage: 'uk-UA',
           isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
           about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+          breadcrumb: {
+            '@id': 'https://www.advocate-pensia.com.ua/documents/#breadcrumbs',
+          },
         },
       ],
     },
@@ -170,29 +214,41 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       '@graph': [
         {
           '@type': 'BreadcrumbList',
+          '@id': 'https://www.advocate-pensia.com.ua/contacts/#breadcrumbs',
           itemListElement: [
             {
               '@type': 'ListItem',
               position: 1,
               name: 'Головна',
-              item: 'https://www.advocate-pensia.com.ua/',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'Контакти',
-              item: 'https://www.advocate-pensia.com.ua/contacts/',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/contacts/',
+                name: 'Контакти',
+              },
             },
           ],
         },
         {
-          '@type': 'WebPage',
+          '@type': 'ContactPage',
           '@id': 'https://www.advocate-pensia.com.ua/contacts/#webpage',
           name: 'Контакти | Адвокат Поддяча Юлія Юріївна',
           url: 'https://www.advocate-pensia.com.ua/contacts/',
           inLanguage: 'uk-UA',
           isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
           about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+          breadcrumb: {
+            '@id': 'https://www.advocate-pensia.com.ua/contacts/#breadcrumbs',
+          },
         },
       ],
     },
@@ -211,21 +267,29 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       '@graph': [
         {
           '@type': 'BreadcrumbList',
+          '@id': 'https://www.advocate-pensia.com.ua/blog/#breadcrumbs',
           itemListElement: [
             {
               '@type': 'ListItem',
               position: 1,
               name: 'Блог',
-              item: 'https://www.advocate-pensia.com.ua/blog/',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/blog/',
+                name: 'Блог',
+              },
             },
           ],
         },
         {
-          '@type': 'WebPage',
-          '@id': 'https://www.advocate-pensia.com.ua/blog/',
+          '@type': 'CollectionPage',
+          '@id': 'https://www.advocate-pensia.com.ua/blog/#webpage',
           name: 'Блог',
           url: 'https://www.advocate-pensia.com.ua/blog/',
           inLanguage: 'uk-UA',
+          breadcrumb: {
+            '@id': 'https://www.advocate-pensia.com.ua/blog/#breadcrumbs',
+          },
         },
       ],
     },

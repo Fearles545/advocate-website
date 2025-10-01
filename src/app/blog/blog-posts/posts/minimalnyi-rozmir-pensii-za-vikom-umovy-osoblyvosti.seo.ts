@@ -15,7 +15,60 @@ export const minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti = {
       '@context': 'https://schema.org',
       '@graph': [
         {
+          '@type': 'BreadcrumbList',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/#breadcrumbs',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Блог',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/blog/',
+                name: 'Блог',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: 'Мінімальний розмір пенсії за віком: умови та особливості',
+              item: {
+                '@type': 'WebPage',
+                '@id':
+                  'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/',
+                name: 'Мінімальний розмір пенсії за віком: умови та особливості',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/#webpage',
+          name: 'Мінімальний розмір пенсії за віком: умови та особливості | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          breadcrumb: {
+            '@id':
+              'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/#breadcrumbs',
+          },
+        },
+        {
           '@type': 'BlogPosting',
+          '@id':
+            'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/#article',
           headline: 'Мінімальний розмір пенсії за віком: умови та особливості',
           description:
             'Мінімальна пенсія в Україні у 2025 році — 2361 грн. Дізнайтеся, який стаж потрібен чоловікам і жінкам, як враховується понаднормовий стаж та умови для осіб 65+.',
@@ -44,28 +97,10 @@ export const minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti = {
           ],
           articleSection: 'Пенсійне право',
           mainEntityOfPage: {
-            '@type': 'WebPage',
             '@id':
-              'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/',
+              'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/#webpage',
           },
           url: 'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/',
-        },
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Блог',
-              item: 'https://www.advocate-pensia.com.ua/blog/',
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: 'Мінімальний розмір пенсії за віком: умови та особливості',
-              item: 'https://www.advocate-pensia.com.ua/blog/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti/',
-            },
-          ],
         },
       ],
     },
