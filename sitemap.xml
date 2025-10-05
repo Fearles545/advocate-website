@@ -46,6 +46,20 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/shchodo-zarakhuvannia-periodiv-ubd-ato-oos/</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/vymohy-pryznachennia-pensii-za-vysluhu-rokiv-dlia-pratsivnykiv-osvity-okhorony-zdorovia-ta-sotsialnoho-zabezpechennia/</loc>
+    <lastmod>2025-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://www.advocate-pensia.com.ua/blog/yaka-maksymalna-pensiia-u-2025/</loc>
     <lastmod>2025-10-01</lastmod>
     <changefreq>monthly</changefreq>
