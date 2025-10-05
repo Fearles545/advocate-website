@@ -9,6 +9,14 @@ export interface Blog {
 
 export const blogs = [
   {
+    title: 'Щодо зарахування періодів УБД, АТО, ООС',
+    slug: 'shchodo-zarakhuvannia-periodiv-ubd-ato-oos',
+    src: 'https://www.youtube.com/embed/Y3Knuv9Rnew',
+    date: '2025-06-30',
+    description:
+      'Пояснюємо, як підтвердити страховий стаж без трудової книжки.',
+  },
+  {
     title: 'Яка максимальна пенсія у 2025 році?',
     slug: 'yaka-maksymalna-pensiia-u-2025',
     src: 'https://www.youtube.com/embed/FZBqCZjdqjU',
