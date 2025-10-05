@@ -23,6 +23,12 @@ export const blogs = [
     date: '2025-04-18',
   },
   {
+    title: 'Вимоги призначення пенсії за вислугу років для працівників освіти, охорони здоров’я та соціального забезпечення',
+    slug: 'vymohy-pryznachennia-pensii-za-vysluhu-rokiv-dlia-pratsivnykiv-osvity-okhorony-zdorovia-ta-sotsialnoho-zabezpechennia',
+    src: 'https://www.youtube.com/embed/5Z2OLDdanUc',
+    date: '2025-04-03',
+  },
+  {
     title: 'Хто має право на пенсію за віком у 2025 році?',
     slug: 'khto-maie-pravo-na-pensiiu-za-vikom-u-2025',
     src: 'https://www.youtube.com/embed/ZwtT8Ddv12c',
