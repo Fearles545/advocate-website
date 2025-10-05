@@ -6,13 +6,14 @@ import { finalize, map, of } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { BlogIframeComponent } from './blog-iframe.component';
-import { blogs } from '../blog-posts';
+import { Blog } from '../blog-posts';
 import { HttpClient } from '@angular/common/http';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { SpinnerComponent } from '@core/components/spinner/spinner.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatMenuModule } from '@angular/material/menu';
 import { SocialShareComponent } from './social-share/social-share.component';
+import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.component';
 
 @Component({
   selector: 'app-blog-post',
@@ -26,6 +27,7 @@ import { SocialShareComponent } from './social-share/social-share.component';
     BlogIframeComponent,
     SpinnerComponent,
     SocialShareComponent,
+    BlogsNavigatorComponent,
   ],
   template: `
     @if (blog()) {
@@ -58,24 +60,16 @@ import { SocialShareComponent } from './social-share/social-share.component';
 
         <section
           class="blog-post-section"
-          style="
-            font-size: 1.25rem;
-            font-weight: 500;
-            line-height: 1.25;
-            margin: 0;"
           [innerHTML]="blogHtml() | async"
         ></section>
         <section
           class="blog-post-section"
-          style="
-            font-size: 1.25rem;
-            font-weight: 500;
-            line-height: 1.25;
-            margin: 0;"
           [innerHTML]="footerCard() | async"
         ></section>
       </section>
     }
+
+    <app-blogs-navigator [currentBlog]="blog()" />
 
     <app-spinner [show]="isLoading()" />
   `,
@@ -118,7 +112,7 @@ import { SocialShareComponent } from './social-share/social-share.component';
     }
 
     .blog-post-container {
-      width: 950px;
+      width: var(--blog-container-max-width);
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
@@ -144,18 +138,11 @@ export class BlogPostComponent {
   sanitizer = inject(DomSanitizer);
   route = inject(ActivatedRoute);
   http = inject(HttpClient);
-  blogs = blogs;
 
   slug = input.required<string>();
+  blog = input.required<Blog>();
 
   isLoading = signal(true);
-  blog = computed(() => this.blogs.find((blog) => blog.slug === this.slug()));
-  // blog = toSignal(
-  //   this.route.params.pipe(
-  //     map((params) => params['slug']),
-  //     map((slug) => this.blogs.find((blog) => blog.slug === slug))
-  //   )
-  // );
 
   blogHtml = computed(() =>
     this.blog() ? this.getPost(this.blog()?.slug!) : of('')
@@ -166,8 +153,6 @@ export class BlogPostComponent {
   );
 
   getPost(slug: string) {
-    // this.isLoading.set(true);
-
     return this.http
       .get(`posts/${slug}.html`, {
         responseType: 'text',

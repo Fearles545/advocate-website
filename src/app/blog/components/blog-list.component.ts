@@ -127,7 +127,7 @@ import { BlogPaginationService } from '../services/blog-pagination.service';
 export class BlogListComponent {
   private blogPaginationService = inject(BlogPaginationService);
 
-  blogs: Blog[] = blogs;
+  blogs = blogs;
 
   readonly pageSize = this.blogPaginationService.pageSize;
   readonly pageIndex = this.blogPaginationService.pageIndex;

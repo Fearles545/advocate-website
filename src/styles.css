@@ -16,6 +16,7 @@
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xxl: 4rem;
+  --blog-container-max-width: 950px;
   --container-max-width: 1200px;
   --container-padding: var(--spacing-lg);
   --container-padding-mobile: var(--spacing-sm);
@@ -96,6 +97,11 @@ a:hover {
 }
 
 .blog-post-section {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0;
+
   article,
   section {
     display: flex;

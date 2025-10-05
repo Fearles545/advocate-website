@@ -5,13 +5,13 @@ import { baseUrl } from '@core/config/base-url';
   name: 'appBlogBaseUrl',
 })
 export class BlogBaseUrlPipe implements PipeTransform {
-  transform(value: string | undefined): string {
+  transform(slug: string | undefined): string {
     const blogBaseUrl = `${baseUrl}/blog`;
 
-    if (!value) {
+    if (!slug) {
       return blogBaseUrl;
     }
 
-    return `${blogBaseUrl}/${value}/`;
+    return `${blogBaseUrl}/${slug}/`;
   }
 }
