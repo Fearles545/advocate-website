@@ -23,6 +23,39 @@ export const blogs = [
     date: '2025-04-18',
   },
   {
+    title: 'Як зараховується стаж, набутий у російській федерації?',
+    slug: 'yak-zarakhovuietsia-stazh-nabutyi-u-rosiiskiy-federatsii',
+    src: 'https://www.youtube.com/embed/ZcfOD4OclCQ',
+    date: '2025-04-09',
+    description:
+      'Питання зарахування стажу, набутого у російській федерації, залишається актуальним і потребує судового захисту після припинення міжнародних угод.',
+  },
+  {
+    title: 'Пенсія для жінок, які працювали за Списком №1',
+    slug: 'pensiia-dlia-zhinok-iaki-pratsiuvaly-za-spyskom-1',
+    src: 'https://www.youtube.com/embed/yZaNonC6KVk',
+    date: '2025-04-08',
+    description:
+      'Пенсія для жінок за Списком №1: умови виходу у 45 років, необхідний стаж, пільги та оскарження відмови Пенсійного фонду.',
+  },
+  {
+    title:
+      'Що робити, якщо Пенсійний фонд не зараховує періоди роботи до страхового стажу?',
+    slug: 'shcho-robyty-iakshcho-pensiinyi-fond-ne-zarakhovuie-periody-roboty-do-strakhovoho-stazhu',
+    src: 'https://www.youtube.com/embed/c7yRYB4Ifcw',
+    date: '2025-04-05',
+    description:
+      'Що робити, якщо ПФУ не зарахував стаж: довідки, архіви, свідки та судовий порядок підтвердження періодів роботи, навчання і служби.',
+  },
+  {
+    title: 'Як підвищити пенсію за вислугу років?',
+    slug: 'yak-pidvyshchyty-pensiiu-za-vysluhu-rokiv',
+    src: 'https://www.youtube.com/embed/xXDsl9snBQ0',
+    date: '2025-04-04',
+    description:
+      'Як підвищити пенсію за вислугу років: коли переходити на пенсію за віком і як через суд домогтися нового показника середньої зарплати.',
+  },
+  {
     title: 'Вимоги призначення пенсії за вислугу років для працівників освіти, охорони здоров’я та соціального забезпечення',
     slug: 'vymohy-pryznachennia-pensii-za-vysluhu-rokiv-dlia-pratsivnykiv-osvity-okhorony-zdorovia-ta-sotsialnoho-zabezpechennia',
     src: 'https://www.youtube.com/embed/5Z2OLDdanUc',

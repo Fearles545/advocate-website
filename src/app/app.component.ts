@@ -1,10 +1,9 @@
 import { Component, isDevMode } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { inject } from '@angular/core';
-import { AsyncPipe, NgClass, NgStyle } from '@angular/common';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { AsyncPipe } from '@angular/common';
 
-import { filter, fromEvent, map, startWith } from 'rxjs';
+import { filter, map, startWith } from 'rxjs';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 
@@ -13,13 +12,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DrawerContentComponent } from './drawer-content/drawer-content.component';
 import { RouteSeoService } from './core/services/route-seo.service';
-
-const bgs: Record<string, string> = {
-  main: 'assets/grey-marble-column-details-building.webp',
-  'about-me': 'assets/library-bookshelves.webp',
-  services: 'assets/office-chair-still-life.webp',
-  documents: 'assets/abstract-blur-defocused-bookshelf-library.webp',
-};
 
 @Component({
   selector: 'app-root',
@@ -40,16 +32,6 @@ export class AppComponent {
   isDevMode = isDevMode();
   private routeSeoService = inject(RouteSeoService);
 
-  // isDesktop = toSignal(
-  //   fromEvent(window, 'resize').pipe(
-  //     startWith(0),
-  //     map(() => ({
-  //       innerWidth: window.innerWidth,
-  //       innerHeight: window.innerHeight,
-  //     }))
-  //   )
-  // );
-
   navigatedItems$ = this.#router.events.pipe(
     startWith(new NavigationEnd(0, this.#router.url, this.#router.url)),
     filter((event): event is NavigationEnd => event instanceof NavigationEnd),
@@ -65,7 +47,6 @@ export class AppComponent {
   );
 
   constructor() {
-    // Start listening for route changes to update SEO tags automatically.
     this.routeSeoService.init();
   }
 }
