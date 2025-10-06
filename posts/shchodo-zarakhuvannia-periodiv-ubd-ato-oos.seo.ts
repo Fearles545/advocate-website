@@ -7,8 +7,8 @@ export const shchodo_zarakhuvannia_periodiv_ubd_ato_oos = {
     keywords:
       'УБД, АТО, ООС, зарахування періодів служби, страховий стаж, пільговий стаж, пенсійний фонд, петиція КМУ',
     type: 'article',
-    publishedTime: '2025-06-30T09:00:00+03:00',
-    modifiedTime: '2025-06-30T09:00:00+03:00',
+    publishedTime: '2025-10-06T09:00:00+03:00',
+    modifiedTime: '2025-10-06T09:00:00+03:00',
     dateCreated: '2025-06-30T09:00:00+03:00',
     canonical: '/blog/shchodo-zarakhuvannia-periodiv-ubd-ato-oos/',
     schema: {
