@@ -23,6 +23,14 @@ export const blogs = [
     date: '2025-04-18',
   },
   {
+    title: 'Пенсія для чоловіків, які працювали за Списком №1',
+    slug: 'pensiia-dlia-cholovikiv-iaki-pratsiuvaly-za-spyskom-1',
+    src: 'https://www.youtube.com/embed/6tAtB1YBlYA',
+    date: '2025-04-10',
+    description:
+      'Чоловіки, які працювали за Списком №1, мають право на пільгову пенсію за віком за наявності 20 років загального стажу та роботи в особливо шкідливих умовах.',
+  },
+  {
     title: 'Як зараховується стаж, набутий у російській федерації?',
     slug: 'yak-zarakhovuietsia-stazh-nabutyi-u-rosiiskiy-federatsii',
     src: 'https://www.youtube.com/embed/ZcfOD4OclCQ',
