@@ -46,6 +46,13 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/shcho-take-spysok-1/</loc>
+    <lastmod>2025-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://www.advocate-pensia.com.ua/blog/pensiia-dlia-cholovikiv-iaki-pratsiuvaly-za-spyskom-1/</loc>
     <lastmod>2025-10-09</lastmod>
     <changefreq>monthly</changefreq>

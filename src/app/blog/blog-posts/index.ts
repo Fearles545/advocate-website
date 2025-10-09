@@ -23,6 +23,14 @@ export const blogs = [
     date: '2025-04-18',
   },
   {
+    title: 'Що таке Список №1?',
+    slug: 'shcho-take-spysok-1',
+    src: 'https://www.youtube.com/embed/9pS1349TKfU',
+    date: '2025-04-11',
+    description:
+      'Що таке Список №1, хто його затверджує та які пенсійні пільги і додатковий стаж отримують працівники в особливо шкідливих умовах.',
+  },
+  {
     title: 'Пенсія для чоловіків, які працювали за Списком №1',
     slug: 'pensiia-dlia-cholovikiv-iaki-pratsiuvaly-za-spyskom-1',
     src: 'https://www.youtube.com/embed/6tAtB1YBlYA',
