@@ -23,6 +23,15 @@ export const blogs = [
     date: '2025-04-18',
   },
   {
+    title:
+      'Право учасників бойових дій, АТО та ООС на дострокове призначення пенсії',
+    slug: 'pravo-uchasnykiv-boiovykh-dii-ato-ta-oos-na-dostrokove-pryznachennia-pensii',
+    src: 'https://www.youtube.com/embed/7MAm1gh6wKk',
+    date: '2025-04-12',
+    description:
+      'Право учасників бойових дій, АТО та ООС на дострокову пенсію: необхідний стаж, стаття 115 Закону №1058-IV та поширені відмови Пенсійного фонду.',
+  },
+  {
     title: 'Що таке Список №1?',
     slug: 'shcho-take-spysok-1',
     src: 'https://www.youtube.com/embed/9pS1349TKfU',
@@ -72,7 +81,8 @@ export const blogs = [
       'Як підвищити пенсію за вислугу років: коли переходити на пенсію за віком і як через суд домогтися нового показника середньої зарплати.',
   },
   {
-    title: 'Вимоги призначення пенсії за вислугу років для працівників освіти, охорони здоров’я та соціального забезпечення',
+    title:
+      'Вимоги призначення пенсії за вислугу років для працівників освіти, охорони здоров’я та соціального забезпечення',
     slug: 'vymohy-pryznachennia-pensii-za-vysluhu-rokiv-dlia-pratsivnykiv-osvity-okhorony-zdorovia-ta-sotsialnoho-zabezpechennia',
     src: 'https://www.youtube.com/embed/5Z2OLDdanUc',
     date: '2025-04-03',
