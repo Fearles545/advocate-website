@@ -80,17 +80,68 @@ date: string; // YYYY-MM-DD (UI + sorting)
   <lastmod>TODAY_EUROPE_KYIV_YYYY-MM-DD</lastmod> <!-- today -->
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
-- Add or update exactly ONE <url> entry for the new post:
-  <url>
-  <loc>https://www.advocate-pensia.com.ua/blog/<slug>/</loc>
-  <lastmod>TODAY_EUROPE_KYIV_YYYY-MM-DD</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
   </url>
 - For the blog listing page `/blog/`:
   **DO NOT create a new <url>**.
   **Only update <lastmod> if an entry for `/blog/` already exists.**
 - Do not duplicate <loc> entries; keep ordering consistent.
+
+## RUNTIME INPUT (Chat-delivered)
+
+### What you will paste into the chat
+
+Paste **one fenced block** with label `INPUT_JSON`. CodeX must treat this as the _only_ dynamic input for the run.
+
+```INPUT_JSON
+{
+  "title": "<string>",
+  "src": "<string | optional>",
+  "date": "YYYY-MM-DD",
+  "content": "<markdown or html string>",
+  "contentFile": "<relative/path.md | optional>",
+  "description": "<string | optional>",
+  "keywords": ["<string>", "<string>"],
+  "publishedTime": "YYYY-MM-DDThh:mm:ss+03:00",
+  "modifiedTime": "YYYY-MM-DDThh:mm:ss+03:00"
+}
+```
+
+Rules:
+
+- If `contentFile` is provided, ignore `content` and load file content relative to repo root.
+- `src` is handled by the component (no `<iframe>` in HTML output).
+- Dates use Europe/Kyiv timezone; if `publishedTime`/`modifiedTime` are missing — default to `${date}T09:00:00+03:00`.
+- Do **not** echo this block back verbatim in outputs.
+
+## HOW TO USE WITH CodeX
+
+1. In chat, write: **“Use static instruction file at `src/app/blog/blog-posts/posts-automatation.md`.”**
+2. Immediately paste the single `INPUT_JSON` block shown above with your real values.
+3. CodeX must read this file for all static rules and use only `INPUT_JSON` for dynamic data.
+
+## OUTPUT
+
+Return **exactly these fenced blocks in this order** (no extra commentary):
+
+```FILE:posts/<slug>.html
+<full HTML file content>
+```
+
+```FILE:posts/<slug>.seo.ts
+<full SEO TS file content>
+```
+
+```DIFF:blog-posts/index.ts
+<contextual diff that inserts the new blog item keeping newest-first>
+```
+
+```DIFF:blog-posts/<SEO_REGISTRY_INDEX_FILE>
+<import of posts/<slug>.seo + merge into master SEO map>
+```
+
+```DIFF:public/sitemap.xml
+<added/updated <url> for /blog/<slug>/> and updated <lastmod> for /blog/ if present>
+```
 
 ## INPUT
 
@@ -135,154 +186,4 @@ content: `
 Список №1 — це нормативний перелік професій, посад і робіт з особливо шкідливими та важкими умовами праці, робота на яких дає право на призначення пенсії за віком на пільгових умовах та додаткове зарахування стажу.
 У разі неправомірної відмови Пенсійного фонду у зарахуванні стажу працівник має право звернутися до суду для захисту своїх прав.
 `
-
-# Optional:
-
-publishedTime: "YYYY-MM-DDThh:mm:ss+03:00"
-modifiedTime: "YYYY-MM-DDThh:mm:ss+03:00"
-
-# Optional alternative:
-
-contentFile: "relative/path/to/text.md" # if set, ignore `content` above and load file
 INPUT>>
-
-## TASKS
-
-1. SLUG
-
-- Generate from `title`: UA→Latin, lowercase, kebab-case, ASCII [a-z0-9-], collapse dashes.
-
-2. BLOG HTML (create: posts/<slug>.html)
-
-- Take `content` (or `contentFile`) and:
-  - If Markdown: convert to HTML; keep links; remove any <h1>; headings start from <h2>.
-  - Wrap into the EXACT pattern:
-    <article>
-      <blockquote class="blog-quote">Use the first 1–2 sentences from the beginning as lead if present; else keep the first paragraph. Keep author text verbatim.</blockquote>
-      <section>…first major section…</section>
-      <hr />
-      <section>…second…</section>
-      <hr />
-      <section>…third or conclusions…</section>
-    </article>
-  - Keep <aside> blocks if they exist; do not invent any.
-  - If there is an inline date, you may format it as <time datetime="YYYY-MM-DD">…</time> (no invention).
-
-3. SEO CONFIG (create: posts/<slug>.seo.ts)
-
-- Title: `${title} | Адвокат Поддяча Юлія Юріївна`
-- Description: if provided — use it; if empty — derive from the first 1–2 sentences of the content (max ~160 chars), no TODOs.
-- Keywords: if not provided — extract 5–8 key phrases from title+content (dedupe, lowercase nouns), no TODOs.
-- Type: "article"
-- publishedTime: from INPUT or `${date}T09:00:00+03:00`
-- modifiedTime: from INPUT or same as publishedTime
-- canonical: `/blog/<slug>/`
-- JSON-LD @graph per SEO RULES (ids/urls consistent with site). JSON-LD must be complete; no empty arrays or placeholder comments.
-
-4. BLOGS INDEX (update: blog-posts/index.ts)
-
-- Insert `{ title, slug, src, date, description }` into `blogs` array keeping manual order: newest first.
-- Follow existing formatting and commas.
-
-5. SEO REGISTRY INDEX (update)
-
-- Import new `<slug>.seo.ts` export and merge into the master SEO map as in existing posts.
-
-6. SITEMAP.XML (update: public/sitemap.xml)
-
-- Insert or update the <url> for `/blog/<slug>/` with TODAY_EUROPE_KYIV_YYYY-MM-DD in <lastmod>.
-- If `/blog/` entry exists: update its <lastmod> to TODAY_EUROPE_KYIV_YYYY-MM-DD. Do NOT create a new one.
-- Validate XML.
-
-## OUTPUT
-
-- Full contents:
-  1. posts/<slug>.html
-  2. posts/<slug>.seo.ts
-- Diffs: 3) blog-posts/index.ts (context around insertion) 4) SEO registry index (new import + merge) 5) public/sitemap.xml (added/updated <url> entries with <lastmod>)
-- All text Ukrainian. ESLint/Prettier clean.
-
-## ACCEPTANCE CHECKLIST
-
-- [ ] HTML uses the exact article→blockquote→sections(+<hr/>) pattern.
-- [ ] No <h1>; headings start from <h2>.
-- [ ] No <iframe>.
-- [ ] Content integrated from provided input/file; author links preserved; no invented URLs.
-- [ ] Canonical ends with `/`.
-- [ ] WebPage.name = title (no brand); <title> has brand.
-- [ ] Blogs array remains sorted (newest first).
-- [ ] JSON-LD valid; ids consistent; builds compile.
-- [ ] public/sitemap.xml updated: new post <url> + <lastmod>=today; blog listing <lastmod>=today if exists; XML valid.
-
-## SEO completeness
-
-- description: if missing, derive from the first 1–2 sentences of the provided content,
-  max ~160 chars, no TODOs.
-- keywords: if missing, extract 5–8 key phrases from title+content (dedupe, lowercase nouns),
-  no TODOs.
-- JSON-LD must be complete; no empty arrays or placeholder comments.
-
-## Best SEO Practices
-
-- **Title (meta tag and H1):**
-
-  - Ideal length: **30–60 characters** (up to 70 max, ~580–600 px).
-  - If longer, automatically **trim less important parts**, keeping the main keyword phrase at the beginning.
-  - Meta title format:  
-    `"[main keyword or topic] | Адвокат Поддяча Юлія Юріївна"`.
-  - H1 (from `Blog.title`) should be **short and natural**, without the brand name, **10–70 characters**.
-  - Avoid identical meta title and H1; they should be similar but not exact duplicates.
-
-- **Description (meta description):**
-
-  - Recommended length: **120–160 characters**.
-  - Should be a meaningful sentence containing the main keyword at the beginning.
-  - Avoid filler phrases like “In this article you will learn…”.
-  - Use action verbs (“find out”, “check”, “apply”) to increase CTR.
-
-- **Keywords:**
-
-  - Use **5–8 real keyword phrases**, deduplicated and relevant.
-  - Avoid repetitive synonyms or keyword stuffing.
-  - Prefer medium-frequency, intent-focused phrases.
-
-- **Canonical:**
-
-  - Must **always end with a trailing slash `/`**.
-  - One unique canonical per page.
-
-- **Structured Data (JSON-LD):**
-
-  - Required entities: `BreadcrumbList`, `WebPage`, and `BlogPosting`.
-  - `WebPage.name` = short, clear title **without brand**.
-  - `BlogPosting.headline` = same as visible H1.
-  - `description` and `keywords` must match the meta tags.
-  - Always include: `author`, `publisher`, `mainEntityOfPage`, `isPartOf`.
-
-- **Headings (H1–H3 hierarchy):**
-
-  - H1 = main topic (comes from component).
-  - H2–H3 = logical hierarchy, no level skipping.
-  - Naturally include keywords in headings (1–2 occurrences maximum).
-  - Only one H1 per page.
-
-- **Image alt attributes:**
-
-  - If images are present, provide short, descriptive alt text (<100 chars).
-  - Avoid using words like “image” or “photo” in alt text.
-
-- **Internal linking:**
-
-  - Preserve internal links between posts when provided.
-  - Use meaningful anchor text (e.g., “learn more about pension recalculation” instead of “click here”).
-
-- **Sitemap and lastmod:**
-
-  - New posts: `<lastmod>` = today (Europe/Kyiv).
-  - For `/blog/`: only update `<lastmod>`, do NOT create duplicates.
-  - Default values: `<changefreq>monthly</changefreq>`, `<priority>0.7</priority>`.
-
-- **Avoid:**
-  - `<iframe>`, `<script>`, `<meta refresh>`, or `nofollow` attributes unless explicitly required.
-  - Empty fields, placeholder comments (`TODO`), or redundant JSON-LD keys.
-  - Duplicate meta titles or descriptions across different posts.
