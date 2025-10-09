@@ -17,6 +17,15 @@ export const blogs = [
       'Пояснюємо, як підтвердити страховий стаж без трудової книжки.',
   },
   {
+    title:
+      'Дострокове призначення пенсії для дружин, чоловіків та батьків загиблих військовослужбовців',
+    slug: 'dostrokove-pryznachennia-pensii-dlia-druzhyn-cholovikiv-ta-batkiv-zahyblykh-viiskovosluzhbovtsiv',
+    src: 'https://www.youtube.com/embed/1wFY8VGEdfo',
+    date: '2025-04-19',
+    description:
+      'Дострокова пенсія для родин загиблих військовослужбовців: умови статті 115 Закону №1058-IV, страховий стаж та необхідні документи.',
+  },
+  {
     title: 'Яка максимальна пенсія у 2025 році?',
     slug: 'yaka-maksymalna-pensiia-u-2025',
     src: 'https://www.youtube.com/embed/FZBqCZjdqjU',
