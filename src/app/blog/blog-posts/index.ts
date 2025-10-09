@@ -18,6 +18,15 @@ export const blogs = [
   },
   {
     title:
+      'Дострокове призначення пенсії для осіб з інвалідністю внаслідок захисту Батьківщини',
+    slug: 'dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny',
+    src: 'https://www.youtube.com/embed/26y0Thp3jRQ',
+    date: '2025-04-22',
+    description:
+      'Дострокова пенсія для осіб з інвалідністю внаслідок захисту Батьківщини: умови статті 115 Закону №1058-IV, страховий стаж та перелік обов’язкових документів.',
+  },
+  {
+    title:
       'Дострокове призначення пенсії для дружин, чоловіків та батьків загиблих військовослужбовців',
     slug: 'dostrokove-pryznachennia-pensii-dlia-druzhyn-cholovikiv-ta-batkiv-zahyblykh-viiskovosluzhbovtsiv',
     src: 'https://www.youtube.com/embed/1wFY8VGEdfo',

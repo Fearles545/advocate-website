@@ -4,6 +4,7 @@ import { khto_maie_pravo_na_pensiiu_za_vikom_u_2025 } from './blog-posts/posts/k
 import { komu_pererakhuiut_pensii_1_kvitnia_2025 } from './blog-posts/posts/komu-pererakhuiut-pensii-1-kvitnia-2025.seo';
 import { yaka_maksymalna_pensiia_u_2025 } from './blog-posts/posts/yaka-maksymalna-pensiia-u-2025.seo';
 import { dostrokove_pryznachennia_pensii_dlia_druzhyn_cholovikiv_ta_batkiv_zahyblykh_viiskovosluzhbovtsiv } from './blog-posts/posts/dostrokove-pryznachennia-pensii-dlia-druzhyn-cholovikiv-ta-batkiv-zahyblykh-viiskovosluzhbovtsiv.seo';
+import { dostrokove_pryznachennia_pensii_dlia_osib_z_invalidnistiu_vnaslidok_zakhystu_batkivshchyny } from './blog-posts/posts/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny.seo';
 import { pravo_uchasnykiv_boiovykh_dii_ato_ta_oos_na_dostrokove_pryznachennia_pensii } from './blog-posts/posts/pravo-uchasnykiv-boiovykh-dii-ato-ta-oos-na-dostrokove-pryznachennia-pensii.seo';
 import { shcho_take_spysok_1 } from './blog-posts/posts/shcho-take-spysok-1.seo';
 import { pensiia_dlia_cholovikiv_iaki_pratsiuvaly_za_spyskom_1 } from './blog-posts/posts/pensiia-dlia-cholovikiv-iaki-pratsiuvaly-za-spyskom-1.seo';
@@ -20,6 +21,7 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...komu_pererakhuiut_pensii_1_kvitnia_2025,
   ...yaka_maksymalna_pensiia_u_2025,
   ...dostrokove_pryznachennia_pensii_dlia_druzhyn_cholovikiv_ta_batkiv_zahyblykh_viiskovosluzhbovtsiv,
+  ...dostrokove_pryznachennia_pensii_dlia_osib_z_invalidnistiu_vnaslidok_zakhystu_batkivshchyny,
   ...pravo_uchasnykiv_boiovykh_dii_ato_ta_oos_na_dostrokove_pryznachennia_pensii,
   ...shcho_take_spysok_1,
   ...pensiia_dlia_cholovikiv_iaki_pratsiuvaly_za_spyskom_1,
