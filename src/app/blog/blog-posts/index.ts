@@ -41,6 +41,14 @@ export const blogs = [
     date: '2025-04-18',
   },
   {
+    title: 'Які вимоги до призначення пенсії за Списком №2?',
+    slug: 'yaki-vymohy-do-pryznachennia-pensii-za-spyskom-2',
+    src: 'https://www.youtube.com/embed/98MWMHpSnb0',
+    date: '2025-04-14',
+    description:
+      'Які вимоги до призначення пенсії за Списком №2: чинні редакції переліку, необхідний стаж для жінок і чоловіків та зменшення пенсійного віку.',
+  },
+  {
     title:
       'Право учасників бойових дій, АТО та ООС на дострокове призначення пенсії',
     slug: 'pravo-uchasnykiv-boiovykh-dii-ato-ta-oos-na-dostrokove-pryznachennia-pensii',
