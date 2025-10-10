@@ -58,22 +58,22 @@ export const dostrokove_pryznachennia_pensii_dlia_osib_z_invalidnistiu_vnaslidok
             {
               '@type': 'WebPage',
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-зakhystu-batkivshchyny/#webpage',
+                'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny/#webpage',
               name: 'Дострокове призначення пенсії для осіб з інвалідністю внаслідок захисту Батьківщини',
-              url: 'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-зakhystu-batkivshchyny/',
+              url: 'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny/',
               inLanguage: 'uk-UA',
               isPartOf: {
                 '@id': 'https://www.advocate-pensia.com.ua/#website',
               },
               breadcrumb: {
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-зakhystu-batkivshchyny/#breadcrumbs',
+                  'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny/#breadcrumbs',
               },
             },
             {
               '@type': 'BlogPosting',
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-зakhystu-batkivshchyny/#article',
+                'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny/#article',
               headline:
                 'Дострокове призначення пенсії для осіб з інвалідністю внаслідок захисту Батьківщини',
               description:
@@ -95,11 +95,11 @@ export const dostrokove_pryznachennia_pensii_dlia_osib_z_invalidnistiu_vnaslidok
               inLanguage: 'uk-UA',
               isPartOf: {
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-зakhystu-batkivshchyny/#webpage',
+                  'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny/#webpage',
               },
               mainEntityOfPage: {
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-зakhystu-batkivshchyny/#webpage',
+                  'https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny/#webpage',
               },
               keywords: [
                 'дострокова пенсія',
