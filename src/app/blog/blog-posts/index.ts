@@ -27,6 +27,15 @@ export const blogs = [
   },
   {
     title:
+      'Право жінок, які народили та виховали п’ятьох дітей, на дострокове призначення пенсії',
+    slug: 'pravo-zhinok-yaki-narodyly-ta-vykhovaly-piatokh-ditei-na-dostrokove-pryznachennia-pensii',
+    src: 'https://www.youtube.com/embed/FJfuO3tlFhA',
+    date: '2025-04-20',
+    description:
+      'Право багатодітних матерів на дострокову пенсію за п. 3 ч. 1 ст. 115 Закону №1058-IV: умови, зарахування догляду до стажу та перелік документів.',
+  },
+  {
+    title:
       'Дострокове призначення пенсії для дружин, чоловіків та батьків загиблих військовослужбовців',
     slug: 'dostrokove-pryznachennia-pensii-dlia-druzhyn-cholovikiv-ta-batkiv-zahyblykh-viiskovosluzhbovtsiv',
     src: 'https://www.youtube.com/embed/1wFY8VGEdfo',
