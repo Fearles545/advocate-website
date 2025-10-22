@@ -27,6 +27,15 @@ export const blogs = [
   },
   {
     title:
+      'Право батька на дострокове призначення пенсії у разі виховання п’ятьох дітей або дитини з інвалідністю',
+    slug: 'pravo-batka-na-dostrokove-pryznachennia-pensii-u-razi-vykhovannia-piatokh-ditei-abo-dytyny-z-invalidnistiu',
+    src: 'https://www.youtube.com/embed/RCpPnUp2S3I',
+    date: '2025-04-21',
+    description:
+      'Як батькові отримати дострокову пенсію за виховання п’ятьох дітей або дитини з інвалідністю: умови статті 115 Закону №1058-IV, необхідний стаж і підтвердні документи.',
+  },
+  {
+    title:
       'Право жінок, які народили та виховали п’ятьох дітей, на дострокове призначення пенсії',
     slug: 'pravo-zhinok-yaki-narodyly-ta-vykhovaly-piatokh-ditei-na-dostrokove-pryznachennia-pensii',
     src: 'https://www.youtube.com/embed/FJfuO3tlFhA',
