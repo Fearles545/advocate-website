@@ -18,6 +18,15 @@ export const blogs = [
   },
   {
     title:
+      'Особливості призначення пенсії матері особи з інвалідністю з дитинства та тяжко хворих дітей',
+    slug: 'osoblyvosti-pryznachennia-pensii-materi-osoby-z-invalidnistiu-z-dytynstva-ta-tiazhko-khvorikh-ditei',
+    src: 'https://www.youtube.com/embed/Rutujf0I5oQ',
+    date: '2025-04-24',
+    description:
+      'Дострокова пенсія матері дитини з інвалідністю або тяжко хворої: вимоги 50 років, 15 років стажу, медичні докази та строки звернення.',
+  },
+  {
+    title:
       'Дострокове призначення пенсії для осіб з інвалідністю внаслідок захисту Батьківщини',
     slug: 'dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny',
     src: 'https://www.youtube.com/embed/26y0Thp3jRQ',

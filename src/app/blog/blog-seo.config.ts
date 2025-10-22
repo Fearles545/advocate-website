@@ -6,6 +6,7 @@ import { yaki_vymohy_do_pryznachennia_pensii_za_spyskom_2 } from './blog-posts/p
 import { yaka_maksymalna_pensiia_u_2025 } from './blog-posts/posts/yaka-maksymalna-pensiia-u-2025.seo';
 import { pravo_zhinok_yaki_narodyly_ta_vykhovaly_piatokh_ditei_na_dostrokove_pryznachennia_pensii } from './blog-posts/posts/pravo-zhinok-yaki-narodyly-ta-vykhovaly-piatokh-ditei-na-dostrokove-pryznachennia-pensii.seo';
 import { pravo_batka_na_dostrokove_pryznachennia_pensii_u_razi_vykhovannia_piatokh_ditei_abo_dytyny_z_invalidnistiu } from './blog-posts/posts/pravo-batka-na-dostrokove-pryznachennia-pensii-u-razi-vykhovannia-piatokh-ditei-abo-dytyny-z-invalidnistiu.seo';
+import { osoblyvosti_pryznachennia_pensii_materi_osoby_z_invalidnistiu_z_dytynstva_ta_tiazhko_khvorikh_ditei } from './blog-posts/posts/osoblyvosti-pryznachennia-pensii-materi-osoby-z-invalidnistiu-z-dytynstva-ta-tiazhko-khvorikh-ditei.seo';
 import { dostrokove_pryznachennia_pensii_dlia_druzhyn_cholovikiv_ta_batkiv_zahyblykh_viiskovosluzhbovtsiv } from './blog-posts/posts/dostrokove-pryznachennia-pensii-dlia-druzhyn-cholovikiv-ta-batkiv-zahyblykh-viiskovosluzhbovtsiv.seo';
 import { dostrokove_pryznachennia_pensii_dlia_osib_z_invalidnistiu_vnaslidok_zakhystu_batkivshchyny } from './blog-posts/posts/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny.seo';
 import { pravo_uchasnykiv_boiovykh_dii_ato_ta_oos_na_dostrokove_pryznachennia_pensii } from './blog-posts/posts/pravo-uchasnykiv-boiovykh-dii-ato-ta-oos-na-dostrokove-pryznachennia-pensii.seo';
@@ -26,6 +27,7 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...yaka_maksymalna_pensiia_u_2025,
   ...pravo_zhinok_yaki_narodyly_ta_vykhovaly_piatokh_ditei_na_dostrokove_pryznachennia_pensii,
   ...pravo_batka_na_dostrokove_pryznachennia_pensii_u_razi_vykhovannia_piatokh_ditei_abo_dytyny_z_invalidnistiu,
+  ...osoblyvosti_pryznachennia_pensii_materi_osoby_z_invalidnistiu_z_dytynstva_ta_tiazhko_khvorikh_ditei,
   ...dostrokove_pryznachennia_pensii_dlia_druzhyn_cholovikiv_ta_batkiv_zahyblykh_viiskovosluzhbovtsiv,
   ...dostrokove_pryznachennia_pensii_dlia_osib_z_invalidnistiu_vnaslidok_zakhystu_batkivshchyny,
   ...pravo_uchasnykiv_boiovykh_dii_ato_ta_oos_na_dostrokove_pryznachennia_pensii,
