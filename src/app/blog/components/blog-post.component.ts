@@ -48,7 +48,7 @@ import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.compo
           </h1>
 
           <div class="subtitle">
-            @let formattedDate = blog()!.date | date: 'dd-MM-yyyy';
+            @let formattedDate = blog().date | date: 'dd-MM-yyyy';
 
             <time [attr.datetime]="formattedDate">{{ formattedDate }}</time>
 
@@ -56,7 +56,9 @@ import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.compo
           </div>
         </header>
 
-        <app-blog-iframe [src]="blog()!.src" [title]="blog()!.title" />
+        @if (blog().src) {
+          <app-blog-iframe [src]="blog().src" [title]="blog().title" />
+        }
 
         <section
           class="blog-post-section"
