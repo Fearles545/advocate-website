@@ -27,6 +27,15 @@ export const blogs = [
   },
   {
     title:
+      'Дострокова пенсія жінкам, які працюють у сільському господарстві та виховали п’ятьох і більше дітей',
+    slug: 'dostrokova-pensiia-zhinkam-iaki-pratsiuiut-u-silskomu-hospodarstvi-ta-vykhovaly-piatokh-i-bilshe-ditei',
+    src: 'https://www.youtube.com/embed/3ytTENHF1xg',
+    date: '2025-04-25',
+    description:
+      'Як скористатися пунктом 7 ч. 2 ст. 114 Закону №1058-IV: які умови, документи та підтвердження працевлаштування потрібні аграрним матерям п’ятьох дітей.',
+  },
+  {
+    title:
       'Особливості призначення пенсії матері особи з інвалідністю з дитинства та тяжко хворих дітей',
     slug: 'osoblyvosti-pryznachennia-pensii-materi-osoby-z-invalidnistiu-z-dytynstva-ta-tiazhko-khvorikh-ditei',
     src: 'https://www.youtube.com/embed/Rutujf0I5oQ',
