@@ -97,7 +97,7 @@ a:hover {
 }
 
 .blog-post-section {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.25;
   margin: 0;
@@ -118,7 +118,8 @@ a:hover {
   h6 {
     margin: 0;
   }
-  ul {
+  ul,
+  ol {
     padding-left: 20px;
   }
   .law-citation {

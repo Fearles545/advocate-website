@@ -46,6 +46,13 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/nepravylna-indeksatsiia-pensii-pryznachenykh-z-2020-roku-shcho-zminyla-postanova-velykoi-palaty-vs-i-iak-diati-pensioneru/</loc>
+    <lastmod>2025-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://www.advocate-pensia.com.ua/blog/dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny/</loc>
     <lastmod>2025-10-10</lastmod>
     <changefreq>monthly</changefreq>

@@ -18,6 +18,15 @@ export const blogs = [
   },
   {
     title:
+      'Неправильна індексація пенсій, призначених з 2020 року: що змінила постанова Великої Палати ВС і як діяти пенсіонеру',
+    slug: 'nepravylna-indeksatsiia-pensii-pryznachenykh-z-2020-roku-shcho-zminyla-postanova-velykoi-palaty-vs-i-iak-diati-pensioneru',
+    src: '',
+    date: '2025-04-25',
+    description:
+      'Чому Велика Палата ВС визнала незаконною фіксовану доплату 100–135 грн, які помилки допустив ПФУ та як крок за кроком добитися правильного перерахунку пенсії.',
+  },
+  {
+    title:
       'Особливості призначення пенсії матері особи з інвалідністю з дитинства та тяжко хворих дітей',
     slug: 'osoblyvosti-pryznachennia-pensii-materi-osoby-z-invalidnistiu-z-dytynstva-ta-tiazhko-khvorikh-ditei',
     src: 'https://www.youtube.com/embed/Rutujf0I5oQ',

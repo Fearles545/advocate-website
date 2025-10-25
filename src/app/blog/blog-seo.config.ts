@@ -18,6 +18,7 @@ import { shchodo_zarakhuvannia_periodiv_ubd_ato_oos } from './blog-posts/posts/s
 import { yak_pidvyshchyty_pensiiu_za_vysluhu_rokiv } from './blog-posts/posts/yak-pidvyshchyty-pensiiu-za-vysluhu-rokiv.seo';
 import { shcho_robyty_iakshcho_pensiinyi_fond_ne_zarakhovuie_periody_roboty_do_strakhovoho_stazhu } from './blog-posts/posts/shcho-robyty-iakshcho-pensiinyi-fond-ne-zarakhovuie-periody-roboty-do-strakhovoho-stazhu.seo';
 import { yak_zarakhovuietsia_stazh_nabutyi_u_rosiiskiy_federatsii } from './blog-posts/posts/yak-zarakhovuietsia-stazh-nabutyi-u-rosiiskiy-federatsii.seo';
+import { nepravylna_indeksatsiia_pensii_pryznachenykh_z_2020_roku_shcho_zminyla_postanova_velykoi_palaty_vs_i_iak_diati_pensioneru } from './blog-posts/posts/nepravylna-indeksatsiia-pensii-pryznachenykh-z-2020-roku-shcho-zminyla-postanova-velykoi-palaty-vs-i-iak-diati-pensioneru.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
@@ -39,4 +40,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...yak_pidvyshchyty_pensiiu_za_vysluhu_rokiv,
   ...shcho_robyty_iakshcho_pensiinyi_fond_ne_zarakhovuie_periody_roboty_do_strakhovoho_stazhu,
   ...yak_zarakhovuietsia_stazh_nabutyi_u_rosiiskiy_federatsii,
+  ...nepravylna_indeksatsiia_pensii_pryznachenykh_z_2020_roku_shcho_zminyla_postanova_velykoi_palaty_vs_i_iak_diati_pensioneru,
 };
