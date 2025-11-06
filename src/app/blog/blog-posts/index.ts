@@ -9,6 +9,32 @@ export interface Blog {
 
 export const blogs = [
   {
+    title: 'Щодо зарахування періодів УБД, АТО, ООС',
+    slug: 'shchodo-zarakhuvannia-periodiv-ubd-ato-oos',
+    src: 'https://www.youtube.com/embed/Y3Knuv9Rnew',
+    date: '2025-06-30',
+    description:
+      'Пояснюємо, як підтвердити страховий стаж без трудової книжки.',
+  },
+  {
+    title:
+      'Хто має право на отримання грошової допомоги у розмірі десяти місячних пенсій',
+    slug: 'khto-maie-pravo-na-otrymannia-hroshovoi-dopomohy-u-rozmiri-desiaty-misiachnykh-pensii',
+    src: 'https://www.youtube.com/embed/wr8ExnqfFyE',
+    date: '2025-04-28',
+    description:
+      "Працівники освіти, охорони здоров'я, культури та соцзахисту можуть отримати грошову допомогу у розмірі 10 місячних пенсій. Умови: 30-35 років стажу, робота на пенсійний вік, жодної попередньої пенсії.",
+  },
+  {
+    title:
+      'Пенсія незалежно від віку з 1 січня 2028 року за наявності 40 років страхового стажу',
+    slug: 'pensiia-nezalezhno-vid-viku-z-1-sichnia-2028-roku-za-naiavnosti-40-rokiv-strakhovoho-stazhu',
+    src: 'https://www.youtube.com/embed/K3dfq-4SE7Y',
+    date: '2025-04-27',
+    description:
+      'З 1 січня 2028 року пенсію можна оформити незалежно від віку при наявності 40 років страхового стажу. Як підготуватися та перевірити свій стаж вже зараз.',
+  },
+  {
     title:
       'Робота в медичних закладах, яка зараховується до стажу у подвійному розмірі: що потрібно знати після 2004 року',
     slug: 'robota-v-medychnykh-zakladakh-iaka-zarakhovuietsia-do-stazhu-u-podviinomu-rozmiri-shcho-potribno-znaty-pislia-2004-roku',
@@ -16,14 +42,6 @@ export const blogs = [
     date: '2025-04-26',
     description:
       'Робота в інфекційних, реанімаційних, психіатричних та патологоанатомічних відділеннях зараховується до стажу у подвійному розмірі навіть після 2004 року. Як оскаржити відмову ПФУ.',
-  },
-  {
-    title: 'Щодо зарахування періодів УБД, АТО, ООС',
-    slug: 'shchodo-zarakhuvannia-periodiv-ubd-ato-oos',
-    src: 'https://www.youtube.com/embed/Y3Knuv9Rnew',
-    date: '2025-06-30',
-    description:
-      'Пояснюємо, як підтвердити страховий стаж без трудової книжки.',
   },
   {
     title:
