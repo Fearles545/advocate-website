@@ -20,6 +20,7 @@ import { shcho_robyty_iakshcho_pensiinyi_fond_ne_zarakhovuie_periody_roboty_do_s
 import { yak_zarakhovuietsia_stazh_nabutyi_u_rosiiskiy_federatsii } from './blog-posts/posts/yak-zarakhovuietsia-stazh-nabutyi-u-rosiiskiy-federatsii.seo';
 import { nepravylna_indeksatsiia_pensii_pryznachenykh_z_2020_roku_shcho_zminyla_postanova_velykoi_palaty_vs_i_iak_diati_pensioneru } from './blog-posts/posts/nepravylna-indeksatsiia-pensii-pryznachenykh-z-2020-roku-shcho-zminyla-postanova-velykoi-palaty-vs-i-iak-diati-pensioneru.seo';
 import { dostrokova_pensiia_zhinkam_iaki_pratsiuiut_u_silskomu_hospodarstvi_ta_vykhovaly_piatokh_i_bilshe_ditei } from './blog-posts/posts/dostrokova-pensiia-zhinkam-iaki-pratsiuiut-u-silskomu-hospodarstvi-ta-vykhovaly-piatokh-i-bilshe-ditei.seo';
+import { robota_v_medychnykh_zakladakh_iaka_zarakhovuietsia_do_stazhu_u_podviinomu_rozmiri_shcho_potribno_znaty_pislia_2004_roku } from './blog-posts/posts/robota-v-medychnykh-zakladakh-iaka-zarakhovuietsia-do-stazhu-u-podviinomu-rozmiri-shcho-potribno-znaty-pislia-2004-roku.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
@@ -43,4 +44,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...yak_zarakhovuietsia_stazh_nabutyi_u_rosiiskiy_federatsii,
   ...nepravylna_indeksatsiia_pensii_pryznachenykh_z_2020_roku_shcho_zminyla_postanova_velykoi_palaty_vs_i_iak_diati_pensioneru,
   ...dostrokova_pensiia_zhinkam_iaki_pratsiuiut_u_silskomu_hospodarstvi_ta_vykhovaly_piatokh_i_bilshe_ditei,
+  ...robota_v_medychnykh_zakladakh_iaka_zarakhovuietsia_do_stazhu_u_podviinomu_rozmiri_shcho_potribno_znaty_pislia_2004_roku,
 };

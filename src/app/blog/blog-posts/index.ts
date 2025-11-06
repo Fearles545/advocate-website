@@ -9,6 +9,15 @@ export interface Blog {
 
 export const blogs = [
   {
+    title:
+      'Робота в медичних закладах, яка зараховується до стажу у подвійному розмірі: що потрібно знати після 2004 року',
+    slug: 'robota-v-medychnykh-zakladakh-iaka-zarakhovuietsia-do-stazhu-u-podviinomu-rozmiri-shcho-potribno-znaty-pislia-2004-roku',
+    src: 'https://www.youtube.com/embed/m3ir28bMeug',
+    date: '2025-04-26',
+    description:
+      'Робота в інфекційних, реанімаційних, психіатричних та патологоанатомічних відділеннях зараховується до стажу у подвійному розмірі навіть після 2004 року. Як оскаржити відмову ПФУ.',
+  },
+  {
     title: 'Щодо зарахування періодів УБД, АТО, ООС',
     slug: 'shchodo-zarakhuvannia-periodiv-ubd-ato-oos',
     src: 'https://www.youtube.com/embed/Y3Knuv9Rnew',
