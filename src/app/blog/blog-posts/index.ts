@@ -17,6 +17,14 @@ export const blogs = [
       'Пояснюємо, як підтвердити страховий стаж без трудової книжки.',
   },
   {
+    title: 'Необхідний страховий стаж для призначення пенсії за віком',
+    slug: 'neobkhidnyi-strakhovyi-stazh-dlia-pryznachennia-pensii-za-vikom',
+    src: 'https://www.youtube.com/embed/mJLpN3urFNc',
+    date: '2025-04-29',
+    description:
+      'Вимоги до страхового стажу для пенсії за віком у 2025-2028 роках: 32-35 років для виходу у 60, 22-25 років для 63 років, 15 років для 65. З 2028 року — пенсія незалежно від віку при 40 роках стажу.',
+  },
+  {
     title:
       'Хто має право на отримання грошової допомоги у розмірі десяти місячних пенсій',
     slug: 'khto-maie-pravo-na-otrymannia-hroshovoi-dopomohy-u-rozmiri-desiaty-misiachnykh-pensii',

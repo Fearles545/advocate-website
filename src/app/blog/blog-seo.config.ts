@@ -23,6 +23,7 @@ import { dostrokova_pensiia_zhinkam_iaki_pratsiuiut_u_silskomu_hospodarstvi_ta_v
 import { robota_v_medychnykh_zakladakh_iaka_zarakhovuietsia_do_stazhu_u_podviinomu_rozmiri_shcho_potribno_znaty_pislia_2004_roku } from './blog-posts/posts/robota-v-medychnykh-zakladakh-iaka-zarakhovuietsia-do-stazhu-u-podviinomu-rozmiri-shcho-potribno-znaty-pislia-2004-roku.seo';
 import { pensiia_nezalezhno_vid_viku_z_1_sichnia_2028_roku_za_naiavnosti_40_rokiv_strakhovoho_stazhu } from './blog-posts/posts/pensiia-nezalezhno-vid-viku-z-1-sichnia-2028-roku-za-naiavnosti-40-rokiv-strakhovoho-stazhu.seo';
 import { khto_maie_pravo_na_otrymannia_hroshovoi_dopomohy_u_rozmiri_desiaty_misiachnykh_pensii } from './blog-posts/posts/khto-maie-pravo-na-otrymannia-hroshovoi-dopomohy-u-rozmiri-desiaty-misiachnykh-pensii.seo';
+import { neobkhidnyi_strakhovyi_stazh_dlia_pryznachennia_pensii_za_vikom } from './blog-posts/posts/neobkhidnyi-strakhovyi-stazh-dlia-pryznachennia-pensii-za-vikom.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
@@ -49,4 +50,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...robota_v_medychnykh_zakladakh_iaka_zarakhovuietsia_do_stazhu_u_podviinomu_rozmiri_shcho_potribno_znaty_pislia_2004_roku,
   ...pensiia_nezalezhno_vid_viku_z_1_sichnia_2028_roku_za_naiavnosti_40_rokiv_strakhovoho_stazhu,
   ...khto_maie_pravo_na_otrymannia_hroshovoi_dopomohy_u_rozmiri_desiaty_misiachnykh_pensii,
+  ...neobkhidnyi_strakhovyi_stazh_dlia_pryznachennia_pensii_za_vikom,
 };
