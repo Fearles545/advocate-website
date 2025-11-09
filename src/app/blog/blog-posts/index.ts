@@ -17,6 +17,15 @@ export const blogs = [
       'Пояснюємо, як підтвердити страховий стаж без трудової книжки.',
   },
   {
+    title:
+      'Призначення пільгової пенсії незалежно від віку для працівників гірничої та металургійної галузей',
+    slug: 'pryznachennia-pilhovoi-pensii-nezalezhno-vid-viku-dlia-pratsivnykiv-hirnychoi-ta-metalurhiinoi-haluzei',
+    src: 'https://www.youtube.com/embed/xpv3CTVfPvo',
+    date: '2025-04-30',
+    description:
+      'Пільгова пенсія незалежно від віку для працівників гірничих та металургійних виробництв: 25 років стажу для загальних професій, 20 років для провідних. Зниження віку на 1 рік за кожен рік роботи.',
+  },
+  {
     title: 'Необхідний страховий стаж для призначення пенсії за віком',
     slug: 'neobkhidnyi-strakhovyi-stazh-dlia-pryznachennia-pensii-za-vikom',
     src: 'https://www.youtube.com/embed/mJLpN3urFNc',
