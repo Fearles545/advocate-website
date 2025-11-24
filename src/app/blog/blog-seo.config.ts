@@ -25,6 +25,7 @@ import { pensiia_nezalezhno_vid_viku_z_1_sichnia_2028_roku_za_naiavnosti_40_roki
 import { khto_maie_pravo_na_otrymannia_hroshovoi_dopomohy_u_rozmiri_desiaty_misiachnykh_pensii } from './blog-posts/posts/khto-maie-pravo-na-otrymannia-hroshovoi-dopomohy-u-rozmiri-desiaty-misiachnykh-pensii.seo';
 import { neobkhidnyi_strakhovyi_stazh_dlia_pryznachennia_pensii_za_vikom } from './blog-posts/posts/neobkhidnyi-strakhovyi-stazh-dlia-pryznachennia-pensii-za-vikom.seo';
 import { pryznachennia_pilhovoi_pensii_nezalezhno_vid_viku_dlia_pratsivnykiv_hirnychoi_ta_metalurhiinoi_haluzei } from './blog-posts/posts/pryznachennia-pilhovoi-pensii-nezalezhno-vid-viku-dlia-pratsivnykiv-hirnychoi-ta-metalurhiinoi-haluzei.seo';
+import { iak_zarakhovuietsia_period_navchannia_do_strakhovoho_stazhu } from './blog-posts/posts/iak-zarakhovuietsia-period-navchannia-do-strakhovoho-stazhu.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
@@ -53,4 +54,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...khto_maie_pravo_na_otrymannia_hroshovoi_dopomohy_u_rozmiri_desiaty_misiachnykh_pensii,
   ...neobkhidnyi_strakhovyi_stazh_dlia_pryznachennia_pensii_za_vikom,
   ...pryznachennia_pilhovoi_pensii_nezalezhno_vid_viku_dlia_pratsivnykiv_hirnychoi_ta_metalurhiinoi_haluzei,
+  ...iak_zarakhovuietsia_period_navchannia_do_strakhovoho_stazhu,
 };

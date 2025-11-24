@@ -17,6 +17,14 @@ export const blogs = [
       'Пояснюємо, як підтвердити страховий стаж без трудової книжки.',
   },
   {
+    title: 'Як зараховується період навчання до страхового стажу',
+    slug: 'iak-zarakhovuietsia-period-navchannia-do-strakhovoho-stazhu',
+    src: 'https://www.youtube.com/embed/KVWTJGFFbkc',
+    date: '2025-05-03',
+    description:
+      'Період навчання до 2004 року на денній формі зараховується до страхового стажу без внесків. Після 2004 року — лише при сплаті ЄСВ. Незакінчене навчання теж враховується при наявності довідки.',
+  },
+  {
     title:
       'Призначення пільгової пенсії незалежно від віку для працівників гірничої та металургійної галузей',
     slug: 'pryznachennia-pilhovoi-pensii-nezalezhno-vid-viku-dlia-pratsivnykiv-hirnychoi-ta-metalurhiinoi-haluzei',
