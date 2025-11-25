@@ -9,6 +9,15 @@ export interface Blog {
 
 export const blogs = [
   {
+    title:
+      'Коли можна подати заяву на призначення пенсії за віком та який строк для подання додаткових документів',
+    slug: 'koly-mozhna-podaty-zaiavu-na-pryznachennia-pensii-za-vikom-ta-iakyi-strok-dlia-podannia-dodatkovykh-dokumentiv',
+    src: ['https://www.youtube.com/embed/B7iPkYXihNo'],
+    date: '2025-11-25',
+    description:
+      'Пенсію призначають з дня після досягнення пенсійного віку, якщо звернутися протягом 3 місяців. Можна подати заяву за місяць до народження. На донесення документів — 3 місяці без втрати дати звернення.',
+  },
+  {
     title: 'Як зараховується період навчання до пільгового стажу',
     slug: 'iak-zarakhovuietsia-period-navchannia-do-pilhovoho-stazhu',
     src: [

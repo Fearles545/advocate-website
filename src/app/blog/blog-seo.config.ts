@@ -27,6 +27,7 @@ import { neobkhidnyi_strakhovyi_stazh_dlia_pryznachennia_pensii_za_vikom } from 
 import { pryznachennia_pilhovoi_pensii_nezalezhno_vid_viku_dlia_pratsivnykiv_hirnychoi_ta_metalurhiinoi_haluzei } from './blog-posts/posts/pryznachennia-pilhovoi-pensii-nezalezhno-vid-viku-dlia-pratsivnykiv-hirnychoi-ta-metalurhiinoi-haluzei.seo';
 import { iak_zarakhovuietsia_period_navchannia_do_strakhovoho_stazhu } from './blog-posts/posts/iak-zarakhovuietsia-period-navchannia-do-strakhovoho-stazhu.seo';
 import { iak_zarakhovuietsia_period_navchannia_do_pilhovoho_stazhu } from './blog-posts/posts/iak-zarakhovuietsia-period-navchannia-do-pilhovoho-stazhu.seo';
+import { koly_mozhna_podaty_zaiavu_na_pryznachennia_pensii_za_vikom_ta_iakyi_strok_dlia_podannia_dodatkovykh_dokumentiv } from './blog-posts/posts/koly-mozhna-podaty-zaiavu-na-pryznachennia-pensii-za-vikom-ta-iakyi-strok-dlia-podannia-dodatkovykh-dokumentiv.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
@@ -57,4 +58,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...pryznachennia_pilhovoi_pensii_nezalezhno_vid_viku_dlia_pratsivnykiv_hirnychoi_ta_metalurhiinoi_haluzei,
   ...iak_zarakhovuietsia_period_navchannia_do_strakhovoho_stazhu,
   ...iak_zarakhovuietsia_period_navchannia_do_pilhovoho_stazhu,
+  ...koly_mozhna_podaty_zaiavu_na_pryznachennia_pensii_za_vikom_ta_iakyi_strok_dlia_podannia_dodatkovykh_dokumentiv,
 };
