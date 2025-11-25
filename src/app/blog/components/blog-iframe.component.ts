@@ -1,4 +1,11 @@
-import { Component, PLATFORM_ID, computed, inject, input, signal } from '@angular/core';
+import {
+  Component,
+  PLATFORM_ID,
+  computed,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -18,9 +25,10 @@ import { isPlatformBrowser } from '@angular/common';
   selector: 'app-blog-iframe',
   imports: [MatProgressSpinnerModule, MatExpansionModule, SpinnerComponent],
   template: `
-    <mat-expansion-panel
-      [expanded]="isDesktop()"
-      style="
+    @for (item of computedSrc(); track item; let i = $index) {
+      <mat-expansion-panel
+        [expanded]="isDesktop()"
+        style="
         background-color: var(--color-container-bg);
         border: 1px solid var(--color-green);
         border-radius: 0.1rem;
@@ -28,45 +36,62 @@ import { isPlatformBrowser } from '@angular/common';
         margin: 0 auto;
         width: 100%;
       "
-    >
-      <mat-expansion-panel-header>
-        <mat-panel-title> Відео-версія блогу </mat-panel-title>
-      </mat-expansion-panel-header>
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Відео-версія блогу
 
-      <app-spinner [show]="isIframeLoading()" />
+            @if (computedSrc().length > 1) {
+              - {{ i + 1 }}
+            }
+          </mat-panel-title>
+        </mat-expansion-panel-header>
 
-      <iframe
-        style="
+        <app-spinner [show]="isIframeLoading()" />
+
+        <iframe
+          style="
           display: block;
           width: fit-content;
           margin: 0 auto;"
-        [width]="width()"
-        [height]="height()"
-        [src]="computedSrc()"
-        [title]="title()"
-        (load)="x($event)"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-      ></iframe>
-    </mat-expansion-panel>
+          [width]="width()"
+          [height]="height()"
+          [src]="item"
+          [title]="title()"
+          (load)="x($event)"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </mat-expansion-panel>
+    }
   `,
-  styles: ``,
+  styles: `
+    :host {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  `,
 })
 export class BlogIframeComponent {
   sanitizer = inject(DomSanitizer);
   private readonly platformId = inject(PLATFORM_ID);
   private readonly isBrowser = isPlatformBrowser(this.platformId);
-  private readonly initialDesktop = this.isBrowser ? window.innerWidth > 768 : false;
+  private readonly initialDesktop = this.isBrowser
+    ? window.innerWidth > 768
+    : false;
 
   width = input<number>(350);
   height = input<number>(600);
-  src = input.required<string>();
+  src = input.required<string[]>();
   title = input<string>();
 
   computedSrc = computed(() =>
-    this.sanitizer.bypassSecurityTrustResourceUrl(this.src())
+    this.src().map((item) =>
+      this.sanitizer.bypassSecurityTrustResourceUrl(item)
+    )
   );
 
   isIframeLoading = signal(true);

@@ -56,7 +56,7 @@ import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.compo
           </div>
         </header>
 
-        @if (blog().src) {
+        @if (blog().src[0]) {
           <app-blog-iframe [src]="blog().src" [title]="blog().title" />
         }
 
@@ -106,11 +106,6 @@ import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.compo
 
     .header-container {
       position: relative;
-    }
-
-    app-blog-iframe {
-      display: block;
-      width: 100%;
     }
 
     .blog-post-container {
