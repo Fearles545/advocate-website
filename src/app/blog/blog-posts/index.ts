@@ -37,6 +37,15 @@ export const blogs = [
       'Пояснюємо, як підтвердити страховий стаж без трудової книжки.',
   },
   {
+    title:
+      'Пільгова пенсія для трактористів-машиністів, безпосередньо зайнятих у виробництві сільськогосподарської продукції',
+    slug: 'pilhova-pensiia-dlia-traktorystiv-mashynistiv-bezposeredno-zainiatykh-u-vyrobnytstvi-silskohospodarskoi-produktsii',
+    src: ['https://www.youtube.com/embed/4Wf0J5HoMIw'],
+    date: '2025-05-05',
+    description:
+      'Пенсія для трактористів-машиністів з 55 років: до 2015 року — 25 років стажу (20 пільгового), після 2015 — 30 років (20 пільгового). Рішення КСУ 2020 року відновило старі норми, але ПФУ їх не застосовує без суду.',
+  },
+  {
     title: 'Як зараховується період навчання до страхового стажу',
     slug: 'iak-zarakhovuietsia-period-navchannia-do-strakhovoho-stazhu',
     src: ['https://www.youtube.com/embed/KVWTJGFFbkc'],
