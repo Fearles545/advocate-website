@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Пенсія на пільгових умовах за Списком №1 для чоловіків: порівняльний аналіз законів №1788-XII та №1058-IV',
+    slug: 'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
+    src: ['https://www.youtube.com/embed/kKqYkOchkPc'],
+    date: '2025-05-14',
+    description:
+      'Порівняльний аналіз законів №1788-XII та №1058-IV для призначення пільгової пенсії чоловікам за Списком №1. Вимоги до стажу, вік виходу та судова практика.',
+  },
+  {
+    title:
       'Пільгова пенсія водіям міського пасажирського транспорту (автобусів, тролейбусів, трамваїв) і великовагових автомобілів',
     slug: 'pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv',
     src: ['https://www.youtube.com/embed/mC1MOIZWPA8'],
