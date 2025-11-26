@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Пільгова пенсія для жінок, які працюють доярками, операторами машинного доїння або свинарками',
+    slug: 'pilhova-pensiia-dlia-zhinok-iaki-pratsiuiut-doiarkamy-operatoramy-mashynnoho-doinnia-abo-svynarkamy',
+    src: ['https://www.youtube.com/embed/4l1bpf4RCtQ'],
+    date: '2025-05-08',
+    description:
+      'Пенсія для доярок і свинарок: до 2015 року — з 50 років при 20 роках стажу, після 2015 — з 55 років. Рішення КСУ 2020 відновило старі норми, але ПФУ не застосовує без суду. Норми обслуговування КМУ не затверджені.',
+  },
+  {
+    title:
       'Пільгова пенсія для трактористів-машиністів, безпосередньо зайнятих у виробництві сільськогосподарської продукції',
     slug: 'pilhova-pensiia-dlia-traktorystiv-mashynistiv-bezposeredno-zainiatykh-u-vyrobnytstvi-silskohospodarskoi-produktsii',
     src: ['https://www.youtube.com/embed/4Wf0J5HoMIw'],

@@ -29,6 +29,7 @@ import { iak_zarakhovuietsia_period_navchannia_do_strakhovoho_stazhu } from './b
 import { iak_zarakhovuietsia_period_navchannia_do_pilhovoho_stazhu } from './blog-posts/posts/iak-zarakhovuietsia-period-navchannia-do-pilhovoho-stazhu.seo';
 import { koly_mozhna_podaty_zaiavu_na_pryznachennia_pensii_za_vikom_ta_iakyi_strok_dlia_podannia_dodatkovykh_dokumentiv } from './blog-posts/posts/koly-mozhna-podaty-zaiavu-na-pryznachennia-pensii-za-vikom-ta-iakyi-strok-dlia-podannia-dodatkovykh-dokumentiv.seo';
 import { pilhova_pensiia_dlia_traktorystiv_mashynistiv_bezposeredno_zainiatykh_u_vyrobnytstvi_silskohospodarskoi_produktsii } from './blog-posts/posts/pilhova-pensiia-dlia-traktorystiv-mashynistiv-bezposeredno-zainiatykh-u-vyrobnytstvi-silskohospodarskoi-produktsii.seo';
+import { pilhova_pensiia_dlia_zhinok_iaki_pratsiuiut_doiarkamy_operatoramy_mashynnoho_doinnia_abo_svynarkamy } from './blog-posts/posts/pilhova-pensiia-dlia-zhinok-iaki-pratsiuiut-doiarkamy-operatoramy-mashynnoho-doinnia-abo-svynarkamy.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
@@ -61,4 +62,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...iak_zarakhovuietsia_period_navchannia_do_pilhovoho_stazhu,
   ...koly_mozhna_podaty_zaiavu_na_pryznachennia_pensii_za_vikom_ta_iakyi_strok_dlia_podannia_dodatkovykh_dokumentiv,
   ...pilhova_pensiia_dlia_traktorystiv_mashynistiv_bezposeredno_zainiatykh_u_vyrobnytstvi_silskohospodarskoi_produktsii,
+  ...pilhova_pensiia_dlia_zhinok_iaki_pratsiuiut_doiarkamy_operatoramy_mashynnoho_doinnia_abo_svynarkamy,
 };
