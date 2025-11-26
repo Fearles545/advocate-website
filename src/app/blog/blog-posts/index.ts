@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Пільгова пенсія водіям міського пасажирського транспорту (автобусів, тролейбусів, трамваїв) і великовагових автомобілів',
+    slug: 'pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv',
+    src: ['https://www.youtube.com/embed/mC1MOIZWPA8'],
+    date: '2025-05-12',
+    description:
+      'Умови призначення пільгової пенсії водіям автобусів, тролейбусів і трамваїв. Порівняння законодавства, вимоги до стажу та судова практика.',
+  },
+  {
+    title:
       'Пільгова пенсія для жінок, які працюють доярками, операторами машинного доїння або свинарками',
     slug: 'pilhova-pensiia-dlia-zhinok-iaki-pratsiuiut-doiarkamy-operatoramy-mashynnoho-doinnia-abo-svynarkamy',
     src: ['https://www.youtube.com/embed/4l1bpf4RCtQ'],
