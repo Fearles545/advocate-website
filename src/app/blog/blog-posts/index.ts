@@ -37,6 +37,22 @@ export const blogs = [
       'Пояснюємо, як підтвердити страховий стаж без трудової книжки.',
   },
   {
+    title: 'Що таке фізична ідентифікація і як її проходжать?',
+    slug: 'shcho-take-fizychna-identyfikatsiia-i-iak-ii-prokhodzhat',
+    src: ['https://www.youtube.com/embed/8fng97h4pGk'],
+    date: '2025-06-12',
+    description:
+      'Процедура фізичної ідентифікації для пенсіонерів згідно Закону № 1058-IV. Способи проходження через Дія.Підпис, відеозвязок, банк або дипломатичну установу. Строки до 31 грудня.',
+  },
+  {
+    title: 'Підстави для припинення виплати пенсії',
+    slug: 'pidstavy-dlia-prypynennia-vyplaty-pensii',
+    src: ['https://www.youtube.com/embed/lRXyW1dQje0'],
+    date: '2025-06-09',
+    description:
+      'Вичерпний перелік підстав припинення виплати пенсії згідно зі статтею 49 Закону № 1058-IV. Недостовірні відомості, непроходження ідентифікації та неконституційність пункту про проживання за кордоном.',
+  },
+  {
     title:
       'Чи можна призначити пенсію в Україні громадянам, які тимчасово проживають за кордоном?',
     slug: 'chy-mozhna-pryznachyty-pensiiu-v-ukraini-hromadianam-iaki-tymchasovo-prozhyvaiut-za-kordonom',

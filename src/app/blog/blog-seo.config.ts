@@ -42,6 +42,8 @@ import { chy_mozhna_zbilshyty_rozmir_pensii_pereishovshi_z_pilhovoi_pensii_za_sp
 import { iak_zarakhovuietsia_pilhovyi_stazh_iakscho_pidpryiemstvo_znakhodytsia_na_okupovanii_terytorii_abo_v_raioni_boiovykh_dii } from './blog-posts/posts/iak-zarakhovuietsia-pilhovyi-stazh-iakscho-pidpryiemstvo-znakhodytsia-na-okupovanii-terytorii-abo-v-raioni-boiovykh-dii.seo';
 import { chy_mozhna_zarakhovaty_periody_roboty_u_pilhovyi_stazh_iakscho_na_pidpryiemstvi_ne_provodyly_atestatsiiu_robochykh_mists } from './blog-posts/posts/chy-mozhna-zarakhovaty-periody-roboty-u-pilhovyi-stazh-iakscho-na-pidpryiemstvi-ne-provodyly-atestatsiiu-robochykh-mists.seo';
 import { chy_mozhna_pryznachyty_pensiiu_v_ukraini_hromadianam_iaki_tymchasovo_prozhyvaiut_za_kordonom } from './blog-posts/posts/chy-mozhna-pryznachyty-pensiiu-v-ukraini-hromadianam-iaki-tymchasovo-prozhyvaiut-za-kordonom.seo';
+import { pidstavy_dlia_prypynennia_vyplaty_pensii } from './blog-posts/posts/pidstavy-dlia-prypynennia-vyplaty-pensii.seo';
+import { shcho_take_fizychna_identyfikatsiia_i_iak_ii_prokhodzhat } from './blog-posts/posts/shcho-take-fizychna-identyfikatsiia-i-iak-ii-prokhodzhat.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
@@ -87,4 +89,6 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...iak_zarakhovuietsia_pilhovyi_stazh_iakscho_pidpryiemstvo_znakhodytsia_na_okupovanii_terytorii_abo_v_raioni_boiovykh_dii,
   ...chy_mozhna_zarakhovaty_periody_roboty_u_pilhovyi_stazh_iakscho_na_pidpryiemstvi_ne_provodyly_atestatsiiu_robochykh_mists,
   ...chy_mozhna_pryznachyty_pensiiu_v_ukraini_hromadianam_iaki_tymchasovo_prozhyvaiut_za_kordonom,
+  ...pidstavy_dlia_prypynennia_vyplaty_pensii,
+  ...shcho_take_fizychna_identyfikatsiia_i_iak_ii_prokhodzhat,
 };
