@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Пенсія на пільгових умовах за Списком №2 для жінок: порівняння законів №1788-XII та №1058-IV',
+    slug: 'pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv',
+    src: ['https://www.youtube.com/embed/uveQDWzq1_Y'],
+    date: '2025-05-17',
+    description:
+      'Порівняння законів №1788-XII та №1058-IV щодо призначення пільгової пенсії за Списком №2 для жінок. Умови, відмінності та судова практика.',
+  },
+  {
+    title:
       'Пенсія на пільгових умовах за Списком №2 для чоловіків: порівняльний аналіз законів №1788-XII та №1058-IV',
     slug: 'pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
     src: ['https://www.youtube.com/embed/lKspLHJQgh4'],
