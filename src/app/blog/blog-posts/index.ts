@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Який мінімальний розмір пенсії шахтарям та працівникам, зайнятим їх обслуговуванням?',
+    slug: 'iakyi-minimalnyi-rozmir-pensii-shakhtariam-ta-pratsivnykam-zainiatym-ikh-obsluhovuvanniam',
+    src: ['https://www.youtube.com/embed/g-JvgWg8gwQ'],
+    date: '2025-10-23',
+    description:
+      'Мінімальний розмір пенсії шахтарям: стаття 28 Закону 1058-IV, 80% від заробітку, три прожиткові мінімуми. Додаткове зарахування стажу та типові проблеми з Пенсійним фондом.',
+  },
+  {
+    title:
       'Чи зараховуються посади асистента вчителя, вихователя та піонервожатої до вислуги років і права на «10 пенсій»?',
     slug: 'chy-zarakhovuiutsia-posady-asystenta-vchytelia-vykhovatelia-ta-pionervozhatoi-do-vysluhy-rokiv-i-prava-na-10-pensii',
     src: ['https://www.youtube.com/embed/od7rFL_Dnuw'],
