@@ -3,7 +3,7 @@ export const chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovo
     'chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva':
       {
         title:
-          'Чи зараховується військова служба до пільгового стажу | Advocate Pensia',
+          'Чи зараховується військова служба до пільгового стажу | Адвокат Поддяча Юлія Юріївна',
         description:
           "Роз'яснення законодавства щодо зарахування військової служби до страхового та пільгового стажу. Умови, обмеження та особливості для військовослужбовців.",
         keywords:
@@ -47,7 +47,7 @@ export const chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovo
               '@id':
                 'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva',
               url: 'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva',
-              name: 'Чи зараховується військова служба до пільгового стажу | Advocate Pensia',
+              name: 'Чи зараховується військова служба до пільгового стажу | Адвокат Поддяча Юлія Юріївна',
               description:
                 "Роз'яснення законодавства щодо зарахування військової служби до страхового та пільгового стажу. Умови, обмеження та особливості для військовослужбовців.",
               inLanguage: 'uk-UA',
@@ -73,7 +73,7 @@ export const chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovo
               },
               publisher: {
                 '@type': 'Organization',
-                name: 'Advocate Pensia',
+                name: 'Адвокат Поддяча Юлія Юріївна',
                 url: 'https://www.advocate-pensia.com.ua/',
                 logo: {
                   '@type': 'ImageObject',

@@ -3,7 +3,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_
     'pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv':
       {
         title:
-          'Пенсія на пільгових умовах за Списком №2 для жінок | Advocate Pensia',
+          'Пенсія на пільгових умовах за Списком №2 для жінок | Адвокат Поддяча Юлія Юріївна',
         description:
           'Порівняння законів №1788-XII та №1058-IV щодо призначення пільгової пенсії за Списком №2 для жінок. Умови, відмінності та судова практика.',
         keywords:
@@ -47,7 +47,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_
               '@id':
                 'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv',
               url: 'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv',
-              name: 'Пенсія на пільгових умовах за Списком №2 для жінок | Advocate Pensia',
+              name: 'Пенсія на пільгових умовах за Списком №2 для жінок | Адвокат Поддяча Юлія Юріївна',
               description:
                 'Порівняння законів №1788-XII та №1058-IV щодо призначення пільгової пенсії за Списком №2 для жінок. Умови, відмінності та судова практика.',
               inLanguage: 'uk-UA',
@@ -73,7 +73,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_
               },
               publisher: {
                 '@type': 'Organization',
-                name: 'Advocate Pensia',
+                name: 'Адвокат Поддяча Юлія Юріївна',
                 url: 'https://www.advocate-pensia.com.ua/',
                 logo: {
                   '@type': 'ImageObject',
