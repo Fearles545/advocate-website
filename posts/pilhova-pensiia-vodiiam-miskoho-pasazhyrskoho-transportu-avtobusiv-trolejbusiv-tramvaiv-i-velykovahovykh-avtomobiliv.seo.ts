@@ -2,7 +2,8 @@ export const pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_
   {
     'pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv':
       {
-        title: 'Пільгова пенсія водіям міського транспорту | Advocate Pensia',
+        title:
+          'Пільгова пенсія водіям міського транспорту | Адвокат Поддяча Юлія Юріївна',
         description:
           'Умови призначення пільгової пенсії водіям автобусів, тролейбусів і трамваїв. Порівняння законодавства, вимоги до стажу та судова практика.',
         keywords:
@@ -42,7 +43,7 @@ export const pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_
               '@id':
                 'https://www.advocate-pensia.com.ua/blog/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv#webpage',
               url: 'https://www.advocate-pensia.com.ua/blog/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv',
-              name: 'Пільгова пенсія водіям міського транспорту | Advocate Pensia',
+              name: 'Пільгова пенсія водіям міського транспорту | Адвокат Поддяча Юлія Юріївна',
               description:
                 'Умови призначення пільгової пенсії водіям автобусів, тролейбусів і трамваїв. Порівняння законодавства, вимоги до стажу та судова практика.',
               inLanguage: 'uk-UA',
@@ -72,7 +73,7 @@ export const pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_
               },
               publisher: {
                 '@type': 'Organization',
-                name: 'Advocate Pensia',
+                name: 'Адвокат Поддяча Юлія Юріївна',
                 url: 'https://www.advocate-pensia.com.ua',
               },
               inLanguage: 'uk-UA',

@@ -2,7 +2,8 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_1_dlia_cholovikiv_porivnial
   {
     'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv':
       {
-        title: 'Пенсія за Списком №1 для чоловіків | Advocate Pensia',
+        title:
+          'Пенсія за Списком №1 для чоловіків | Адвокат Поддяча Юлія Юріївна',
         description:
           'Порівняльний аналіз законів №1788-XII та №1058-IV для призначення пільгової пенсії чоловікам за Списком №1. Вимоги до стажу, вік виходу та судова практика.',
         keywords:
@@ -57,7 +58,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_1_dlia_cholovikiv_porivnial
               '@type': 'WebPage',
               '@id':
                 'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv/#webpage',
-              name: 'Пенсія за Списком №1 для чоловіків | Advocate Pensia',
+              name: 'Пенсія за Списком №1 для чоловіків | Адвокат Поддяча Юлія Юріївна',
               url: 'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv/',
               inLanguage: 'uk-UA',
               isPartOf: {
