@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Чи можна призначити пенсію в Україні громадянам, які тимчасово проживають за кордоном?',
+    slug: 'chy-mozhna-pryznachyty-pensiiu-v-ukraini-hromadianam-iaki-tymchasovo-prozhyvaiut-za-kordonom',
+    src: ['https://www.youtube.com/embed/vzNE33MOCRQ'],
+    date: '2025-06-06',
+    description:
+      'Можливість призначення та виплати пенсії громадянам України, які тимчасово проживають за кордоном. Порядок КМУ № 299 від 2025 року, фізична ідентифікація та дистанційне оформлення.',
+  },
+  {
+    title:
       'Чи можна зарахувати періоди роботи у пільговий стаж, якщо на підприємстві не проводили атестацію робочих місць?',
     slug: 'chy-mozhna-zarakhovaty-periody-roboty-u-pilhovyi-stazh-iakscho-na-pidpryiemstvi-ne-provodyly-atestatsiiu-robochykh-mists',
     src: ['https://www.youtube.com/embed/RCXMYLuGQIg'],
