@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Як зараховуються періоди роботи за Списком № 1 до страхового стажу?',
+    slug: 'iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
+    src: ['https://www.youtube.com/embed/3D_e94DujX8'],
+    date: '2025-05-25',
+    description:
+      'Механізм додаткового зарахування стажу для працівників, зайнятих на роботах із особливо шкідливими умовами праці за Списком №1. Умови та вплив на розмір пенсії.',
+  },
+  {
+    title:
       'Чому Пенсійний фонд не зараховує періоди участі в бойових діях у кратному обчисленні (1:3) до стажу при призначенні пенсії?',
     slug: 'chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii',
     src: ['https://www.youtube.com/embed/TA2zRdFmmzo'],
