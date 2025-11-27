@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Як зараховується пільговий стаж, якщо підприємство знаходиться на окупованій території або в районі бойових дій?',
+    slug: 'iak-zarakhovuietsia-pilhovyi-stazh-iakscho-pidpryiemstvo-znakhodytsia-na-okupovanii-terytorii-abo-v-raioni-boiovykh-dii',
+    src: ['https://www.youtube.com/embed/7WgdT5M7pf0'],
+    date: '2025-05-29',
+    description:
+      'Підтвердження пільгового стажу за Списками № 1 і № 2 для підприємств на окупованих територіях та в районах бойових дій. Порядок зарахування за даними Реєстру застрахованих осіб.',
+  },
+  {
+    title:
       'Чи можна збільшити розмір пенсії, перейшовши з пільгової пенсії за Списком № 1 або № 2 на звичайну пенсію за віком у 60 років із застосуванням нової середньої заробітної плати?',
     slug: 'chy-mozhna-zbilshyty-rozmir-pensii-pereishovshi-z-pilhovoi-pensii-za-spyskom-1-abo-2-na-zvychainu-pensiiu-za-vikom-u-60-rokiv-iz-zastosuvanniam-novoi-serednoi-zarobitnoi-platy',
     src: ['https://www.youtube.com/embed/Y0P1U9ZrxEs'],

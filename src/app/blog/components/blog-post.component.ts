@@ -124,6 +124,7 @@ import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.compo
     @media (max-width: 479px) {
       :host {
         padding: 1rem 1rem 2rem;
+        width: 100%;
       }
 
       .back-link {
