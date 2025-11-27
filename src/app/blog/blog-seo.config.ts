@@ -32,6 +32,7 @@ import { pilhova_pensiia_dlia_traktorystiv_mashynistiv_bezposeredno_zainiatykh_u
 import { pilhova_pensiia_dlia_zhinok_iaki_pratsiuiut_doiarkamy_operatoramy_mashynnoho_doinnia_abo_svynarkamy } from './blog-posts/posts/pilhova-pensiia-dlia-zhinok-iaki-pratsiuiut-doiarkamy-operatoramy-mashynnoho-doinnia-abo-svynarkamy.seo';
 import { pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_trolejbusiv_tramvaiv_i_velykovahovykh_avtomobiliv } from './blog-posts/posts/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv.seo';
 import { pensiia_na_pilhovykh_umovakh_za_spyskom_1_dlia_cholovikiv_porivnialnyi_analiz_zakoniv_1788_xii_ta_1058_iv } from './blog-posts/posts/pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv.seo';
+import { pensiia_na_pilhovykh_umovakh_za_spyskom_1_dlia_zhinok_porivnialnyi_analiz_zakoniv_1788_xii_ta_1058_iv } from './blog-posts/posts/pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-zhinok-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
@@ -67,4 +68,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...pilhova_pensiia_dlia_zhinok_iaki_pratsiuiut_doiarkamy_operatoramy_mashynnoho_doinnia_abo_svynarkamy,
   ...pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_trolejbusiv_tramvaiv_i_velykovahovykh_avtomobiliv,
   ...pensiia_na_pilhovykh_umovakh_za_spyskom_1_dlia_cholovikiv_porivnialnyi_analiz_zakoniv_1788_xii_ta_1058_iv,
+  ...pensiia_na_pilhovykh_umovakh_za_spyskom_1_dlia_zhinok_porivnialnyi_analiz_zakoniv_1788_xii_ta_1058_iv,
 };

@@ -38,12 +38,21 @@ export const blogs = [
   },
   {
     title:
+      'Пенсія на пільгових умовах за Списком №1 для жінок: порівняльний аналіз законів №1788-XII та №1058-IV',
+    slug: 'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-zhinok-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
+    src: ['https://www.youtube.com/embed/5Qt2pz5duXk'],
+    date: '2025-05-15',
+    description:
+      'Порівняльний аналіз законів №1788-XII та №1058-IV для призначення пільгової пенсії жінкам за Списком №1. Вимоги до стажу, вік виходу та судова практика.',
+  },
+  {
+    title:
       'Пенсія на пільгових умовах за Списком №1 для чоловіків: порівняльний аналіз законів №1788-XII та №1058-IV',
     slug: 'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
     src: ['https://www.youtube.com/embed/kKqYkOchkPc'],
     date: '2025-05-14',
     description:
-      'Порівняльний аналіз законів №1788-XII та №1058-IV для призначення пільгової пенсії чоловікам за Списком №1. Вимоги до стажу, вік виходу та судова практика.',
+      'Порівняльний аналіз законів №1788-XII та №1058-IV для призначення пільгової пенсії чоловікам за Списком №1. Вімоги до стажу, вік виходу та судова практика.',
   },
   {
     title:
