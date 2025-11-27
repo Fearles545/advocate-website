@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Чи можна зарахувати періоди роботи у пільговий стаж, якщо на підприємстві не проводили атестацію робочих місць?',
+    slug: 'chy-mozhna-zarakhovaty-periody-roboty-u-pilhovyi-stazh-iakscho-na-pidpryiemstvi-ne-provodyly-atestatsiiu-robochykh-mists',
+    src: ['https://www.youtube.com/embed/RCXMYLuGQIg'],
+    date: '2025-06-05',
+    description:
+      'Позиція Верховного Суду щодо зарахування пільгового стажу за Списками № 1 і № 2 у випадках, коли підприємство не проводило атестацію робочих місць. Відповідальність власника.',
+  },
+  {
+    title:
       'Як зараховується пільговий стаж, якщо підприємство знаходиться на окупованій території або в районі бойових дій?',
     slug: 'iak-zarakhovuietsia-pilhovyi-stazh-iakscho-pidpryiemstvo-znakhodytsia-na-okupovanii-terytorii-abo-v-raioni-boiovykh-dii',
     src: ['https://www.youtube.com/embed/7WgdT5M7pf0'],
