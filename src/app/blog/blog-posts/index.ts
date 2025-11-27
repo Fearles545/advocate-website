@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Чому Пенсійний фонд не зараховує періоди участі в бойових діях у кратному обчисленні (1:3) до стажу при призначенні пенсії?',
+    slug: 'chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii',
+    src: ['https://www.youtube.com/embed/TA2zRdFmmzo'],
+    date: '2025-05-20',
+    description:
+      'Причини відмов Пенсійного фонду в зарахуванні періодів участі в бойових діях у кратному обчисленні 1:3 до стажу. Законодавство, судова практика та шляхи вирішення.',
+  },
+  {
+    title:
       "Чи зараховується військова служба до загального стажу та пільгового (спецстажу)? Роз'яснення законодавства",
     slug: 'chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva',
     src: ['https://www.youtube.com/embed/hguLxkUkz3M'],
