@@ -28,6 +28,7 @@ import { pryznachennia_pilhovoi_pensii_nezalezhno_vid_viku_dlia_pratsivnykiv_hir
 import { iak_zarakhovuietsia_period_navchannia_do_strakhovoho_stazhu } from './blog-posts/posts/iak-zarakhovuietsia-period-navchannia-do-strakhovoho-stazhu.seo';
 import { iak_zarakhovuietsia_period_navchannia_do_pilhovoho_stazhu } from './blog-posts/posts/iak-zarakhovuietsia-period-navchannia-do-pilhovoho-stazhu.seo';
 import { koly_mozhna_podaty_zaiavu_na_pryznachennia_pensii_za_vikom_ta_iakyi_strok_dlia_podannia_dodatkovykh_dokumentiv } from './blog-posts/posts/koly-mozhna-podaty-zaiavu-na-pryznachennia-pensii-za-vikom-ta-iakyi-strok-dlia-podannia-dodatkovykh-dokumentiv.seo';
+import { chy_zarakhovuiutsia_posady_asystenta_vchytelia_vykhovatelia_ta_pionervozhatoi_do_vysluhy_rokiv_i_prava_na_10_pensii } from './blog-posts/posts/chy-zarakhovuiutsia-posady-asystenta-vchytelia-vykhovatelia-ta-pionervozhatoi-do-vysluhy-rokiv-i-prava-na-10-pensii.seo';
 import { pilhova_pensiia_dlia_traktorystiv_mashynistiv_bezposeredno_zainiatykh_u_vyrobnytstvi_silskohospodarskoi_produktsii } from './blog-posts/posts/pilhova-pensiia-dlia-traktorystiv-mashynistiv-bezposeredno-zainiatykh-u-vyrobnytstvi-silskohospodarskoi-produktsii.seo';
 import { pilhova_pensiia_dlia_zhinok_iaki_pratsiuiut_doiarkamy_operatoramy_mashynnoho_doinnia_abo_svynarkamy } from './blog-posts/posts/pilhova-pensiia-dlia-zhinok-iaki-pratsiuiut-doiarkamy-operatoramy-mashynnoho-doinnia-abo-svynarkamy.seo';
 import { pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_trolejbusiv_tramvaiv_i_velykovahovykh_avtomobiliv } from './blog-posts/posts/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv.seo';
@@ -92,4 +93,6 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...chy_mozhna_pryznachyty_pensiiu_v_ukraini_hromadianam_iaki_tymchasovo_prozhyvaiut_za_kordonom,
   ...pidstavy_dlia_prypynennia_vyplaty_pensii,
   ...shcho_take_fizychna_identyfikatsiia_i_iak_ii_prokhodzhat,
+  ...chy_zarakhovuietsia_chas_dohliadu_nepratsiuiuchoi_materi_za_dytynoiu_do_trokh_rokiv_do_stazhu,
+  ...chy_zarakhovuiutsia_posady_asystenta_vchytelia_vykhovatelia_ta_pionervozhatoi_do_vysluhy_rokiv_i_prava_na_10_pensii,
 };

@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Чи зараховуються посади асистента вчителя, вихователя та піонервожатої до вислуги років і права на «10 пенсій»?',
+    slug: 'chy-zarakhovuiutsia-posady-asystenta-vchytelia-vykhovatelia-ta-pionervozhatoi-do-vysluhy-rokiv-i-prava-na-10-pensii',
+    src: ['https://www.youtube.com/embed/od7rFL_Dnuw'],
+    date: '2025-08-12',
+    description:
+      'Відмова Пенсійного фонду у зарахуванні посад асистента вчителя, вихователя та піонервожатої до спеціального стажу. Порядок №909, судова практика та право на десять місячних пенсій.',
+  },
+  {
+    title:
       'Чи зараховується час догляду непрацюючої матері за дитиною до трьох років до стажу?',
     slug: 'chy-zarakhovuietsia-chas-dohliadu-nepratsiuiuchoi-materi-za-dytynoiu-do-trokh-rokiv-do-stazhu',
     src: ['https://www.youtube.com/embed/WWbhJBQJRmA'],
