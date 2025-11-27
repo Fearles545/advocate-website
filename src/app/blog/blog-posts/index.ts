@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      'Чи можна збільшити розмір пенсії, перейшовши з пільгової пенсії за Списком № 1 або № 2 на звичайну пенсію за віком у 60 років із застосуванням нової середньої заробітної плати?',
+    slug: 'chy-mozhna-zbilshyty-rozmir-pensii-pereishovshi-z-pilhovoi-pensii-za-spyskom-1-abo-2-na-zvychainu-pensiiu-za-vikom-u-60-rokiv-iz-zastosuvanniam-novoi-serednoi-zarobitnoi-platy',
+    src: ['https://www.youtube.com/embed/Y0P1U9ZrxEs'],
+    date: '2025-05-26',
+    description:
+      'Позиція Верховного Суду щодо неможливості переходу з пільгової пенсії за Списком № 1 або № 2 на звичайну пенсію за віком у 60 років із застосуванням нової середньої заробітної плати.',
+  },
+  {
+    title:
       'Як зараховуються періоди роботи за Списком № 1 до страхового стажу?',
     slug: 'iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
     src: ['https://www.youtube.com/embed/3D_e94DujX8'],

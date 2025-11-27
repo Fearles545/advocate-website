@@ -38,6 +38,7 @@ import { pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_zako
 import { chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovoho_spetsstazhu_roziasnennia_zakonodavstva } from './blog-posts/posts/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva.seo';
 import { chomu_pensiinyi_fond_ne_zarakhovuie_periody_uchasti_v_boiovykh_diiakh_u_kratnomu_obchyslenni_1_3_do_stazhu_pry_pryznachenni_pensii } from './blog-posts/posts/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii.seo';
 import { iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_stazhu } from './blog-posts/posts/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu.seo';
+import { chy_mozhna_zbilshyty_rozmir_pensii_pereishovshi_z_pilhovoi_pensii_za_spyskom_1_abo_2_na_zvychainu_pensiiu_za_vikom_u_60_rokiv_iz_zastosuvanniam_novoi_serednoi_zarobitnoi_platy } from './blog-posts/posts/chy-mozhna-zbilshyty-rozmir-pensii-pereishovshi-z-pilhovoi-pensii-za-spyskom-1-abo-2-na-zvychainu-pensiiu-za-vikom-u-60-rokiv-iz-zastosuvanniam-novoi-serednoi-zarobitnoi-platy.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
@@ -79,4 +80,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovoho_spetsstazhu_roziasnennia_zakonodavstva,
   ...chomu_pensiinyi_fond_ne_zarakhovuie_periody_uchasti_v_boiovykh_diiakh_u_kratnomu_obchyslenni_1_3_do_stazhu_pry_pryznachenni_pensii,
   ...iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_stazhu,
+  ...chy_mozhna_zbilshyty_rozmir_pensii_pereishovshi_z_pilhovoi_pensii_za_spyskom_1_abo_2_na_zvychainu_pensiiu_za_vikom_u_60_rokiv_iz_zastosuvanniam_novoi_serednoi_zarobitnoi_platy,
 };
