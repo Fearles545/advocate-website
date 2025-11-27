@@ -44,6 +44,7 @@ import { chy_mozhna_zarakhovaty_periody_roboty_u_pilhovyi_stazh_iakscho_na_pidpr
 import { chy_mozhna_pryznachyty_pensiiu_v_ukraini_hromadianam_iaki_tymchasovo_prozhyvaiut_za_kordonom } from './blog-posts/posts/chy-mozhna-pryznachyty-pensiiu-v-ukraini-hromadianam-iaki-tymchasovo-prozhyvaiut-za-kordonom.seo';
 import { pidstavy_dlia_prypynennia_vyplaty_pensii } from './blog-posts/posts/pidstavy-dlia-prypynennia-vyplaty-pensii.seo';
 import { shcho_take_fizychna_identyfikatsiia_i_iak_ii_prokhodzhat } from './blog-posts/posts/shcho-take-fizychna-identyfikatsiia-i-iak-ii-prokhodzhat.seo';
+import { chy_zarakhovuietsia_chas_dohliadu_nepratsiuiuchoi_materi_za_dytynoiu_do_trokh_rokiv_do_stazhu } from './blog-posts/posts/chy-zarakhovuietsia-chas-dohliadu-nepratsiuiuchoi-materi-za-dytynoiu-do-trokh-rokiv-do-stazhu.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,

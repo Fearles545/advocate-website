@@ -37,7 +37,16 @@ export const blogs = [
       'Пояснюємо, як підтвердити страховий стаж без трудової книжки.',
   },
   {
-    title: 'Що таке фізична ідентифікація і як її проходжать?',
+    title:
+      'Чи зараховується час догляду непрацюючої матері за дитиною до трьох років до стажу?',
+    slug: 'chy-zarakhovuietsia-chas-dohliadu-nepratsiuiuchoi-materi-za-dytynoiu-do-trokh-rokiv-do-stazhu',
+    src: ['https://www.youtube.com/embed/WWbhJBQJRmA'],
+    date: '2025-06-30',
+    description:
+      'Порядок зарахування періоду догляду за дитиною до страхового стажу. Правила до 2004 року, з 2004 по 2005 роки та включення до пільгового стажу.',
+  },
+  {
+    title: 'Що таке фізична ідентифікація і як її проходжань?',
     slug: 'shcho-take-fizychna-identyfikatsiia-i-iak-ii-prokhodzhat',
     src: ['https://www.youtube.com/embed/8fng97h4pGk'],
     date: '2025-06-12',
