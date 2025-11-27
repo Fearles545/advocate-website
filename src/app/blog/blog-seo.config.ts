@@ -35,6 +35,7 @@ import { pensiia_na_pilhovykh_umovakh_za_spyskom_1_dlia_cholovikiv_porivnialnyi_
 import { pensiia_na_pilhovykh_umovakh_za_spyskom_1_dlia_zhinok_porivnialnyi_analiz_zakoniv_1788_xii_ta_1058_iv } from './blog-posts/posts/pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-zhinok-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv.seo';
 import { pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_cholovikiv_porivnialnyi_analiz_zakoniv_1788_xii_ta_1058_iv } from './blog-posts/posts/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv.seo';
 import { pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_zakoniv_1788_xii_ta_1058_iv } from './blog-posts/posts/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv.seo';
+import { chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovoho_spetsstazhu_roziasnennia_zakonodavstva } from './blog-posts/posts/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
@@ -73,4 +74,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...pensiia_na_pilhovykh_umovakh_za_spyskom_1_dlia_zhinok_porivnialnyi_analiz_zakoniv_1788_xii_ta_1058_iv,
   ...pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_cholovikiv_porivnialnyi_analiz_zakoniv_1788_xii_ta_1058_iv,
   ...pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_zakoniv_1788_xii_ta_1058_iv,
+  ...chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovoho_spetsstazhu_roziasnennia_zakonodavstva,
 };

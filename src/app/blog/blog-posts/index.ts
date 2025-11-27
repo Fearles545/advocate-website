@@ -38,6 +38,15 @@ export const blogs = [
   },
   {
     title:
+      "Чи зараховується військова служба до загального стажу та пільгового (спецстажу)? Роз'яснення законодавства",
+    slug: 'chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva',
+    src: ['https://www.youtube.com/embed/hguLxkUkz3M'],
+    date: '2025-05-19',
+    description:
+      "Роз'яснення законодавства щодо зарахування військової служби до страхового та пільгового стажу. Умови, обмеження та особливості для військовослужбовців.",
+  },
+  {
+    title:
       'Пенсія на пільгових умовах за Списком №2 для жінок: порівняння законів №1788-XII та №1058-IV',
     slug: 'pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv',
     src: ['https://www.youtube.com/embed/uveQDWzq1_Y'],
