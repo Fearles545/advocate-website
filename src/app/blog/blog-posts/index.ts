@@ -420,4 +420,4 @@ export const blogs = [
     src: ['https://www.youtube.com/embed/6-P2rTCcoUY'],
     date: '2025-03-28',
   },
-];
+].sort((a, b) => b.date.localeCompare(a.date));
