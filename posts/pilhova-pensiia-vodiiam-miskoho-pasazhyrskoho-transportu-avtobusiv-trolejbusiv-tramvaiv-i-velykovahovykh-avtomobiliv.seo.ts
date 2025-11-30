@@ -18,6 +18,8 @@ export const pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_
           '@graph': [
             {
               '@type': 'BreadcrumbList',
+              '@id':
+                'https://www.advocate-pensia.com.ua/blog/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv#breadcrumbs',
               itemListElement: [
                 {
                   '@type': 'ListItem',
