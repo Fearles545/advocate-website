@@ -34,9 +34,17 @@ export class SeoService {
       seo = DEFAULT_SEO_CONFIG;
     }
 
+    this.applySEO(seo);
+  }
+
+  /**
+   * Apply SEO data directly (e.g., for blog posts with dynamic SEO configs)
+   */
+  applySEO(seo: PageSEO): void {
+    // For SSG/SSR, canonical must be provided. Don't fall back to location.href
     const url = seo.canonical
       ? `${this.siteUrl}${seo.canonical}`
-      : this.document.location.href;
+      : `${this.siteUrl}`;
 
     // Update title
     this.titleService.setTitle(seo.title);

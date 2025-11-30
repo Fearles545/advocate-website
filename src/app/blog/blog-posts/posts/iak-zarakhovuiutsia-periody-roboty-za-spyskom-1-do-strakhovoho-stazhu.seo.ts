@@ -8,13 +8,11 @@ export const iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_staz
       keywords:
         'Список 1, додаткове зарахування стажу, страховий стаж, шкідливі умови праці, пільгова пенсія, спецстаж, розмір пенсії',
       type: 'article',
-      dates: {
-        dateCreated: '2025-05-25T09:00:00+03:00',
-        publishedTime: '2025-11-27T09:00:00+02:00',
-        modifiedTime: '2025-11-27T09:00:00+02:00',
-      },
+      dateCreated: '2025-05-25T09:00:00+03:00',
+      publishedTime: '2025-11-27T09:00:00+02:00',
+      modifiedTime: '2025-11-27T09:00:00+02:00',
       canonical:
-        'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
+        '/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
       schema: {
         '@context': 'https://schema.org',
         '@graph': [
@@ -37,28 +35,36 @@ export const iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_staz
                 '@type': 'ListItem',
                 position: 3,
                 name: 'Як зараховуються періоди роботи за Списком №1',
-                item: 'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
+                item: {
+                  '@type': 'WebPage',
+                  '@id':
+                    'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
+                  name: 'Як зараховуються періоди роботи за Списком №1',
+                },
               },
             ],
           },
           {
             '@type': 'WebPage',
             '@id':
-              'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
+              'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu#webpage',
             url: 'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
             name: 'Як зараховуються періоди роботи за Списком №1 | Адвокат Поддяча Юлія Юріївна',
             description:
               'Механізм додаткового зарахування стажу для працівників, зайнятих на роботах із особливо шкідливими умовами праці за Списком №1. Умови та вплив на розмір пенсії.',
             inLanguage: 'uk-UA',
+            isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
             datePublished: '2025-11-27T09:00:00+02:00',
             dateModified: '2025-11-27T09:00:00+02:00',
             breadcrumb: {
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu#breadcrumb',
+                'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu#breadcrumbs',
             },
           },
           {
             '@type': 'BlogPosting',
+            '@id':
+              'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu#article',
             headline:
               'Як зараховуються періоди роботи за Списком № 1 до страхового стажу?',
             description:
@@ -72,7 +78,7 @@ export const iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_staz
             },
             publisher: {
               '@type': 'Organization',
-              name: 'Advocate Pensia',
+              name: 'Адвокат Поддяча Юлія Юріївна',
               url: 'https://www.advocate-pensia.com.ua/',
               logo: {
                 '@type': 'ImageObject',
