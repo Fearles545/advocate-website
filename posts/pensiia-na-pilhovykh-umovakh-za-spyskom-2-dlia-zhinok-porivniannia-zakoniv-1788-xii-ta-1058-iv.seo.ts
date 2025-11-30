@@ -68,7 +68,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_
               dateModified: '2025-11-27T09:00:00+02:00',
               author: {
                 '@type': 'Person',
-                name: 'Стрижак Олександр Миколайович',
+                name: 'Поддяча Юлія Юріївна',
                 url: 'https://www.advocate-pensia.com.ua/about-me',
               },
               publisher: {

@@ -27,7 +27,7 @@ export const shcho_take_fizychna_identyfikatsiia_i_iak_ii_prokhodzhat = {
       },
       publisher: {
         '@type': 'Organization',
-        name: 'Advocate Pensia',
+        name: 'Адвокат Поддяча Юлія Юріївна',
         logo: {
           '@type': 'ImageObject',
           url: 'https://www.advocate-pensia.com.ua/assets/logo/logo.webp',

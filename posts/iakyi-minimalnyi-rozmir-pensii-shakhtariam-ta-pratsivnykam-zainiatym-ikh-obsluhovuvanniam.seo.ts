@@ -30,7 +30,7 @@ export const iakyi_minimalnyi_rozmir_pensii_shakhtariam_ta_pratsivnykam_zainiaty
           },
           publisher: {
             '@type': 'Organization',
-            name: 'Advocate Pensia',
+            name: 'Адвокат Поддяча Юлія Юріївна',
             logo: {
               '@type': 'ImageObject',
               url: 'https://www.advocate-pensia.com.ua/assets/logo/logo.webp',

@@ -12,7 +12,7 @@ export const pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_
         publishedTime: '2025-11-26T09:00:00+02:00',
         modifiedTime: '2025-11-26T09:00:00+02:00',
         canonical:
-          'https://www.advocate-pensia.com.ua/blog/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv',
+          '/blog/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv',
         schema: {
           '@context': 'https://schema.org',
           '@graph': [
@@ -35,6 +35,12 @@ export const pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_
                   '@type': 'ListItem',
                   position: 3,
                   name: 'Пільгова пенсія водіям міського транспорту',
+                  item: {
+                    '@type': 'WebPage',
+                    '@id':
+                      'https://www.advocate-pensia.com.ua/blog/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv',
+                    name: 'Пільгова пенсія водіям міського транспорту',
+                  },
                 },
               ],
             },
@@ -48,11 +54,11 @@ export const pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_
                 'Умови призначення пільгової пенсії водіям автобусів, тролейбусів і трамваїв. Порівняння законодавства, вимоги до стажу та судова практика.',
               inLanguage: 'uk-UA',
               isPartOf: {
-                '@id': 'https://www.advocate-pensia.com.ua#website',
+                '@id': 'https://www.advocate-pensia.com.ua/#website',
               },
               breadcrumb: {
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv#breadcrumb',
+                  'https://www.advocate-pensia.com.ua/blog/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv#breadcrumbs',
               },
               datePublished: '2025-11-26T09:00:00+02:00',
               dateModified: '2025-11-26T09:00:00+02:00',
@@ -60,7 +66,7 @@ export const pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_
             {
               '@type': 'BlogPosting',
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv#blogposting',
+                'https://www.advocate-pensia.com.ua/blog/pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv#article',
               headline: 'Пільгова пенсія водіям міського транспорту',
               description:
                 'Умови призначення пільгової пенсії водіям автобусів, тролейбусів і трамваїв. Порівняння законодавства, вимоги до стажу та судова практика.',
@@ -69,7 +75,7 @@ export const pilhova_pensiia_vodiiam_miskoho_pasazhyrskoho_transportu_avtobusiv_
               dateCreated: '2025-05-12T09:00:00+03:00',
               author: {
                 '@type': 'Person',
-                name: 'Ігор Шевчук',
+                name: 'Поддяча Юлія Юріївна',
               },
               publisher: {
                 '@type': 'Organization',
