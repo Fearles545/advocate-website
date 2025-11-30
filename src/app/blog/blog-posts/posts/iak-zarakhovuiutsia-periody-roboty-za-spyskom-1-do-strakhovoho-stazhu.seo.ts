@@ -18,6 +18,8 @@ export const iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_staz
         '@graph': [
           {
             '@type': 'BreadcrumbList',
+            '@id':
+              'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu#breadcrumbs',
             itemListElement: [
               {
                 '@type': 'ListItem',
