@@ -21,6 +21,8 @@ export const chomu_pensiinyi_fond_ne_zarakhovuie_periody_uchasti_v_boiovykh_diia
           '@graph': [
             {
               '@type': 'BreadcrumbList',
+              '@id':
+                'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii#breadcrumbs',
               itemListElement: [
                 {
                   '@type': 'ListItem',
@@ -55,7 +57,7 @@ export const chomu_pensiinyi_fond_ne_zarakhovuie_periody_uchasti_v_boiovykh_diia
               dateModified: '2025-11-27T09:00:00+02:00',
               breadcrumb: {
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii#breadcrumb',
+                  'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii#breadcrumbs',
               },
             },
             {
@@ -73,7 +75,7 @@ export const chomu_pensiinyi_fond_ne_zarakhovuie_periody_uchasti_v_boiovykh_diia
               },
               publisher: {
                 '@type': 'Organization',
-                name: 'Advocate Pensia',
+                name: 'Адвокат Поддяча Юлія Юріївна',
                 url: 'https://www.advocate-pensia.com.ua/',
                 logo: {
                   '@type': 'ImageObject',
