@@ -30,7 +30,7 @@ export const chy_mozhna_zbilshyty_rozmir_pensii_pereishovshi_z_pilhovoi_pensii_z
           },
           publisher: {
             '@type': 'Organization',
-            name: 'Advocate Pensia',
+            name: 'Адвокат Поддяча Юлія Юріївна',
             logo: {
               '@type': 'ImageObject',
               url: 'https://www.advocate-pensia.com.ua/assets/logo/logo.webp',

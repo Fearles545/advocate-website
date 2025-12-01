@@ -21,6 +21,8 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_
           '@graph': [
             {
               '@type': 'BreadcrumbList',
+              '@id':
+                'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv#breadcrumbs',
               itemListElement: [
                 {
                   '@type': 'ListItem',
@@ -55,7 +57,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_
               dateModified: '2025-11-27T09:00:00+02:00',
               breadcrumb: {
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv#breadcrumb',
+                  'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv#breadcrumbs',
               },
             },
             {

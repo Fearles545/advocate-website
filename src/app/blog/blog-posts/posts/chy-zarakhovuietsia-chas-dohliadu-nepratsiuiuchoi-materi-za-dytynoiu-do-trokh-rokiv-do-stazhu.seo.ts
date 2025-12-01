@@ -30,7 +30,7 @@ export const chy_zarakhovuietsia_chas_dohliadu_nepratsiuiuchoi_materi_za_dytynoi
           },
           publisher: {
             '@type': 'Organization',
-            name: 'Поддяча Юлія Юріївна',
+            name: 'Адвокат Поддяча Юлія Юріївна',
             logo: {
               '@type': 'ImageObject',
               url: 'https://www.advocate-pensia.com.ua/assets/logo/logo.webp',

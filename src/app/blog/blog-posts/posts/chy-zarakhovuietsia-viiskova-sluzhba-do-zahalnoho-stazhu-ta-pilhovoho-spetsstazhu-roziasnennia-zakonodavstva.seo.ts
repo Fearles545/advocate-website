@@ -21,6 +21,8 @@ export const chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovo
           '@graph': [
             {
               '@type': 'BreadcrumbList',
+              '@id':
+                'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva#breadcrumbs',
               itemListElement: [
                 {
                   '@type': 'ListItem',
@@ -55,7 +57,7 @@ export const chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovo
               dateModified: '2025-11-27T09:00:00+02:00',
               breadcrumb: {
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva#breadcrumb',
+                  'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva#breadcrumbs',
               },
             },
             {
@@ -68,7 +70,7 @@ export const chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovo
               dateModified: '2025-11-27T09:00:00+02:00',
               author: {
                 '@type': 'Person',
-                name: 'Стрижак Олександр Миколайович',
+                name: 'Поддяча Юлія Юріївна',
                 url: 'https://www.advocate-pensia.com.ua/about-me',
               },
               publisher: {

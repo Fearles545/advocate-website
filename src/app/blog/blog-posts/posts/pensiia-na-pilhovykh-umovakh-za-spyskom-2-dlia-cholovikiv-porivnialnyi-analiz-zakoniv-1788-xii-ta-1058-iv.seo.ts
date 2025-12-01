@@ -21,6 +21,8 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_cholovikiv_porivnial
           '@graph': [
             {
               '@type': 'BreadcrumbList',
+              '@id':
+                'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv#breadcrumbs',
               itemListElement: [
                 {
                   '@type': 'ListItem',
@@ -55,7 +57,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_cholovikiv_porivnial
               dateModified: '2025-11-27T09:00:00+02:00',
               breadcrumb: {
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv#breadcrumb',
+                  'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv#breadcrumbs',
               },
             },
             {
@@ -68,7 +70,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_cholovikiv_porivnial
               dateModified: '2025-11-27T09:00:00+02:00',
               author: {
                 '@type': 'Person',
-                name: 'Стрижак Олександр Миколайович',
+                name: 'Поддяча Юлія Юріївна',
                 url: 'https://www.advocate-pensia.com.ua/about-me',
               },
               publisher: {
