@@ -10,6 +10,15 @@ export interface Blog {
 export const blogs = [
   {
     title:
+      'Коли доцільніше подавати заяву на призначення пенсії, якщо день народження припадає на жовтень, листопад або грудень',
+    slug: 'koly-dotsilnishe-podavaty-zaiavu-na-pryznachennia-pensii-iakscho-den-narodzhennia-prypadaie-na-zhovten-lystopad-abo-hruden',
+    src: ['https://www.youtube.com/embed/fEPy13y4L-U'],
+    date: '2025-11-28',
+    description:
+      'Чому вигідніше подавати заяву на пенсію у січні, якщо день народження у жовтні, листопаді чи грудні. Показник середньої заробітної плати Зс, формула розрахунку та стаття 40 Закону № 1058-IV.',
+  },
+  {
+    title:
       'Коли можна подати заяву на призначення пенсії за віком та який строк для подання додаткових документів',
     slug: 'koly-mozhna-podaty-zaiavu-na-pryznachennia-pensii-za-vikom-ta-iakyi-strok-dlia-podannia-dodatkovykh-dokumentiv',
     src: ['https://www.youtube.com/embed/B7iPkYXihNo'],
