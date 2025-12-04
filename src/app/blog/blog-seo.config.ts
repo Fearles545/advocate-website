@@ -48,6 +48,7 @@ import { pidstavy_dlia_prypynennia_vyplaty_pensii } from './blog-posts/posts/pid
 import { shcho_take_fizychna_identyfikatsiia_i_iak_ii_prokhodzhat } from './blog-posts/posts/shcho-take-fizychna-identyfikatsiia-i-iak-ii-prokhodzhat.seo';
 import { chy_zarakhovuietsia_chas_dohliadu_nepratsiuiuchoi_materi_za_dytynoiu_do_trokh_rokiv_do_stazhu } from './blog-posts/posts/chy-zarakhovuietsia-chas-dohliadu-nepratsiuiuchoi-materi-za-dytynoiu-do-trokh-rokiv-do-stazhu.seo';
 import { koly_dotsilnishe_podavaty_zaiavu_na_pryznachennia_pensii_iakscho_den_narodzhennia_prypadaie_na_zhovten_lystopad_abo_hruden } from './blog-posts/posts/koly-dotsilnishe-podavaty-zaiavu-na-pryznachennia-pensii-iakscho-den-narodzhennia-prypadaie-na-zhovten-lystopad-abo-hruden.seo';
+import { shcho_oznachaie_status_do_atrybutuvannia_pid_chas_zvernennia_do_pensiinoho_fondu_ukrainy } from './blog-posts/posts/shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
@@ -99,4 +100,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...chy_zarakhovuiutsia_posady_asystenta_vchytelia_vykhovatelia_ta_pionervozhatoi_do_vysluhy_rokiv_i_prava_na_10_pensii,
   ...iakyi_minimalnyi_rozmir_pensii_shakhtariam_ta_pratsivnykam_zainiatym_ikh_obsluhovuvanniam,
   ...koly_dotsilnishe_podavaty_zaiavu_na_pryznachennia_pensii_iakscho_den_narodzhennia_prypadaie_na_zhovten_lystopad_abo_hruden,
+  ...shcho_oznachaie_status_do_atrybutuvannia_pid_chas_zvernennia_do_pensiinoho_fondu_ukrainy,
 };

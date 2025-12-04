@@ -46,6 +46,12 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy/</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.advocate-pensia.com.ua/blog/koly-dotsilnishe-podavaty-zaiavu-na-pryznachennia-pensii-iakscho-den-narodzhennia-prypadaie-na-zhovten-lystopad-abo-hruden/</loc>
     <lastmod>2025-11-28</lastmod>
     <changefreq>monthly</changefreq>

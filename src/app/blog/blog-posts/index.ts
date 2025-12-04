@@ -10,6 +10,15 @@ export interface Blog {
 export const blogs = [
   {
     title:
+      'Що означає статус «До атрибутування» під час звернення до Пенсійного фонду України?',
+    slug: 'shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy',
+    src: ['https://www.youtube.com/embed/N6A37lyqWZE'],
+    date: '2025-12-02',
+    description:
+      'Статус «До атрибутування» в електронному кабінеті ПФУ — це технічний етап обробки заяви. Що означає, скільки триває та що робити далі.',
+  },
+  {
+    title:
       'Коли доцільніше подавати заяву на призначення пенсії, якщо день народження припадає на жовтень, листопад або грудень',
     slug: 'koly-dotsilnishe-podavaty-zaiavu-na-pryznachennia-pensii-iakscho-den-narodzhennia-prypadaie-na-zhovten-lystopad-abo-hruden',
     src: ['https://www.youtube.com/embed/fEPy13y4L-U'],
