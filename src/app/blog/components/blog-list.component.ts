@@ -71,6 +71,7 @@ import { BlogPaginationService } from '../services/blog-pagination.service';
       border: 1px solid var(--color-green);
       box-shadow: var(--color-green) 0 0 0.25rem;
       background-color: var(--color-container-bg);
+      background-color: #f0f2f3;
       max-width: 800px;
       margin: 0 auto;
       overflow: hidden;

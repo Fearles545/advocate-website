@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --font-main: normal 400 16px/20px 'Lora', serif;
@@ -23,11 +24,13 @@
   --section-padding-vertical: var(--spacing-xxl);
   --section-padding-horizontal: var(--spacing-lg);
   --color-green: #002706;
-  --color-navy: #1a365d;
+  --color-greennnn: rgb(0, 39, 6);
+  --color-greennnn: rgba(255, 255, 255, 0);
   --color-gold-accent: #bb925c;
   --color-gold: #c9a55c;
-  --color-navy-dark: #152d4f;
   --color-gold-light: #e0d6c1;
+  --color-navy: #1a365d;
+  --color-navy-dark: #152d4f;
   --color-container-bg: #bb925c1c;
   --border-thin: 1px solid var(--color-gold-light);
   --border-accent: 2px solid var(--color-gold);

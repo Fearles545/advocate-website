@@ -1,7 +1,4 @@
-<app-header
-  [iconsData]="iconsData"
-  (toggleDrawer)="drawer.toggle()"
-></app-header>
+<app-header [iconsData]="iconsData" (toggleDrawer)="drawer.toggle()" />
 
 <mat-sidenav-container class="example-container" [hasBackdrop]="true">
   <mat-sidenav
@@ -16,6 +13,7 @@
       (onLinkClick)="drawer.close()"
     ></app-drawer-content>
   </mat-sidenav>
+
   @let navigatedItem = navigatedItems$ | async;
   <mat-sidenav-content [class]="navigatedItem">
     @if (isDevMode) {
@@ -34,7 +32,7 @@
     }
 
     <div class="main-content">
-      <router-outlet style="display: none"></router-outlet>
+      <router-outlet style="display: none" />
     </div>
 
     <app-footer [iconsData]="iconsData"></app-footer>

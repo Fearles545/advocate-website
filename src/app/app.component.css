@@ -57,16 +57,13 @@ mat-sidenav-content::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    109.6deg,
-    rgba(204, 228, 247, 0.75) 11.2%,
-    rgba(237, 246, 250, 0.75) 100.2%
-  );
+  background: linear-gradient(to right, #f0f2f3, #e4edf4);
+  /* background: #e8ebed; */
   z-index: -1;
 }
 
 mat-sidenav-content.main {
-  background-image: url('assets/grey-marble-column-details-building.webp');
+  /* background-image: url('assets/grey-marble-column-details-building.webp'); */
 }
 
 mat-sidenav-content.blog {
@@ -94,7 +91,7 @@ mat-sidenav-content.contacts {
 }
 
 .main-content {
-  flex: auto;
+  /* flex: auto; */
   display: flex;
   align-items: center;
 }
