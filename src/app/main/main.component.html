@@ -345,6 +345,54 @@
   </div>
 </section>
 
+<section class="need-help-section-bg">
+  <div class="need-help-section">
+    <h2>Потрібна допомога з пенсійних питань?</h2>
+
+    <p class="need-help-description">
+      Зверніться за консультацією у зручний спосіб — через WhatsApp, Telegram
+      або Viber. Я проаналізую вашу ситуацію, перевірю документи та підкажу,
+      який крок буде найефективнішим.
+    </p>
+
+    <div class="need-help-messengers">
+      @for (iconData of messengerIcons; track iconData.alt) {
+        <app-social-icon-link
+          [iconData]="iconData"
+          [iconStyles]="{
+            width: '3.5rem',
+            height: '3.5rem',
+            backgroundColor: '#fff',
+            borderRadius: '50%',
+            padding: '0.5rem',
+          }"
+        ></app-social-icon-link>
+      }
+    </div>
+
+    <a routerLink="/contacts" class="need-help-contacts-btn" mat-flat-button>
+      <mat-icon>contact_page</mat-icon>
+      Контакти
+    </a>
+
+    <mat-divider class="need-help-divider"></mat-divider>
+
+    <p class="need-help-callback-text">
+      Або залиште заявку у формі зворотного зв'язку, і я зв'яжуся з вами
+      найближчим часом.
+    </p>
+
+    <button
+      class="need-help-callback-btn"
+      mat-flat-button
+      (click)="openContactForm()"
+    >
+      <mat-icon>send</mat-icon>
+      Заявка на консультацію
+    </button>
+  </div>
+</section>
+
 <!-- <main class="main-container">
   <section class="description-container">
     <h2 class="description-title">

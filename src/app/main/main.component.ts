@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NgOptimizedImage, CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
@@ -6,6 +6,10 @@ import { MatIcon } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconButton } from '@angular/material/button';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactFormDialogComponent } from '../contacts/contact-form-dialog/contact-form-dialog.component';
+import { iconsData, SocialIconData } from '../core/icons.data';
+import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.component';
 
 interface Feedback {
   user?: string;
@@ -24,14 +28,24 @@ interface Feedback {
     MatListModule,
     MatDividerModule,
     MatIconButton,
+    SocialIconLinkComponent,
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent {
+  private dialog = inject(MatDialog);
+
   currentFeedbackIndex = 0;
   private touchStartX = 0;
   private touchEndX = 0;
+
+  // Get only messengers (Telegram, Viber, WhatsApp)
+  get messengerIcons(): SocialIconData[] {
+    return iconsData.filter((icon) =>
+      ['telegram', 'viber', 'whatsApp'].includes(icon.alt)
+    );
+  }
 
   feedbacks: Feedback[] = [
     {
@@ -107,5 +121,19 @@ export class MainComponent {
         this.previousFeedback();
       }
     }
+  }
+
+  openContactForm(): void {
+    this.dialog.open(ContactFormDialogComponent, {
+      data: {
+        width: 'fit-content',
+        height: 'auto',
+      },
+      width: '100%',
+      maxWidth: '100vw',
+      height: 'auto',
+      panelClass: 'contact-form-dialog',
+      autoFocus: false,
+    });
   }
 }

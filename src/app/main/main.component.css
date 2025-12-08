@@ -744,6 +744,227 @@
   }
 }
 
+/* Need Help Section */
+.need-help-section-bg {
+  background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
+}
+
+.need-help-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+
+  h2 {
+    color: white;
+    margin: 0 0 0.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background-color: var(--color-gold);
+      border-radius: 10px;
+    }
+  }
+}
+
+.need-help-description {
+  color: var(--color-gold-light);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+}
+
+.need-help-messengers {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem;
+}
+
+.need-help-contacts-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  color: var(--color-green);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.1),
+    0 8px 30px rgba(201, 165, 92, 0.2),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
+    transform: skewX(-25deg);
+    transition: left 0.6s ease;
+  }
+
+  mat-icon {
+    font-size: 1.4rem;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 6px 20px rgba(0, 0, 0, 0.15),
+      0 12px 40px rgba(201, 165, 92, 0.3),
+      inset 0 -2px 5px rgba(0, 0, 0, 0.08);
+
+    &::before {
+      left: 125%;
+    }
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+.need-help-divider {
+  width: 100%;
+  max-width: 200px;
+  border-color: rgba(201, 165, 92, 0.3);
+  margin: 2rem 0;
+}
+
+.need-help-callback-text {
+  color: var(--color-gold-light);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  max-width: 500px;
+}
+
+.need-help-callback-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  background: linear-gradient(
+    135deg,
+    #d4af37 0%,
+    var(--color-gold) 50%,
+    #f0c850 100%
+  );
+  background-size: 200% 200%;
+  color: var(--color-green);
+  padding: 1.25rem 3rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow:
+    0 6px 20px rgba(201, 165, 92, 0.4),
+    0 12px 40px rgba(201, 165, 92, 0.2),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: gradient-shift 4s ease infinite;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 47px;
+    background: linear-gradient(
+      135deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.15) 100%
+    );
+    pointer-events: none;
+  }
+
+  mat-icon {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow:
+      0 10px 30px rgba(201, 165, 92, 0.5),
+      0 20px 50px rgba(201, 165, 92, 0.3),
+      inset 0 2px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+
+    &::before {
+      left: 100%;
+    }
+
+    mat-icon {
+      transform: translateX(4px);
+    }
+  }
+
+  &:active {
+    transform: translateY(-2px) scale(0.98);
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 .description-container {
   flex: 2;
   display: flex;
