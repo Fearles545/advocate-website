@@ -1273,6 +1273,12 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .services-section .service-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    justify-self: center;
+  }
+
   .why-me-section .why-me-cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
