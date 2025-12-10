@@ -540,13 +540,14 @@
     </div>
 
     <div class="feedback-dots">
-      <button
-        *ngFor="let feedback of feedbacks; let i = index"
-        class="dot"
-        [class.active]="i === currentFeedbackIndex"
-        (click)="goToFeedback(i)"
-        [attr.aria-label]="'Перейти до відгуку ' + (i + 1)"
-      ></button>
+      @for (feedback of feedbacks; track $index) {
+        <button
+          class="dot"
+          [class.active]="$index === currentFeedbackIndex"
+          (click)="goToFeedback($index)"
+          [attr.aria-label]="'Перейти до відгуку ' + ($index + 1)"
+        ></button>
+      }
     </div>
 
     <div class="feedback-more-container">
