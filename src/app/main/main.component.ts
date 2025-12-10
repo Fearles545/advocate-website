@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { NgOptimizedImage, CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
@@ -39,6 +39,12 @@ export class MainComponent {
   currentFeedbackIndex = 0;
   private touchStartX = 0;
   private touchEndX = 0;
+
+  isSeoExpanded = signal(false);
+
+  toggleSeoSection(): void {
+    this.isSeoExpanded.update((v) => !v);
+  }
 
   // Get only messengers (Telegram, Viber, WhatsApp)
   get messengerIcons(): SocialIconData[] {

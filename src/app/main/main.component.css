@@ -4,11 +4,6 @@
   padding: 0;
   width: 100%;
   background-image: url('/assets/images/main/first-section.pattern.svg');
-  /* padding: 2rem 1rem 1rem; */
-}
-
-.intro-section-bg {
-  /* background-color: tomato; */
 }
 
 .why-me-section-bg {
@@ -480,6 +475,202 @@
       font-weight: 500;
       line-height: 1.4;
     }
+  }
+}
+
+/* SEO Section */
+.seo-section-bg {
+  background-color: white;
+  overflow: visible;
+}
+
+.seo-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem 2rem;
+  overflow: visible;
+
+  h2 {
+    text-align: center;
+    margin: 0 0 2rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background-color: var(--color-gold);
+      border-radius: 10px;
+    }
+  }
+}
+
+.seo-content-wrapper {
+  position: relative;
+  max-height: 280px;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.expanded {
+    max-height: 8000px;
+  }
+}
+
+.seo-gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.7) 30%,
+    rgba(255, 255, 255, 0.95) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  pointer-events: none;
+}
+
+.seo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0 2rem;
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+  }
+
+  .seo-intro {
+    font-size: 1.1rem;
+    color: #222;
+  }
+
+  strong {
+    color: var(--color-green);
+  }
+
+  a {
+    color: var(--color-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-gold);
+    }
+  }
+}
+
+.seo-block {
+  background: linear-gradient(
+    135deg,
+    rgba(248, 246, 242, 0.8) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
+  border-radius: 0.75rem;
+  padding: 1.75rem 1.5rem 1.5rem;
+  border-left: 4px solid var(--color-gold);
+  box-shadow: 0 2px 10px rgba(0, 39, 6, 0.05);
+
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+    color: var(--color-green);
+    overflow: visible;
+
+    mat-icon {
+      color: var(--color-gold);
+      font-size: 1.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      flex-shrink: 0;
+    }
+  }
+
+  p {
+    margin: 0 0 0.75rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #444;
+
+      &::marker {
+        color: var(--color-gold);
+      }
+    }
+  }
+
+  .seo-cities {
+    font-size: 0.9rem;
+    color: #555;
+    font-style: italic;
+    margin-top: 1rem;
+  }
+
+  .seo-services-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+.seo-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+  margin: 1.5rem auto 0;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-green);
+  background: transparent;
+  border: 2px solid var(--color-gold);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  mat-icon {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background-color: var(--color-gold);
+    color: white;
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 }
 
@@ -1085,6 +1276,10 @@
   .why-me-section .why-me-cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .seo-block .seo-services-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1149,6 +1344,22 @@
 
   .why-me-section .why-me-cards-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .seo-section {
+    padding: 3rem 2rem 2rem;
+  }
+
+  .seo-content-wrapper {
+    max-height: 320px;
+  }
+
+  .seo-content {
+    gap: 2rem;
+  }
+
+  .seo-block {
+    padding: 2rem;
   }
 }
 
