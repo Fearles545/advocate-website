@@ -5,9 +5,11 @@ import { MatIcon } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconButton } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
+import { DatePipe } from '@angular/common';
 import { ContactFormDialogComponent } from '../contacts/contact-form-dialog/contact-form-dialog.component';
 import { iconsData, SocialIconData } from '../core/icons.data';
 import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.component';
+import { blogs, Blog } from '../blog/blog-posts';
 
 interface Feedback {
   name: string;
@@ -23,12 +25,15 @@ interface Feedback {
     MatDividerModule,
     MatIconButton,
     SocialIconLinkComponent,
+    DatePipe,
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent {
   private dialog = inject(MatDialog);
+
+  recentBlogs: Blog[] = blogs.slice(0, 3);
 
   currentFeedbackIndex = 0;
   private touchStartX = 0;
