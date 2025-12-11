@@ -16,6 +16,12 @@ interface Feedback {
   comment: string;
 }
 
+interface CourtCase {
+  title: string;
+  caseNumber: string;
+  date: string;
+}
+
 @Component({
   selector: 'app-main',
   imports: [
@@ -34,6 +40,27 @@ export class MainComponent {
   private dialog = inject(MatDialog);
 
   recentBlogs: Blog[] = blogs.slice(0, 3);
+
+  courtCases: CourtCase[] = [
+    {
+      title:
+        'Оскаржили незаконну відмову ПФУ та вибороли право клієнтки на пенсію по Списку №2, зарахувавши пільговий стаж та періоди роботи до страхового стажу',
+      caseNumber: '420/22036/25',
+      date: '2025-12-01',
+    },
+    {
+      title:
+        'Вибороли в суді право на пенсію шахтарю по Списку №1, зарахувавши пільговий стаж без уточнюючих довідок, період перебування в центрі зайнятості та періоди роботи без сплати внесків',
+      caseNumber: '200/7851/25',
+      date: '2025-11-15',
+    },
+    {
+      title:
+        'Зарахували військову службу шахтарю з 2022 року до пільгового стажу',
+      caseNumber: '200/5966/25',
+      date: '2025-10-20',
+    },
+  ];
 
   currentFeedbackIndex = 0;
   private touchStartX = 0;

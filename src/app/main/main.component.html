@@ -274,6 +274,142 @@
   </div>
 </section>
 
+<section class="feedback-section-bg">
+  <div class="feedback-section">
+    <h2>Відгуки клієнтів</h2>
+
+    <div class="feedback-carousel">
+      <button
+        mat-icon-button
+        class="carousel-nav carousel-nav-prev"
+        (click)="previousFeedback()"
+        aria-label="Попередній відгук"
+      >
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+
+      <div
+        class="feedback-card"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)"
+      >
+        <div class="feedback-header">
+          <div class="reviewer-avatar">
+            <mat-icon>person</mat-icon>
+          </div>
+          <div class="reviewer-info">
+            <h3 class="reviewer-name">{{ reviewerName }}</h3>
+            <div class="rating">
+              <mat-icon class="star">star</mat-icon>
+              <mat-icon class="star">star</mat-icon>
+              <mat-icon class="star">star</mat-icon>
+              <mat-icon class="star">star</mat-icon>
+              <mat-icon class="star">star</mat-icon>
+            </div>
+          </div>
+        </div>
+
+        <div class="feedback-content">
+          <mat-icon class="quote-icon">format_quote_outlined</mat-icon>
+
+          <p class="feedback-text">{{ currentFeedback.comment }}</p>
+        </div>
+      </div>
+
+      <button
+        mat-icon-button
+        class="carousel-nav carousel-nav-next"
+        (click)="nextFeedback()"
+        aria-label="Наступний відгук"
+      >
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+
+    <div class="feedback-dots">
+      @for (feedback of feedbacks; track $index) {
+        <button
+          class="dot"
+          [class.active]="$index === currentFeedbackIndex"
+          (click)="goToFeedback($index)"
+          [attr.aria-label]="'Перейти до відгуку ' + ($index + 1)"
+        ></button>
+      }
+    </div>
+
+    <div class="feedback-more-container">
+      <a routerLink="/feedbacks" class="feedback-more-button">
+        Усі відгуки
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="court-cases-section-bg">
+  <div class="court-cases-section">
+    <h2>Судові справи</h2>
+
+    <div class="court-cases-cards">
+      @for (courtCase of courtCases; track courtCase.caseNumber) {
+        <article class="court-case-card">
+          <a [routerLink]="['/court-cases', courtCase.caseNumber]">
+            <div class="court-case-content">
+              <h3>Справа №{{ courtCase.caseNumber }}</h3>
+
+              <p class="court-case-description">{{ courtCase.title }}</p>
+              <time class="court-case-date" [attr.datetime]="courtCase.date">
+                {{ courtCase.date | date: 'dd.MM.yyyy' }}
+              </time>
+            </div>
+            <mat-icon class="court-case-arrow">arrow_forward</mat-icon>
+          </a>
+        </article>
+      }
+    </div>
+
+    <div class="court-cases-more-container">
+      <a routerLink="/court-cases" class="court-cases-more-button">
+        Усі судові рішення
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="blog-preview-section-bg">
+  <div class="blog-preview-section">
+    <h2>Публікації</h2>
+
+    <div class="blog-preview-cards">
+      @for (blog of recentBlogs; track blog.slug) {
+        <article class="blog-preview-card">
+          <mat-icon class="blog-preview-decoration-icon">description</mat-icon>
+          <a [routerLink]="['/blog', blog.slug]">
+            <div class="blog-preview-content">
+              <h3>{{ blog.title }}</h3>
+              @if (blog.description) {
+                <p class="blog-preview-description">{{ blog.description }}</p>
+              }
+              <time class="blog-preview-date" [attr.datetime]="blog.date">
+                {{ blog.date | date: 'dd.MM.yyyy' }}
+              </time>
+            </div>
+            <mat-icon class="blog-preview-arrow">arrow_forward</mat-icon>
+          </a>
+        </article>
+      }
+    </div>
+
+    <div class="blog-preview-more-container">
+      <a routerLink="/blog" class="blog-preview-more-button">
+        Усі публікації
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section class="seo-section-bg">
   <div class="seo-section">
     <h2>Юридичні послуги пенсійного адвоката</h2>
@@ -484,110 +620,6 @@
       <span>{{ isSeoExpanded() ? 'Згорнути' : 'Читати далі' }}</span>
       <mat-icon>{{ isSeoExpanded() ? 'expand_less' : 'expand_more' }}</mat-icon>
     </button>
-  </div>
-</section>
-
-<section class="feedback-section-bg">
-  <div class="feedback-section">
-    <h2>Відгуки клієнтів</h2>
-
-    <div class="feedback-carousel">
-      <button
-        mat-icon-button
-        class="carousel-nav carousel-nav-prev"
-        (click)="previousFeedback()"
-        aria-label="Попередній відгук"
-      >
-        <mat-icon>chevron_left</mat-icon>
-      </button>
-
-      <div
-        class="feedback-card"
-        (touchstart)="onTouchStart($event)"
-        (touchend)="onTouchEnd($event)"
-      >
-        <div class="feedback-header">
-          <div class="reviewer-avatar">
-            <mat-icon>person</mat-icon>
-          </div>
-          <div class="reviewer-info">
-            <h3 class="reviewer-name">{{ reviewerName }}</h3>
-            <div class="rating">
-              <mat-icon class="star">star</mat-icon>
-              <mat-icon class="star">star</mat-icon>
-              <mat-icon class="star">star</mat-icon>
-              <mat-icon class="star">star</mat-icon>
-              <mat-icon class="star">star</mat-icon>
-            </div>
-          </div>
-        </div>
-
-        <div class="feedback-content">
-          <mat-icon class="quote-icon">format_quote_outlined</mat-icon>
-
-          <p class="feedback-text">{{ currentFeedback.comment }}</p>
-        </div>
-      </div>
-
-      <button
-        mat-icon-button
-        class="carousel-nav carousel-nav-next"
-        (click)="nextFeedback()"
-        aria-label="Наступний відгук"
-      >
-        <mat-icon>chevron_right</mat-icon>
-      </button>
-    </div>
-
-    <div class="feedback-dots">
-      @for (feedback of feedbacks; track $index) {
-        <button
-          class="dot"
-          [class.active]="$index === currentFeedbackIndex"
-          (click)="goToFeedback($index)"
-          [attr.aria-label]="'Перейти до відгуку ' + ($index + 1)"
-        ></button>
-      }
-    </div>
-
-    <div class="feedback-more-container">
-      <a routerLink="/feedbacks" class="feedback-more-button">
-        Усі відгуки
-        <mat-icon>arrow_forward</mat-icon>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="blog-preview-section-bg">
-  <div class="blog-preview-section">
-    <h2>Публікації</h2>
-
-    <div class="blog-preview-cards">
-      @for (blog of recentBlogs; track blog.slug) {
-        <article class="blog-preview-card">
-          <a [routerLink]="['/blog', blog.slug]">
-            <div class="blog-preview-content">
-              <h3>{{ blog.title }}</h3>
-              @if (blog.description) {
-                <p class="blog-preview-description">{{ blog.description }}</p>
-              }
-              <time class="blog-preview-date" [attr.datetime]="blog.date">
-                {{ blog.date | date: 'dd.MM.yyyy' }}
-              </time>
-            </div>
-            <mat-icon class="blog-preview-arrow">arrow_forward</mat-icon>
-          </a>
-        </article>
-      }
-    </div>
-
-    <div class="blog-preview-more-container">
-      <a routerLink="/blog" class="blog-preview-more-button">
-        Усі публікації
-        <mat-icon>arrow_forward</mat-icon>
-      </a>
-    </div>
   </div>
 </section>
 
