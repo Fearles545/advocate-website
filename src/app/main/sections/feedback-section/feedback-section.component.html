@@ -1,0 +1,71 @@
+<section class="feedback-section-bg">
+  <div class="feedback-section">
+    <h2>Відгуки клієнтів</h2>
+
+    <div class="feedback-carousel">
+      <button
+        mat-icon-button
+        class="carousel-nav carousel-nav-prev"
+        (click)="previousFeedback()"
+        aria-label="Попередній відгук"
+      >
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+
+      <div
+        class="feedback-card"
+        (touchstart)="onTouchStart($event)"
+        (touchend)="onTouchEnd($event)"
+      >
+        <div class="feedback-header">
+          <div class="reviewer-avatar">
+            <mat-icon>person</mat-icon>
+          </div>
+          <div class="reviewer-info">
+            <h3 class="reviewer-name">{{ reviewerName() }}</h3>
+            <div class="rating">
+              <mat-icon class="star">star</mat-icon>
+              <mat-icon class="star">star</mat-icon>
+              <mat-icon class="star">star</mat-icon>
+              <mat-icon class="star">star</mat-icon>
+              <mat-icon class="star">star</mat-icon>
+            </div>
+          </div>
+        </div>
+
+        <div class="feedback-content">
+          <mat-icon class="quote-icon">format_quote_outlined</mat-icon>
+
+          <p class="feedback-text">{{ currentFeedback().comment }}</p>
+        </div>
+      </div>
+
+      <button
+        mat-icon-button
+        class="carousel-nav carousel-nav-next"
+        (click)="nextFeedback()"
+        aria-label="Наступний відгук"
+      >
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+
+    <div class="feedback-dots">
+      @for (feedback of feedbacks(); track $index) {
+        <button
+          class="dot"
+          [class.active]="$index === currentFeedbackIndex()"
+          (click)="goToFeedback($index)"
+          [attr.aria-label]="'Перейти до відгуку ' + ($index + 1)"
+        ></button>
+      }
+    </div>
+
+    <div class="feedback-more-container">
+      <a routerLink="/feedbacks" class="feedback-more-button">
+        Усі відгуки
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+    </div>
+  </div>
+</section>

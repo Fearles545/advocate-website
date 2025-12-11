@@ -1,0 +1,30 @@
+<section class="court-cases-section-bg">
+  <div class="court-cases-section">
+    <h2>Судові справи</h2>
+
+    <div class="court-cases-cards">
+      @for (courtCase of courtCases(); track courtCase.caseNumber) {
+        <article class="court-case-card">
+          <a [routerLink]="['/court-cases', courtCase.caseNumber]">
+            <div class="court-case-content">
+              <h3>Справа №{{ courtCase.caseNumber }}</h3>
+
+              <p class="court-case-description">{{ courtCase.title }}</p>
+              <time class="court-case-date" [attr.datetime]="courtCase.date">
+                {{ courtCase.date | date: 'dd.MM.yyyy' }}
+              </time>
+            </div>
+            <mat-icon class="court-case-arrow">arrow_forward</mat-icon>
+          </a>
+        </article>
+      }
+    </div>
+
+    <div class="court-cases-more-container">
+      <a routerLink="/court-cases" class="court-cases-more-button">
+        Усі судові рішення
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+    </div>
+  </div>
+</section>

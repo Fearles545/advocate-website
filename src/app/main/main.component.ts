@@ -1,44 +1,32 @@
-import { Component, inject, signal } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
-import { MatIcon } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatIconButton } from '@angular/material/button';
-import { MatDialog } from '@angular/material/dialog';
-import { DatePipe } from '@angular/common';
-import { ContactFormDialogComponent } from '../contacts/contact-form-dialog/contact-form-dialog.component';
-import { iconsData, SocialIconData } from '../core/icons.data';
-import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.component';
+import { Component } from '@angular/core';
 import { blogs, Blog } from '../blog/blog-posts';
-
-interface Feedback {
-  name: string;
-  comment: string;
-}
-
-interface CourtCase {
-  title: string;
-  caseNumber: string;
-  date: string;
-}
+import { iconsData, SocialIconData } from '../core/icons.data';
+import { CourtCase, Feedback } from './models';
+import { IntroSectionComponent } from './sections/intro-section/intro-section.component';
+import { WhyMeSectionComponent } from './sections/why-me-section/why-me-section.component';
+import { ServicesSectionComponent } from './sections/services-section/services-section.component';
+import { FeedbackSectionComponent } from './sections/feedback-section/feedback-section.component';
+import { CourtCasesSectionComponent } from './sections/court-cases-section/court-cases-section.component';
+import { BlogPreviewSectionComponent } from './sections/blog-preview-section/blog-preview-section.component';
+import { SeoSectionComponent } from './sections/seo-section/seo-section.component';
+import { NeedHelpSectionComponent } from './sections/need-help-section/need-help-section.component';
 
 @Component({
   selector: 'app-main',
   imports: [
-    MatButtonModule,
-    RouterLink,
-    MatIcon,
-    MatDividerModule,
-    MatIconButton,
-    SocialIconLinkComponent,
-    DatePipe,
+    IntroSectionComponent,
+    WhyMeSectionComponent,
+    ServicesSectionComponent,
+    FeedbackSectionComponent,
+    CourtCasesSectionComponent,
+    BlogPreviewSectionComponent,
+    SeoSectionComponent,
+    NeedHelpSectionComponent,
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent {
-  private dialog = inject(MatDialog);
-
   recentBlogs: Blog[] = blogs.slice(0, 3);
 
   courtCases: CourtCase[] = [
@@ -61,23 +49,6 @@ export class MainComponent {
       date: '2025-10-20',
     },
   ];
-
-  currentFeedbackIndex = 0;
-  private touchStartX = 0;
-  private touchEndX = 0;
-
-  isSeoExpanded = signal(false);
-
-  toggleSeoSection(): void {
-    this.isSeoExpanded.update((v) => !v);
-  }
-
-  // Get only messengers (Telegram, Viber, WhatsApp)
-  get messengerIcons(): SocialIconData[] {
-    return iconsData.filter((icon) =>
-      ['telegram', 'viber', 'whatsApp'].includes(icon.alt)
-    );
-  }
 
   feedbacks: Feedback[] = [
     {
@@ -107,65 +78,9 @@ export class MainComponent {
     },
   ];
 
-  get currentFeedback(): Feedback {
-    return this.feedbacks[this.currentFeedbackIndex];
-  }
-
-  get reviewerName(): string {
-    return this.currentFeedback.name;
-  }
-
-  nextFeedback(): void {
-    this.currentFeedbackIndex =
-      (this.currentFeedbackIndex + 1) % this.feedbacks.length;
-  }
-
-  previousFeedback(): void {
-    this.currentFeedbackIndex =
-      this.currentFeedbackIndex === 0
-        ? this.feedbacks.length - 1
-        : this.currentFeedbackIndex - 1;
-  }
-
-  goToFeedback(index: number): void {
-    this.currentFeedbackIndex = index;
-  }
-
-  onTouchStart(event: TouchEvent): void {
-    this.touchStartX = event.changedTouches[0].screenX;
-  }
-
-  onTouchEnd(event: TouchEvent): void {
-    this.touchEndX = event.changedTouches[0].screenX;
-    this.handleSwipe();
-  }
-
-  private handleSwipe(): void {
-    const swipeThreshold = 50; // minimum distance for swipe
-    const difference = this.touchStartX - this.touchEndX;
-
-    if (Math.abs(difference) > swipeThreshold) {
-      if (difference > 0) {
-        // Swiped left - next feedback
-        this.nextFeedback();
-      } else {
-        // Swiped right - previous feedback
-        this.previousFeedback();
-      }
-    }
-  }
-
-  openContactForm(): void {
-    this.dialog.open(ContactFormDialogComponent, {
-      data: {
-        width: 'fit-content',
-        height: 'auto',
-      },
-      width: '100%',
-      maxWidth: '100vw',
-      height: 'auto',
-      panelClass: 'contact-form-dialog',
-      autoFocus: false,
-    });
+  get messengerIcons(): SocialIconData[] {
+    return iconsData.filter((icon) =>
+      ['telegram', 'viber', 'whatsApp'].includes(icon.alt)
+    );
   }
 }
