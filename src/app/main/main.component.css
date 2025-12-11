@@ -375,12 +375,17 @@
       font-size: 1.25rem;
       width: 1.25rem;
       height: 1.25rem;
+      transition: transform var(--transition-normal);
     }
   }
 
   .services-more-button:hover {
     background-color: var(--color-gold);
     color: white;
+
+    mat-icon {
+      transform: translateX(4px);
+    }
   }
 }
 
@@ -924,11 +929,16 @@
     font-size: 1.25rem;
     width: 1.25rem;
     height: 1.25rem;
+    transition: transform var(--transition-normal);
   }
 
   &:hover {
     background-color: var(--color-gold);
     color: white;
+
+    mat-icon {
+      transform: translateX(4px);
+    }
   }
 }
 
