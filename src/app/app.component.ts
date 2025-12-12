@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DrawerContentComponent } from './drawer-content/drawer-content.component';
 import { RouteSeoService } from './core/services/route-seo.service';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { RouteSeoService } from './core/services/route-seo.service';
     MatSidenavModule,
     DrawerContentComponent,
     AsyncPipe,
+    ScrollToTopComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
