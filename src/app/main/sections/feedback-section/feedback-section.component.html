@@ -4,49 +4,54 @@
 
     <div class="feedback-carousel">
       <button
-        mat-icon-button
         class="carousel-nav carousel-nav-prev"
-        (click)="previousFeedback()"
+        (click)="goToPrevious()"
         aria-label="Попередній відгук"
       >
-        <mat-icon>chevron_left</mat-icon>
+        <mat-icon>arrow_back</mat-icon>
       </button>
 
       <div
-        class="feedback-card"
-        (touchstart)="onTouchStart($event)"
-        (touchend)="onTouchEnd($event)"
+        class="feedback-track"
+        #feedbackTrack
+        (scroll)="onScroll()"
+        (mousedown)="onMouseDown($event)"
+        (mousemove)="onMouseMove($event)"
+        (mouseup)="onMouseUp()"
+        (mouseleave)="onMouseLeave()"
       >
-        <div class="feedback-header">
-          <div class="reviewer-avatar">
-            <mat-icon>person</mat-icon>
-          </div>
-          <div class="reviewer-info">
-            <h3 class="reviewer-name">{{ reviewerName() }}</h3>
-            <div class="rating">
-              <mat-icon class="star">star</mat-icon>
-              <mat-icon class="star">star</mat-icon>
-              <mat-icon class="star">star</mat-icon>
-              <mat-icon class="star">star</mat-icon>
-              <mat-icon class="star">star</mat-icon>
+        @for (feedback of feedbacks(); track $index) {
+          <article class="feedback-card">
+            <div class="feedback-header">
+              <div class="reviewer-avatar">
+                <mat-icon>person</mat-icon>
+              </div>
+              <div class="reviewer-info">
+                <h3 class="reviewer-name">{{ feedback.name }}</h3>
+                <div class="rating">
+                  <mat-icon class="star">star</mat-icon>
+                  <mat-icon class="star">star</mat-icon>
+                  <mat-icon class="star">star</mat-icon>
+                  <mat-icon class="star">star</mat-icon>
+                  <mat-icon class="star">star</mat-icon>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="feedback-content">
-          <mat-icon class="quote-icon">format_quote_outlined</mat-icon>
-
-          <p class="feedback-text">{{ currentFeedback().comment }}</p>
-        </div>
+            <div class="feedback-content">
+              <mat-icon class="quote-icon">format_quote_outlined</mat-icon>
+              <p class="feedback-text">{{ feedback.comment }}</p>
+            </div>
+          </article>
+        }
       </div>
 
       <button
-        mat-icon-button
         class="carousel-nav carousel-nav-next"
-        (click)="nextFeedback()"
+        (click)="goToNext()"
         aria-label="Наступний відгук"
       >
-        <mat-icon>chevron_right</mat-icon>
+        <mat-icon>arrow_forward</mat-icon>
       </button>
     </div>
 
