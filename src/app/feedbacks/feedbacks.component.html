@@ -1,0 +1,38 @@
+<section class="feedbacks-page-bg">
+  <div class="feedbacks-page">
+    <h1 class="main-title">ВІДГУКИ КЛІЄНТІВ</h1>
+
+    <p class="page-description">
+      Реальні відгуки від клієнтів, яким була надана допомога з пенсійних
+      питань. Кожна історія — це підтвердження професіоналізму та відданості
+      справі.
+    </p>
+
+    <div class="feedbacks-grid">
+      @for (feedback of feedbacks; track $index) {
+        <article class="feedback-card">
+          <div class="feedback-header">
+            <div class="reviewer-avatar">
+              <mat-icon>person</mat-icon>
+            </div>
+            <div class="reviewer-info">
+              <h2 class="reviewer-name">{{ feedback.name }}</h2>
+              <div class="rating" aria-label="Оцінка 5 з 5">
+                <mat-icon class="star">star</mat-icon>
+                <mat-icon class="star">star</mat-icon>
+                <mat-icon class="star">star</mat-icon>
+                <mat-icon class="star">star</mat-icon>
+                <mat-icon class="star">star</mat-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="feedback-content">
+            <mat-icon class="quote-icon">format_quote_outlined</mat-icon>
+            <p class="feedback-text">{{ feedback.comment }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

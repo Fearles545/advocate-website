@@ -205,9 +205,9 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
   contacts: {
     title: 'Контакти | Адвокат Поддяча Юлія Юріївна',
     description:
-      'Зв’язок з адвокатом Поддячою Юлією Юріївною: телефон, email, Viber, Telegram. Онлайн-консультації з пенсійних питань по всій Україні. Запишіться на зручний час уже сьогодні.',
+      "Зв'язок з адвокатом Поддячою Юлією Юріївною: телефон, email, Viber, Telegram. Онлайн-консультації з пенсійних питань по всій Україні. Запишіться на зручний час уже сьогодні.",
     keywords:
-      'контакти адвоката, телефон адвоката, email адвоката, консультація адвоката онлайн, запис на консультацію, адвокат по пенсіях, зв’язатися з адвокатом, Вайбер адвокат, Телеграм адвокат, консультація по пенсії',
+      "контакти адвоката, телефон адвоката, email адвоката, консультація адвоката онлайн, запис на консультацію, адвокат по пенсіях, зв'язатися з адвокатом, Вайбер адвокат, Телеграм адвокат, консультація по пенсії",
     canonical: '/contacts/',
     schema: {
       '@context': 'https://schema.org',
@@ -248,6 +248,57 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
           about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
           breadcrumb: {
             '@id': 'https://www.advocate-pensia.com.ua/contacts/#breadcrumbs',
+          },
+        },
+      ],
+    },
+  },
+  feedbacks: {
+    title: 'Відгуки клієнтів | Адвокат Поддяча Юлія Юріївна',
+    description:
+      'Реальні відгуки клієнтів про роботу адвоката Поддячої Юлії Юріївни з пенсійних справ. Дізнайтесь, як ми допомогли іншим отримати заслужену пенсію.',
+    keywords:
+      'відгуки адвокат пенсія, відгуки клієнтів адвоката, адвокат Поддяча відгуки, пенсійний адвокат відгуки, реальні відгуки пенсійна справа, відгуки про адвоката по пенсіях',
+    canonical: '/feedbacks/',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          '@id': 'https://www.advocate-pensia.com.ua/feedbacks/#breadcrumbs',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Відгуки',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/feedbacks/',
+                name: 'Відгуки',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id': 'https://www.advocate-pensia.com.ua/feedbacks/#webpage',
+          name: 'Відгуки клієнтів | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/feedbacks/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+          breadcrumb: {
+            '@id': 'https://www.advocate-pensia.com.ua/feedbacks/#breadcrumbs',
           },
         },
       ],

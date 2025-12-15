@@ -44,6 +44,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Feedbacks / Reviews Page -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/feedbacks/</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Blog Posts -->
   <url>
     <loc>https://www.advocate-pensia.com.ua/blog/shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy/</loc>
