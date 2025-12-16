@@ -1,12 +1,28 @@
 <section class="feedbacks-page-bg">
   <div class="feedbacks-page">
-    <h1 class="main-title">ВІДГУКИ КЛІЄНТІВ</h1>
+    <header class="page-header">
+      <h1 class="main-title">ВІДГУКИ КЛІЄНТІВ</h1>
+      <p class="page-description">
+        Реальні відгуки від клієнтів, яким була надана допомога з пенсійних
+        питань. Кожна історія — це підтвердження професіоналізму та відданості
+        справі.
+      </p>
+    </header>
 
-    <p class="page-description">
-      Реальні відгуки від клієнтів, яким була надана допомога з пенсійних
-      питань. Кожна історія — це підтвердження професіоналізму та відданості
-      справі.
-    </p>
+    <div class="trust-banner">
+      <div class="trust-item">
+        <mat-icon>handshake</mat-icon>
+        <span>Індивідуальний підхід</span>
+      </div>
+      <div class="trust-item">
+        <mat-icon>verified</mat-icon>
+        <span>Професійна допомога</span>
+      </div>
+      <div class="trust-item">
+        <mat-icon>lock</mat-icon>
+        <span>Конфіденційність</span>
+      </div>
+    </div>
 
     <div class="feedbacks-grid">
       @for (feedback of feedbacks; track $index) {
@@ -28,11 +44,23 @@
           </div>
 
           <div class="feedback-content">
-            <mat-icon class="quote-icon">format_quote_outlined</mat-icon>
+            <mat-icon class="quote-icon">format_quote</mat-icon>
             <p class="feedback-text">{{ feedback.comment }}</p>
           </div>
         </article>
       }
+    </div>
+
+    <div class="google-reviews-container">
+      <a
+        href="https://www.google.com/search?q=адвокат+поддяча+юлія+юріївна+відгуки&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E9fTA2TkxnCVhpfTpqseDTzoWPTXrSxeWaK1r53ra_YcaCDLyoOiU0qXd4zR1ymDl_X7KFQEo8R7dL0ZIQp2w3ekO1BO3L4oecDVqgFMg3JUKnbxljt9Ip2lnNWjAIfnooZmEnjyBKXIn1OTlSJIOAm5Gt7l"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="google-reviews-button"
+      >
+        Переглянути відгуки в Google
+        <mat-icon>open_in_new</mat-icon>
+      </a>
     </div>
   </div>
 </section>

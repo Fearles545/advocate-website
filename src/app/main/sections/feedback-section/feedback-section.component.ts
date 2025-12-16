@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { Feedback } from '../../models';
+import { Feedback } from '../../../feedbacks/feedbacks.data';
 
 @Component({
   selector: 'app-feedback-section',
