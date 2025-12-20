@@ -1,34 +1,64 @@
 <section class="court-cases-section-bg">
+  <div class="section-glow"></div>
+
   <div class="court-cases-section">
-    <h2>Судові справи</h2>
+    <div class="section-header">
+      <div class="header-badge">
+        <mat-icon>gavel</mat-icon>
+      </div>
+      <h2>Судові справи з Пенсійним фондом — виграні рішення</h2>
+      <p class="section-intro">
+        Приклади судових справ, у яких вдалося захистити пенсійні права клієнтів
+        та зобов'язати Пенсійний фонд виконати вимоги закону.
+      </p>
+    </div>
 
-    <div class="court-cases-cards">
+    <div class="court-cases-grid">
       @for (courtCase of courtCases(); track courtCase.caseNumber) {
-        <!-- TODO: Uncomment link when /court-cases/:id page is ready -->
         <article class="court-case-card">
-          <!-- <a [routerLink]="['/court-cases', courtCase.caseNumber]"> -->
-            <div class="court-case-content">
-              <h3>Справа №{{ courtCase.caseNumber }}</h3>
+          <div class="victory-badge">
+            <mat-icon>check_circle</mat-icon>
+            <!-- <span>Виграно</span> -->
+          </div>
 
-              <p class="court-case-description">{{ courtCase.title }}</p>
-              <time class="court-case-date" [attr.datetime]="courtCase.date">
+          <a [routerLink]="['/court-cases', courtCase.caseNumber]">
+            <div class="card-header">
+              <span class="case-number"
+                >Справа №{{ courtCase.caseNumber }}</span
+              >
+              <time class="case-date" [attr.datetime]="courtCase.date">
                 {{ courtCase.date | date: 'dd.MM.yyyy' }}
               </time>
             </div>
-            <!-- <mat-icon class="court-case-arrow">arrow_forward</mat-icon>
-          </a> -->
+
+            <h3 class="case-title">{{ courtCase.title }}</h3>
+
+            <div class="card-footer">
+              <span class="read-more">Детальніше</span>
+              <mat-icon class="card-arrow">arrow_forward</mat-icon>
+            </div>
+          </a>
         </article>
       }
     </div>
 
-
-    <!-- TODO: Uncomment when /court-cases page is ready
-    <div class="court-cases-more-container">
-      <a routerLink="/court-cases" class="court-cases-more-button">
-        Усі судові рішення
+    <div class="section-cta">
+      <a routerLink="/court-cases" class="cta-button">
+        <span>Переглянути всі судові рішення</span>
         <mat-icon>arrow_forward</mat-icon>
       </a>
     </div>
-    -->
+  </div>
+
+  <div class="decorative-scales">
+    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M60 10V35M60 85V110M45 22.5H75M30 35L45 65H15L30 35ZM90 35L105 65H75L90 35ZM60 35V85M40 85H80"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
   </div>
 </section>

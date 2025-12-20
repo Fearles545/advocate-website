@@ -1,6 +1,13 @@
 <section class="feedback-section-bg">
   <div class="feedback-section">
-    <h2>Відгуки клієнтів</h2>
+    <div class="section-header">
+      <h2>Відгуки клієнтів</h2>
+      <p class="section-intro">
+        Відгуки клієнтів — важливий показник якості юридичної допомоги.
+        Ознайомитися з реальними відгуками про мою роботу ви можете у
+        відповідному розділі сайту.
+      </p>
+    </div>
 
     <div class="feedback-carousel">
       <button
@@ -39,7 +46,7 @@
             </div>
 
             <div class="feedback-content">
-              <mat-icon class="quote-icon">format_quote_outlined</mat-icon>
+              <mat-icon class="quote-icon">format_quote</mat-icon>
               <p class="feedback-text">{{ feedback.comment }}</p>
             </div>
           </article>
@@ -66,9 +73,9 @@
       }
     </div>
 
-    <div class="feedback-more-container">
-      <a routerLink="/feedbacks" class="feedback-more-button">
-        Усі відгуки
+    <div class="feedback-cta">
+      <a routerLink="/feedbacks" class="cta-button">
+        <span>Переглянути відгуки клієнтів</span>
         <mat-icon>arrow_forward</mat-icon>
       </a>
     </div>

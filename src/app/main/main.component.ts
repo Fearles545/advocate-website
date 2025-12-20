@@ -4,7 +4,10 @@ import { iconsData, SocialIconData } from '../core/icons.data';
 import { feedbacks, Feedback } from '../feedbacks/feedbacks.data';
 import { CourtCase } from './models';
 import { IntroSectionComponent } from './sections/intro-section/intro-section.component';
+import { PensionHelpSectionComponent } from './sections/pension-help-section/pension-help-section.component';
+import { AboutSectionComponent } from './sections/about-section/about-section.component';
 import { WhyMeSectionComponent } from './sections/why-me-section/why-me-section.component';
+import { DocumentsSectionComponent } from './sections/documents-section/documents-section.component';
 import { ServicesSectionComponent } from './sections/services-section/services-section.component';
 import { FeedbackSectionComponent } from './sections/feedback-section/feedback-section.component';
 import { CourtCasesSectionComponent } from './sections/court-cases-section/court-cases-section.component';
@@ -16,8 +19,11 @@ import { NeedHelpSectionComponent } from './sections/need-help-section/need-help
   selector: 'app-main',
   imports: [
     IntroSectionComponent,
-    WhyMeSectionComponent,
+    PensionHelpSectionComponent,
+    AboutSectionComponent,
     ServicesSectionComponent,
+    WhyMeSectionComponent,
+    DocumentsSectionComponent,
     FeedbackSectionComponent,
     CourtCasesSectionComponent,
     BlogPreviewSectionComponent,

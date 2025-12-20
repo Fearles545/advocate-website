@@ -1,30 +1,37 @@
 <section class="blog-preview-section-bg">
   <div class="blog-preview-section">
-    <h2>Публікації</h2>
+    <div class="section-header">
+      <h2>Корисні публікації з пенсійних питань</h2>
+      <p class="section-intro">
+        Тут я публікую роз'яснення щодо пенсійного законодавства, змін у
+        правилах призначення пенсій та практичні поради для захисту пенсійних
+        прав.
+      </p>
+    </div>
 
-    <div class="blog-preview-cards">
+    <div class="blog-cards">
       @for (blog of recentBlogs(); track blog.slug) {
-        <article class="blog-preview-card">
-          <mat-icon class="blog-preview-decoration-icon">description</mat-icon>
+        <article class="blog-card">
+          <mat-icon class="blog-card-bg-icon">article</mat-icon>
           <a [routerLink]="['/blog', blog.slug]">
-            <div class="blog-preview-content">
+            <div class="blog-card-content">
               <h3>{{ blog.title }}</h3>
               @if (blog.description) {
-                <p class="blog-preview-description">{{ blog.description }}</p>
+                <p class="blog-description">{{ blog.description }}</p>
               }
-              <time class="blog-preview-date" [attr.datetime]="blog.date">
+              <time class="blog-date" [attr.datetime]="blog.date">
                 {{ blog.date | date: 'dd.MM.yyyy' }}
               </time>
             </div>
-            <mat-icon class="blog-preview-arrow">arrow_forward</mat-icon>
+            <mat-icon class="blog-arrow">arrow_forward</mat-icon>
           </a>
         </article>
       }
     </div>
 
-    <div class="blog-preview-more-container">
-      <a routerLink="/blog" class="blog-preview-more-button">
-        Усі публікації
+    <div class="blog-cta">
+      <a routerLink="/blog" class="cta-button">
+        <span>Усі публікації</span>
         <mat-icon>arrow_forward</mat-icon>
       </a>
     </div>

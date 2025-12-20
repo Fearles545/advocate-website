@@ -1,31 +1,71 @@
 <section class="intro-section-bg">
+  <div class="intro-glow"></div>
+  <div class="intro-glow-secondary"></div>
+
   <div class="intro-section">
     <div class="intro-header">
       <h1>
-        <span class="intro-section-subheader">Адвокат з пенсійних питань</span>
-        Поддяча Юлія Юріївна
+        <span class="profession-label">Адвокат з пенсійних питань</span>
+        <span class="name-label">Поддяча Юлія Юріївна</span>
       </h1>
 
-      <div class="intro-tagline">
-        <p>
-          Надаю допомогу з призначенням та перерахунком пенсій, розрахунком усіх
-          видів стажу та оскарженням рішень ПФУ.
-        </p>
-        <p class="intro-highlight">
-          <mat-icon class="location-icon">language</mat-icon>
-          Працюю онлайн з клієнтами з будь-яких міст України та з-за кордону.
-        </p>
+      <p class="intro-tagline">
+        Юридична допомога з призначення та перерахунку пенсії, оскарження рішень
+        Пенсійного фонду України
+      </p>
+
+      <!-- Photo appears here on mobile only -->
+      <div class="intro-photo-mobile">
+        <div class="photo-frame">
+          <img
+            class="main-photo"
+            ngSrc="assets/images/main/main-image.webp"
+            alt="Адвокат з пенсійних питань Поддяча Юлія Юріївна"
+            placeholder="blur"
+            width="742"
+            height="1035"
+            priority
+          />
+        </div>
+      </div>
+
+      <div class="location-badge">
+        <mat-icon>public</mat-icon>
+        <span class="location-text"
+          >Працюю з клієнтами по всій Україні та з-за кордону</span
+        >
       </div>
 
       <div class="intro-cta">
-        <a href="tel:+380999426056" class="consultation-btn" mat-fab extended>
-          <mat-icon>call</mat-icon>
-          Зателефонувати
+        <a href="tel:+380999426056" class="cta-primary">
+          <span class="btn-glow"></span>
+          <span class="cta-icon-wrapper">
+            <mat-icon>call</mat-icon>
+          </span>
+          <span class="cta-text">Зателефонувати</span>
+        </a>
+
+        <a routerLink="/services" class="cta-link">
+          Перелік послуг
+          <mat-icon>arrow_forward</mat-icon>
         </a>
       </div>
+
+      <!-- <div class="trust-indicators">
+        <div class="trust-item">
+          <mat-icon>verified</mat-icon>
+          <span>Практикуючий адвокат</span>
+        </div>
+        <span class="trust-divider">•</span>
+        <div class="trust-item">
+          <mat-icon>schedule</mat-icon>
+          <span>Досвід з 2015 року</span>
+        </div>
+      </div> -->
     </div>
 
-    <div class="intro-photo-container">
+    <!-- Photo appears here on desktop only -->
+    <div class="intro-photo-desktop">
       <div class="photo-frame">
         <img
           class="main-photo"
@@ -38,64 +78,29 @@
         />
       </div>
     </div>
+  </div>
 
-    <div class="intro-credentials">
-      <h2 class="credentials-title">Про мене</h2>
+  <div class="decorative-element decorative-left">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M50 15L55 35H75L59 47L64 67L50 55L36 67L41 47L25 35H45L50 15Z"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
 
-      <ul class="credentials-list">
-        <li>
-          <div class="credential-icon-wrapper">
-            <mat-icon>school</mat-icon>
-          </div>
-          <span
-            >Маю вищу юридичну освіту, освітній ступінь «Магістр права».</span
-          >
-        </li>
-        <li>
-          <div class="credential-icon-wrapper">
-            <mat-icon>work_history</mat-icon>
-          </div>
-          <span>Досвід роботи в сфері права — з 2015 року.</span>
-        </li>
-        <li>
-          <div class="credential-icon-wrapper">
-            <mat-icon>gavel</mat-icon>
-          </div>
-          <span>
-            Надаю професійну правничу допомогу, представляю інтереси клієнтів в
-            пенсійних органах, підприємствах, організаціях, установах та судах
-            всіх інстанцій.
-          </span>
-        </li>
-        <li>
-          <div class="credential-icon-wrapper">
-            <mat-icon>description</mat-icon>
-          </div>
-          <span>
-            Консультую та складаю документи різної складності, в тому числі
-            адвокатські запити для швидкого отримання відповідей.
-          </span>
-        </li>
-        <li>
-          <div class="credential-icon-wrapper">
-            <mat-icon>trending_up</mat-icon>
-          </div>
-          <span>
-            Постійно підвищую свою професійну кваліфікацію як пенсійний адвокат.
-          </span>
-        </li>
-      </ul>
-
-      <div class="credentials-actions">
-        <a routerLink="/about-me" class="profile-more-button">
-          Детальніше про мене
-          <mat-icon>arrow_forward</mat-icon>
-        </a>
-        <a routerLink="/documents" class="profile-more-button">
-          Документи адвоката
-          <mat-icon>arrow_forward</mat-icon>
-        </a>
-      </div>
-    </div>
+  <div class="decorative-element decorative-right">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M50 15L55 35H75L59 47L64 67L50 55L36 67L41 47L25 35H45L50 15Z"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
   </div>
 </section>

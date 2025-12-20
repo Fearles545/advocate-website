@@ -1,47 +1,93 @@
 <section class="need-help-section-bg">
+  <div class="section-glow"></div>
+  <div class="section-glow-secondary"></div>
+
   <div class="need-help-section">
-    <h2>Потрібна допомога з пенсійних питань?</h2>
-
-    <p class="need-help-description">
-      Зверніться за консультацією у зручний спосіб — через WhatsApp, Telegram
-      або Viber. Я проаналізую вашу ситуацію, перевірю документи та підкажу,
-      який крок буде найефективнішим.
-    </p>
-
-    <div class="need-help-messengers">
-      @for (iconData of messengerIcons(); track iconData.alt) {
-        <app-social-icon-link
-          [iconData]="iconData"
-          [iconStyles]="{
-            width: '3.5rem',
-            height: '3.5rem',
-            backgroundColor: '#fff',
-            borderRadius: '50%',
-            padding: '0.5rem',
-          }"
-        ></app-social-icon-link>
-      }
+    <div class="section-badge">
+      <mat-icon>support_agent</mat-icon>
     </div>
 
-    <a routerLink="/contacts" class="need-help-contacts-btn" mat-flat-button>
-      <mat-icon>contact_page</mat-icon>
-      Контакти
-    </a>
+    <h2>Потрібна юридична допомога з пенсійних питань?</h2>
 
-    <mat-divider class="need-help-divider"></mat-divider>
+    <div class="section-description">
+      <p class="description-main">
+        Якщо ви зіткнулися з відмовою Пенсійного фонду, неправильним розрахунком
+        пенсії або не знаєте, з чого почати — звертайтеся за консультацією.
+      </p>
+      <p class="description-highlight">
+        Я поясню, які саме кроки допоможуть вирішити вашу ситуацію з Пенсійним
+        фондом — від перевірки документів до подальших дій.
+      </p>
+    </div>
 
-    <p class="need-help-callback-text">
-      Або залиште заявку у формі зворотного зв'язку, і я зв'яжуся з вами
-      найближчим часом.
-    </p>
+    <div class="cta-buttons">
+      <button class="cta-primary" (click)="openContactForm()">
+        <span class="btn-glow"></span>
+        <mat-icon>send</mat-icon>
+        <span>Замовити консультацію</span>
+      </button>
 
-    <button
-      class="need-help-callback-btn"
-      mat-flat-button
-      (click)="openContactForm()"
-    >
-      <mat-icon>send</mat-icon>
-      Заявка на консультацію
-    </button>
+      <p class="trust-text">
+        Після заповнення заявки я зв'яжуся з вами та поясню наступні кроки для
+        вирішення вашої ситуації.
+      </p>
+
+      <div class="cta-links">
+        <a routerLink="/services" class="cta-link">
+          Переглянути послуги
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+        <span class="link-divider">|</span>
+        <a routerLink="/about-me" class="cta-link">
+          Про адвоката
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="messenger-block">
+      <p class="messenger-label">Або швидко напишіть у зручний месенджер:</p>
+      <div class="messenger-icons">
+        @for (iconData of messengerIcons(); track iconData.alt) {
+          <div class="messenger-item">
+            <app-social-icon-link
+              [iconData]="iconData"
+              [iconStyles]="{
+                width: '3rem',
+                height: '3rem',
+                backgroundColor: '#fff',
+                borderRadius: '50%',
+                padding: '0.4rem',
+              }"
+            />
+            <span class="messenger-label-text">{{ iconData.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="decorative-element decorative-left">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M50 10V30M50 70V90M35 20H65M25 30L40 55H10L25 30ZM75 30L90 55H60L75 30ZM50 30V70M30 70H70"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </div>
+
+  <div class="decorative-element decorative-right">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M50 10V30M50 70V90M35 20H65M25 30L40 55H10L25 30ZM75 30L90 55H60L75 30ZM50 30V70M30 70H70"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
   </div>
 </section>
