@@ -247,7 +247,6 @@ import { MatIcon } from '@angular/material/icon';
       line-height: 1.6;
       color: var(--color-gold-light);
       font-weight: 500;
-      max-width: 600px;
     }
 
     @media (min-width: 640px) {

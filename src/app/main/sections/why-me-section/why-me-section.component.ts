@@ -8,7 +8,10 @@ import { MatIcon } from '@angular/material/icon';
     <section class="why-me-section-bg">
       <div class="why-me-section">
         <div class="section-header">
-          <h2>Чому клієнти обирають адвоката з пенсійних питань</h2>
+          <h2>
+            Чому клієнти обирають адвоката з пенсійних питань (пенсійного
+            юриста)
+          </h2>
         </div>
 
         <ul class="trust-list">
