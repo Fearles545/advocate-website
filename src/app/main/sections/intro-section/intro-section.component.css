@@ -218,118 +218,6 @@
   margin-top: 0.5rem;
 }
 
-/* Primary CTA - Dark green with glow effect */
-.cta-primary {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  /* width: 100%; */
-  padding: 0.5rem;
-  padding-right: 1.5rem;
-  background: linear-gradient(
-    135deg,
-    var(--color-green) 0%,
-    #003d0a 50%,
-    var(--color-green) 100%
-  );
-  background-size: 200% 200%;
-  background-position: 0% 50%;
-  color: var(--color-gold);
-  text-decoration: none;
-  font-size: 1.05rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border-radius: 3rem;
-  border: 2px solid transparent;
-  box-shadow:
-    0 4px 20px rgba(0, 39, 6, 0.25),
-    0 2px 8px rgba(0, 39, 6, 0.15),
-    inset 0 1px 0 rgba(201, 165, 92, 0.1);
-  transition:
-    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.3s ease,
-    background-position 0.5s ease,
-    border-color 0.3s ease;
-  overflow: hidden;
-
-  .btn-glow {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(201, 165, 92, 0.2),
-      transparent
-    );
-    animation: shimmer 4s ease-in-out infinite;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    background-position: 100% 50%;
-    border-color: rgba(201, 165, 92, 0.3);
-    box-shadow:
-      0 8px 32px rgba(0, 39, 6, 0.3),
-      0 4px 12px rgba(0, 39, 6, 0.2),
-      inset 0 1px 0 rgba(201, 165, 92, 0.15);
-
-    .cta-icon-wrapper {
-      transform: scale(1.05);
-      box-shadow: 0 0 0 4px rgba(201, 165, 92, 0.15);
-    }
-  }
-
-  &:active {
-    transform: translateY(0);
-    box-shadow:
-      0 2px 12px rgba(0, 39, 6, 0.2),
-      0 1px 4px rgba(0, 39, 6, 0.15);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    left: -100%;
-  }
-  50%,
-  100% {
-    left: 100%;
-  }
-}
-
-.cta-icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  background: rgba(201, 165, 92, 0.15);
-  border-radius: 50%;
-  border: 1px solid rgba(201, 165, 92, 0.25);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  position: relative;
-  z-index: 1;
-  flex-shrink: 0;
-
-  mat-icon {
-    font-size: 1.25rem;
-    width: 1.25rem;
-    height: 1.25rem;
-    color: var(--color-gold);
-  }
-}
-
-.cta-text {
-  position: relative;
-  z-index: 1;
-}
 
 /* Services Link - simple link style */
 .cta-link {
@@ -535,17 +423,10 @@
 /* Tablets */
 @media (min-width: 640px) {
   .intro-cta {
-    flex-direction: row;
+    flex-direction: column;
     gap: 1.5rem;
     max-width: none;
     align-items: center;
-  }
-
-  .cta-primary {
-    width: auto;
-    padding: 0.5rem;
-    padding-right: 2rem;
-    font-size: 1.1rem;
   }
 
   .trust-indicators {

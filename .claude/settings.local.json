@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Skill(frontend-design:frontend-design)",
-      "Skill(frontend-design)"
+      "Skill(frontend-design)",
+      "Bash(mkdir:*)",
+      "Bash(npm run build:*)"
     ]
   }
 }

@@ -5,7 +5,11 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-about-section',
-  imports: [MatIcon, RouterLink, NgOptimizedImage],
+  imports: [
+    MatIcon,
+    RouterLink,
+    // NgOptimizedImage
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section class="about-section-bg">
