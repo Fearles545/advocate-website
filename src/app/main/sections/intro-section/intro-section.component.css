@@ -99,7 +99,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 1rem 2.5rem;
+  padding: var(--section-padding-y) var(--section-padding-x);
   position: relative;
   z-index: 1;
 }
@@ -389,10 +389,6 @@
 
 /* Large phones / small tablets */
 @media (min-width: 480px) {
-  .intro-section {
-    padding: 2.5rem 1.5rem;
-  }
-
   .intro-header {
     gap: 1.25rem;
   }
@@ -442,7 +438,6 @@
 @media (min-width: 768px) {
   .intro-section {
     gap: 2.5rem;
-    padding: 3.5rem 2rem 3rem;
   }
 
   .intro-header {
@@ -500,7 +495,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    padding: 4.5rem 2rem 3.5rem;
     align-items: center;
   }
 
@@ -582,7 +576,6 @@
 @media (min-width: 1280px) {
   .intro-section {
     gap: 4rem;
-    padding: 5rem 2rem 4rem;
   }
 
   .intro-photo-desktop .photo-frame {

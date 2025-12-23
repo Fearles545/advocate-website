@@ -63,15 +63,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
 
             <span class="quote-mark quote-close" aria-hidden="true">"</span>
 
-            <a
-              routerLink="/about-me"
-              appCtaOutlineButton
-              style="
-                display: flex;
-                width: fit-content;
-                margin: auto;
-              "
-            >
+            <a routerLink="/about-me" appCtaOutlineButton>
               Детальніше про адвоката
             </a>
           </div>
@@ -158,7 +150,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
     .about-section {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 3.5rem 1rem;
+      padding: var(--section-padding-y) var(--section-padding-x);
       position: relative;
       z-index: 1;
       display: flex;
@@ -406,6 +398,12 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
       }
     }
 
+    .cta-outline-button {
+      display: flex;
+      width: fit-content;
+      margin: auto;
+    }
+
     .highlight-text {
       position: relative;
       padding: 1rem 1.5rem;
@@ -460,10 +458,6 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
     }
 
     @media (min-width: 768px) {
-      .about-section {
-        padding: 4.5rem 2rem;
-      }
-
       .content-wrapper {
         padding: 3rem 3rem;
       }
@@ -496,7 +490,6 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
         display: grid;
         grid-template-columns: 320px 1fr;
         gap: 3rem;
-        padding: 5rem 2rem;
         align-items: center;
       }
 
@@ -604,13 +597,16 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
       .corner-br {
         right: 16px;
       }
+
+      .cta-outline-button {
+        margin: initial;
+      }
     }
 
     @media (min-width: 1280px) {
       .about-section {
         grid-template-columns: 380px 1fr;
         gap: 4rem;
-        padding: 5.5rem 2rem;
       }
 
       .image-frame {

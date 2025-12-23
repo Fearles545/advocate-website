@@ -55,7 +55,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
     .documents-section {
       max-width: 800px;
       margin: 0 auto;
-      padding: 3rem 1rem;
+      padding: var(--section-padding-y) var(--section-padding-x);
     }
 
     .documents-content {
@@ -104,22 +104,12 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
     }
 
     @media (min-width: 768px) {
-      .documents-section {
-        padding: 3.5rem 2rem;
-      }
-
       h2 {
         font-size: 1.65rem;
       }
 
       p {
         font-size: 1.1rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .documents-section {
-        padding: 4rem 2rem;
       }
     }
   `,

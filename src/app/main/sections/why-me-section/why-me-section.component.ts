@@ -91,7 +91,7 @@ import { MatIcon } from '@angular/material/icon';
     .why-me-section {
       max-width: 900px;
       margin: 0 auto;
-      padding: 3.5rem 1rem 3rem;
+      padding: var(--section-padding-y) var(--section-padding-x);
     }
 
     .section-header {
@@ -188,10 +188,6 @@ import { MatIcon } from '@angular/material/icon';
     }
 
     @media (min-width: 768px) {
-      .why-me-section {
-        padding: 4rem 2rem 3.5rem;
-      }
-
       .trust-list {
         gap: 0.875rem;
       }
@@ -206,10 +202,6 @@ import { MatIcon } from '@angular/material/icon';
     }
 
     @media (min-width: 1024px) {
-      .why-me-section {
-        padding: 4.5rem 2rem 4rem;
-      }
-
       .trust-text {
         font-size: 1.1rem;
       }

@@ -21,8 +21,11 @@
   --container-max-width: 1200px;
   --container-padding: var(--spacing-lg);
   --container-padding-mobile: var(--spacing-sm);
-  --section-padding-vertical: var(--spacing-xxl);
-  --section-padding-horizontal: var(--spacing-lg);
+  /* Section padding - mobile first */
+  --section-padding-y: 2rem;
+  --section-padding-x: 1rem;
+  /* Extra breathing room for dark/accent sections */
+  --section-padding-y-accent: 2.5rem;
   --color-green: #002706;
   --color-greennnn: rgb(0, 39, 6);
   --color-greennnn: rgba(255, 255, 255, 0);
@@ -170,6 +173,15 @@ mat-paginator div.mat-mdc-paginator-range-label {
 }
 
 @media (max-width: 1279px) {
+}
+
+/* Desktop section padding overrides */
+@media (min-width: 768px) {
+  :root {
+    --section-padding-y: 4rem;
+    --section-padding-x: 2rem;
+    --section-padding-y-accent: 5rem;
+  }
 }
 
 @media (max-width: 1023px) {

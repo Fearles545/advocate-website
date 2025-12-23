@@ -23,7 +23,7 @@
 .services-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3.5rem 1rem 3rem;
+  padding: var(--section-padding-y) var(--section-padding-x);
 }
 
 .section-header {
@@ -180,9 +180,9 @@
 /* Format Banner */
 .format-banner {
   background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
-  padding: 2rem 1rem;
   position: relative;
   overflow: hidden;
+  padding: var(--section-padding-y-accent) var(--section-padding-x);
 
   &::before {
     content: '';
@@ -255,10 +255,6 @@
 }
 
 @media (min-width: 768px) {
-  .services-section {
-    padding: 4rem 2rem 3.5rem;
-  }
-
   .service-card {
     padding: 1.75rem;
   }
@@ -275,10 +271,6 @@
     }
   }
 
-  .format-banner {
-    padding: 2.5rem 2rem;
-  }
-
   .format-content {
     flex-direction: row;
     align-items: center;
@@ -292,10 +284,6 @@
 }
 
 @media (min-width: 1024px) {
-  .services-section {
-    padding: 4.5rem 2rem 4rem;
-  }
-
   .services-grid {
     gap: 1.5rem;
   }
@@ -318,10 +306,6 @@
       width: 1.6rem;
       height: 1.6rem;
     }
-  }
-
-  .format-banner {
-    padding: 2.5rem;
   }
 
   .format-text p {

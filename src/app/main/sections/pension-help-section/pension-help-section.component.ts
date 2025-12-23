@@ -98,7 +98,7 @@ import { MatIcon } from '@angular/material/icon';
     .pension-help-section {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 3.5rem 1rem 3rem;
+      padding: var(--section-padding-y) var(--section-padding-x);
     }
 
     .section-header {
@@ -256,10 +256,6 @@ import { MatIcon } from '@angular/material/icon';
     }
 
     @media (min-width: 768px) {
-      .pension-help-section {
-        padding: 4rem 2rem 3.5rem;
-      }
-
       .section-header h2 {
         font-size: 1.75rem;
       }
@@ -284,10 +280,6 @@ import { MatIcon } from '@angular/material/icon';
     }
 
     @media (min-width: 1024px) {
-      .pension-help-section {
-        padding: 4.5rem 2rem 4rem;
-      }
-
       .content-grid {
         gap: 2.5rem;
       }

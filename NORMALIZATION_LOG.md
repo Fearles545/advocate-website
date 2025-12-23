@@ -112,7 +112,11 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 
 ### 1.3 Border Radius Conflict
 
-**Status:** Pending
+**Status:** No action needed (resolved by 1.1 and 1.2)
+
+**Original issue:** Outline buttons had inconsistent border-radius (`2rem` vs `3rem`).
+
+**Resolution:** Both `CtaButtonComponent` and `CtaOutlineButtonComponent` now use `border-radius: 3rem`. Visual hierarchy is achieved through fill style (solid vs outline with gradient hover) rather than different radii.
 
 ---
 
@@ -120,7 +124,57 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 
 ### 2.1 Section Padding
 
-**Status:** Pending
+**Status:** Completed
+**Date:** 2025-12-23
+
+**Solution:** Created CSS variables for responsive section padding in `src/styles.css`.
+
+**CSS Variables added:**
+```css
+:root {
+  /* Section padding - mobile first */
+  --section-padding-y: 2rem;
+  --section-padding-x: 1rem;
+  /* Extra breathing room for dark/accent sections */
+  --section-padding-y-accent: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-padding-y: 4rem;
+    --section-padding-x: 2rem;
+    --section-padding-y-accent: 5rem;
+  }
+}
+```
+
+**Files modified:**
+- `src/styles.css` - Added CSS variables and desktop media query
+- `src/app/main/sections/intro-section/intro-section.component.css` - Uses `--section-padding-y/x`, removed responsive overrides
+- `src/app/main/sections/pension-help-section/pension-help-section.component.ts` - Uses variables, removed responsive overrides
+- `src/app/main/sections/about-section/about-section.component.ts` - Uses variables
+- `src/app/main/sections/services-section/services-section.component.css` - Uses variables, removed responsive overrides
+- `src/app/main/sections/why-me-section/why-me-section.component.ts` - Uses variables
+- `src/app/main/sections/documents-section/documents-section.component.ts` - Uses variables
+- `src/app/main/sections/feedback-section/feedback-section.component.css` - Uses variables
+- `src/app/main/sections/blog-preview-section/blog-preview-section.component.css` - Uses variables
+- `src/app/main/sections/seo-section/seo-section.component.css` - Uses variables
+- `src/app/main/sections/court-cases-section/court-cases-section.component.css` - Uses `--section-padding-y-accent` (dark section)
+- `src/app/main/sections/need-help-section/need-help-section.component.css` - Uses `--section-padding-y-accent` (dark section)
+
+**Pattern:**
+| Section Type | Variable |
+|--------------|----------|
+| Light background sections | `padding: var(--section-padding-y) var(--section-padding-x)` |
+| Dark/accent sections (court-cases, need-help) | `padding: var(--section-padding-y-accent) var(--section-padding-x)` |
+
+**Benefits:**
+- Single source of truth for section spacing
+- Responsive behavior controlled centrally via CSS variables
+- Easy to adjust spacing site-wide by changing 3 values
+- Dark sections automatically get extra breathing room
+
+**Cleanup:** All legacy responsive padding overrides removed from section media queries. Sections now fully rely on CSS variables for responsive padding.
 
 ---
 

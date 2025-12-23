@@ -23,7 +23,7 @@
 .blog-preview-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3.5rem 1rem 3rem;
+  padding: var(--section-padding-y) var(--section-padding-x);
 }
 
 .section-header {
@@ -225,10 +225,6 @@
 }
 
 @media (min-width: 768px) {
-  .blog-preview-section {
-    padding: 4rem 2rem 3.5rem;
-  }
-
   .section-header .section-intro {
     font-size: 1.1rem;
   }
@@ -273,10 +269,6 @@
 }
 
 @media (min-width: 1024px) {
-  .blog-preview-section {
-    padding: 4.5rem 2rem 4rem;
-  }
-
   .blog-card a {
     padding: 1.75rem 1.75rem 1.75rem 2rem;
   }
@@ -287,10 +279,6 @@
 }
 
 @media (max-width: 479px) {
-  .blog-preview-section {
-    padding: 3rem 1rem 2.5rem;
-  }
-
   .section-header {
     margin-bottom: 2rem;
 
