@@ -1,10 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button';
 
 @Component({
   selector: 'app-about-section',
-  imports: [RouterLink, CtaOutlineButtonComponent],
+  imports: [RouterLink, CtaOutlineButtonComponent, NgOptimizedImage],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section class="about-section-bg">
@@ -17,9 +18,11 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
         <div class="image-panel">
           <div class="image-frame">
             <img
-              src="/assets/images/main/about-section-1.jpg"
+              ngSrc="assets/images/main/about-section-2.webp"
               alt="Адвокат з пенсійних питань"
               fill
+              placeholder="blur"
+              sizes="30vw"
             />
             <!-- Gold corner accents -->
             <div class="corner-accent corner-tl"></div>
@@ -166,7 +169,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
     .image-frame {
       position: relative;
       width: 100%;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 6 / 7;
       border-radius: 0.75rem;
       overflow: hidden;
       box-shadow:
@@ -610,7 +613,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
       }
 
       .image-frame {
-        aspect-ratio: 3 / 4;
+        aspect-ratio: 6 / 7;
       }
 
       .about-content {
