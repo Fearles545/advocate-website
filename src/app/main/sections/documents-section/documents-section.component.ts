@@ -1,10 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button';
 
 @Component({
   selector: 'app-documents-section',
-  imports: [MatIcon, RouterLink],
+  imports: [MatIcon, RouterLink, CtaOutlineButtonComponent],
   template: `
     <section class="documents-section-bg">
       <div class="documents-section">
@@ -21,9 +22,8 @@ import { RouterLink } from '@angular/router';
             відповідно до вимог законодавства.
           </p>
 
-          <a routerLink="/documents" class="documents-cta">
-            <span>Переглянути документи адвоката</span>
-            <mat-icon>arrow_forward</mat-icon>
+          <a routerLink="/documents" appCtaOutlineButton>
+            Переглянути документи адвоката
           </a>
         </div>
       </div>
@@ -101,52 +101,6 @@ import { RouterLink } from '@angular/router';
       color: #444;
       font-weight: 500;
       max-width: 600px;
-    }
-
-    .documents-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background: transparent;
-      color: var(--color-green);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      border-radius: 2rem;
-      border: 2px solid rgba(0, 39, 6, 0.2);
-      transition:
-        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-        box-shadow var(--transition-normal),
-        background var(--transition-normal),
-        border-color var(--transition-normal),
-        color var(--transition-normal);
-
-      mat-icon {
-        font-size: 1.1rem;
-        width: 1.1rem;
-        height: 1.1rem;
-        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      }
-
-      &:hover {
-        transform: translateY(-2px);
-        background: var(--color-green);
-        border-color: var(--color-green);
-        color: var(--color-gold);
-        box-shadow:
-          0 6px 20px rgba(0, 39, 6, 0.2),
-          0 2px 8px rgba(0, 39, 6, 0.1);
-
-        mat-icon {
-          transform: translateX(4px);
-        }
-      }
-
-      &:active {
-        transform: translateY(0);
-      }
     }
 
     @media (min-width: 768px) {

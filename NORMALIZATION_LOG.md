@@ -22,6 +22,9 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 - `src/app/main/sections/intro-section/intro-section.component.ts` - Uses new component
 - `src/app/main/sections/intro-section/intro-section.component.html` - Updated markup
 - `src/app/main/sections/intro-section/intro-section.component.css` - Removed old button styles
+- `src/app/main/sections/need-help-section/need-help-section.component.ts` - Uses new component
+- `src/app/main/sections/need-help-section/need-help-section.component.html` - Updated markup
+- `src/app/main/sections/need-help-section/need-help-section.component.css` - Removed old `.cta-primary` styles (~100 lines)
 
 **Component API:**
 ```html
@@ -45,7 +48,65 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 
 ### 1.2 Secondary/Outline CTA Buttons
 
-**Status:** Pending
+**Status:** Completed
+**Date:** 2025-12-23
+
+**Solution:** Created reusable `CtaOutlineButtonComponent` with two theme variants.
+
+**Files created:**
+- `src/app/shared/components/cta-outline-button/cta-outline-button.component.ts`
+- `src/app/shared/components/cta-outline-button/index.ts`
+
+**Files modified:**
+- `src/app/main/sections/documents-section/documents-section.component.ts` - Uses new component
+- `src/app/main/sections/documents-section/documents-section.component.html` - Updated markup
+- `src/app/main/sections/documents-section/documents-section.component.css` - Removed old `.documents-cta` styles
+- `src/app/main/sections/services-section/services-section.component.ts` - Uses new component
+- `src/app/main/sections/services-section/services-section.component.html` - Updated markup
+- `src/app/main/sections/services-section/services-section.component.css` - Removed old `.cta-button` styles (~43 lines)
+- `src/app/main/sections/feedback-section/feedback-section.component.ts` - Uses new component
+- `src/app/main/sections/feedback-section/feedback-section.component.html` - Updated markup
+- `src/app/main/sections/feedback-section/feedback-section.component.css` - Removed old styles
+- `src/app/main/sections/blog-preview-section/blog-preview-section.component.ts` - Uses new component
+- `src/app/main/sections/blog-preview-section/blog-preview-section.component.html` - Updated markup
+- `src/app/main/sections/court-cases-section/court-cases-section.component.ts` - Uses new component
+- `src/app/main/sections/court-cases-section/court-cases-section.component.html` - Updated markup with `theme="gold"`
+- `src/app/main/sections/court-cases-section/court-cases-section.component.css` - Removed old `.cta-button` styles (~47 lines)
+- `src/app/main/sections/about-section/about-section.component.ts` - Uses new component, removed old `.about-cta` styles (~95 lines)
+
+**Component API:**
+```html
+<!-- Green theme (default) - for light backgrounds -->
+<a routerLink="..." appCtaOutlineButton>Text</a>
+
+<!-- Gold theme - for dark backgrounds -->
+<a routerLink="..." appCtaOutlineButton theme="gold">Text</a>
+
+<!-- Custom icon (default: arrow_forward) -->
+<a routerLink="..." appCtaOutlineButton icon="send">Text</a>
+```
+
+**Standardized values:**
+- Padding: `1rem 1.5rem`
+- Font-size: `0.9rem`
+- Border: `2px solid var(--color-green)` or `var(--color-gold)`
+- Border-radius: `3rem`
+- Default icon: `arrow_forward`
+
+**Features:**
+- Attribute selector `[appCtaOutlineButton]` - works on `<a>`, `<button>`, any element
+- Two themes: `green` (default for light bg), `gold` (for dark bg)
+- Gradient fill on hover via `::before` pseudo-element
+- Circular icon wrapper with translateX shift on hover
+- Content projection for text
+
+**Sections migrated:**
+- [x] `documents-section`
+- [x] `services-section`
+- [x] `feedback-section`
+- [x] `blog-preview-section`
+- [x] `court-cases-section` (uses `theme="gold"`)
+- [x] `about-section` (was the reference design)
 
 ---
 

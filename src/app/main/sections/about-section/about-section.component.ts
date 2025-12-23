@@ -1,15 +1,10 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
-import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button';
 
 @Component({
   selector: 'app-about-section',
-  imports: [
-    MatIcon,
-    RouterLink,
-    // NgOptimizedImage
-  ],
+  imports: [RouterLink, CtaOutlineButtonComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section class="about-section-bg">
@@ -68,11 +63,16 @@ import { RouterLink } from '@angular/router';
 
             <span class="quote-mark quote-close" aria-hidden="true">"</span>
 
-            <a routerLink="/about-me" class="about-cta">
-              <span class="cta-text">Детальніше про адвоката</span>
-              <span class="cta-icon">
-                <mat-icon>arrow_forward</mat-icon>
-              </span>
+            <a
+              routerLink="/about-me"
+              appCtaOutlineButton
+              style="
+                display: flex;
+                width: fit-content;
+                margin: auto;
+              "
+            >
+              Детальніше про адвоката
             </a>
           </div>
         </div>
@@ -334,7 +334,7 @@ import { RouterLink } from '@angular/router';
     }
 
     .quote-close {
-      bottom: 2rem;
+      bottom: 0;
       right: 0.5rem;
       transform: rotate(180deg);
     }
@@ -419,97 +419,6 @@ import { RouterLink } from '@angular/router';
       border-left: 3px solid var(--color-gold);
       font-style: italic;
       color: var(--color-green) !important;
-    }
-
-    .about-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 0.875rem 1.75rem;
-      background: transparent;
-      color: var(--color-green);
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      border-radius: 3rem;
-      border: 2px solid rgba(0, 39, 6, 0.2);
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      width: fit-content;
-      transition:
-        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-        box-shadow 0.4s ease,
-        border-color 0.3s ease;
-
-      &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          135deg,
-          var(--color-green) 0%,
-          #003d0a 100%
-        );
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: 0;
-      }
-
-      .cta-text,
-      .cta-icon {
-        position: relative;
-        z-index: 1;
-        transition: color 0.3s ease;
-      }
-
-      .cta-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 1.5rem;
-        height: 1.5rem;
-        background: rgba(0, 39, 6, 0.08);
-        border-radius: 50%;
-        transition:
-          transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-          background 0.3s ease;
-
-        mat-icon {
-          font-size: 0.95rem;
-          width: 0.95rem;
-          height: 0.95rem;
-        }
-      }
-
-      &:hover {
-        transform: translateY(-3px);
-        border-color: var(--color-green);
-        box-shadow:
-          0 8px 28px rgba(0, 39, 6, 0.2),
-          0 4px 12px rgba(0, 39, 6, 0.1);
-
-        &::before {
-          opacity: 1;
-        }
-
-        .cta-text,
-        .cta-icon mat-icon {
-          color: var(--color-gold);
-        }
-
-        .cta-icon {
-          background: rgba(201, 165, 92, 0.2);
-          transform: translateX(4px);
-        }
-      }
-
-      &:active {
-        transform: translateY(-1px);
-      }
     }
 
     .decorative-line {
@@ -638,11 +547,6 @@ import { RouterLink } from '@angular/router';
       .highlight-text {
         margin-left: 0;
         margin-right: 0;
-      }
-
-      .about-cta {
-        margin: 0;
-        justify-content: flex-start;
       }
 
       .quote-open {

@@ -9,10 +9,11 @@ import {
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { Feedback } from '../../../feedbacks/feedbacks.data';
+import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button';
 
 @Component({
   selector: 'app-feedback-section',
-  imports: [MatIcon, RouterLink],
+  imports: [MatIcon, RouterLink, CtaOutlineButtonComponent],
   templateUrl: './feedback-section.component.html',
   styleUrl: './feedback-section.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -300,50 +300,6 @@
   margin-top: 3rem;
 }
 
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background: transparent;
-  color: var(--color-gold);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  border-radius: 2rem;
-  border: 2px solid var(--color-gold);
-  transition:
-    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow var(--transition-normal),
-    background var(--transition-normal),
-    color var(--transition-normal);
-
-  mat-icon {
-    font-size: 1.1rem;
-    width: 1.1rem;
-    height: 1.1rem;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    background: var(--color-gold);
-    color: var(--color-green);
-    box-shadow:
-      0 8px 24px rgba(201, 165, 92, 0.3),
-      0 4px 8px rgba(201, 165, 92, 0.2);
-
-    mat-icon {
-      transform: translateX(4px);
-    }
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-}
-
 .decorative-scales {
   position: absolute;
   bottom: 2rem;
@@ -490,10 +446,5 @@
 
   .case-title {
     font-size: 0.95rem;
-  }
-
-  .cta-button {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9rem;
   }
 }

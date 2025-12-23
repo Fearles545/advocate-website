@@ -167,106 +167,6 @@
   margin-top: 0.5rem;
 }
 
-.cta-primary {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 1.25rem 2.5rem;
-  font-size: 1.15rem;
-  font-weight: 700;
-  font-family: inherit;
-  background: linear-gradient(
-    135deg,
-    #e0c060 0%,
-    var(--color-gold) 30%,
-    #f5d675 60%,
-    var(--color-gold) 100%
-  );
-  background-size: 300% 300%;
-  color: var(--color-green);
-  border: none;
-  border-radius: 3rem;
-  cursor: pointer;
-  box-shadow:
-    0 8px 32px rgba(201, 165, 92, 0.5),
-    0 4px 16px rgba(201, 165, 92, 0.3),
-    inset 0 2px 0 rgba(255, 255, 255, 0.3),
-    inset 0 -2px 0 rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow var(--transition-normal);
-  animation: gradient-flow 4s ease infinite;
-  overflow: hidden;
-
-  .btn-glow {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.4),
-      transparent
-    );
-    animation: shimmer 3s ease-in-out infinite;
-  }
-
-  mat-icon {
-    font-size: 1.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  span:not(.btn-glow) {
-    position: relative;
-    z-index: 1;
-  }
-
-  &:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow:
-      0 12px 40px rgba(201, 165, 92, 0.6),
-      0 8px 24px rgba(201, 165, 92, 0.4),
-      inset 0 2px 0 rgba(255, 255, 255, 0.4),
-      inset 0 -2px 0 rgba(0, 0, 0, 0.1);
-
-    mat-icon {
-      transform: translateX(4px);
-    }
-  }
-
-  &:active {
-    transform: translateY(-2px) scale(0.99);
-  }
-}
-
-@keyframes gradient-flow {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    left: -100%;
-  }
-  50%,
-  100% {
-    left: 100%;
-  }
-}
-
 .trust-text {
   margin: 0;
   font-size: 0.9rem;
@@ -395,11 +295,6 @@
 }
 
 @media (min-width: 640px) {
-  .cta-primary {
-    padding: 1.25rem 3rem;
-    font-size: 1.2rem;
-  }
-
   .cta-link {
     font-size: 1rem;
   }
@@ -493,12 +388,6 @@
 
   .description-highlight {
     font-size: 0.9rem;
-  }
-
-  .cta-primary {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
   }
 
   .cta-links {
