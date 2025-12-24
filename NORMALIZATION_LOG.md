@@ -459,7 +459,46 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 
 ### 4.3 Card Borders
 
-**Status:** Pending
+**Status:** Completed
+**Date:** 2025-12-24
+
+**Solution:** Created CSS variable for card border in `src/styles.css`.
+
+**CSS Variable added:**
+```css
+:root {
+  /* Card border - 4.3 (gold-tinted for premium feel) */
+  --card-border: 1px solid rgba(201, 165, 92, 0.2);
+}
+```
+
+**Files modified:**
+- `src/app/main/sections/services-section/services-section.component.css` - `.service-card`
+- `src/app/main/sections/feedback-section/feedback-section.component.css` - `.feedback-card`
+- `src/app/main/sections/seo-section/seo-section.component.css` - `.seo-block`
+- `src/app/main/sections/blog-preview-section/blog-preview-section.component.css` - `.blog-card`
+- `src/app/main/sections/pension-help-section/pension-help-section.component.ts` - `.solution-content`
+- `src/app/main/sections/about-section/about-section.component.ts` - `.content-wrapper` (was 0.15, now 0.2)
+- `src/app/main/sections/why-me-section/why-me-section.component.ts` - `.trust-item` (was 0.15, now 0.2)
+
+**Also updated (bonus):**
+- `why-me-section` `.trust-item` - `border-radius: 0.5rem` → `var(--card-border-radius-sm)`
+
+**Not changed (intentional):**
+| Element | Border | Reason |
+|---------|--------|--------|
+| `.problem-item` | `rgba(0, 39, 6, 0.08)` | Green-tinted for "problem" semantic |
+| `.intro-badge` | `rgba(0, 39, 6, 0.08)` | Neutral items, different purpose |
+| `.problem-icon-wrapper` | `rgba(0, 39, 6, 0.1)` | Icon wrapper, not a card |
+
+**Standardization:**
+- Previous: `0.15` and `0.2` opacity variants
+- Now: All gold-tinted card borders use `0.2` opacity via variable
+
+**Design rationale:**
+- Gold-tinted border (`rgba(201, 165, 92, 0.2)`) creates subtle premium feel
+- Matches the brand gold color at low opacity
+- Green-tinted borders kept for neutral/problem items (different semantic purpose)
 
 ---
 

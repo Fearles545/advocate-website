@@ -220,7 +220,7 @@ import { MatIcon } from '@angular/material/icon';
       padding: 1rem 1.5rem 1.5rem;
       background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
       border-radius: var(--card-border-radius);
-      border: 1px solid rgba(201, 165, 92, 0.2);
+      border: var(--card-border);
       box-shadow:
         0 8px 32px rgba(0, 39, 6, 0.2),
         0 4px 12px rgba(0, 39, 6, 0.15),

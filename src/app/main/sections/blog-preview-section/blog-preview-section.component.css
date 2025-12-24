@@ -69,7 +69,7 @@
   position: relative;
   background: white;
   border-radius: var(--card-border-radius);
-  border: 1px solid rgba(201, 165, 92, 0.2);
+  border: var(--card-border);
   box-shadow: var(--card-box-shadow);
   transition:
     transform var(--transition-normal),

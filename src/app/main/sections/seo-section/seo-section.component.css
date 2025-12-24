@@ -111,7 +111,7 @@
   background: white;
   border-radius: var(--card-border-radius);
   padding: 1.5rem;
-  border: 1px solid rgba(201, 165, 92, 0.2);
+  border: var(--card-border);
   box-shadow: var(--card-box-shadow);
 
   p {

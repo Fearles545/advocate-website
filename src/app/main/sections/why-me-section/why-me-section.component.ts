@@ -134,8 +134,8 @@ import { MatIcon } from '@angular/material/icon';
       gap: 1rem;
       padding: 1rem 1.25rem;
       background: white;
-      border-radius: 0.5rem;
-      border: 1px solid rgba(201, 165, 92, 0.15);
+      border-radius: var(--card-border-radius-sm);
+      border: var(--card-border);
       box-shadow:
         0 2px 8px rgba(0, 39, 6, 0.04),
         0 1px 2px rgba(0, 39, 6, 0.02);

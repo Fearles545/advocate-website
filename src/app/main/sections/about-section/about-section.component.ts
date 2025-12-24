@@ -304,7 +304,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
       padding: 2rem 1.5rem;
       background: rgba(255, 255, 255, 0.7);
       border-radius: var(--card-border-radius);
-      border: 1px solid rgba(201, 165, 92, 0.15);
+      border: var(--card-border);
       box-shadow:
         0 4px 24px rgba(0, 39, 6, 0.04),
         0 1px 4px rgba(0, 39, 6, 0.02);
