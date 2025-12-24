@@ -140,7 +140,7 @@
 
 .description-main {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: var(--section-intro-font-size);
   line-height: 1.7;
   color: var(--color-gold-light);
   font-weight: 500;
@@ -304,10 +304,6 @@
     font-size: 2rem;
   }
 
-  .description-main {
-    font-size: 1.15rem;
-  }
-
   .description-highlight {
     font-size: 1.05rem;
   }
@@ -369,10 +365,6 @@
 
   .need-help-section h2 {
     font-size: 1.4rem;
-  }
-
-  .description-main {
-    font-size: 0.95rem;
   }
 
   .description-highlight {

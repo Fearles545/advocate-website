@@ -137,7 +137,7 @@ import { MatIcon } from '@angular/material/icon';
     }
 
     .problems-intro {
-      font-size: 1.1rem;
+      font-size: var(--section-intro-font-size);
       line-height: 1.6;
       color: #444;
       text-align: center;
@@ -253,10 +253,6 @@ import { MatIcon } from '@angular/material/icon';
     @media (min-width: 768px) {
       .section-header h2 {
         font-size: 1.75rem;
-      }
-
-      .problems-intro {
-        font-size: 1.15rem;
       }
 
       .solution-content {

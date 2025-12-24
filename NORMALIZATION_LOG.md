@@ -279,7 +279,43 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 
 ### 3.2 Section Intro Text Sizes
 
-**Status:** Pending
+**Status:** Completed
+**Date:** 2025-12-24
+
+**Solution:** Created responsive CSS variable for section intro text in `src/styles.css`.
+
+**CSS Variables added:**
+```css
+:root {
+  /* Section intro text - leads reader into section content */
+  --section-intro-font-size: 1.1rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-intro-font-size: 1.2rem;
+  }
+}
+```
+
+**Sections updated:**
+| Section | Class | Before | After |
+|---------|-------|--------|-------|
+| intro-section | `.intro-tagline` | 1rem + responsive overrides | var |
+| pension-help-section | `.problems-intro` | 1.1rem + responsive overrides | var |
+| blog-preview-section | `.section-intro` | 1.05rem + responsive overrides | var |
+| feedback-section | `.section-intro` | 1.05rem + responsive overrides | var |
+| court-cases-section | `.section-intro` | 1.1rem + responsive overrides | var |
+| need-help-section | `.description-main` | 1.1rem + responsive overrides | var |
+
+**Cleanup:**
+- Removed all responsive font-size overrides for intro text (variable handles responsiveness)
+- Removed ~15 lines of redundant responsive CSS across 6 sections
+
+**Design rationale:**
+- 1.1rem on mobile provides readable intro text without overwhelming h2 headings
+- 1.2rem on tablet+ adds subtle emphasis on larger screens
+- Variable-based approach ensures consistency and simplifies maintenance
 
 ---
 

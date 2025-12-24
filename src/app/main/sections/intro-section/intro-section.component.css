@@ -153,7 +153,7 @@
 .intro-tagline {
   margin: 0;
   max-width: 550px;
-  font-size: 1rem;
+  font-size: var(--section-intro-font-size);
   line-height: 1.6;
   font-weight: 500;
   color: #444;
@@ -396,10 +396,6 @@
     letter-spacing: 2px;
   }
 
-  .intro-tagline {
-    font-size: 1.05rem;
-  }
-
   .photo-frame {
     width: 60%;
     max-width: 320px;
@@ -450,10 +446,6 @@
 
   .name-label {
     font-size: 2.5rem;
-  }
-
-  .intro-tagline {
-    font-size: 1.15rem;
   }
 
   .location-text {
@@ -515,10 +507,6 @@
 
   .name-label {
     font-size: 2.75rem;
-  }
-
-  .intro-tagline {
-    font-size: 1.2rem;
   }
 
   .location-text {

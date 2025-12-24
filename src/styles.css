@@ -34,6 +34,8 @@
   --header-underline-width: 80px;
   --header-underline-width-accent: 100px; /* Dark/accent sections - wider for visibility */
   --header-underline-gradient: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  /* Section intro text - leads reader into section content */
+  --section-intro-font-size: 1.1rem;
   --color-green: #002706;
   --color-greennnn: rgb(0, 39, 6);
   --color-greennnn: rgba(255, 255, 255, 0);
@@ -183,12 +185,13 @@ mat-paginator div.mat-mdc-paginator-range-label {
 @media (max-width: 1279px) {
 }
 
-/* Desktop section padding overrides */
+/* Desktop overrides */
 @media (min-width: 768px) {
   :root {
     --section-padding-y: 4rem;
     --section-padding-x: 2rem;
     --section-padding-y-accent: 5rem;
+    --section-intro-font-size: 1.2rem;
   }
 }
 

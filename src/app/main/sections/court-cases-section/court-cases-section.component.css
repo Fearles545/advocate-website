@@ -120,7 +120,7 @@
 .section-intro {
   margin: 0 auto;
   max-width: 700px;
-  font-size: 1.1rem;
+  font-size: var(--section-intro-font-size);
   line-height: 1.6;
   color: var(--color-gold-light);
   font-weight: 500;
@@ -340,10 +340,6 @@
     }
   }
 
-  .section-intro {
-    font-size: 1.15rem;
-  }
-
   .court-case-card a {
     padding: 1.75rem;
     padding-top: 2rem;
@@ -396,10 +392,6 @@
 
   .section-header h2 {
     font-size: 1.4rem;
-  }
-
-  .section-intro {
-    font-size: 0.95rem;
   }
 
   .court-case-card a {
