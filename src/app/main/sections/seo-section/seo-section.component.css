@@ -142,9 +142,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  min-width: 2.5rem;
+  width: var(--icon-wrapper-md);
+  height: var(--icon-wrapper-md);
+  min-width: var(--icon-wrapper-md);
   background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
   border-radius: 0.5rem;
   box-shadow:

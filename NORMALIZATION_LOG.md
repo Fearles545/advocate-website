@@ -504,7 +504,48 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 
 ### 4.4 Icon Wrapper Sizes
 
-**Status:** Pending
+**Status:** Completed
+**Date:** 2025-12-24
+
+**Solution:** Created CSS variables for 3-tier icon wrapper scale in `src/styles.css`.
+
+**CSS Variables added:**
+```css
+:root {
+  /* Icon wrapper sizes - 4.4 (3-tier scale) */
+  --icon-wrapper-sm: 2.25rem; /* Small inline icons (checkmarks, list items) */
+  --icon-wrapper-md: 2.5rem; /* Card icons (service icons, block icons) */
+  --icon-wrapper-lg: 4rem; /* Section badges (documents, court-cases headers) */
+}
+```
+
+**Files modified:**
+
+**Small (--icon-wrapper-sm: 2.25rem):**
+- `src/app/main/sections/why-me-section/why-me-section.component.ts` - `.check-wrapper`
+
+**Medium (--icon-wrapper-md: 2.5rem):**
+- `src/app/main/sections/services-section/services-section.component.css` - `.service-icon-wrapper`
+- `src/app/main/sections/pension-help-section/pension-help-section.component.ts` - `.problem-icon-wrapper`
+- `src/app/main/sections/seo-section/seo-section.component.css` - `.block-icon`
+
+**Large (--icon-wrapper-lg: 4rem):**
+- `src/app/main/sections/documents-section/documents-section.component.ts` - `.badge-icon`
+- `src/app/main/sections/court-cases-section/court-cases-section.component.css` - `.header-badge`
+
+**Not changed (intentional):**
+| Element | Size | Reason |
+|---------|------|--------|
+| `need-help .section-badge` | `4.5rem` | Main CTA emphasis (larger for prominence) |
+| Responsive desktop overrides | Various | Media query adjustments kept as explicit values |
+| `feedback .reviewer-avatar` | `3.5rem` | Avatar, not icon wrapper |
+
+**Design rationale:**
+- 3-tier scale creates clear visual hierarchy
+- Small: inline with text (checkmarks, indicators)
+- Medium: card-level icons (services, features)
+- Large: section-level badges (headers, focal points)
+- Responsive overrides remain explicit for fine-tuned control
 
 ---
 

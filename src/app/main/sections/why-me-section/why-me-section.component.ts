@@ -157,9 +157,9 @@ import { MatIcon } from '@angular/material/icon';
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 2.25rem;
-      height: 2.25rem;
-      min-width: 2.25rem;
+      width: var(--icon-wrapper-sm);
+      height: var(--icon-wrapper-sm);
+      min-width: var(--icon-wrapper-sm);
       background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
       border-radius: 50%;
       box-shadow:

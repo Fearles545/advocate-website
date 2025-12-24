@@ -181,9 +181,9 @@ import { MatIcon } from '@angular/material/icon';
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 2.5rem;
-      height: 2.5rem;
-      min-width: 2.5rem;
+      width: var(--icon-wrapper-md);
+      height: var(--icon-wrapper-md);
+      min-width: var(--icon-wrapper-md);
       background: linear-gradient(
         135deg,
         rgba(0, 39, 6, 0.06) 0%,

@@ -69,8 +69,8 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 4rem;
-      height: 4rem;
+      width: var(--icon-wrapper-lg);
+      height: var(--icon-wrapper-lg);
       background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
       border-radius: 50%;
       margin-bottom: 1.5rem;

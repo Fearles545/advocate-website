@@ -78,8 +78,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
+  width: var(--icon-wrapper-lg);
+  height: var(--icon-wrapper-lg);
   background: linear-gradient(135deg, var(--color-gold) 0%, #a8854a 100%);
   border-radius: 50%;
   margin-bottom: 1.5rem;
