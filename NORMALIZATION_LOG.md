@@ -389,13 +389,71 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 
 ### 4.1 Card Border Radius
 
-**Status:** No action needed (already consistent)
+**Status:** Completed
+**Date:** 2025-12-24
+
+**Solution:** Created CSS variables for card border radius in `src/styles.css`.
+
+**CSS Variables added:**
+```css
+:root {
+  /* Card border radius - 4.1 */
+  --card-border-radius: 0.75rem;
+  --card-border-radius-sm: 0.5rem; /* Smaller items like problem-item, trust-item */
+}
+```
+
+**Files modified (0.75rem → var(--card-border-radius)):**
+- `src/app/main/sections/blog-preview-section/blog-preview-section.component.css` - `.blog-card`
+- `src/app/main/sections/services-section/services-section.component.css` - `.service-card`
+- `src/app/main/sections/feedback-section/feedback-section.component.css` - `.feedback-card`
+- `src/app/main/sections/seo-section/seo-section.component.css` - `.seo-block`, `.cta-block`
+- `src/app/main/sections/court-cases-section/court-cases-section.component.css` - `.court-case-card`
+- `src/app/main/sections/pension-help-section/pension-help-section.component.ts` - `.solution-content`
+- `src/app/main/sections/about-section/about-section.component.ts` - `.image-frame`, `::after`, `.content-wrapper`
+
+**Files modified (0.5rem → var(--card-border-radius-sm)):**
+- `src/app/main/sections/pension-help-section/pension-help-section.component.ts` - `.problem-item`
+
+**Not changed (intentional):**
+- Photo container borders in `intro-section` (image-specific styling)
+- Decorative elements like `.block-note`, `.highlight-text` (different semantic purpose)
 
 ---
 
 ### 4.2 Card Box Shadows
 
-**Status:** No action needed (exception for dark bg is correct)
+**Status:** Completed
+**Date:** 2025-12-24
+
+**Solution:** Created CSS variable for standard card box shadow in `src/styles.css`.
+
+**CSS Variable added:**
+```css
+:root {
+  /* Card box shadow - 4.2 (uses brand green for subtle warmth) */
+  --card-box-shadow: 0 4px 16px rgba(0, 39, 6, 0.06), 0 1px 4px rgba(0, 39, 6, 0.04);
+}
+```
+
+**Files modified:**
+- `src/app/main/sections/blog-preview-section/blog-preview-section.component.css` - `.blog-card`
+- `src/app/main/sections/services-section/services-section.component.css` - `.service-card`
+- `src/app/main/sections/feedback-section/feedback-section.component.css` - `.feedback-card`
+- `src/app/main/sections/seo-section/seo-section.component.css` - `.seo-block`
+
+**Not changed (intentional exceptions):**
+| Element | Shadow | Reason |
+|---------|--------|--------|
+| `.court-case-card` | `0 8px 32px rgba(0,0,0,0.2)` | Dark background needs stronger shadow |
+| `.cta-block` | Custom with inset | Dark gradient block with premium feel |
+| `.solution-content` | Custom stronger | Dark CTA block needs emphasis |
+| `.image-frame` | Custom softer | Image containers have unique treatment |
+
+**Design rationale:**
+- Standard card shadow uses brand green (`rgba(0, 39, 6, ...)`) instead of pure black for subtle warmth
+- Dark background elements keep stronger shadows for proper depth perception
+- Variable enables easy adjustment of card depth across the site
 
 ---
 

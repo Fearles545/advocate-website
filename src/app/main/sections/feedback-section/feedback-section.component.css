@@ -151,7 +151,7 @@
   scroll-snap-align: center;
   scroll-snap-stop: always;
   background: white;
-  border-radius: 0.75rem;
+  border-radius: var(--card-border-radius);
   padding: 2rem;
   border: 1px solid rgba(201, 165, 92, 0.2);
   min-height: 280px;
@@ -159,9 +159,7 @@
   flex-direction: column;
   gap: 1.5rem;
   box-sizing: border-box;
-  box-shadow:
-    0 4px 16px rgba(0, 39, 6, 0.06),
-    0 1px 4px rgba(0, 39, 6, 0.04);
+  box-shadow: var(--card-box-shadow);
 }
 
 .feedback-header {
