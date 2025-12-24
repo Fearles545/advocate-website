@@ -1,6 +1,6 @@
 # Design Normalization Log
 
-Tracking design consistency improvements based on `design-audit-report.md`.
+Tracking design consistency improvements based on [`audit-report.md`](audit-report.md).
 
 ---
 

@@ -92,10 +92,44 @@ public/
 - **Accessibility** - semantic HTML, ARIA attributes
 - **Angular Material** preferred for UI components
 
+## Design System
+
+**See [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md) for the complete design system documentation.**
+
+The design system defines canonical patterns for:
+- **Colors** - Brand palette (green/gold), text colors, semantic colors
+- **Typography** - Font stack, size scale, weights
+- **Spacing** - Section padding, max-widths, spacing scale
+- **Components** - CTA buttons, cards, icon wrappers, section headers
+- **Section backgrounds** - Light/dark patterns with gold separators
+- **Animations** - Transitions and hover effects
+- **Breakpoints** - Responsive design targets
+
+### Key Design Tokens
+
+```css
+/* Brand colors */
+--color-green: #002706;
+--color-gold: #c9a55c;
+
+/* Section structure */
+--section-max-width: 1100px;
+--section-padding-y: clamp(3rem, 5vw, 4rem);
+--section-padding-x: clamp(1rem, 4vw, 2rem);
+
+/* Card styling */
+--card-border-radius: 0.75rem;
+--card-box-shadow: 0 2px 8px rgba(0, 39, 6, 0.06);
+```
+
+When creating new sections or components, **always reference the design system** to maintain visual consistency.
+
 ## Key Files
 
 | File | Purpose |
 |------|---------|
+| `docs/DESIGN_SYSTEM.md` | **Design system documentation** |
+| `src/styles.css` | Global CSS variables and tokens |
 | `core/config/base-url.ts` | Site base URL |
 | `core/config/seo.config.ts` | Global SEO config |
 | `core/services/seo.service.ts` | SEO tag management |
