@@ -76,7 +76,7 @@
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.55;
-    color: #444;
+    color: var(--text-color-primary);
     flex: 1;
   }
 

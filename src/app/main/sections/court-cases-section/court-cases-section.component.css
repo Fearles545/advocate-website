@@ -245,7 +245,7 @@
 
 .case-date {
   font-size: 0.8rem;
-  color: #777;
+  color: var(--text-color-secondary);
   font-weight: 500;
 }
 

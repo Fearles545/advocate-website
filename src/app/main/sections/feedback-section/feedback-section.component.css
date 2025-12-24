@@ -54,7 +54,7 @@
     max-width: 650px;
     font-size: var(--section-intro-font-size);
     line-height: 1.6;
-    color: #444;
+    color: var(--text-color-primary);
     font-weight: 500;
   }
 }
@@ -236,7 +236,7 @@
     margin: 0;
     font-size: 1rem;
     line-height: 1.65;
-    color: #333;
+    color: var(--text-color-primary);
     position: relative;
     z-index: 1;
     max-height: 180px;

@@ -386,7 +386,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
       p {
         font-size: 1.05rem;
         line-height: 1.8;
-        color: #333;
+        color: var(--text-color-primary);
         margin: 0 0 1.25rem;
         font-weight: 500;
 

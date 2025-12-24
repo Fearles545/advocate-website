@@ -321,7 +321,67 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 
 ### 3.3 Body Text Colors
 
-**Status:** Pending
+**Status:** Completed
+**Date:** 2025-12-24
+
+**Solution:** Created CSS variables for body text colors in `src/styles.css`.
+
+**CSS Variables added:**
+```css
+:root {
+  /* Body text colors - for content on light backgrounds */
+  --text-color-primary: #444;
+  --text-color-secondary: #666;
+}
+```
+
+**Files modified:**
+
+**CSS files:**
+- `src/app/main/sections/intro-section/intro-section.component.css`
+  - `.intro-tagline` → primary
+  - `.trust-item span` → secondary
+- `src/app/main/sections/blog-preview-section/blog-preview-section.component.css`
+  - `.section-intro` → primary
+  - `.blog-description` → secondary (was #555)
+- `src/app/main/sections/services-section/services-section.component.css`
+  - `.service-card p` → primary
+- `src/app/main/sections/seo-section/seo-section.component.css`
+  - `.seo-content p` → primary
+  - `.intro-block p` → primary (was #333)
+  - `.check-list li` → primary
+  - `.block-note` → secondary
+- `src/app/main/sections/feedback-section/feedback-section.component.css`
+  - `.section-intro` → primary
+  - `.feedback-text` → primary (was #333)
+- `src/app/main/sections/court-cases-section/court-cases-section.component.css`
+  - `.case-date` → secondary (was #777)
+
+**TypeScript files (inline styles):**
+- `src/app/main/sections/pension-help-section/pension-help-section.component.ts`
+  - `.problems-intro` → primary
+- `src/app/main/sections/about-section/about-section.component.ts`
+  - `.about-text p` → primary (was #333)
+- `src/app/main/sections/documents-section/documents-section.component.ts`
+  - `p` → primary
+
+**Color standardization:**
+| Original | Mapped To | Variable |
+|----------|-----------|----------|
+| #444 | #444 | `--text-color-primary` |
+| #333 | #444 | `--text-color-primary` |
+| #555 | #666 | `--text-color-secondary` |
+| #666 | #666 | `--text-color-secondary` |
+| #777 | #666 | `--text-color-secondary` |
+
+**Not changed (intentional):**
+- `#4ade80` in court-cases (green success checkmark icon)
+- `#f5b800` in feedback (gold star rating)
+
+**Design rationale:**
+- Two-tier hierarchy: primary (#444) for main content, secondary (#666) for supporting text
+- Both colors pass WCAG AA contrast on light backgrounds
+- Standardizing to CSS variables enables easy theming/dark mode in future
 
 ---
 

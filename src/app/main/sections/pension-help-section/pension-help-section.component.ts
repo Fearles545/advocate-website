@@ -139,7 +139,7 @@ import { MatIcon } from '@angular/material/icon';
     .problems-intro {
       font-size: var(--section-intro-font-size);
       line-height: 1.6;
-      color: #444;
+      color: var(--text-color-primary);
       text-align: center;
       max-width: 800px;
       margin: 0 auto;

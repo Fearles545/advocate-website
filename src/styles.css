@@ -36,6 +36,9 @@
   --header-underline-gradient: linear-gradient(90deg, transparent, var(--color-gold), transparent);
   /* Section intro text - leads reader into section content */
   --section-intro-font-size: 1.1rem;
+  /* Body text colors - for content on light backgrounds */
+  --text-color-primary: #444;
+  --text-color-secondary: #666;
   --color-green: #002706;
   --color-greennnn: rgb(0, 39, 6);
   --color-greennnn: rgba(255, 255, 255, 0);

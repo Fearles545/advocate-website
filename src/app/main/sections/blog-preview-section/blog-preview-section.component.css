@@ -54,7 +54,7 @@
     max-width: 700px;
     font-size: var(--section-intro-font-size);
     line-height: 1.6;
-    color: #444;
+    color: var(--text-color-primary);
     font-weight: 500;
   }
 }
@@ -173,7 +173,7 @@
 .blog-description {
   margin: 0;
   font-size: 0.9rem;
-  color: #555;
+  color: var(--text-color-secondary);
   line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 2;

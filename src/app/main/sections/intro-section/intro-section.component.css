@@ -156,7 +156,7 @@
   font-size: var(--section-intro-font-size);
   line-height: 1.6;
   font-weight: 500;
-  color: #444;
+  color: var(--text-color-primary);
 }
 
 /* Photo containers - mobile vs desktop */
@@ -265,7 +265,7 @@
   span {
     font-size: 0.8rem;
     font-weight: 500;
-    color: #666;
+    color: var(--text-color-secondary);
     white-space: nowrap;
   }
 }
