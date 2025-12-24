@@ -227,7 +227,53 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 
 ### 3.1 Section Header Underline Width
 
-**Status:** Pending
+**Status:** Completed
+**Date:** 2025-12-24
+
+**Solution:** Created CSS variables for header underline in `src/styles.css`.
+
+**CSS Variables added:**
+```css
+:root {
+  /* Section header underline */
+  --header-underline-width: 80px;
+  --header-underline-width-accent: 100px; /* Dark/accent sections - wider for visibility */
+  --header-underline-gradient: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+```
+
+**Files modified:**
+- `src/styles.css` - Added CSS variables
+
+**Light background sections (80px → variable):**
+- `src/app/main/sections/intro-section/intro-section.component.css`
+- `src/app/main/sections/pension-help-section/pension-help-section.component.ts`
+- `src/app/main/sections/about-section/about-section.component.ts`
+- `src/app/main/sections/services-section/services-section.component.css` (was 100px, fixed)
+- `src/app/main/sections/why-me-section/why-me-section.component.ts`
+- `src/app/main/sections/feedback-section/feedback-section.component.css`
+- `src/app/main/sections/blog-preview-section/blog-preview-section.component.css`
+- `src/app/main/sections/seo-section/seo-section.component.css` (was 100px, fixed)
+
+**Dark background sections (120px → 100px via accent variable):**
+- `src/app/main/sections/court-cases-section/court-cases-section.component.css`
+- `src/app/main/sections/need-help-section/need-help-section.component.css`
+
+**Pattern:**
+| Background | Variable | Width | Sections |
+|------------|----------|-------|----------|
+| Light | `--header-underline-width` | 80px | intro, pension-help, about, services, why-me, feedback, blog-preview, seo |
+| Dark/accent | `--header-underline-width-accent` | 100px | court-cases, need-help |
+
+**Cleanup:**
+- Removed responsive width override from intro-section (was changing to 100px at 768px breakpoint)
+- Fixed services-section and seo-section from 100px to standard 80px
+- Fixed court-cases and need-help from 120px to 100px
+
+**Design rationale:**
+- Wider underlines on dark backgrounds improve visibility
+- Consistent 80px across all light sections creates visual harmony
+- Gradient variable eliminates 5-line duplication in each section (reduced ~50 lines total)
 
 ---
 

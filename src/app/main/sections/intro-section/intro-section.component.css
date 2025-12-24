@@ -128,14 +128,9 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    width: var(--header-underline-width);
     height: 3px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      var(--color-gold),
-      transparent
-    );
+    background: var(--header-underline-gradient);
     border-radius: 2px;
   }
 }
@@ -446,10 +441,6 @@
   .intro-header h1 {
     gap: 0.75rem;
     padding-bottom: 1.5rem;
-
-    &::after {
-      width: 100px;
-    }
   }
 
   .profession-label {

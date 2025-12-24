@@ -111,14 +111,9 @@ import { MatIcon } from '@angular/material/icon';
           bottom: 0;
           left: 50%;
           transform: translateX(-50%);
-          width: 80px;
+          width: var(--header-underline-width);
           height: 3px;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            var(--color-gold),
-            transparent
-          );
+          background: var(--header-underline-gradient);
           border-radius: 2px;
         }
       }

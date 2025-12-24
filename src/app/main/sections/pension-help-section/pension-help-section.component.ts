@@ -117,14 +117,9 @@ import { MatIcon } from '@angular/material/icon';
     }
 
     .header-accent {
-      width: 80px;
+      width: var(--header-underline-width);
       height: 3px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--color-gold),
-        transparent
-      );
+      background: var(--header-underline-gradient);
       margin: 0 auto;
       border-radius: 2px;
     }

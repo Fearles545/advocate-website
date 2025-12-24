@@ -30,6 +30,10 @@
   --section-max-width: 1200px;
   --section-max-width-narrow: 900px; /* Text-heavy sections for better readability */
   --section-max-width-compact: 800px; /* Focused content sections */
+  /* Section header underline */
+  --header-underline-width: 80px;
+  --header-underline-width-accent: 100px; /* Dark/accent sections - wider for visibility */
+  --header-underline-gradient: linear-gradient(90deg, transparent, var(--color-gold), transparent);
   --color-green: #002706;
   --color-greennnn: rgb(0, 39, 6);
   --color-greennnn: rgba(255, 255, 255, 0);
