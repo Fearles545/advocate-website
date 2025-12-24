@@ -160,7 +160,7 @@ import { MatIcon } from '@angular/material/icon';
       width: var(--icon-wrapper-sm);
       height: var(--icon-wrapper-sm);
       min-width: var(--icon-wrapper-sm);
-      background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
+      background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-dark) 100%);
       border-radius: 50%;
       box-shadow:
         0 2px 8px rgba(0, 39, 6, 0.2),

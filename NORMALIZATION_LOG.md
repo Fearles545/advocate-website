@@ -553,12 +553,74 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 
 ### 5.1 Unlisted Hardcoded Colors
 
-**Status:** Pending
+**Status:** Completed
+**Date:** 2025-12-24
+
+**Solution:** Created CSS variables for all hardcoded colors and replaced usages across the codebase.
+
+**CSS Variables added to `src/styles.css`:**
+```css
+:root {
+  --color-green: #002706;
+  --color-green-dark: #003d0a; /* Gradient endpoints */
+  --color-green-darkest: #001a04; /* Dark section backgrounds */
+  --color-gold-accent: #bb925c;
+  --color-gold: #c9a55c;
+  --color-gold-dark: #a8854a; /* Gradient endpoints */
+  --color-gold-light: #e0d6c1;
+  /* Semantic colors */
+  --color-star: #f5b800; /* Star ratings */
+  --color-success: #4ade80; /* Victory/success indicators */
+  --color-success-bg: linear-gradient(135deg, #1a5c1a 0%, #0d3d0d 100%); /* Victory badge background */
+}
+```
+
+**Files modified:**
+
+**#003d0a → var(--color-green-dark):**
+- `src/app/shared/components/cta-button/cta-button.component.ts` - green theme gradient mid
+- `src/app/shared/components/cta-outline-button/cta-outline-button.component.ts` - gradient end
+- `src/app/main/sections/why-me-section/why-me-section.component.ts` - check-wrapper gradient
+- `src/app/main/sections/pension-help-section/pension-help-section.component.ts` - solution-content gradient
+- `src/app/main/sections/services-section/services-section.component.css` - icon-wrapper, format-banner gradients
+- `src/app/main/sections/feedback-section/feedback-section.component.css` - reviewer-avatar gradient
+- `src/app/main/sections/documents-section/documents-section.component.ts` - badge-icon gradient
+- `src/app/main/sections/seo-section/seo-section.component.css` - block-icon, cta-block gradients
+- `src/app/feedbacks/feedbacks.component.css` - reviewer-avatar gradient
+
+**#001a04 → var(--color-green-darkest):**
+- `src/app/shared/components/cta-button/cta-button.component.ts` - gold theme text color, icon color
+- `src/app/main/sections/court-cases-section/court-cases-section.component.css` - section background gradient
+- `src/app/main/sections/need-help-section/need-help-section.component.css` - section background gradient
+
+**#a8854a → var(--color-gold-dark):**
+- `src/app/shared/components/cta-button/cta-button.component.ts` - gold theme gradient mid
+- `src/app/shared/components/cta-outline-button/cta-outline-button.component.ts` - gold theme gradient end
+- `src/app/main/sections/court-cases-section/court-cases-section.component.css` - header-badge gradient
+- `src/app/main/sections/need-help-section/need-help-section.component.css` - section-badge gradient
+
+**#f5b800 → var(--color-star):**
+- `src/app/main/sections/feedback-section/feedback-section.component.css` - star rating color
+
+**#4ade80 → var(--color-success):**
+- `src/app/main/sections/court-cases-section/court-cases-section.component.css` - victory badge icon and text
+
+**#1a5c1a/#0d3d0d → var(--color-success-bg):**
+- `src/app/main/sections/court-cases-section/court-cases-section.component.css` - victory badge background
+
+**Design rationale:**
+- Green gradient scale: `--color-green` → `--color-green-dark` → `--color-green-darkest`
+- Gold gradient scale: `--color-gold` → `--color-gold-dark`
+- Semantic colors (`--color-star`, `--color-success`) for specific UI elements
+- Centralizing colors enables easy theming and dark mode implementation
+- All hardcoded hex values removed from section styles
 
 ---
 
 ### 5.2 CSS Variable Additions
 
-**Status:** Pending
+**Status:** Completed (merged with 5.1)
+
+See above for full list of CSS variables added.
 
 ---

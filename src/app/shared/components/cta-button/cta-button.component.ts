@@ -26,7 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
        ========================= */
     :host {
       --cta-bg-start: var(--color-green);
-      --cta-bg-mid: #003d0a;
+      --cta-bg-mid: var(--color-green-dark);
       --cta-bg-end: var(--color-green);
       --cta-text: var(--color-gold);
       --cta-glow: rgba(201, 165, 92, 0.2);
@@ -91,9 +91,9 @@ import { MatIconModule } from '@angular/material/icon';
        ========================= */
     :host([data-theme='gold']) {
       --cta-bg-start: var(--color-gold);
-      --cta-bg-mid: #a8854a;
+      --cta-bg-mid: var(--color-gold-dark);
       --cta-bg-end: var(--color-gold);
-      --cta-text: #001a04;
+      --cta-text: var(--color-green-darkest);
       --cta-glow: rgba(201, 165, 92, 0.3);
       --cta-shadow-color: rgba(168, 133, 74, 0.3);
       --cta-shadow-color-hover: rgba(168, 133, 74, 0.4);
@@ -116,7 +116,7 @@ import { MatIconModule } from '@angular/material/icon';
     }
 
     :host([data-theme='gold']) .cta-icon-wrapper mat-icon {
-      color: #001a04;
+      color: var(--color-green-darkest);
     }
 
     :host([data-theme='gold']:hover) .cta-icon-wrapper {

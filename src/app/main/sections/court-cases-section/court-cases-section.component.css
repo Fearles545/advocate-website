@@ -1,9 +1,9 @@
 .court-cases-section-bg {
   background: linear-gradient(
     135deg,
-    #001a04 0%,
+    var(--color-green-darkest) 0%,
     var(--color-green) 50%,
-    #001a04 100%
+    var(--color-green-darkest) 100%
   );
   position: relative;
   overflow: hidden;
@@ -80,7 +80,7 @@
   justify-content: center;
   width: var(--icon-wrapper-lg);
   height: var(--icon-wrapper-lg);
-  background: linear-gradient(135deg, var(--color-gold) 0%, #a8854a 100%);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
   border-radius: 50%;
   margin-bottom: 1.5rem;
   box-shadow:
@@ -201,7 +201,7 @@
   gap: 0.35rem;
   padding: 0.1rem;
   /* padding: 0.35rem 0.75rem; */
-  background: linear-gradient(135deg, #1a5c1a 0%, #0d3d0d 100%);
+  background: var(--color-success-bg);
   border-radius: 2rem;
   box-shadow:
     0 2px 8px rgba(0, 39, 6, 0.3),
@@ -212,13 +212,13 @@
     font-size: 1rem;
     width: 1rem;
     height: 1rem;
-    color: #4ade80;
+    color: var(--color-success);
   }
 
   span {
     font-size: 0.75rem;
     font-weight: 700;
-    color: #4ade80;
+    color: var(--color-success);
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }

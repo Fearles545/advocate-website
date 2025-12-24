@@ -40,11 +40,16 @@
   --text-color-primary: #444;
   --text-color-secondary: #666;
   --color-green: #002706;
-  --color-greennnn: rgb(0, 39, 6);
-  --color-greennnn: rgba(255, 255, 255, 0);
+  --color-green-dark: #003d0a; /* Gradient endpoints */
+  --color-green-darkest: #001a04; /* Dark section backgrounds */
   --color-gold-accent: #bb925c;
   --color-gold: #c9a55c;
+  --color-gold-dark: #a8854a; /* Gradient endpoints */
   --color-gold-light: #e0d6c1;
+  /* Semantic colors */
+  --color-star: #f5b800; /* Star ratings */
+  --color-success: #4ade80; /* Victory/success indicators */
+  --color-success-bg: linear-gradient(135deg, #1a5c1a 0%, #0d3d0d 100%); /* Victory badge background */
   --color-navy: #1a365d;
   --color-navy-dark: #152d4f;
   --color-container-bg: #bb925c1c;

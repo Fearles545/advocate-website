@@ -218,7 +218,7 @@ import { MatIcon } from '@angular/material/icon';
       align-items: center;
       gap: 1rem;
       padding: 1rem 1.5rem 1.5rem;
-      background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
+      background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-dark) 100%);
       border-radius: var(--card-border-radius);
       border: var(--card-border);
       box-shadow:

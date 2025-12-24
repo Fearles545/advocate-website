@@ -145,7 +145,7 @@
   width: var(--icon-wrapper-md);
   height: var(--icon-wrapper-md);
   min-width: var(--icon-wrapper-md);
-  background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
+  background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-dark) 100%);
   border-radius: 0.5rem;
   box-shadow:
     0 2px 8px rgba(0, 39, 6, 0.2),
@@ -197,7 +197,7 @@
 }
 
 .cta-block {
-  background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
+  background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-dark) 100%);
   border-radius: var(--card-border-radius);
   padding: 1.75rem;
   display: flex;

@@ -71,7 +71,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
       justify-content: center;
       width: var(--icon-wrapper-lg);
       height: var(--icon-wrapper-lg);
-      background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
+      background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-dark) 100%);
       border-radius: 50%;
       margin-bottom: 1.5rem;
       box-shadow:

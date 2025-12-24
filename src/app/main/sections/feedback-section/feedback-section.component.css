@@ -172,7 +172,7 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-green) 0%, #003d0a 100%);
+  background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-dark) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -207,7 +207,7 @@
   gap: 0.125rem;
 
   .star {
-    color: #f5b800;
+    color: var(--color-star);
     font-size: 1.1rem;
     width: 1.1rem;
     height: 1.1rem;
