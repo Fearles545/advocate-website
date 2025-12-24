@@ -89,7 +89,7 @@ import { MatIcon } from '@angular/material/icon';
     }
 
     .why-me-section {
-      max-width: 900px;
+      max-width: var(--section-max-width-narrow);
       margin: 0 auto;
       padding: var(--section-padding-y) var(--section-padding-x);
     }

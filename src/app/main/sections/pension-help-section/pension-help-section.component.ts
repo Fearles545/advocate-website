@@ -96,7 +96,7 @@ import { MatIcon } from '@angular/material/icon';
     }
 
     .pension-help-section {
-      max-width: 1200px;
+      max-width: var(--section-max-width);
       margin: 0 auto;
       padding: var(--section-padding-y) var(--section-padding-x);
     }

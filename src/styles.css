@@ -26,6 +26,10 @@
   --section-padding-x: 1rem;
   /* Extra breathing room for dark/accent sections */
   --section-padding-y-accent: 2.5rem;
+  /* Section content max-widths */
+  --section-max-width: 1200px;
+  --section-max-width-narrow: 900px; /* Text-heavy sections for better readability */
+  --section-max-width-compact: 800px; /* Focused content sections */
   --color-green: #002706;
   --color-greennnn: rgb(0, 39, 6);
   --color-greennnn: rgba(255, 255, 255, 0);

@@ -151,7 +151,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
     }
 
     .about-section {
-      max-width: 1200px;
+      max-width: var(--section-max-width);
       margin: 0 auto;
       padding: var(--section-padding-y) var(--section-padding-x);
       position: relative;

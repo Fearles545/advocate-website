@@ -53,7 +53,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
     }
 
     .documents-section {
-      max-width: 800px;
+      max-width: var(--section-max-width-compact);
       margin: 0 auto;
       padding: var(--section-padding-y) var(--section-padding-x);
     }

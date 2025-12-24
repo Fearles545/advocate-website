@@ -180,7 +180,46 @@ Tracking design consistency improvements based on `design-audit-report.md`.
 
 ### 2.2 Section Max-Width
 
-**Status:** No action needed (intentional variation for readability)
+**Status:** Completed
+**Date:** 2025-12-24
+
+**Solution:** Created CSS variables for section max-widths in `src/styles.css`.
+
+**CSS Variables added:**
+```css
+:root {
+  /* Section content max-widths */
+  --section-max-width: 1200px;
+  --section-max-width-narrow: 900px; /* Text-heavy sections for better readability */
+  --section-max-width-compact: 800px; /* Focused content sections */
+}
+```
+
+**Files modified:**
+- `src/styles.css` - Added CSS variables
+- `src/app/main/sections/intro-section/intro-section.component.css` - Uses `--section-max-width`
+- `src/app/main/sections/about-section/about-section.component.ts` - Uses `--section-max-width`
+- `src/app/main/sections/pension-help-section/pension-help-section.component.ts` - Uses `--section-max-width`
+- `src/app/main/sections/services-section/services-section.component.css` - Uses `--section-max-width`
+- `src/app/main/sections/feedback-section/feedback-section.component.css` - Uses `--section-max-width`
+- `src/app/main/sections/court-cases-section/court-cases-section.component.css` - Uses `--section-max-width`
+- `src/app/main/sections/blog-preview-section/blog-preview-section.component.css` - Uses `--section-max-width`
+- `src/app/main/sections/why-me-section/why-me-section.component.ts` - Uses `--section-max-width-narrow`
+- `src/app/main/sections/seo-section/seo-section.component.css` - Uses `--section-max-width-narrow`
+- `src/app/main/sections/documents-section/documents-section.component.ts` - Uses `--section-max-width-compact`
+- `src/app/main/sections/need-help-section/need-help-section.component.css` - Uses `--section-max-width-compact`
+
+**Pattern:**
+| Width | Variable | Usage | Sections |
+|-------|----------|-------|----------|
+| 1200px | `--section-max-width` | Standard sections | intro, about, pension-help, services, feedback, court-cases, blog-preview |
+| 900px | `--section-max-width-narrow` | Text-heavy sections (~65-75 char line length) | why-me, seo |
+| 800px | `--section-max-width-compact` | Focused content, CTAs | documents, need-help |
+
+**Design rationale:**
+- Narrower widths for text-heavy sections improve readability (optimal line length is 65-75 characters)
+- Compact width for call-to-action sections keeps focus tight
+- All widths now centrally managed via CSS variables
 
 ---
 

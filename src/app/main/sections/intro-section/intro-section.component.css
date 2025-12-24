@@ -94,7 +94,7 @@
 }
 
 .intro-section {
-  max-width: 1200px;
+  max-width: var(--section-max-width);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -184,26 +184,26 @@
 .location-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 2rem 0.5rem 1.5rem;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
   background: rgba(0, 39, 6, 0.04);
   border-radius: 2rem;
   border: 1px solid rgba(0, 39, 6, 0.08);
 
   mat-icon {
-    font-size: 1.15rem;
-    width: 1.15rem;
-    height: 1.15rem;
+    font-size: 1.75rem;
+    width: 1.75rem;
+    height: 1.75rem;
     color: var(--color-gold);
     flex-shrink: 0;
   }
 }
 
 .location-text {
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--color-green);
-  line-height: 1.4;
+  line-height: 1.2;
   text-align: left;
 }
 
@@ -217,7 +217,6 @@
   max-width: 320px;
   margin-top: 0.5rem;
 }
-
 
 /* Services Link - simple link style */
 .cta-link {
@@ -535,8 +534,21 @@
     font-size: 1rem;
   }
 
+  .location-badge {
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+
+    mat-icon {
+      font-size: 2rem;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
   .intro-cta {
+    flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
   }
 
   /* Hide trust indicators on desktop - redundant with full layout */
