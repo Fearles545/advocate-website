@@ -10,8 +10,8 @@ A professional Angular 20 website for **Поддяча Юлія Юріївна**
 
 ## Tech Stack
 
-- **Angular 20.1.4** with standalone components (no NgModules)
-- **Angular Material 20.1.4** for UI components
+- **Angular 20.3.x** with standalone components (no NgModules)
+- **Angular Material 20.2.x** for UI components
 - **ng-gallery 12.0.0** for image galleries
 - **TypeScript 5.8.3** with strict mode
 - **SSG (Static Site Generation)** for optimal performance and SEO
@@ -143,3 +143,7 @@ When creating new sections or components, **always reference the design system**
 - Focus on **pension law** topics
 - Blog posts often include YouTube embeds
 - Target: Ukrainian citizens needing pension assistance
+
+## Updating Angular
+
+This project uses SSG (prerendering) which has specific requirements when updating Angular. See [`docs/ANGULAR_SSG_UPDATE_GUIDE.md`](docs/ANGULAR_SSG_UPDATE_GUIDE.md) for detailed instructions.
