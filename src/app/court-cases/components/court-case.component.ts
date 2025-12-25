@@ -22,178 +22,166 @@ import { SpinnerComponent } from '@core/components/spinner/spinner.component';
     SpinnerComponent,
   ],
   template: `
-    @if (courtCase()) {
-      <section class="court-case-container">
-        <header class="header-container">
-          <a
-            class="back-link"
-            mat-button
-            color="primary"
-            [routerLink]="['/court-cases']"
-            aria-label="Назад до судових справ"
-          >
-            Судові справи
-            <mat-icon>arrow_back_ios_new</mat-icon>
-          </a>
+    <section class="court-case-page-bg">
+      <div class="court-case-page">
+        @if (courtCase()) {
+          <header class="page-header">
+            <a
+              class="back-link"
+              mat-button
+              color="primary"
+              [routerLink]="['/court-cases']"
+              aria-label="Назад до судових рішень"
+            >
+              <mat-icon>arrow_back_ios_new</mat-icon>
+              Судові рішення
+            </a>
 
-          <h1 class="main-title">{{ courtCase()!.title }}</h1>
-
-          <div class="subtitle">
-            @let formattedDate = courtCase().date | date: 'dd-MM-yyyy';
-            <time [attr.datetime]="formattedDate">{{ formattedDate }}</time>
-
-            @if (courtCase().outcome) {
-              <span class="outcome-badge" [class]="courtCase().outcome">
-                @switch (courtCase().outcome) {
-                  @case ('win') {
-                    Виграно
-                  }
-                  @case ('partial') {
-                    Часткове рішення
-                  }
-                  @case ('pending') {
-                    В процесі
-                  }
-                }
-              </span>
-            }
-          </div>
-
-          @if (courtCase().caseNumber || courtCase().court) {
             <div class="case-meta">
-              @if (courtCase().caseNumber) {
-                <span class="case-number">
-                  <mat-icon>description</mat-icon>
-                  {{ courtCase().caseNumber }}
-                </span>
-              }
-              @if (courtCase().court) {
-                <span class="court-name">
-                  <mat-icon>account_balance</mat-icon>
-                  {{ courtCase().court }}
-                </span>
-              }
+              <time class="case-date" [attr.datetime]="courtCase().date">
+                {{ courtCase().date | date: 'dd.MM.yyyy' }}
+              </time>
+              <span class="case-number">
+                Справа № {{ courtCase().caseNumber }}
+              </span>
             </div>
-          }
-        </header>
 
-        <section
-          class="court-case-content"
-          [innerHTML]="caseHtml() | async"
-        ></section>
+            <h1>{{ courtCase()!.title }}</h1>
+          </header>
 
-        <section
-          class="court-case-content"
-          [innerHTML]="footerCard() | async"
-        ></section>
-      </section>
-    }
+          <article class="case-content">
+            <section [innerHTML]="caseHtml() | async"></section>
+            <section [innerHTML]="footerCard() | async"></section>
+          </article>
+        }
+      </div>
 
-    <app-spinner [show]="isLoading()" />
+      <app-spinner [show]="isLoading()" />
+    </section>
   `,
   styles: `
-    :host {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+    .court-case-page-bg {
+      background: linear-gradient(180deg, #f8f6f2 0%, #ffffff 50%, #f8f6f2 100%);
+      min-height: 100vh;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          var(--color-gold-light) 20%,
+          var(--color-gold) 50%,
+          var(--color-gold-light) 80%,
+          transparent 100%
+        );
+      }
+    }
+
+    .court-case-page {
+      max-width: var(--section-max-width-narrow);
       margin: 0 auto;
-      padding: 1rem 1rem 2rem;
-      width: var(--container-max-width);
-      max-width: var(--container-max-width);
-      border-left: 1px solid var(--color-green);
-      border-right: 1px solid var(--color-green);
-      background-color: var(--color-container-bg);
+      padding: var(--section-padding-y) var(--section-padding-x);
     }
 
-    h1.main-title {
-      text-align: center;
-      margin: 0;
+    .page-header {
+      margin-bottom: 2.5rem;
     }
 
-    .subtitle {
-      display: flex;
-      justify-content: space-between;
+    .back-link {
+      display: inline-flex;
       align-items: center;
-      font-size: 1rem;
-      color: grey;
-      margin: 1rem 0 0;
-    }
+      gap: 0.25rem;
+      margin-bottom: 1.5rem;
+      font-weight: var(--weight-semibold);
+      color: var(--color-green);
 
-    .outcome-badge {
-      padding: 0.25rem 0.75rem;
-      border-radius: 0.25rem;
-      font-size: 0.875rem;
-      font-weight: 600;
-
-      &.win {
-        background-color: #d4edda;
-        color: #155724;
+      mat-icon {
+        font-size: 1rem;
+        width: 1rem;
+        height: 1rem;
       }
 
-      &.partial {
-        background-color: #fff3cd;
-        color: #856404;
-      }
-
-      &.pending {
-        background-color: #cce5ff;
-        color: #004085;
+      &:hover {
+        color: var(--color-gold-accent);
       }
     }
 
     .case-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-top: 1rem;
-      padding: 1rem;
-      background-color: #f8f9fa;
-      border-radius: 0.5rem;
-      border: 1px solid #e9ecef;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
 
-      span {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--color-green);
-        font-weight: 500;
+    .case-date {
+      font-size: 0.9rem;
+      font-weight: var(--weight-bold);
+      color: var(--color-green);
+    }
 
-        mat-icon {
-          font-size: 1.25rem;
-          width: 1.25rem;
-          height: 1.25rem;
-          color: var(--color-gold);
+    .case-number {
+      font-size: 0.85rem;
+      font-weight: var(--weight-semibold);
+      color: var(--color-gold-accent);
+      padding: 0.25rem 0.75rem;
+      background: rgba(201, 165, 92, 0.1);
+      border-radius: 2rem;
+    }
+
+    .page-header h1 {
+      margin: 0;
+      color: var(--color-green);
+      font-family: var(--font-heading);
+      font-size: var(--font-size-h1);
+      font-weight: var(--weight-bold);
+      line-height: 1.35;
+    }
+
+    .case-content {
+      background: white;
+      border-radius: var(--card-border-radius);
+      border: var(--card-border);
+      box-shadow: var(--card-box-shadow);
+      padding: 2rem;
+
+      section {
+        line-height: 1.7;
+        color: var(--text-color-primary);
+
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+          padding-bottom: 2rem;
+          border-bottom: 1px solid rgba(201, 165, 92, 0.15);
         }
       }
     }
 
-    .header-container {
-      position: relative;
-    }
-
-    .court-case-container {
-      width: var(--blog-container-max-width);
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    @media (max-width: 950px) {
-      .court-case-container {
-        width: fit-content;
+    @media (min-width: 768px) {
+      .case-content {
+        padding: 2.5rem 3rem;
       }
     }
 
     @media (max-width: 479px) {
-      :host {
-        padding: 1rem 1rem 2rem;
-        width: 100%;
+      .page-header h1 {
+        font-size: 1.4rem;
+      }
+
+      .case-content {
+        padding: 1.5rem;
       }
 
       .case-meta {
         flex-direction: column;
-        gap: 0.75rem;
+        align-items: flex-start;
+        gap: 0.5rem;
       }
     }
   `,
@@ -202,22 +190,21 @@ export class CourtCaseComponent {
   private sanitizer = inject(DomSanitizer);
   private http = inject(HttpClient);
 
-  slug = input.required<string>();
   courtCase = input.required<CourtCase>();
 
   isLoading = signal(true);
 
   caseHtml = computed(() =>
-    this.courtCase() ? this.getCase(this.courtCase()?.slug!) : of('')
+    this.courtCase() ? this.getCase(this.courtCase()?.caseNumber!) : of('')
   );
 
   footerCard = computed(() =>
     this.courtCase() ? this.getCase('footer-card') : of('')
   );
 
-  getCase(slug: string) {
+  getCase(caseNumber: string) {
     return this.http
-      .get(`court-cases/${slug}.html`, {
+      .get(`court-cases/${caseNumber}.html`, {
         responseType: 'text',
       })
       .pipe(

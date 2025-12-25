@@ -1,15 +1,26 @@
 export interface CourtCase {
   title: string;
-  slug: string;
-  description?: string;
+  caseNumber: string;
   date: string;
-  caseNumber?: string;
-  court?: string;
-  outcome?: 'win' | 'partial' | 'pending';
 }
 
-export const courtCases: CourtCase[] = (
-  [
-    // TODO: Add court cases here
-  ] as CourtCase[]
-).sort((a, b) => b.date.localeCompare(a.date));
+export const courtCases: CourtCase[] = [
+  {
+    title:
+      'Оскаржили незаконну відмову ПФУ та вибороли право клієнтки на пенсію по Списку №2, зарахувавши пільговий стаж та періоди роботи до страхового стажу',
+    caseNumber: '420/22036/25',
+    date: '2025-12-01',
+  },
+  {
+    title:
+      'Вибороли в суді право на пенсію шахтарю по Списку №1, зарахувавши пільговий стаж без уточнюючих довідок, період перебування в центрі зайнятості та періоди роботи без сплати внесків',
+    caseNumber: '200/7851/25',
+    date: '2025-11-15',
+  },
+  {
+    title:
+      'Зарахували військову службу шахтарю з 2022 року до пільгового стажу',
+    caseNumber: '200/5966/25',
+    date: '2025-10-20',
+  },
+].sort((a, b) => b.date.localeCompare(a.date));

@@ -128,7 +128,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: var(--header-underline-width);
+    width: var(--header-underline-width-accent);
     height: 3px;
     background: var(--header-underline-gradient);
     border-radius: 2px;
