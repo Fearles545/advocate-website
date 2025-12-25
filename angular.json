@@ -32,6 +32,11 @@
               },
               {
                 "glob": "**/*",
+                "input": "src/app/court-cases/cases",
+                "output": "court-cases/"
+              },
+              {
+                "glob": "**/*",
                 "input": "public",
                 "output": "/"
               }

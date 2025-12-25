@@ -34,6 +34,10 @@ export const NAV_ITEMS: NavItem[] = [
     route: 'documents',
   },
   {
+    label: 'Судові рішення',
+    route: 'court-cases',
+  },
+  {
     label: 'Відгуки',
     route: 'feedbacks',
   },

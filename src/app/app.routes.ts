@@ -28,6 +28,11 @@ export const routes: Routes = [
     loadChildren: () => import('./blog/routes').then((m) => m.blogRoutes),
   },
   {
+    path: 'court-cases',
+    loadChildren: () =>
+      import('./court-cases/routes').then((m) => m.courtCasesRoutes),
+  },
+  {
     path: 'feedbacks',
     component: FeedbacksComponent,
   },
