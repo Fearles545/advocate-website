@@ -14,55 +14,44 @@
     <header class="case-header">
       <h1>{{ case.title }}</h1>
 
-      <div class="case-meta">
-        <time class="case-date" [attr.datetime]="case.date">
-          {{ case.date | date: 'dd.MM.yyyy' }}
-        </time>
+      <!-- Unified Metadata Card -->
+      <div class="case-meta-card">
+        <!-- Row 1: Case Number & Date -->
+        <div class="meta-row meta-row-primary">
+          <span class="case-number">Справа №{{ case.caseNumber }}</span>
+          <time class="case-date" [attr.datetime]="case.date">
+            <mat-icon>calendar_today</mat-icon>
+            <span>{{ case.date | date: 'dd.MM.yyyy' }}</span>
+          </time>
+        </div>
 
-        <h3 class="case-number">Справа №{{ case.caseNumber }}</h3>
-      </div>
+        <!-- Row 2: Tags -->
+        @if (case.tags?.length) {
+        <div class="meta-row meta-row-tags">
+          <span class="tags-label">Категорії</span>
+          <div class="tags-list">
+            @for (tag of case.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+            }
+          </div>
+        </div>
+        }
 
-      @if (case.category) {
-      <div class="category-container">
-        <div class="case-title">Категорія:</div>
-
-        <div class="case-category">{{ case.category }}</div>
-      </div>
-      }
-
-      <!-- Registry Links -->
-      <div class="registry-links">
-        @for (link of case.registryLinks; track link.url) {
-        <!-- <a
-                  [href]="link.url"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  appCtaOutlineButton
-                  icon="open_in_new"
-                  style="
-                    border-radius: 0.5rem;
-                    padding: 0.5rem 1rem;
-                    justify-content: center;
-                    flex-direction: row-reverse;
-                  "
-                >
-                  {{ link.label || 'Рішення в реєстрі судових рішень' }}
-                </a> -->
-
-        <a
-          [href]="link.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          appCtaOutlineButton
-          icon="open_in_new"
-          style="
-            padding: 0.5rem 1rem;
-            justify-content: center;
-            border-width: 1.5px;
-          "
-        >
-          {{ link.label || 'Рішення в реєстрі судових рішень' }}
-        </a>
+        <!-- Row 3: Registry Links -->
+        @if (case.registryLinks?.length) {
+        <div class="meta-row meta-row-actions">
+          @for (link of case.registryLinks; track link.url) {
+          <a
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="registry-link"
+          >
+            <span>Рішення в реєстрі судових рішень</span>
+            <mat-icon>open_in_new</mat-icon>
+          </a>
+          }
+        </div>
         }
       </div>
     </header>
