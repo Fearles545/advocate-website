@@ -2,7 +2,7 @@
 
 Canonical design patterns for the advocate-pensia.com.ua website.
 
-**Last Updated:** 2025-12-24
+**Last Updated:** 2025-12-26
 
 **Related Documents:**
 - [`design-system/audit-report.md`](design-system/audit-report.md) — Initial design consistency audit
@@ -287,6 +287,89 @@ Centered heading with gold underline.
 | `--header-underline-width` | `80px` | Light background sections |
 | `--header-underline-width-accent` | `100px` | Dark background sections |
 | `--header-underline-gradient` | `linear-gradient(90deg, transparent, var(--color-gold), transparent)` | Fading gold line |
+
+---
+
+### 4.6 Page Header Pattern (Signature)
+
+The signature page header pattern creates a recognizable, branded look across content pages (court-cases, feedbacks, blog list, etc.).
+
+**Structure:**
+```html
+<section class="page-bg-pattern">
+  <div class="page-content">
+    <header class="page-header">
+      <div class="page-header-badge">
+        <mat-icon>gavel</mat-icon>
+      </div>
+      <h1>Page Title Here</h1>
+      <p class="page-intro">Optional intro paragraph...</p>
+    </header>
+    <!-- page content -->
+  </div>
+</section>
+```
+
+**Visual Elements:**
+
+| Element | Description |
+|---------|-------------|
+| Background | SVG pattern + cream gradient (full viewport width) |
+| Badge | Circular icon, green gradient bg, gold icon |
+| H1 | Centered, gold underline via `::after` |
+| Intro | Centered paragraph below title |
+
+**Background Pattern:**
+```css
+.page-bg-pattern {
+  background:
+    url('/assets/images/main/first-section.pattern.svg'),
+    linear-gradient(180deg, #f5f2ed 0%, #faf8f5 50%, #f5f2ed 100%);
+}
+```
+
+**Badge Sizing:**
+
+| Breakpoint | Badge Size | Icon Size |
+|------------|------------|-----------|
+| Mobile (<480px) | `3.5rem` | `1.75rem` |
+| Default | `4rem` | `2rem` |
+| Tablet (768px+) | `4.5rem` | `2.25rem` |
+
+**Entrance Animations — "Judicial Reveal":**
+
+The Page Header Pattern includes built-in entrance animations for a premium feel:
+
+| Element | Animation | Duration | Delay | Easing |
+|---------|-----------|----------|-------|--------|
+| Badge | Scale + gold pulse | 0.8s | 0s | `cubic-bezier(0.34, 1.56, 0.64, 1)` |
+| H1 | Rise + letter-spacing | 0.7s | 0.3s | `cubic-bezier(0.22, 1, 0.36, 1)` |
+| Intro | Fade up | 0.6s | 0.5s | `ease-out` |
+| Intro (secondary) | Fade up | 0.6s | 0.6s | `ease-out` |
+
+**Keyframes (in styles.css):**
+- `badgeReveal` — Scale from 0.6 with gold glow pulse at 60%
+- `titleReveal` — TranslateY with subtle letter-spacing change
+- `introReveal` — Simple fade-up
+
+**Animation Design Philosophy:**
+- Badge appears first as the visual anchor point
+- Title follows when badge "lands" (0.3s delay)
+- Intro text fades in as user processes the title
+- Staggered timing creates sense of orchestrated reveal
+
+**Usage Guidelines:**
+- Use for standalone content pages (not homepage sections)
+- Badge icon should represent the page content (gavel for court cases, people for feedbacks, etc.)
+- H1 must use the gold underline pattern for consistency
+- Background extends full viewport width; content container uses `--section-max-width`
+- Animations are automatic — no extra classes needed
+
+**CSS Classes (in styles.css):**
+- `.page-bg-pattern` — Full-width patterned background
+- `.page-header` — Centered header container
+- `.page-header-badge` — Circular icon badge (includes `badgeReveal` animation)
+- `.page-intro` — Intro paragraph styling (includes `introReveal` animation)
 
 ---
 

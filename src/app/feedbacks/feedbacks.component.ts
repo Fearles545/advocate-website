@@ -4,10 +4,10 @@ import { feedbacks, Feedback } from './feedbacks.data';
 
 @Component({
   selector: 'app-feedbacks',
-  imports: [MatIcon],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './feedbacks.component.html',
   styleUrl: './feedbacks.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [MatIcon],
 })
 export class FeedbacksComponent {
   feedbacks: Feedback[] = feedbacks;

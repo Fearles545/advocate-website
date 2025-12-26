@@ -1,0 +1,175 @@
+<section class="court-case-page-bg">
+  <div class="court-case-page">
+    @if (courtCase(); as case) {
+    <!-- Back Navigation -->
+    <nav class="breadcrumb">
+      <a [routerLink]="['/court-cases']" class="back-link">
+        <mat-icon>arrow_back</mat-icon>
+
+        <span>Судові рішення</span>
+      </a>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="case-header">
+      <h1>{{ case.title }}</h1>
+
+      <div class="case-meta">
+        <time class="case-date" [attr.datetime]="case.date">
+          {{ case.date | date: 'dd.MM.yyyy' }}
+        </time>
+
+        <h3 class="case-number">Справа №{{ case.caseNumber }}</h3>
+      </div>
+
+      @if (case.category) {
+      <div class="category-container">
+        <div class="case-title">Категорія:</div>
+
+        <div class="case-category">{{ case.category }}</div>
+      </div>
+      }
+
+      <!-- Registry Links -->
+      <div class="registry-links">
+        @for (link of case.registryLinks; track link.url) {
+        <!-- <a
+                  [href]="link.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  appCtaOutlineButton
+                  icon="open_in_new"
+                  style="
+                    border-radius: 0.5rem;
+                    padding: 0.5rem 1rem;
+                    justify-content: center;
+                    flex-direction: row-reverse;
+                  "
+                >
+                  {{ link.label || 'Рішення в реєстрі судових рішень' }}
+                </a> -->
+
+        <a
+          [href]="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          appCtaOutlineButton
+          icon="open_in_new"
+          style="
+            padding: 0.5rem 1rem;
+            justify-content: center;
+            border-width: 1.5px;
+          "
+        >
+          {{ link.label || 'Рішення в реєстрі судових рішень' }}
+        </a>
+        }
+      </div>
+    </header>
+
+    <!-- Main Content Card -->
+    <article class="case-content">
+      <!-- Essence Section -->
+      <section class="content-section">
+        <h2>
+          <mat-icon>description</mat-icon>
+          Суть справи
+        </h2>
+        <div class="section-body" [innerHTML]="case.essence"></div>
+      </section>
+
+      <!-- Court Review Section -->
+      <section class="content-section">
+        <h2>
+          <mat-icon>gavel</mat-icon>
+          Судовий розгляд
+        </h2>
+        <div class="section-body" [innerHTML]="case.courtReview"></div>
+      </section>
+
+      <!-- Result Section -->
+      <section class="content-section result-section">
+        <h2>
+          <mat-icon>check_circle</mat-icon>
+          Результат
+        </h2>
+        <ul class="result-list">
+          @for (item of case.result; track item) {
+          <li>
+            <mat-icon class="check-icon">done</mat-icon>
+            <span>{{ item }}</span>
+          </li>
+          }
+        </ul>
+      </section>
+    </article>
+
+    <!-- Useful For Section -->
+    @if (case.usefulFor?.length) {
+    <aside class="useful-for-card">
+      <h2>
+        <mat-icon>lightbulb</mat-icon>
+        Кому буде корисним це рішення
+      </h2>
+      <p class="useful-intro">Цей приклад може бути корисним, якщо вам:</p>
+      <ul class="useful-list">
+        @for (item of case.usefulFor; track item) {
+        <li>
+          <mat-icon>arrow_right</mat-icon>
+          <span>{{ item }}</span>
+        </li>
+        }
+      </ul>
+    </aside>
+    }
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <h2>Поширені питання щодо судових рішень</h2>
+      <mat-accordion>
+        @for (faq of faqItems; track faq.question) {
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{ faq.question }}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{ faq.answer }}</p>
+        </mat-expansion-panel>
+        }
+      </mat-accordion>
+    </section>
+
+    <!-- CTA Section -->
+    <aside class="cta-section">
+      <h2>Маєте подібну пенсійну ситуацію?</h2>
+      <p>
+        Якщо вам не зарахували пільговий або страховий стаж, або ви отримали
+        відмову у призначенні чи перерахунку пенсії — я проаналізую документи та
+        підкажу можливі варіанти дій.
+      </p>
+      <div class="cta-buttons">
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfGhKluuO6FZNq2drDpeagCdRYlPDKJSdKS_pHJIMqrrO91JQ/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cta-primary"
+        >
+          <mat-icon>calendar_today</mat-icon>
+          Записатися на консультацію
+        </a>
+        <a [routerLink]="['/services']" class="cta-secondary">
+          <mat-icon>work</mat-icon>
+          Юридичні послуги
+        </a>
+        <a [routerLink]="['/contacts']" class="cta-secondary">
+          <mat-icon>contact_phone</mat-icon>
+          Контакти
+        </a>
+      </div>
+      <p class="cta-note">
+        Консультації надаються онлайн — для клієнтів по всій Україні та за
+        кордоном.
+      </p>
+    </aside>
+    }
+  </div>
+</section>

@@ -1,0 +1,70 @@
+<section class="page-bg-pattern">
+  <div class="page-content">
+    <header class="page-header">
+      <div class="page-header-badge">
+        <mat-icon>gavel</mat-icon>
+      </div>
+
+      <h1>Судові рішення у пенсійних справах</h1>
+
+      <p class="page-intro">
+        У цьому розділі зібрані
+        <strong>судові рішення у спорах з Пенсійним фондом України</strong>, які
+        були успішно супроводжені адвокатом з пенсійних питань
+        <strong>Поддячою Юлією Юріївною</strong>.
+      </p>
+
+      <p class="page-intro secondary">
+        Розділ регулярно оновлюється, тому ви можете переглянути найновіші
+        судові рішення, переконатися у практичному досвіді адвоката та оцінити
+        результати пенсійних справ.
+      </p>
+    </header>
+
+    @if (courtCases.length === 0) {
+      <div class="empty-state">
+        <mat-icon>folder_open</mat-icon>
+        <p>Судові справи скоро з'являться</p>
+      </div>
+    } @else {
+      <div class="court-cases-grid">
+        @for (courtCase of paginatedCases(); track courtCase.caseNumber) {
+          <article class="court-case-card">
+            <div class="victory-badge">
+              <mat-icon>check_circle</mat-icon>
+            </div>
+
+            <a [routerLink]="getCaseRoute(courtCase.caseNumber)">
+              <div class="card-header">
+                <span class="case-number"
+                  >Справа №{{ courtCase.caseNumber }}</span
+                >
+                <time class="case-date" [attr.datetime]="courtCase.date">
+                  {{ courtCase.date | date: 'dd.MM.yyyy' }}
+                </time>
+              </div>
+
+              <h3 class="case-title">{{ courtCase.title }}</h3>
+
+              <div class="card-footer">
+                <span class="read-more">Детальніше</span>
+                <mat-icon class="card-arrow">arrow_forward</mat-icon>
+              </div>
+            </a>
+          </article>
+        }
+      </div>
+
+      @if (courtCases.length > pageSize()) {
+        <mat-paginator
+          [length]="courtCases.length"
+          [pageSize]="pageSize()"
+          [pageIndex]="pageIndex()"
+          [hidePageSize]="true"
+          (page)="handlePageEvent($event)"
+          aria-label="Оберіть сторінку"
+        />
+      }
+    }
+  </div>
+</section>
