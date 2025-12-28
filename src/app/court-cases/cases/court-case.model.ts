@@ -2,7 +2,7 @@
  * Court Case Data Model
  *
  * Comprehensive structure for pension law court cases.
- * Based on the case presentation template from court-case.md
+ * SEO is auto-generated from case data with optional overrides.
  */
 
 export interface RegistryLink {
@@ -10,44 +10,42 @@ export interface RegistryLink {
   label?: string; // e.g., "Рішення першої інстанції", "Апеляційне рішення"
 }
 
-export interface RelatedArticle {
-  title: string;
-  slug: string; // Blog post slug for routerLink
-}
-
-export interface CourtCaseSeo {
-  title?: string;
-  description?: string;
-  keywords?: string[];
+/**
+ * SEO override fields.
+ * When not provided, values are auto-generated from case data.
+ */
+export interface CourtCaseSeoOverrides {
+  title?: string; // Override: defaults to `${title} | Адвокат...`
+  description?: string; // Override: defaults to first 155 chars of essence
+  keywords?: string[]; // Override: defaults to tags
 }
 
 export interface CourtCase {
-  // === Basic Identification ===
-  caseNumber: string; // e.g., "420/22036/25"
+  // === Identification ===
+  caseNumber: string; // Primary key, used in URL (e.g., "420/22036/25")
   title: string; // Main headline
-  date: string; // Publication date (ISO format)
+  date: string; // Publication date (ISO format: YYYY-MM-DD)
 
   // === Classification ===
-  category?: string; // e.g., "пільговий стаж / Список №2 / відмова ПФУ"
-  tags?: string[]; // For filtering: ["список-2", "пільговий-стаж", "відмова-пфу"]
+  tags: string[]; // Required for filtering and SEO keywords
 
   // === Registry Links ===
   registryLinks: RegistryLink[];
 
-  // === Main Content Sections ===
-  essence: string; // Суть справи (HTML allowed for formatting)
+  // === Main Content ===
+  essence: string; // Суть справи (HTML allowed)
   courtReview: string; // Судовий розгляд (HTML allowed)
-  result: string[]; // Результат - array of bullet points (plain text)
+  result: string[]; // Результат - bullet points (plain text)
 
-  // === Enrichment Sections ===
+  // === Enrichment ===
   usefulFor?: string[]; // "Кому буде корисно" bullet points
 
-  // === Related Content ===
+  // === Related Content (for internal linking / SEO) ===
   relatedCaseNumbers?: string[]; // Links to other cases by caseNumber
-  relatedArticles?: RelatedArticle[];
+  relatedBlogSlugs?: string[]; // Links to blog posts by slug
 
-  // === SEO ===
-  seo?: CourtCaseSeo;
+  // === SEO Overrides ===
+  seo?: CourtCaseSeoOverrides;
 }
 
 /**

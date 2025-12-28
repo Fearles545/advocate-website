@@ -1,4 +1,5 @@
 import { BLOG_SEO_DATA } from '../../blog/blog-seo.config';
+import { COURT_CASES_SEO_DATA } from '../../court-cases/court-cases-seo.config';
 import { PageSEO } from '../services/seo.service';
 
 /**
@@ -347,7 +348,59 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
     },
   },
 
-  //Оскарження рішень ПФУ в суді — виграні справи | Поддяча Юлія
+  'court-cases': {
+    title:
+      'Виграні пенсійні справи в суді — практика адвоката | Поддяча Юлія',
+    description:
+      'Реальні судові рішення з пенсійних справ: індексація пенсій, пільговий стаж, відмови ПФУ. Успішна практика адвоката Поддячої Юлії Юріївни.',
+    keywords:
+      'судові рішення пенсія, виграні справи ПФУ, пенсійний адвокат практика, індексація пенсії суд, пільговий стаж суд, Список №1, Список №2, відмова Пенсійного фонду',
+    canonical: '/court-cases/',
+    type: 'website',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          '@id': 'https://www.advocate-pensia.com.ua/court-cases/#breadcrumbs',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Судові рішення',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/court-cases/',
+                name: 'Судові рішення',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'CollectionPage',
+          '@id': 'https://www.advocate-pensia.com.ua/court-cases/#webpage',
+          name: 'Судові рішення | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/court-cases/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+          breadcrumb: {
+            '@id': 'https://www.advocate-pensia.com.ua/court-cases/#breadcrumbs',
+          },
+        },
+      ],
+    },
+  },
 };
 
 export const DEFAULT_SEO_CONFIG: PageSEO = {
@@ -363,4 +416,5 @@ export const DEFAULT_SEO_CONFIG: PageSEO = {
 export const GLOBAL_SEO_CONFIG: { [key: string]: PageSEO } = {
   ...SEO_DATA,
   ...BLOG_SEO_DATA,
+  ...COURT_CASES_SEO_DATA,
 };

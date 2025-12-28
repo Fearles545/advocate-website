@@ -32,7 +32,7 @@
           </div>
 
           <!-- Row 2: Tags -->
-          @if (case.tags?.length) {
+          @if (case.tags.length) {
             <div class="meta-row meta-row-tags">
               <div class="tags-list">
                 <span class="tags-label">Категорії</span>
@@ -44,7 +44,7 @@
           }
 
           <!-- Row 3: Registry Links -->
-          @if (case.registryLinks?.length) {
+          @if (case.registryLinks.length) {
             <div class="meta-row meta-row-actions">
               @for (link of case.registryLinks; track link.url) {
                 <a
@@ -118,7 +118,7 @@
             Кому буде корисним це рішення
           </h2>
 
-          <p class="useful-intro">Цей приклад може бути корисним, якщо вам:</p>
+          <p class="useful-intro">Цей приклад може бути Вам корисним, якщо:</p>
 
           <ul class="useful-list">
             @for (item of case.usefulFor; track item) {
@@ -130,6 +130,61 @@
             }
           </ul>
         </aside>
+      }
+
+      <!-- Related Court Cases Section -->
+      @if (relatedCases().length) {
+        <section class="related-section related-cases">
+          <h2>
+            <mat-icon>gavel</mat-icon>
+
+            Пов'язані судові рішення
+          </h2>
+
+          <div class="related-list">
+            @for (relatedCase of relatedCases(); track relatedCase.caseNumber) {
+              <a
+                [routerLink]="['/court-cases', relatedCase.caseNumber]"
+                class="related-card"
+              >
+                <span class="related-case-number"
+                  >Справа №{{ relatedCase.caseNumber }}</span
+                >
+
+                <span class="related-title">{{ relatedCase.title }}</span>
+
+                <div class="related-tags">
+                  @for (tag of relatedCase.tags.slice(0, 3); track tag) {
+                    <span class="tag-mini">{{ tag }}</span>
+                  }
+                </div>
+              </a>
+            }
+          </div>
+        </section>
+      }
+
+      <!-- Related Blog Posts Section -->
+      @if (relatedBlogs().length) {
+        <section class="related-section related-blogs">
+          <h2>
+            <mat-icon>article</mat-icon>
+
+            Пов'язані статті
+          </h2>
+
+          <div class="related-list">
+            @for (blog of relatedBlogs(); track blog.slug) {
+              <a [routerLink]="['/blog', blog.slug]" class="related-card">
+                <span class="related-title">{{ blog.title }}</span>
+
+                <time class="related-date" [attr.datetime]="blog.date">
+                  {{ blog.date | date: 'dd.MM.yyyy' }}
+                </time>
+              </a>
+            }
+          </div>
+        </section>
       }
 
       <!-- FAQ Section -->

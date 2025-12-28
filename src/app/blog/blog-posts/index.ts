@@ -439,3 +439,5 @@ export const blogs = [
     date: '2025-03-28',
   },
 ].sort((a, b) => b.date.localeCompare(a.date));
+
+export { findBlog, getBlogsBySlug } from './blog.utils';
