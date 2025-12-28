@@ -5,5 +5,5 @@ import { Injectable, signal } from '@angular/core';
 })
 export class CourtCasesPaginationService {
   pageIndex = signal(0);
-  pageSize = signal(5);
+  pageSize = signal(10);
 }

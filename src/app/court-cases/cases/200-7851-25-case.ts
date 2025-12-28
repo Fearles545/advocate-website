@@ -1,0 +1,46 @@
+import { CourtCase } from './court-case.model';
+
+export const case_200_7851_25: CourtCase = {
+  caseNumber: '200/7851/25',
+  title:
+    'Вибороли право на пенсію за Списком №1 із зарахуванням пільгового стажу та страхових періодів',
+  date: '2025-11-20',
+  tags: ['пільгова пенсія', 'пільговий стаж', 'список №1', 'стаж по трудовій'],
+  registryLinks: [
+    {
+      url: 'https://reyestr.court.gov.ua/Review/131910927',
+    },
+  ],
+  essence: `<p>Пенсійний фонд України відмовив клієнтці у призначенні пенсії на пільгових умовах за Списком №1, мотивуючи це тим, що:</p>
+<ul>
+<li>пільговий стаж нібито відсутній;</li>
+<li>не може бути зарахований період перебування в центрі зайнятості;</li>
+<li>частина періодів роботи не підлягає зарахуванню через неповну сплату внесків роботодавцем;</li>
+<li>відсутня довідка внутрішньо переміщеної особи.</li>
+</ul>`,
+  courtReview: `<p>У суді було доведено, що:</p>
+<ul>
+<li>всі періоди роботи під землею з повним робочим днем підлягають зарахуванню до пільгового стажу за Списком №1;</li>
+<li>період отримання допомоги по безробіттю зараховується до страхового стажу;</li>
+<li>неповна сплата внесків роботодавцем не може позбавляти особу права на пенсію;</li>
+<li>відсутність довідки ВПО не є підставою для відмови у призначенні пенсії.</li>
+</ul>`,
+  result: [
+    'Зараховано пільговий стаж за Списком №1',
+    'Підтверджено страховий стаж',
+    'Суд визнав відмову ПФУ у призначенні пенсії за Списком №1 незаконною',
+  ],
+  usefulFor: [
+    'Працювали під землею на шахті',
+    'ПФУ не зараховує пільговий стаж без уточнюючих довідок',
+    'Роботодавець не повністю сплачував внески',
+    'Перебували на обліку в центрі зайнятості',
+  ],
+  relatedCaseNumbers: ['420/22036/25', '200/5966/25'],
+  relatedBlogSlugs: [
+    'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
+    'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-zhinok-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
+    'chy-mozhna-zarakhovaty-periody-roboty-u-pilhovyi-stazh-iakscho-na-pidpryiemstvi-ne-provodyly-atestatsiiu-robochykh-mists',
+    'iak-zarakhovuietsia-pilhovyi-stazh-iakscho-pidpryiemstvo-znakhodytsia-na-okupovanii-terytorii-abo-v-raioni-boiovykh-dii',
+  ],
+};
