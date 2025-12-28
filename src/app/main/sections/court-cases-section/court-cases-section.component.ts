@@ -4,10 +4,11 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { CourtCase } from '../../models';
 import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button';
+import { CaseRoutePipe } from '../../../court-cases/pipes/case-route.pipe';
 
 @Component({
   selector: 'app-court-cases-section',
-  imports: [DatePipe, MatIcon, RouterLink, CtaOutlineButtonComponent],
+  imports: [DatePipe, MatIcon, RouterLink, CtaOutlineButtonComponent, CaseRoutePipe],
   templateUrl: './court-cases-section.component.html',
   styleUrl: './court-cases-section.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

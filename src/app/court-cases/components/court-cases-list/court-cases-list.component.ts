@@ -11,10 +11,11 @@ import {
 import { courtCases } from '../../cases';
 import { CourtCasesPaginationService } from '../../services/court-cases-pagination.service';
 import { UkrainianPaginatorIntl } from '../../../core/services/ukrainian-paginator-intl.service';
+import { CaseRoutePipe } from '../../pipes/case-route.pipe';
 
 @Component({
   selector: 'app-court-cases-list',
-  imports: [RouterLink, MatIcon, DatePipe, MatPaginatorModule],
+  imports: [RouterLink, MatIcon, DatePipe, MatPaginatorModule, CaseRoutePipe],
   providers: [{ provide: MatPaginatorIntl, useClass: UkrainianPaginatorIntl }],
   templateUrl: './court-cases-list.component.html',
   styleUrl: './court-cases-list.component.css',
@@ -35,9 +36,5 @@ export class CourtCasesListComponent {
 
   handlePageEvent(event: PageEvent) {
     this.pageIndex.set(event.pageIndex);
-  }
-
-  getCaseRoute(caseNumber: string): string[] {
-    return ['/court-cases', ...caseNumber.split('/')];
   }
 }

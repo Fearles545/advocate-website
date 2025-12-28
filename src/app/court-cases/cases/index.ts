@@ -1,4 +1,8 @@
-export type { CourtCase, CourtCaseSeoOverrides, FaqItem } from './court-case.model';
+export type {
+  CourtCase,
+  CourtCaseSeoOverrides,
+  FaqItem,
+} from './court-case.model';
 export { COURT_CASE_FAQ } from './court-case.model';
 import { CourtCase } from './court-case.model';
 
@@ -31,6 +35,11 @@ export const courtCases: CourtCase[] = [
       'У трудовій книжці або дипломі є розбіжності у прізвищі',
       'Установи відмовляють вносити виправлення до документів',
       'Потрібно підтвердити стаж для призначення пенсії',
+    ],
+    relatedCaseNumbers: ['420/22036/25'],
+    relatedBlogSlugs: [
+      'neobkhidnyi-strakhovyi-stazh-dlia-pryznachennia-pensii-za-vikom',
+      'khto-maie-pravo-na-pensiiu-za-vikom-u-2025',
     ],
   },
 

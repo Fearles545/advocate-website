@@ -144,7 +144,7 @@
           <div class="related-list">
             @for (relatedCase of relatedCases(); track relatedCase.caseNumber) {
               <a
-                [routerLink]="['/court-cases', relatedCase.caseNumber]"
+                [routerLink]="relatedCase.caseNumber | caseRoute"
                 class="related-card"
               >
                 <span class="related-case-number"

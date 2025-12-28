@@ -34,7 +34,7 @@
               <mat-icon>check_circle</mat-icon>
             </div>
 
-            <a [routerLink]="getCaseRoute(courtCase.caseNumber)">
+            <a [routerLink]="courtCase.caseNumber | caseRoute">
               <div class="card-header">
                 <span class="case-number"
                   >Справа №{{ courtCase.caseNumber }}</span
