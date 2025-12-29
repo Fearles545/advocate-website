@@ -209,24 +209,32 @@
             href="https://docs.google.com/forms/d/e/1FAIpQLSfGhKluuO6FZNq2drDpeagCdRYlPDKJSdKS_pHJIMqrrO91JQ/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            class="cta-primary"
+            appCtaButton
+            theme="gold"
+            icon="calendar_today"
           >
-            <mat-icon>calendar_today</mat-icon>
-
             Записатися на консультацію
           </a>
 
-          <a [routerLink]="['/services']" class="cta-secondary">
-            <mat-icon>work</mat-icon>
+          <div class="cta-secondary-row">
+            <a
+              [routerLink]="['/services']"
+              appCtaOutlineButton
+              theme="gold"
+              icon="work"
+            >
+              Юридичні послуги
+            </a>
 
-            Юридичні послуги
-          </a>
-
-          <a [routerLink]="['/contacts']" class="cta-secondary">
-            <mat-icon>contact_phone</mat-icon>
-
-            Контакти
-          </a>
+            <a
+              [routerLink]="['/contacts']"
+              appCtaOutlineButton
+              theme="gold"
+              icon="contact_phone"
+            >
+              Контакти
+            </a>
+          </div>
         </div>
 
         <p class="cta-note">

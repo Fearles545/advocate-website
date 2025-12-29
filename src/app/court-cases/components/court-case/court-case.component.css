@@ -540,7 +540,7 @@ h1 {
 
   h2 {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.75rem;
     margin: 0 0 1.25rem;
     font-size: 1.25rem;
@@ -553,6 +553,7 @@ h1 {
       width: 1.5rem;
       height: 1.5rem;
       color: var(--color-green);
+      margin-top: 0.15rem;
     }
   }
 
@@ -610,7 +611,7 @@ h1 {
 /* === CTA Section - Mobile base === */
 .cta-section {
   margin-top: 2.5rem;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   background: linear-gradient(
     135deg,
     var(--color-green-darkest) 0%,
@@ -638,49 +639,17 @@ h1 {
   .cta-buttons {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    gap: 1.25rem;
     margin-bottom: 1.5rem;
   }
 
-  .cta-primary,
-  .cta-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
+  .cta-secondary-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     width: 100%;
-    padding: 0.85rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: var(--weight-semibold);
-    text-decoration: none;
-    transition: all 0.3s ease;
-
-    mat-icon {
-      font-size: 1.25rem;
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-  }
-
-  .cta-primary {
-    background: var(--color-gold);
-    color: white;
-
-    &:hover {
-      background: var(--color-gold-accent);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(201, 165, 92, 0.4);
-    }
-  }
-
-  .cta-secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
+    align-items: center;
   }
 
   .cta-note {
@@ -753,8 +722,13 @@ h1 {
     margin-top: 3rem;
 
     h2 {
+      align-items: center;
       font-size: 1.4rem;
       margin-bottom: 1.5rem;
+
+      mat-icon {
+        margin-top: 0;
+      }
     }
 
     ::ng-deep .mat-expansion-panel-header {
@@ -782,14 +756,9 @@ h1 {
       font-size: 1.4rem;
     }
 
-    .cta-buttons {
+    .cta-secondary-row {
       flex-direction: row;
-      flex-wrap: wrap;
       justify-content: center;
-    }
-
-    .cta-primary,
-    .cta-secondary {
       width: auto;
     }
   }

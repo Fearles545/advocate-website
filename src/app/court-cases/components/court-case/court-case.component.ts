@@ -9,6 +9,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { CourtCase, COURT_CASE_FAQ, getRelatedCases } from '../../cases';
 import { Blog, getBlogsBySlug } from '../../../blog/blog-posts';
 import { CaseRoutePipe } from '../../pipes/case-route.pipe';
+import { CtaButtonComponent } from '../../../shared/components/cta-button';
+import { CtaOutlineButtonComponent } from '../../../shared/components/cta-outline-button';
 
 @Component({
   selector: 'app-court-case',
@@ -19,6 +21,8 @@ import { CaseRoutePipe } from '../../pipes/case-route.pipe';
     MatButtonModule,
     MatExpansionModule,
     CaseRoutePipe,
+    CtaButtonComponent,
+    CtaOutlineButtonComponent,
   ],
   templateUrl: './court-case.component.html',
   styleUrl: './court-case.component.css',
