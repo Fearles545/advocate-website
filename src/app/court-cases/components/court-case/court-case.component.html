@@ -134,62 +134,52 @@
 
       <!-- Related Court Cases Section -->
       @if (relatedCases().length) {
-        <section class="related-section related-cases">
+        <section class="related-section">
           <h2>
             <mat-icon>gavel</mat-icon>
-
             Пов'язані судові рішення
           </h2>
 
-          <div class="related-list">
+          <ul class="related-links">
             @for (relatedCase of relatedCases(); track relatedCase.caseNumber) {
-              <a
-                [routerLink]="relatedCase.caseNumber | caseRoute"
-                class="related-card"
-              >
-                <span class="related-case-number"
-                  >Справа №{{ relatedCase.caseNumber }}</span
-                >
-
-                <span class="related-title">{{ relatedCase.title }}</span>
-
-                <div class="related-tags">
-                  @for (tag of relatedCase.tags.slice(0, 3); track tag) {
-                    <span class="tag-mini">{{ tag }}</span>
-                  }
-                </div>
-              </a>
+              <li>
+                <a [routerLink]="relatedCase.caseNumber | caseRoute">
+                  <span>{{ relatedCase.title }}</span>
+                  <mat-icon>arrow_forward</mat-icon>
+                </a>
+              </li>
             }
-          </div>
+          </ul>
         </section>
       }
 
       <!-- Related Blog Posts Section -->
       @if (relatedBlogs().length) {
-        <section class="related-section related-blogs">
+        <section class="related-section">
           <h2>
             <mat-icon>article</mat-icon>
-
             Пов'язані статті
           </h2>
 
-          <div class="related-list">
+          <ul class="related-links">
             @for (blog of relatedBlogs(); track blog.slug) {
-              <a [routerLink]="['/blog', blog.slug]" class="related-card">
-                <span class="related-title">{{ blog.title }}</span>
-
-                <time class="related-date" [attr.datetime]="blog.date">
-                  {{ blog.date | date: 'dd.MM.yyyy' }}
-                </time>
-              </a>
+              <li>
+                <a [routerLink]="['/blog', blog.slug]">
+                  <span>{{ blog.title }}</span>
+                  <mat-icon>arrow_forward</mat-icon>
+                </a>
+              </li>
             }
-          </div>
+          </ul>
         </section>
       }
 
       <!-- FAQ Section -->
       <section class="faq-section">
-        <h2>Поширені питання щодо судових рішень</h2>
+        <h2>
+          <mat-icon>help_center</mat-icon>
+          Поширені питання щодо судових рішень
+        </h2>
 
         <mat-accordion>
           @for (faq of faqItems; track faq.question) {
