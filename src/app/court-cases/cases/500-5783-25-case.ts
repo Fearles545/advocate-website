@@ -1,6 +1,7 @@
 import { CourtCase } from './court-case.model';
 
 export const case_500_5783_25: CourtCase = {
+  slug: '500-5783-25',
   caseNumber: '500/5783/25',
   title:
     'Отримали рішення суду про індексацію пенсії із застосуванням збільшеного показника середньої заробітної плати (7763,17 грн)',
@@ -30,7 +31,7 @@ export const case_500_5783_25: CourtCase = {
     'При індексації застосовується занижений показник середньої заробітної плати 3764,40 грн',
     'Розмір пенсії не відповідає очікуванням після індексації',
   ],
-  relatedCaseNumbers: ['420/14018/25', '420/14489/25'],
+  relatedCaseSlugs: ['420-14018-25', '420-14489-25'],
   relatedBlogSlugs: [
     'nepravylna-indeksatsiia-pensii-pryznachenykh-z-2020-roku-shcho-zminyla-postanova-velykoi-palaty-vs-i-iak-diati-pensioneru',
     'yak-pidvyshchyty-pensiiu-za-vysluhu-rokiv',

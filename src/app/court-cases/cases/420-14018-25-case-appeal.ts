@@ -1,6 +1,7 @@
 import { CourtCase } from './court-case.model';
 
 export const case_420_14018_25_appeal: CourtCase = {
+  slug: '420-14018-25-appeal',
   caseNumber: '420/14018/25',
   title:
     'Індексація пенсії: апеляція Пенсійного фонду залишена без задоволення',
@@ -35,7 +36,7 @@ export const case_420_14018_25_appeal: CourtCase = {
     'При індексації застосовується занижений показник середньої заробітної плати 3764,40 грн.',
     'Розмір пенсії не відповідає очікуванням після індексації',
   ],
-  relatedCaseNumbers: ['420/14018/25', '420/14489/25'],
+  relatedCaseSlugs: ['420-14018-25', '420-14489-25'],
   relatedBlogSlugs: [
     'nepravylna-indeksatsiia-pensii-pryznachenykh-z-2020-roku-shcho-zminyla-postanova-velykoi-palaty-vs-i-iak-diati-pensioneru',
     'yak-pidvyshchyty-pensiiu-za-vysluhu-rokiv',

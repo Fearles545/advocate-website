@@ -1,6 +1,7 @@
 import { CourtCase } from './court-case.model';
 
 export const case_200_5966_25: CourtCase = {
+  slug: '200-5966-25',
   caseNumber: '200/5966/25',
   title:
     'Зарахували період військової служби в особливий період до пільгового стажу шахтаря',
@@ -26,7 +27,7 @@ export const case_200_5966_25: CourtCase = {
     'Маєте пільговий стаж за Списком №1 або №2',
     'ПФУ відмовляє зараховувати військову службу до пільгового стажу',
   ],
-  relatedCaseNumbers: ['420/22036/25', '200/7851/25'],
+  relatedCaseSlugs: ['420-22036-25', '200-7851-25'],
   relatedBlogSlugs: [
     'chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva',
     'pryznachennia-pilhovoi-pensii-nezalezhno-vid-viku-dlia-pratsivnykiv-hirnychoi-ta-metalurhiinoi-haluzei',

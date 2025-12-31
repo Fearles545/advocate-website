@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure: true,
 })
 export class CaseRoutePipe implements PipeTransform {
-  transform(caseNumber: string): string[] {
-    return ['/court-cases', ...caseNumber.split('/')];
+  transform(slug: string): string[] {
+    return ['/court-cases', slug];
   }
 }

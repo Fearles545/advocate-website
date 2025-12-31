@@ -1,6 +1,7 @@
 import { CourtCase } from './court-case.model';
 
 export const case_582_867_21: CourtCase = {
+  slug: '582-867-21',
   caseNumber: '582/867/21',
   title: 'Встановлено факт належності трудової книжки та диплому',
   date: '2025-06-01',
@@ -24,7 +25,7 @@ export const case_582_867_21: CourtCase = {
     'Установи відмовляють вносити виправлення до документів',
     'Потрібно підтвердити стаж для призначення пенсії',
   ],
-  relatedCaseNumbers: ['420/22036/25', '500/5783/25'],
+  relatedCaseSlugs: ['420-22036-25', '500-5783-25'],
   relatedBlogSlugs: [
     'neobkhidnyi-strakhovyi-stazh-dlia-pryznachennia-pensii-za-vikom',
     'khto-maie-pravo-na-pensiiu-za-vikom-u-2025',

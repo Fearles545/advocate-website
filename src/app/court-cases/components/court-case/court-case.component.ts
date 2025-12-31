@@ -10,7 +10,6 @@ import { CourtCase, COURT_CASE_FAQ, getRelatedCases } from '../../cases';
 import { Blog, getBlogsBySlug } from '../../../blog/blog-posts';
 import { CaseRoutePipe } from '../../pipes/case-route.pipe';
 import { CtaButtonComponent } from '../../../shared/components/cta-button';
-import { CtaOutlineButtonComponent } from '../../../shared/components/cta-outline-button';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactFormDialogComponent } from '../../../contacts/contact-form-dialog/contact-form-dialog.component';
 
@@ -24,7 +23,6 @@ import { ContactFormDialogComponent } from '../../../contacts/contact-form-dialo
     MatExpansionModule,
     CaseRoutePipe,
     CtaButtonComponent,
-    CtaOutlineButtonComponent,
   ],
   templateUrl: './court-case.component.html',
   styleUrl: './court-case.component.css',
@@ -36,8 +34,8 @@ export class CourtCaseComponent {
   faqItems = COURT_CASE_FAQ;
 
   relatedCases = computed<CourtCase[]>(() => {
-    const caseNumbers = this.courtCase().relatedCaseNumbers ?? [];
-    return getRelatedCases(caseNumbers);
+    const slugs = this.courtCase().relatedCaseSlugs ?? [];
+    return getRelatedCases(slugs);
   });
 
   relatedBlogs = computed<Blog[]>(() => {

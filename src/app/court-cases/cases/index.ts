@@ -31,17 +31,17 @@ export const courtCases: CourtCase[] = [
 ].sort((a, b) => b.date.localeCompare(a.date));
 
 /**
- * Find a court case by its case number.
+ * Find a court case by its slug.
  */
-export function findCourtCase(caseNumber: string): CourtCase | undefined {
-  return courtCases.find((c) => c.caseNumber === caseNumber);
+export function findBySlug(slug: string): CourtCase | undefined {
+  return courtCases.find((c) => c.slug === slug);
 }
 
 /**
- * Get related court cases by case numbers.
+ * Get related court cases by slugs.
  */
-export function getRelatedCases(caseNumbers: string[]): CourtCase[] {
-  return caseNumbers
-    .map((num) => findCourtCase(num))
+export function getRelatedCases(slugs: string[]): CourtCase[] {
+  return slugs
+    .map((slug) => findBySlug(slug))
     .filter((c): c is CourtCase => c !== undefined);
 }

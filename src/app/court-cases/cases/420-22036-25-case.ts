@@ -1,6 +1,7 @@
 import { CourtCase } from './court-case.model';
 
 export const case_420_22036_25: CourtCase = {
+  slug: '420-22036-25',
   caseNumber: '420/22036/25',
   title: 'Зарахування пільгового стажу за Списком №2 та призначення пенсії',
   date: '2025-12-02',
@@ -25,7 +26,7 @@ export const case_420_22036_25: CourtCase = {
     'Не зарахували стаж через виправлення або неточності у трудовій книжці',
     'Потрібен судовий захист у спорі з Пенсійним фондом України',
   ],
-  relatedCaseNumbers: ['200/7851/25', '200/5966/25'],
+  relatedCaseSlugs: ['200-7851-25', '200-5966-25'],
   relatedBlogSlugs: [
     'pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
     'pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv',

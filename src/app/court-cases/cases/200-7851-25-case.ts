@@ -1,6 +1,7 @@
 import { CourtCase } from './court-case.model';
 
 export const case_200_7851_25: CourtCase = {
+  slug: '200-7851-25',
   caseNumber: '200/7851/25',
   title:
     'Вибороли право на пенсію за Списком №1 із зарахуванням пільгового стажу та страхових періодів',
@@ -36,7 +37,7 @@ export const case_200_7851_25: CourtCase = {
     'Роботодавець не повністю сплачував внески',
     'Перебували на обліку в центрі зайнятості',
   ],
-  relatedCaseNumbers: ['420/22036/25', '200/5966/25'],
+  relatedCaseSlugs: ['420-22036-25', '200-5966-25'],
   relatedBlogSlugs: [
     'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
     'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-zhinok-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',

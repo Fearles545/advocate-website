@@ -10,7 +10,7 @@ export const courtCasesRoutes: Routes = [
     component: CourtCasesListComponent,
   },
   ...courtCases.map((courtCase) => ({
-    path: courtCase.caseNumber,
+    path: courtCase.slug,
     component: CourtCaseComponent,
     data: {
       courtCase,

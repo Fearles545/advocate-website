@@ -23,8 +23,8 @@ function toIsoDateTime(dateStr: string): string {
  * Uses case data for defaults, with optional overrides from case.seo.
  */
 export function generateCourtCaseSeo(courtCase: CourtCase): PageSEO {
-  const caseUrl = `${BASE_URL}/court-cases/${courtCase.caseNumber}/`;
-  const canonicalPath = `/court-cases/${courtCase.caseNumber}/`;
+  const caseUrl = `${BASE_URL}/court-cases/${courtCase.slug}/`;
+  const canonicalPath = `/court-cases/${courtCase.slug}/`;
 
   // Generate defaults from case data
   const defaultTitle = `${courtCase.title} | Адвокат ${AUTHOR_NAME}`;

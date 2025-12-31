@@ -141,9 +141,9 @@
           </h2>
 
           <ul class="related-links">
-            @for (relatedCase of relatedCases(); track relatedCase.caseNumber) {
+            @for (relatedCase of relatedCases(); track relatedCase.slug) {
               <li>
-                <a [routerLink]="relatedCase.caseNumber | caseRoute">
+                <a [routerLink]="relatedCase.slug | caseRoute">
                   <span>{{ relatedCase.title }}</span>
                   <mat-icon>arrow_forward</mat-icon>
                 </a>
@@ -214,23 +214,20 @@
             Записатися на консультацію
           </button>
 
-          <div class="cta-secondary-row">
-            <a
-              [routerLink]="['/services']"
-              appCtaOutlineButton
-              theme="gold"
-              icon="work"
-            >
-              Юридичні послуги
-            </a>
+          <p class="trust-text">
+            Після заповнення заявки я зв'яжуся з вами та поясню наступні кроки
+            для вирішення вашої ситуації.
+          </p>
 
-            <a
-              [routerLink]="['/contacts']"
-              appCtaOutlineButton
-              theme="gold"
-              icon="contact_phone"
-            >
+          <div class="cta-links">
+            <a [routerLink]="['/services']" class="cta-link">
+              Юридичні послуги
+              <mat-icon>arrow_forward</mat-icon>
+            </a>
+            <span class="link-divider">|</span>
+            <a [routerLink]="['/contacts']" class="cta-link">
               Контакти
+              <mat-icon>arrow_forward</mat-icon>
             </a>
           </div>
         </div>

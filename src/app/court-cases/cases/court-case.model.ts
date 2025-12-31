@@ -22,7 +22,8 @@ export interface CourtCaseSeoOverrides {
 
 export interface CourtCase {
   // === Identification ===
-  caseNumber: string; // Primary key, used in URL (e.g., "420/22036/25")
+  slug: string; // Unique identifier for URL and tracking (e.g., "420-14018-25-appeal")
+  caseNumber: string; // Official court case number for display (e.g., "420/14018/25")
   title: string; // Main headline
   date: string; // Publication date (ISO format: YYYY-MM-DD)
 
@@ -41,7 +42,7 @@ export interface CourtCase {
   usefulFor?: string[]; // "Кому буде корисно" bullet points
 
   // === Related Content (for internal linking / SEO) ===
-  relatedCaseNumbers?: string[]; // Links to other cases by caseNumber
+  relatedCaseSlugs?: string[]; // Links to other cases by slug
   relatedBlogSlugs?: string[]; // Links to blog posts by slug
 
   // === SEO Overrides ===
