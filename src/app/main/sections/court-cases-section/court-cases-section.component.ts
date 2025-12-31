@@ -1,10 +1,10 @@
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { CourtCase } from '../../models';
 import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button';
 import { CaseRoutePipe } from '../../../court-cases/pipes/case-route.pipe';
+import { courtCases } from '../../../court-cases/cases';
 
 @Component({
   selector: 'app-court-cases-section',
@@ -14,5 +14,6 @@ import { CaseRoutePipe } from '../../../court-cases/pipes/case-route.pipe';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourtCasesSectionComponent {
-  courtCases = input.required<CourtCase[]>();
+  /** Display the 3 most recent court cases (already sorted by date in index.ts) */
+  courtCases = courtCases.slice(0, 3);
 }

@@ -14,14 +14,14 @@
     </div>
 
     <div class="court-cases-grid">
-      @for (courtCase of courtCases(); track courtCase.caseNumber) {
+      @for (courtCase of courtCases; track courtCase.slug) {
         <article class="court-case-card">
           <div class="victory-badge">
             <mat-icon>check_circle</mat-icon>
             <!-- <span>Виграно</span> -->
           </div>
 
-          <a [routerLink]="courtCase.caseNumber | caseRoute">
+          <a [routerLink]="courtCase.slug | caseRoute">
             <div class="card-header">
               <span class="case-number"
                 >Справа №{{ courtCase.caseNumber }}</span
