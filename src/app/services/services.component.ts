@@ -1,82 +1,224 @@
-import { Component } from '@angular/core';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { MatIcon } from '@angular/material/icon';
+import { CtaButtonComponent } from '@shared/components/cta-button';
+import {
+  FaqAccordionComponent,
+  FaqItem,
+} from '@shared/components/faq-accordion';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactFormDialogComponent } from '../contacts/contact-form-dialog/contact-form-dialog.component';
+
+interface ServiceItem {
+  text: string;
+}
+
+interface MainService {
+  id: string;
+  icon: string;
+  title: string;
+  description: string;
+  items: ServiceItem[];
+  ctaText: string;
+}
+
+interface AdditionalService {
+  icon: string;
+  title: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-services',
-  imports: [MatListModule, MatIconModule],
+  imports: [RouterLink, MatIcon, CtaButtonComponent, FaqAccordionComponent],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ServicesComponent {
-  serviceCategories = [
+  private dialog = inject(MatDialog);
+
+  mainServices: MainService[] = [
     {
-      name: 'ПЕНСІЙНІ',
+      id: 'priznannya-pensiyi',
+      icon: 'description',
+      title: 'Призначення пенсії',
+      description:
+        'Юридичний супровід під час призначення пенсії у таких випадках:',
       items: [
-        { icon: 'handshake', title: 'Консультації з пенсійних питань' },
-        { icon: 'mail', title: 'Звернення з адвокатським запитом' },
-        { icon: 'people', title: 'Допомога у зборі необхідних довідок' },
-        { icon: 'lock', title: 'Оформлення різних видів пенсій' },
-        { icon: 'calculator', title: 'Перерахунок/допризначення пенсій' },
-        { icon: 'card', title: 'Оформлення пенсійного посвідчення' },
-        { icon: 'checklist', title: 'Розрахунки різних видів стажу' },
-        { icon: 'check', title: 'Перевірка документів для призначення пенсії' },
-        { icon: 'question', title: 'Інші пенсійні питання' },
+        { text: 'пенсія за віком' },
+        { text: 'дострокова пенсія' },
+        { text: 'пенсія на пільгових умовах (Список №1, №2 та інші)' },
+        { text: 'шахтарська пенсія' },
+        { text: 'чорнобильська пенсія' },
+        { text: 'пенсія по інвалідності' },
+        { text: "пенсія у зв'язку з втратою годувальника" },
       ],
+      ctaText: 'Записатися на консультацію щодо призначення пенсії',
     },
     {
-      name: 'СУДОВІ',
+      id: 'pererahunok-pensiyi',
+      icon: 'sync_alt',
+      title: 'Перерахунок пенсії',
+      description: 'Допомога у випадках, коли:',
       items: [
-        { icon: 'person', title: 'Представництво інтересів у судах' },
-        {
-          icon: 'legal-case',
-          title:
-            'Написання та подання позовів (оскарження відмов Пенсійного фонду)',
-        },
-        { icon: 'letter', title: 'Відповіді на відзиви ПФУ' },
-        {
-          icon: 'document',
-          title: 'Написання інших документів для суду (клопотання, заяви тощо)',
-        },
-        { icon: 'document-appeal', title: 'Апеляційні скарги' },
-        {
-          icon: 'executive',
-          title: 'Отримання виконавчих листів та подання до виконавчої служби',
-        },
-        {
-          icon: 'question-1',
-          title: 'Вирішення інших питань у пенсійних справах',
-        },
+        { text: 'неправильно визначено страховий або пільговий стаж' },
+        { text: 'не враховано окремі періоди роботи' },
+        { text: 'занижено заробіток' },
+        { text: 'неправильно застосовано норми законодавства' },
+        { text: 'не проведено індексацію пенсії' },
       ],
+      ctaText: 'Записатися на консультацію щодо перерахунку пенсії',
+    },
+    {
+      id: 'oskarzhennya-rishen',
+      icon: 'gavel',
+      title: 'Оскарження рішень Пенсійного фонду України',
+      description: 'Правова допомога у випадках:',
+      items: [
+        { text: 'відмови у призначенні пенсії' },
+        { text: 'відмови у перерахунку пенсії' },
+        { text: 'незарахування стажу або заробітку' },
+        { text: 'порушення строків розгляду заяв' },
+        { text: 'бездіяльності органів Пенсійного фонду' },
+      ],
+      ctaText: 'Записатися на консультацію щодо оскарження рішень ПФУ',
+    },
+    {
+      id: 'sudovyi-zahyst',
+      icon: 'balance',
+      title: 'Судовий захист пенсійних прав',
+      description:
+        'Представництво інтересів клієнтів у судах у пенсійних спорах, зокрема:',
+      items: [
+        { text: 'визнання дій Пенсійного фонду незаконними' },
+        { text: "зобов'язання призначити або перерахувати пенсію" },
+        { text: 'зарахування страхового чи пільгового стажу' },
+        { text: 'відновлення пенсійних виплат' },
+      ],
+      ctaText: 'Переглянути судові рішення',
     },
   ];
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    const iconNames = [
-      'handshake',
-      'mail',
-      'people',
-      'lock',
-      'calculator',
-      'card',
-      'checklist',
-      'check',
-      'question',
-      'person',
-      'legal-case',
-      'letter',
-      'document',
-      'document-appeal',
-      'executive',
-      'question-1',
-    ];
-    iconNames.forEach((iconName) => {
-      iconRegistry.addSvgIcon(
-        iconName,
-        sanitizer.bypassSecurityTrustResourceUrl(
-          `assets/services-icons/${iconName}.svg`
-        )
-      );
+
+  additionalServices: AdditionalService[] = [
+    {
+      icon: 'support_agent',
+      title: 'Консультація адвоката з пенсійних питань',
+      description:
+        'Первинна або розширена консультація з аналізом документів, стажу та можливих шляхів вирішення пенсійного питання.',
+    },
+    {
+      icon: 'analytics',
+      title: 'Комплексний аналіз пенсійної справи',
+      description:
+        'Глибокий аналіз пенсійної ситуації, документів та законодавства з формуванням індивідуальної правової позиції.',
+    },
+    {
+      icon: 'refresh',
+      title: 'Повторне звернення до Пенсійного фонду після відмови',
+      description:
+        'Підготовка повторних заяв, пояснень і додаткових документів для повторного розгляду пенсійної справи без суду.',
+    },
+    {
+      icon: 'history',
+      title: 'Відновлення та підтвердження стажу',
+      description:
+        'Юридична допомога у підтвердженні страхового, спеціального або пільгового стажу за відсутності або наявності помилок у документах.',
+    },
+    {
+      icon: 'verified',
+      title: 'Зарахування пільгового стажу (Список №1, №2)',
+      description:
+        'Супровід питань зарахування пільгового стажу, у тому числі при відмовах Пенсійного фонду України.',
+    },
+    {
+      icon: 'mail',
+      title: 'Адвокатські запити',
+      description:
+        'Направлення адвокатських запитів до Пенсійного фонду, підприємств, архівних установ та органів влади для отримання необхідних документів.',
+    },
+    {
+      icon: 'edit_note',
+      title: 'Виправлення помилок у документах',
+      description:
+        'Виявлення та усунення помилок у трудових книжках, довідках, архівних документах, що впливають на стаж і розмір пенсії.',
+    },
+    {
+      icon: 'qr_code_scanner',
+      title: 'Оцифрування трудової книжки та інших документів',
+      description:
+        'Перевірка документів перед оцифруванням, допомога у збиранні довідок і підготовка до подання через електронний кабінет ПФУ.',
+    },
+    {
+      icon: 'folder_shared',
+      title: 'Документи ДРАЦС для пенсійних справ',
+      description:
+        'Отримання повторних свідоцтв про народження, шлюб, розірвання шлюбу, витягів про підтвердження дошлюбного прізвища.',
+    },
+    {
+      icon: 'badge',
+      title: 'Отримання пенсійного посвідчення',
+      description:
+        'Юридичний супровід оформлення та отримання пенсійного посвідчення після призначення пенсії.',
+    },
+    {
+      icon: 'swap_horiz',
+      title: 'Переведення з одного виду пенсії на інший',
+      description:
+        'Оцінка доцільності переведення, підготовка документів і супровід звернення до Пенсійного фонду України.',
+    },
+    {
+      icon: 'public',
+      title: 'Пенсійні питання для осіб, які працювали за кордоном',
+      description:
+        'Юридична допомога особам, які мають трудовий стаж за кордоном, з аналізом можливості його зарахування.',
+    },
+  ];
+
+  faqItems: FaqItem[] = [
+    {
+      question: 'Чи можна отримати консультацію онлайн?',
+      answer:
+        'Так, консультації надаються дистанційно — по телефону або через месенджери.',
+    },
+    {
+      question: 'Чи можна звернутися до вас, якщо я проживаю за кордоном?',
+      answer:
+        'Так, юридична допомога надається дистанційно для клієнтів за кордоном. Консультації, підготовка документів і супровід здійснюються онлайн.',
+    },
+    {
+      question: 'Що робити, якщо ПФУ відмовив у призначенні пенсії?',
+      answer:
+        'Відмову необхідно проаналізувати. У багатьох випадках її можна оскаржити або подати повторне звернення.',
+    },
+    {
+      question: "Чи обов'язково звертатися до суду?",
+      answer:
+        'Ні. Частину пенсійних питань можливо вирішити без суду, залежно від ситуації.',
+    },
+    {
+      question: 'Як підтвердити стаж при відсутності документів?',
+      answer:
+        'Стаж підтверджується архівними довідками, записами трудової книжки або в судовому порядку.',
+    },
+    {
+      question: 'Скільки часу займає пенсійна справа?',
+      answer:
+        'Строки залежать від складності справи та обраного способу захисту прав.',
+    },
+  ];
+
+  openContactForm(): void {
+    this.dialog.open(ContactFormDialogComponent, {
+      data: {
+        width: 'fit-content',
+        height: 'auto',
+      },
+      width: '100%',
+      maxWidth: '100vw',
+      height: 'auto',
+      panelClass: 'contact-form-dialog',
+      autoFocus: false,
     });
   }
 }

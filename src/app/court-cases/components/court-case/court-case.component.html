@@ -181,17 +181,7 @@
           Поширені питання щодо судових рішень
         </h2>
 
-        <mat-accordion>
-          @for (faq of faqItems; track faq.question) {
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>{{ faq.question }}</mat-panel-title>
-              </mat-expansion-panel-header>
-
-              <p>{{ faq.answer }}</p>
-            </mat-expansion-panel>
-          }
-        </mat-accordion>
+        <app-faq-accordion [items]="faqItems" />
       </section>
 
       <!-- CTA Section -->

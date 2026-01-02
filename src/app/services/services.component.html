@@ -1,21 +1,230 @@
-<h1 class="main-title">ПОСЛУГИ</h1>
+<!-- Page Header -->
+<section class="page-bg-pattern">
+  <div class="page-content">
+    <header class="page-header">
+      <div class="page-header-badge">
+        <mat-icon>work</mat-icon>
+      </div>
 
-<div class="services-container">
-  @for (category of serviceCategories; track category.name) {
-    <section class="service-category">
-      <h2 class="category-title">{{ category.name }}</h2>
+      <h1>Юридичні послуги пенсійного адвоката</h1>
 
-      <div class="list">
-        @for (item of category.items; track item.title) {
-          <div class="listitem">
-            <div class="icon-container">
-              <mat-icon color="primary" svgIcon="{{ item.icon }}"></mat-icon>
+      <p class="page-intro">
+        Надаю юридичну допомогу з призначення, перерахунку та захисту пенсійних
+        прав. Працюю з клієнтами по всій Україні та за кордоном — дистанційно,
+        без необхідності особистого відвідування Пенсійного фонду.
+      </p>
+    </header>
+
+    <!-- Main Services Section -->
+    <section class="main-services-section">
+      <div class="section-header">
+        <h2 class="main-services-title">Основні послуги з пенсійних питань</h2>
+      </div>
+
+      <div class="main-services-grid">
+        @for (service of mainServices; track service.id) {
+          <article class="main-service-card" [id]="service.id">
+            <div class="service-header">
+              <div class="service-icon-wrapper">
+                <mat-icon>{{ service.icon }}</mat-icon>
+              </div>
+              <h3>{{ service.title }}</h3>
             </div>
 
-            <span class="listitem-text">{{ item.title }}</span>
-          </div>
+            <p class="service-description">{{ service.description }}</p>
+
+            <ul class="service-items">
+              @for (item of service.items; track item.text) {
+                <li>
+                  <mat-icon>check_circle</mat-icon>
+                  <span>{{ item.text }}</span>
+                </li>
+              }
+            </ul>
+
+            @if (service.id === 'sudovyi-zahyst') {
+              <p class="service-note">
+                Я здійснюю супровід справ у судах першої, апеляційної та
+                касаційної інстанцій.
+              </p>
+              <a routerLink="/court-cases" class="service-cta-link">
+                {{ service.ctaText }}
+                <mat-icon>arrow_forward</mat-icon>
+              </a>
+            } @else {
+              @if (service.id === 'pererahunok-pensiyi') {
+                <p class="service-note">
+                  Я здійснюю юридичний аналіз пенсійної справи та супроводжую
+                  процедуру перерахунку пенсії, у тому числі шляхом судового
+                  захисту.
+                </p>
+              }
+              @if (service.id === 'priznannya-pensiyi') {
+                <p class="service-note">
+                  Послуга включає аналіз документів, перевірку стажу, підготовку
+                  заяв та взаємодію з органами Пенсійного фонду України.
+                </p>
+              }
+              @if (service.id === 'oskarzhennya-rishen') {
+                <p class="service-note">
+                  Оскарження можливе в адміністративному порядку або в суді —
+                  залежно від обставин справи.
+                </p>
+              }
+              <button
+                type="button"
+                class="service-cta-btn"
+                (click)="openContactForm()"
+              >
+                <mat-icon>calendar_today</mat-icon>
+                {{ service.ctaText }}
+              </button>
+            }
+          </article>
         }
       </div>
+
+      <div class="main-services-cta">
+        <button
+          type="button"
+          appCtaButton
+          (click)="openContactForm()"
+          icon="calendar_today"
+        >
+          Записатися на консультацію з пенсійних питань
+        </button>
+      </div>
     </section>
-  }
-</div>
+  </div>
+</section>
+
+<!-- Additional Services Section -->
+<section class="additional-services-section-bg">
+  <div class="additional-services-section">
+    <div class="section-header">
+      <h2>Додаткові та спеціальні послуги</h2>
+    </div>
+
+    <p class="section-intro">
+      Ці послуги часто поєднуються між собою та застосовуються залежно від
+      конкретної ситуації клієнта.
+    </p>
+
+    <div class="additional-services-grid">
+      @for (service of additionalServices; track service.title) {
+        <article class="additional-service-card">
+          <h3>
+            <div class="additional-service-icon">
+              <mat-icon>{{ service.icon }}</mat-icon>
+            </div>
+            {{ service.title }}
+          </h3>
+          <p>{{ service.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Format Section -->
+<section class="format-section-bg">
+  <div class="format-section">
+    <div class="format-icon-wrapper">
+      <mat-icon>language</mat-icon>
+    </div>
+    <div class="format-text">
+      <h2>Формат роботи</h2>
+      <p>
+        Юридична допомога надається дистанційно — онлайн або телефоном.
+        Комунікація здійснюється через Viber, WhatsApp, Telegram та електронні
+        сервіси Пенсійного фонду України. Формат роботи підбирається
+        індивідуально з урахуванням місця проживання клієнта та складності
+        справи.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing-section-bg">
+  <div class="pricing-section">
+    <div class="section-header">
+      <h2>Вартість юридичних послуг</h2>
+    </div>
+
+    <div class="pricing-content">
+      <div class="pricing-icon-wrapper">
+        <mat-icon>payments</mat-icon>
+      </div>
+      <p>
+        Вартість послуг визначається індивідуально та залежить від виду пенсії,
+        обсягу документів, складності справи та наявності судового спору.
+        Остаточна вартість узгоджується після консультації та ознайомлення з
+        матеріалами справи.
+      </p>
+      <button
+        type="button"
+        appCtaButton
+        (click)="openContactForm()"
+        icon="calendar_today"
+      >
+        Записатися на консультацію
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section-bg">
+  <div class="faq-section">
+    <div class="section-header">
+      <h2>Поширені питання щодо пенсійних послуг</h2>
+    </div>
+
+    <app-faq-accordion [items]="faqItems" />
+  </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="final-cta-section-bg">
+  <div class="final-cta-section">
+    <div class="section-header">
+      <h2>Обговоримо вашу пенсійну ситуацію</h2>
+    </div>
+
+    <p class="final-cta-intro">
+      Ви ознайомилися з переліком послуг. Якщо ваша ситуація потребує
+      призначення, перерахунку пенсії або оскарження рішень Пенсійного фонду —
+      звертайтеся за консультацією.
+    </p>
+
+    <div class="final-cta-buttons">
+      <button
+        type="button"
+        appCtaButton
+        theme="gold"
+        icon="calendar_today"
+        (click)="openContactForm()"
+      >
+        Записатися на консультацію
+      </button>
+
+      <p class="final-cta-note">
+        Після звернення я проаналізую вашу ситуацію та поясню можливі варіанти
+        її вирішення.
+      </p>
+
+      <div class="cta-links">
+        <a routerLink="/about-me" class="cta-link">
+          Про адвоката
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+        <span class="link-divider">|</span>
+        <a routerLink="/documents" class="cta-link">
+          Офіційні документи та сертифікати
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
