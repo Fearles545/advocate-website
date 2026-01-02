@@ -1,9 +1,3 @@
-/* :host {
-  display: block;
-  height: calc(100% - 124px);
-  min-height: calc(100vh - 124px);
-} */
-
 app-header {
   position: fixed;
   top: 0;
@@ -14,15 +8,16 @@ app-header {
 
 mat-sidenav,
 mat-sidenav-content {
-  margin-top: 140px;
+  margin-top: var(--header-height, 140px);
 }
 
 mat-sidenav-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100% - 140px);
-  min-height: calc(100vh - 140px);
+  height: calc(100% - var(--header-height, 140px));
+  min-height: calc(100vh - var(--header-height, 140px));
+  scroll-padding-top: 1rem;
 
   /* background: #002706; */
   /* background-image: linear-gradient(
@@ -84,7 +79,7 @@ mat-sidenav-content.blog {
   );
 }
 
-mat-sidenav-content.about-me::before {
+/* mat-sidenav-content.about-me::before {
   background: linear-gradient(
     109.6deg,
     rgba(204, 228, 247, 0.75) 11.2%,
@@ -93,9 +88,9 @@ mat-sidenav-content.about-me::before {
 }
 mat-sidenav-content.about-me {
   background-image: url('assets/library-bookshelves.webp');
-}
+} */
 
-mat-sidenav-content.services::before {
+/* mat-sidenav-content.services::before {
   background: linear-gradient(
     109.6deg,
     rgba(204, 228, 247, 0.75) 11.2%,
@@ -104,7 +99,7 @@ mat-sidenav-content.services::before {
 }
 mat-sidenav-content.services {
   background-image: url('assets/office-chair-still-life.webp');
-}
+} */
 
 /* mat-sidenav-content.documents {
   background-image: url('assets/front-view-stacked-books-earth-globe-open-book-education-day.webp');
@@ -127,16 +122,3 @@ mat-sidenav-content.contacts {
   align-items: center;
 }
 
-@media (max-width: 800px) {
-  mat-sidenav,
-  mat-sidenav-content {
-    margin-top: 136px;
-  }
-}
-
-@media (max-width: 320px) {
-  mat-sidenav,
-  mat-sidenav-content {
-    margin-top: 64px;
-  }
-}

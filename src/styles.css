@@ -9,10 +9,19 @@
   --font-heading: 'Cormorant Garamond', serif;
   --weight-semibold: 600;
   --weight-bold: 700;
+  /* Heading sizes */
   --font-size-h1: 2.25rem;
   --font-size-h2: 1.75rem;
   --font-size-h3: 1.375rem;
   --line-height-heading: 1.3;
+  /* Body text scale - standardized across site */
+  --font-size-body-lg: 1.05rem; /* Main content paragraphs (about text, profile text) */
+  --font-size-body: 0.95rem; /* Card descriptions, secondary text */
+  --font-size-body-sm: 0.9rem; /* Links, captions, small text */
+  /* Card/component text */
+  --font-size-card-title: 1.15rem; /* Service/feature card h3 */
+  --font-size-label: 0.75rem; /* Badges, small labels */
+  --font-size-link: 0.9rem; /* Action links */
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
@@ -33,7 +42,12 @@
   /* Section header underline */
   --header-underline-width: 80px;
   --header-underline-width-accent: 100px; /* Dark/accent sections - wider for visibility */
-  --header-underline-gradient: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  --header-underline-gradient: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
   /* Section intro text - leads reader into section content */
   --section-intro-font-size: 1.1rem;
   /* Body text colors - for content on light backgrounds */
@@ -49,7 +63,11 @@
   /* Semantic colors */
   --color-star: #f5b800; /* Star ratings */
   --color-success: #4ade80; /* Victory/success indicators */
-  --color-success-bg: linear-gradient(135deg, #1a5c1a 0%, #0d3d0d 100%); /* Victory badge background */
+  --color-success-bg: linear-gradient(
+    135deg,
+    #1a5c1a 0%,
+    #0d3d0d 100%
+  ); /* Victory badge background */
   --color-navy: #1a365d;
   --color-navy-dark: #152d4f;
   --color-container-bg: #bb925c1c;
@@ -64,7 +82,8 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
   /* Card box shadow - 4.2 (uses brand green for subtle warmth) */
-  --card-box-shadow: 0 4px 16px rgba(0, 39, 6, 0.06), 0 1px 4px rgba(0, 39, 6, 0.04);
+  --card-box-shadow:
+    0 4px 16px rgba(0, 39, 6, 0.06), 0 1px 4px rgba(0, 39, 6, 0.04);
   /* Card border - 4.3 (gold-tinted for premium feel) */
   --card-border: 1px solid rgba(201, 165, 92, 0.2);
   /* Icon wrapper sizes - 4.4 (3-tier scale) */
@@ -79,6 +98,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height, 140px) + 1rem);
 }
 
 body {
@@ -288,7 +308,11 @@ mat-paginator div.mat-mdc-paginator-range-label {
   width: var(--icon-wrapper-lg);
   height: var(--icon-wrapper-lg);
   margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-green) 0%,
+    var(--color-green-dark) 100%
+  );
   border-radius: 50%;
   border: 2px solid rgba(201, 165, 92, 0.4);
   box-shadow:
@@ -396,13 +420,24 @@ mat-paginator div.mat-mdc-paginator-range-label {
 @media (max-width: 1279px) {
 }
 
-/* Desktop overrides */
+/* Tablet overrides (768px+) */
 @media (min-width: 768px) {
   :root {
     --section-padding-y: 4rem;
     --section-padding-x: 2rem;
     --section-padding-y-accent: 5rem;
     --section-intro-font-size: 1.2rem;
+    /* Body text scale - tablet */
+    --font-size-body-lg: 1.15rem;
+  }
+}
+
+/* Desktop overrides (1024px+) */
+@media (min-width: 1024px) {
+  :root {
+    /* Body text scale - desktop */
+    --font-size-body-lg: 1.2rem;
+    --font-size-card-title: 1.2rem;
   }
 }
 
@@ -426,4 +461,9 @@ mat-paginator div.mat-mdc-paginator-range-label {
 }
 
 @media (max-width: 320px) {
+}
+
+.mdc-dialog--open .mat-mdc-dialog-surface {
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
 }

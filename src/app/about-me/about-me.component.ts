@@ -2,15 +2,23 @@ import { NgOptimizedImage } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { MatButtonModule } from '@angular/material/button';
-
 import { MatDialog } from '@angular/material/dialog';
-import { AboutMeDialogComponent } from './about-me-dialog/about-me-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
+
+import { AboutMeDialogComponent } from './about-me-dialog/about-me-dialog.component';
+import { ContactFormDialogComponent } from '../contacts/contact-form-dialog/contact-form-dialog.component';
+import { CtaButtonComponent } from '../shared/components/cta-button/cta-button.component';
+import { CtaOutlineButtonComponent } from '../shared/components/cta-outline-button/cta-outline-button.component';
 
 @Component({
   selector: 'app-about-me',
-  imports: [NgOptimizedImage, RouterLink, MatButtonModule, MatIconModule],
+  imports: [
+    NgOptimizedImage,
+    RouterLink,
+    MatIconModule,
+    CtaButtonComponent,
+    CtaOutlineButtonComponent,
+  ],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.css',
 })
@@ -19,8 +27,22 @@ export class AboutMeComponent {
 
   openDialog(): void {
     this.dialog.open(AboutMeDialogComponent, {
-      width: '400px',
+      width: '500px',
+      maxWidth: '90vw',
       height: 'auto',
+      autoFocus: false,
+    });
+  }
+
+  openContactForm(): void {
+    this.dialog.open(ContactFormDialogComponent, {
+      data: {
+        width: 'fit-content',
+      },
+      width: '100%',
+      maxWidth: '100vw',
+      height: 'auto',
+      panelClass: 'contact-form-dialog',
       autoFocus: false,
     });
   }

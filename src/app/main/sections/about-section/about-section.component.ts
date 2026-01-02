@@ -384,7 +384,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
       margin-bottom: 2rem;
 
       p {
-        font-size: 1.05rem;
+        font-size: var(--font-size-body-lg);
         line-height: 1.8;
         color: var(--text-color-primary);
         margin: 0 0 1.25rem;
@@ -464,10 +464,6 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
         font-size: 2.5rem;
       }
 
-      .about-text p {
-        font-size: 1.15rem;
-      }
-
       .quote-mark {
         font-size: 8rem;
       }
@@ -529,10 +525,6 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
 
       .about-text {
         text-align: left;
-      }
-
-      .about-text p {
-        font-size: 1.2rem;
       }
 
       .highlight-text {

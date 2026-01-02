@@ -164,7 +164,7 @@
 
 .trust-text {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: var(--font-size-body-sm);
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.6);
   font-style: italic;
@@ -263,7 +263,7 @@
 }
 
 .messenger-label-text {
-  font-size: 0.75rem;
+  font-size: var(--font-size-label);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.7);
   transition: color var(--transition-normal);

@@ -202,7 +202,7 @@ import { MatIcon } from '@angular/material/icon';
     }
 
     .problem-item span {
-      font-size: 0.95rem;
+      font-size: var(--font-size-body);
       font-weight: 600;
       color: var(--color-green);
       letter-spacing: 0.2px;
@@ -238,7 +238,7 @@ import { MatIcon } from '@angular/material/icon';
 
     .solution-content p {
       margin: 0;
-      font-size: 1.05rem;
+      font-size: var(--font-size-body-lg);
       line-height: 1.6;
       color: var(--color-gold-light);
       font-weight: 500;
@@ -306,9 +306,7 @@ import { MatIcon } from '@angular/material/icon';
         padding: 2rem 2.5rem;
       }
 
-      .solution-content p {
-        font-size: 1.1rem;
-      }
+      /* Uses var(--font-size-body-lg) which scales automatically */
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

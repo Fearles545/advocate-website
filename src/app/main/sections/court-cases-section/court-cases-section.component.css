@@ -220,7 +220,7 @@
   }
 
   span {
-    font-size: 0.75rem;
+    font-size: var(--font-size-label);
     font-weight: 700;
     color: var(--color-gold);
     text-transform: uppercase;
@@ -278,7 +278,7 @@
 }
 
 .read-more {
-  font-size: 0.85rem;
+  font-size: var(--font-size-link);
   font-weight: 600;
   color: var(--color-gold-accent);
 }

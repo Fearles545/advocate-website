@@ -22,16 +22,8 @@ export const NAV_ITEMS: NavItem[] = [
     exact: true,
   },
   {
-    label: 'Про мене',
-    route: 'about-me',
-  },
-  {
     label: 'Послуги',
     route: 'services',
-  },
-  {
-    label: 'Документи',
-    route: 'documents',
   },
   {
     label: 'Судові рішення',
@@ -44,6 +36,14 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: 'Блог',
     route: 'blog',
+  },
+  {
+    label: 'Про мене',
+    route: 'about-me',
+  },
+  {
+    label: 'Документи',
+    route: 'documents',
   },
   {
     label: 'Контакти',

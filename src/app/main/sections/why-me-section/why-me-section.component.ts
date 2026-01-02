@@ -176,7 +176,7 @@ import { MatIcon } from '@angular/material/icon';
     }
 
     .trust-text {
-      font-size: 1rem;
+      font-size: var(--font-size-body-lg);
       font-weight: 600;
       color: var(--color-green);
       line-height: 1.4;
@@ -191,15 +191,7 @@ import { MatIcon } from '@angular/material/icon';
         padding: 1.125rem 1.5rem;
       }
 
-      .trust-text {
-        font-size: 1.05rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .trust-text {
-        font-size: 1.1rem;
-      }
+      /* Uses var(--font-size-body-lg) which scales automatically */
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

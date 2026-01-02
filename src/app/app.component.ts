@@ -1,7 +1,14 @@
-import { Component, isDevMode } from '@angular/core';
+import {
+  Component,
+  isDevMode,
+  inject,
+  afterNextRender,
+  viewChild,
+  ElementRef,
+  DestroyRef,
+} from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { inject } from '@angular/core';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, ViewportScroller } from '@angular/common';
 
 import { filter, map, startWith } from 'rxjs';
 
@@ -31,8 +38,11 @@ import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 export class AppComponent {
   iconsData = iconsData;
   #router = inject(Router);
+  #destroyRef = inject(DestroyRef);
+  #viewportScroller = inject(ViewportScroller);
   isDevMode = isDevMode();
   private routeSeoService = inject(RouteSeoService);
+  private headerEl = viewChild('headerEl', { read: ElementRef });
 
   navigatedItems$ = this.#router.events.pipe(
     startWith(new NavigationEnd(0, this.#router.url, this.#router.url)),
@@ -50,5 +60,26 @@ export class AppComponent {
 
   constructor() {
     this.routeSeoService.init();
+    this.#initHeaderHeightObserver();
+  }
+
+  #initHeaderHeightObserver(): void {
+    afterNextRender(() => {
+      const headerElement = this.headerEl()?.nativeElement;
+      if (!headerElement) return;
+
+      const resizeObserver = new ResizeObserver((entries) => {
+        const height = entries[0].borderBoxSize[0].blockSize;
+        document.documentElement.style.setProperty(
+          '--header-height',
+          `${height}px`
+        );
+        this.#viewportScroller.setOffset([0, height + 16]);
+      });
+
+      resizeObserver.observe(headerElement);
+
+      this.#destroyRef.onDestroy(() => resizeObserver.disconnect());
+    });
   }
 }

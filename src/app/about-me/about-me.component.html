@@ -1,90 +1,374 @@
-<div class="profile-container">
-  <div class="main-photo-container">
-    <img
-      ngSrc="assets/images/main/about-me-image.webp"
-      alt="Юлія Поддяча"
-      class="profile-photo"
-      width="300"
-      height="472"
-      priority
-    />
+<!-- Page Header -->
+<section class="page-bg-pattern">
+  <div class="page-content">
+    <header class="page-header">
+      <div class="page-header-badge">
+        <mat-icon>verified</mat-icon>
+      </div>
+
+      <h1>
+        Пенсійний адвокат
+        <!-- <span class="verified-badge" title="Верифікований адвокат">
+          <mat-icon>verified</mat-icon>
+        </span> -->
+      </h1>
+
+      <p class="page-intro">
+        <b>Поддяча Юлія Юріївна</b> • Адвокат • Спеціалізація — пенсійне
+        забезпечення та адміністративне судочинство
+      </p>
+    </header>
+
+    <!-- About Me Section -->
+    <section class="about-me-section">
+      <!-- Ambient glow effects -->
+      <div class="ambient-glow ambient-glow-1"></div>
+      <div class="ambient-glow ambient-glow-2"></div>
+
+      <div class="about-me-grid">
+        <!-- Image Panel with Offset Frame -->
+        <div class="image-panel">
+          <div class="photo-frame">
+            <img
+              ngSrc="assets/images/main/about-me-image.webp"
+              alt="Адвокат Поддяча Юлія Юріївна"
+              class="profile-photo"
+              width="300"
+              height="472"
+              priority
+            />
+          </div>
+        </div>
+
+        <!-- Content Section with Frosted Glass -->
+        <div class="profile-content">
+          <div class="content-wrapper">
+            <!-- Decorative quote marks -->
+            <span class="quote-mark quote-open" aria-hidden="true">"</span>
+
+            <div class="section-header">
+              <h2>Про мене</h2>
+            </div>
+
+            <div class="profile-text">
+              <p>
+                Я — адвокат, який спеціалізується на пенсійних справах та спорах
+                із органами Пенсійного фонду України. З 2018 року працюю
+                виключно з пенсійними питаннями та допомагаю людям захистити
+                своє право на законну й справедливу пенсію.
+              </p>
+
+              <p class="highlight-text">
+                Моя робота — це не формальний підхід, а детальний аналіз кожної
+                ситуації: перевірка документів і стажу, пошук правових рішень у
+                складних пенсійних спорах, підготовка юридичних висновків та
+                повний супровід клієнта — від першої консультації до отримання
+                результату.
+              </p>
+            </div>
+
+            <span class="quote-mark quote-close" aria-hidden="true">"</span>
+
+            <!-- Credentials badges -->
+            <!-- <div class="credentials-row">
+              <div class="credential-badge">
+                <mat-icon>school</mat-icon>
+                <span>НЮУ ім. Ярослава Мудрого</span>
+              </div>
+              <div class="credential-badge">
+                <mat-icon>badge</mat-icon>
+                <span>Свідоцтво з 2021 р.</span>
+              </div>
+            </div> -->
+            <a
+              href="https://erau.unba.org.ua/profile/82725"
+              target="_blank"
+              rel="noopener noreferrer"
+              appCtaButton
+              icon="open_in_new"
+              [style.fontSize]="'0.9rem'"
+            >
+              Профіль у Єдиному реєстрі адвокатів України
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
+</section>
 
-  <section class="profile-content">
-    <h1 class="profile-name">Поддяча Юлія Юріївна</h1>
+<!-- Qualification Section -->
+<section class="qualification-section-bg">
+  <div class="qualification-section">
+    <div class="section-header">
+      <h2 [style.width]="'99%'">Кваліфікація та професійний досвід</h2>
+    </div>
 
-    <div class="info-container">
-      <div class="profile-header">
-        <h1 class="profile-name profile-name--sm">Поддяча Юлія Юріївна</h1>
-
-        <p class="profile-title">Адвокат з пенсійних справ</p>
-
-        <p
-          style="
-            background-color: var(--color-green);
-            width: fit-content;
-            margin-left: -1.7rem;
-            padding: 0 1rem;
-            color: white;
-          "
-        >
-          Про мене
+    <div class="qualification-grid">
+      <div class="qualification-card">
+        <div class="qualification-icon">
+          <mat-icon>school</mat-icon>
+        </div>
+        <p>
+          Вища юридична освіта — Національний юридичний університет імені
+          Ярослава Мудрого (кваліфікація «юрист»)
         </p>
       </div>
 
-      <ul class="qualification-list">
-        <li class="qualification-item">
-          <img
-            class="qualification-item-icon"
-            src="assets/icons/nlu-logo.webp"
-            alt="логотип НЮУ імені Ярослава Мудрого"
-          />
+      <div class="qualification-card">
+        <div class="qualification-icon">
+          <mat-icon>gavel</mat-icon>
+        </div>
+        <p>Юридичний досвід — з 2015 року</p>
+      </div>
 
-          Закінчила найкращий юридичний університет в Україні - Національний
-          юридичний університет імені Ярослава Мудрого
-        </li>
+      <div class="qualification-card">
+        <div class="qualification-icon">
+          <mat-icon>account_balance</mat-icon>
+        </div>
+        <p>Практична робота з пенсійними питаннями — з 2018 року</p>
+      </div>
 
-        <li class="qualification-item">
-          <img
-            class="qualification-item-icon"
-            src="assets/icons/law-logo.png"
-            alt="Право"
-          />
+      <div class="qualification-card">
+        <div class="qualification-icon">
+          <mat-icon>assured_workload</mat-icon>
+        </div>
+        <p>
+          Чотири роки роботи в органах Пенсійного фонду України, зокрема у сфері
+          представництва інтересів у судах та інших органах
+        </p>
+      </div>
 
-          10+ років досвіду роботи у сфері права
-        </li>
+      <div class="qualification-card">
+        <div class="qualification-icon">
+          <mat-icon>badge</mat-icon>
+        </div>
+        <p>Свідоцтво адвоката — з 2021 року</p>
+      </div>
 
-        <li class="qualification-item">
-          <img
-            class="qualification-item-icon"
-            src="assets/icons/pfu_logo.png"
-            alt="логотип Пенсійного фонду України"
-          />
+      <div class="qualification-card">
+        <div class="qualification-icon">
+          <mat-icon>trending_up</mat-icon>
+        </div>
+        <p>
+          Регулярне підвищення кваліфікації відповідно до вимог законодавства
+        </p>
+      </div>
+    </div>
 
-          4 роки працювала в органах Пенсійного фонду України
-        </li>
+    <div class="biography-cta">
+      <button
+        type="button"
+        appCtaOutlineButton
+        (click)="openDialog()"
+        [style.padding]="'0.75rem 1.25rem'"
+      >
+        Детальніше про професійний шлях
+      </button>
+    </div>
+  </div>
+</section>
 
-        <li class="qualification-item">
-          <img
-            class="qualification-item-icon"
-            src="assets/icons/unba-logo.png"
-            alt="Національна асоціація адвокатів України"
-          />
+<!-- Mission Section -->
+<section class="mission-section-bg">
+  <div class="mission-section">
+    <div class="mission-content">
+      <mat-icon class="mission-icon">favorite</mat-icon>
+      <div class="mission-text">
+        <h2>Чому я обрала пенсійну сферу</h2>
+        <p>
+          Пенсійні питання часто є складними, заплутаними та несправедливими. Я
+          бачу свою професійну місію в тому, щоб захищати права людей, які все
+          життя працювали та мають законне право на гідне пенсійне забезпечення.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-          Отримала свідоцтво адвоката в 2021 році
-        </li>
-      </ul>
+<!-- Services Section -->
+<section class="services-section-bg">
+  <div class="services-section">
+    <div class="section-header">
+      <h2>Чим я можу допомогти</h2>
+    </div>
 
-      <p (click)="openDialog()" class="profile-more-button">
-        Детальніше
-        <mat-icon>chevron_right</mat-icon>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>
+          <div class="service-icon">
+            <mat-icon>assignment_turned_in</mat-icon>
+          </div>
+
+          Призначення пенсії
+        </h3>
+
+        <p>
+          Повний юридичний супровід при призначенні пенсії: за віком,
+          дострокової, пільгової, шахтарської, чорнобильської, по інвалідності,
+          у зв'язку з втратою годувальника
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>
+          <div class="service-icon">
+            <mat-icon>calculate</mat-icon>
+          </div>
+          Перерахунок та індексація
+        </h3>
+        <p>
+          Перерахунок пенсії, індексація, відновлення виплат — допомагаю
+          отримати належні суми
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>
+          <div class="service-icon">
+            <mat-icon>report_problem</mat-icon>
+          </div>
+          Оскарження рішень ПФУ
+        </h3>
+        <p>
+          Оскарження відмов та бездіяльності Пенсійного фонду України в
+          адміністративному та судовому порядку
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>
+          <div class="service-icon">
+            <mat-icon>balance</mat-icon>
+          </div>
+          Судовий захист
+        </h3>
+        <p>
+          Представництво інтересів у судах першої, апеляційної та касаційної
+          інстанцій
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>
+          <div class="service-icon">
+            <mat-icon>find_in_page</mat-icon>
+          </div>
+          Аналіз документів
+        </h3>
+        <p>
+          Аналіз документів і формування оптимальної правової позиції для кожної
+          справи
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>
+          <div class="service-icon">
+            <mat-icon>mail</mat-icon>
+          </div>
+          Адвокатські запити
+        </h3>
+        <p>
+          Направлення адвокатських запитів до Пенсійного фонду, підприємств,
+          архівних установ та органів влади для отримання необхідних документів.
+        </p>
+      </div>
+    </div>
+
+    <div class="services-cta">
+      <a routerLink="/services" appCtaOutlineButton> Детальніше про послуги </a>
+    </div>
+  </div>
+</section>
+
+<!-- Work Format Section -->
+<section class="format-section-bg">
+  <div class="format-section">
+    <div class="format-icon-wrapper">
+      <mat-icon>language</mat-icon>
+    </div>
+    <div class="format-text">
+      <h2>Формат роботи</h2>
+      <p>
+        Надаю юридичну допомогу дистанційно для клієнтів по всій Україні та за
+        кордоном. Зв'язок і консультації — по телефону, а також через Viber,
+        WhatsApp, Telegram.
       </p>
     </div>
+  </div>
+</section>
 
-    <div class="buttons-container">
-      <a routerLink="/services" mat-flat-button color="primary">Послуги</a>
-
-      <a routerLink="/documents" mat-flat-button color="primary">Документи</a>
+<!-- Approach Section -->
+<section class="approach-section-bg">
+  <div class="approach-section">
+    <div class="section-header">
+      <h2>Мій підхід до роботи</h2>
     </div>
-  </section>
-</div>
+
+    <div class="approach-grid">
+      <div class="approach-item">
+        <mat-icon>visibility</mat-icon>
+        <span>Уважність до деталей та доказова стратегія</span>
+      </div>
+
+      <div class="approach-item">
+        <mat-icon>menu_book</mat-icon>
+        <span>Професійність і глибоке знання пенсійного законодавства</span>
+      </div>
+
+      <div class="approach-item">
+        <mat-icon>person_search</mat-icon>
+        <span>Індивідуальний підхід до кожної справи</span>
+      </div>
+
+      <div class="approach-item">
+        <mat-icon>chat</mat-icon>
+        <span>Пояснення складних питань простою та зрозумілою мовою</span>
+      </div>
+
+      <div class="approach-item">
+        <mat-icon>handshake</mat-icon>
+        <span>Чесність і прозорість у взаємодії з клієнтом</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="final-cta-section-bg">
+  <div class="final-cta-section">
+    <div class="section-header">
+      <h2>Готові обговорити вашу ситуацію?</h2>
+    </div>
+
+    <div class="final-cta-buttons">
+      <button
+        type="button"
+        appCtaButton
+        theme="gold"
+        icon="calendar_today"
+        (click)="openContactForm()"
+      >
+        Записатися на консультацію
+      </button>
+
+      <p class="final-cta-note">
+        Після звернення я проаналізую вашу ситуацію та поясню можливі варіанти
+        її вирішення.
+      </p>
+
+      <div class="cta-links">
+        <a routerLink="/documents" class="cta-link">
+          Офіційні документи та сертифікати
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+        <span class="link-divider">|</span>
+        <a routerLink="/services" class="cta-link">
+          Перелік послуг
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,15 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, viewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive, CommonModule],
+  imports: [RouterLink, RouterLinkActive],
   template: `
     <section class="nav-container">
       <nav class="navbar">
-        @for (navItem of navItems; track navItem.route) {
+        @for (navItem of mainNavItems; track navItem.route) {
           <li>
             <a
               [routerLink]="navItem.route"
@@ -19,10 +18,32 @@ import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
               {{ navItem.label }}
             </a>
           </li>
-          @if (!$last) {
-            |
-          }
+          <span class="separator">|</span>
         }
+
+        <li class="more-menu">
+          <details #detailsEl>
+            <summary>
+              Ще
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <ul class="dropdown">
+              @for (navItem of moreNavItems; track navItem.route) {
+                <li>
+                  <a
+                    [routerLink]="navItem.route"
+                    routerLinkActive="active"
+                    (click)="closeDropdown()"
+                  >
+                    {{ navItem.label }}
+                  </a>
+                </li>
+              }
+            </ul>
+          </details>
+        </li>
       </nav>
     </section>
   `,
@@ -66,20 +87,132 @@ import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
       text-decoration: none;
     }
 
-    @media (max-width: 1000px) {
+    .separator {
+      opacity: 0.5;
+    }
+
+    .more-menu {
+      position: relative;
+    }
+
+    details {
+      position: relative;
+    }
+
+    summary {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+      list-style: none;
+      transition: color 0.2s ease;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &:hover {
+        color: #bb925c;
+      }
+    }
+
+    .chevron {
+      width: 1.1em;
+      height: 1.1em;
+      transition: transform 0.2s ease;
+    }
+
+    details[open] .chevron {
+      transform: rotate(180deg);
+    }
+
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 160px;
+      background: var(--color-green);
+      border: 1px solid rgba(201, 165, 92, 0.3);
+      border-radius: 0.5rem;
+      box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.2);
+      padding: 0.5rem 0;
+      list-style: none;
+      z-index: 100;
+
+      li {
+        padding: 0;
+      }
+
+      a {
+        display: block;
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        transition: background 0.15s ease;
+
+        &:hover {
+          background: rgba(201, 165, 92, 0.15);
+        }
+
+        &.active {
+          color: var(--color-gold);
+          background: rgba(201, 165, 92, 0.1);
+        }
+      }
+    }
+
+    @media (max-width: 1200px) {
       .navbar {
         font-size: 1.25rem;
         gap: 1.5rem;
+      }
+
+      .separator {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .navbar {
+        font-size: 1.1rem;
+        gap: 1.25rem;
       }
     }
 
     @media (max-width: 900px) {
       .navbar {
         font-size: 1rem;
+        gap: 1rem;
       }
     }
   `,
 })
 export class NavbarComponent {
-  readonly navItems: NavItem[] = NAV_ITEMS;
+  private readonly moreLabels = ['Документи'];
+  private readonly detailsEl = viewChild<ElementRef<HTMLDetailsElement>>('detailsEl');
+
+  readonly mainNavItems: NavItem[] = NAV_ITEMS.filter(
+    (item) => !this.moreLabels.includes(item.label)
+  );
+
+  readonly moreNavItems: NavItem[] = NAV_ITEMS.filter((item) =>
+    this.moreLabels.includes(item.label)
+  );
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const details = this.detailsEl()?.nativeElement;
+    if (details?.open && !details.contains(event.target as Node)) {
+      details.open = false;
+    }
+  }
+
+  closeDropdown(): void {
+    const details = this.detailsEl()?.nativeElement;
+    if (details) {
+      details.open = false;
+    }
+  }
 }

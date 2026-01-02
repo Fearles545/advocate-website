@@ -197,7 +197,7 @@
 
 .reviewer-name {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: var(--font-size-card-title);
   font-weight: 700;
   color: var(--color-green);
 }
@@ -387,6 +387,6 @@
   }
 
   .feedback-content .feedback-text {
-    font-size: 0.95rem;
+    font-size: var(--font-size-body);
   }
 }

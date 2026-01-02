@@ -96,7 +96,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
 
     p {
       margin: 0 0 1.75rem;
-      font-size: 1.05rem;
+      font-size: var(--font-size-body-lg);
       line-height: 1.6;
       color: var(--text-color-primary);
       font-weight: 500;
@@ -108,9 +108,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
         font-size: 1.65rem;
       }
 
-      p {
-        font-size: 1.1rem;
-      }
+      /* Uses var(--font-size-body-lg) which scales automatically */
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -201,7 +201,7 @@ h1 {
 }
 
 .case-number {
-  font-size: 0.8rem;
+  font-size: var(--font-size-label);
   font-weight: 700;
   color: var(--color-green);
   text-transform: uppercase;
@@ -232,7 +232,7 @@ h1 {
 }
 
 .tags-label {
-  font-size: 0.75rem;
+  font-size: var(--font-size-label);
   font-weight: 600;
   color: var(--text-color-secondary);
   padding: 0.2rem 0.5rem;
@@ -242,7 +242,7 @@ h1 {
 .tag {
   flex: 1 1 auto;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: var(--font-size-label);
   font-weight: 600;
   color: var(--color-gold-accent);
   padding: 0.2rem 0.5rem;
@@ -264,7 +264,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.9rem;
+  font-size: var(--font-size-body-sm);
   font-weight: 600;
   color: var(--color-green);
   text-decoration: none;
@@ -635,7 +635,7 @@ h1 {
 
   .trust-text {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: var(--font-size-body-sm);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.6);
     font-style: italic;
