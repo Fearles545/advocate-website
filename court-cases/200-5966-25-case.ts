@@ -34,4 +34,9 @@ export const case_200_5966_25: CourtCase = {
     'chy-mozhna-zarakhovaty-periody-roboty-u-pilhovyi-stazh-iakscho-na-pidpryiemstvi-ne-provodyly-atestatsiiu-robochykh-mists',
     'iak-zarakhovuietsia-pilhovyi-stazh-iakscho-pidpryiemstvo-znakhodytsia-na-okupovanii-terytorii-abo-v-raioni-boiovykh-dii',
   ],
+  seo: {
+    title: 'Військова служба зарахована до пільгового стажу шахтаря через суд',
+    description:
+      'Суд визнав право шахтаря на зарахування військової служби до пільгового стажу та призначення пенсії. Справа №200/5966/25',
+  },
 };

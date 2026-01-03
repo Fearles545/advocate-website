@@ -31,4 +31,10 @@ export const case_582_867_21: CourtCase = {
     'khto-maie-pravo-na-pensiiu-za-vikom-u-2025',
     'iak-zarakhovuietsia-period-navchannia-do-strakhovoho-stazhu',
   ],
+  seo: {
+    title:
+      'Суд встановив факт належності трудової книжки та диплому для пенсії',
+    description:
+      'Суд встановив юридичний факт належності документів, що дозволило підтвердити стаж для пенсії. Справа №582/867/21',
+  },
 };

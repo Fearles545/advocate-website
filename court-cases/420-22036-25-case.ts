@@ -33,4 +33,9 @@ export const case_420_22036_25: CourtCase = {
     'yaki-vymohy-do-pryznachennia-pensii-za-spyskom-2',
     'iak-zarakhovuietsia-pilhovyi-stazh-iakscho-pidpryiemstvo-znakhodytsia-na-okupovanii-terytorii-abo-v-raioni-boiovykh-dii',
   ],
+  seo: {
+    title: 'Пільговий стаж за Списком №2: суд зобов’язав ПФУ призначити пенсію',
+    description:
+      'Суд визнав неправомірною відмову ПФУ та зарахував пільговий стаж за Списком №2. Судове рішення у справі №420/22036/25',
+  },
 };

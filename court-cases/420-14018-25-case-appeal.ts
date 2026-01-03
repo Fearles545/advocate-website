@@ -42,4 +42,9 @@ export const case_420_14018_25_appeal: CourtCase = {
     'yak-pidvyshchyty-pensiiu-za-vysluhu-rokiv',
     'chy-mozhna-zbilshyty-rozmir-pensii-pereishovshi-z-pilhovoi-pensii-za-spyskom-1-abo-2-na-zvychainu-pensiiu-za-vikom-u-60-rokiv-iz-zastosuvanniam-novoi-serednoi-zarobitnoi-platy',
   ],
+  seo: {
+    title: 'Апеляція ПФУ відхилена: індексація пенсії підтверджена судом',
+    description:
+      'Апеляційний суд залишив без змін рішення щодо індексації пенсії та правильного перерахунку виплат. Справа №420/14018/25',
+  },
 };

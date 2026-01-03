@@ -36,4 +36,9 @@ export const case_420_14018_25: CourtCase = {
     'yak-pidvyshchyty-pensiiu-za-vysluhu-rokiv',
     'chy-mozhna-zbilshyty-rozmir-pensii-pereishovshi-z-pilhovoi-pensii-za-spyskom-1-abo-2-na-zvychainu-pensiiu-za-vikom-u-60-rokiv-iz-zastosuvanniam-novoi-serednoi-zarobitnoi-platy',
   ],
+  seo: {
+    title: 'Перерахунок та індексація пенсії: суд визнав дії ПФУ незаконними',
+    description:
+      'Суд зобов’язав Пенсійний фонд провести правильну індексацію та виплату пенсії. Рішення у справі №420/14018/25',
+  },
 };
