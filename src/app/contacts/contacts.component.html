@@ -1,94 +1,206 @@
-<div class="contact-container">
-  <div class="contact-info">
-    <div class="left-content">
-      <div class="center-content">
-        <h2 class="center-content-title">Контакти адвоката</h2>
+<!-- Page Header -->
+<section class="page-bg-pattern">
+  <div class="page-content">
+    <header class="page-header">
+      <div class="page-header-badge" aria-hidden="true">
+        <mat-icon>contact_phone</mat-icon>
+      </div>
 
-        <h2 class="center-content-value">Поддячої Юлії Юріївни</h2>
+      <h1>Контакти адвоката з пенсійних питань</h1>
+
+      <p class="page-intro">
+        Зв'яжіться з адвокатом <strong>Поддячою Юлією Юріївною</strong> для
+        отримання юридичної консультації з пенсійних питань. Надаю правничу
+        допомогу дистанційно клієнтам по всій Україні та за кордоном.
+      </p>
+    </header>
+
+    <!-- Hero Section with Photo and Contact Info -->
+    <section class="hero-section">
+      <div class="hero-grid">
+        <!-- Image Panel with Offset Frame -->
+        <div class="image-panel">
+          <div class="photo-frame">
+            <img
+              ngSrc="assets/images/main/contacts-image.webp"
+              alt="Адвокат з пенсійних питань Поддяча Юлія Юріївна"
+              class="profile-photo"
+              width="380"
+              height="543"
+              priority
+            />
+          </div>
+        </div>
+
+        <!-- Contact Methods -->
+        <div class="contact-methods">
+          <!-- Header with Schedule Badge -->
+          <div class="contact-header">
+            <h2>Як зв'язатися з адвокатом</h2>
+            <div class="schedule-badge">
+              <div class="schedule-header">
+                <mat-icon aria-hidden="true">schedule</mat-icon>
+                <span class="schedule-title">Графік роботи</span>
+              </div>
+              <div class="schedule-lines">
+                <span>Понеділок–субота: 10:00–19:00</span>
+                <span>Неділя — вихідний</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Primary Contact - Phone (Most Important) -->
+          <a
+            href="tel:+380999426056"
+            class="primary-contact"
+            aria-label="Зателефонувати адвокату: +38 099 942 60 56"
+          >
+            <div class="primary-icon-wrap">
+              <mat-icon aria-hidden="true">call</mat-icon>
+            </div>
+            <div class="primary-info">
+              <span class="primary-label">Зателефонувати</span>
+              <span class="primary-number">+38 (099) 942-60-56</span>
+            </div>
+            <div class="primary-arrow">
+              <mat-icon aria-hidden="true">arrow_forward</mat-icon>
+            </div>
+          </a>
+
+          <!-- Messenger Section -->
+          <div class="messenger-section">
+            <span class="messenger-title">Написати в месенджер</span>
+            <div class="messenger-grid" role="list" aria-label="Месенджери">
+              @for (icon of messengerIcons; track icon.alt) {
+                <a
+                  [href]="icon.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="messenger-btn"
+                  role="listitem"
+                  [attr.aria-label]="'Написати в ' + icon.name"
+                >
+                  @if (isBrowser) {
+                    <svg
+                      class="messenger-icon"
+                      [attr.viewBox]="icon.viewBox"
+                      xmlns="http://www.w3.org/2000/svg"
+                      [style.color]="icon.color"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <g [innerHTML]="icon.safeSvg"></g>
+                    </svg>
+                  } @else {
+                    <div
+                      class="messenger-icon-placeholder"
+                      aria-hidden="true"
+                    ></div>
+                  }
+                  <span>{{ icon.name }}</span>
+                </a>
+              }
+            </div>
+          </div>
+
+          <!-- Email - Secondary -->
+          <a
+            href="mailto:yuliapoddyacha@gmail.com"
+            target="_blank"
+            class="email-contact"
+            aria-label="Надіслати email: yuliapoddyacha@gmail.com"
+          >
+            <mat-icon aria-hidden="true">email</mat-icon>
+            <span class="email-text">yuliapoddyacha&#64;gmail.com</span>
+            <mat-icon class="email-arrow" aria-hidden="true"
+              >arrow_forward</mat-icon
+            >
+          </a>
+
+          <!-- Appointment Note -->
+          <p class="appointment-note">
+            <mat-icon aria-hidden="true">info_outline</mat-icon>
+            Консультації надаються за попереднім записом
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<!-- Work Format Section -->
+<section class="format-section-bg">
+  <div class="format-section">
+    <div class="format-icon-wrapper" aria-hidden="true">
+      <mat-icon>language</mat-icon>
+    </div>
+    <div class="format-text">
+      <h2>Формат роботи</h2>
+      <p>
+        Юридична допомога з пенсійних питань надається дистанційно, без
+        необхідності особистого відвідування Пенсійного фонду.
+      </p>
+      <p class="format-lead">Я працюю з клієнтами у зручному форматі:</p>
+      <ul class="format-list">
+        <li>онлайн-консультації</li>
+        <li>телефонні консультації</li>
+        <li>робота через електронний кабінет Пенсійного фонду України</li>
+        <li>спілкування через месенджери WhatsApp, Telegram, Viber</li>
+      </ul>
+      <p class="format-conclusion">
+        Такий формат дозволяє швидко отримати правничу допомогу незалежно від
+        місця вашого проживання.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA Section - Unified -->
+<section class="cta-section-bg">
+  <div class="cta-section">
+    <!-- Decorative Corner Accents -->
+    <div class="cta-frame">
+      <span class="corner corner-tl" aria-hidden="true"></span>
+      <span class="corner corner-tr" aria-hidden="true"></span>
+      <span class="corner corner-bl" aria-hidden="true"></span>
+      <span class="corner corner-br" aria-hidden="true"></span>
+
+      <div class="cta-inner">
+        <h2>
+          Дистанційна юридична допомога з пенсійних питань — по всій Україні
+        </h2>
+
+        <p class="cta-intro">
+          Залиште заявку — я розгляну вашу ситуацію та поясню можливі варіанти
+          вирішення пенсійного питання.
+        </p>
+
+        <button
+          type="button"
+          appCtaButton
+          icon="calendar_today"
+          (click)="openContactForm()"
+        >
+          Записатися на консультацію
+        </button>
+
+        <p class="cta-note">
+          Після звернення я зв'яжуся з вами, щоб пояснити подальші кроки.
+        </p>
       </div>
     </div>
 
-    <div class="contact-info-links-container">
-      <a
-        class="contact-info-item-container"
-        href="mailto:yuliapoddyacha@gmail.com"
-        target="_blank"
-      >
-        <p class="contact-info-item-header">
-          E-mail
-          <mat-icon class="new-window-icon"> open_in_new </mat-icon>
-        </p>
-        <p class="contact-info-item-value">yuliapoddyacha&#64;gmail.com</p>
+    <!-- Navigation Links -->
+    <nav class="cta-nav" aria-label="Додаткова навігація">
+      <a routerLink="/about-me" class="nav-link">
+        <span class="nav-label">Про адвоката</span>
+        <mat-icon aria-hidden="true">arrow_forward</mat-icon>
       </a>
-
-      <a
-        class="contact-info-item-container"
-        href="tel:+380999426056"
-        target="_blank"
-      >
-        <p class="contact-info-item-header">
-          Телефон
-          <mat-icon class="new-window-icon"> open_in_new </mat-icon>
-        </p>
-
-        <p class="contact-info-item-value">+38 (099) 942-60-56</p>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a routerLink="/services" class="nav-link">
+        <span class="nav-label">Послуги</span>
+        <mat-icon aria-hidden="true">arrow_forward</mat-icon>
       </a>
-
-      <a
-        class="contact-info-item-container"
-        href="viber://chat?number=380999426056"
-        target="_blank"
-      >
-        <p class="contact-info-item-header">
-          Viber
-          <mat-icon class="new-window-icon"> open_in_new </mat-icon>
-        </p>
-      </a>
-
-      <a
-        class="contact-info-item-container"
-        href="https://t.me/yuliyuri"
-        target="_blank"
-      >
-        <p class="contact-info-item-header">
-          Telegram
-          <mat-icon class="new-window-icon"> open_in_new </mat-icon>
-        </p>
-      </a>
-
-      <a
-        class="contact-info-item-container"
-        href="https://wa.me/380999426056"
-        target="_blank"
-      >
-        <p class="contact-info-item-header">
-          Whatsapp
-          <mat-icon class="new-window-icon"> open_in_new </mat-icon>
-        </p>
-      </a>
-    </div>
+    </nav>
   </div>
-
-  <div class="consultation-container">
-    <button
-      class="consultation-btn"
-      mat-fab
-      extended
-      (click)="openContactForm()"
-    >
-      <mat-icon style="overflow: visible">balance</mat-icon>
-      Заявка на консультацію
-    </button>
-  </div>
-
-  <div class="contact-photo-container">
-    <img
-      ngSrc="assets/images/main/contacts-image.webp"
-      alt="адвокат Юлія Поддяча"
-      class="profile-photo"
-      width="320"
-      height="497"
-      priority
-    />
-  </div>
-</div>
+</section>

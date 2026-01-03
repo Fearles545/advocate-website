@@ -83,6 +83,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  padding: 0 1rem 1.5rem 0; /* Space for gold frame offset + shadow */
 }
 
 /* Photo frame with offset gold border - frame to right and bottom */
@@ -114,7 +115,7 @@
   position: relative;
   z-index: 1;
   border-radius: 0.5rem;
-  box-shadow: 0 10px 40px rgba(0, 39, 6, 0.2);
+  box-shadow: 40px 20px 40px rgba(0, 39, 6, 0.1);
   object-fit: cover;
   object-position: center top;
   animation: photo-appear 0.6s ease-out;
@@ -373,6 +374,11 @@
   gap: 1rem;
   justify-content: center;
   margin-top: 2rem;
+
+  & > * {
+    width: fit-content;
+    margin: 0 auto;
+  }
 }
 
 /* ========================================
@@ -970,6 +976,7 @@
 
   .image-panel {
     align-items: flex-start;
+    padding: 0 1.25rem 1.75rem 0;
   }
 
   .photo-frame {
@@ -1070,6 +1077,10 @@
   .about-me-grid {
     grid-template-columns: 380px 1fr;
     gap: 4rem;
+  }
+
+  .image-panel {
+    padding: 0 1.5rem 2rem 0;
   }
 
   .photo-frame {

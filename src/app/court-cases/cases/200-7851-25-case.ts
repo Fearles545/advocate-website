@@ -44,4 +44,9 @@ export const case_200_7851_25: CourtCase = {
     'chy-mozhna-zarakhovaty-periody-roboty-u-pilhovyi-stazh-iakscho-na-pidpryiemstvi-ne-provodyly-atestatsiiu-robochykh-mists',
     'iak-zarakhovuietsia-pilhovyi-stazh-iakscho-pidpryiemstvo-znakhodytsia-na-okupovanii-terytorii-abo-v-raioni-boiovykh-dii',
   ],
+  seo: {
+    title: 'Пенсія за Списком №1: суд зарахував стаж без уточнюючих довідок',
+    description:
+      'Суд зобов’язав Пенсійний фонд зарахувати пільговий стаж, періоди безробіття та роботи без повної сплати внесків. Справа №200/7851/25',
+  },
 };

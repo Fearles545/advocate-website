@@ -4,7 +4,7 @@ export const case_500_5783_25: CourtCase = {
   slug: '500-5783-25',
   caseNumber: '500/5783/25',
   title:
-    'Отримали рішення суду про індексацію пенсії із застосуванням збільшеного показника середньої заробітної плати (7763,17 грн)',
+    'Отримали рішення суду про індексацію пенсії із застосуванням збільшеного показника середньої заробітної плати (7763,17 грн.)',
   date: '2025-12-26',
   tags: ['індексація пенсії', 'пенсія за віком', 'показник середньої зарплати'],
   registryLinks: [
@@ -37,4 +37,10 @@ export const case_500_5783_25: CourtCase = {
     'yak-pidvyshchyty-pensiiu-za-vysluhu-rokiv',
     'chy-mozhna-zbilshyty-rozmir-pensii-pereishovshi-z-pilhovoi-pensii-za-spyskom-1-abo-2-na-zvychainu-pensiiu-za-vikom-u-60-rokiv-iz-zastosuvanniam-novoi-serednoi-zarobitnoi-platy',
   ],
+  seo: {
+    title:
+      'Індексація пенсії через суд — позитивне рішення на користь пенсіонера',
+    description:
+      'Судове рішення щодо індексації пенсії: у справі №500/5783/25 суд визнав дії Пенсійного фонду незаконними та зобов’язав провести правильний перерахунок пенсії',
+  },
 };

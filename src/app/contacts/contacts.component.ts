@@ -1,37 +1,38 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { MatRadioModule } from '@angular/material/radio';
-import { TextFieldModule } from '@angular/cdk/text-field';
 import { MatIconModule } from '@angular/material/icon';
-
-import { iconsData } from '../core/icons.data';
 import { MatDialog } from '@angular/material/dialog';
+
+import { CtaButtonComponent } from '../shared/components/cta-button';
 import { ContactFormDialogComponent } from './contact-form-dialog/contact-form-dialog.component';
-import { NgOptimizedImage } from '@angular/common';
+import { iconsData, SocialIconData } from '../core/icons.data';
+
+interface MessengerIcon extends SocialIconData {
+  safeSvg: SafeHtml;
+}
 
 @Component({
   selector: 'app-contacts',
-  imports: [
-    MatButtonModule,
-    MatIconModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatRadioModule,
-    TextFieldModule,
-    NgOptimizedImage,
-  ],
+  imports: [NgOptimizedImage, RouterLink, MatIconModule, CtaButtonComponent],
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.css',
 })
 export class ContactsComponent {
   private dialog = inject(MatDialog);
+  private sanitizer = inject(DomSanitizer);
+  private platformId = inject(PLATFORM_ID);
 
-  iconsData = iconsData;
+  readonly isBrowser = isPlatformBrowser(this.platformId);
+
+  readonly messengerIcons: MessengerIcon[] = iconsData
+    .filter((icon) => icon.alt === 'telegram' || icon.alt === 'viber' || icon.alt === 'whatsApp')
+    .map((icon) => ({
+      ...icon,
+      safeSvg: this.sanitizer.bypassSecurityTrustHtml(icon.svg),
+    }));
 
   openContactForm() {
     this.dialog.open(ContactFormDialogComponent, {

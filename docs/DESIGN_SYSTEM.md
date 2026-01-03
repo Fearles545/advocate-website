@@ -2,7 +2,7 @@
 
 Canonical design patterns for the advocate-pensia.com.ua website.
 
-**Last Updated:** 2025-12-26
+**Last Updated:** 2026-01-03
 
 **Related Documents:**
 - [`design-system/audit-report.md`](design-system/audit-report.md) — Initial design consistency audit
@@ -40,6 +40,36 @@ Canonical design patterns for the advocate-pensia.com.ua website.
 | `--color-success` | `#4ade80` | Victory badges, success indicators |
 | `--color-success-bg` | `linear-gradient(135deg, #1a5c1a 0%, #0d3d0d 100%)` | Victory badge background |
 
+### Alpha Color Variants
+
+Pre-defined opacity variants for shadows, overlays, and borders. Use these instead of inline `rgba()` for consistency.
+
+**Green Alpha (for shadows, subtle overlays):**
+
+| Variable | Value | Usage |
+|----------|-------|-------|
+| `--green-alpha-03` | `rgba(0, 39, 6, 0.03)` | Very subtle shadows |
+| `--green-alpha-04` | `rgba(0, 39, 6, 0.04)` | Card shadow secondary |
+| `--green-alpha-06` | `rgba(0, 39, 6, 0.06)` | Card shadow primary |
+| `--green-alpha-08` | `rgba(0, 39, 6, 0.08)` | Hover shadow light |
+| `--green-alpha-10` | `rgba(0, 39, 6, 0.1)` | Hover shadow medium |
+| `--green-alpha-15` | `rgba(0, 39, 6, 0.15)` | Overlays |
+| `--green-alpha-20` | `rgba(0, 39, 6, 0.2)` | Badge inset shadows |
+| `--green-alpha-25` | `rgba(0, 39, 6, 0.25)` | Strong overlays |
+| `--green-alpha-30` | `rgba(0, 39, 6, 0.3)` | Dark overlays |
+
+**Gold Alpha (for borders, accents, glows):**
+
+| Variable | Value | Usage |
+|----------|-------|-------|
+| `--gold-alpha-06` | `rgba(201, 165, 92, 0.06)` | Very subtle gold tint |
+| `--gold-alpha-10` | `rgba(201, 165, 92, 0.1)` | Light borders |
+| `--gold-alpha-15` | `rgba(201, 165, 92, 0.15)` | Hover backgrounds |
+| `--gold-alpha-20` | `rgba(201, 165, 92, 0.2)` | Card borders, borders |
+| `--gold-alpha-30` | `rgba(201, 165, 92, 0.3)` | Focus rings |
+| `--gold-alpha-35` | `rgba(201, 165, 92, 0.35)` | Badge shadows |
+| `--gold-alpha-40` | `rgba(201, 165, 92, 0.4)` | Badge borders, glow effects |
+
 ### Usage on Backgrounds
 
 | Background | Text Color | Accent Color |
@@ -55,17 +85,25 @@ Canonical design patterns for the advocate-pensia.com.ua website.
 
 ```css
 --font-main: normal 400 16px/20px 'Lora', serif;
---font-heading: 'Cormorant Garamond', serif;
 ```
 
 ### Font Sizes
 
-| Variable | Mobile | Desktop (768px+) | Usage |
-|----------|--------|------------------|-------|
+**Headings:**
+
+| Variable | Mobile (<480px) | Default | Usage |
+|----------|-----------------|---------|-------|
 | `--font-size-h1` | `1.75rem` | `2.25rem` | Page titles |
 | `--font-size-h2` | `1.5rem` | `1.75rem` | Section headings |
 | `--font-size-h3` | `1.375rem` | `1.375rem` | Card titles |
-| `--section-intro-font-size` | `1.1rem` | `1.2rem` | Section intro paragraphs |
+| `--section-intro-font-size` | `1.1rem` | `1.2rem` (768px+) | Section intro paragraphs |
+
+**Body Text:**
+
+| Variable | Value | Usage |
+|----------|-------|-------|
+| `--font-size-body-lg` | `1.05rem` | Large body text, lead paragraphs |
+| `--font-size-body` | `0.95rem` | Standard body text |
 
 ### Font Weights
 
@@ -109,7 +147,21 @@ Canonical design patterns for the advocate-pensia.com.ua website.
 | `--spacing-sm` | `1rem` |
 | `--spacing-md` | `1.5rem` |
 | `--spacing-lg` | `2rem` |
-| `--spacing-xxl` | `4rem` |
+
+### Container Utility
+
+Global container class for consistent max-width and centering:
+
+```css
+--container-max-width: 1200px;
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+```
+
+Used by header and footer components for layout consistency.
 
 ---
 
@@ -200,8 +252,8 @@ Standard card styling for content containers.
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba(201, 165, 92, 0.4);
-  box-shadow: 0 12px 32px rgba(0, 39, 6, 0.1), 0 4px 12px rgba(0, 39, 6, 0.06);
+  border-color: var(--gold-alpha-40);
+  box-shadow: 0 12px 32px var(--green-alpha-10), 0 4px 12px var(--green-alpha-06);
 }
 ```
 
@@ -210,8 +262,8 @@ Standard card styling for content containers.
 |----------|-------|-------|
 | `--card-border-radius` | `0.75rem` | Standard cards |
 | `--card-border-radius-sm` | `0.5rem` | Small items (list items, tags) |
-| `--card-border` | `1px solid rgba(201, 165, 92, 0.2)` | Gold-tinted border |
-| `--card-box-shadow` | `0 4px 16px rgba(0, 39, 6, 0.06), 0 1px 4px rgba(0, 39, 6, 0.04)` | Subtle green-tinted shadow |
+| `--card-border` | `1px solid var(--gold-alpha-20)` | Gold-tinted border |
+| `--card-box-shadow` | `0 4px 16px var(--green-alpha-06), 0 1px 4px var(--green-alpha-04)` | Subtle green-tinted shadow |
 
 **Dark Background Exception:**
 Cards on dark backgrounds (court-cases) use stronger shadows:
@@ -375,6 +427,21 @@ The Page Header Pattern includes built-in entrance animations for a premium feel
 
 ## 5. Section Backgrounds
 
+### Gold Separator
+
+A reusable gradient for section dividers, available as a CSS variable:
+
+```css
+--gold-separator: linear-gradient(
+  90deg,
+  transparent 0%,
+  var(--color-gold-light) 20%,
+  var(--color-gold) 50%,
+  var(--color-gold-light) 80%,
+  transparent 100%
+);
+```
+
 ### Light Sections
 
 ```css
@@ -392,14 +459,7 @@ The Page Header Pattern includes built-in entrance animations for a premium feel
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--color-gold-light) 20%,
-    var(--color-gold) 50%,
-    var(--color-gold-light) 80%,
-    transparent 100%
-  );
+  background: var(--gold-separator);
 }
 ```
 
@@ -444,16 +504,29 @@ The Page Header Pattern includes built-in entrance animations for a premium feel
 
 ## 6. Animations & Transitions
 
-### Standard Transition
+### Timing Variables
 
+| Variable | Value | Usage |
+|----------|-------|-------|
+| `--transition-normal` | `0.3s ease` | Standard hover/state transitions |
+| `--ease-standard` | `cubic-bezier(0.4, 0, 0.2, 1)` | Material Design standard easing |
+| `--ease-bounce` | `cubic-bezier(0.34, 1.56, 0.64, 1)` | Bouncy, playful interactions |
+
+### Usage Examples
+
+**Standard transition:**
 ```css
---transition-normal: 0.3s ease;
+transition: transform var(--transition-normal);
 ```
 
-### Bouncy Transition (for interactive elements)
-
+**Bouncy interaction (buttons, cards):**
 ```css
-transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+transition: transform 0.3s var(--ease-bounce);
+```
+
+**Smooth UI animations (page reveals):**
+```css
+animation: fadeIn 0.6s var(--ease-standard) forwards;
 ```
 
 ### Hover Effects
@@ -491,11 +564,15 @@ transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 
 ## 7. Responsive Breakpoints
 
-| Variable | Value | Usage |
-|----------|-------|-------|
-| `--breakpoint-mobile` | `767px` | max-width for mobile |
-| `--breakpoint-tablet` | `768px` | min-width for tablet+ |
-| `--breakpoint-desktop` | `1200px` | min-width for desktop |
+### Key Breakpoints
+
+| Breakpoint | Value | Usage |
+|------------|-------|-------|
+| Mobile max | `479px` | Small mobile devices |
+| Small tablet | `640px` | 2-column grids begin |
+| Tablet | `768px` | Section padding increases |
+| Desktop | `1024px` | 3-column grids, full layouts |
+| Large desktop | `1200px` | Max content width |
 
 ### Media Query Pattern
 
@@ -589,7 +666,13 @@ At `479px` (max-width):
   position: relative;
 
   &::before {
-    /* gold separator - copy from services-section */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gold-separator);
   }
 }
 
@@ -640,8 +723,8 @@ At `479px` (max-width):
 
   &:hover {
     transform: translateY(-4px);
-    border-color: rgba(201, 165, 92, 0.4);
-    box-shadow: 0 12px 32px rgba(0, 39, 6, 0.1), 0 4px 12px rgba(0, 39, 6, 0.06);
+    border-color: var(--gold-alpha-40);
+    box-shadow: 0 12px 32px var(--green-alpha-10), 0 4px 12px var(--green-alpha-06);
   }
 }
 ```
