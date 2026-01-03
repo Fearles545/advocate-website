@@ -369,6 +369,8 @@
 
 .biography-cta {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
   justify-content: center;
   margin-top: 2rem;
 }
@@ -1171,12 +1173,7 @@
     }
   }
 
-  .link-divider {
-    display: none;
-  }
-
   .cta-links {
-    flex-direction: column;
     gap: 0.75rem;
   }
 }

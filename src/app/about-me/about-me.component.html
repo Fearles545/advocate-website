@@ -157,6 +157,16 @@
     </div>
 
     <div class="biography-cta">
+      <a
+        routerLink="/documents"
+        appCtaButton
+        icon="arrow_forward"
+        [style.fontSize]="'0.9rem'"
+        [style.flexDirection]="'row-reverse'"
+      >
+        Офіційні документи, сертифікати
+      </a>
+
       <button
         type="button"
         appCtaOutlineButton
@@ -359,10 +369,11 @@
       </p>
 
       <div class="cta-links">
-        <a routerLink="/documents" class="cta-link">
-          Офіційні документи та сертифікати
+        <a routerLink="/feedbacks" class="cta-link">
+          Відгуки клієнтів
           <mat-icon>arrow_forward</mat-icon>
         </a>
+
         <span class="link-divider">|</span>
         <a routerLink="/services" class="cta-link">
           Перелік послуг
