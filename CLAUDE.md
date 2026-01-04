@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A professional Angular 20 website for **Поддяча Юлія Юріївна**, a Ukrainian lawyer specializing in pension law. The site serves as a client acquisition tool with an extensive blog system focused on Ukrainian pension law topics.
 
-**Live site**: https://www.advocate-pensia.com.ua
+**Live site**: https://www.advocate-pensia.com.ua/
 
 ## Tech Stack
 
@@ -87,16 +87,15 @@ public/
 
 ## Development Principles
 
-- **Standalone components only** - no NgModules
 - **Mobile-first responsive design** - flexbox/grid, %, vw/vh, rem units
 - **Accessibility** - semantic HTML, ARIA attributes
-- **Angular Material** preferred for UI components
 
 ## Design System
 
 **See [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md) for the complete design system documentation.**
 
 The design system defines canonical patterns for:
+
 - **Colors** - Brand palette (green/gold), text colors, semantic colors
 - **Typography** - Font stack, size scale, weights
 - **Spacing** - Section padding, max-widths, spacing scale
@@ -111,31 +110,22 @@ The design system defines canonical patterns for:
 /* Brand colors */
 --color-green: #002706;
 --color-gold: #c9a55c;
-
-/* Section structure */
---section-max-width: 1100px;
---section-padding-y: clamp(3rem, 5vw, 4rem);
---section-padding-x: clamp(1rem, 4vw, 2rem);
-
-/* Card styling */
---card-border-radius: 0.75rem;
---card-box-shadow: 0 2px 8px rgba(0, 39, 6, 0.06);
 ```
 
 When creating new sections or components, **always reference the design system** to maintain visual consistency.
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `docs/DESIGN_SYSTEM.md` | **Design system documentation** |
-| `src/styles.css` | Global CSS variables and tokens |
-| `core/config/base-url.ts` | Site base URL |
-| `core/config/seo.config.ts` | Global SEO config |
-| `core/services/seo.service.ts` | SEO tag management |
-| `blog/blog-posts/posts/_template.seo.ts` | Blog SEO template |
-| `public/sitemap.xml` | XML sitemap |
-| `src/index.html` | Global meta, JSON-LD, GTM |
+| File                                     | Purpose                         |
+| ---------------------------------------- | ------------------------------- |
+| `docs/DESIGN_SYSTEM.md`                  | **Design system documentation** |
+| `src/styles.css`                         | Global CSS variables and tokens |
+| `core/config/base-url.ts`                | Site base URL                   |
+| `core/config/seo.config.ts`              | Global SEO config               |
+| `core/services/seo.service.ts`           | SEO tag management              |
+| `blog/blog-posts/posts/_template.seo.ts` | Blog SEO template               |
+| `public/sitemap.xml`                     | XML sitemap                     |
+| `src/index.html`                         | Global meta, JSON-LD, GTM       |
 
 ## Content Notes
 
@@ -143,6 +133,36 @@ When creating new sections or components, **always reference the design system**
 - Focus on **pension law** topics
 - Blog posts often include YouTube embeds
 - Target: Ukrainian citizens needing pension assistance
+
+## Build Behavior
+
+**DO NOT run `npm run build` unless explicitly requested.** The build output is verbose and wastes context.
+
+**To check for TypeScript errors**, use:
+
+```bash
+npx tsc --noEmit
+```
+
+This runs quickly, produces minimal output, and catches type errors without triggering SSG.
+
+### Known SSG Warnings (IGNORE THESE)
+
+During `npm run build`, you'll see many `NotYetImplemented` errors like:
+
+```
+ERROR Error: NotYetImplemented
+    at Ne.nyi (...)
+    at hu.setProperty (...)
+```
+
+**These are harmless.** They occur because:
+
+- Angular's SSR uses `domino` (a DOM emulator for Node.js)
+- `domino` doesn't implement `CSSStyleDeclaration.setProperty()`
+- Angular Material internally calls this method
+
+The build **succeeds despite these warnings** - all 66 routes are prerendered correctly. This is a known Angular limitation with no official fix. Do not attempt to fix or suppress these errors.
 
 ## Updating Angular
 
