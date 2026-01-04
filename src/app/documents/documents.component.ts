@@ -1,10 +1,23 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
 import { Gallery, GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
-import { Lightbox, LIGHTBOX_CONFIG, LightboxModule } from 'ng-gallery/lightbox';
+import { LIGHTBOX_CONFIG, LightboxModule } from 'ng-gallery/lightbox';
+
+import { CtaButtonComponent } from '../shared/components/cta-button';
+import { ContactFormDialogComponent } from '../contacts/contact-form-dialog/contact-form-dialog.component';
+
 @Component({
   selector: 'app-documents',
-  imports: [GalleryModule, LightboxModule],
+  imports: [
+    RouterLink,
+    MatIconModule,
+    GalleryModule,
+    LightboxModule,
+    CtaButtonComponent,
+  ],
   templateUrl: './documents.component.html',
   styleUrl: './documents.component.css',
   providers: [
@@ -17,6 +30,11 @@ import { Lightbox, LIGHTBOX_CONFIG, LightboxModule } from 'ng-gallery/lightbox';
   ],
 })
 export class DocumentsComponent implements OnInit {
+  private dialog = inject(MatDialog);
+  private gallery = inject(Gallery);
+
+  showAllCertificates = signal(false);
+
   bachelorImages!: GalleryItem[];
   masterImages!: GalleryItem[];
   barImages!: GalleryItem[];
@@ -26,9 +44,6 @@ export class DocumentsComponent implements OnInit {
   masterImagesId = 'masterImages';
   barImagesId = 'barImages';
   qualificationImagesId = 'qualificationImages';
-
-  gallery = inject(Gallery);
-  lightbox = inject(Lightbox);
 
   ngOnInit(): void {
     this.bachelorImages = [
@@ -66,24 +81,24 @@ export class DocumentsComponent implements OnInit {
 
     this.qualificationImages = [
       new ImageItem({
-        src: 'assets/documents/qual-2021.webp',
-        thumb: 'assets/documents/qual-2021.webp',
-      }),
-      new ImageItem({
-        src: 'assets/documents/qual-2022.webp',
-        thumb: 'assets/documents/qual-2022.webp',
-      }),
-      new ImageItem({
-        src: 'assets/documents/qual-2023.webp',
-        thumb: 'assets/documents/qual-2023.webp',
+        src: 'assets/documents/qual-2025.webp',
+        thumb: 'assets/documents/qual-2025.webp',
       }),
       new ImageItem({
         src: 'assets/documents/qual-2024.webp',
         thumb: 'assets/documents/qual-2024.webp',
       }),
       new ImageItem({
-        src: 'assets/documents/qual-2025.webp',
-        thumb: 'assets/documents/qual-2025.webp',
+        src: 'assets/documents/qual-2023.webp',
+        thumb: 'assets/documents/qual-2023.webp',
+      }),
+      new ImageItem({
+        src: 'assets/documents/qual-2022.webp',
+        thumb: 'assets/documents/qual-2022.webp',
+      }),
+      new ImageItem({
+        src: 'assets/documents/qual-2021.webp',
+        thumb: 'assets/documents/qual-2021.webp',
       }),
     ];
 
@@ -118,5 +133,23 @@ export class DocumentsComponent implements OnInit {
         autoHeight: true,
       })
       .load(this.qualificationImages);
+  }
+
+  toggleCertificates(): void {
+    this.showAllCertificates.update((v) => !v);
+  }
+
+  openContactForm(): void {
+    this.dialog.open(ContactFormDialogComponent, {
+      data: {
+        width: 'fit-content',
+        height: 'auto',
+      },
+      width: '100%',
+      maxWidth: '100vw',
+      height: 'auto',
+      panelClass: 'contact-form-dialog',
+      autoFocus: false,
+    });
   }
 }

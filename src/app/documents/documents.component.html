@@ -1,118 +1,339 @@
-<section class="documents-container">
-  <img
-    class="education-logo"
-    src="assets/icons/unba-logo.png"
-    alt="Національна асоціація адвокатів України"
-  />
+<!-- Page Header -->
+<section class="page-bg-pattern">
+  <div class="page-content">
+    <header class="page-header">
+      <div class="page-header-badge" aria-hidden="true">
+        <mat-icon>verified_user</mat-icon>
+      </div>
 
-  <section class="documents-item-container">
-    <h6 class="documents-item-title">Адвокатура</h6>
+      <h1>Документи адвоката Поддячої Юлії Юріївни</h1>
 
-    <p class="text">
-      <a href="https://erau.unba.org.ua/profile/82725" target="_blank">
-        Профіль у Єдиному реєстрі адвокатів України
+      <p class="page-intro">
+        На цій сторінці зібрані офіційні документи, що підтверджують юридичну
+        освіту, статус адвоката та системне підвищення професійної кваліфікації.
+      </p>
+      <p class="page-intro page-intro-secondary">
+        Уся інформація подана відкрито та підтверджена офіційними документами,
+        що дає можливість самостійно перевірити професійний статус.
+      </p>
+    </header>
+
+    <!-- Адвокатська діяльність Section -->
+    <section class="documents-section">
+      <div class="section-header">
+        <h2>Адвокатська діяльність</h2>
+      </div>
+
+      <p class="section-intro">
+        Відомості про адвоката Поддячу Юлію Юріївну містяться в Єдиному реєстрі
+        адвокатів України, який ведеться Національною асоціацією адвокатів
+        України (НААУ).
+      </p>
+
+      <!-- NAAU Registry Link Card -->
+      <a
+        href="https://erau.unba.org.ua/profile/82725"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="registry-card"
+      >
+        <div class="registry-icon">
+          <img
+            src="assets/icons/unba-logo.png"
+            alt="Логотип НААУ"
+            loading="lazy"
+            width="48"
+            height="48"
+          />
+        </div>
+        <div class="registry-info">
+          <span class="registry-label">Єдиний реєстр адвокатів України</span>
+          <span class="registry-action"
+            >Переглянути профіль
+            <mat-icon aria-hidden="true">open_in_new</mat-icon>
+          </span>
+        </div>
       </a>
-    </p>
 
-    <p class="text">
-      23.06.2021 - отримала свідоцтво про право на заняття адвокатською
-      діяльністю
-    </p>
+      <p class="registry-description">
+        Перейшовши за посиланням, ви можете ознайомитися з інформацією про
+        статус адвоката, дату початку адвокатської діяльності (23.06.2021),
+        форму здійснення адвокатської діяльності, а також підтвердженням
+        щорічного підвищення кваліфікації.
+      </p>
 
-    <div class="document-images">
-      @for (item of barImages; track item; let i = $index) {
-        <button
-          class="document-images-item"
-          [lightbox]="i"
-          [gallery]="barImagesId"
-        >
-          <img
-            class="document-images-image"
-            loading="lazy"
-            [src]="item.data!.thumb"
-            [alt]="'адвокатура-' + (i + 1)"
-          />
-        </button>
-      }
-    </div>
+      <!-- Lawyer License Document Card -->
+      <div class="document-card">
+        <div class="document-card-header">
+          <div class="document-icon">
+            <mat-icon>badge</mat-icon>
+          </div>
+          <h3>Свідоцтво про право на заняття адвокатською діяльністю</h3>
+        </div>
 
-    <h6 class="documents-item-title">
-      Щорічне підвищення професійного рівня адвоката
-    </h6>
+        <p class="document-description">
+          Свідоцтво підтверджує, що Поддяча Юлія Юріївна має повну вищу юридичну
+          освіту, необхідний стаж роботи у сфері права, склала кваліфікаційний
+          іспит, пройшла стажування, склала присягу адвоката України та має
+          право здійснювати адвокатську діяльність.
+        </p>
 
-    <div class="document-images">
-      @for (item of qualificationImages; track item; let i = $index) {
-        <button
-          class="document-images-item"
-          [lightbox]="i"
-          [gallery]="qualificationImagesId"
-        >
-          <img
-            class="document-images-image"
-            loading="lazy"
-            [src]="item.data!.thumb"
-            [alt]="'підвищення-кваліфікації-' + (i + 1)"
-          />
-        </button>
-      }
-    </div>
-  </section>
+        <div class="document-images">
+          @for (item of barImages; track item; let i = $index) {
+            <button
+              type="button"
+              class="document-image-btn"
+              [lightbox]="i"
+              [gallery]="barImagesId"
+              [attr.aria-label]="
+                'Переглянути свідоцтво адвоката, зображення ' + (i + 1)
+              "
+            >
+              <img
+                class="document-image"
+                loading="lazy"
+                [src]="item.data!.thumb"
+                alt="свідоцтво про право на заняття адвокатською діяльністю Поддячої Юлії Юріївни"
+              />
+              <div class="image-overlay">
+                <mat-icon>zoom_in</mat-icon>
+              </div>
+            </button>
+          }
+        </div>
+
+        <p class="document-caption">
+          <mat-icon aria-hidden="true">event</mat-icon>
+          23.06.2021 — Поддяча Юлія Юріївна отримала свідоцтво про право на
+          заняття адвокатською діяльністю, видане Головою Ради адвокатів
+          Харківської області Гайворонською В. В.
+        </p>
+      </div>
+    </section>
+  </div>
 </section>
 
-<section class="documents-container documents-item-container--education">
-  <img
-    class="education-logo"
-    src="assets/icons/nlu-logo.webp"
-    alt="логотип НЮУ імені Ярослава Мудрого"
-  />
+<!-- Підвищення кваліфікації Section -->
+<section class="qualification-section-bg">
+  <div class="qualification-section">
+    <div class="section-header">
+      <h2>Підвищення професійного рівня адвоката</h2>
+    </div>
 
-  <section class="documents-item-container">
-    <h6 class="documents-item-title">Освіта</h6>
-
-    <p class="text">
-      2010-2014 роки - навчання для здобуття ступеня бакалавра в НЮУ імені
-      Ярослава Мудрого
+    <p class="section-intro">
+      Сертифікати підтверджують, що адвокат Поддяча Юлія Юріївна щорічно
+      проходить підвищення професійної кваліфікації з 2021 року відповідно до
+      вимог законодавства та стандартів адвокатської діяльності.
     </p>
 
-    <div class="document-images">
-      @for (item of bachelorImages; track item; let i = $index) {
-        <button
-          class="document-images-item"
-          [lightbox]="i"
-          [gallery]="bachelorImagesId"
-        >
-          <img
-            class="document-images-image"
-            loading="lazy"
-            [src]="item.data!.thumb"
-            [alt]="'бакалавр-' + (i + 1)"
-          />
-        </button>
+    <div class="certificates-grid" [class.expanded]="showAllCertificates()">
+      @for (item of qualificationImages; track item; let i = $index) {
+        <div class="certificate-card" [class.hidden]="i >= 2 && !showAllCertificates()">
+          <button
+            type="button"
+            class="certificate-image-btn"
+            [lightbox]="i"
+            [gallery]="qualificationImagesId"
+            [attr.aria-label]="'Переглянути сертифікат за ' + (2025 - i) + ' рік'"
+          >
+            <img
+              class="certificate-image"
+              loading="lazy"
+              [src]="item.data!.thumb"
+              [alt]="
+                'сертифікат про підвищення професійного рівня адвоката за ' +
+                (2025 - i) +
+                ' рік Поддячої Юлії Юріївни'
+              "
+            />
+            <div class="image-overlay">
+              <mat-icon>zoom_in</mat-icon>
+            </div>
+          </button>
+          <p class="certificate-caption">
+            Сертифікат за {{ 2025 - i }} рік
+          </p>
+        </div>
       }
     </div>
-  </section>
 
-  <section class="documents-item-container">
-    <p class="text">
-      2014-2015 роки - навчання для здобуття ступеня магістра в НЮУ імені
-      Ярослава Мудрого
+    @if (qualificationImages.length > 2) {
+      <button
+        type="button"
+        class="show-more-btn"
+        (click)="toggleCertificates()"
+        [attr.aria-expanded]="showAllCertificates()"
+      >
+        <span>{{
+          showAllCertificates()
+            ? 'Приховати'
+            : 'Показати всі сертифікати (' + qualificationImages.length + ')'
+        }}</span>
+        <mat-icon [class.rotated]="showAllCertificates()">expand_more</mat-icon>
+      </button>
+    }
+  </div>
+</section>
+
+<!-- Юридична освіта Section -->
+<section class="education-section-bg">
+  <div class="education-section">
+    <div class="section-header">
+      <h2>Юридична освіта</h2>
+    </div>
+
+    <p class="section-intro">
+      Документи про освіту підтверджують, що Поддяча Юлія Юріївна має повну вищу
+      юридичну освіту зі ступенем магістра за спеціальністю «Правознавство».
     </p>
 
-    <div class="document-images">
-      @for (item of masterImages; track item; let i = $index) {
-        <button
-          class="document-images-item"
-          [lightbox]="i"
-          [gallery]="masterImagesId"
-        >
-          <img
-            class="document-images-image"
-            loading="lazy"
-            [src]="item.data!.thumb"
-            [alt]="'магістр-' + (i + 1)"
-          />
-        </button>
-      }
+    <!-- University Logo Badge -->
+    <div class="university-badge">
+      <img
+        src="assets/icons/nlu-logo.webp"
+        alt="логотип НЮУ імені Ярослава Мудрого"
+        loading="lazy"
+        width="60"
+        height="60"
+      />
+      <span>Національний юридичний університет імені Ярослава Мудрого</span>
     </div>
-  </section>
+
+    <div class="education-grid">
+      <!-- Master's Diploma -->
+      <div class="education-card">
+        <div class="education-card-header">
+          <div class="degree-badge degree-master">
+            <mat-icon>workspace_premium</mat-icon>
+            <span>Магістр</span>
+          </div>
+          <span class="degree-year">2015</span>
+        </div>
+
+        <h3>Диплом магістра з відзнакою</h3>
+        <p class="education-specialty">Спеціальність: «Правознавство»</p>
+
+        <div class="document-images education-images">
+          @for (item of masterImages; track item; let i = $index) {
+            <button
+              type="button"
+              class="document-image-btn"
+              [lightbox]="i"
+              [gallery]="masterImagesId"
+              [attr.aria-label]="
+                'Переглянути диплом магістра, зображення ' + (i + 1)
+              "
+            >
+              <img
+                class="document-image"
+                loading="lazy"
+                [src]="item.data!.thumb"
+                alt="диплом з відзнакою Поддячої Юлії, ступінь магістра за спеціальністю «Правознавство», виданий Національним юридичним університетом імені Ярослава Мудрого"
+              />
+              <div class="image-overlay">
+                <mat-icon>zoom_in</mat-icon>
+              </div>
+            </button>
+          }
+        </div>
+
+        <p class="document-caption">
+          <mat-icon aria-hidden="true">event</mat-icon>
+          27.07.2015 — Поддяча Юлія Юріївна закінчила НЮУ імені Ярослава Мудрого
+          та здобула кваліфікацію юриста (диплом з відзнакою).
+        </p>
+      </div>
+
+      <!-- Bachelor's Diploma -->
+      <div class="education-card">
+        <div class="education-card-header">
+          <div class="degree-badge degree-bachelor">
+            <mat-icon>school</mat-icon>
+            <span>Бакалавр</span>
+          </div>
+          <span class="degree-year">2014</span>
+        </div>
+
+        <h3>Диплом бакалавра з відзнакою</h3>
+        <p class="education-specialty">Напрям підготовки: «Правознавство»</p>
+
+        <div class="document-images education-images">
+          @for (item of bachelorImages; track item; let i = $index) {
+            <button
+              type="button"
+              class="document-image-btn"
+              [lightbox]="i"
+              [gallery]="bachelorImagesId"
+              [attr.aria-label]="
+                'Переглянути диплом бакалавра, зображення ' + (i + 1)
+              "
+            >
+              <img
+                class="document-image"
+                loading="lazy"
+                [src]="item.data!.thumb"
+                alt="диплом з відзнакою Поддячої Юлії, бакалавр юриста, виданий Національним юридичним університетом імені Ярослава Мудрого"
+              />
+              <div class="image-overlay">
+                <mat-icon>zoom_in</mat-icon>
+              </div>
+            </button>
+          }
+        </div>
+
+        <p class="document-caption">
+          <mat-icon aria-hidden="true">event</mat-icon>
+          26.06.2014 — Поддяча Юлія Юріївна закінчила НЮУ імені Ярослава Мудрого
+          та здобула кваліфікацію бакалавра юриста (диплом з відзнакою).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="cta-section-bg">
+  <div class="cta-section">
+    <div class="cta-frame">
+      <span class="corner corner-tl" aria-hidden="true"></span>
+      <span class="corner corner-tr" aria-hidden="true"></span>
+      <span class="corner corner-bl" aria-hidden="true"></span>
+      <span class="corner corner-br" aria-hidden="true"></span>
+
+      <div class="cta-inner">
+        <h2>Потрібна юридична допомога?</h2>
+
+        <p class="cta-intro">
+          Залиште заявку — я розгляну вашу ситуацію та поясню можливі варіанти
+          вирішення пенсійного питання.
+        </p>
+
+        <button
+          type="button"
+          appCtaButton
+          icon="calendar_today"
+          (click)="openContactForm()"
+        >
+          Замовити консультацію
+        </button>
+
+        <p class="cta-note">
+          Після звернення я проаналізую вашу ситуацію та поясню можливі варіанти
+          її вирішення.
+        </p>
+      </div>
+    </div>
+
+    <nav class="cta-nav" aria-label="Додаткова навігація">
+      <a routerLink="/services" class="nav-link">
+        <span class="nav-label">Послуги</span>
+        <mat-icon aria-hidden="true">arrow_forward</mat-icon>
+      </a>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <a routerLink="/about-me" class="nav-link">
+        <span class="nav-label">Про адвоката</span>
+        <mat-icon aria-hidden="true">arrow_forward</mat-icon>
+      </a>
+    </nav>
+  </div>
 </section>
