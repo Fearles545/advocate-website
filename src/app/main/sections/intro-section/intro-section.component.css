@@ -36,14 +36,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      var(--color-gold-light) 20%,
-      var(--color-gold) 50%,
-      var(--color-gold-light) 80%,
-      transparent 100%
-    );
+    background: var(--gold-separator);
   }
 }
 
@@ -120,11 +113,7 @@
   justify-content: center;
   width: 5rem;
   height: 5rem;
-  background: linear-gradient(
-    135deg,
-    var(--color-green) 0%,
-    var(--color-green-dark) 100%
-  );
+  background: var(--green-gradient);
   border-radius: 50%;
   border: 2px solid rgba(201, 165, 92, 0.4);
   box-shadow:
@@ -305,27 +294,12 @@
   opacity: 0.6;
 }
 
-/* Photo Section - offset border frame */
+/* Photo frame - sizing only (base styles in global styles.css) */
 .photo-frame {
-  position: relative;
   width: 70%;
   max-width: 280px;
   min-width: 260px;
   aspect-ratio: 742 / 1035;
-  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-  border-radius: 0.5rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: -10px;
-    bottom: -10px;
-    border: 3px solid var(--color-gold);
-    border-radius: 0.5rem;
-    z-index: 0;
-  }
 }
 
 .main-photo {
@@ -338,18 +312,7 @@
   box-shadow: 0 10px 40px rgba(0, 39, 6, 0.2);
   object-fit: cover;
   object-position: center top;
-  animation: photo-appear 0.6s ease-out;
-}
-
-@keyframes photo-appear {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  animation: photoAppear 0.6s ease-out;
 }
 
 /* Decorative Elements */
@@ -494,13 +457,7 @@
   .photo-frame {
     width: 55%;
     max-width: 350px;
-
-    &::before {
-      top: 12px;
-      left: 12px;
-      right: -12px;
-      bottom: -12px;
-    }
+    --photo-frame-offset: 12px;
   }
 
   .decorative-element {
@@ -582,13 +539,7 @@
   .intro-photo-desktop .photo-frame {
     width: 75%;
     max-width: 380px;
-
-    &::before {
-      top: 14px;
-      left: 14px;
-      right: -14px;
-      bottom: -14px;
-    }
+    --photo-frame-offset: 14px;
   }
 
   .decorative-element {

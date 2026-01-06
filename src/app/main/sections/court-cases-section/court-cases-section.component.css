@@ -15,14 +15,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      var(--color-gold-light) 20%,
-      var(--color-gold) 50%,
-      var(--color-gold-light) 80%,
-      transparent 100%
-    );
+    background: var(--gold-separator);
   }
 
   &::after {
@@ -32,14 +25,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      var(--color-gold-light) 20%,
-      var(--color-gold) 50%,
-      var(--color-gold-light) 80%,
-      transparent 100%
-    );
+    background: var(--gold-separator);
   }
 }
 

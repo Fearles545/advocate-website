@@ -72,6 +72,37 @@
   --color-navy: #1a365d;
   --color-navy-dark: #152d4f;
   --color-container-bg: #bb925c1c;
+
+  /* Gradient tokens - reusable across components */
+  --gold-separator: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold-light) 20%,
+    var(--color-gold) 50%,
+    var(--color-gold-light) 80%,
+    transparent 100%
+  );
+  --gold-separator-center: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold) 50%,
+    transparent 100%
+  );
+  --green-gradient: linear-gradient(
+    135deg,
+    var(--color-green) 0%,
+    var(--color-green-dark) 100%
+  );
+  --gold-highlight-gradient: linear-gradient(
+    90deg,
+    var(--gold-alpha-06) 0%,
+    var(--gold-alpha-10) 50%,
+    var(--gold-alpha-06) 100%
+  );
+
+  /* Photo frame offset - can be overridden at component level for responsive scaling */
+  --photo-frame-offset: 10px;
+
   --border-thin: 1px solid var(--color-gold-light);
   --border-accent: 2px solid var(--color-gold);
   --border-radius-sm: 0.25rem;
@@ -229,6 +260,40 @@ a {
   padding: 0 var(--container-padding);
 }
 
+/* ==========================================================================
+   Photo Frame Pattern - Gold offset border effect
+   Override --photo-frame-offset in component for responsive scaling
+   ========================================================================== */
+.photo-frame {
+  --photo-frame-offset: 10px;
+  position: relative;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: var(--photo-frame-offset);
+    left: var(--photo-frame-offset);
+    right: calc(var(--photo-frame-offset) * -1);
+    bottom: calc(var(--photo-frame-offset) * -1);
+    border: 3px solid var(--color-gold);
+    border-radius: 0.5rem;
+    z-index: 0;
+  }
+}
+
+/* ==========================================================================
+   Highlight Box - Emphasized callout/blockquote with gold left border
+   Override background in component for variants (white, simpler solid)
+   ========================================================================== */
+.highlight-box {
+  padding: 1rem 1.25rem;
+  background: var(--gold-highlight-gradient);
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--color-gold);
+}
+
 mat-dialog-content.mat-mdc-dialog-content {
   max-height: inherit;
 }
@@ -288,6 +353,29 @@ mat-paginator div.mat-mdc-paginator-range-label {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Card/Content Entrance Animations */
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes photoAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 

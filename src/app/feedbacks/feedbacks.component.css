@@ -65,8 +65,8 @@
 
   /* Staggered entrance animation */
   opacity: 0;
-  transform: translateY(30px);
-  animation: cardEntrance 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform: translateY(20px);
+  animation: cardReveal 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 
   /* Gold accent line at top */
   &::before {
@@ -132,13 +132,6 @@
   }
   &:nth-child(8) {
     animation-delay: 0.8s;
-  }
-}
-
-@keyframes cardEntrance {
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 

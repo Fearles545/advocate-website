@@ -1,0 +1,267 @@
+  ---
+  Undocumented Design System Patterns
+
+  1. Frosted Glass Card Effect
+
+  Used in about-me and contacts for premium card feel, but not documented:
+
+  /* Pattern observed in about-me .content-wrapper, contacts .contact-methods */
+  background: rgba(255, 255, 255, 0.7);  /* or 0.85 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  Where documented? Nowhere. The DESIGN_SYSTEM.md only shows solid background: white for cards.
+
+  ---
+  3. Photo Frame with Offset Border
+
+  Distinctive pattern used in about-me and contacts:
+
+  .photo-frame {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;      /* Offset creates "shadow" effect */
+      left: 10px;
+      right: -10px;   /* Extends beyond container */
+      bottom: -10px;
+      border: 3px solid var(--color-gold);
+      border-radius: 0.5rem;
+      z-index: 0;
+    }
+  }
+
+  Visual effect: Gold rectangular frame offset to bottom-right of photo.
+  Responsive scaling: Offset increases from 10px → 14px → 18px at breakpoints.
+
+  Where documented? Nowhere.
+
+  ---
+  4. Decorative Quote Marks
+
+  Used in about-me for testimonial/personal statement feel:
+
+  .quote-mark {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 6rem → 9rem;  /* Scales with breakpoints */
+    color: var(--color-gold);
+    opacity: 0.15;
+    position: absolute;
+  }
+  .quote-open { top: -0.5rem; left: 0.5rem; }
+  .quote-close { bottom: 0; right: 0.5rem; transform: rotate(180deg); }
+
+  Where documented? Nowhere.
+
+  ---
+  5. Highlight Text Block
+
+  Emphasized paragraph with gold accent:
+
+  .highlight-text {
+    padding: 1rem 1.25rem;
+    background: linear-gradient(90deg,
+      rgba(201, 165, 92, 0.08),
+      rgba(201, 165, 92, 0.12),
+      rgba(201, 165, 92, 0.08)
+    );
+    border-radius: 0.5rem;
+    border-left: 3px solid var(--color-gold);
+    font-style: italic;
+  }
+
+  Where documented? Nowhere. Similar to .blog-quote but with different implementation.
+
+  ---
+  6. Ambient Glow Animation
+
+  Floating decorative background elements in about-me:
+
+  .ambient-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    animation: float-glow 8s ease-in-out infinite;
+  }
+
+  @keyframes float-glow {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -20px) scale(1.1); }
+  }
+
+  Where documented? Nowhere. Only static .section-glow is documented.
+
+  ---
+  7. CTA Frame with Corner Accents
+
+  Distinctive pattern in contacts CTA section:
+
+  .corner {
+    --corner-size: 24px → 40px;  /* Scales */
+    position: absolute;
+    &::before { width: 100%; height: 2px; background: var(--color-gold); }
+    &::after { width: 2px; height: 100%; background: var(--color-gold); }
+  }
+
+  Creates L-shaped gold accents at each corner of the CTA card.
+
+  Where documented? Nowhere.
+
+  ---
+  8. Navigation Links with Divider
+
+  Bottom-of-section navigation pattern:
+
+  .cta-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-divider {
+    width: 1px;
+    height: 1.5rem;
+    background: linear-gradient(180deg, transparent, var(--color-gold), transparent);
+  }
+
+  .nav-link {
+    /* ... with arrow icon that shifts on hover */
+  }
+
+  Where documented? Nowhere.
+
+  ---
+  9. Staggered Entrance Animation Pattern
+
+  Used extensively for card grids:
+
+  .card {
+    animation: cardEntrance 0.5s var(--ease-standard) backwards;
+
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.2s; }
+    /* ... up to 8 children */
+  }
+
+  Where documented? Only badgeReveal, titleReveal, introReveal are documented. The general staggered pattern is not.
+
+  ---
+  10. Image Hover Overlay
+
+  Interactive document/image viewing pattern:
+
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 39, 6, 0.6), rgba(0, 39, 6, 0.4));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    mat-icon { color: var(--color-gold); font-size: 2.5rem; }
+  }
+
+  .btn:hover .image-overlay { opacity: 1; }
+
+  Where documented? Nowhere.
+
+  ---
+  11. Trust/Feature Banner
+
+  Horizontal strip of icons with labels (feedbacks page):
+
+  .trust-banner {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.25rem 2rem;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,246,242,0.9));
+    border-radius: 1rem;
+    border: 1px solid rgba(201, 165, 92, 0.2);
+  }
+
+  Where documented? Nowhere.
+
+  ---
+  12. Degree/Status Badges
+
+  Two-tone badge pattern for credentials:
+
+  .degree-master {
+    background: var(--green-gradient);
+    color: var(--color-gold);
+  }
+
+  .degree-bachelor {
+    background: linear-gradient(135deg, var(--gold-alpha-20), var(--gold-alpha-30));
+    color: var(--color-green);
+    border: 1px solid var(--gold-alpha-30);
+  }
+
+  Where documented? Nowhere. Only generic icon wrappers are documented.
+
+  ---
+  13. External Link Card Pattern
+
+  For registry/external resource links:
+
+  .registry-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--green-gradient);
+    /* Logo in white circle + label + action text with icon */
+  }
+
+  Where documented? Nowhere.
+
+  ---
+  14. Show More/Expand Pattern
+
+  Expandable content sections:
+
+  .show-more-btn {
+    border: 2px solid var(--green-alpha-20);
+    border-radius: 3rem;
+
+    mat-icon.rotated { transform: rotate(180deg); }
+
+    &:hover mat-icon:not(.rotated) {
+      animation: bounceDown 0.4s ease;
+    }
+  }
+
+  Where documented? Nowhere.
+
+  ---
+  15. .page-intro-secondary Class
+
+  Second intro paragraph with different styling:
+
+  .page-intro.page-intro-secondary {
+    /* In styles.css as .page-intro.secondary */
+    color: var(--text-color-secondary);
+    font-size: 1rem;
+    animation-delay: 0.6s;  /* Additional delay */
+  }
+
+  Where documented? Partially in styles.css but not in DESIGN_SYSTEM.md.
+
+  ---
+  Summary: Documentation Gaps
+
+  | Category            | Patterns Missing                           |
+  |---------------------|--------------------------------------------|
+  | Card Variants       | Frosted glass, external link cards         |
+  | Decorative Elements | Quote marks, corner accents, ambient glows |
+  | Photo/Image         | Offset frame, hover overlay                |
+  | Badges              | Degree badges, trust banners               |
+  | Animations          | Staggered entrance, float-glow, bounceDown |
+  | Interactive         | Show more/expand, nav links with divider   |
+  | Layout              | Highlight text blocks, secondary intro     |
+
+  Would you like me to create a documentation update for DESIGN_SYSTEM.md that captures these patterns?

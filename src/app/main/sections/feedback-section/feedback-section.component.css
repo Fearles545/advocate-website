@@ -9,14 +9,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      var(--color-gold-light) 20%,
-      var(--color-gold) 50%,
-      var(--color-gold-light) 80%,
-      transparent 100%
-    );
+    background: var(--gold-separator);
   }
 }
 
@@ -172,7 +165,7 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-dark) 100%);
+  background: var(--green-gradient);
   display: flex;
   align-items: center;
   justify-content: center;

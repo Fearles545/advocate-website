@@ -1,26 +1,6 @@
 :host {
   display: block;
   width: 100%;
-
-  --gold-separator: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--color-gold-light) 20%,
-    var(--color-gold) 50%,
-    var(--color-gold-light) 80%,
-    transparent 100%
-  );
-  --gold-separator-center: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--color-gold) 50%,
-    transparent 100%
-  );
-  --green-gradient: linear-gradient(
-    135deg,
-    var(--color-green) 0%,
-    var(--color-green-dark) 100%
-  );
 }
 
 /* Override page-bg-pattern min-height for this page */
@@ -204,13 +184,6 @@
   animation: cardReveal 0.6s var(--ease-standard) 0.2s forwards;
 }
 
-@keyframes cardReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .document-card-header {
   display: flex;
   align-items: center;
@@ -332,14 +305,6 @@
   gap: 0.5rem;
   margin: 0;
   padding: 1rem;
-  background: linear-gradient(
-    90deg,
-    var(--gold-alpha-06),
-    var(--gold-alpha-10),
-    var(--gold-alpha-06)
-  );
-  border-radius: var(--card-border-radius-sm);
-  border-left: 3px solid var(--color-gold);
   font-size: var(--font-size-body-sm);
   line-height: 1.6;
   color: var(--text-color-primary);
@@ -402,7 +367,7 @@
   }
 
   /* Staggered entrance animation */
-  animation: cardEntrance 0.5s var(--ease-standard) backwards;
+  animation: cardReveal 0.5s var(--ease-standard) backwards;
 
   &:nth-child(1) {
     animation-delay: 0.1s;
@@ -418,17 +383,6 @@
   }
   &:nth-child(5) {
     animation-delay: 0.5s;
-  }
-}
-
-@keyframes cardEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 

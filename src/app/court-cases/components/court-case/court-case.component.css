@@ -20,14 +20,7 @@ h1 {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      var(--color-gold-light) 20%,
-      var(--color-gold) 50%,
-      var(--color-gold-light) 80%,
-      transparent 100%
-    );
+    background: var(--gold-separator);
   }
 }
 
@@ -53,11 +46,7 @@ h1 {
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  background: linear-gradient(
-    135deg,
-    var(--color-green) 0%,
-    var(--color-green-dark) 100%
-  );
+  background: var(--green-gradient);
   border-radius: 50%;
   border: 2px solid rgba(201, 165, 92, 0.4);
   box-shadow:

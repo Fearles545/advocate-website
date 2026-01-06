@@ -1,15 +1,3 @@
-/* Card entrance animation */
-@keyframes cardReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) rotate(-1deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) rotate(0);
-  }
-}
-
 :host {
   display: block;
   width: 100%;

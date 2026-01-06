@@ -1,19 +1,6 @@
 :host {
   display: block;
   width: 100%;
-
-  /* Component-specific gradients (using global color tokens) */
-  --gold-separator-center: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--color-gold) 50%,
-    transparent 100%
-  );
-  --green-gradient: linear-gradient(
-    135deg,
-    var(--color-green) 0%,
-    var(--color-green-dark) 100%
-  );
 }
 
 /* Override global min-height: 100vh for this page */
@@ -49,25 +36,10 @@
   gap: 1rem;
 }
 
-/* Photo frame with offset gold border */
+/* Photo frame - sizing only (base styles in global styles.css) */
 .photo-frame {
-  position: relative;
   width: 100%;
   max-width: 280px;
-  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-  border-radius: 0.5rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: -10px;
-    bottom: -10px;
-    border: 3px solid var(--color-gold);
-    border-radius: 0.5rem;
-    z-index: 0;
-  }
 }
 
 .profile-photo {
@@ -80,18 +52,7 @@
   box-shadow: 0 10px 40px var(--green-alpha-20);
   object-fit: cover;
   object-position: center top;
-  animation: photo-appear 0.6s ease-out;
-}
-
-@keyframes photo-appear {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  animation: photoAppear 0.6s ease-out;
 }
 
 /* ========================================
@@ -144,15 +105,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1rem 1.25rem;
-  background: linear-gradient(
-    90deg,
-    rgba(201, 165, 92, 0.08),
-    rgba(201, 165, 92, 0.12),
-    rgba(201, 165, 92, 0.08)
-  );
-  border-radius: 0.5rem;
-  border-left: 3px solid var(--color-gold);
   text-align: left;
 }
 
@@ -865,14 +817,7 @@
 
   .photo-frame {
     max-width: 100%;
-  }
-
-  /* Photo frame - larger offset on desktop */
-  .photo-frame::before {
-    top: 12px;
-    left: 12px;
-    right: -12px;
-    bottom: -12px;
+    --photo-frame-offset: 12px;
   }
 
   /* Contact methods - desktop adjustments */
@@ -941,11 +886,8 @@
   }
 
   /* Photo frame - even larger offset */
-  .photo-frame::before {
-    top: 14px;
-    left: 14px;
-    right: -14px;
-    bottom: -14px;
+  .photo-frame {
+    --photo-frame-offset: 14px;
   }
 }
 

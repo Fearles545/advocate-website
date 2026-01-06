@@ -9,10 +9,6 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section class="about-section-bg">
-      <!-- Ambient glow effects -->
-      <div class="ambient-glow ambient-glow-1"></div>
-      <div class="ambient-glow ambient-glow-2"></div>
-
       <div class="about-section">
         <!-- Image Panel with Gold Corner Accents -->
         <div class="image-panel">
@@ -86,7 +82,6 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
         #fdfcfa 100%
       );
       position: relative;
-      overflow: hidden;
 
       &::before {
         content: '';
@@ -103,50 +98,6 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
           var(--color-gold-light) 80%,
           transparent 100%
         );
-      }
-    }
-
-    /* Ambient glow effects */
-    .ambient-glow {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-      filter: blur(80px);
-    }
-
-    .ambient-glow-1 {
-      top: 10%;
-      left: 5%;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(
-        circle,
-        rgba(201, 165, 92, 0.12) 0%,
-        transparent 70%
-      );
-      animation: float-glow 8s ease-in-out infinite;
-    }
-
-    .ambient-glow-2 {
-      bottom: 20%;
-      right: 10%;
-      width: 250px;
-      height: 250px;
-      background: radial-gradient(
-        circle,
-        rgba(0, 39, 6, 0.06) 0%,
-        transparent 70%
-      );
-      animation: float-glow 10s ease-in-out infinite reverse;
-    }
-
-    @keyframes float-glow {
-      0%,
-      100% {
-        transform: translate(0, 0) scale(1);
-      }
-      50% {
-        transform: translate(20px, -20px) scale(1.1);
       }
     }
 
@@ -542,16 +493,6 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
         bottom: 0.5rem;
         right: -1rem;
         font-size: 9rem;
-      }
-
-      .ambient-glow-1 {
-        width: 400px;
-        height: 400px;
-      }
-
-      .ambient-glow-2 {
-        width: 350px;
-        height: 350px;
       }
 
       /* Corner accents - slightly larger on desktop */

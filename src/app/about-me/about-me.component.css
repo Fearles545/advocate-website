@@ -1,72 +1,12 @@
 :host {
   display: block;
   width: 100%;
-  --gold-separator: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--color-gold-light) 20%,
-    var(--color-gold) 50%,
-    var(--color-gold-light) 80%,
-    transparent 100%
-  );
-  --gold-separator-center: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--color-gold) 50%,
-    transparent 100%
-  );
-  --green-gradient: linear-gradient(
-    135deg,
-    var(--color-green) 0%,
-    var(--color-green-dark) 100%
-  );
 }
 
 /* About Me Section */
 .about-me-section {
   position: relative;
   margin-top: 2rem;
-  overflow: hidden;
-}
-
-/* Ambient glow effects */
-.ambient-glow {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(80px);
-}
-
-.ambient-glow-1 {
-  top: 10%;
-  left: -5%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(
-    circle,
-    rgba(201, 165, 92, 0.12) 0%,
-    transparent 70%
-  );
-  animation: float-glow 8s ease-in-out infinite;
-}
-
-.ambient-glow-2 {
-  bottom: 20%;
-  right: -5%;
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(0, 39, 6, 0.06) 0%, transparent 70%);
-  animation: float-glow 10s ease-in-out infinite reverse;
-}
-
-@keyframes float-glow {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(20px, -20px) scale(1.1);
-  }
 }
 
 .about-me-grid {
@@ -86,26 +26,11 @@
   padding: 0 1rem 1.5rem 0; /* Space for gold frame offset + shadow */
 }
 
-/* Photo frame with offset gold border - frame to right and bottom */
+/* Photo frame - sizing only (base styles in global styles.css) */
 .photo-frame {
-  position: relative;
   width: 100%;
   max-width: 280px;
   aspect-ratio: 300 / 472;
-  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-  border-radius: 0.5rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: -10px;
-    bottom: -10px;
-    border: 3px solid var(--color-gold);
-    border-radius: 0.5rem;
-    z-index: 0;
-  }
 }
 
 .profile-photo {
@@ -118,18 +43,7 @@
   box-shadow: 40px 20px 40px rgba(0, 39, 6, 0.1);
   object-fit: cover;
   object-position: center top;
-  animation: photo-appear 0.6s ease-out;
-}
-
-@keyframes photo-appear {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  animation: photoAppear 0.6s ease-out;
 }
 
 /* Content Section */
@@ -234,15 +148,6 @@
 
 .highlight-text {
   position: relative;
-  padding: 1rem 1.25rem;
-  background: linear-gradient(
-    90deg,
-    rgba(201, 165, 92, 0.08),
-    rgba(201, 165, 92, 0.12),
-    rgba(201, 165, 92, 0.08)
-  );
-  border-radius: 0.5rem;
-  border-left: 3px solid var(--color-gold);
   font-style: italic;
   color: var(--color-green) !important;
   text-align: left !important;
@@ -1035,21 +940,8 @@
   }
 
   /* Photo frame - larger offset on desktop */
-  .photo-frame::before {
-    top: 14px;
-    left: 14px;
-    right: -14px;
-    bottom: -14px;
-  }
-
-  .ambient-glow-1 {
-    width: 400px;
-    height: 400px;
-  }
-
-  .ambient-glow-2 {
-    width: 350px;
-    height: 350px;
+  .photo-frame {
+    --photo-frame-offset: 14px;
   }
 
   .qualification-grid {
@@ -1100,11 +992,8 @@
   }
 
   /* Photo frame - even larger offset */
-  .photo-frame::before {
-    top: 18px;
-    left: 18px;
-    right: -18px;
-    bottom: -18px;
+  .photo-frame {
+    --photo-frame-offset: 18px;
   }
 }
 
