@@ -6,9 +6,9 @@ import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
   selector: 'app-navbar',
   imports: [RouterLink, RouterLinkActive],
   template: `
-    <section class="nav-container">
-      <nav class="navbar">
-        @for (navItem of mainNavItems; track navItem.route) {
+    <nav class="navbar-container">
+      <ul class="navbar">
+        @for (navItem of mainNavItems; track navItem.route; let last = $last) {
           <li>
             <a
               [routerLink]="navItem.route"
@@ -18,14 +18,20 @@ import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
               {{ navItem.label }}
             </a>
           </li>
-          <span class="separator">|</span>
+          <span class="separator" aria-hidden="true"></span>
         }
 
         <li class="more-menu">
           <details #detailsEl>
             <summary>
               Ще
-              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <svg
+                class="chevron"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </summary>
@@ -44,53 +50,81 @@ import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
             </ul>
           </details>
         </li>
-      </nav>
-    </section>
+      </ul>
+    </nav>
   `,
   styles: `
-    .nav-container {
+    /* ==========================================================================
+       NAVBAR - Desktop Navigation
+       ========================================================================== */
+    .navbar-container {
       background: linear-gradient(
         180deg,
         rgba(0, 0, 0, 1) 0%,
-        rgba(0, 39, 6, 1) 20%
+        rgba(0, 39, 6, 1) 25%
       );
       width: 100%;
-      box-shadow:
-        rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-      padding: 1.5rem 0 1rem;
+      padding: 1.25rem 2rem 1rem;
     }
 
     .navbar {
-      font-size: 1.4rem;
-      font-weight: 500;
-      list-style-type: none;
+      max-width: var(--container-max-width);
+      margin: 0 auto;
+      list-style: none;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      align-items: center;
+      gap: 0;
+      padding: 0;
+    }
+
+    .navbar a {
       color: white;
-    }
-
-    .navbar li {
-      cursor: pointer;
-    }
-
-    .navbar li:hover,
-    .active {
-      cursor: pointer;
-      color: #bb925c;
-    }
-
-    a {
-      color: inherit;
+      font-size: 1.1rem;
+      font-weight: 500;
       text-decoration: none;
+      padding: 0.5rem 1.25rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--color-gold);
+      transition: width 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: var(--color-gold);
+    }
+
+    .navbar a:hover::after {
+      width: calc(100% - 2rem);
+    }
+
+    .navbar a.active {
+      color: var(--color-gold);
+    }
+
+    .navbar a.active::after {
+      width: calc(100% - 2rem);
     }
 
     .separator {
-      opacity: 0.5;
+      color: rgba(255, 255, 255, 0.25);
+      font-size: 0.75rem;
+      user-select: none;
     }
 
+    /* ==========================================================================
+       MORE DROPDOWN
+       ========================================================================== */
     .more-menu {
       position: relative;
     }
@@ -105,20 +139,28 @@ import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
       gap: 0.25rem;
       cursor: pointer;
       list-style: none;
-      transition: color 0.2s ease;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0.5rem 1.25rem;
+      transition: color 0.3s ease;
 
       &::-webkit-details-marker {
         display: none;
       }
 
       &:hover {
-        color: #bb925c;
+        color: var(--color-gold);
       }
     }
 
+    details[open] summary {
+      color: var(--color-gold);
+    }
+
     .chevron {
-      width: 1.1em;
-      height: 1.1em;
+      width: 1em;
+      height: 1em;
       transition: transform 0.2s ease;
     }
 
@@ -152,6 +194,10 @@ import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
         font-size: 1rem;
         transition: background 0.15s ease;
 
+        &::after {
+          display: none;
+        }
+
         &:hover {
           background: rgba(201, 165, 92, 0.15);
         }
@@ -163,10 +209,22 @@ import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
       }
     }
 
-    @media (max-width: 1200px) {
-      .navbar {
-        font-size: 1.25rem;
-        gap: 1.5rem;
+    /* ==========================================================================
+       RESPONSIVE: LARGE SCREENS
+       ========================================================================== */
+    @media (max-width: 1279px) {
+      .navbar a,
+      summary {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .navbar a,
+      summary {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.75rem;
       }
 
       .separator {
@@ -175,23 +233,18 @@ import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
     }
 
     @media (max-width: 1000px) {
-      .navbar {
-        font-size: 1.1rem;
-        gap: 1.25rem;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .navbar {
-        font-size: 1rem;
-        gap: 1rem;
+      .navbar a,
+      summary {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
       }
     }
   `,
 })
 export class NavbarComponent {
   private readonly moreLabels = ['Документи'];
-  private readonly detailsEl = viewChild<ElementRef<HTMLDetailsElement>>('detailsEl');
+  private readonly detailsEl =
+    viewChild<ElementRef<HTMLDetailsElement>>('detailsEl');
 
   readonly mainNavItems: NavItem[] = NAV_ITEMS.filter(
     (item) => !this.moreLabels.includes(item.label)

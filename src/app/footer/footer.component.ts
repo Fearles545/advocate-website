@@ -6,7 +6,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { courtCases } from '../court-cases/cases';
 import { SocialIconData } from '../core/icons.data';
-import { CtaButtonComponent } from '../shared/components/cta-button/cta-button.component';
 import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.component';
 
 @Component({

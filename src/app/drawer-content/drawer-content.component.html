@@ -1,32 +1,43 @@
-<section class="nav-container">
-  <nav class="navbar">
+<section class="drawer-container">
+  <!-- Navigation Links -->
+  <nav class="nav-menu">
     @for (navItem of navItems; track navItem.route) {
-      <li>
-        <a
-          [routerLink]="navItem.route"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: navItem.exact || false }"
-          (click)="onLinkClick.emit()"
-        >
-          {{ navItem.label }}
-        </a>
-      </li>
+      <a
+        class="nav-link"
+        [routerLink]="navItem.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: navItem.exact || false }"
+        (click)="onLinkClick.emit()"
+      >
+        {{ navItem.label }}
+      </a>
     }
   </nav>
 
-  <div class="social-icons">
-    @for (iconData of socialMediaIconsData(); track iconData) {
-      <app-social-icon-link
-        iconColor="#fff"
-        [iconData]="iconData"
-        [iconStyles]="{
-          width: '2rem',
-          height: '2rem',
-          backgroundColor: 'transparent',
-          borderRadius: '0',
-          padding: '0.3rem',
-        }"
-      />
-    }
+  <!-- Social Media Section -->
+  <div class="social-section">
+    <span class="social-label">Соцмережі Адвоката</span>
+    <div class="social-icons">
+      @for (iconData of socialMediaIconsData(); track iconData.alt) {
+        <a
+          [href]="iconData.link"
+          target="_blank"
+          class="social-link"
+          [attr.aria-label]="iconData.name"
+        >
+          <app-social-icon-link
+            [iconData]="iconData"
+            [iconColor]="'var(--color-gold)'"
+            [iconStyles]="{
+              width: '1.5rem',
+              height: '1.5rem',
+              backgroundColor: 'transparent',
+              borderRadius: '0',
+              padding: '0',
+            }"
+          />
+        </a>
+      }
+    </div>
   </div>
 </section>

@@ -1,20 +1,12 @@
 import { Component, computed, input, output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { SocialIconData } from '../core/icons.data';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.component';
 import { NavItem, NAV_ITEMS } from '../core/config/nav-items.config';
 
 @Component({
   selector: 'app-drawer-content',
-  imports: [
-    RouterLink,
-    RouterLinkActive,
-    MatButtonModule,
-    MatIconModule,
-    SocialIconLinkComponent,
-  ],
+  imports: [RouterLink, RouterLinkActive, SocialIconLinkComponent],
   templateUrl: './drawer-content.component.html',
   styleUrl: './drawer-content.component.css',
 })
@@ -23,8 +15,9 @@ export class DrawerContentComponent {
   onLinkClick = output<void>();
 
   readonly navItems: NavItem[] = NAV_ITEMS;
+
   socialMediaIconsData = computed(() => {
-    const desiredOrder = ['tikTok', 'youtube-white', 'facebook', 'instagram'];
+    const desiredOrder = ['instagram', 'tikTok', 'youtube', 'facebook'];
 
     return this.iconsData()
       .filter(
@@ -32,7 +25,7 @@ export class DrawerContentComponent {
           icon.alt === 'facebook' ||
           icon.alt === 'instagram' ||
           icon.alt === 'tikTok' ||
-          icon.alt === 'youtube-white'
+          icon.alt === 'youtube'
       )
       .sort((a, b) => {
         const indexA = desiredOrder.indexOf(a.alt);
