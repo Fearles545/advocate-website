@@ -1,0 +1,72 @@
+<section class="page-bg-pattern">
+  <div class="page-content">
+    @if (blog()) {
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb" aria-label="Навігація">
+        <a routerLink="/" class="breadcrumb-link">
+          <mat-icon>home</mat-icon>
+          <span>Головна</span>
+        </a>
+        <mat-icon class="breadcrumb-separator">chevron_right</mat-icon>
+        <a routerLink="/blog" class="breadcrumb-link">
+          <span>Блог</span>
+        </a>
+        <mat-icon class="breadcrumb-separator">chevron_right</mat-icon>
+        <span class="breadcrumb-current">Стаття</span>
+      </nav>
+
+      <!-- Article Container -->
+      <article class="blog-article">
+        <!-- Header -->
+        <header class="article-header">
+          <h1 class="article-title">{{ blog()!.title }}</h1>
+
+          <div class="article-meta">
+            <div class="meta-left">
+              <div class="date-badge">
+                <mat-icon>calendar_today</mat-icon>
+                @let formattedDate = blog().date | date: 'dd MMMM yyyy';
+                <time [attr.datetime]="blog().date">{{ formattedDate }}</time>
+              </div>
+
+              @if (blog().src[0]) {
+                <div class="video-badge">
+                  <mat-icon>play_circle</mat-icon>
+                  <span>Є відео</span>
+                </div>
+              }
+            </div>
+
+            <app-social-share [blog]="blog()!" />
+          </div>
+        </header>
+
+        <!-- Video Section -->
+        @if (blog().src[0]) {
+          <app-blog-iframe [src]="blog().src" [title]="blog().title" />
+        }
+
+        <!-- Content -->
+        <div class="article-content">
+          <section
+            class="blog-post-section"
+            [innerHTML]="blogHtml() | async"
+          ></section>
+        </div>
+
+        <!-- Footer Card -->
+        <aside class="article-footer">
+          <section
+            class="blog-post-section"
+            [innerHTML]="footerCard() | async"
+          ></section>
+        </aside>
+      </article>
+
+      <!-- Navigator -->
+      <app-blogs-navigator [currentBlog]="blog()" />
+    }
+
+    <app-spinner [show]="isLoading()" />
+  </div>
+</section>

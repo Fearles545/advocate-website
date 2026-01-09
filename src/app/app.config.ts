@@ -1,4 +1,8 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import {
+  ApplicationConfig,
+  LOCALE_ID,
+  provideZoneChangeDetection,
+} from '@angular/core';
 import {
   provideRouter,
   withComponentInputBinding,
@@ -6,11 +10,16 @@ import {
   withViewTransitions,
 } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { registerLocaleData } from '@angular/common';
+import localeUk from '@angular/common/locales/uk';
 
 import { GALLERY_CONFIG, GalleryConfig } from 'ng-gallery';
 
 import { routes } from './app.routes';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+
+// Register Ukrainian locale
+registerLocaleData(localeUk);
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -33,5 +42,6 @@ export const appConfig: ApplicationConfig = {
       } as GalleryConfig,
     },
     provideHttpClient(withFetch()),
+    { provide: LOCALE_ID, useValue: 'uk' },
   ],
 };

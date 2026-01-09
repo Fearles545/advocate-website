@@ -310,12 +310,11 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
   blog: {
     title: 'Блог про пенсії в Україні — поради юриста з пенсійних питань',
     description:
-      'Корисні статті та поради адвоката Поддячої Юлії Юріївни з питань пенсійного права. Останні новини, роз’яснення та практичні кейси.',
+      'Корисні статті та відповіді на питання з пенсійного права від адвоката Поддячої Юлії Юріївни: призначення пенсії, перерахунок, підтвердження стажу, судова практика та зміни в законодавстві',
     keywords:
       'блог адвоката, статті про пенсії, поради юриста, новини пенсійного законодавства, Юлія Поддяча',
     canonical: '/blog/',
     type: 'website',
-    robots: 'noindex,follow',
     schema: {
       '@context': 'https://schema.org',
       '@graph': [
@@ -326,6 +325,16 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
             {
               '@type': 'ListItem',
               position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
               name: 'Блог',
               item: {
                 '@type': 'WebPage',
@@ -338,9 +347,11 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
         {
           '@type': 'CollectionPage',
           '@id': 'https://www.advocate-pensia.com.ua/blog/#webpage',
-          name: 'Блог',
+          name: 'Блог | Адвокат Поддяча Юлія Юріївна',
           url: 'https://www.advocate-pensia.com.ua/blog/',
           inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
           breadcrumb: {
             '@id': 'https://www.advocate-pensia.com.ua/blog/#breadcrumbs',
           },
