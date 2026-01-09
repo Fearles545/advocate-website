@@ -3,6 +3,8 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentsComponent } from './documents/documents.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import { PrivacyPolicyComponent } from './legal/privacy-policy.component';
+import { PublicOfferComponent } from './legal/public-offer.component';
 import { MainComponent } from './main/main.component';
 import { ServicesComponent } from './services/services.component';
 
@@ -39,6 +41,14 @@ export const routes: Routes = [
   {
     path: 'contacts',
     component: ContactsComponent,
+  },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent,
+  },
+  {
+    path: 'public-offer',
+    component: PublicOfferComponent,
   },
   {
     path: '**',

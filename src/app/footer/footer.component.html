@@ -1,40 +1,202 @@
-<footer class="footer">
-  <div class="container">
-    <div class="left-content">
-      <div class="left-top-content">
-        <div class="center-content">
-          <p class="description">
-            Професійна допомога на всіх етапах оформлення пенсії ! Без вашої
-            особистої присутності в органах Пенсійного фонду чи суді !
-          </p>
+<footer class="footer-wrapper">
+  <div class="footer-glow"></div>
+
+  <div class="footer-main">
+    <div class="footer-content">
+      <!-- Block 1: Brand (matching header structure) -->
+      <div class="footer-brand">
+        <a routerLink="/" class="brand-link">
+          <img
+            class="footer-logo"
+            src="assets/logo/logo-white-transparent.png"
+            alt="Адвокат Поддяча Юлія Юріївна"
+          />
+          <div class="brand-text">
+            <p class="footer-title">Адвокат по пенсіях</p>
+            <p class="footer-subtitle">Поддяча Юлія Юріївна</p>
+          </div>
+        </a>
+        <p class="footer-description">
+          Юридична допомога з пенсійних питань. Консультації онлайн по Україні
+          та за кордоном.
+        </p>
+        <a routerLink="/about-me" class="footer-about-link">
+          <span>Про адвоката</span>
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+      </div>
+
+      <!-- Block 2: Contacts (moved before navigation) -->
+      <div class="footer-contacts">
+        <h4 class="footer-column-title">Контакти</h4>
+        <div class="contact-items">
+          <a href="tel:+380999426056" class="contact-item">
+            <div class="contact-icon">
+              <mat-icon>phone</mat-icon>
+            </div>
+            <span>+380 99 942 60 56</span>
+          </a>
+          <a href="mailto:yuliapoddyacha@gmail.com" class="contact-item">
+            <div class="contact-icon">
+              <mat-icon>email</mat-icon>
+            </div>
+            <span>yuliapoddyacha&#64;gmail.com</span>
+          </a>
         </div>
 
-        <img
-          class="logo"
-          src="assets/logo/logo-white-transparent.png"
-          alt="Адвокат Поддяча Юлія Юріївна"
-        />
+        <div class="messenger-links">
+          @for (messenger of messengerIcons(); track messenger.alt) {
+            <a
+              [href]="messenger.link"
+              target="_blank"
+              class="messenger-link"
+              [attr.aria-label]="messenger.name"
+            >
+              <app-social-icon-link
+                [iconData]="messenger"
+                [iconColor]="'var(--color-gold)'"
+                [iconStyles]="{
+                  width: '1.5rem',
+                  height: '1.5rem',
+                  backgroundColor: 'transparent',
+                  borderRadius: '0',
+                  padding: '0',
+                }"
+              />
+              <span>{{ messenger.name }}</span>
+            </a>
+          }
+        </div>
+
+        <!-- Work Schedule -->
+        <div class="work-schedule">
+          <div class="schedule-icon">
+            <mat-icon>schedule</mat-icon>
+          </div>
+
+          <div class="schedule-text">
+            <span class="schedule-label">Графік роботи:</span>
+
+            <span class="schedule-hours"> Пн–Сб: 10:00–19:00 </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 3: Navigation + Services (side by side on mobile) -->
+      <div class="footer-nav-services">
+        <nav class="footer-nav">
+          <h4 class="footer-column-title">Навігація</h4>
+
+          <ul class="footer-nav-list">
+            <li><a routerLink="/">Головна</a></li>
+            <li><a routerLink="/services">Послуги</a></li>
+            <li><a routerLink="/court-cases">Судові рішення</a></li>
+            <li><a routerLink="/feedbacks">Відгуки</a></li>
+            <li><a routerLink="/blog">Блог</a></li>
+            <li><a routerLink="/documents">Документи</a></li>
+            <li><a routerLink="/contacts">Контакти</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-services">
+          <h4 class="footer-column-title">Послуги</h4>
+
+          <ul class="footer-services-list">
+            <li>
+              <mat-icon>check_circle</mat-icon>
+              <span>Призначення пенсії</span>
+            </li>
+
+            <li>
+              <mat-icon>check_circle</mat-icon>
+              <span>Перерахунок пенсії</span>
+            </li>
+
+            <li>
+              <mat-icon>check_circle</mat-icon>
+              <span>Оскарження рішень ПФУ</span>
+            </li>
+
+            <li>
+              <mat-icon>check_circle</mat-icon>
+              <span>Судовий захист</span>
+            </li>
+          </ul>
+
+          <a routerLink="/services" class="footer-link-arrow">
+            <span>Усі послуги</span>
+
+            <mat-icon>arrow_forward</mat-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Block 4: Court Cases -->
+      <div class="footer-cases">
+        <h4 class="footer-column-title">Судова практика</h4>
+
+        <ul class="footer-cases-list">
+          @for (courtCase of featuredCases(); track courtCase.slug) {
+            <li>
+              <a [routerLink]="['/court-cases', courtCase.slug]">
+                <span class="case-title">{{ courtCase.title }}</span>
+
+                <span class="case-number">№{{ courtCase.caseNumber }}</span>
+              </a>
+            </li>
+          }
+        </ul>
+
+        <a routerLink="/court-cases" class="footer-link-arrow">
+          <span>Усі судові рішення</span>
+
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
       </div>
     </div>
 
-    <div class="social-icons">
-      @for (iconData of socialMediaIconsData(); track iconData) {
-        <app-social-icon-link
-          [iconData]="iconData"
-          [matTooltip]="iconData.name"
-          [matTooltipShowDelay]="300"
-          [matTooltipPosition]="'above'"
-        />
-      }
+    <!-- Block 5: Social Media Row (prominent) -->
+    <div class="footer-social-row">
+      <span class="social-label">Адвокат в соцмережах:</span>
 
-      <!-- <a class="contacts" href="tel:+380999426056" target="_blank">
-        <app-social-icon-link [iconData]="phoneData()"></app-social-icon-link>
-        <span class="phone">+38 (099) 942-60-56</span>
-      </a> -->
+      <div class="social-icons">
+        @for (iconData of socialMediaIconsData(); track iconData.alt) {
+          <a
+            [href]="iconData.link"
+            target="_blank"
+            class="social-icon-wrapper"
+            [attr.aria-label]="iconData.name"
+          >
+            <app-social-icon-link
+              [iconData]="iconData"
+              [iconColor]="'var(--color-gold)'"
+              [iconStyles]="{
+                width: '1.75rem',
+                height: '1.75rem',
+                backgroundColor: 'transparent',
+                borderRadius: '0',
+                padding: '0',
+              }"
+            />
+            <span class="social-name">{{ iconData.name }}</span>
+          </a>
+        }
+      </div>
     </div>
   </div>
 
-  <p class="copyright">
-    &copy; {{ currentYear }} Адвокат Поддяча Юлія Юріївна. Всі права захищені.
-  </p>
+  <!-- Bottom Bar: Copyright + Legal Links -->
+  <div class="footer-bottom">
+    <p class="copyright">
+      &copy; {{ currentYear }} Адвокат Поддяча Юлія Юріївна. Всі права захищені.
+    </p>
+
+    <div class="legal-links">
+      <a routerLink="/privacy-policy">Політика конфіденційності</a>
+
+      <span class="divider">|</span>
+
+      <a routerLink="/public-offer">Публічна оферта</a>
+    </div>
+  </div>
 </footer>
