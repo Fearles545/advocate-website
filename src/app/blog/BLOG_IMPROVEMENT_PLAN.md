@@ -1,7 +1,7 @@
 # Blog Improvement Plan
 
 > This document tracks the blog rebranding implementation progress.
-> Last updated: 2025-01-10
+> Last updated: 2026-01-10
 
 ## Overview
 
@@ -11,16 +11,18 @@ Improving the blog section based on SEO and UX recommendations from rebranding d
 
 ## Categories (8 total)
 
-| # | Category (UA) | Slug | Status |
+| # | Category (UA) | Slug | Posts* |
 |---|---------------|------|--------|
-| 1 | Загальні пенсійні питання | `general` | Empty (future) |
-| 2 | Пенсія за віком | `pension-by-age` | Has posts |
-| 3 | Пільгова пенсія (Списки №1 і №2) | `preferential` | Has posts (strongest) |
-| 4 | Дострокова пенсія | `early-retirement` | Has posts |
-| 5 | Пенсія за вислугу років | `service-years` | Has posts |
-| 6 | Стаж, індексація та перерахунок | `service-record` | Has posts (2nd strongest) |
-| 7 | Пенсія по інвалідності | `disability` | Empty (future) |
-| 8 | Пенсія у зв'язку з втратою годувальника | `survivor` | Empty (future) |
+| 1 | Загальні пенсійні питання | `general` | 7 |
+| 2 | Пенсія за віком | `pension-by-age` | 25 |
+| 3 | Пільгова пенсія (Списки №1 і №2) | `preferential` | 18 |
+| 4 | Дострокова пенсія | `early-retirement` | 7 |
+| 5 | Пенсія за вислугу років | `service-years` | 3 |
+| 6 | Стаж, індексація та перерахунок | `service-record` | 36 ⭐ |
+| 7 | Пенсія по інвалідності | `disability` | 0 (future) |
+| 8 | Пенсія у зв'язку з втратою годувальника | `survivor` | 0 (future) |
+
+*Posts count includes secondary categories (multi-category support)
 
 ---
 
@@ -53,24 +55,46 @@ Improving the blog section based on SEO and UX recommendations from rebranding d
 
 ---
 
-## Phase 2: Category System 🔜 PENDING
+## Phase 2: Category System ✅ COMPLETE
 
 ### Tasks
 
-- [ ] **2.1 Add category field to Blog interface**
-  - Update `src/app/blog/blog-posts/index.ts`
-  - Add `BlogCategory` type enum
+- [x] **2.1 Add categories field to Blog interface**
+  - Updated `src/app/blog/blog-posts/index.ts`
+  - Uses `categories?: readonly BlogCategorySlug[]` for multi-category support
+  - Posts can belong to multiple categories (primary + secondary)
 
-- [ ] **2.2 Create category constants**
-  - Labels, slugs, icons for each category
+- [x] **2.2 Create category constants**
+  - Created `src/app/blog/blog-categories.ts`
+  - Labels, slugs, icons for all 8 categories
+  - Helper functions: `getCategoryBySlug`, `getCategoryDisplayLabel`
 
-- [ ] **2.3 Categorize existing posts (gradual)**
-  - Start with strongest clusters (Пільгова, Стаж)
-  - Can be done incrementally
+- [x] **2.3 Categorize ALL existing posts with multi-category**
+  - All 50 posts have primary + secondary categories based on spec
+  - Category appearances (primary + secondary):
+    - service-record: 36 posts (appears as secondary in most categories)
+    - pension-by-age: 25 posts
+    - preferential: 18 posts (Списки №1 і №2)
+    - general: 7 posts
+    - early-retirement: 7 posts
+    - service-years: 3 posts
 
-- [ ] **2.4 Category filter UI**
-  - Filter chips or dropdown above blog list
-  - URL query param support (?category=preferential)
+- [x] **2.4 Category filter UI**
+  - Created `CategoryFilterComponent` with chip-style buttons
+  - Shows category counts dynamically
+  - Resets to page 1 when category changes
+  - Responsive design with horizontal scroll on mobile
+  - Filter hidden until posts are categorized
+
+### Files created/modified
+- NEW: `src/app/blog/blog-categories.ts` - Category types and constants
+- NEW: `src/app/blog/components/category-filter/category-filter.component.ts`
+- `src/app/blog/blog-posts/index.ts` - Added category field + all 50 posts categorized
+- `src/app/blog/components/blog-list.component.ts` - Category filtering logic
+- `src/app/blog/components/blog-list.component.html` - Filter integration
+
+### Pending for Phase 2 (optional)
+- [ ] URL query param support (?category=preferential)
 
 ---
 
