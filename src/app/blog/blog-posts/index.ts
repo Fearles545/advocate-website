@@ -346,6 +346,8 @@ export const blogs = [
     slug: 'yaka-maksymalna-pensiia-u-2025',
     src: ['https://www.youtube.com/embed/FZBqCZjdqjU'],
     date: '2025-04-18',
+    description:
+      'Максимальна пенсія в Україні у 2025 році. Як обчислюється максимальний розмір пенсії. Дізнайтеся, кого не стосуються обмеження, як їх оскаржити та коли можна підвищити виплати.',
   },
   {
     title: 'Які вимоги до призначення пенсії за Списком №2?',
@@ -419,24 +421,32 @@ export const blogs = [
     slug: 'vymohy-pryznachennia-pensii-za-vysluhu-rokiv-dlia-pratsivnykiv-osvity-okhorony-zdorovia-ta-sotsialnoho-zabezpechennia',
     src: ['https://www.youtube.com/embed/5Z2OLDdanUc'],
     date: '2025-04-03',
+    description:
+      'Умови для призначення пенсії за вислугу років працівникам сфери освіти, медицини та соціального захисту.',
   },
   {
     title: 'Хто має право на пенсію за віком у 2025 році?',
     slug: 'khto-maie-pravo-na-pensiiu-za-vikom-u-2025',
     src: ['https://www.youtube.com/embed/ZwtT8Ddv12c'],
     date: '2025-04-02',
+    description:
+      'Хто має право на пенсію за віком у 2025 році: який страховий стаж потрібен для виходу у 60, 63 або 65 років. Що робити у разі відмови Пенсійним фондом призначити пенсію.',
   },
   {
     title: 'Мінімальний розмір пенсії за віком: умови та особливості',
     slug: 'minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti',
     src: ['https://www.youtube.com/embed/52AMmLjUiFk'],
     date: '2025-04-01',
+    description:
+      'Мінімальна пенсія в Україні у 2025 році — 2361 грн. Дізнайтеся, який стаж потрібен чоловікам і жінкам, як враховується понаднормовий стаж та умови для осіб 65+.',
   },
   {
     title: 'Кому перерахують пенсію з 1 квітня 2025 року?',
     slug: 'komu-pererakhuiut-pensii-1-kvitnia-2025',
     src: ['https://www.youtube.com/embed/6-P2rTCcoUY'],
     date: '2025-03-28',
+    description:
+      'Хто отримає автоматичний перерахунок пенсії з 1 квітня 2025 року, за яких умов, як враховуються новий стаж і зарплата, коли очікувати виплати.',
   },
 ].sort((a, b) => b.date.localeCompare(a.date));
 

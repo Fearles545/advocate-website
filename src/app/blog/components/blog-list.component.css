@@ -73,12 +73,15 @@
 }
 
 .blog-item {
-  opacity: 0;
-  animation: blogItemReveal 0.5s ease forwards;
   border-bottom: 1px solid rgba(201, 165, 92, 0.15);
 
   &:last-child {
     border-bottom: none;
+  }
+
+  &.animate {
+    opacity: 0;
+    animation: blogItemReveal 0.5s ease forwards;
   }
 }
 
@@ -204,6 +207,19 @@
   overflow: hidden;
 }
 
+.blog-description {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-color-secondary);
+
+  /* 2-line truncation */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .blog-date {
   display: flex;
   align-items: center;
@@ -244,30 +260,6 @@
 }
 
 /* ==========================================================================
-   PAGINATOR
-   ========================================================================== */
-.paginator-container {
-  display: flex;
-  justify-content: center;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(
-    180deg,
-    rgba(248, 246, 242, 0.5) 0%,
-    rgba(248, 246, 242, 0.8) 100%
-  );
-  border-top: 1px solid rgba(201, 165, 92, 0.15);
-}
-
-mat-paginator {
-  background: transparent;
-
-  --mdc-icon-button-icon-color: var(--color-green);
-  --mat-paginator-container-text-color: var(--color-green);
-  --mat-paginator-enabled-icon-color: var(--color-green);
-  --mat-paginator-disabled-icon-color: rgba(0, 39, 6, 0.3);
-}
-
-/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 768px) {
@@ -300,6 +292,11 @@ mat-paginator {
 
   .blog-title {
     font-size: 0.95rem;
+  }
+
+  .blog-description {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 2;
   }
 }
 
@@ -344,9 +341,6 @@ mat-paginator {
     }
   }
 
-  .paginator-container {
-    padding: 0.75rem 1rem;
-  }
 }
 
 @media (max-width: 400px) {
@@ -382,6 +376,11 @@ mat-paginator {
   .blog-title {
     font-size: 0.9rem;
     -webkit-line-clamp: 3;
+  }
+
+  .blog-description {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2;
   }
 
   .blog-date {

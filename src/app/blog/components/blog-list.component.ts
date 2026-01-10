@@ -1,21 +1,18 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { blogs } from '../blog-posts';
 import { MatIcon } from '@angular/material/icon';
 import { DatePipe } from '@angular/common';
-import {
-  MatPaginatorIntl,
-  MatPaginatorModule,
-  PageEvent,
-} from '@angular/material/paginator';
-import { UkrainianPaginatorIntl } from '../../core/services/ukrainian-paginator-intl.service';
 import { BlogPaginationService } from '../services/blog-pagination.service';
+import {
+  PageChangeEvent,
+  PaginationComponent,
+} from './pagination/pagination.component';
 
 @Component({
   selector: 'app-blog-list.component',
-  imports: [RouterLink, MatIcon, DatePipe, MatPaginatorModule],
-  providers: [{ provide: MatPaginatorIntl, useClass: UkrainianPaginatorIntl }],
+  imports: [RouterLink, MatIcon, DatePipe, PaginationComponent],
   templateUrl: './blog-list.component.html',
   styleUrl: './blog-list.component.css',
 })
@@ -23,9 +20,11 @@ export class BlogListComponent {
   private blogPaginationService = inject(BlogPaginationService);
 
   blogs = blogs;
+  isInitialLoad = signal(true);
 
   readonly pageSize = this.blogPaginationService.pageSize;
   readonly pageIndex = this.blogPaginationService.pageIndex;
+  readonly pageSizeOptions = this.blogPaginationService.pageSizeOptions;
 
   readonly paginatedBlogs = computed(() => {
     const startIndex = this.pageIndex() * this.pageSize();
@@ -33,7 +32,8 @@ export class BlogListComponent {
     return this.blogs.slice(startIndex, endIndex);
   });
 
-  handlePageEvent(event: PageEvent) {
-    this.pageIndex.set(event.pageIndex);
+  handlePageChange(event: PageChangeEvent): void {
+    this.isInitialLoad.set(false);
+    this.blogPaginationService.updatePage(event.pageIndex, event.pageSize);
   }
 }

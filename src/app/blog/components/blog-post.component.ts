@@ -1,5 +1,5 @@
 import { Component, computed, inject, input, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { finalize, map, of } from 'rxjs';
 
@@ -20,7 +20,6 @@ import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.compo
   imports: [
     AsyncPipe,
     DatePipe,
-    RouterLink,
     MatIconModule,
     MatButtonModule,
     MatMenuModule,

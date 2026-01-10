@@ -30,7 +30,11 @@
     <div class="blog-list-container">
       <ul class="blog-list">
         @for (blog of paginatedBlogs(); track blog.slug; let i = $index) {
-          <li class="blog-item" [style.animation-delay.ms]="i * 80">
+          <li
+            class="blog-item"
+            [class.animate]="isInitialLoad()"
+            [style.animation-delay.ms]="isInitialLoad() ? i * 80 : 0"
+          >
             <a [routerLink]="['/blog', blog.slug]" class="blog-link">
               <div class="blog-icon-wrapper">
                 <mat-icon>{{
@@ -40,6 +44,9 @@
 
               <div class="blog-content">
                 <h2 class="blog-title">{{ blog.title }}</h2>
+                @if (blog.description) {
+                  <p class="blog-description">{{ blog.description }}</p>
+                }
                 <time class="blog-date" [attr.datetime]="blog.date">
                   <mat-icon>calendar_today</mat-icon>
                   {{ blog.date | date: 'dd MMMM yyyy' }}
@@ -54,16 +61,13 @@
         }
       </ul>
 
-      <div class="paginator-container">
-        <mat-paginator
-          [length]="blogs.length"
-          [pageSize]="pageSize()"
-          [pageIndex]="pageIndex()"
-          [hidePageSize]="true"
-          (page)="handlePageEvent($event)"
-          aria-label="Виберіть сторінку"
-        />
-      </div>
+      <app-pagination
+        [totalItems]="blogs.length"
+        [pageIndex]="pageIndex()"
+        [pageSize]="pageSize()"
+        [pageSizeOptions]="pageSizeOptions"
+        (pageChange)="handlePageChange($event)"
+      />
     </div>
   </div>
 </section>
