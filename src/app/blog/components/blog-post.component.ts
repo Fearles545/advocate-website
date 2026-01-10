@@ -15,6 +15,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { SocialShareComponent } from './social-share/social-share.component';
 import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.component';
 import { RelatedArticlesComponent } from './related-articles/related-articles.component';
+import { BlogLinksComponent } from './blog-links/blog-links.component';
+import { BlogFaqComponent } from './blog-faq/blog-faq.component';
 
 @Component({
   selector: 'app-blog-post',
@@ -29,6 +31,8 @@ import { RelatedArticlesComponent } from './related-articles/related-articles.co
     SocialShareComponent,
     BlogsNavigatorComponent,
     RelatedArticlesComponent,
+    BlogLinksComponent,
+    BlogFaqComponent,
   ],
   templateUrl: './blog-post.component.html',
   styleUrl: './blog-post.component.css',

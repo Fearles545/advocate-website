@@ -40,6 +40,9 @@
           ></section>
         </div>
 
+        <!-- FAQ -->
+        <app-blog-faq [category]="blog()!.categories?.[0]" />
+
         <!-- Related Articles -->
         <app-related-articles [currentBlog]="blog()!" />
 
@@ -50,6 +53,9 @@
             [innerHTML]="footerCard() | async"
           ></section>
         </aside>
+
+        <!-- Links & CTA -->
+        <app-blog-links />
       </article>
 
       <!-- Navigator -->

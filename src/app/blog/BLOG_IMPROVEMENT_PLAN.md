@@ -124,25 +124,46 @@ Improving the blog section based on SEO and UX recommendations from rebranding d
 
 ---
 
-## Phase 4: Footer Enhancements 🔜 PENDING
+## Phase 4: Footer Enhancements ✅ COMPLETE
 
 ### Tasks
 
-- [ ] **4.1 Update footer-card.html**
-  - Add internal links section (Services, Court Cases, Reviews, About)
-  - Keep existing CTA text
+- [x] **4.1 Update footer-card.html**
+  - Restructured with `.footer-main` and `.footer-links` sections
+  - Added internal links: Послуги, Судові справи, Відгуки, Про адвоката
+  - Preserved original CTA text
 
-- [ ] **4.2 Optional: Consultation CTA button**
-  - Link to contacts or Google Form
-  - Subtle, not aggressive
+- [x] **4.2 Consultation CTA button**
+  - Added "Записатися на консультацію" button
+  - Links to /contacts page
+  - Green/gold gradient, pill-shaped, with email icon
+  - Subtle hover animation
+
+### Files created/modified
+- NEW: `src/app/blog/components/blog-links/blog-links.component.ts` - Standalone component with CTA + links
+- `src/app/blog/components/blog-post.component.ts` - Import BlogLinksComponent
+- `src/app/blog/components/blog-post.component.html` - Add `<app-blog-links />` after footer-card
+- `src/app/blog/blog-posts/posts/footer-card.html` - Kept original (unchanged)
 
 ---
 
-## Phase 5: Optional Enhancements 💭 FUTURE
+## Phase 5: Optional Enhancements ✅ COMPLETE
 
-- [ ] FAQ component (template-based, for key topics only)
-- [ ] Keyword tags (in addition to categories)
-- [ ] "Popular posts" section (requires analytics data)
+- [x] **FAQ component (category-based)**
+  - FAQ data mapped to 6 categories from spec
+  - Expandable accordion-style UI
+  - JSON-LD FAQPage schema for SEO rich snippets
+  - Falls back to 'general' FAQ if no category match
+
+### Files created
+- NEW: `src/app/blog/blog-faq-data.ts` - FAQ content mapped to categories
+- NEW: `src/app/blog/components/blog-faq/blog-faq.component.ts` - FAQ UI + JSON-LD
+- `src/app/blog/components/blog-post.component.ts` - Import BlogFaqComponent
+- `src/app/blog/components/blog-post.component.html` - Add `<app-blog-faq />`
+
+### Not implemented (not needed)
+- ~~Keyword tags~~ - Multi-category system already provides this
+- ~~Popular posts~~ - Related articles already provides this
 
 ---
 
