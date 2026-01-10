@@ -172,7 +172,6 @@ import {
         var(--color-green-dark) 100%
       );
       border-radius: 50%;
-      transition: all 0.25s var(--ease-standard);
 
       mat-icon {
         font-size: 1.25rem;

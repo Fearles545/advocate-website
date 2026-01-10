@@ -129,7 +129,6 @@ import { RouterLink } from '@angular/router';
         var(--color-green-dark) 100%
       );
       border-radius: 50%;
-      transition: all 0.3s var(--ease-bounce);
 
       mat-icon {
         font-size: 1.25rem;
