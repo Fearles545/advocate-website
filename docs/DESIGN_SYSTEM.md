@@ -995,6 +995,160 @@ Expandable content toggle with animated icon for "show more" patterns.
 
 ---
 
+### 4.16 Blog Content Typography (`.blog-post-section`)
+
+Premium article typography for blog post content. Provides consistent, readable styling for rendered HTML content.
+
+**Base Typography:**
+
+| Property | Value | Purpose |
+|----------|-------|---------|
+| `font-size` | `1.05rem` | Comfortable reading size |
+| `line-height` | `1.7` | Generous spacing for readability |
+| `font-weight` | `400` | Light body text, bold reserved for emphasis |
+| `color` | `var(--text-color-primary)` | Standard body text color |
+
+**Heading Styles:**
+
+```css
+.blog-post-section h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-green);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(201, 165, 92, 0.2);
+}
+
+.blog-post-section h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-green);
+}
+```
+
+**Links:**
+
+```css
+.blog-post-section a {
+  color: var(--color-gold-accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(201, 165, 92, 0.4);
+  text-underline-offset: 2px;
+}
+
+.blog-post-section a:hover {
+  color: var(--color-green);
+  text-decoration-color: var(--color-green);
+}
+```
+
+**Lists - Custom Gold Markers:**
+
+Unordered lists use gold circular bullets, ordered lists use gold-colored numbers.
+
+```css
+/* Unordered list */
+.blog-post-section ul li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--color-gold);
+  border-radius: 50%;
+}
+
+/* Ordered list */
+.blog-post-section ol li::before {
+  content: counter(list-counter) '.';
+  font-weight: 700;
+  color: var(--color-gold);
+}
+```
+
+**Horizontal Rule:**
+
+Uses the signature gold separator gradient instead of browser default.
+
+```css
+.blog-post-section hr {
+  border: none;
+  height: 1px;
+  background: var(--gold-separator-center);
+}
+```
+
+**Blockquote / `.blog-quote`:**
+
+Premium callout styling with decorative quote mark.
+
+```css
+.blog-post-section blockquote,
+.blog-post-section .blog-quote {
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 165, 92, 0.08) 0%,
+    rgba(201, 165, 92, 0.03) 100%
+  );
+  border-left: 4px solid var(--color-gold);
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+  color: var(--color-green);
+}
+
+/* Decorative quote mark */
+.blog-post-section blockquote::before {
+  content: '"';
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 3rem;
+  color: var(--color-gold);
+  opacity: 0.3;
+}
+```
+
+**Special Classes:**
+
+| Class | Purpose | Styling |
+|-------|---------|---------|
+| `.law-citation` | Legal references | Italic, green left border, subtle green background |
+| `.footer-quote` | Closing quotes | Green right border, address aligned right |
+
+**Responsive Scaling:**
+
+| Breakpoint | Font Size | Line Height |
+|------------|-----------|-------------|
+| Desktop | `1.05rem` | `1.7` |
+| Tablet (≤768px) | `1rem` | `1.65` |
+| Mobile (≤479px) | `0.95rem` | `1.65` |
+
+**HTML Structure Expected:**
+
+```html
+<article>
+  <blockquote class="blog-quote">
+    Highlighted introduction text...
+  </blockquote>
+
+  <section>
+    <h2>Section Title</h2>
+    <p>Paragraph content...</p>
+    <ul>
+      <li><p>List item with paragraph</p></li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>Another Section</h2>
+    <p>More content with <strong>emphasis</strong> and <a href="#">links</a>.</p>
+  </section>
+</article>
+```
+
+**Used in:** Blog post pages (`blog-post.component`)
+
+---
+
 ## 5. Section Backgrounds
 
 ### 5.1 Gold Separator Lines
