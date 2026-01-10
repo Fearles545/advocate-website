@@ -294,6 +294,42 @@
 }
 
 /* ==========================================================================
+   ARTICLE FOOTER SECTIONS (FAQ, Related, CTA)
+   ========================================================================== */
+.article-footer-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Gold separator between each section */
+.article-footer-sections > * {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gold-separator-center);
+  }
+}
+
+@media (max-width: 768px) {
+  .article-footer-sections > * {
+    padding-top: 1.25rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .article-footer-sections > * {
+    padding-top: 0;
+  }
+}
+
+/* ==========================================================================
    RESPONSIVE
    ========================================================================== */
 @media (min-width: 600px) {

@@ -69,25 +69,17 @@ import { MatIconModule } from '@angular/material/icon';
     </aside>
   `,
   styles: `
+    :host {
+      display: block;
+    }
+
     /* ==========================================================================
        CTA SECTION BACKGROUND
        ========================================================================== */
     .cta-section-bg {
       position: relative;
-      margin-top: 2rem;
       padding: 2rem 0;
       overflow: hidden;
-
-      /* Top gold separator */
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: var(--gold-separator-center);
-      }
     }
 
     .section-glow {
@@ -113,7 +105,7 @@ import { MatIconModule } from '@angular/material/icon';
       z-index: 1;
       display: flex;
       justify-content: center;
-      padding: 0 1rem;
+      padding: 0;
     }
 
     /* ==========================================================================
@@ -445,7 +437,6 @@ import { MatIconModule } from '@angular/material/icon';
        ========================================================================== */
     @media (max-width: 768px) {
       .cta-section-bg {
-        margin-top: 1.5rem;
         padding: 1.5rem 0;
       }
 
@@ -535,8 +526,7 @@ import { MatIconModule } from '@angular/material/icon';
 
     @media (max-width: 479px) {
       .cta-section-bg {
-        margin-top: 1rem;
-        padding: 1.25rem 0;
+        padding: 1px;
       }
 
       .cta-frame {

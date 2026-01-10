@@ -59,6 +59,10 @@ import {
     }
   `,
   styles: `
+    :host {
+      display: block;
+    }
+
     .related-articles {
       padding: 2rem;
       background: linear-gradient(
@@ -66,8 +70,6 @@ import {
         rgba(255, 255, 255, 0.95) 0%,
         rgba(201, 165, 92, 0.08) 100%
       );
-      border-radius: var(--card-border-radius);
-      border: 1px solid rgba(201, 165, 92, 0.2);
     }
 
     .related-header {
@@ -246,7 +248,6 @@ import {
     /* Responsive */
     @media (max-width: 768px) {
       .related-articles {
-        margin: 2rem 0;
         padding: 1.5rem;
       }
 
@@ -307,7 +308,6 @@ import {
 
     @media (max-width: 479px) {
       .related-articles {
-        margin: 1.5rem 0;
         padding: 1rem;
       }
 

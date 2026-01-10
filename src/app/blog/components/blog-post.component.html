@@ -64,22 +64,12 @@
           ></section>
         </div>
 
-        <!-- FAQ -->
-        <app-blog-faq [category]="blog()!.categories?.[0]" />
-
-        <!-- Related Articles -->
-        <app-related-articles [currentBlog]="blog()!" />
-
-        <!-- Footer Card -->
-        <!-- <aside class="article-footer">
-          <section
-            class="blog-post-section"
-            [innerHTML]="footerCard() | async"
-          ></section>
-        </aside> -->
-
-        <!-- Links & CTA -->
-        <app-blog-links />
+        <!-- Footer Sections with Gold Separators -->
+        <div class="article-footer-sections">
+          <app-blog-faq [category]="blog()!.categories?.[0]" />
+          <app-related-articles [currentBlog]="blog()!" />
+          <app-blog-links />
+        </div>
       </article>
 
       <!-- Navigator -->

@@ -52,6 +52,10 @@ import { getFaqForCategory, FaqItem } from '../../blog-faq-data';
     }
   `,
   styles: `
+    :host {
+      display: block;
+    }
+
     .faq-section {
       padding: 1.5rem;
       background: linear-gradient(
@@ -59,8 +63,6 @@ import { getFaqForCategory, FaqItem } from '../../blog-faq-data';
         rgba(255, 255, 255, 0.95) 0%,
         rgba(201, 165, 92, 0.06) 100%
       );
-      border-radius: var(--card-border-radius);
-      border: 1px solid rgba(201, 165, 92, 0.2);
     }
 
     .faq-header {
@@ -180,7 +182,6 @@ import { getFaqForCategory, FaqItem } from '../../blog-faq-data';
 
     @media (max-width: 768px) {
       .faq-section {
-        margin: 1.5rem 0;
         padding: 1.25rem;
       }
 
@@ -228,7 +229,6 @@ import { getFaqForCategory, FaqItem } from '../../blog-faq-data';
 
     @media (max-width: 479px) {
       .faq-section {
-        margin: 1.25rem 0;
         padding: 1rem;
       }
 
