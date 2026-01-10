@@ -14,6 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatMenuModule } from '@angular/material/menu';
 import { SocialShareComponent } from './social-share/social-share.component';
 import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.component';
+import { RelatedArticlesComponent } from './related-articles/related-articles.component';
 
 @Component({
   selector: 'app-blog-post',
@@ -27,6 +28,7 @@ import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.compo
     SpinnerComponent,
     SocialShareComponent,
     BlogsNavigatorComponent,
+    RelatedArticlesComponent,
   ],
   templateUrl: './blog-post.component.html',
   styleUrl: './blog-post.component.css',
