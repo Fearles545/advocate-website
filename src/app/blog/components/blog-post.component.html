@@ -13,12 +13,9 @@
         </div>
       </nav>
 
-      <!-- Article Container -->
-      <article class="blog-article">
-        <!-- Header -->
-        <header class="article-header">
-          <h1 class="article-title">{{ blog()!.title }}</h1>
-        </header>
+      <!-- Page Header (outside article card) -->
+      <header class="article-header">
+        <h1 class="article-title">{{ blog()!.title }}</h1>
 
         <!-- Meta Card -->
         <div class="article-meta-card">
@@ -50,7 +47,10 @@
             </div>
           }
         </div>
+      </header>
 
+      <!-- Article Container -->
+      <article class="blog-article">
         <!-- Video Section -->
         @if (blog().src[0]) {
           <app-blog-iframe [src]="blog().src" [title]="blog().title" />

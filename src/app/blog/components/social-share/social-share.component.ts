@@ -1,16 +1,17 @@
+import { DOCUMENT } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
+  HostListener,
   inject,
   input,
+  signal,
 } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-
-import { MatMenuModule } from '@angular/material/menu';
-import { DomSanitizer } from '@angular/platform-browser';
-import { ClipboardModule } from '@angular/cdk/clipboard';
+import { Clipboard } from '@angular/cdk/clipboard';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Blog } from '../../blog-posts';
 import { BlogBaseUrlPipe } from './base-url.pipe';
 import { shareIconsData, SocialIconData } from './share-icons.data';
@@ -18,66 +19,63 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
 @Component({
   selector: 'app-social-share',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    ClipboardModule,
-    MatSnackBarModule,
-    BlogBaseUrlPipe,
-  ],
+  imports: [MatIconModule, MatSnackBarModule, BlogBaseUrlPipe],
   template: `
-    <button
-      class="share-button"
-      [matMenuTriggerFor]="menu"
-      aria-label="Поділитися в соціальних мережах"
-    >
-      <mat-icon>share</mat-icon>
-      <span class="share-text">Поділитися</span>
-    </button>
-
-    <mat-menu #menu="matMenu" class="share-menu">
+    <div class="social-share">
       <button
-        mat-menu-item
-        class="share-menu-item"
-        [cdkCopyToClipboard]="blog().slug | appBlogBaseUrl"
-        (click)="openSnackBar()"
+        class="share-button"
+        (click)="toggleDropdown()"
+        [attr.aria-expanded]="isOpen()"
+        aria-haspopup="menu"
+        aria-label="Поділитися в соціальних мережах"
       >
-        <span class="menu-icon copy-icon">
-          <mat-icon>content_copy</mat-icon>
-        </span>
-        <span class="menu-text">Копіювати посилання</span>
+        <mat-icon>share</mat-icon>
+        <span class="share-text">Поділитися</span>
+        <mat-icon class="dropdown-icon" [class.rotated]="isOpen()"
+          >expand_more</mat-icon
+        >
       </button>
 
-      @for (iconData of shareIcons; track iconData.alt) {
-        @let shareLink =
-          iconData.shareLink
-            ? iconData?.shareLink(blog().slug | appBlogBaseUrl, blog().title)
-            : '';
-        <a
-          mat-menu-item
-          class="share-menu-item"
-          target="_blank"
-          [href]="shareLink"
-        >
-          <span class="menu-icon" [style.--icon-color]="iconData.color">
-            <svg
-              [style.color]="iconData.color"
-              [attr.viewBox]="iconData.viewBox"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
+      @if (isOpen()) {
+        <div class="dropdown-panel" role="menu">
+          <!-- Copy Link -->
+          <button class="dropdown-item" (click)="copyLink()" role="menuitem">
+            <span class="item-icon copy-icon">
+              <mat-icon>content_copy</mat-icon>
+            </span>
+            <span class="item-text">Копіювати посилання</span>
+          </button>
+
+          <!-- Social Share Links -->
+          @for (iconData of shareIcons; track iconData.alt) {
+            <a
+              class="dropdown-item"
+              target="_blank"
+              rel="noopener noreferrer"
+              [href]="getShareLink(iconData)"
+              (click)="closeDropdown()"
+              role="menuitem"
             >
-              <g [innerHTML]="sanitizedSvg(iconData)"></g>
-            </svg>
-          </span>
-          <span class="menu-text">{{ iconData.name }}</span>
-        </a>
+              <span class="item-icon" [style.--icon-color]="iconData.color">
+                <svg
+                  [style.color]="iconData.color"
+                  [attr.viewBox]="iconData.viewBox"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                >
+                  <g [innerHTML]="sanitizedSvg(iconData)"></g>
+                </svg>
+              </span>
+              <span class="item-text">{{ iconData.name }}</span>
+            </a>
+          }
+        </div>
       }
-    </mat-menu>
+    </div>
   `,
   styles: `
-    :host {
-      display: block;
+    .social-share {
+      position: relative;
     }
 
     /* ==========================================================================
@@ -115,13 +113,26 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
         color: white;
       }
 
+      .dropdown-icon {
+        font-size: 1rem;
+        width: 1rem;
+        height: 1rem;
+        color: rgba(201, 165, 92, 0.7);
+        margin-left: -0.25rem;
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &.rotated {
+          transform: rotate(180deg);
+        }
+      }
+
       &:hover {
         transform: translateY(-2px);
         box-shadow:
           0 4px 12px rgba(0, 39, 6, 0.2),
           inset 0 1px 0 rgba(201, 165, 92, 0.15);
 
-        mat-icon {
+        mat-icon:first-child {
           transform: scale(1.1);
         }
       }
@@ -132,21 +143,65 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
     }
 
     /* ==========================================================================
-       SHARE MENU ITEM
+       DROPDOWN PANEL
        ========================================================================== */
-    .share-menu-item {
-      display: flex;
-      align-items: center;
-      gap: 0.875rem;
-      padding: 0.75rem 1rem !important;
-      min-height: auto !important;
+    .dropdown-panel {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      right: 0;
+      z-index: 1000;
+      min-width: 220px;
+      padding: 0.5rem;
+      background: #fffcf7;
+      border: 1px solid rgba(201, 165, 92, 0.25);
+      border-radius: 0.625rem;
+      box-shadow:
+        0 12px 40px rgba(0, 39, 6, 0.15),
+        0 4px 12px rgba(0, 39, 6, 0.08);
 
-      &:hover .menu-icon {
-        transform: scale(1.1);
+      animation: dropdownReveal 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes dropdownReveal {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    .menu-icon {
+    /* ==========================================================================
+       DROPDOWN ITEMS
+       ========================================================================== */
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      width: 100%;
+      padding: 0.625rem 0.875rem;
+      background: transparent;
+      border: none;
+      border-radius: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      text-align: left;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+
+      &:hover {
+        background: rgba(201, 165, 92, 0.1);
+
+        .item-icon {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .item-icon {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -155,7 +210,7 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
       min-width: 2rem;
       background: rgba(201, 165, 92, 0.1);
       border-radius: 0.5rem;
-      transition: transform 0.3s var(--ease-bounce);
+      transition: transform 0.2s var(--ease-bounce);
 
       mat-icon,
       svg {
@@ -169,20 +224,13 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
       }
 
       &.copy-icon {
-        background: linear-gradient(
-          135deg,
-          var(--color-green) 0%,
-          var(--color-green-dark) 100%
-        );
-
         mat-icon {
           color: var(--color-gold);
         }
       }
     }
 
-    .menu-text {
-      font-size: 0.9rem;
+    .item-text {
       font-weight: 500;
       color: var(--color-green);
     }
@@ -195,7 +243,7 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
         padding: 0.4rem 0.875rem;
         gap: 0.375rem;
 
-        mat-icon {
+        mat-icon:first-child {
           font-size: 1rem;
           width: 1rem;
           height: 1rem;
@@ -204,26 +252,106 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
         .share-text {
           font-size: 0.8rem;
         }
+
+        .dropdown-icon {
+          font-size: 0.875rem;
+          width: 0.875rem;
+          height: 0.875rem;
+        }
+      }
+
+      .dropdown-panel {
+        min-width: 200px;
+      }
+
+      .dropdown-item {
+        padding: 0.5rem 0.75rem;
+        gap: 0.625rem;
+      }
+
+      .item-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        min-width: 1.75rem;
+
+        mat-icon,
+        svg {
+          width: 1.1rem;
+          height: 1.1rem;
+        }
+
+        mat-icon {
+          font-size: 1.1rem;
+        }
+      }
+
+      .item-text {
+        font-size: 0.85rem;
       }
     }
   `,
 })
 export class SocialShareComponent {
+  private document = inject(DOCUMENT);
   private snackBar = inject(MatSnackBar);
+  private clipboard = inject(Clipboard);
   private domSanitizer = inject(DomSanitizer);
+  private elementRef = inject(ElementRef);
+  private baseUrlPipe = new BlogBaseUrlPipe();
 
   blog = input.required<Blog>();
 
   shareIcons = shareIconsData;
+  isOpen = signal(false);
 
-  sanitizedSvg = (iconData: SocialIconData) =>
-    iconData.svg.includes('.svg')
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.closeDropdown();
+    }
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscapeKey(): void {
+    this.closeDropdown();
+  }
+
+  toggleDropdown(): void {
+    if (this.isOpen()) {
+      this.closeDropdown();
+    } else {
+      this.openDropdown();
+    }
+  }
+
+  private openDropdown(): void {
+    this.isOpen.set(true);
+    this.document.body.style.overflow = 'hidden';
+  }
+
+  closeDropdown(): void {
+    this.isOpen.set(false);
+    this.document.body.style.overflow = '';
+  }
+
+  sanitizedSvg(iconData: SocialIconData) {
+    return iconData.svg.includes('.svg')
       ? ''
       : this.domSanitizer.bypassSecurityTrustHtml(iconData.svg);
+  }
 
-  openSnackBar() {
+  getShareLink(iconData: SocialIconData): string {
+    if (!iconData.shareLink) return '';
+    const url = this.baseUrlPipe.transform(this.blog().slug);
+    return iconData.shareLink(url, this.blog().title);
+  }
+
+  copyLink(): void {
+    const url = this.baseUrlPipe.transform(this.blog().slug);
+    this.clipboard.copy(url);
     this.snackBar.open('Посилання скопійовано в буфер обміну', 'Закрити', {
       duration: 3000,
     });
+    this.closeDropdown();
   }
 }

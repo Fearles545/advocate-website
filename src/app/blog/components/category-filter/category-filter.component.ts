@@ -1,8 +1,10 @@
+import { DOCUMENT } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   ElementRef,
   HostListener,
+  inject,
   input,
   output,
   signal,
@@ -385,6 +387,9 @@ import {
   `,
 })
 export class CategoryFilterComponent {
+  private document = inject(DOCUMENT);
+  private elementRef = inject(ElementRef);
+
   categoryCounts = input.required<Record<BlogCategorySlug, number>>();
   selectedCategory = input<BlogCategorySlug | null>(null);
   categoryChange = output<BlogCategorySlug | null>();
@@ -394,22 +399,34 @@ export class CategoryFilterComponent {
 
   isOpen = signal(false);
 
-  constructor(private elementRef: ElementRef) {}
-
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
     if (!this.elementRef.nativeElement.contains(event.target)) {
-      this.isOpen.set(false);
+      this.closeDropdown();
     }
   }
 
   @HostListener('document:keydown.escape')
   onEscapeKey(): void {
-    this.isOpen.set(false);
+    this.closeDropdown();
   }
 
   toggleDropdown(): void {
-    this.isOpen.update((v) => !v);
+    if (this.isOpen()) {
+      this.closeDropdown();
+    } else {
+      this.openDropdown();
+    }
+  }
+
+  private openDropdown(): void {
+    this.isOpen.set(true);
+    this.document.body.style.overflow = 'hidden';
+  }
+
+  private closeDropdown(): void {
+    this.isOpen.set(false);
+    this.document.body.style.overflow = '';
   }
 
   getDisplayLabel(slug: BlogCategorySlug): string {
@@ -418,6 +435,6 @@ export class CategoryFilterComponent {
 
   selectCategory(slug: BlogCategorySlug | null): void {
     this.categoryChange.emit(slug);
-    this.isOpen.set(false);
+    this.closeDropdown();
   }
 }
