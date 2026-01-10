@@ -20,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DrawerContentComponent } from './drawer-content/drawer-content.component';
 import { RouteSeoService } from './core/services/route-seo.service';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { BreadcrumbComponent } from './core/components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,7 @@ import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
     DrawerContentComponent,
     AsyncPipe,
     ScrollToTopComponent,
+    BreadcrumbComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
