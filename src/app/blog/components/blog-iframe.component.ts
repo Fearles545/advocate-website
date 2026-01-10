@@ -40,7 +40,9 @@ import { isPlatformBrowser } from '@angular/common';
             <span class="panel-title">
               Відео-версія блогу
               @if (computedSrc().length > 1) {
-                <span class="panel-number">{{ i + 1 }} / {{ computedSrc().length }}</span>
+                <span class="panel-number"
+                  >{{ i + 1 }} / {{ computedSrc().length }}</span
+                >
               }
             </span>
           </span>
@@ -90,6 +92,8 @@ import { isPlatformBrowser } from '@angular/common';
     .video-panel {
       background: white;
       border-radius: var(--card-border-radius);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
       border: 1px solid rgba(201, 165, 92, 0.25);
       box-shadow:
         0 4px 16px rgba(0, 39, 6, 0.06),
@@ -321,6 +325,8 @@ import { isPlatformBrowser } from '@angular/common';
     @media (max-width: 479px) {
       .video-panel {
         border-radius: 0.75rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
       }
 
       .panel-header {

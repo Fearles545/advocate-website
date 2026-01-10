@@ -53,7 +53,6 @@ import { getFaqForCategory, FaqItem } from '../../blog-faq-data';
   `,
   styles: `
     .faq-section {
-      margin: 2rem 0;
       padding: 1.5rem;
       background: linear-gradient(
         135deg,
@@ -282,9 +281,7 @@ export class BlogFaqComponent {
   }
 
   toggleItem(index: number): void {
-    this.expandedIndex.update((current) =>
-      current === index ? null : index
-    );
+    this.expandedIndex.update((current) => (current === index ? null : index));
   }
 
   private injectJsonLd(items: FaqItem[]): void {

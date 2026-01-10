@@ -60,7 +60,6 @@ import {
   `,
   styles: `
     .related-articles {
-      margin: 2.5rem 0;
       padding: 2rem;
       background: linear-gradient(
         135deg,

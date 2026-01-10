@@ -26,9 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
               <div class="cta-icon">
                 <mat-icon>support_agent</mat-icon>
               </div>
-              <p class="cta-intro">
-                Потрібна допомога з пенсійними питаннями?
-              </p>
+              <p class="cta-intro">Потрібна допомога з пенсійними питаннями?</p>
             </div>
 
             <!-- Primary CTA Button -->
@@ -78,14 +76,6 @@ import { MatIconModule } from '@angular/material/icon';
       position: relative;
       margin-top: 2rem;
       padding: 2rem 0;
-      background: linear-gradient(
-        180deg,
-        rgba(250, 249, 246, 0) 0%,
-        #faf9f6 15%,
-        #f5f3ef 50%,
-        #faf9f6 85%,
-        rgba(250, 249, 246, 0) 100%
-      );
       overflow: hidden;
 
       /* Top gold separator */
@@ -175,32 +165,56 @@ import { MatIconModule } from '@angular/material/icon';
         top: -1px;
         left: -1px;
 
-        &::before { top: 0; left: 0; }
-        &::after { top: 0; left: 0; }
+        &::before {
+          top: 0;
+          left: 0;
+        }
+        &::after {
+          top: 0;
+          left: 0;
+        }
       }
 
       &.top-right {
         top: -1px;
         right: -1px;
 
-        &::before { top: 0; right: 0; }
-        &::after { top: 0; right: 0; }
+        &::before {
+          top: 0;
+          right: 0;
+        }
+        &::after {
+          top: 0;
+          right: 0;
+        }
       }
 
       &.bottom-left {
         bottom: -1px;
         left: -1px;
 
-        &::before { bottom: 0; left: 0; }
-        &::after { bottom: 0; left: 0; }
+        &::before {
+          bottom: 0;
+          left: 0;
+        }
+        &::after {
+          bottom: 0;
+          left: 0;
+        }
       }
 
       &.bottom-right {
         bottom: -1px;
         right: -1px;
 
-        &::before { bottom: 0; right: 0; }
-        &::after { bottom: 0; right: 0; }
+        &::before {
+          bottom: 0;
+          right: 0;
+        }
+        &::after {
+          bottom: 0;
+          right: 0;
+        }
       }
     }
 
@@ -346,8 +360,13 @@ import { MatIconModule } from '@angular/material/icon';
     }
 
     @keyframes shimmer {
-      0% { left: -100%; }
-      50%, 100% { left: 100%; }
+      0% {
+        left: -100%;
+      }
+      50%,
+      100% {
+        left: 100%;
+      }
     }
 
     /* ==========================================================================
