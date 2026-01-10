@@ -32,6 +32,13 @@ Canonical design patterns for the advocate-pensia.com.ua website.
 | `--text-color-primary` | `#444` | Body text, paragraphs |
 | `--text-color-secondary` | `#666` | Meta text, dates, captions |
 
+**Aliases** (for `--color-*` naming consistency):
+
+| Alias | Points to |
+|-------|-----------|
+| `--color-text-primary` | `var(--text-color-primary)` |
+| `--color-text-secondary` | `var(--text-color-secondary)` |
+
 ### Semantic Colors
 
 | Variable | Value | Usage |

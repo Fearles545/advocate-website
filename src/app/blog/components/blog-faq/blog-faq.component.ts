@@ -6,9 +6,8 @@ import {
   inject,
   input,
   signal,
-  PLATFORM_ID,
 } from '@angular/core';
-import { isPlatformBrowser, DOCUMENT } from '@angular/common';
+import { DOCUMENT } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { BlogCategorySlug } from '../../blog-categories';
 import { getFaqForCategory, FaqItem } from '../../blog-faq-data';
@@ -264,7 +263,6 @@ import { getFaqForCategory, FaqItem } from '../../blog-faq-data';
 })
 export class BlogFaqComponent {
   private document = inject(DOCUMENT);
-  private platformId = inject(PLATFORM_ID);
 
   category = input<BlogCategorySlug>();
 
@@ -274,7 +272,7 @@ export class BlogFaqComponent {
   constructor() {
     effect(() => {
       const faqData = this.faq();
-      if (faqData && isPlatformBrowser(this.platformId)) {
+      if (faqData) {
         this.injectJsonLd(faqData.items);
       }
     });

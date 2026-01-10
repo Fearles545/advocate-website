@@ -54,6 +54,9 @@
   /* Body text colors - for content on light backgrounds */
   --text-color-primary: #444;
   --text-color-secondary: #666;
+  /* Aliases for --color-* naming consistency */
+  --color-text-primary: var(--text-color-primary);
+  --color-text-secondary: var(--text-color-secondary);
   --color-green: #002706;
   --color-green-dark: #003d0a; /* Gradient endpoints */
   --color-green-darkest: #001a04; /* Dark section backgrounds */
