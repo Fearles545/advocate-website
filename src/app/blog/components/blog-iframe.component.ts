@@ -94,23 +94,23 @@ import { isPlatformBrowser } from '@angular/common';
       border-radius: var(--card-border-radius);
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      border: 1px solid rgba(201, 165, 92, 0.25);
-      box-shadow:
-        0 4px 16px rgba(0, 39, 6, 0.06),
-        0 1px 4px rgba(0, 39, 6, 0.04);
+      /* border: 1px solid rgba(201, 165, 92, 0.25);
+       box-shadow:
+         0 4px 16px rgba(0, 39, 6, 0.06),
+         0 1px 4px rgba(0, 39, 6, 0.04);
+      transition: box-shadow 0.3s ease;*/
       overflow: hidden;
-      transition: box-shadow 0.3s ease;
 
       &:hover {
-        box-shadow:
-          0 6px 24px rgba(0, 39, 6, 0.1),
-          0 2px 6px rgba(0, 39, 6, 0.06);
+        /* box-shadow:
+           0 6px 24px rgba(0, 39, 6, 0.1),
+           0 2px 6px rgba(0, 39, 6, 0.06);*/
       }
 
       &.expanded {
-        box-shadow:
-          0 8px 32px rgba(0, 39, 6, 0.12),
-          0 2px 8px rgba(0, 39, 6, 0.06);
+        /* box-shadow:
+           0 8px 32px rgba(0, 39, 6, 0.12),
+           0 2px 8px rgba(0, 39, 6, 0.06);*/
 
         .expand-indicator mat-icon {
           transform: rotate(180deg);
