@@ -1,5 +1,5 @@
 import { Component, computed, inject, input, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { finalize, map, of } from 'rxjs';
 
@@ -17,12 +17,17 @@ import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.compo
 import { RelatedArticlesComponent } from './related-articles/related-articles.component';
 import { BlogLinksComponent } from './blog-links/blog-links.component';
 import { BlogFaqComponent } from './blog-faq/blog-faq.component';
+import {
+  BlogCategorySlug,
+  getCategoryDisplayLabel,
+} from '../blog-categories';
 
 @Component({
   selector: 'app-blog-post',
   imports: [
     AsyncPipe,
     DatePipe,
+    RouterLink,
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
@@ -64,5 +69,9 @@ export class BlogPostComponent {
         map((html) => this.sanitizer.bypassSecurityTrustHtml(html)),
         finalize(() => this.isLoading.set(false))
       );
+  }
+
+  getCategoryLabel(slug: BlogCategorySlug): string {
+    return getCategoryDisplayLabel(slug);
   }
 }

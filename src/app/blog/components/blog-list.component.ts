@@ -1,5 +1,5 @@
-import { Component, computed, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 import { blogs } from '../blog-posts';
 import { MatIcon } from '@angular/material/icon';
@@ -27,12 +27,21 @@ import {
   templateUrl: './blog-list.component.html',
   styleUrl: './blog-list.component.css',
 })
-export class BlogListComponent {
+export class BlogListComponent implements OnInit {
   private blogPaginationService = inject(BlogPaginationService);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
 
   readonly allBlogs = blogs;
   isInitialLoad = signal(true);
   selectedCategory = signal<BlogCategorySlug | null>(null);
+
+  ngOnInit(): void {
+    const categoryParam = this.route.snapshot.queryParamMap.get('category');
+    if (categoryParam && ACTIVE_CATEGORIES.includes(categoryParam as BlogCategorySlug)) {
+      this.selectedCategory.set(categoryParam as BlogCategorySlug);
+    }
+  }
 
   readonly pageSize = this.blogPaginationService.pageSize;
   readonly pageIndex = this.blogPaginationService.pageIndex;
@@ -98,5 +107,12 @@ export class BlogListComponent {
     this.selectedCategory.set(category);
     this.blogPaginationService.updatePage(0, this.pageSize());
     this.isInitialLoad.set(true);
+
+    // Update URL query params
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: category ? { category } : {},
+      queryParamsHandling: category ? 'merge' : '',
+    });
   }
 }

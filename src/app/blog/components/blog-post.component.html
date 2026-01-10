@@ -1,31 +1,55 @@
 <section class="page-bg-pattern">
   <div class="page-content">
     @if (blog()) {
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb">
+        <a routerLink="/blog" class="back-link">
+          <mat-icon>arrow_back</mat-icon>
+          <span>Блог</span>
+        </a>
+
+        <div class="breadcrumb-badge">
+          <mat-icon>article</mat-icon>
+        </div>
+      </nav>
+
       <!-- Article Container -->
       <article class="blog-article">
         <!-- Header -->
         <header class="article-header">
           <h1 class="article-title">{{ blog()!.title }}</h1>
+        </header>
 
-          <div class="article-meta">
-            <div class="meta-left">
-              <div class="date-badge">
-                <mat-icon>calendar_today</mat-icon>
-                @let formattedDate = blog().date | date: 'dd MMMM yyyy';
-                <time [attr.datetime]="blog().date">{{ formattedDate }}</time>
-              </div>
-
-              @if (blog().src[0]) {
-                <div class="video-badge">
-                  <mat-icon>play_circle</mat-icon>
-                  <span>Є відео</span>
-                </div>
-              }
-            </div>
+        <!-- Meta Card -->
+        <div class="article-meta-card">
+          <!-- Row 1: Date & Social Share -->
+          <div class="meta-row meta-row-primary">
+            <time class="meta-date" [attr.datetime]="blog().date">
+              <mat-icon>calendar_month</mat-icon>
+              <span>{{ blog().date | date: 'dd.MM.yyyy' }}</span>
+            </time>
 
             <app-social-share [blog]="blog()!" />
           </div>
-        </header>
+
+          <!-- Row 2: Categories -->
+          @if (blog().categories?.length) {
+            <div class="meta-row meta-row-categories">
+              <div class="categories-list">
+                <span class="categories-label">Категорії</span>
+                @for (cat of blog().categories; track cat) {
+                  <a
+                    [routerLink]="['/blog']"
+                    [queryParams]="{ category: cat }"
+                    class="category-tag"
+                  >
+                    {{ getCategoryLabel(cat) }}
+                  </a>
+                }
+              </div>
+            </div>
+          }
+        </div>
 
         <!-- Video Section -->
         @if (blog().src[0]) {
