@@ -19,7 +19,7 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
 @Component({
   selector: 'app-social-share',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIconModule, MatSnackBarModule, BlogBaseUrlPipe],
+  imports: [MatIconModule, MatSnackBarModule],
   template: `
     <div class="social-share">
       <button
