@@ -14,7 +14,8 @@
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-bottom: 3rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
   padding: 1.25rem 2rem;
   background: linear-gradient(
     135deg,
@@ -24,6 +25,13 @@
   border-radius: 1rem;
   border: 1px solid rgba(201, 165, 92, 0.2);
   box-shadow: 0 4px 20px rgba(0, 39, 6, 0.06);
+}
+
+/* Category filter alignment */
+app-category-filter {
+  display: block;
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
 }
 
 .stat-item {

@@ -1,9 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
+  ElementRef,
+  HostListener,
   input,
   output,
+  signal,
 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import {
@@ -19,81 +21,127 @@ import {
   imports: [MatIconModule],
   template: `
     <div class="category-filter">
-      <button
-        class="category-chip"
-        [class.active]="!selectedCategory()"
-        (click)="selectCategory(null)"
-      >
-        <mat-icon>apps</mat-icon>
-        <span>Усі статті</span>
-        <span class="count">{{ totalPosts() }}</span>
-      </button>
-
-      @for (slug of activeCategories; track slug) {
-        @let category = categories[slug];
-        @let count = categoryCounts()[slug] || 0;
-        @if (count > 0) {
+      @if (selectedCategory(); as selected) {
+        <!-- Active filter chip -->
+        <div class="active-filter">
           <button
-            class="category-chip"
-            [class.active]="selectedCategory() === slug"
-            (click)="selectCategory(slug)"
+            class="filter-chip active"
+            (click)="toggleDropdown()"
+            [attr.aria-expanded]="isOpen()"
+            aria-haspopup="listbox"
           >
-            <mat-icon>{{ category.icon }}</mat-icon>
-            <span>{{ getDisplayLabel(slug) }}</span>
-            <span class="count">{{ count }}</span>
+            <mat-icon>{{ categories[selected].icon }}</mat-icon>
+            <span>{{ getDisplayLabel(selected) }}</span>
+            <mat-icon class="dropdown-icon" [class.rotated]="isOpen()"
+              >expand_more</mat-icon
+            >
           </button>
-        }
+          <button
+            class="clear-btn"
+            (click)="selectCategory(null)"
+            aria-label="Скинути фільтр"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+      } @else {
+        <!-- Default filter button -->
+        <button
+          class="filter-chip"
+          (click)="toggleDropdown()"
+          [attr.aria-expanded]="isOpen()"
+          aria-haspopup="listbox"
+        >
+          <mat-icon>filter_list</mat-icon>
+          <span>Фільтрувати за категорією</span>
+          <mat-icon class="dropdown-icon" [class.rotated]="isOpen()"
+            >expand_more</mat-icon
+          >
+        </button>
       }
+
+      <!-- Custom dropdown panel -->
+      @if (isOpen()) {
+        <div class="dropdown-panel" role="listbox">
+          @for (slug of activeCategories; track slug) {
+            @let category = categories[slug];
+            @let count = categoryCounts()[slug] || 0;
+            @if (count > 0) {
+              <button
+                class="dropdown-item"
+                [class.selected]="selectedCategory() === slug"
+                (click)="selectCategory(slug)"
+                role="option"
+                [attr.aria-selected]="selectedCategory() === slug"
+              >
+                <mat-icon>{{ category.icon }}</mat-icon>
+                <span class="item-label">{{ getDisplayLabel(slug) }}</span>
+                <span class="item-count">({{ count }})</span>
+              </button>
+            }
+          }
+        </div>
+      }
+
     </div>
   `,
   styles: `
     .category-filter {
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      align-items: center;
+      gap: 0.75rem;
       margin-bottom: 1.5rem;
+      flex-wrap: wrap;
     }
 
-    .category-chip {
+    .active-filter {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .filter-chip {
       display: inline-flex;
       align-items: center;
-      gap: 0.375rem;
-      padding: 0.5rem 0.875rem;
+      gap: 0.5rem;
+      padding: 0.625rem 1rem;
       background: white;
-      border: 1px solid rgba(201, 165, 92, 0.25);
+      border: 1px solid rgba(201, 165, 92, 0.3);
       border-radius: 2rem;
-      font-size: 0.875rem;
+      font-size: 0.9rem;
       font-weight: 500;
       color: var(--color-green);
       cursor: pointer;
       transition: all 0.2s ease;
-      white-space: nowrap;
 
       mat-icon {
+        font-size: 1.25rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        color: var(--color-gold);
+      }
+
+      .dropdown-icon {
         font-size: 1.125rem;
         width: 1.125rem;
         height: 1.125rem;
-        color: var(--color-gold);
-        transition: color 0.2s ease;
+        color: var(--color-text-secondary);
+        margin-left: -0.125rem;
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &.rotated {
+          transform: rotate(180deg);
+        }
       }
 
-      .count {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 1.25rem;
-        height: 1.25rem;
-        padding: 0 0.375rem;
-        background: rgba(201, 165, 92, 0.15);
-        border-radius: 0.625rem;
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--color-green);
-      }
-
-      &:hover:not(.active) {
+      &:hover {
         border-color: rgba(201, 165, 92, 0.5);
         background: rgba(201, 165, 92, 0.08);
+
+        .dropdown-icon {
+          color: var(--color-gold);
+        }
       }
 
       &.active {
@@ -105,75 +153,264 @@ import {
         border-color: var(--color-green);
         color: var(--color-gold);
         box-shadow: 0 2px 8px rgba(0, 39, 6, 0.2);
+        padding-right: 0.75rem;
 
         mat-icon {
           color: var(--color-gold);
         }
 
-        .count {
-          background: rgba(201, 165, 92, 0.25);
-          color: var(--color-gold);
+        .dropdown-icon {
+          color: rgba(201, 165, 92, 0.7);
         }
       }
     }
 
+    .clear-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.75rem;
+      height: 1.75rem;
+      padding: 0;
+      background: rgba(0, 39, 6, 0.08);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      mat-icon {
+        font-size: 1rem;
+        width: 1rem;
+        height: 1rem;
+        color: var(--color-green);
+      }
+
+      &:hover {
+        background: rgba(201, 165, 92, 0.2);
+
+        mat-icon {
+          color: var(--color-gold-accent);
+        }
+      }
+    }
+
+    /* ─── DROPDOWN PANEL ─── */
+    .dropdown-panel {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 0;
+      z-index: 1000;
+      min-width: 260px;
+      padding: 0.5rem;
+      background: #fffcf7;
+      border: 1px solid rgba(201, 165, 92, 0.25);
+      border-radius: 0.625rem;
+      box-shadow:
+        0 12px 40px rgba(0, 39, 6, 0.15),
+        0 4px 12px rgba(0, 39, 6, 0.08);
+
+      /* Entrance animation */
+      animation: dropdownReveal 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes dropdownReveal {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ─── DROPDOWN ITEMS ─── */
+    .dropdown-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 1.125rem;
+      background: transparent;
+      border: none;
+      border-radius: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s ease;
+
+      /* Gold accent bar - hidden by default */
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%) scaleY(0);
+        width: 3px;
+        height: 55%;
+        background: linear-gradient(
+          180deg,
+          var(--color-gold-light) 0%,
+          var(--color-gold) 50%,
+          var(--color-gold-light) 100%
+        );
+        border-radius: 0 2px 2px 0;
+        transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      mat-icon {
+        font-size: 1.25rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        color: var(--color-gold-accent);
+        opacity: 0.7;
+        flex-shrink: 0;
+        transition: all 0.15s ease;
+      }
+
+      .item-label {
+        flex: 1;
+        font-weight: 500;
+        color: var(--color-green);
+      }
+
+      .item-count {
+        font-weight: 400;
+        font-size: 0.85rem;
+        color: rgba(0, 39, 6, 0.4);
+        margin-left: 0.25rem;
+      }
+
+      /* ─── HOVER STATE ─── */
+      &:hover:not(.selected) {
+        background: rgba(201, 165, 92, 0.1);
+
+        mat-icon {
+          color: var(--color-gold);
+          opacity: 1;
+        }
+
+        .item-count {
+          color: rgba(0, 39, 6, 0.55);
+        }
+      }
+
+      /* ─── SELECTED STATE ─── */
+      &.selected {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 39, 6, 0.05) 0%,
+          rgba(201, 165, 92, 0.12) 100%
+        );
+
+        &::before {
+          transform: translateY(-50%) scaleY(1);
+        }
+
+        mat-icon {
+          color: var(--color-gold);
+          opacity: 1;
+        }
+
+        .item-label {
+          font-weight: 600;
+        }
+
+        .item-count {
+          color: var(--color-green);
+          font-weight: 500;
+        }
+      }
+    }
+
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
       .category-filter {
-        gap: 0.375rem;
+        gap: 0.5rem;
         margin-bottom: 1.25rem;
       }
 
-      .category-chip {
-        padding: 0.375rem 0.625rem;
-        font-size: 0.8rem;
+      .filter-chip {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+        gap: 0.375rem;
 
         mat-icon {
+          font-size: 1.125rem;
+          width: 1.125rem;
+          height: 1.125rem;
+        }
+
+        .dropdown-icon {
           font-size: 1rem;
           width: 1rem;
           height: 1rem;
         }
+      }
 
-        .count {
-          min-width: 1.125rem;
-          height: 1.125rem;
-          font-size: 0.7rem;
+      .clear-btn {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        mat-icon {
+          font-size: 0.875rem;
+          width: 0.875rem;
+          height: 0.875rem;
         }
+      }
+
+      .dropdown-panel {
+        min-width: 240px;
       }
     }
 
     @media (max-width: 480px) {
       .category-filter {
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 0.5rem;
         margin-bottom: 1rem;
-        -webkit-overflow-scrolling: touch;
+      }
 
-        &::-webkit-scrollbar {
-          height: 4px;
-        }
+      .filter-chip {
+        padding: 0.4rem 0.625rem;
+        font-size: 0.8rem;
+      }
 
-        &::-webkit-scrollbar-track {
-          background: rgba(201, 165, 92, 0.1);
-          border-radius: 2px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background: rgba(201, 165, 92, 0.3);
-          border-radius: 2px;
-        }
+      .dropdown-panel {
+        min-width: 220px;
+        right: 0;
+        left: auto;
       }
     }
   `,
 })
 export class CategoryFilterComponent {
   categoryCounts = input.required<Record<BlogCategorySlug, number>>();
-  totalPosts = input.required<number>();
   selectedCategory = input<BlogCategorySlug | null>(null);
   categoryChange = output<BlogCategorySlug | null>();
 
   readonly categories = BLOG_CATEGORIES;
   readonly activeCategories = ACTIVE_CATEGORIES;
+
+  isOpen = signal(false);
+
+  constructor(private elementRef: ElementRef) {}
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.isOpen.set(false);
+    }
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscapeKey(): void {
+    this.isOpen.set(false);
+  }
+
+  toggleDropdown(): void {
+    this.isOpen.update((v) => !v);
+  }
 
   getDisplayLabel(slug: BlogCategorySlug): string {
     return getCategoryDisplayLabel(slug);
@@ -181,5 +418,6 @@ export class CategoryFilterComponent {
 
   selectCategory(slug: BlogCategorySlug | null): void {
     this.categoryChange.emit(slug);
+    this.isOpen.set(false);
   }
 }

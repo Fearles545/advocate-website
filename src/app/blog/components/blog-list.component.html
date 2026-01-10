@@ -30,7 +30,6 @@
     @if (hasCategorizedPosts()) {
       <app-category-filter
         [categoryCounts]="categoryCounts()"
-        [totalPosts]="allBlogs.length"
         [selectedCategory]="selectedCategory()"
         (categoryChange)="handleCategoryChange($event)"
       />

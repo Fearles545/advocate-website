@@ -1,5 +1,6 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { blogs } from '../blog-posts';
 import { MatIcon } from '@angular/material/icon';
@@ -30,7 +31,7 @@ import {
 export class BlogListComponent implements OnInit {
   private blogPaginationService = inject(BlogPaginationService);
   private route = inject(ActivatedRoute);
-  private router = inject(Router);
+  private location = inject(Location);
 
   readonly allBlogs = blogs;
   isInitialLoad = signal(true);
@@ -108,11 +109,8 @@ export class BlogListComponent implements OnInit {
     this.blogPaginationService.updatePage(0, this.pageSize());
     this.isInitialLoad.set(true);
 
-    // Update URL query params
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: category ? { category } : {},
-      queryParamsHandling: category ? 'merge' : '',
-    });
+    // Update URL without triggering navigation (no scroll)
+    const url = category ? `/blog?category=${category}` : '/blog';
+    this.location.replaceState(url);
   }
 }
