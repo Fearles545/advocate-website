@@ -128,13 +128,18 @@
 
     <div class="certificates-grid" [class.expanded]="showAllCertificates()">
       @for (item of qualificationImages; track item; let i = $index) {
-        <div class="certificate-card" [class.hidden]="i >= 2 && !showAllCertificates()">
+        <div
+          class="certificate-card"
+          [class.hidden]="i >= 3 && !showAllCertificates()"
+        >
           <button
             type="button"
             class="certificate-image-btn"
             [lightbox]="i"
             [gallery]="qualificationImagesId"
-            [attr.aria-label]="'Переглянути сертифікат за ' + (2025 - i) + ' рік'"
+            [attr.aria-label]="
+              'Переглянути сертифікат за ' + (2025 - i) + ' рік'
+            "
           >
             <img
               class="certificate-image"
@@ -150,9 +155,7 @@
               <mat-icon>zoom_in</mat-icon>
             </div>
           </button>
-          <p class="certificate-caption">
-            Сертифікат за {{ 2025 - i }} рік
-          </p>
+          <p class="certificate-caption">Сертифікат за {{ 2025 - i }} рік</p>
         </div>
       }
     </div>
