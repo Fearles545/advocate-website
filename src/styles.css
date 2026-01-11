@@ -32,7 +32,7 @@
   --container-padding: var(--spacing-lg);
   --container-padding-mobile: var(--spacing-sm);
   /* Section padding - mobile first */
-  --section-padding-y: 2rem;
+  --section-padding-y: 1.5rem;
   --section-padding-x: 1rem;
   /* Extra breathing room for dark/accent sections */
   --section-padding-y-accent: 2.5rem;
@@ -338,7 +338,7 @@ a {
     border: none;
     height: 1px;
     background: var(--gold-separator-center);
-    margin: 1rem 0;
+    margin: 0;
   }
 
   /* Blockquote - Premium callout style */
