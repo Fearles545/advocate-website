@@ -58,7 +58,7 @@ export const blogs = [
     slug: 'shchodo-zarakhuvannia-periodiv-ubd-ato-oos',
     src: ['https://www.youtube.com/embed/Y3Knuv9Rnew'],
     date: '2025-06-30',
-    categories: ['service-record', 'pension-by-age'] as const,
+    categories: ['service-record'] as const,
     description:
       'Пояснюємо, як підтвердити страховий стаж без трудової книжки.',
   },
@@ -166,7 +166,7 @@ export const blogs = [
     slug: 'chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii',
     src: ['https://www.youtube.com/embed/TA2zRdFmmzo'],
     date: '2025-05-20',
-    categories: ['service-record', 'pension-by-age'] as const,
+    categories: ['service-record'] as const,
     description:
       'Причини відмов Пенсійного фонду в зарахуванні періодів участі в бойових діях у кратному обчисленні 1:3 до стажу. Законодавство, судова практика та шляхи вирішення.',
   },
@@ -186,7 +186,7 @@ export const blogs = [
     slug: 'pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv',
     src: ['https://www.youtube.com/embed/uveQDWzq1_Y'],
     date: '2025-05-17',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Порівняння законів №1788-XII та №1058-IV щодо призначення пільгової пенсії за Списком №2 для жінок. Умови, відмінності та судова практика.',
   },
@@ -196,7 +196,7 @@ export const blogs = [
     slug: 'pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
     src: ['https://www.youtube.com/embed/lKspLHJQgh4'],
     date: '2025-05-16',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Порівняльний аналіз законів №1788-XII та №1058-IV щодо призначення пільгової пенсії за Списком №2 для чоловіків. Умови, відмінності та судова практика.',
   },
@@ -206,7 +206,7 @@ export const blogs = [
     slug: 'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-zhinok-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
     src: ['https://www.youtube.com/embed/5Qt2pz5duXk'],
     date: '2025-05-15',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Порівняльний аналіз законів №1788-XII та №1058-IV для призначення пільгової пенсії жінкам за Списком №1. Вимоги до стажу, вік виходу та судова практика.',
   },
@@ -216,7 +216,7 @@ export const blogs = [
     slug: 'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
     src: ['https://www.youtube.com/embed/kKqYkOchkPc'],
     date: '2025-05-14',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Порівняльний аналіз законів №1788-XII та №1058-IV для призначення пільгової пенсії чоловікам за Списком №1. Вімоги до стажу, вік виходу та судова практика.',
   },
@@ -226,7 +226,7 @@ export const blogs = [
     slug: 'pilhova-pensiia-vodiiam-miskoho-pasazhyrskoho-transportu-avtobusiv-trolejbusiv-tramvaiv-i-velykovahovykh-avtomobiliv',
     src: ['https://www.youtube.com/embed/mC1MOIZWPA8'],
     date: '2025-05-12',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Умови призначення пільгової пенсії водіям автобусів, тролейбусів і трамваїв. Порівняння законодавства, вимоги до стажу та судова практика.',
   },
@@ -236,7 +236,7 @@ export const blogs = [
     slug: 'pilhova-pensiia-dlia-zhinok-iaki-pratsiuiut-doiarkamy-operatoramy-mashynnoho-doinnia-abo-svynarkamy',
     src: ['https://www.youtube.com/embed/4l1bpf4RCtQ'],
     date: '2025-05-08',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Пенсія для доярок і свинарок: до 2015 року — з 50 років при 20 роках стажу, після 2015 — з 55 років. Рішення КСУ 2020 відновило старі норми, але ПФУ не застосовує без суду. Норми обслуговування КМУ не затверджені.',
   },
@@ -246,7 +246,7 @@ export const blogs = [
     slug: 'pilhova-pensiia-dlia-traktorystiv-mashynistiv-bezposeredno-zainiatykh-u-vyrobnytstvi-silskohospodarskoi-produktsii',
     src: ['https://www.youtube.com/embed/4Wf0J5HoMIw'],
     date: '2025-05-05',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Пенсія для трактористів-машиністів з 55 років: до 2015 року — 25 років стажу (20 пільгового), після 2015 — 30 років (20 пільгового). Рішення КСУ 2020 року відновило старі норми, але ПФУ їх не застосовує без суду.',
   },
@@ -268,7 +268,7 @@ export const blogs = [
       'https://www.youtube.com/embed/CPXH6CQt5Bg',
     ],
     date: '2025-04-30',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Пільгова пенсія незалежно від віку для працівників гірничих та металургійних виробництв: 25 років стажу для загальних професій, 20 років для провідних. Зниження віку на 1 рік за кожен рік роботи.',
   },
@@ -307,7 +307,7 @@ export const blogs = [
     slug: 'robota-v-medychnykh-zakladakh-iaka-zarakhovuietsia-do-stazhu-u-podviinomu-rozmiri-shcho-potribno-znaty-pislia-2004-roku',
     src: ['https://www.youtube.com/embed/m3ir28bMeug'],
     date: '2025-04-26',
-    categories: ['service-record', 'pension-by-age'] as const,
+    categories: ['service-record'] as const,
     description:
       'Робота в інфекційних, реанімаційних, психіатричних та патологоанатомічних відділеннях зараховується до стажу у подвійному розмірі навіть після 2004 року. Як оскаржити відмову ПФУ.',
   },
@@ -323,11 +323,11 @@ export const blogs = [
   },
   {
     title:
-      'Дострокова пенсія жінкам, які працюють у сільському господарстві та виховали п’ятьох і більше дітей',
+      'Пільгова пенсія жінкам, які працюють у сільському господарстві та виховали п’ятьох і більше дітей',
     slug: 'dostrokova-pensiia-zhinkam-iaki-pratsiuiut-u-silskomu-hospodarstvi-ta-vykhovaly-piatokh-i-bilshe-ditei',
     src: ['https://www.youtube.com/embed/3ytTENHF1xg'],
     date: '2025-04-25',
-    categories: ['early-retirement', 'pension-by-age'] as const,
+    categories: ['preferential'] as const,
     description:
       'Як скористатися пунктом 7 ч. 2 ст. 114 Закону №1058-IV: які умови, документи та підтвердження працевлаштування потрібні аграрним матерям п’ятьох дітей.',
   },
@@ -337,7 +337,7 @@ export const blogs = [
     slug: 'osoblyvosti-pryznachennia-pensii-materi-osoby-z-invalidnistiu-z-dytynstva-ta-tiazhko-khvorikh-ditei',
     src: ['https://www.youtube.com/embed/Rutujf0I5oQ'],
     date: '2025-04-24',
-    categories: ['early-retirement', 'pension-by-age'] as const,
+    categories: ['early-retirement'] as const,
     description:
       'Дострокова пенсія матері дитини з інвалідністю або тяжко хворої: вимоги 50 років, 15 років стажу, медичні докази та строки звернення.',
   },
@@ -347,7 +347,7 @@ export const blogs = [
     slug: 'dostrokove-pryznachennia-pensii-dlia-osib-z-invalidnistiu-vnaslidok-zakhystu-batkivshchyny',
     src: ['https://www.youtube.com/embed/26y0Thp3jRQ'],
     date: '2025-04-22',
-    categories: ['early-retirement', 'pension-by-age'] as const,
+    categories: ['early-retirement'] as const,
     description:
       'Дострокова пенсія для осіб з інвалідністю внаслідок захисту Батьківщини: умови статті 115 Закону №1058-IV, страховий стаж та перелік обов’язкових документів.',
   },
@@ -357,7 +357,7 @@ export const blogs = [
     slug: 'pravo-batka-na-dostrokove-pryznachennia-pensii-u-razi-vykhovannia-piatokh-ditei-abo-dytyny-z-invalidnistiu',
     src: ['https://www.youtube.com/embed/RCpPnUp2S3I'],
     date: '2025-04-21',
-    categories: ['early-retirement', 'pension-by-age'] as const,
+    categories: ['early-retirement'] as const,
     description:
       'Як батькові отримати дострокову пенсію за виховання п’ятьох дітей або дитини з інвалідністю: умови статті 115 Закону №1058-IV, необхідний стаж і підтвердні документи.',
   },
@@ -367,7 +367,7 @@ export const blogs = [
     slug: 'pravo-zhinok-yaki-narodyly-ta-vykhovaly-piatokh-ditei-na-dostrokove-pryznachennia-pensii',
     src: ['https://www.youtube.com/embed/FJfuO3tlFhA'],
     date: '2025-04-20',
-    categories: ['early-retirement', 'pension-by-age'] as const,
+    categories: ['early-retirement'] as const,
     description:
       'Право багатодітних матерів на дострокову пенсію за п. 3 ч. 1 ст. 115 Закону №1058-IV: умови, зарахування догляду до стажу та перелік документів.',
   },
@@ -386,7 +386,7 @@ export const blogs = [
     slug: 'yaka-maksymalna-pensiia-u-2025',
     src: ['https://www.youtube.com/embed/FZBqCZjdqjU'],
     date: '2025-04-18',
-    categories: ['pension-by-age', 'service-record'] as const,
+    categories: ['general', 'pension-by-age'] as const,
     description:
       'Максимальна пенсія в Україні у 2025 році. Як обчислюється максимальний розмір пенсії. Дізнайтеся, кого не стосуються обмеження, як їх оскаржити та коли можна підвищити виплати.',
   },
@@ -395,7 +395,7 @@ export const blogs = [
     slug: 'yaki-vymohy-do-pryznachennia-pensii-za-spyskom-2',
     src: ['https://www.youtube.com/embed/98MWMHpSnb0'],
     date: '2025-04-14',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Які вимоги до призначення пенсії за Списком №2: чинні редакції переліку, необхідний стаж для жінок і чоловіків та зменшення пенсійного віку.',
   },
@@ -405,7 +405,7 @@ export const blogs = [
     slug: 'pravo-uchasnykiv-boiovykh-dii-ato-ta-oos-na-dostrokove-pryznachennia-pensii',
     src: ['https://www.youtube.com/embed/7MAm1gh6wKk'],
     date: '2025-04-12',
-    categories: ['early-retirement', 'pension-by-age'] as const,
+    categories: ['early-retirement'] as const,
     description:
       'Право учасників бойових дій, АТО та ООС на дострокову пенсію: необхідний стаж, стаття 115 Закону №1058-IV та поширені відмови Пенсійного фонду.',
   },
@@ -414,7 +414,7 @@ export const blogs = [
     slug: 'shcho-take-spysok-1',
     src: ['https://www.youtube.com/embed/9pS1349TKfU'],
     date: '2025-04-11',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Що таке Список №1, хто його затверджує та які пенсійні пільги і додатковий стаж отримують працівники в особливо шкідливих умовах.',
   },
@@ -423,7 +423,7 @@ export const blogs = [
     slug: 'pensiia-dlia-cholovikiv-iaki-pratsiuvaly-za-spyskom-1',
     src: ['https://www.youtube.com/embed/6tAtB1YBlYA'],
     date: '2025-04-10',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Чоловіки, які працювали за Списком №1, мають право на пільгову пенсію за віком за наявності 20 років загального стажу та роботи в особливо шкідливих умовах.',
   },
@@ -432,7 +432,7 @@ export const blogs = [
     slug: 'yak-zarakhovuietsia-stazh-nabutyi-u-rosiiskiy-federatsii',
     src: ['https://www.youtube.com/embed/ZcfOD4OclCQ'],
     date: '2025-04-09',
-    categories: ['service-record', 'pension-by-age'] as const,
+    categories: ['service-record'] as const,
     description:
       'Питання зарахування стажу, набутого у російській федерації, залишається актуальним і потребує судового захисту після припинення міжнародних угод.',
   },
@@ -441,7 +441,7 @@ export const blogs = [
     slug: 'pensiia-dlia-zhinok-iaki-pratsiuvaly-za-spyskom-1',
     src: ['https://www.youtube.com/embed/yZaNonC6KVk'],
     date: '2025-04-08',
-    categories: ['preferential', 'service-record'] as const,
+    categories: ['preferential'] as const,
     description:
       'Пенсія для жінок за Списком №1: умови виходу у 45 років, необхідний стаж, пільги та оскарження відмови Пенсійного фонду.',
   },
@@ -460,7 +460,7 @@ export const blogs = [
     slug: 'yak-pidvyshchyty-pensiiu-za-vysluhu-rokiv',
     src: ['https://www.youtube.com/embed/xXDsl9snBQ0'],
     date: '2025-04-04',
-    categories: ['service-years', 'service-record', 'pension-by-age'] as const,
+    categories: ['service-years'] as const,
     description:
       'Як підвищити пенсію за вислугу років: коли переходити на пенсію за віком і як через суд домогтися нового показника середньої зарплати.',
   },
@@ -470,7 +470,7 @@ export const blogs = [
     slug: 'vymohy-pryznachennia-pensii-za-vysluhu-rokiv-dlia-pratsivnykiv-osvity-okhorony-zdorovia-ta-sotsialnoho-zabezpechennia',
     src: ['https://www.youtube.com/embed/5Z2OLDdanUc'],
     date: '2025-04-03',
-    categories: ['service-years', 'service-record', 'pension-by-age'] as const,
+    categories: ['service-years'] as const,
     description:
       'Умови для призначення пенсії за вислугу років працівникам сфери освіти, медицини та соціального захисту.',
   },
@@ -479,7 +479,7 @@ export const blogs = [
     slug: 'khto-maie-pravo-na-pensiiu-za-vikom-u-2025',
     src: ['https://www.youtube.com/embed/ZwtT8Ddv12c'],
     date: '2025-04-02',
-    categories: ['pension-by-age', 'service-record'] as const,
+    categories: ['pension-by-age'] as const,
     description:
       'Хто має право на пенсію за віком у 2025 році: який страховий стаж потрібен для виходу у 60, 63 або 65 років. Що робити у разі відмови Пенсійним фондом призначити пенсію.',
   },
@@ -488,7 +488,7 @@ export const blogs = [
     slug: 'minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti',
     src: ['https://www.youtube.com/embed/52AMmLjUiFk'],
     date: '2025-04-01',
-    categories: ['pension-by-age', 'service-record'] as const,
+    categories: ['general', 'pension-by-age'] as const,
     description:
       'Мінімальна пенсія в Україні у 2025 році — 2361 грн. Дізнайтеся, який стаж потрібен чоловікам і жінкам, як враховується понаднормовий стаж та умови для осіб 65+.',
   },
