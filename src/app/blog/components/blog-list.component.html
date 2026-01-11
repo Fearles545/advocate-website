@@ -28,11 +28,13 @@
     </div>
 
     @if (hasCategorizedPosts()) {
-      <app-category-filter
-        [categoryCounts]="categoryCounts()"
-        [selectedCategory]="selectedCategory()"
-        (categoryChange)="handleCategoryChange($event)"
-      />
+      <div id="categories">
+        <app-category-filter
+          [categoryCounts]="categoryCounts()"
+          [selectedCategory]="selectedCategory()"
+          (categoryChange)="handleCategoryChange($event)"
+        />
+      </div>
     }
 
     <div class="blog-list-container">

@@ -38,6 +38,7 @@
                   <a
                     [routerLink]="['/blog']"
                     [queryParams]="{ category: cat }"
+                    fragment="categories"
                     class="category-tag"
                   >
                     {{ getCategoryLabel(cat) }}
