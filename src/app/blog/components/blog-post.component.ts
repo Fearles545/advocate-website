@@ -21,6 +21,7 @@ import {
   BlogCategorySlug,
   getCategoryDisplayLabel,
 } from '../blog-categories';
+import { BlogPaginationService } from '../services/blog-pagination.service';
 
 @Component({
   selector: 'app-blog-post',
@@ -43,14 +44,16 @@ import {
   styleUrl: './blog-post.component.css',
 })
 export class BlogPostComponent {
-  sanitizer = inject(DomSanitizer);
-  route = inject(ActivatedRoute);
-  http = inject(HttpClient);
+  private sanitizer = inject(DomSanitizer);
+  private route = inject(ActivatedRoute);
+  private http = inject(HttpClient);
+  private blogPaginationService = inject(BlogPaginationService);
 
   slug = input.required<string>();
   blog = input.required<Blog>();
 
   isLoading = signal(true);
+  activeCategory = computed(() => this.blogPaginationService.selectedCategory());
 
   blogHtml = computed(() =>
     this.blog() ? this.getPost(this.blog()?.slug!) : of('')

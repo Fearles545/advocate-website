@@ -35,12 +35,33 @@ export class BlogListComponent implements OnInit {
 
   readonly allBlogs = blogs;
   isInitialLoad = signal(true);
-  selectedCategory = signal<BlogCategorySlug | null>(null);
+
+  readonly selectedCategory = computed(
+    () => this.blogPaginationService.selectedCategory()
+  );
 
   ngOnInit(): void {
-    const categoryParam = this.route.snapshot.queryParamMap.get('category');
-    if (categoryParam && ACTIVE_CATEGORIES.includes(categoryParam as BlogCategorySlug)) {
-      this.selectedCategory.set(categoryParam as BlogCategorySlug);
+    const urlCategory = this.route.snapshot.queryParamMap.get('category');
+
+    if (
+      urlCategory &&
+      ACTIVE_CATEGORIES.includes(urlCategory as BlogCategorySlug)
+    ) {
+      this.blogPaginationService.updateCategory(urlCategory as BlogCategorySlug);
+    } else if (!urlCategory && this.blogPaginationService.selectedCategory()) {
+      const category = this.blogPaginationService.selectedCategory();
+      this.location.replaceState(`/blog?category=${category}`);
+    }
+
+    this.clampPageIndex();
+  }
+
+  private clampPageIndex(): void {
+    const totalPages = Math.ceil(
+      this.filteredBlogs().length / this.pageSize()
+    );
+    if (totalPages > 0 && this.pageIndex() >= totalPages) {
+      this.blogPaginationService.updatePage(totalPages - 1, this.pageSize());
     }
   }
 
@@ -105,11 +126,9 @@ export class BlogListComponent implements OnInit {
   }
 
   handleCategoryChange(category: BlogCategorySlug | null): void {
-    this.selectedCategory.set(category);
-    this.blogPaginationService.updatePage(0, this.pageSize());
+    this.blogPaginationService.updateCategory(category);
     this.isInitialLoad.set(true);
 
-    // Update URL without triggering navigation (no scroll)
     const url = category ? `/blog?category=${category}` : '/blog';
     this.location.replaceState(url);
   }

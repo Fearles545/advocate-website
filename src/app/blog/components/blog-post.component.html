@@ -74,7 +74,7 @@
       </article>
 
       <!-- Navigator -->
-      <app-blogs-navigator [currentBlog]="blog()" />
+      <app-blogs-navigator [currentBlog]="blog()" [category]="activeCategory()" />
     }
 
     <app-spinner [show]="isLoading()" />

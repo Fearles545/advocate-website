@@ -5,6 +5,7 @@ import {
   input,
 } from '@angular/core';
 import { Blog, blogs } from '../../blog-posts';
+import { BlogCategorySlug } from '../../blog-categories';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 
@@ -256,20 +257,26 @@ import { RouterLink } from '@angular/router';
 })
 export class BlogsNavigatorComponent {
   currentBlog = input<Blog>();
+  category = input<BlogCategorySlug | null>(null);
 
-  blogs = blogs;
+  private filteredBlogs = computed(() => {
+    const cat = this.category();
+    if (!cat) return blogs;
+    return blogs.filter((b) => b.categories?.some((c) => c === cat));
+  });
 
   previousBlog = computed(() => {
     if (!this.currentBlog()) {
       return null;
     }
 
-    const currentIndex = this.blogs.findIndex(
+    const blogList = this.filteredBlogs();
+    const currentIndex = blogList.findIndex(
       (blog) => blog.slug === this.currentBlog()!.slug
     );
 
     if (currentIndex > 0) {
-      return this.blogs[currentIndex - 1];
+      return blogList[currentIndex - 1];
     }
 
     return null;
@@ -280,12 +287,13 @@ export class BlogsNavigatorComponent {
       return null;
     }
 
-    const currentIndex = this.blogs.findIndex(
+    const blogList = this.filteredBlogs();
+    const currentIndex = blogList.findIndex(
       (blog) => blog.slug === this.currentBlog()!.slug
     );
 
-    if (currentIndex < this.blogs.length - 1) {
-      return this.blogs[currentIndex + 1];
+    if (currentIndex < blogList.length - 1) {
+      return blogList[currentIndex + 1];
     }
 
     return null;
