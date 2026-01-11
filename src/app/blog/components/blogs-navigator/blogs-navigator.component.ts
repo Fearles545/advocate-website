@@ -79,11 +79,31 @@ import { RouterLink } from '@angular/router';
       transition: all 0.3s var(--ease-standard);
       overflow: hidden;
 
-      &:hover {
-        background: white;
-        border-color: rgba(201, 165, 92, 0.4);
-        box-shadow: 0 8px 24px rgba(0, 39, 6, 0.1);
-        transform: translateY(-2px);
+      /* Only apply hover effects on devices that support hover */
+      @media (hover: hover) {
+        &:hover {
+          background: white;
+          border-color: rgba(201, 165, 92, 0.4);
+          box-shadow: 0 8px 24px rgba(0, 39, 6, 0.1);
+          transform: translateY(-2px);
+
+          .nav-icon {
+            background: var(--color-gold);
+
+            mat-icon {
+              color: var(--color-green-darkest);
+            }
+          }
+
+          .nav-title {
+            color: var(--color-gold-accent);
+          }
+        }
+      }
+
+      /* Active state for touch feedback */
+      &:active {
+        transform: scale(0.98);
 
         .nav-icon {
           background: var(--color-gold);
@@ -91,10 +111,6 @@ import { RouterLink } from '@angular/router';
           mat-icon {
             color: var(--color-green-darkest);
           }
-        }
-
-        .nav-title {
-          color: var(--color-gold-accent);
         }
       }
     }

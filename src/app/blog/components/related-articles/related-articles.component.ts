@@ -136,10 +136,35 @@ import {
       text-decoration: none;
       transition: all 0.25s var(--ease-standard);
 
-      &:hover {
-        border-color: rgba(201, 165, 92, 0.4);
-        box-shadow: 0 6px 20px rgba(0, 39, 6, 0.08);
-        transform: translateX(4px);
+      /* Only apply hover effects on devices that support hover */
+      @media (hover: hover) {
+        &:hover {
+          border-color: rgba(201, 165, 92, 0.4);
+          box-shadow: 0 6px 20px rgba(0, 39, 6, 0.08);
+          transform: translateX(4px);
+
+          .card-icon {
+            background: var(--color-gold);
+
+            mat-icon {
+              color: var(--color-green-darkest);
+            }
+          }
+
+          .card-arrow mat-icon {
+            transform: translateX(4px);
+            color: var(--color-gold);
+          }
+
+          h3 {
+            color: var(--color-gold-accent);
+          }
+        }
+      }
+
+      /* Active state for touch feedback */
+      &:active {
+        transform: scale(0.98);
 
         .card-icon {
           background: var(--color-gold);
@@ -147,15 +172,6 @@ import {
           mat-icon {
             color: var(--color-green-darkest);
           }
-        }
-
-        .card-arrow mat-icon {
-          transform: translateX(4px);
-          color: var(--color-gold);
-        }
-
-        h3 {
-          color: var(--color-gold-accent);
         }
       }
     }
