@@ -1,4 +1,3 @@
-import { DOCUMENT } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -10,6 +9,7 @@ import {
   signal,
 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { DropdownPositionDirective } from '../../../core/directives/dropdown-position.directive';
 import {
   ACTIVE_CATEGORIES,
   BLOG_CATEGORIES,
@@ -20,9 +20,14 @@ import {
 @Component({
   selector: 'app-category-filter',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIconModule],
+  imports: [MatIconModule, DropdownPositionDirective],
   template: `
-    <div class="category-filter">
+    <div
+      class="category-filter"
+      appDropdownPosition
+      [dpIsOpen]="isOpen()"
+      #position="dropdownPosition"
+    >
       @if (selectedCategory(); as selected) {
         <!-- Active filter chip -->
         <div class="active-filter">
@@ -64,7 +69,12 @@ import {
 
       <!-- Custom dropdown panel -->
       @if (isOpen()) {
-        <div class="dropdown-panel" role="listbox">
+        <div
+          class="dropdown-panel"
+          [class.open-up]="position.openUp()"
+          [class.open-left]="position.openLeft()"
+          role="listbox"
+        >
           @for (slug of activeCategories; track slug) {
             @let category = categories[slug];
             @let count = categoryCounts()[slug] || 0;
@@ -226,6 +236,29 @@ import {
       }
     }
 
+    @keyframes dropdownRevealUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ─── FLIPPED POSITIONS ─── */
+    .dropdown-panel.open-up {
+      top: auto;
+      bottom: calc(100% + 0.5rem);
+      animation-name: dropdownRevealUp;
+    }
+
+    .dropdown-panel.open-left {
+      left: auto;
+      right: 0;
+    }
+
     /* ─── DROPDOWN ITEMS ─── */
     .dropdown-item {
       position: relative;
@@ -380,14 +413,12 @@ import {
 
       .dropdown-panel {
         min-width: 220px;
-        right: 0;
-        left: auto;
+        /* Position now handled dynamically by calculatePosition() */
       }
     }
   `,
 })
 export class CategoryFilterComponent {
-  private document = inject(DOCUMENT);
   private elementRef = inject(ElementRef);
 
   categoryCounts = input.required<Record<BlogCategorySlug, number>>();
@@ -411,22 +442,19 @@ export class CategoryFilterComponent {
     this.closeDropdown();
   }
 
-  toggleDropdown(): void {
+  @HostListener('window:scroll')
+  onScroll(): void {
     if (this.isOpen()) {
       this.closeDropdown();
-    } else {
-      this.openDropdown();
     }
   }
 
-  private openDropdown(): void {
-    this.isOpen.set(true);
-    this.document.body.style.overflow = 'hidden';
+  toggleDropdown(): void {
+    this.isOpen.update((open) => !open);
   }
 
   private closeDropdown(): void {
     this.isOpen.set(false);
-    this.document.body.style.overflow = '';
   }
 
   getDisplayLabel(slug: BlogCategorySlug): string {

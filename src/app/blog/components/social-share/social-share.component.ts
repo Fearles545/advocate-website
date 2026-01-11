@@ -1,4 +1,3 @@
-import { DOCUMENT } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -10,6 +9,7 @@ import {
 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { Clipboard } from '@angular/cdk/clipboard';
+import { DropdownPositionDirective } from '../../../core/directives/dropdown-position.directive';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Blog } from '../../blog-posts';
@@ -19,9 +19,14 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
 @Component({
   selector: 'app-social-share',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIconModule, MatSnackBarModule],
+  imports: [MatIconModule, MatSnackBarModule, DropdownPositionDirective],
   template: `
-    <div class="social-share">
+    <div
+      class="social-share"
+      appDropdownPosition
+      [dpIsOpen]="isOpen()"
+      #position="dropdownPosition"
+    >
       <button
         class="share-button"
         (click)="toggleDropdown()"
@@ -37,7 +42,11 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
       </button>
 
       @if (isOpen()) {
-        <div class="dropdown-panel" role="menu">
+        <div
+          class="dropdown-panel"
+          [class.open-up]="position.openUp()"
+          role="menu"
+        >
           <!-- Copy Link -->
           <button class="dropdown-item" (click)="copyLink()" role="menuitem">
             <span class="item-icon copy-icon">
@@ -173,6 +182,23 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
       }
     }
 
+    @keyframes dropdownRevealUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .dropdown-panel.open-up {
+      top: auto;
+      bottom: calc(100% + 0.5rem);
+      animation-name: dropdownRevealUp;
+    }
+
     /* ==========================================================================
        DROPDOWN ITEMS
        ========================================================================== */
@@ -292,7 +318,6 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
   `,
 })
 export class SocialShareComponent {
-  private document = inject(DOCUMENT);
   private snackBar = inject(MatSnackBar);
   private clipboard = inject(Clipboard);
   private domSanitizer = inject(DomSanitizer);
@@ -316,22 +341,19 @@ export class SocialShareComponent {
     this.closeDropdown();
   }
 
-  toggleDropdown(): void {
+  @HostListener('window:scroll')
+  onScroll(): void {
     if (this.isOpen()) {
       this.closeDropdown();
-    } else {
-      this.openDropdown();
     }
   }
 
-  private openDropdown(): void {
-    this.isOpen.set(true);
-    this.document.body.style.overflow = 'hidden';
+  toggleDropdown(): void {
+    this.isOpen.update((open) => !open);
   }
 
   closeDropdown(): void {
     this.isOpen.set(false);
-    this.document.body.style.overflow = '';
   }
 
   sanitizedSvg(iconData: SocialIconData) {
