@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentsComponent } from './documents/documents.component';
+import { FaqComponent } from './faq/faq.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { PrivacyPolicyComponent } from './legal/privacy-policy.component';
 import { PublicOfferComponent } from './legal/public-offer.component';
@@ -33,6 +34,10 @@ export const routes: Routes = [
     path: 'court-cases',
     loadChildren: () =>
       import('./court-cases/routes').then((m) => m.courtCasesRoutes),
+  },
+  {
+    path: 'faq',
+    component: FaqComponent,
   },
   {
     path: 'feedbacks',

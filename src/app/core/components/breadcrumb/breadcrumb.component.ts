@@ -25,6 +25,7 @@ const ROUTE_LABELS: Record<string, string> = {
   contacts: 'Контакти',
   'privacy-policy': 'Політика конфіденційності',
   'public-offer': 'Публічна оферта',
+  faq: 'FAQ',
 };
 
 @Component({

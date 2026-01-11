@@ -46,6 +46,10 @@ export const NAV_ITEMS: NavItem[] = [
     route: 'documents',
   },
   {
+    label: 'FAQ',
+    route: 'faq',
+  },
+  {
     label: 'Контакти',
     route: 'contacts',
   },

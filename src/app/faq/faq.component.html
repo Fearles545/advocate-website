@@ -1,0 +1,95 @@
+<!-- Page Header -->
+<section class="page-bg-pattern">
+  <div class="page-content">
+    <header class="page-header">
+      <div class="page-header-badge">
+        <mat-icon>quiz</mat-icon>
+      </div>
+
+      <h1>Поширені питання про юридичну допомогу у пенсійних справах</h1>
+
+      <p class="page-intro">
+        На цій сторінці зібрані відповіді на найпоширеніші питання щодо
+        юридичної допомоги у пенсійних справах: призначення та перерахунку
+        пенсії, підтвердження стажу, роботи з Пенсійним фондом і судового
+        захисту.
+      </p>
+    </header>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-main-section">
+      <app-faq-accordion [items]="faqItems" />
+    </section>
+  </div>
+</section>
+
+<!-- Related Links Section -->
+<section class="related-section-bg">
+  <div class="related-section">
+    <div class="section-header">
+      <h2>Дізнайтеся більше</h2>
+    </div>
+
+    <div class="related-cards">
+      @for (link of relatedLinks; track link.route) {
+        <a [routerLink]="link.route" class="related-card">
+          <div class="related-card-icon">
+            <mat-icon>{{ link.icon }}</mat-icon>
+          </div>
+          <div class="related-card-content">
+            <h3>{{ link.title }}</h3>
+            <p>{{ link.description }}</p>
+            <span class="related-card-link">
+              {{ link.linkText }}
+              <mat-icon>arrow_forward</mat-icon>
+            </span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="final-cta-section-bg">
+  <div class="final-cta-section">
+    <div class="section-header">
+      <h2>Залишилися питання?</h2>
+    </div>
+
+    <p class="final-cta-intro">
+      Якщо у вас виникла конкретна пенсійна ситуація або потрібна індивідуальна
+      консультація — звертайтеся. Після аналізу вашої ситуації я поясню можливі
+      варіанти її вирішення.
+    </p>
+
+    <div class="final-cta-buttons">
+      <button
+        type="button"
+        appCtaButton
+        theme="gold"
+        icon="calendar_today"
+        (click)="openContactForm()"
+      >
+        Записатися на консультацію
+      </button>
+
+      <div class="cta-links">
+        <a routerLink="/services" class="cta-link">
+          Послуги адвоката
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+        <span class="link-divider">|</span>
+        <a routerLink="/about-me" class="cta-link">
+          Про адвоката
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+        <span class="link-divider">|</span>
+        <a routerLink="/contacts" class="cta-link">
+          Контакти
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
