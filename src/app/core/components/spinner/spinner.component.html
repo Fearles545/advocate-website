@@ -1,11 +1,23 @@
-<!-- || (loadingService.isLoading$ | async) -->
-@if (show) {
-  <div>
-    <div [class]="blocking ? 'transparent-block' : ''"></div>
-    <div [class]="blocking ? 'loading-indicator' : 'non-blocking'">
-      <mat-progress-spinner mode="indeterminate" color="accent">
-      </mat-progress-spinner>
-      <p [class]="blocking ? 'spinner-label' : ''">Loading...</p>
+@if (show()) {
+  <div class="spinner-wrapper" [class.blocking]="blocking()">
+    @if (blocking()) {
+      <div class="spinner-backdrop"></div>
+    }
+    <div class="spinner-badge-wrapper">
+      <!-- Spinning progress ring -->
+      <svg class="spinner-progress" viewBox="0 0 100 100">
+        <circle class="spinner-progress-track" cx="50" cy="50" r="46" />
+        <circle class="spinner-progress-fill" cx="50" cy="50" r="46" />
+      </svg>
+      <!-- Badge with logo -->
+      <div class="spinner-badge">
+        <img
+          src="assets/logo/logo-white-transparent.png"
+          alt=""
+          width="56"
+          height="30"
+        />
+      </div>
     </div>
   </div>
 }

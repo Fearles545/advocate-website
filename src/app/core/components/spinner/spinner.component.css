@@ -1,36 +1,96 @@
-.transparent-block {
-  background-color: rgba(0, 0, 0, 0.4);
+/* Blocking mode - full screen overlay */
+.spinner-wrapper.blocking {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 1050;
-  backdrop-filter: blur(1px);
-}
-
-.loading-indicator {
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  z-index: 1051;
-  overflow: show;
-}
-
-.spinner-label {
-  text-align: center;
-  color: #e4e2e2;
-  margin-top: 1rem;
-}
-
-.non-blocking {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  margin: 3rem 0;
+}
+
+.spinner-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    url('/assets/images/main/first-section.pattern.svg'),
+    linear-gradient(
+      180deg,
+      #f5f2ed 0%,
+      #faf8f5 25%,
+      #ffffff 50%,
+      #faf8f5 75%,
+      #f5f2ed 100%
+    );
+  opacity: 0.97;
+}
+
+/* Non-blocking mode - inline spinner */
+.spinner-wrapper:not(.blocking) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+/* Badge wrapper with progress ring */
+.spinner-badge-wrapper {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  z-index: 1;
+}
+
+.spinner-progress {
+  position: absolute;
+  inset: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  transform: rotate(-90deg);
+}
+
+.spinner-progress-track {
+  fill: none;
+  stroke: rgba(201, 165, 92, 0.15);
+  stroke-width: 2;
+}
+
+.spinner-progress-fill {
+  fill: none;
+  stroke: #c9a55c;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 289;
+  stroke-dashoffset: 216;
+  animation: spin 1.4s linear infinite;
+  transform-origin: center;
+}
+
+.spinner-badge {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #002706 0%, #003d0a 100%);
+  border-radius: 50%;
+  border: 2px solid rgba(201, 165, 92, 0.4);
+  box-shadow:
+    0 4px 24px rgba(201, 165, 92, 0.35),
+    0 2px 8px rgba(0, 39, 6, 0.2),
+    inset 0 1px 0 rgba(201, 165, 92, 0.2);
+}
+
+.spinner-badge img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
