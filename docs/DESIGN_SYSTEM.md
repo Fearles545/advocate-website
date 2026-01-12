@@ -2,7 +2,7 @@
 
 Canonical design patterns for the advocate-pensia.com.ua website.
 
-**Last Updated:** 2026-01-06
+**Last Updated:** 2026-01-12
 
 **Related Documents:**
 - [`design-system/audit-report.md`](design-system/audit-report.md) — Initial design consistency audit
@@ -1156,6 +1156,165 @@ Premium callout styling with decorative quote mark.
 
 ---
 
+### 4.17 Branded Loader
+
+Premium loading indicator featuring the brand logo badge with animated gold progress ring. Creates a cohesive, professional loading experience across the app.
+
+**Visual Structure:**
+```
+    ╭─────────────╮
+ ╭──│             │──╮  ← Gold progress ring (spinning)
+ │  │   [LOGO]    │  │
+ ╰──│             │──╯
+    ╰─────────────╯
+        Badge (green gradient, gold border)
+```
+
+**Implementation Locations:**
+
+| Location | File | Mode |
+|----------|------|------|
+| App startup | `src/index.html` | Full-screen with light patterned background |
+| Blog loading | `src/app/core/components/spinner/` | Full-screen (blocking) or inline |
+
+**Badge Styling:**
+
+```css
+.loader-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #002706 0%, #003d0a 100%);
+  border-radius: 50%;
+  border: 2px solid rgba(201, 165, 92, 0.4);
+  box-shadow:
+    0 4px 24px rgba(201, 165, 92, 0.35),
+    0 2px 8px rgba(0, 39, 6, 0.2),
+    inset 0 1px 0 rgba(201, 165, 92, 0.2);
+}
+
+.loader-badge img {
+  width: 60%;
+  height: auto;
+  object-fit: contain;
+}
+```
+
+**Progress Ring (SVG):**
+
+```html
+<svg class="loader-progress" viewBox="0 0 100 100">
+  <circle class="loader-progress-track" cx="50" cy="50" r="46" />
+  <circle class="loader-progress-fill" cx="50" cy="50" r="46" />
+</svg>
+```
+
+```css
+.loader-progress {
+  position: absolute;
+  inset: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  transform: rotate(-90deg);  /* Start from top */
+}
+
+.loader-progress-track {
+  fill: none;
+  stroke: rgba(201, 165, 92, 0.15);
+  stroke-width: 2;
+}
+
+.loader-progress-fill {
+  fill: none;
+  stroke: #c9a55c;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 289;      /* Circle circumference */
+  stroke-dashoffset: 216;     /* ~75% hidden = 25% visible arc */
+  animation: spin 1.4s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+```
+
+**Background Pattern:**
+
+The loader uses the intro section's signature background for brand consistency:
+
+```css
+.loader-backdrop {
+  background:
+    url('/assets/images/main/first-section.pattern.svg'),
+    linear-gradient(
+      180deg,
+      #f5f2ed 0%,
+      #faf8f5 25%,
+      #ffffff 50%,
+      #faf8f5 75%,
+      #f5f2ed 100%
+    );
+}
+```
+
+**Sizing:**
+
+| Context | Badge Size | Progress Ring Offset |
+|---------|------------|---------------------|
+| App loader (`index.html`) | `6rem` | `8px` |
+| Spinner component | `5rem` | `8px` |
+
+**Fade-Out Transition:**
+
+```css
+.app-loader {
+  opacity: 1;
+  transition: opacity 0.6s ease-out;
+}
+
+.app-loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+```
+
+**Angular Removal Logic:**
+
+The app loader is removed after hydration + fonts load:
+
+```typescript
+afterNextRender(() => {
+  document.fonts?.ready.then(() => {
+    const loader = document.getElementById('app-loader');
+    loader?.classList.add('fade-out');
+    setTimeout(() => loader?.remove(), 600);
+  });
+});
+```
+
+**Component Usage:**
+
+```html
+<!-- Full-screen blocking loader -->
+<app-spinner [show]="isLoading()" [blocking]="true" />
+
+<!-- Inline loader (within content) -->
+<app-spinner [show]="isLoading()" [blocking]="false" />
+```
+
+**Design Philosophy:**
+- Matches the `.intro-header-badge` styling from the hero section
+- Gold progress ring creates visual continuity with gold accent color
+- Light patterned background (blocking mode) feels premium, not jarring
+- Subtle fade-out animation (0.6s) for smooth reveal
+
+**Used in:** App initialization (`index.html`), blog post loading (`SpinnerComponent`)
+
+---
+
 ## 5. Section Backgrounds
 
 ### 5.1 Gold Separator Lines
@@ -1629,7 +1788,9 @@ At `479px` (max-width):
 | File | Purpose |
 |------|---------|
 | `src/styles.css` | Global CSS variables |
+| `src/index.html` | App-level branded loader |
 | `src/app/shared/components/cta-button/` | Primary CTA component |
 | `src/app/shared/components/cta-outline-button/` | Outline CTA component |
+| `src/app/core/components/spinner/` | Branded spinner component |
 | `docs/DESIGN_SYSTEM.md` | This document |
 | `NORMALIZATION_LOG.md` | Change history for design normalization |
