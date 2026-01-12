@@ -4,6 +4,7 @@ import { Component, input } from '@angular/core';
   selector: 'app-spinner',
   templateUrl: './spinner.component.html',
   styleUrls: ['./spinner.component.css'],
+  host: { ngSkipHydration: 'true' },
 })
 export class SpinnerComponent {
   readonly show = input<boolean | null>(false);
