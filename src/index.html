@@ -217,8 +217,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts (only Lora + Cormorant Garamond are used) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -237,6 +246,144 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <!-- App Loading Screen -->
+    <div id="app-loader" class="app-loader">
+      <div class="loader-badge-wrapper">
+        <!-- Spinning progress ring -->
+        <svg class="loader-progress" viewBox="0 0 100 100">
+          <circle class="loader-progress-track" cx="50" cy="50" r="46" />
+          <circle class="loader-progress-fill" cx="50" cy="50" r="46" />
+        </svg>
+        <!-- Badge with logo -->
+        <div class="loader-badge">
+          <img
+            src="assets/logo/logo-white-transparent.png"
+            alt=""
+            width="56"
+            height="30"
+          />
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .app-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          url('/assets/images/main/first-section.pattern.svg'),
+          linear-gradient(
+            180deg,
+            #f5f2ed 0%,
+            #faf8f5 25%,
+            #ffffff 50%,
+            #faf8f5 75%,
+            #f5f2ed 100%
+          );
+        opacity: 1;
+        transition: opacity 0.6s ease-out;
+      }
+
+      .app-loader.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .loader-badge-wrapper {
+        position: relative;
+        width: 6rem;
+        height: 6rem;
+      }
+
+      .loader-progress {
+        position: absolute;
+        inset: -8px;
+        width: calc(100% + 16px);
+        height: calc(100% + 16px);
+        transform: rotate(-90deg);
+      }
+
+      .loader-progress-track {
+        fill: none;
+        stroke: rgba(201, 165, 92, 0.15);
+        stroke-width: 2;
+      }
+
+      .loader-progress-fill {
+        fill: none;
+        stroke: #c9a55c;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-dasharray: 289;
+        stroke-dashoffset: 216;
+        animation: spin 1.4s linear infinite;
+        transform-origin: center;
+      }
+
+      .loader-badge {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #002706 0%, #003d0a 100%);
+        border-radius: 50%;
+        border: 2px solid rgba(201, 165, 92, 0.4);
+        box-shadow:
+          0 4px 24px rgba(201, 165, 92, 0.35),
+          0 2px 8px rgba(0, 39, 6, 0.2),
+          inset 0 1px 0 rgba(201, 165, 92, 0.2);
+      }
+
+      .loader-badge img {
+        width: 60%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!--
+    =====================================================================
+    BACKUP: Dark Loader Design (logo + gold bar on dark green background)
+    =====================================================================
+    <div id="app-loader" class="app-loader">
+      <div class="loader-content">
+        <img src="assets/logo/logo-white-transparent.png" alt="" class="loader-logo" width="200" height="107" />
+        <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+      </div>
+    </div>
+    <style>
+      .app-loader {
+        position: fixed; inset: 0; z-index: 99999;
+        display: flex; align-items: center; justify-content: center;
+        background: linear-gradient(135deg, #001a04 0%, #002706 50%, #001a04 100%);
+        opacity: 1; transition: opacity 0.6s ease-out;
+      }
+      .app-loader.fade-out { opacity: 0; pointer-events: none; }
+      .loader-content { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+      .loader-logo { width: 200px; height: auto; animation: pulse 2s ease-in-out infinite; }
+      .loader-bar { width: 120px; height: 2px; background: rgba(201, 165, 92, 0.2); border-radius: 1px; overflow: hidden; }
+      .loader-bar-fill { height: 100%; width: 30%; background: linear-gradient(90deg, transparent, #c9a55c, transparent); animation: loading 1.5s ease-in-out infinite; }
+      @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.02); opacity: 0.85; } }
+      @keyframes loading { 0% { transform: translateX(-100%); } 100% { transform: translateX(400%); } }
+    </style>
+    =====================================================================
+    -->
+
     <app-root></app-root>
   </body>
 </html>

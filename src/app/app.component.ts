@@ -6,9 +6,10 @@ import {
   viewChild,
   ElementRef,
   DestroyRef,
+  PLATFORM_ID,
 } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { AsyncPipe, ViewportScroller } from '@angular/common';
+import { AsyncPipe, isPlatformBrowser, ViewportScroller } from '@angular/common';
 
 import { filter, map, startWith } from 'rxjs';
 
@@ -42,6 +43,7 @@ export class AppComponent {
   #router = inject(Router);
   #destroyRef = inject(DestroyRef);
   #viewportScroller = inject(ViewportScroller);
+  #platformId = inject(PLATFORM_ID);
   isDevMode = isDevMode();
   private routeSeoService = inject(RouteSeoService);
   private headerEl = viewChild('headerEl', { read: ElementRef });
@@ -63,6 +65,29 @@ export class AppComponent {
   constructor() {
     this.routeSeoService.init();
     this.#initHeaderHeightObserver();
+    this.#removeLoader();
+  }
+
+  #removeLoader(): void {
+    afterNextRender(() => {
+      if (!isPlatformBrowser(this.#platformId)) return;
+
+      // Wait for fonts to be ready before removing loader
+      if (document.fonts?.ready) {
+        document.fonts.ready.then(() => this.#fadeOutLoader());
+      } else {
+        // Fallback for older browsers
+        setTimeout(() => this.#fadeOutLoader(), 100);
+      }
+    });
+  }
+
+  #fadeOutLoader(): void {
+    const loader = document.getElementById('app-loader');
+    if (!loader) return;
+
+    loader.classList.add('fade-out');
+    setTimeout(() => loader.remove(), 600);
   }
 
   #initHeaderHeightObserver(): void {
@@ -70,6 +95,17 @@ export class AppComponent {
       const headerElement = this.headerEl()?.nativeElement;
       if (!headerElement) return;
 
+      // Set initial height immediately to avoid layout shift
+      const initialHeight = headerElement.getBoundingClientRect().height;
+      if (initialHeight > 0) {
+        document.documentElement.style.setProperty(
+          '--header-height',
+          `${initialHeight}px`
+        );
+        this.#viewportScroller.setOffset([0, initialHeight + 16]);
+      }
+
+      // Continue observing for changes (e.g., window resize)
       const resizeObserver = new ResizeObserver((entries) => {
         const height = entries[0].borderBoxSize[0].blockSize;
         document.documentElement.style.setProperty(

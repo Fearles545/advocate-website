@@ -10,6 +10,7 @@ import {
   withViewTransitions,
 } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideClientHydration } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
 import localeUk from '@angular/common/locales/uk';
 
@@ -23,6 +24,7 @@ registerLocaleData(localeUk);
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideClientHydration(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       routes,
