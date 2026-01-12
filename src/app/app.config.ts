@@ -10,7 +10,6 @@ import {
   withViewTransitions,
 } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideClientHydration } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
 import localeUk from '@angular/common/locales/uk';
 
@@ -24,7 +23,8 @@ registerLocaleData(localeUk);
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideClientHydration(),
+    // Note: provideClientHydration() removed due to conflicts with custom SVG icons
+    // registered via MatIconRegistry. The branded loader provides smooth UX instead.
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       routes,
