@@ -94,6 +94,15 @@ public/
 
 **See [`docs/DESIGN_SYSTEM.md`](docs/DESIGN_SYSTEM.md) for the complete design system documentation.**
 
+## Consultation Form
+
+**See [`docs/CONSULTATION_FORM.md`](docs/CONSULTATION_FORM.md) for the consultation form system documentation.**
+
+The consultation form (`/consultation`) is a custom Angular form integrated with:
+- **Cloudflare Worker** - Serverless backend for form processing
+- **Telegram Bot** - Instant notifications on form submission
+- **Rate limiting & honeypot** - Spam protection
+
 The design system defines canonical patterns for:
 
 - **Colors** - Brand palette (green/gold), text colors, semantic colors

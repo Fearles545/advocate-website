@@ -91,9 +91,9 @@ function validateRequest(data: unknown): ConsultationRequest {
   }
 
   const cleanPhone = String(phone).replace(/\s/g, '');
-  const phoneRegex = /^\+380\d{9}$/;
+  const phoneRegex = /^(\+\d{10,15}|\d{9})$/;
   if (!phoneRegex.test(cleanPhone)) {
-    throw new Error('Невірний формат телефону. Використовуйте +380XXXXXXXXX');
+    throw new Error('Невірний формат телефону. Введіть 9 цифр або міжнародний номер з +');
   }
 
   if (typeof description !== 'string' || description.trim().length < 10) {

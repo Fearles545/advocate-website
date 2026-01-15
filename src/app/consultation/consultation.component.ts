@@ -35,6 +35,7 @@ export class ConsultationComponent {
   readonly isSubmitting = signal(false);
   readonly isSuccess = signal(false);
   readonly errorMessage = signal<string | null>(null);
+  readonly pensionStatusValue = signal<PensionStatus>(null);
 
   readonly form = new FormGroup({
     name: new FormControl('', {
@@ -47,7 +48,7 @@ export class ConsultationComponent {
     }),
     phone: new FormControl('', {
       nonNullable: true,
-      validators: [Validators.required, Validators.pattern(/^\+380\d{9}$/)],
+      validators: [Validators.required, Validators.pattern(/^(\+\d{10,15}|\d{9})$/)],
     }),
     contactMethods: new FormGroup({
       call: new FormControl(false, { nonNullable: true }),
@@ -101,13 +102,19 @@ export class ConsultationComponent {
   });
 
   readonly showPensionTypes = computed(() => {
-    const status = this.form.controls.pensionStatus.value;
+    const status = this.pensionStatusValue();
     return status === 'receiving' || status === 'suspended';
   });
 
   readonly showQuestionTypes = computed(() => {
-    return this.form.controls.pensionStatus.value === 'not_assigned';
+    return this.pensionStatusValue() === 'not_assigned';
   });
+
+  constructor() {
+    this.form.controls.pensionStatus.valueChanges.subscribe((value) => {
+      this.pensionStatusValue.set(value);
+    });
+  }
 
   async onSubmit(): Promise<void> {
     if (this.form.invalid || this.isSubmitting()) {
@@ -140,6 +147,8 @@ export class ConsultationComponent {
       if (response.success) {
         this.isSuccess.set(true);
         this.form.reset();
+        this.pensionStatusValue.set(null);
+        setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 100);
       } else {
         throw new Error(response.error || 'Невідома помилка');
       }
@@ -171,6 +180,7 @@ export class ConsultationComponent {
   resetForm(): void {
     this.isSuccess.set(false);
     this.errorMessage.set(null);
+    this.pensionStatusValue.set(null);
     this.form.reset();
   }
 }

@@ -88,13 +88,13 @@
                   [class.invalid]="form.controls.phone.touched && form.controls.phone.invalid"
                 />
                 <span class="field-hint">
-                  Вкажіть номер, за яким зручно з вами зв'язатися
+                  Міжнародний формат (+380...) або 9 цифр без коду
                 </span>
                 @if (form.controls.phone.touched && form.controls.phone.errors?.['required']) {
                   <span class="field-error">Це поле обов'язкове</span>
                 }
                 @if (form.controls.phone.touched && form.controls.phone.errors?.['pattern']) {
-                  <span class="field-error">Формат: +380XXXXXXXXX</span>
+                  <span class="field-error">Введіть 9 цифр або міжнародний номер з +</span>
                 }
               </div>
             </div>
