@@ -2,12 +2,10 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialog } from '@angular/material/dialog';
 import { Gallery, GalleryItem, GalleryModule, ImageItem } from 'ng-gallery';
 import { LIGHTBOX_CONFIG, LightboxModule } from 'ng-gallery/lightbox';
 
 import { CtaButtonComponent } from '../shared/components/cta-button';
-import { ContactFormDialogComponent } from '../contacts/contact-form-dialog/contact-form-dialog.component';
 
 @Component({
   selector: 'app-documents',
@@ -30,7 +28,6 @@ import { ContactFormDialogComponent } from '../contacts/contact-form-dialog/cont
   ],
 })
 export class DocumentsComponent implements OnInit {
-  private dialog = inject(MatDialog);
   private gallery = inject(Gallery);
 
   showAllCertificates = signal(false);
@@ -137,19 +134,5 @@ export class DocumentsComponent implements OnInit {
 
   toggleCertificates(): void {
     this.showAllCertificates.update((v) => !v);
-  }
-
-  openContactForm(): void {
-    this.dialog.open(ContactFormDialogComponent, {
-      data: {
-        width: 'fit-content',
-        height: 'auto',
-      },
-      width: '100%',
-      maxWidth: '100vw',
-      height: 'auto',
-      panelClass: 'contact-form-dialog',
-      autoFocus: false,
-    });
   }
 }

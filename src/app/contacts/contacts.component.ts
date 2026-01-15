@@ -4,10 +4,8 @@ import { RouterLink } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialog } from '@angular/material/dialog';
 
 import { CtaButtonComponent } from '../shared/components/cta-button';
-import { ContactFormDialogComponent } from './contact-form-dialog/contact-form-dialog.component';
 import { iconsData, SocialIconData } from '../core/icons.data';
 
 interface MessengerIcon extends SocialIconData {
@@ -21,7 +19,6 @@ interface MessengerIcon extends SocialIconData {
   styleUrl: './contacts.component.css',
 })
 export class ContactsComponent {
-  private dialog = inject(MatDialog);
   private sanitizer = inject(DomSanitizer);
   private platformId = inject(PLATFORM_ID);
 
@@ -33,18 +30,4 @@ export class ContactsComponent {
       ...icon,
       safeSvg: this.sanitizer.bypassSecurityTrustHtml(icon.svg),
     }));
-
-  openContactForm() {
-    this.dialog.open(ContactFormDialogComponent, {
-      data: {
-        width: 'fit-content',
-        height: 'auto',
-      },
-      width: '100%',
-      maxWidth: '100vw',
-      height: 'auto',
-      panelClass: 'contact-form-dialog',
-      autoFocus: false,
-    });
-  }
 }

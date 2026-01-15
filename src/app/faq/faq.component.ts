@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { CtaButtonComponent } from '@shared/components/cta-button';
@@ -6,8 +6,6 @@ import {
   FaqAccordionComponent,
   FaqItem,
 } from '@shared/components/faq-accordion';
-import { MatDialog } from '@angular/material/dialog';
-import { ContactFormDialogComponent } from '../contacts/contact-form-dialog/contact-form-dialog.component';
 
 interface RelatedLink {
   icon: string;
@@ -25,8 +23,6 @@ interface RelatedLink {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FaqComponent {
-  private dialog = inject(MatDialog);
-
   faqItems: FaqItem[] = [
     {
       question: 'Що робить пенсійний адвокат?',
@@ -109,18 +105,4 @@ export class FaqComponent {
       linkText: 'Переглянути справи',
     },
   ];
-
-  openContactForm(): void {
-    this.dialog.open(ContactFormDialogComponent, {
-      data: {
-        width: 'fit-content',
-        height: 'auto',
-      },
-      width: '100%',
-      maxWidth: '100vw',
-      height: 'auto',
-      panelClass: 'contact-form-dialog',
-      autoFocus: false,
-    });
-  }
 }

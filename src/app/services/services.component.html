@@ -71,28 +71,26 @@
                   залежно від обставин справи.
                 </p>
               }
-              <button
-                type="button"
+              <a
+                routerLink="/consultation"
                 class="service-cta-btn"
-                (click)="openContactForm()"
               >
                 <mat-icon>calendar_today</mat-icon>
                 {{ service.ctaText }}
-              </button>
+              </a>
             }
           </article>
         }
       </div>
 
       <div class="main-services-cta">
-        <button
-          type="button"
+        <a
+          routerLink="/consultation"
           appCtaButton
-          (click)="openContactForm()"
           icon="calendar_today"
         >
           Записатися на консультацію з пенсійних питань
-        </button>
+        </a>
       </div>
     </section>
   </div>
@@ -162,14 +160,13 @@
         Остаточна вартість узгоджується після консультації та ознайомлення з
         матеріалами справи.
       </p>
-      <button
-        type="button"
+      <a
+        routerLink="/consultation"
         appCtaButton
-        (click)="openContactForm()"
         icon="calendar_today"
       >
         Записатися на консультацію
-      </button>
+      </a>
     </div>
   </div>
 </section>
@@ -199,15 +196,14 @@
     </p>
 
     <div class="final-cta-buttons">
-      <button
-        type="button"
+      <a
+        routerLink="/consultation"
         appCtaButton
         theme="gold"
         icon="calendar_today"
-        (click)="openContactForm()"
       >
         Записатися на консультацію
-      </button>
+      </a>
 
       <p class="final-cta-note">
         Після звернення я проаналізую вашу ситуацію та поясню можливі варіанти

@@ -6,7 +6,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 
 import { AboutMeDialogComponent } from './about-me-dialog/about-me-dialog.component';
-import { ContactFormDialogComponent } from '../contacts/contact-form-dialog/contact-form-dialog.component';
 import { CtaButtonComponent } from '../shared/components/cta-button/cta-button.component';
 import { CtaOutlineButtonComponent } from '../shared/components/cta-outline-button/cta-outline-button.component';
 
@@ -30,19 +29,6 @@ export class AboutMeComponent {
       width: '500px',
       maxWidth: '90vw',
       height: 'auto',
-      autoFocus: false,
-    });
-  }
-
-  openContactForm(): void {
-    this.dialog.open(ContactFormDialogComponent, {
-      data: {
-        width: 'fit-content',
-      },
-      width: '100%',
-      maxWidth: '100vw',
-      height: 'auto',
-      panelClass: 'contact-form-dialog',
       autoFocus: false,
     });
   }

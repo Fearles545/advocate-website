@@ -11,6 +11,10 @@
 npm-debug.log
 yarn-error.log
 
+# Cloudflare Workers
+cloudflare/**/node_modules
+cloudflare/**/.wrangler
+
 #GitHub
 /.github/copilot-instructions.md
 

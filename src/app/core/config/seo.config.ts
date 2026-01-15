@@ -208,7 +208,7 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
   contacts: {
     title: 'Контакти адвоката з пенсійних питань — Поддяча Юлія Юріївна',
     description:
-      'Контакти адвоката з пенсійних питань Поддячої Юлії Юріївни. Консультації онлайн по всій Україні та за кордоном. Телефон, месенджери, форма зворотного зв’язку.',
+      "Контакти адвоката з пенсійних питань Поддячої Юлії Юріївни. Консультації онлайн по всій Україні та за кордоном. Телефон, месенджери, форма зворотного зв'язку.",
     keywords:
       "контакти адвоката, телефон адвоката, email адвоката, консультація адвоката онлайн, запис на консультацію, адвокат по пенсіях, зв'язатися з адвокатом, Вайбер адвокат, Телеграм адвокат, консультація по пенсії",
     canonical: '/contacts/',
@@ -251,6 +251,58 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
           about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
           breadcrumb: {
             '@id': 'https://www.advocate-pensia.com.ua/contacts/#breadcrumbs',
+          },
+        },
+      ],
+    },
+  },
+  consultation: {
+    title: 'Запис на консультацію з пенсійних питань | Адвокат Поддяча Юлія',
+    description:
+      "Заповніть форму для запису на консультацію з адвокатом по пенсіях. Швидкий зворотний зв'язок, консультації онлайн по всій Україні та за кордоном.",
+    keywords:
+      'запис на консультацію, консультація адвоката пенсія, запис до адвоката онлайн, юридична консультація пенсія, консультація по пенсії онлайн',
+    canonical: '/consultation/',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          '@id': 'https://www.advocate-pensia.com.ua/consultation/#breadcrumbs',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Консультація',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/consultation/',
+                name: 'Консультація',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'ContactPage',
+          '@id': 'https://www.advocate-pensia.com.ua/consultation/#webpage',
+          name: 'Запис на консультацію | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/consultation/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+          breadcrumb: {
+            '@id':
+              'https://www.advocate-pensia.com.ua/consultation/#breadcrumbs',
           },
         },
       ],

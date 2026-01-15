@@ -1,0 +1,419 @@
+<section class="page-bg-pattern">
+  <div class="page-content">
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="page-header-badge">
+        <mat-icon>edit_calendar</mat-icon>
+      </div>
+      <h1>Запис на консультацію</h1>
+      <p class="page-intro">
+        Заповніть коротку форму, щоб я могла ознайомитися з вашою пенсійною
+        ситуацією та надати коректну юридичну консультацію.
+      </p>
+      <p class="page-intro secondary">
+        Юридична допомога надається дистанційно — для клієнтів по всій Україні
+        та за кордоном.
+      </p>
+    </header>
+
+    <!-- Form Container -->
+    <div class="form-container">
+      @if (isSuccess()) {
+        <!-- Success State -->
+        <div class="success-card">
+          <div class="success-icon">
+            <mat-icon>check_circle</mat-icon>
+          </div>
+          <h2>Дякую!</h2>
+          <p>
+            Я отримала ваше звернення та ознайомлюся з інформацією. Зв'яжуся з
+            вами найближчим часом у зручний спосіб.
+          </p>
+          <div class="success-actions">
+            <a routerLink="/" appCtaButton icon="home">На головну</a>
+            <button
+              type="button"
+              class="reset-btn"
+              (click)="resetForm()"
+            >
+              Надіслати ще одну заявку
+            </button>
+          </div>
+        </div>
+      } @else {
+        <!-- Form -->
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="consultation-form">
+          <!-- Section 1: Contact Info -->
+          <fieldset class="form-section">
+            <legend class="section-legend">
+              <span class="legend-number">1</span>
+              <span class="legend-text">Контактні дані</span>
+            </legend>
+
+            <div class="form-grid">
+              <!-- Name -->
+              <div class="form-field">
+                <label for="name" class="form-label">
+                  Ваше ім'я та прізвище
+                  <span class="required">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  formControlName="name"
+                  class="form-input"
+                  placeholder="Введіть ваше ім'я"
+                  [class.invalid]="form.controls.name.touched && form.controls.name.invalid"
+                />
+                @if (form.controls.name.touched && form.controls.name.errors?.['required']) {
+                  <span class="field-error">Це поле обов'язкове</span>
+                }
+                @if (form.controls.name.touched && form.controls.name.errors?.['minlength']) {
+                  <span class="field-error">Мінімум 2 символи</span>
+                }
+              </div>
+
+              <!-- Phone -->
+              <div class="form-field">
+                <label for="phone" class="form-label">
+                  Контактний номер телефону
+                  <span class="required">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  formControlName="phone"
+                  class="form-input"
+                  placeholder="+380XXXXXXXXX"
+                  [class.invalid]="form.controls.phone.touched && form.controls.phone.invalid"
+                />
+                <span class="field-hint">
+                  Вкажіть номер, за яким зручно з вами зв'язатися
+                </span>
+                @if (form.controls.phone.touched && form.controls.phone.errors?.['required']) {
+                  <span class="field-error">Це поле обов'язкове</span>
+                }
+                @if (form.controls.phone.touched && form.controls.phone.errors?.['pattern']) {
+                  <span class="field-error">Формат: +380XXXXXXXXX</span>
+                }
+              </div>
+            </div>
+
+            <!-- Contact Methods -->
+            <div class="form-field">
+              <span class="form-label">Зручний спосіб зв'язку</span>
+              <div class="checkbox-group" formGroupName="contactMethods">
+                <label class="checkbox-item">
+                  <input type="checkbox" formControlName="call" />
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-label">Телефонний дзвінок</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" formControlName="viber" />
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-label">Viber</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" formControlName="whatsapp" />
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-label">WhatsApp</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" formControlName="telegram" />
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-label">Telegram</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Section 2: Pension Status -->
+          <fieldset class="form-section">
+            <legend class="section-legend">
+              <span class="legend-number">2</span>
+              <span class="legend-text">Статус пенсії</span>
+            </legend>
+
+            <div class="form-field">
+              <span class="form-label">
+                Чи отримуєте ви пенсію на цей момент?
+                <span class="required">*</span>
+              </span>
+              <div class="radio-group">
+                <label class="radio-item">
+                  <input
+                    type="radio"
+                    formControlName="pensionStatus"
+                    value="receiving"
+                  />
+                  <span class="radio-custom"></span>
+                  <span class="radio-label">Так, я вже отримую пенсію</span>
+                </label>
+                <label class="radio-item">
+                  <input
+                    type="radio"
+                    formControlName="pensionStatus"
+                    value="not_assigned"
+                  />
+                  <span class="radio-custom"></span>
+                  <span class="radio-label">Ні, пенсія ще не призначена</span>
+                </label>
+                <label class="radio-item">
+                  <input
+                    type="radio"
+                    formControlName="pensionStatus"
+                    value="suspended"
+                  />
+                  <span class="radio-custom"></span>
+                  <span class="radio-label">
+                    Пенсія була призначена раніше, але виплати припинені
+                  </span>
+                </label>
+              </div>
+              @if (form.controls.pensionStatus.touched && form.controls.pensionStatus.invalid) {
+                <span class="field-error">Оберіть один з варіантів</span>
+              }
+            </div>
+          </fieldset>
+
+          <!-- Section 3a: Pension Types (conditional) -->
+          @if (showPensionTypes()) {
+            <fieldset class="form-section animate-in">
+              <legend class="section-legend">
+                <span class="legend-number">3</span>
+                <span class="legend-text">Вид пенсії</span>
+              </legend>
+
+              <div class="form-field">
+                <span class="form-label">
+                  Який вид пенсії ви отримуєте або плануєте оформити?
+                </span>
+                <span class="field-hint">Можна обрати декілька варіантів</span>
+                <div class="checkbox-group checkbox-grid" formGroupName="pensionTypes">
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="byAge" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">За віком</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="privileged" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">На пільгових умовах (Список №1 / №2)</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="early" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">Дострокова пенсія</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="byService" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">За вислугу років</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="disability" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">По інвалідності</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="survivor" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">У зв'язку з втратою годувальника</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="other" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">Інше / не знаю</span>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          }
+
+          <!-- Section 3b: Question Types (conditional) -->
+          @if (showQuestionTypes()) {
+            <fieldset class="form-section animate-in">
+              <legend class="section-legend">
+                <span class="legend-number">3</span>
+                <span class="legend-text">Тип пенсійного питання</span>
+              </legend>
+
+              <div class="form-field">
+                <span class="form-label">Оберіть тип пенсійного питання</span>
+                <span class="field-hint">Можна обрати декілька варіантів</span>
+                <div class="checkbox-group checkbox-grid" formGroupName="questionTypes">
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="byAge" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">Пенсія за віком</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="privileged" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">Пільгова пенсія (Список №1 / №2)</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="early" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">Дострокова пенсія</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="byService" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">Пенсія за вислугу років</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="recalculation" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">Перерахунок / індексація пенсії</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="appeal" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">Оскарження рішення ПФУ</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="experience" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">Стаж / незараховані періоди</span>
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" formControlName="other" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-label">Інше питання</span>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          }
+
+          <!-- Section 4: Description -->
+          <fieldset class="form-section">
+            <legend class="section-legend">
+              <span class="legend-number">{{ showPensionTypes() || showQuestionTypes() ? '4' : '3' }}</span>
+              <span class="legend-text">Суть питання</span>
+            </legend>
+
+            <div class="form-field">
+              <label for="description" class="form-label">
+                Коротко опишіть вашу пенсійну ситуацію або проблему
+                <span class="required">*</span>
+              </label>
+              <textarea
+                id="description"
+                formControlName="description"
+                class="form-textarea"
+                rows="5"
+                placeholder="Наприклад: відмова у призначенні пенсії, незарахований стаж, перерахунок пенсії, припинення виплат, підготовка документів тощо."
+                [class.invalid]="form.controls.description.touched && form.controls.description.invalid"
+              ></textarea>
+              @if (form.controls.description.touched && form.controls.description.errors?.['required']) {
+                <span class="field-error">Це поле обов'язкове</span>
+              }
+              @if (form.controls.description.touched && form.controls.description.errors?.['minlength']) {
+                <span class="field-error">Мінімум 10 символів</span>
+              }
+            </div>
+          </fieldset>
+
+          <!-- Section 5: Location -->
+          <fieldset class="form-section">
+            <legend class="section-legend">
+              <span class="legend-number">{{ showPensionTypes() || showQuestionTypes() ? '5' : '4' }}</span>
+              <span class="legend-text">Місце проживання</span>
+            </legend>
+
+            <div class="form-field">
+              <span class="form-label">Де ви зараз проживаєте?</span>
+              <div class="radio-group radio-inline">
+                <label class="radio-item">
+                  <input
+                    type="radio"
+                    formControlName="location"
+                    value="ukraine"
+                  />
+                  <span class="radio-custom"></span>
+                  <span class="radio-label">Україна</span>
+                </label>
+                <label class="radio-item">
+                  <input
+                    type="radio"
+                    formControlName="location"
+                    value="abroad"
+                  />
+                  <span class="radio-custom"></span>
+                  <span class="radio-label">За кордоном</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Section 6: Consent -->
+          <fieldset class="form-section consent-section">
+            <div class="form-field">
+              <label class="checkbox-item consent-checkbox">
+                <input type="checkbox" formControlName="consent" />
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-label">
+                  Я погоджуюся на обробку персональних даних з метою надання
+                  юридичної консультації
+                  <span class="required">*</span>
+                </span>
+              </label>
+              @if (form.controls.consent.touched && form.controls.consent.invalid) {
+                <span class="field-error">Необхідна згода на обробку даних</span>
+              }
+            </div>
+          </fieldset>
+
+          <!-- Honeypot (hidden) -->
+          <div class="hp-field" aria-hidden="true">
+            <input
+              type="text"
+              formControlName="website"
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- Final Text -->
+          <div class="form-footer">
+            <p class="footer-text">
+              Після отримання вашого звернення я ознайомлюся з інформацією та
+              зв'яжуся з вами, щоб пояснити можливі варіанти вирішення
+              пенсійного питання.
+            </p>
+            <p class="footer-note">
+              Консультації надаються онлайн. Особиста присутність у Пенсійному
+              фонді або суді, як правило, не потрібна.
+            </p>
+          </div>
+
+          <!-- Error Banner -->
+          @if (errorMessage()) {
+            <div class="error-banner">
+              <mat-icon>error_outline</mat-icon>
+              <span>{{ errorMessage() }}</span>
+            </div>
+          }
+
+          <!-- Submit Button -->
+          <div class="form-actions">
+            <button
+              type="submit"
+              appCtaButton
+              icon="send"
+              [disabled]="isSubmitting()"
+            >
+              @if (isSubmitting()) {
+                Надсилання...
+              } @else {
+                Надіслати заявку
+              }
+            </button>
+          </div>
+        </form>
+      }
+    </div>
+  </div>
+</section>
