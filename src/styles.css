@@ -304,7 +304,7 @@ a {
     counter-reset: list-counter;
     list-style: none;
 
-    li {
+    > li {
       position: relative;
       counter-increment: list-counter;
       padding-left: 0.5rem;
@@ -319,7 +319,7 @@ a {
         text-align: right;
       }
 
-      p {
+      > p {
         display: inline;
       }
     }
@@ -458,7 +458,7 @@ a {
     ol {
       padding-left: 1.5rem;
 
-      li::before {
+      > li::before {
         left: -1.5rem;
         width: 1.25rem;
       }
