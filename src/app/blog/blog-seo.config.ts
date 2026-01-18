@@ -1,4 +1,5 @@
 import { PageSEO } from '@core/services/seo.service';
+import { yaki_dokumenty_mozhna_otsyfruvaty_razom_iz_trudovoiu_knyzhkoiu_abo_u_razi_vtraty_trudovoi_knyzhky } from './blog-posts/posts/yaki-dokumenty-mozhna-otsyfruvaty-razom-iz-trudovoiu-knyzhkoiu-abo-u-razi-vtraty-trudovoi-knyzhky.seo';
 import { otsyfruvannia_trudovykh_knyzhok_shcho_potribno_znaty_dlia_pidtverdzhennia_stazhu_ta_pryznachennia_pensii } from './blog-posts/posts/otsyfruvannia-trudovykh-knyzhok-shcho-potribno-znaty-dlia-pidtverdzhennia-stazhu-ta-pryznachennia-pensii.seo';
 import { minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti } from './blog-posts/posts/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti.seo';
 import { khto_maie_pravo_na_pensiiu_za_vikom_u_2025 } from './blog-posts/posts/khto-maie-pravo-na-pensiiu-za-vikom-u-2025.seo';
@@ -103,4 +104,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...koly_dotsilnishe_podavaty_zaiavu_na_pryznachennia_pensii_iakscho_den_narodzhennia_prypadaie_na_zhovten_lystopad_abo_hruden,
   ...shcho_oznachaie_status_do_atrybutuvannia_pid_chas_zvernennia_do_pensiinoho_fondu_ukrainy,
   ...otsyfruvannia_trudovykh_knyzhok_shcho_potribno_znaty_dlia_pidtverdzhennia_stazhu_ta_pryznachennia_pensii,
+  ...yaki_dokumenty_mozhna_otsyfruvaty_razom_iz_trudovoiu_knyzhkoiu_abo_u_razi_vtraty_trudovoi_knyzhky,
 };
