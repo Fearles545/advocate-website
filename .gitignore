@@ -14,6 +14,7 @@ yarn-error.log
 # Cloudflare Workers
 cloudflare/**/node_modules
 cloudflare/**/.wrangler
+cloudflare/**/.env*
 
 #GitHub
 /.github/copilot-instructions.md
