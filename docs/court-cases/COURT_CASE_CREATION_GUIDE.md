@@ -2,6 +2,69 @@
 
 This guide documents the process for adding new court cases to the advocate-website.
 
+---
+
+## Using Claude AI (Recommended)
+
+For streamlined case creation, use the AI input template:
+
+**Template file:** `court-case-ai-input.ts` (project root)
+
+### Workflow
+
+1. Fill in `court-case-ai-input.ts` with case details
+2. Tell Claude: "case content in court-case-ai-input.ts"
+3. Claude will automatically:
+   - Create case TypeScript file
+   - Register in `cases/index.ts`
+   - Update `sitemap.xml`
+   - Verify TypeScript compilation
+
+**Note:** SEO is auto-generated - no separate SEO file needed!
+
+### Template Structure
+
+```typescript
+export const courtCaseInput: CourtCaseInput = {
+  caseNumber: string;        // "420/14018/25" (slug auto-generated)
+  slug?: string;             // Override for appeals: "420-14018-25-appeal"
+  title: string;             // Headline describing outcome
+  date: string;              // YYYY-MM-DD
+  tags: string[];            // Classification tags
+  registryLinks: [{url, label?}]; // Court registry URL(s)
+
+  essence: string;           // Background (markdown → HTML)
+  courtReview: string;       // Court findings (markdown → HTML)
+  result: string[];          // Outcome points (plain text)
+
+  usefulFor?: string[];      // Target audience
+  relatedCases?: string[];   // Related case slugs
+  relatedBlogs?: string[];   // Related blog slugs
+  seo?: SeoOverrides;        // Optional SEO overrides
+};
+```
+
+### Slug Conventions
+
+| Case Type | Slug Format | Example |
+|-----------|-------------|---------|
+| First instance | `{number}` | `420-14018-25` |
+| Appeal | `{number}-appeal` | `420-14018-25-appeal` |
+| Cassation | `{number}-cassation` | `420-14018-25-cassation` |
+
+### Tips
+
+- **Markdown**: Write `essence` and `courtReview` in markdown - converted to HTML
+- **result/usefulFor**: Plain text only (no markdown)
+- **Date**: Use today's date for new publications; sitemap uses same date
+- **Related cases**: Reference other case slugs to link them together
+
+---
+
+## Manual Creation
+
+For manual case creation without AI assistance, follow the steps below.
+
 ## Overview
 
 Court cases are stored as TypeScript data files and rendered dynamically. Unlike blog posts, **SEO is auto-generated** from case data - no separate SEO file needed.

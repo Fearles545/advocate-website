@@ -2,6 +2,53 @@
 
 Complete workflow for adding new blog posts to the advocate-pensia.com.ua website.
 
+---
+
+## Using Claude AI (Recommended)
+
+For streamlined blog creation, use the AI input template:
+
+**Template file:** `blog-ai-input.ts` (project root)
+
+### Workflow
+
+1. Fill in `blog-ai-input.ts` with your content
+2. Tell Claude: "next blog post content in blog-ai-input.ts"
+3. Claude will automatically:
+   - Create HTML post file
+   - Create SEO config file
+   - Register in `index.ts`
+   - Update `blog-seo.config.ts`
+   - Update `sitemap.xml`
+   - Verify TypeScript compilation
+
+### Template Structure
+
+```typescript
+export const blogAiInput: BlogInput = {
+  title: string;           // H1 title (slug auto-generated)
+  date: string;            // YYYY-MM-DD
+  category: CategoryLabel; // Ukrainian label, converted to slug
+  src?: string | string[]; // YouTube embed URL(s)
+  relatedSlugs?: string[]; // Custom related articles
+  faq?: FaqItem[];         // Custom FAQ items
+  content: string;         // Markdown content
+};
+```
+
+### Tips
+
+- **Apostrophes**: Use `'` (standard) in content - Claude handles escaping
+- **Markdown**: Write content in markdown - converted to HTML automatically
+- **Date**: Use post's conceptual date; sitemap uses today's date for `lastmod`
+- **Category**: Use Ukrainian label (e.g., "Пільгова пенсія") - auto-converted
+
+---
+
+## Manual Creation
+
+For manual blog creation without AI assistance, follow the steps below.
+
 ## Quick Reference
 
 **Files to create per post:**
