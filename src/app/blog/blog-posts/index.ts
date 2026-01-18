@@ -16,6 +16,35 @@ export interface Blog {
 export const blogs = [
   {
     title:
+      'Вимоги до оцифрування трудової книжки та інших документів: детальні роз\'яснення',
+    slug: 'vymohy-do-otsyfruvannia-trudovoi-knyzhky-ta-inshykh-dokumentiv-detalni-roziasnnennia',
+    src: ['https://www.youtube.com/embed/FoIzS2N-KZ8'],
+    date: '2025-01-06',
+    categories: ['general'] as const,
+    description:
+      'Детальні вимоги ПФУ до оцифрування трудової книжки: кольорові скани, формат .pdf/.jpg, розмір до 1 МБ, роздільна здатність 300 dpi.',
+    faq: [
+      {
+        question: 'Чи приймає ПФУ чорно-білі скани документів?',
+        answer: 'Ні, документи мають бути подані у кольоровому форматі.',
+      },
+      {
+        question: 'Чи потрібно сканувати порожні сторінки трудової книжки?',
+        answer: 'Ні, оцифровуються лише заповнені сторінки.',
+      },
+      {
+        question: 'У якому форматі краще подавати трудову книжку?',
+        answer:
+          'Рекомендовано об\'єднати всі сторінки в один файл формату .pdf.',
+      },
+      {
+        question: 'Що робити, якщо файл перевищує 1 мегабайт?',
+        answer: 'Файл необхідно стиснути або розділити на кілька частин.',
+      },
+    ] as const,
+  },
+  {
+    title:
       'Які документи можна оцифрувати разом із трудовою книжкою або у разі втрати трудової книжки',
     slug: 'yaki-dokumenty-mozhna-otsyfruvaty-razom-iz-trudovoiu-knyzhkoiu-abo-u-razi-vtraty-trudovoi-knyzhky',
     src: ['https://www.youtube.com/embed/lflIdtA5KZc'],

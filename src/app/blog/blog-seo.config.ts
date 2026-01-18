@@ -1,4 +1,5 @@
 import { PageSEO } from '@core/services/seo.service';
+import { vymohy_do_otsyfruvannia_trudovoi_knyzhky_ta_inshykh_dokumentiv_detalni_roziasnnennia } from './blog-posts/posts/vymohy-do-otsyfruvannia-trudovoi-knyzhky-ta-inshykh-dokumentiv-detalni-roziasnnennia.seo';
 import { yaki_dokumenty_mozhna_otsyfruvaty_razom_iz_trudovoiu_knyzhkoiu_abo_u_razi_vtraty_trudovoi_knyzhky } from './blog-posts/posts/yaki-dokumenty-mozhna-otsyfruvaty-razom-iz-trudovoiu-knyzhkoiu-abo-u-razi-vtraty-trudovoi-knyzhky.seo';
 import { otsyfruvannia_trudovykh_knyzhok_shcho_potribno_znaty_dlia_pidtverdzhennia_stazhu_ta_pryznachennia_pensii } from './blog-posts/posts/otsyfruvannia-trudovykh-knyzhok-shcho-potribno-znaty-dlia-pidtverdzhennia-stazhu-ta-pryznachennia-pensii.seo';
 import { minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti } from './blog-posts/posts/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti.seo';
@@ -53,6 +54,9 @@ import { koly_dotsilnishe_podavaty_zaiavu_na_pryznachennia_pensii_iakscho_den_na
 import { shcho_oznachaie_status_do_atrybutuvannia_pid_chas_zvernennia_do_pensiinoho_fondu_ukrainy } from './blog-posts/posts/shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
+  ...vymohy_do_otsyfruvannia_trudovoi_knyzhky_ta_inshykh_dokumentiv_detalni_roziasnnennia,
+  ...yaki_dokumenty_mozhna_otsyfruvaty_razom_iz_trudovoiu_knyzhkoiu_abo_u_razi_vtraty_trudovoi_knyzhky,
+  ...otsyfruvannia_trudovykh_knyzhok_shcho_potribno_znaty_dlia_pidtverdzhennia_stazhu_ta_pryznachennia_pensii,
   ...minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti,
   ...khto_maie_pravo_na_pensiiu_za_vikom_u_2025,
   ...komu_pererakhuiut_pensii_1_kvitnia_2025,
