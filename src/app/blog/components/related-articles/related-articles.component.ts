@@ -393,6 +393,16 @@ export class RelatedArticlesComponent {
 
   readonly relatedPosts = computed(() => {
     const current = this.currentBlog();
+
+    // Use custom related slugs if provided
+    if (current.relatedSlugs?.length) {
+      return this.getPostsBySlugs(current.relatedSlugs).slice(
+        0,
+        this.MAX_RELATED
+      );
+    }
+
+    // Fall back to automatic category-based related posts
     const categories = current.categories;
 
     if (!categories?.length) {
@@ -434,14 +444,22 @@ export class RelatedArticlesComponent {
   });
 
   readonly headerTitle = computed(() => {
+    const current = this.currentBlog();
+    if (current.relatedSlugs?.length) {
+      return 'Рекомендовані статті';
+    }
     const cat = this.primaryCategory();
     if (cat && this.hasCategoryPosts()) {
-      return 'Схожі статті';
+      return 'Повʼязані статті';
     }
     return 'Останні статті';
   });
 
   readonly headerSubtitle = computed(() => {
+    const current = this.currentBlog();
+    if (current.relatedSlugs?.length) {
+      return 'Обрані для вас';
+    }
     const cat = this.primaryCategory();
     if (cat && this.hasCategoryPosts()) {
       return getCategoryDisplayLabel(cat);
@@ -474,5 +492,11 @@ export class RelatedArticlesComponent {
       .filter((blog) => blog.slug !== excludeSlug)
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
       .slice(0, this.MAX_RELATED);
+  }
+
+  private getPostsBySlugs(slugs: readonly string[]): Blog[] {
+    return slugs
+      .map((slug) => this.allBlogs.find((blog) => blog.slug === slug))
+      .filter((blog) => blog !== undefined) as Blog[];
   }
 }

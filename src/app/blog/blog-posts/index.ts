@@ -1,4 +1,5 @@
 import { BlogCategorySlug } from '../blog-categories';
+import { FaqItem } from '../blog-faq-data';
 
 export interface Blog {
   id?: number;
@@ -8,6 +9,8 @@ export interface Blog {
   src: string[];
   date: string;
   categories?: readonly BlogCategorySlug[];
+  relatedSlugs?: readonly string[];
+  faq?: readonly FaqItem[];
 }
 
 export const blogs = [

@@ -67,7 +67,10 @@
 
         <!-- Footer Sections with Gold Separators -->
         <div class="article-footer-sections">
-          <app-blog-faq [category]="blog()!.categories?.[0]" />
+          <app-blog-faq
+            [category]="blog()!.categories?.[0]"
+            [customFaq]="blog()!.faq"
+          />
           <app-related-articles [currentBlog]="blog()!" />
           <app-blog-links />
         </div>

@@ -265,8 +265,18 @@ export class BlogFaqComponent {
   private document = inject(DOCUMENT);
 
   category = input<BlogCategorySlug>();
+  customFaq = input<readonly FaqItem[]>();
 
-  readonly faq = computed(() => getFaqForCategory(this.category()));
+  readonly faq = computed(() => {
+    const custom = this.customFaq();
+    if (custom?.length) {
+      return {
+        title: 'Часті питання',
+        items: custom as FaqItem[],
+      };
+    }
+    return getFaqForCategory(this.category());
+  });
   readonly expandedIndex = signal<number | null>(null);
 
   constructor() {
