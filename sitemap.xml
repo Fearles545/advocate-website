@@ -100,6 +100,18 @@
 
   <!-- Court Cases (Individual) -->
   <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/420-14018-25-cassation/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/280-9134-25/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.advocate-pensia.com.ua/court-cases/500-5783-25/</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>monthly</changefreq>
@@ -149,6 +161,30 @@
   </url>
 
   <!-- Blog Posts -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/iak-samostiino-otsyfruvaty-trudovu-knyzhku-ta-inshi-dokumenty-cherez-vebportal-pensiinoho-fondu-ukrainy/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/vymohy-do-otsyfruvannia-trudovoi-knyzhky-ta-inshykh-dokumentiv-detalni-roziasnnennia/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/yaki-dokumenty-mozhna-otsyfruvaty-razom-iz-trudovoiu-knyzhkoiu-abo-u-razi-vtraty-trudovoi-knyzhky/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/otsyfruvannia-trudovykh-knyzhok-shcho-potribno-znaty-dlia-pidtverdzhennia-stazhu-ta-pryznachennia-pensii/</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.advocate-pensia.com.ua/blog/shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy/</loc>
     <lastmod>2025-12-02</lastmod>

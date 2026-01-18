@@ -14,6 +14,8 @@ import { case_200_7851_25 } from './200-7851-25-case';
 import { case_420_22036_25 } from './420-22036-25-case';
 import { case_500_5783_25 } from './500-5783-25-case';
 import { case_420_14018_25_appeal } from './420-14018-25-case-appeal';
+import { case_280_9134_25 } from './280-9134-25-case';
+import { case_420_14018_25_cassation } from './420-14018-25-case-cassation';
 
 /**
  * All court cases data.
@@ -24,10 +26,12 @@ export const courtCases: CourtCase[] = [
   case_420_14018_25,
   case_420_14489_25,
   case_420_14018_25_appeal,
+  case_420_14018_25_cassation,
   case_200_5966_25,
   case_200_7851_25,
   case_420_22036_25,
   case_500_5783_25,
+  case_280_9134_25,
 ].sort((a, b) => b.date.localeCompare(a.date));
 
 /**
