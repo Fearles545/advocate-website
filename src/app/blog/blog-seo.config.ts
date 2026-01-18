@@ -1,4 +1,5 @@
 import { PageSEO } from '@core/services/seo.service';
+import { otsyfruvannia_trudovykh_knyzhok_shcho_potribno_znaty_dlia_pidtverdzhennia_stazhu_ta_pryznachennia_pensii } from './blog-posts/posts/otsyfruvannia-trudovykh-knyzhok-shcho-potribno-znaty-dlia-pidtverdzhennia-stazhu-ta-pryznachennia-pensii.seo';
 import { minimalnyi_rozmir_pensii_za_vikom_umovy_osoblyvosti } from './blog-posts/posts/minimalnyi-rozmir-pensii-za-vikom-umovy-osoblyvosti.seo';
 import { khto_maie_pravo_na_pensiiu_za_vikom_u_2025 } from './blog-posts/posts/khto-maie-pravo-na-pensiiu-za-vikom-u-2025.seo';
 import { komu_pererakhuiut_pensii_1_kvitnia_2025 } from './blog-posts/posts/komu-pererakhuiut-pensii-1-kvitnia-2025.seo';
@@ -101,4 +102,5 @@ export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
   ...iakyi_minimalnyi_rozmir_pensii_shakhtariam_ta_pratsivnykam_zainiatym_ikh_obsluhovuvanniam,
   ...koly_dotsilnishe_podavaty_zaiavu_na_pryznachennia_pensii_iakscho_den_narodzhennia_prypadaie_na_zhovten_lystopad_abo_hruden,
   ...shcho_oznachaie_status_do_atrybutuvannia_pid_chas_zvernennia_do_pensiinoho_fondu_ukrainy,
+  ...otsyfruvannia_trudovykh_knyzhok_shcho_potribno_znaty_dlia_pidtverdzhennia_stazhu_ta_pryznachennia_pensii,
 };
