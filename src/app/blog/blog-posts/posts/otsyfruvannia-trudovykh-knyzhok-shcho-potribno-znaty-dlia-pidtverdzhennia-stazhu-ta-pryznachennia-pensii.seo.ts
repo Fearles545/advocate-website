@@ -18,6 +18,8 @@ export const otsyfruvannia_trudovykh_knyzhok_shcho_potribno_znaty_dlia_pidtverdz
           '@graph': [
             {
               '@type': 'BreadcrumbList',
+              '@id':
+                'https://www.advocate-pensia.com.ua/blog/otsyfruvannia-trudovykh-knyzhok-shcho-potribno-znaty-dlia-pidtverdzhennia-stazhu-ta-pryznachennia-pensii/#breadcrumb',
               itemListElement: [
                 {
                   '@type': 'ListItem',

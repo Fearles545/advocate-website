@@ -18,6 +18,8 @@ export const yaki_dokumenty_mozhna_otsyfruvaty_razom_iz_trudovoiu_knyzhkoiu_abo_
           '@graph': [
             {
               '@type': 'BreadcrumbList',
+              '@id':
+                'https://www.advocate-pensia.com.ua/blog/yaki-dokumenty-mozhna-otsyfruvaty-razom-iz-trudovoiu-knyzhkoiu-abo-u-razi-vtraty-trudovoi-knyzhky/#breadcrumb',
               itemListElement: [
                 {
                   '@type': 'ListItem',

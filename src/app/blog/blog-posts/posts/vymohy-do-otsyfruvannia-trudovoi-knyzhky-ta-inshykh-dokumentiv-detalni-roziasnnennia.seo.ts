@@ -18,6 +18,8 @@ export const vymohy_do_otsyfruvannia_trudovoi_knyzhky_ta_inshykh_dokumentiv_deta
           '@graph': [
             {
               '@type': 'BreadcrumbList',
+              '@id':
+                'https://www.advocate-pensia.com.ua/blog/vymohy-do-otsyfruvannia-trudovoi-knyzhky-ta-inshykh-dokumentiv-detalni-roziasnnennia/#breadcrumb',
               itemListElement: [
                 {
                   '@type': 'ListItem',
