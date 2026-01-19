@@ -18,6 +18,8 @@ export const iak_samostiino_otsyfruvaty_trudovu_knyzhku_ta_inshi_dokumenty_chere
           '@graph': [
             {
               '@type': 'BreadcrumbList',
+              '@id':
+                'https://www.advocate-pensia.com.ua/blog/iak-samostiino-otsyfruvaty-trudovu-knyzhku-ta-inshi-dokumenty-cherez-vebportal-pensiinoho-fondu-ukrainy/#breadcrumb',
               itemListElement: [
                 {
                   '@type': 'ListItem',
