@@ -22,7 +22,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
             відповідно до вимог законодавства.
           </p>
 
-          <a routerLink="/documents" appCtaOutlineButton>
+          <a routerLink="/documents/" appCtaOutlineButton>
             Переглянути документи адвоката
           </a>
         </div>

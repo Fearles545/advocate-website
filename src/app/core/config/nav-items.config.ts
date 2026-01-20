@@ -23,34 +23,34 @@ export const NAV_ITEMS: NavItem[] = [
   },
   {
     label: 'Послуги',
-    route: 'services',
+    route: '/services/',
   },
   {
     label: 'Судові рішення',
-    route: 'court-cases',
+    route: '/court-cases/',
   },
   {
     label: 'Відгуки',
-    route: 'feedbacks',
+    route: '/feedbacks/',
   },
   {
     label: 'Блог',
-    route: 'blog',
+    route: '/blog/',
   },
   {
     label: 'Про мене',
-    route: 'about-me',
+    route: '/about-me/',
   },
   {
     label: 'Документи',
-    route: 'documents',
+    route: '/documents/',
   },
   {
     label: 'FAQ',
-    route: 'faq',
+    route: '/faq/',
   },
   {
     label: 'Контакти',
-    route: 'contacts',
+    route: '/contacts/',
   },
 ];

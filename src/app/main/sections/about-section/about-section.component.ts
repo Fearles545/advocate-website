@@ -62,7 +62,7 @@ import { CtaOutlineButtonComponent } from '@shared/components/cta-outline-button
 
             <span class="quote-mark quote-close" aria-hidden="true">"</span>
 
-            <a routerLink="/about-me" appCtaOutlineButton>
+            <a routerLink="/about-me/" appCtaOutlineButton>
               Детальніше про адвоката
             </a>
           </div>

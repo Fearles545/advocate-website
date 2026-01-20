@@ -30,7 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
             </div>
 
             <!-- Primary CTA Button -->
-            <a routerLink="/contacts" class="cta-button">
+            <a routerLink="/contacts/" class="cta-button">
               <span class="btn-icon">
                 <mat-icon>mail</mat-icon>
               </span>
@@ -42,22 +42,22 @@ import { MatIconModule } from '@angular/material/icon';
             <nav class="cta-nav">
               <span class="nav-label">Дивіться також:</span>
               <div class="nav-links">
-                <a routerLink="/services" class="nav-link">
+                <a routerLink="/services/" class="nav-link">
                   <mat-icon>description</mat-icon>
                   <span>Послуги</span>
                 </a>
                 <span class="nav-divider"></span>
-                <a routerLink="/court-cases" class="nav-link">
+                <a routerLink="/court-cases/" class="nav-link">
                   <mat-icon>gavel</mat-icon>
                   <span>Судові справи</span>
                 </a>
                 <span class="nav-divider"></span>
-                <a routerLink="/feedbacks" class="nav-link">
+                <a routerLink="/feedbacks/" class="nav-link">
                   <mat-icon>reviews</mat-icon>
                   <span>Відгуки</span>
                 </a>
                 <span class="nav-divider"></span>
-                <a routerLink="/about-me" class="nav-link">
+                <a routerLink="/about-me/" class="nav-link">
                   <mat-icon>person</mat-icon>
                   <span>Про адвоката</span>
                 </a>
