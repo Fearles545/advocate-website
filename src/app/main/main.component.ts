@@ -35,7 +35,7 @@ import { NeedHelpSectionComponent } from './sections/need-help-section/need-help
 export class MainComponent {
   recentBlogs: Blog[] = blogs.slice(0, 3);
 
-  feedbacks: Feedback[] = feedbacks.slice(0, 5);
+  feedbacks: Feedback[] = feedbacks.slice(-5);
 
   get messengerIcons(): SocialIconData[] {
     return iconsData.filter((icon) =>
