@@ -50,6 +50,10 @@ export class ConsultationComponent {
       nonNullable: true,
       validators: [Validators.required, Validators.pattern(/^(\+\d{10,15}|\d{9})$/)],
     }),
+    email: new FormControl('', {
+      nonNullable: true,
+      validators: [Validators.email],
+    }),
     contactMethods: new FormGroup({
       call: new FormControl(false, { nonNullable: true }),
       viber: new FormControl(false, { nonNullable: true }),
@@ -166,6 +170,7 @@ export class ConsultationComponent {
     return {
       name: formValue.name,
       phone: formValue.phone,
+      email: formValue.email,
       contactMethods: formValue.contactMethods,
       pensionStatus: formValue.pensionStatus,
       pensionTypes: formValue.pensionTypes,

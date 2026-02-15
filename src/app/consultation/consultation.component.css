@@ -604,6 +604,16 @@
    Mobile Refinements
    ============================================ */
 
+@media (max-width: 639px) {
+  .form-grid > .form-field {
+    margin-bottom: 0;
+  }
+
+  .form-grid {
+    margin-bottom: 1.25rem;
+  }
+}
+
 @media (max-width: 479px) {
   .consultation-form {
     padding: 1.5rem 1rem;

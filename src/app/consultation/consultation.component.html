@@ -99,6 +99,27 @@
               </div>
             </div>
 
+            <!-- Email -->
+            <div class="form-field">
+              <label for="email" class="form-label">
+                Електронна пошта
+              </label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="form-input"
+                placeholder="example@email.com"
+                [class.invalid]="form.controls.email.touched && form.controls.email.invalid"
+              />
+              <span class="field-hint">
+                Вкажіть email для додаткового зв'язку — на випадок, якщо номер телефону введено з помилкою
+              </span>
+              @if (form.controls.email.touched && form.controls.email.errors?.['email']) {
+                <span class="field-error">Невірний формат електронної пошти</span>
+              }
+            </div>
+
             <!-- Contact Methods -->
             <div class="form-field">
               <span class="form-label">Зручний спосіб зв'язку</span>
@@ -156,7 +177,7 @@
                     value="not_assigned"
                   />
                   <span class="radio-custom"></span>
-                  <span class="radio-label">Ні, пенсія ще не призначена</span>
+                  <span class="radio-label">Ні, пенсія не призначена</span>
                 </label>
                 <label class="radio-item">
                   <input

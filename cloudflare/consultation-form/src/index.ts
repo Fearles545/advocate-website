@@ -13,6 +13,7 @@ interface ContactMethods {
 interface ConsultationRequest {
   name: string;
   phone: string;
+  email: string;
   contactMethods: ContactMethods;
   pensionStatus: 'receiving' | 'not_assigned' | 'suspended' | null;
   pensionTypes: Record<string, boolean>;
@@ -69,6 +70,7 @@ function validateRequest(data: unknown): ConsultationRequest {
   const {
     name,
     phone,
+    email,
     contactMethods,
     pensionStatus,
     pensionTypes,
@@ -112,9 +114,12 @@ function validateRequest(data: unknown): ConsultationRequest {
     throw new Error('Оберіть статус пенсії');
   }
 
+  const cleanEmail = typeof email === 'string' ? email.trim() : '';
+
   return {
     name: name.trim(),
     phone: cleanPhone,
+    email: cleanEmail,
     contactMethods: (contactMethods as ContactMethods) || { call: false, viber: false, whatsapp: false, telegram: false },
     pensionStatus: pensionStatus as ConsultationRequest['pensionStatus'],
     pensionTypes: (pensionTypes as Record<string, boolean>) || {},
@@ -205,6 +210,7 @@ function formatTelegramMessage(data: ConsultationRequest): string {
     '',
     `*Ім'я:* ${escapeMarkdownV2(data.name)}`,
     `*Телефон:* ${escapeMarkdownV2(data.phone)}`,
+    `*Email:* ${escapeMarkdownV2(data.email || 'Не вказано')}`,
     `*Спосіб зв'язку:* ${escapeMarkdownV2(formatContactMethods(data.contactMethods))}`,
     '',
     `*Статус пенсії:* ${escapeMarkdownV2(formatPensionStatus(data.pensionStatus))}`,
