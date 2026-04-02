@@ -147,9 +147,61 @@ type BlogCategorySlug =
 | `<ul>/<li>` | Lists |
 | `<cite>` | Law references |
 | `<time datetime="YYYY-MM-DD">` | Dates |
-| `<aside>` | Supplementary info |
+| `<aside>` | Supplementary info (green left border) |
+| `<aside class="blog-warning">` | Warning/attention notice (gold left border) |
+| `<figure>` + `<img>` + `<figcaption>` | Image with caption (centered, max 300px) |
 | `<strong>` | Critical information |
 | `<footer>` | Professional help CTA |
+
+### Images in Blog Posts
+
+**Asset location:** `src/assets/images/blog/{slug}/`
+
+**Recommended format:** WebP, ~500px width for source files (CSS caps display at 300px)
+
+**HTML pattern:**
+
+```html
+<figure>
+  <img
+    src="assets/images/blog/{slug}/filename.webp"
+    alt="Descriptive text in Ukrainian"
+    width="500"
+    height="XXX"
+    loading="lazy"
+  />
+  <figcaption>Short caption text</figcaption>
+</figure>
+```
+
+**Required attributes:**
+- `alt` — descriptive Ukrainian text (not just "скріншот")
+- `width` / `height` — actual pixel dimensions (prevents CLS)
+- `loading="lazy"` — for images below the fold
+- `src` — relative path, no leading `/`: `assets/images/blog/{slug}/...`
+
+**Image processing workflow:**
+1. Resize to ~500px width: `sips --resampleWidth 500 input.jpg --out resized.jpg`
+2. Convert to WebP: `cwebp -q 85 resized.jpg -o output.webp`
+3. Record dimensions: `sips -g pixelWidth -g pixelHeight output.webp`
+
+### Aside and Warning Elements
+
+**`<aside>`** — supplementary information with green left border:
+
+```html
+<aside>
+  <p><strong>Важливо:</strong> supplementary text here.</p>
+</aside>
+```
+
+**`<aside class="blog-warning">`** — attention-grabbing warning with gold left border:
+
+```html
+<aside class="blog-warning">
+  <p>Warning or critical notice text.</p>
+</aside>
+```
 
 ---
 
