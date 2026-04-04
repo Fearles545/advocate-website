@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { CtaButtonComponent } from '../shared/components/cta-button';
 import { iconsData, SocialIconData } from '../core/icons.data';
+import { schedule } from '../core/config/schedule.config';
 
 interface MessengerIcon extends SocialIconData {
   safeSvg: SafeHtml;
@@ -19,6 +20,7 @@ interface MessengerIcon extends SocialIconData {
   styleUrl: './contacts.component.css',
 })
 export class ContactsComponent {
+  readonly schedule = schedule;
   private sanitizer = inject(DomSanitizer);
   private platformId = inject(PLATFORM_ID);
 

@@ -6,6 +6,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { courtCases } from '../court-cases/cases';
 import { SocialIconData } from '../core/icons.data';
+import { schedule } from '../core/config/schedule.config';
 import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.component';
 
 @Component({
@@ -20,6 +21,7 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
   styleUrl: './footer.component.css',
 })
 export class FooterComponent {
+  readonly schedule = schedule;
   iconsData = input.required<SocialIconData[]>();
 
   readonly currentYear = new Date().getFullYear();
