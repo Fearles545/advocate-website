@@ -1,4 +1,5 @@
 import { PageSEO } from '@core/services/seo.service';
+import { shcho_oznachaiut_statusy_vykonano_ta_skasovano_vykonannia_pid_chas_otsyfruvannia_dokumentiv } from './blog-posts/posts/shcho-oznachaiut-statusy-vykonano-ta-skasovano-vykonannia-pid-chas-otsyfruvannia-dokumentiv.seo';
 import { holosuvannia_proty_proiektu_kmu_821 } from './blog-posts/posts/holosuvannia-proty-proiektu-kmu-821.seo';
 import { iak_samostiino_otsyfruvaty_trudovu_knyzhku_ta_inshi_dokumenty_cherez_vebportal_pensiinoho_fondu_ukrainy } from './blog-posts/posts/iak-samostiino-otsyfruvaty-trudovu-knyzhku-ta-inshi-dokumenty-cherez-vebportal-pensiinoho-fondu-ukrainy.seo';
 import { vymohy_do_otsyfruvannia_trudovoi_knyzhky_ta_inshykh_dokumentiv_detalni_roziasnnennia } from './blog-posts/posts/vymohy-do-otsyfruvannia-trudovoi-knyzhky-ta-inshykh-dokumentiv-detalni-roziasnnennia.seo';
@@ -56,6 +57,7 @@ import { koly_dotsilnishe_podavaty_zaiavu_na_pryznachennia_pensii_iakscho_den_na
 import { shcho_oznachaie_status_do_atrybutuvannia_pid_chas_zvernennia_do_pensiinoho_fondu_ukrainy } from './blog-posts/posts/shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
+  ...shcho_oznachaiut_statusy_vykonano_ta_skasovano_vykonannia_pid_chas_otsyfruvannia_dokumentiv,
   ...holosuvannia_proty_proiektu_kmu_821,
   ...iak_samostiino_otsyfruvaty_trudovu_knyzhku_ta_inshi_dokumenty_cherez_vebportal_pensiinoho_fondu_ukrainy,
   ...vymohy_do_otsyfruvannia_trudovoi_knyzhky_ta_inshykh_dokumentiv_detalni_roziasnnennia,

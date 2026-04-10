@@ -16,6 +16,45 @@ export interface Blog {
 export const blogs = [
   {
     title:
+      'Що означають статуси «Виконано» та «Скасовано виконання» під час оцифрування трудової книжки та інших документів',
+    slug: 'shcho-oznachaiut-statusy-vykonano-ta-skasovano-vykonannia-pid-chas-otsyfruvannia-dokumentiv',
+    src: ['https://www.youtube.com/embed/ezewJjjSjN8'],
+    date: '2026-04-10',
+    categories: ['general'] as const,
+    description:
+      'Що означають статуси «Виконано» та «Скасовано виконання» в електронному кабінеті ПФУ після подання документів на оцифрування та як діяти в кожному випадку.',
+    relatedSlugs: [
+      'iak-samostiino-otsyfruvaty-trudovu-knyzhku-ta-inshi-dokumenty-cherez-vebportal-pensiinoho-fondu-ukrainy',
+      'vymohy-do-otsyfruvannia-trudovoi-knyzhky-ta-inshykh-dokumentiv-detalni-roziasnnennia',
+      'shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy',
+    ] as const,
+    faq: [
+      {
+        question: 'Чи означає статус «Виконано» призначення пенсії?',
+        answer:
+          'Ні, цей статус підтверджує лише факт оцифрування документів та внесення даних до електронної пенсійної справи, а не рішення про призначення пенсії.',
+      },
+      {
+        question:
+          'Що робити, якщо звернення отримало статус «Скасовано виконання»?',
+        answer:
+          'Потрібно перевірити поле «Повідомлення» в електронному кабінеті, усунути зазначені недоліки та подати документи повторно.',
+      },
+      {
+        question: 'Де переглянути причину відхилення документів?',
+        answer:
+          'Причина завжди зазначається у спеціальному полі «Повідомлення» в електронному кабінеті ПФУ поряд зі статусом звернення.',
+      },
+      {
+        question:
+          'Чи можна повторно подати документи без аналізу причини відхилення?',
+        answer:
+          'Ні, без усунення виявлених недоліків документи будуть відхилені знову. Спочатку необхідно проаналізувати повідомлення ПФУ та виправити помилки.',
+      },
+    ] as const,
+  },
+  {
+    title:
       'Мінсоцполітики опублікувало проєкт аналогічної постанови на заміну протиправної постанови КМУ №821',
     slug: 'holosuvannia-proty-proiektu-kmu-821',
     src: [] as string[],
