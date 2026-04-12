@@ -31,7 +31,7 @@ export const case_500_5783_25: CourtCase = {
     'При індексації застосовується занижений показник середньої заробітної плати 3764,40 грн',
     'Розмір пенсії не відповідає очікуванням після індексації',
   ],
-  relatedCaseSlugs: ['420-14018-25', '420-14489-25'],
+  relatedCaseSlugs: ['500-5783-25-appeal', '420-14018-25', '420-14489-25'],
   relatedBlogSlugs: [
     'nepravylna-indeksatsiia-pensii-pryznachenykh-z-2020-roku-shcho-zminyla-postanova-velykoi-palaty-vs-i-iak-diati-pensioneru',
     'yak-pidvyshchyty-pensiiu-za-vysluhu-rokiv',
