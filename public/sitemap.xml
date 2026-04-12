@@ -93,7 +93,7 @@
   <!-- Court Cases List Page -->
   <url>
     <loc>https://www.advocate-pensia.com.ua/court-cases/</loc>
-    <lastmod>2025-12-31</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -162,6 +162,48 @@
   <url>
     <loc>https://www.advocate-pensia.com.ua/court-cases/582-867-21/</loc>
     <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/420-14489-25-appeal/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/500-5783-25-appeal/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/520-26392-25/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/520-30296-25/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/460-12796-25/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/200-7851-25-appeal/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/520-30296-25-additional/</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

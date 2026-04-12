@@ -51,6 +51,7 @@ export const courtCaseInput: CourtCaseInput = {
 | First instance | `{number}` | `420-14018-25` |
 | Appeal | `{number}-appeal` | `420-14018-25-appeal` |
 | Cassation | `{number}-cassation` | `420-14018-25-cassation` |
+| Additional decision | `{number}-additional` | `520-30296-25-additional` |
 
 ### Tips
 

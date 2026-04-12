@@ -4,7 +4,9 @@
       "Skill(frontend-design:frontend-design)",
       "Skill(frontend-design)",
       "Bash(mkdir:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(ls /Users/Leo/Documents/L/Angular/advocate-website/src/app/blog/blog-posts/posts/*.seo.ts)",
+      "Bash(grep -r \"img\\\\|image\\\\|assets\" /Users/Leo/Documents/L/Angular/advocate-website/src/app/blog/blog-posts/posts/*.html)"
     ]
   }
 }

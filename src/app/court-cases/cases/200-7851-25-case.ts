@@ -37,7 +37,7 @@ export const case_200_7851_25: CourtCase = {
     'Роботодавець не повністю сплачував внески',
     'Перебували на обліку в центрі зайнятості',
   ],
-  relatedCaseSlugs: ['420-22036-25', '200-5966-25'],
+  relatedCaseSlugs: ['200-7851-25-appeal', '420-22036-25', '200-5966-25'],
   relatedBlogSlugs: [
     'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
     'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-zhinok-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
