@@ -208,6 +208,58 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Instructions List Page -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/instructions/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Instructions (Individual) -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/instructions/kep-privatbank/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/instructions/kep-monobank/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/instructions/dovidka-ok5-diia/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/instructions/vytiag-misce-prozhyvannia-diia/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/instructions/dovidka-dokhody-portal-pfu/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/instructions/dovidka-vyplata-pensii-privat24/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/instructions/oplata-rekvizytamy-privat24/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Blog Posts -->
   <url>
     <loc>https://www.advocate-pensia.com.ua/blog/shcho-oznachaiut-statusy-vykonano-ta-skasovano-vykonannia-pid-chas-otsyfruvannia-dokumentiv/</loc>

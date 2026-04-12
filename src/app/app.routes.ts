@@ -37,6 +37,11 @@ export const routes: Routes = [
       import('./court-cases/routes').then((m) => m.courtCasesRoutes),
   },
   {
+    path: 'instructions',
+    loadChildren: () =>
+      import('./instructions/routes').then((m) => m.instructionsRoutes),
+  },
+  {
     path: 'faq',
     component: FaqComponent,
   },

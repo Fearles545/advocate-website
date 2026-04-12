@@ -7,23 +7,6 @@ h1 {
   font-size: var(--font-size-h2);
 }
 
-/* === Page Background === */
-.court-case-page-bg {
-  background: linear-gradient(180deg, #f8f6f2 0%, #ffffff 50%, #f8f6f2 100%);
-  min-height: 100vh;
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: var(--gold-separator);
-  }
-}
-
 .court-case-page {
   width: 100%;
   max-width: var(--section-max-width-narrow);
@@ -67,6 +50,7 @@ h1 {
   align-items: center;
   gap: 0.5rem;
   font-weight: var(--weight-semibold);
+  font-size: 0.9rem;
   color: var(--color-green);
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -646,7 +630,13 @@ h1 {
    ======================================== */
 
 /* Small screens (400px+) - Result list row layout */
-@media (min-width: 400px) {
+@media (max-width: 400px) {
+  .case-header {
+    h1 {
+      font-size: 1.25rem;
+    }
+  }
+
   .result-list li {
     flex-direction: row;
   }

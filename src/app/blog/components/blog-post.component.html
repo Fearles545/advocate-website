@@ -26,7 +26,10 @@
               <span>{{ blog().date | date: 'dd.MM.yyyy' }}</span>
             </time>
 
-            <app-social-share [blog]="blog()!" />
+            <app-social-share
+              [shareUrl]="'https://www.advocate-pensia.com.ua/blog/' + blog()!.slug + '/'"
+              [shareTitle]="blog()!.title"
+            />
           </div>
 
           <!-- Row 2: Categories -->

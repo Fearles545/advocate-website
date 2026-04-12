@@ -8,6 +8,7 @@ import { Router, NavigationEnd, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { filter, map, startWith } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
+import { findBySlug as findInstructionBySlug } from '../../../instructions/data';
 
 interface BreadcrumbItem {
   label: string;
@@ -21,6 +22,7 @@ const ROUTE_LABELS: Record<string, string> = {
   documents: 'Документи',
   blog: 'Блог',
   'court-cases': 'Судові справи',
+  instructions: 'Інструкції',
   feedbacks: 'Відгуки',
   contacts: 'Контакти',
   'privacy-policy': 'Політика конфіденційності',
@@ -218,7 +220,7 @@ const ROUTE_LABELS: Record<string, string> = {
       font-size: 0.875rem;
       font-weight: 500;
       color: var(--text-color-secondary);
-      max-width: 200px;
+      max-width: 500px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -251,7 +253,7 @@ const ROUTE_LABELS: Record<string, string> = {
       }
 
       .breadcrumb-current {
-        max-width: 150px;
+        max-width: 300px;
       }
     }
 
@@ -295,7 +297,7 @@ const ROUTE_LABELS: Record<string, string> = {
       }
 
       .breadcrumb-current {
-        max-width: 120px;
+        max-width: 200px;
       }
     }
   `,
@@ -333,13 +335,16 @@ export class BreadcrumbComponent {
       // Get label from route map or use segment as fallback
       let label = ROUTE_LABELS[segment];
 
-      // Handle nested routes (blog posts, court cases)
+      // Handle nested routes (blog posts, court cases, instructions)
       if (!label && index > 0) {
         const parentSegment = segments[index - 1];
         if (parentSegment === 'blog') {
           label = 'Стаття';
         } else if (parentSegment === 'court-cases') {
           label = 'Справа';
+        } else if (parentSegment === 'instructions') {
+          const instruction = findInstructionBySlug(segment);
+          label = instruction ? instruction.shortTitle : 'Інструкція';
         } else {
           label = segment;
         }

@@ -12,8 +12,6 @@ import { Clipboard } from '@angular/cdk/clipboard';
 import { DropdownPositionDirective } from '../../../core/directives/dropdown-position.directive';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Blog } from '../../blog-posts';
-import { BlogBaseUrlPipe } from './base-url.pipe';
 import { shareIconsData, SocialIconData } from './share-icons.data';
 
 @Component({
@@ -266,23 +264,22 @@ import { shareIconsData, SocialIconData } from './share-icons.data';
        ========================================================================== */
     @media (max-width: 479px) {
       .share-button {
-        padding: 0.4rem 0.875rem;
-        gap: 0.375rem;
+        padding: 0.5rem;
+        gap: 0;
+        border-radius: 50%;
+        width: 2.25rem;
+        height: 2.25rem;
+        justify-content: center;
 
         mat-icon:first-child {
-          font-size: 1rem;
-          width: 1rem;
-          height: 1rem;
+          font-size: 1.1rem;
+          width: 1.1rem;
+          height: 1.1rem;
         }
 
-        .share-text {
-          font-size: 0.8rem;
-        }
-
+        .share-text,
         .dropdown-icon {
-          font-size: 0.875rem;
-          width: 0.875rem;
-          height: 0.875rem;
+          display: none;
         }
       }
 
@@ -322,9 +319,9 @@ export class SocialShareComponent {
   private clipboard = inject(Clipboard);
   private domSanitizer = inject(DomSanitizer);
   private elementRef = inject(ElementRef);
-  private baseUrlPipe = new BlogBaseUrlPipe();
 
-  blog = input.required<Blog>();
+  shareUrl = input.required<string>();
+  shareTitle = input.required<string>();
 
   shareIcons = shareIconsData;
   isOpen = signal(false);
@@ -364,13 +361,11 @@ export class SocialShareComponent {
 
   getShareLink(iconData: SocialIconData): string {
     if (!iconData.shareLink) return '';
-    const url = this.baseUrlPipe.transform(this.blog().slug);
-    return iconData.shareLink(url, this.blog().title);
+    return iconData.shareLink(this.shareUrl(), this.shareTitle());
   }
 
   copyLink(): void {
-    const url = this.baseUrlPipe.transform(this.blog().slug);
-    this.clipboard.copy(url);
+    this.clipboard.copy(this.shareUrl());
     this.snackBar.open('Посилання скопійовано в буфер обміну', 'Закрити', {
       duration: 3000,
     });

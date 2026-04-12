@@ -1,5 +1,6 @@
 import { BLOG_SEO_DATA } from '../../blog/blog-seo.config';
 import { COURT_CASES_SEO_DATA } from '../../court-cases/court-cases-seo.config';
+import { INSTRUCTIONS_SEO_DATA } from '../../instructions/instructions-seo.config';
 import { PageSEO } from '../services/seo.service';
 
 /**
@@ -412,6 +413,61 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
     },
   },
 
+  instructions: {
+    title:
+      'Покрокові інструкції — КЕП, довідки, оплата | Адвокат Поддяча Юлія',
+    description:
+      'Покрокові інструкції з отримання КЕП, довідок через Дію, Портал ПФУ, Приват24 та оплати юридичних послуг. Зі скріншотами кожного кроку.',
+    keywords:
+      'інструкція КЕП, отримати КЕП ПриватБанк, довідка ОК-5 Дія, довідка про доходи пенсіонера, оплата через Приват24, покрокова інструкція',
+    canonical: '/instructions/',
+    type: 'website',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          '@id': 'https://www.advocate-pensia.com.ua/instructions/#breadcrumbs',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Інструкції',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/instructions/',
+                name: 'Інструкції',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'CollectionPage',
+          '@id': 'https://www.advocate-pensia.com.ua/instructions/#webpage',
+          name: 'Покрокові інструкції | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/instructions/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+          breadcrumb: {
+            '@id':
+              'https://www.advocate-pensia.com.ua/instructions/#breadcrumbs',
+          },
+        },
+      ],
+    },
+  },
+
   'court-cases': {
     title:
       'Судові рішення у пенсійних спорах — практика адвоката з пенсійних прав',
@@ -632,4 +688,5 @@ export const GLOBAL_SEO_CONFIG: { [key: string]: PageSEO } = {
   ...SEO_DATA,
   ...BLOG_SEO_DATA,
   ...COURT_CASES_SEO_DATA,
+  ...INSTRUCTIONS_SEO_DATA,
 };

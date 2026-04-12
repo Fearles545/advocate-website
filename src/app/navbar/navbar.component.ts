@@ -242,7 +242,7 @@ import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
   `,
 })
 export class NavbarComponent {
-  private readonly moreLabels = ['Документи', 'FAQ'];
+  private readonly moreLabels = ['Документи', 'Інструкції', 'FAQ'];
   private readonly detailsEl =
     viewChild<ElementRef<HTMLDetailsElement>>('detailsEl');
 

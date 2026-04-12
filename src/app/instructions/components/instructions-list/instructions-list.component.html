@@ -1,0 +1,56 @@
+<section class="page-bg-pattern">
+  <div class="page-content">
+    <header class="page-header">
+      <div class="page-header-badge">
+        <mat-icon>menu_book</mat-icon>
+      </div>
+
+      <h1>Покрокові інструкції</h1>
+
+      <p class="page-intro">
+        Покрокові інструкції зі скріншотами допоможуть Вам самостійно отримати
+        <strong>електронний підпис (КЕП)</strong>, замовити необхідні довідки та
+        здійснити оплату за юридичні послуги.
+      </p>
+    </header>
+
+    @for (category of categories; track category) {
+      @if (groupedInstructions.get(category); as items) {
+        <section class="category-section">
+          <h2 class="category-heading">
+            <mat-icon>{{ categoryIcons[category] }}</mat-icon>
+            {{ categoryLabels[category] }}
+          </h2>
+          <div class="instructions-grid">
+            @for (instruction of items; track instruction.slug) {
+              <a
+                class="instruction-card"
+                [routerLink]="instruction.slug | instructionRoute"
+              >
+                <div class="card-icon">
+                  <mat-icon>{{ categoryIcons[instruction.category] }}</mat-icon>
+                </div>
+                <div class="card-body">
+                  <h3>{{ instruction.shortTitle }}</h3>
+                  <div class="card-meta">
+                    <span class="meta-badge">
+                      <mat-icon>checklist</mat-icon>
+                      {{ stepsLabel(instruction.steps.length) }}
+                    </span>
+                    @if (instruction.estimatedTime) {
+                      <span class="meta-badge">
+                        <mat-icon>schedule</mat-icon>
+                        ~{{ instruction.estimatedTime }}
+                      </span>
+                    }
+                  </div>
+                </div>
+                <mat-icon class="card-arrow">arrow_forward</mat-icon>
+              </a>
+            }
+          </div>
+        </section>
+      }
+    }
+  </div>
+</section>

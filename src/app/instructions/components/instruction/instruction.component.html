@@ -1,0 +1,244 @@
+<section class="page-bg-pattern">
+  <div class="page-content">
+    <!-- Breadcrumb (blog-style) -->
+    <nav class="breadcrumb">
+      <a routerLink="/instructions/" class="back-link">
+        <mat-icon>arrow_back</mat-icon>
+        <span>Інструкції</span>
+      </a>
+
+      <div class="breadcrumb-badge">
+        <mat-icon>menu_book</mat-icon>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="article-header">
+      <h1 class="article-title">{{ instruction().title }}</h1>
+
+      <!-- Meta Card (blog-style) -->
+      <div class="article-meta-card">
+        <div class="meta-row meta-row-primary">
+          <div class="meta-badges">
+            <span class="meta-badge">
+              <mat-icon>category</mat-icon>
+              {{ categoryLabels[instruction().category] }}
+            </span>
+            <span class="meta-badge">
+              <mat-icon>checklist</mat-icon>
+              {{ stepsLabel(instruction().steps.length) }}
+            </span>
+            @if (instruction().estimatedTime) {
+              <span class="meta-badge">
+                <mat-icon>schedule</mat-icon>
+                ~{{ instruction().estimatedTime }}
+              </span>
+            }
+          </div>
+
+          <app-social-share
+            [shareUrl]="shareUrl()"
+            [shareTitle]="instruction().title"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Article Container -->
+    <article class="instruction-article">
+      <!-- Intro -->
+      <div class="article-content">
+        <div class="intro" [innerHTML]="instruction().intro"></div>
+      </div>
+
+      <!-- Prerequisite callout -->
+      @if (prerequisiteInstruction(); as prereq) {
+        <div class="prerequisite-callout">
+          <mat-icon>info</mat-icon>
+          <div>
+            <strong>Для цієї інструкції потрібен КЕП.</strong>
+            Якщо у Вас ще немає електронного підпису — скористайтеся інструкцією:
+            <a [routerLink]="prereq.slug | instructionRoute">
+              {{ prereq.shortTitle }}
+            </a>
+          </div>
+        </div>
+      }
+
+      <!-- Prerequisites list -->
+      @if (instruction().prerequisites.length > 0) {
+        <div class="prerequisites-section">
+          <div class="prerequisites-badge">
+            <mat-icon>task_alt</mat-icon>
+          </div>
+          <h2>Що потрібно для початку</h2>
+          <ul>
+            @for (item of instruction().prerequisites; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+
+      <!-- Table of contents (collapsible) -->
+      <nav class="steps-toc">
+        <mat-expansion-panel [expanded]="instruction().steps.length >= 6">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>list</mat-icon>
+              Зміст
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <ol>
+            @for (step of instruction().steps; track step.title; let i = $index) {
+              <li>
+                <a [routerLink]="[]" [fragment]="'step-' + (i + 1)">{{ step.title }}</a>
+              </li>
+            }
+          </ol>
+        </mat-expansion-panel>
+      </nav>
+
+      <!-- Steps -->
+      <section class="steps-section">
+        @for (step of instruction().steps; track step.title; let i = $index) {
+          <div class="step" [id]="'step-' + (i + 1)">
+            <div class="step-number">{{ i + 1 }}</div>
+            <div class="step-content">
+              <h3>{{ step.title }}</h3>
+              <p>{{ step.description }}</p>
+              @if (step.image) {
+                <div class="step-image-container">
+                  <img
+                    [src]="step.image"
+                    [alt]="'Крок ' + (i + 1) + ': ' + step.title"
+                    loading="lazy"
+                  />
+                </div>
+              }
+              @if (step.warning) {
+                <div class="step-warning">
+                  <mat-icon>warning</mat-icon>
+                  <span>{{ step.warning }}</span>
+                </div>
+              }
+              @if (step.warningImage) {
+                <div class="step-image-container">
+                  <img
+                    [src]="step.warningImage"
+                    [alt]="'Попередження: ' + step.warning"
+                    loading="lazy"
+                  />
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </section>
+
+      <!-- Important notes -->
+      @if (instruction().importantNotes?.length) {
+        <div class="important-notes">
+          <h2>
+            <mat-icon>priority_high</mat-icon>
+            Важливо
+          </h2>
+          <ul>
+            @for (note of instruction().importantNotes; track note) {
+              <li>{{ note }}</li>
+            }
+          </ul>
+        </div>
+      }
+
+      <!-- Footer sections with gold separators -->
+      <div class="article-footer-sections">
+        <!-- Related instructions -->
+        @if (relatedInstructions().length > 0) {
+          <section class="footer-section">
+            <h2>
+              <mat-icon>link</mat-icon>
+              Пов'язані інструкції
+            </h2>
+            <div class="related-list">
+              @for (related of relatedInstructions(); track related.slug) {
+                <a
+                  class="related-card"
+                  [routerLink]="related.slug | instructionRoute"
+                >
+                  <span>{{ related.shortTitle }}</span>
+                  <mat-icon>arrow_forward</mat-icon>
+                </a>
+              }
+            </div>
+          </section>
+        }
+
+        <!-- Related blog posts -->
+        @if (relatedBlogs().length > 0) {
+          <section class="footer-section">
+            <h2>
+              <mat-icon>article</mat-icon>
+              Корисні роз'яснення
+            </h2>
+            <div class="related-list">
+              @for (blog of relatedBlogs(); track blog.slug) {
+                <a class="related-card" [routerLink]="['/blog', blog.slug]">
+                  <span>{{ blog.title }}</span>
+                  <mat-icon>arrow_forward</mat-icon>
+                </a>
+              }
+            </div>
+          </section>
+        }
+
+        <!-- FAQ -->
+        <section class="footer-section">
+          <h2>
+            <mat-icon>help_outline</mat-icon>
+            Поширені питання
+          </h2>
+          <app-faq-accordion [items]="faqItems" />
+        </section>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- Final CTA — full-width (matches about-me pattern) -->
+<section class="final-cta-section-bg">
+  <div class="final-cta-section">
+    <div class="section-header">
+      <h2>Потрібна допомога?</h2>
+    </div>
+
+    <div class="final-cta-buttons">
+      <a
+        routerLink="/consultation/"
+        appCtaButton
+        theme="gold"
+        icon="calendar_today"
+      >
+        Записатися на консультацію
+      </a>
+
+      <p class="final-cta-note">
+        Якщо у Вас виникли складнощі або потрібна індивідуальна консультація
+        — зверніться до адвоката.
+      </p>
+
+      <div class="cta-links">
+        <a routerLink="/feedbacks/" class="cta-link">
+          Відгуки клієнтів
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+        <span class="link-divider">|</span>
+        <a routerLink="/instructions/" class="cta-link">
+          Усі інструкції
+          <mat-icon>arrow_forward</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
