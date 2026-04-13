@@ -31,18 +31,18 @@
           </p>
           <div class="success-actions">
             <a routerLink="/" appCtaButton icon="home">На головну</a>
-            <button
-              type="button"
-              class="reset-btn"
-              (click)="resetForm()"
-            >
+            <button type="button" class="reset-btn" (click)="resetForm()">
               Надіслати ще одну заявку
             </button>
           </div>
         </div>
       } @else {
         <!-- Form -->
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="consultation-form">
+        <form
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+          class="consultation-form"
+        >
           <!-- Section 1: Contact Info -->
           <fieldset class="form-section">
             <legend class="section-legend">
@@ -63,12 +63,20 @@
                   formControlName="name"
                   class="form-input"
                   placeholder="Введіть ваше ім'я"
-                  [class.invalid]="form.controls.name.touched && form.controls.name.invalid"
+                  [class.invalid]="
+                    form.controls.name.touched && form.controls.name.invalid
+                  "
                 />
-                @if (form.controls.name.touched && form.controls.name.errors?.['required']) {
+                @if (
+                  form.controls.name.touched &&
+                  form.controls.name.errors?.['required']
+                ) {
                   <span class="field-error">Це поле обов'язкове</span>
                 }
-                @if (form.controls.name.touched && form.controls.name.errors?.['minlength']) {
+                @if (
+                  form.controls.name.touched &&
+                  form.controls.name.errors?.['minlength']
+                ) {
                   <span class="field-error">Мінімум 2 символи</span>
                 }
               </div>
@@ -85,38 +93,54 @@
                   formControlName="phone"
                   class="form-input"
                   placeholder="+380XXXXXXXXX"
-                  [class.invalid]="form.controls.phone.touched && form.controls.phone.invalid"
+                  [class.invalid]="
+                    form.controls.phone.touched && form.controls.phone.invalid
+                  "
                 />
                 <span class="field-hint">
                   Міжнародний формат (+380...) або 9 цифр без коду
                 </span>
-                @if (form.controls.phone.touched && form.controls.phone.errors?.['required']) {
+                @if (
+                  form.controls.phone.touched &&
+                  form.controls.phone.errors?.['required']
+                ) {
                   <span class="field-error">Це поле обов'язкове</span>
                 }
-                @if (form.controls.phone.touched && form.controls.phone.errors?.['pattern']) {
-                  <span class="field-error">Введіть 9 цифр або міжнародний номер з +</span>
+                @if (
+                  form.controls.phone.touched &&
+                  form.controls.phone.errors?.['pattern']
+                ) {
+                  <span class="field-error"
+                    >Введіть 9 цифр або міжнародний номер з +</span
+                  >
                 }
               </div>
             </div>
 
             <!-- Email -->
             <div class="form-field">
-              <label for="email" class="form-label">
-                Електронна пошта
-              </label>
+              <label for="email" class="form-label"> Електронна пошта </label>
               <input
                 type="email"
                 id="email"
                 formControlName="email"
                 class="form-input"
                 placeholder="example@email.com"
-                [class.invalid]="form.controls.email.touched && form.controls.email.invalid"
+                [class.invalid]="
+                  form.controls.email.touched && form.controls.email.invalid
+                "
               />
               <span class="field-hint">
-                Вкажіть email для додаткового зв'язку — на випадок, якщо номер телефону введено з помилкою
+                Вкажіть email для додаткового зв'язку — на випадок, якщо номер
+                телефону введено з помилкою
               </span>
-              @if (form.controls.email.touched && form.controls.email.errors?.['email']) {
-                <span class="field-error">Невірний формат електронної пошти</span>
+              @if (
+                form.controls.email.touched &&
+                form.controls.email.errors?.['email']
+              ) {
+                <span class="field-error"
+                  >Невірний формат електронної пошти</span
+                >
               }
             </div>
 
@@ -124,11 +148,11 @@
             <div class="form-field">
               <span class="form-label">Зручний спосіб зв'язку</span>
               <div class="checkbox-group" formGroupName="contactMethods">
-                <label class="checkbox-item">
+                <!-- <label class="checkbox-item">
                   <input type="checkbox" formControlName="call" />
                   <span class="checkbox-custom"></span>
                   <span class="checkbox-label">Телефонний дзвінок</span>
-                </label>
+                </label> -->
                 <label class="checkbox-item">
                   <input type="checkbox" formControlName="viber" />
                   <span class="checkbox-custom"></span>
@@ -191,7 +215,10 @@
                   </span>
                 </label>
               </div>
-              @if (form.controls.pensionStatus.touched && form.controls.pensionStatus.invalid) {
+              @if (
+                form.controls.pensionStatus.touched &&
+                form.controls.pensionStatus.invalid
+              ) {
                 <span class="field-error">Оберіть один з варіантів</span>
               }
             </div>
@@ -210,7 +237,10 @@
                   Який вид пенсії ви отримуєте або плануєте оформити?
                 </span>
                 <span class="field-hint">Можна обрати декілька варіантів</span>
-                <div class="checkbox-group checkbox-grid" formGroupName="pensionTypes">
+                <div
+                  class="checkbox-group checkbox-grid"
+                  formGroupName="pensionTypes"
+                >
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="byAge" />
                     <span class="checkbox-custom"></span>
@@ -219,7 +249,9 @@
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="privileged" />
                     <span class="checkbox-custom"></span>
-                    <span class="checkbox-label">На пільгових умовах (Список №1 / №2)</span>
+                    <span class="checkbox-label"
+                      >На пільгових умовах (Список №1 / №2)</span
+                    >
                   </label>
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="early" />
@@ -239,7 +271,9 @@
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="survivor" />
                     <span class="checkbox-custom"></span>
-                    <span class="checkbox-label">У зв'язку з втратою годувальника</span>
+                    <span class="checkbox-label"
+                      >У зв'язку з втратою годувальника</span
+                    >
                   </label>
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="other" />
@@ -262,7 +296,10 @@
               <div class="form-field">
                 <span class="form-label">Оберіть тип пенсійного питання</span>
                 <span class="field-hint">Можна обрати декілька варіантів</span>
-                <div class="checkbox-group checkbox-grid" formGroupName="questionTypes">
+                <div
+                  class="checkbox-group checkbox-grid"
+                  formGroupName="questionTypes"
+                >
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="byAge" />
                     <span class="checkbox-custom"></span>
@@ -271,7 +308,9 @@
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="privileged" />
                     <span class="checkbox-custom"></span>
-                    <span class="checkbox-label">Пільгова пенсія (Список №1 / №2)</span>
+                    <span class="checkbox-label"
+                      >Пільгова пенсія (Список №1 / №2)</span
+                    >
                   </label>
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="early" />
@@ -286,7 +325,9 @@
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="recalculation" />
                     <span class="checkbox-custom"></span>
-                    <span class="checkbox-label">Перерахунок / індексація пенсії</span>
+                    <span class="checkbox-label"
+                      >Перерахунок / індексація пенсії</span
+                    >
                   </label>
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="appeal" />
@@ -296,7 +337,9 @@
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="experience" />
                     <span class="checkbox-custom"></span>
-                    <span class="checkbox-label">Стаж / незараховані періоди</span>
+                    <span class="checkbox-label"
+                      >Стаж / незараховані періоди</span
+                    >
                   </label>
                   <label class="checkbox-item">
                     <input type="checkbox" formControlName="other" />
@@ -311,7 +354,9 @@
           <!-- Section 4: Description -->
           <fieldset class="form-section">
             <legend class="section-legend">
-              <span class="legend-number">{{ showPensionTypes() || showQuestionTypes() ? '4' : '3' }}</span>
+              <span class="legend-number">{{
+                showPensionTypes() || showQuestionTypes() ? '4' : '3'
+              }}</span>
               <span class="legend-text">Суть питання</span>
             </legend>
 
@@ -326,12 +371,21 @@
                 class="form-textarea"
                 rows="5"
                 placeholder="Наприклад: відмова у призначенні пенсії, незарахований стаж, перерахунок пенсії, припинення виплат, підготовка документів тощо."
-                [class.invalid]="form.controls.description.touched && form.controls.description.invalid"
+                [class.invalid]="
+                  form.controls.description.touched &&
+                  form.controls.description.invalid
+                "
               ></textarea>
-              @if (form.controls.description.touched && form.controls.description.errors?.['required']) {
+              @if (
+                form.controls.description.touched &&
+                form.controls.description.errors?.['required']
+              ) {
                 <span class="field-error">Це поле обов'язкове</span>
               }
-              @if (form.controls.description.touched && form.controls.description.errors?.['minlength']) {
+              @if (
+                form.controls.description.touched &&
+                form.controls.description.errors?.['minlength']
+              ) {
                 <span class="field-error">Мінімум 10 символів</span>
               }
             </div>
@@ -340,7 +394,9 @@
           <!-- Section 5: Location -->
           <fieldset class="form-section">
             <legend class="section-legend">
-              <span class="legend-number">{{ showPensionTypes() || showQuestionTypes() ? '5' : '4' }}</span>
+              <span class="legend-number">{{
+                showPensionTypes() || showQuestionTypes() ? '5' : '4'
+              }}</span>
               <span class="legend-text">Місце проживання</span>
             </legend>
 
@@ -381,8 +437,12 @@
                   <span class="required">*</span>
                 </span>
               </label>
-              @if (form.controls.consent.touched && form.controls.consent.invalid) {
-                <span class="field-error">Необхідна згода на обробку даних</span>
+              @if (
+                form.controls.consent.touched && form.controls.consent.invalid
+              ) {
+                <span class="field-error"
+                  >Необхідна згода на обробку даних</span
+                >
               }
             </div>
           </fieldset>
