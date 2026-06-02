@@ -207,11 +207,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/280-9134-25-appeal/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Instructions List Page -->
   <url>
     <loc>https://www.advocate-pensia.com.ua/instructions/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -254,6 +260,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.advocate-pensia.com.ua/instructions/dovidka-vyplata-pensii-monobank/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.advocate-pensia.com.ua/instructions/oplata-rekvizytamy-privat24/</loc>
     <lastmod>2026-04-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -261,6 +273,12 @@
   </url>
 
   <!-- Blog Posts -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/zarakhuvannia-periodu-dohliadu-do-strakhovoho-stazhu/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.advocate-pensia.com.ua/blog/shcho-oznachaiut-statusy-vykonano-ta-skasovano-vykonannia-pid-chas-otsyfruvannia-dokumentiv/</loc>
     <lastmod>2026-04-10</lastmod>

@@ -28,7 +28,7 @@ export const case_280_9134_25: CourtCase = {
     'Пенсійний фонд відмовляє у призначенні пенсії за Списком №1 жінці через недосягнення 50-річного віку',
     'Пенсійний фонд не зараховує пільговий стаж за Списком №1 через відсутність уточнюючих довідок, попри наявність інших підтверджуючих документів',
   ],
-  relatedCaseSlugs: ['200-7851-25', '420-22036-25'],
+  relatedCaseSlugs: ['280-9134-25-appeal', '200-7851-25', '420-22036-25'],
   relatedBlogSlugs: [
     'iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
     'pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-zhinok-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
