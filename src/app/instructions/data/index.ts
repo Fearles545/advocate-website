@@ -22,6 +22,7 @@ import { dovidkaOk5Diia } from './dovidka-ok5-diia';
 import { vytiagMisceProzhyvanniaDiia } from './vytiag-misce-prozhyvannia-diia';
 import { dovidkaDokhodyPortalPfu } from './dovidka-dokhody-portal-pfu';
 import { dovidkaVyplataPensiiPrivat24 } from './dovidka-vyplata-pensii-privat24';
+import { dovidkaVyplataPensiiMonobank } from './dovidka-vyplata-pensii-monobank';
 import { oplataRekvizytamyPrivat24 } from './oplata-rekvizytamy-privat24';
 
 const allInstructions: Instruction[] = [
@@ -31,6 +32,7 @@ const allInstructions: Instruction[] = [
   vytiagMisceProzhyvanniaDiia,
   dovidkaDokhodyPortalPfu,
   dovidkaVyplataPensiiPrivat24,
+  dovidkaVyplataPensiiMonobank,
   oplataRekvizytamyPrivat24,
 ];
 

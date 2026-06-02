@@ -57,7 +57,7 @@ export const dovidkaVyplataPensiiPrivat24: Instruction = {
     'Довідка формується автоматично з печаткою та підписом уповноваженої особи банку.',
     'Для подання до Пенсійного фонду достатньо надати довідку в електронному вигляді.',
   ],
-  relatedInstructionSlugs: ['dovidka-ok5-diia', 'vytiag-misce-prozhyvannia-diia', 'dovidka-dokhody-portal-pfu'],
+  relatedInstructionSlugs: ['dovidka-vyplata-pensii-monobank', 'dovidka-ok5-diia', 'dovidka-dokhody-portal-pfu'],
   seo: {
     title:
       'Як отримати довідку про виплату пенсії через Приват24 — інструкція зі скріншотами',
