@@ -16,6 +16,46 @@ export interface Blog {
 export const blogs = [
   {
     title:
+      'Догляд за особою з інвалідністю, дитиною чи пенсіонером: чи входить цей період до страхового стажу',
+    slug: 'zarakhuvannia-periodu-dohliadu-do-strakhovoho-stazhu',
+    src: [] as string[],
+    date: '2026-06-02',
+    categories: ['general', 'service-record'] as const,
+    description:
+      'Чи зараховується догляд за особою з інвалідністю, дитиною чи літньою людиною до страхового стажу, якими документами підтвердити та як це впливає на пенсію.',
+    relatedSlugs: [
+      'osoblyvosti-pryznachennia-pensii-materi-osoby-z-invalidnistiu-z-dytynstva-ta-tiazhko-khvorikh-ditei',
+      'pravo-batka-na-dostrokove-pryznachennia-pensii-u-razi-vykhovannia-piatokh-ditei-abo-dytyny-z-invalidnistiu',
+      'chy-zarakhovuietsia-chas-dohliadu-nepratsiuiuchoi-materi-za-dytynoiu-do-trokh-rokiv-do-stazhu',
+    ] as const,
+    faq: [
+      {
+        question:
+          'Чи зараховується догляд до стажу без офіційного працевлаштування?',
+        answer:
+          'Так. Більше того, відсутність роботи в період догляду — одна з умов зарахування. Головне, щоб Ви були працездатними і отримували допомогу, надбавку чи компенсацію на догляд.',
+      },
+      {
+        question:
+          'Що робити, якщо в довідці ОК-5 період догляду не відображено?',
+        answer:
+          'Це не є підставою для відмови. Зверніться до Пенсійного фонду України із заявою про коригування даних персоніфікованого обліку, а в разі відмови — оскаржте її в судовому порядку.',
+      },
+      {
+        question:
+          'Чи зменшиться пенсія через «низькооплачуваний» період догляду?',
+        answer:
+          'Не повинна. Закон дозволяє за заявою особи виключити такі періоди з розрахунку заробітку, залишивши їх у страховому стажі. Це питання варто порушити вже при поданні документів на пенсію.',
+      },
+      {
+        question: 'Хто тепер виплачує допомогу на догляд?',
+        answer:
+          'Раніше — органи соціального захисту населення, з 01 липня 2025 року функції з призначення та виплати низки таких допомог покладені на органи Пенсійного фонду України.',
+      },
+    ] as const,
+  },
+  {
+    title:
       'Що означають статуси «Виконано» та «Скасовано виконання» під час оцифрування трудової книжки та інших документів',
     slug: 'shcho-oznachaiut-statusy-vykonano-ta-skasovano-vykonannia-pid-chas-otsyfruvannia-dokumentiv',
     src: ['https://www.youtube.com/embed/ezewJjjSjN8'],

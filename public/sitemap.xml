@@ -274,6 +274,12 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/zarakhuvannia-periodu-dohliadu-do-strakhovoho-stazhu/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.advocate-pensia.com.ua/blog/shcho-oznachaiut-statusy-vykonano-ta-skasovano-vykonannia-pid-chas-otsyfruvannia-dokumentiv/</loc>
     <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
