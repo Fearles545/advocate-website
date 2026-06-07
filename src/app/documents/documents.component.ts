@@ -78,6 +78,10 @@ export class DocumentsComponent implements OnInit {
 
     this.qualificationImages = [
       new ImageItem({
+        src: 'assets/documents/qual-2026.webp',
+        thumb: 'assets/documents/qual-2026.webp',
+      }),
+      new ImageItem({
         src: 'assets/documents/qual-2025.webp',
         thumb: 'assets/documents/qual-2025.webp',
       }),
