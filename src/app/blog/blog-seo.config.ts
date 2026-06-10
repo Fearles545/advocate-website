@@ -1,4 +1,5 @@
 import { PageSEO } from '@core/services/seo.service';
+import { postanova_kmu_821_skasovana_shcho_tse_oznachaie_dlia_pensioneriv } from './blog-posts/posts/postanova-kmu-821-skasovana-shcho-tse-oznachaie-dlia-pensioneriv.seo';
 import { zarakhuvannia_periodu_dohliadu_do_strakhovoho_stazhu } from './blog-posts/posts/zarakhuvannia-periodu-dohliadu-do-strakhovoho-stazhu.seo';
 import { shcho_oznachaiut_statusy_vykonano_ta_skasovano_vykonannia_pid_chas_otsyfruvannia_dokumentiv } from './blog-posts/posts/shcho-oznachaiut-statusy-vykonano-ta-skasovano-vykonannia-pid-chas-otsyfruvannia-dokumentiv.seo';
 import { holosuvannia_proty_proiektu_kmu_821 } from './blog-posts/posts/holosuvannia-proty-proiektu-kmu-821.seo';
@@ -58,6 +59,7 @@ import { koly_dotsilnishe_podavaty_zaiavu_na_pryznachennia_pensii_iakscho_den_na
 import { shcho_oznachaie_status_do_atrybutuvannia_pid_chas_zvernennia_do_pensiinoho_fondu_ukrainy } from './blog-posts/posts/shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
+  ...postanova_kmu_821_skasovana_shcho_tse_oznachaie_dlia_pensioneriv,
   ...zarakhuvannia_periodu_dohliadu_do_strakhovoho_stazhu,
   ...shcho_oznachaiut_statusy_vykonano_ta_skasovano_vykonannia_pid_chas_otsyfruvannia_dokumentiv,
   ...holosuvannia_proty_proiektu_kmu_821,
