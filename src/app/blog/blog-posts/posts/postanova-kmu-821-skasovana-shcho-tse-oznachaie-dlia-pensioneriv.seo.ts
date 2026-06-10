@@ -2,9 +2,9 @@ export const postanova_kmu_821_skasovana_shcho_tse_oznachaie_dlia_pensioneriv =
   {
     'postanova-kmu-821-skasovana-shcho-tse-oznachaie-dlia-pensioneriv': {
       title:
-        'Постанова КМУ № 821 скасована: що це означає для пенсіонерів | Адвокат Поддяча Юлія Юріївна',
+        'Постанова КМУ №821 скасована: що це означає для пенсіонерів | Адвокат Поддяча Юлія Юріївна',
       description:
-        'Апеляційний суд підтвердив протиправність постанови КМУ № 821 у справі № 320/51895/25. Що це означає для пенсіонерів і як вимагати виплати в повному обсязі.',
+        '8 червня 2026 року Шостий апеляційний адміністративний суд залишив без задоволення апеляційні скарги у справі №320/51895/25. Рішення про визнання постанови КМУ №821 протиправною та нечинною набрало законної сили.',
       keywords:
         'постанова КМУ 821, скасування постанови 821, пенсія за рішенням суду, виконання судового рішення, Пенсійний фонд, виплата присуджених сум',
       type: 'article',
@@ -35,7 +35,7 @@ export const postanova_kmu_821_skasovana_shcho_tse_oznachaie_dlia_pensioneriv =
               {
                 '@type': 'ListItem',
                 position: 3,
-                name: 'Постанова КМУ № 821 скасована: що це означає для пенсіонерів',
+                name: 'Постанову Кабінету Міністрів України №821 визнано протиправною: апеляцію відхилено',
                 item: 'https://www.advocate-pensia.com.ua/blog/postanova-kmu-821-skasovana-shcho-tse-oznachaie-dlia-pensioneriv/',
               },
             ],
@@ -45,7 +45,7 @@ export const postanova_kmu_821_skasovana_shcho_tse_oznachaie_dlia_pensioneriv =
             '@id':
               'https://www.advocate-pensia.com.ua/blog/postanova-kmu-821-skasovana-shcho-tse-oznachaie-dlia-pensioneriv/#webpage',
             url: 'https://www.advocate-pensia.com.ua/blog/postanova-kmu-821-skasovana-shcho-tse-oznachaie-dlia-pensioneriv/',
-            name: 'Постанова КМУ № 821 скасована: що це означає для пенсіонерів | Адвокат Поддяча Юлія Юріївна',
+            name: 'Постанова КМУ №821 скасована: що це означає для пенсіонерів | Адвокат Поддяча Юлія Юріївна',
             isPartOf: {
               '@id': 'https://www.advocate-pensia.com.ua/#website',
             },
@@ -62,9 +62,9 @@ export const postanova_kmu_821_skasovana_shcho_tse_oznachaie_dlia_pensioneriv =
             '@id':
               'https://www.advocate-pensia.com.ua/blog/postanova-kmu-821-skasovana-shcho-tse-oznachaie-dlia-pensioneriv/#blogposting',
             headline:
-              'Постанова КМУ № 821 скасована: що це означає для пенсіонерів',
+              'Постанову Кабінету Міністрів України №821 визнано протиправною: апеляцію відхилено',
             description:
-              'Постанова КМУ № 821 скасована: апеляційний суд підтвердив її протиправність у справі № 320/51895/25. Що це означає для пенсіонерів і як вимагати повного виконання рішення суду.',
+              '8 червня 2026 року Шостий апеляційний адміністративний суд залишив без задоволення апеляційні скарги у справі №320/51895/25. Рішення про визнання постанови КМУ №821 протиправною та нечинною набрало законної сили.',
             datePublished: '2026-06-10T10:00:00+03:00',
             dateModified: '2026-06-10T10:00:00+03:00',
             author: {
