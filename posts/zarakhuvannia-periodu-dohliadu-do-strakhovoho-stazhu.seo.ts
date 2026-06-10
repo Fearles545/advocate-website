@@ -8,7 +8,7 @@ export const zarakhuvannia_periodu_dohliadu_do_strakhovoho_stazhu = {
       'догляд страховий стаж, зарахування періоду догляду, догляд за особою з інвалідністю, допомога на догляд, дострокова пенсія батькам, стаж за період догляду',
     type: 'article',
     publishedTime: '2026-06-02T10:00:00+03:00',
-    modifiedTime: '2026-06-02T10:00:00+03:00',
+    modifiedTime: '2026-06-10T10:00:00+03:00',
     canonical: '/blog/zarakhuvannia-periodu-dohliadu-do-strakhovoho-stazhu/',
     schema: {
       '@context': 'https://schema.org',
@@ -53,7 +53,7 @@ export const zarakhuvannia_periodu_dohliadu_do_strakhovoho_stazhu = {
           },
           inLanguage: 'uk-UA',
           datePublished: '2026-06-02T10:00:00+03:00',
-          dateModified: '2026-06-02T10:00:00+03:00',
+          dateModified: '2026-06-10T10:00:00+03:00',
         },
         {
           '@type': 'BlogPosting',
@@ -64,7 +64,7 @@ export const zarakhuvannia_periodu_dohliadu_do_strakhovoho_stazhu = {
           description:
             'Пояснюємо, за догляд за ким нараховується страховий стаж, на яких умовах, якими документами це підтвердити та як не втратити в розмірі пенсії через період догляду.',
           datePublished: '2026-06-02T10:00:00+03:00',
-          dateModified: '2026-06-02T10:00:00+03:00',
+          dateModified: '2026-06-10T10:00:00+03:00',
           author: {
             '@type': 'Person',
             name: 'Поддяча Юлія Юріївна',
