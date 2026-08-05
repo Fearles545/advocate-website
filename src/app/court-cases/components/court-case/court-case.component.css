@@ -293,7 +293,11 @@ h1 {
   }
 
   .section-body {
-    line-height: 1.75;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
     color: var(--text-color-primary);
 
     p {
@@ -643,7 +647,13 @@ h1 {
   }
 }
 
-/* Medium screens (600px+) - Small tablets */
+/* Large phones and tablets match blog post typography */
+@media (min-width: 480px) {
+  .content-section .section-body {
+    font-size: 1rem;
+  }
+}
+
 @media (min-width: 600px) {
   .breadcrumb {
     margin-bottom: 2rem;
@@ -734,5 +744,13 @@ h1 {
   .useful-for-card,
   .cta-section {
     padding: 2.5rem 3rem;
+  }
+}
+
+/* Desktop typography matches blog posts */
+@media (min-width: 769px) {
+  .content-section .section-body {
+    font-size: 1.05rem;
+    line-height: 1.7;
   }
 }

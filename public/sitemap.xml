@@ -93,7 +93,7 @@
   <!-- Court Cases List Page -->
   <url>
     <loc>https://www.advocate-pensia.com.ua/court-cases/</loc>
-    <lastmod>2026-04-12</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -210,6 +210,30 @@
   <url>
     <loc>https://www.advocate-pensia.com.ua/court-cases/280-9134-25-appeal/</loc>
     <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/380-9255-26/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/560-8236-26/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/480-3424-26-correction/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/court-cases/480-3424-26/</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
