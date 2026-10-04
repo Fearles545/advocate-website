@@ -145,19 +145,17 @@ When creating new sections or components, **always reference the design system**
 
 ## Build Behavior
 
-**DO NOT run `npm run build` unless explicitly requested.** The build output is verbose and wastes context.
+Run `npm run build:ssg` as often as you need: it is the only check that every route still prerenders. The output is long, so filter out the `NotYetImplemented` noise described below and read the `Prerendered N static routes` line.
 
-**To check for TypeScript errors**, use:
+For a quick type check between builds, use:
 
 ```bash
 npx tsc --noEmit
 ```
 
-This runs quickly, produces minimal output, and catches type errors without triggering SSG.
-
 ### Known SSG Warnings (IGNORE THESE)
 
-During `npm run build`, you'll see many `NotYetImplemented` errors like:
+During the build, you'll see many `NotYetImplemented` errors like:
 
 ```
 ERROR Error: NotYetImplemented
@@ -171,7 +169,7 @@ ERROR Error: NotYetImplemented
 - `domino` doesn't implement `CSSStyleDeclaration.setProperty()`
 - Angular Material internally calls this method
 
-The build **succeeds despite these warnings** - all 66 routes are prerendered correctly. This is a known Angular limitation with no official fix. Do not attempt to fix or suppress these errors.
+The build **succeeds despite these warnings** - every route is prerendered correctly. This is a known Angular limitation with no official fix. Do not attempt to fix or suppress these errors.
 
 ## Updating Angular
 
