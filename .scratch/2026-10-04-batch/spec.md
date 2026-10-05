@@ -139,6 +139,8 @@ Expected counts: assignment 11, recalculation 16, service-credit 12, indexation 
 
 500-5783-25-appeal is in `other` while its first instance is not. It is kept exactly as the advocate listed it, and the question is open with her.
 
+**Update 2026-10-05:** the advocate answered that the first instance belongs to `other` too (commit 57c8963). 500-5783-25 is now recalculation, indexation, other, and the `other` count is 11.
+
 ### Shared UI components (prefactor)
 
 - The blog's pagination, prev/next navigator and category filter become shared presentational components. Both the blog and the court decisions section use them.
@@ -318,9 +320,9 @@ Follow the court case creation guide, plus these decisions.
 
   A worktree does not contain them; read them from the main checkout.
 - **Commits.** Make separate conventional commits per logical block, directly on `main`, with no feature branch. Push only on Leo's command, because a push to `main` is a production deploy.
-- **Open questions for the advocate.** None of them blocks this spec:
-  1. 500-5783-25 versus its appeal in «Інші»;
-  2. whether articles and decisions should share one taxonomy;
-  3. whether she wants category landing pages, which would need her intro texts.
+- **Open questions for the advocate.** None of them blocks this spec. Her answers, received 2026-10-05:
+  1. 500-5783-25 versus its appeal in «Інші»: the first instance goes into «Інші» too.
+  2. whether articles and decisions should share one taxonomy: no.
+  3. whether she wants category landing pages, which would need her intro texts: no.
 
   Also send her an FYI about the 130 → 135 грн correction.

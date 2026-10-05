@@ -4,7 +4,7 @@ Date: 2026-10-05. Spec: [`spec.md`](spec.md). Tickets: [`issues/01`–`09`](issu
 
 ## Summary
 
-The whole spec is implemented on local `main` in 27 commits (`847cba0`..`a651fbd`) plus this report. Nothing is pushed. A push to `main` deploys production, and it will also carry two earlier unpushed commits (`11a0b51`, `cf86310`).
+The whole spec is implemented on local `main` in 27 commits (`847cba0`..`a651fbd`), followed by this report and three changes made after the advocate's answers (see "After the advocate's answers"). Nothing is pushed. A push to `main` deploys production, and it will also carry two earlier unpushed commits (`11a0b51`, `cf86310`).
 
 What visitors get:
 
@@ -153,7 +153,7 @@ Final build, after `62ac80b`:
 
 The court decisions list check covers:
 
-- category counts 11/16/12/14/9/10 and each category's members;
+- category counts 11/16/12/14/9/10 and each category's members (after the advocate's answers, «Інші пенсійні спори» holds 11);
 - pagination and remembered state;
 - prev/next scenarios;
 - the «Категорії» row and prerendered neighbour links on all 29 pages.
@@ -178,15 +178,32 @@ Also checked:
 
 To re-check a build, run `npm run build:ssg`, then the "every route written" one-liner in `CLAUDE.md` "Build Behavior", then `npm run preview`.
 
+## After the advocate's answers (2026-10-05)
+
+| Change | Commit |
+|---|---|
+| lastmod 2026-10-05 on the 8 instruction pages, which crawlers saw as 404 until this batch (Leo's decision) | `ad42797` |
+| 500-5783-25 also in «Інші пенсійні спори», like its appeal; that category now holds 11 | `57c8963` |
+| 420-11457-26 first among the related decisions of 520-26392-25; the other three stay | `d421244` |
+
+- She confirmed the 135 грн correction on 380-9255-26.
+- She wants no shared taxonomy for articles and decisions, and no category landing pages.
+- After these changes the build still prints 0 `ERROR` lines and 110 routes, and the browser suite passes 513/513.
+
 ## Open items
 
 1. **Push** on Leo's command. It deploys production.
-2. **lastmod beyond the spec's list.**
-   - Story 37 asks for the lastmod of "every changed page", but the explicit list in the spec is narrower.
-   - Recommendation: set 2026-10-05 on the 8 instruction pages, which crawlers saw as 404 until this batch.
-   - Leave alone the 31 older articles whose only change is a related-articles block or a navigator card.
-3. **Message for the advocate.** The text is in ticket 09's Comments. Send it after the push: it says the content is live.
-4. **Follow-ups found along the way**, not done:
+2. **«130 грн» elsewhere.** The advocate wrote that it should be 135 грн, not 130. The same «130» appears in four other decisions. Their registry texts say:
+
+   | Decision | What the site says | Registry text |
+   |---|---|---|
+   | 420-14489-25 | «100–130 грн» in «Суть справи» | 100 and 135 грн (Review/129786280); no 130 |
+   | 420-14489-25-appeal | «від 100 до 130 грн» in «Суть справи» | 100 and 135 грн (Review/134438986); no 130 |
+   | 560-8236-26 | «100–130 грн» in «Кому буде корисним», a general description | names no amounts (Review/137435304) |
+   | 300-6563-25 | «100–130 грн» in «Суть справи», «(100-130 грн.)» in «Кому буде корисним», and the SEO title «доплата 100 грн., 130 грн.» | «100 гривень та 100 гривень» only (Review/133916488); neither 130 nor 135 |
+
+   Changing 130 to 135 in the first three is backed by the registry or by her rule. 300-6563-25 needs her answer, because its document supports neither number.
+3. **Follow-ups found along the way**, not done:
    - On phones, navigator titles are clamped to one line, which shows about 35 characters of a 54–167-character decision title. A two-line clamp would change both sections at once.
    - The court case guide still says "use today's date", while the spec used «Дата публікації».
    - The blog guide still names `blogSeoConfig` (the real name is `BLOG_SEO_DATA`), shows a `<footer>` in the post template (it is never rendered), and caps related slugs at 3.
@@ -201,4 +218,3 @@ To re-check a build, run `npm run build:ssg`, then the "every route written" one
 - **Sitemap gap:** `/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv/` is prerendered but missing from the sitemap.
 - **Published source files:** the `angular.json` assets glob publishes `src/app/court-cases/cases/**` as `/court-cases/*.ts`, now including `decision-categories.ts`. The root `npx tsc --noEmit` also type-checks those copies in `dist/`.
 - **Homepage 404:** the homepage requests `/blur` (`NgOptimizedImage` with `placeholder="blur"`) and gets a 404.
-- **Other «100–130 грн» mentions:** 560-8236-26 («Кому буде корисним») and 300-6563-25 mention «100–130 грн». These are other справи and are untouched; ask the advocate only if wanted.
