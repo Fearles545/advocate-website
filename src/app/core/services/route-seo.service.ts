@@ -37,7 +37,9 @@ export class RouteSeoService {
         takeUntilDestroyed(this.destroyRef)
       )
       .subscribe((seoData) => {
-        const lastPathSegment = seoData.url.replace(/^.*\//, '');
+        // SEO configs are keyed by path, so ?category=… and #… are ignored.
+        const path = seoData.url.split(/[?#]/)[0];
+        const lastPathSegment = path.replace(/^.*\//, '');
 
         this.seoService.updatePageSEO(lastPathSegment);
       });
