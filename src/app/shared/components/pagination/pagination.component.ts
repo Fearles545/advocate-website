@@ -84,6 +84,7 @@ export interface PageChangeEvent {
     </nav>
   `,
   styles: `
+    /* A host can replace the top divider through --pagination-divider */
     .pagination {
       display: flex;
       align-items: center;
@@ -95,7 +96,7 @@ export interface PageChangeEvent {
         rgba(248, 246, 242, 0.5) 0%,
         rgba(248, 246, 242, 0.8) 100%
       );
-      border-top: 1px solid rgba(201, 165, 92, 0.15);
+      border-top: var(--pagination-divider, 1px solid rgba(201, 165, 92, 0.15));
     }
 
     /* Page Size Selector */

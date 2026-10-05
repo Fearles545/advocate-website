@@ -238,8 +238,7 @@ app-category-filter {
 
 /* The card's top border stands in for the bar's own divider line */
 .pagination-card app-pagination {
-  display: block;
-  margin-top: -1px;
+  --pagination-divider: none;
 }
 
 /* ========================================
