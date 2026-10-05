@@ -11,7 +11,7 @@
 
 // Decision categories, in display order (the list filter and the «Категорії»
 // row). Take them from the advocate's category lists.
-type DecisionCategory =
+type DecisionCategorySlug =
   | 'assignment' // Призначення пенсії
   | 'recalculation' // Перерахунок пенсії
   | 'service-credit' // Зарахування стажу
@@ -19,7 +19,7 @@ type DecisionCategory =
   | 'preferential' // Пільгові пенсії
   | 'other'; // Інші пенсійні спори: always next to a main category
 
-type MainDecisionCategory = Exclude<DecisionCategory, 'other'>;
+type MainDecisionCategorySlug = Exclude<DecisionCategorySlug, 'other'>;
 
 // Common tags for consistency
 type CommonTag =
@@ -53,7 +53,7 @@ interface CourtCaseInput {
   title: string; // Main headline describing outcome
   date: string; // Publication date: YYYY-MM-DD
 
-  categories: [MainDecisionCategory, ...DecisionCategory[]]; // Required, 1+, a main one first
+  categories: [MainDecisionCategorySlug, ...DecisionCategorySlug[]]; // Required, 1+, a main one first
 
   tags: CommonTag[]; // SEO keywords only, not displayed («Категорія справи» in the sources)
 

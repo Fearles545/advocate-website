@@ -30,7 +30,7 @@ export const courtCaseInput: CourtCaseInput = {
   slug?: string;             // Override for appeals: "420-14018-25-appeal"
   title: string;             // Headline describing outcome
   date: string;              // YYYY-MM-DD
-  categories: [MainDecisionCategory, ...DecisionCategory[]]; // Required, 1+
+  categories: [MainDecisionCategorySlug, ...DecisionCategorySlug[]]; // Required, 1+
   tags: string[];            // Free-form keywords (SEO only)
   registryLinks: [{url, label?}]; // Court registry URL(s)
 
@@ -242,7 +242,7 @@ interface CourtCaseInput {
   registryUrl: string;     // Court registry link
   title: string;           // Main headline
   date: string;            // YYYY-MM-DD
-  categories: [MainDecisionCategory, ...DecisionCategory[]]; // e.g. ['recalculation', 'indexation']
+  categories: [MainDecisionCategorySlug, ...DecisionCategorySlug[]]; // e.g. ['recalculation', 'indexation']
   tags: string[];          // Free-form keywords (SEO only)
 
   essence: string;         // Background (markdown)
