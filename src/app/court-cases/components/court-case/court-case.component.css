@@ -638,6 +638,11 @@ h1 {
   }
 }
 
+/* === Prev/Next Navigator - Mobile base === */
+app-prev-next-navigator {
+  margin-top: 2.5rem;
+}
+
 /* ========================================
    RESPONSIVE BREAKPOINTS (Mobile-first)
    ======================================== */
@@ -749,6 +754,10 @@ h1 {
 
   .cta-link {
     font-size: 1rem;
+  }
+
+  app-prev-next-navigator {
+    margin-top: 3rem;
   }
 }
 

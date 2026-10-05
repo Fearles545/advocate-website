@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DatePipe } from '@angular/common';
 
@@ -7,14 +7,21 @@ import { MatButtonModule } from '@angular/material/button';
 
 import {
   CourtCase,
+  courtCases,
   COURT_CASE_FAQ,
   DECISION_CATEGORIES,
   getRelatedCases,
 } from '../../cases';
 import { Blog, getBlogsBySlug } from '../../../blog/blog-posts';
 import { CaseRoutePipe } from '../../pipes/case-route.pipe';
+import { CourtCasesPaginationService } from '../../services/court-cases-pagination.service';
 import { CtaButtonComponent } from '../../../shared/components/cta-button';
 import { FaqAccordionComponent } from '../../../shared/components/faq-accordion';
+import {
+  pickNeighbours,
+  PrevNextItem,
+  PrevNextNavigatorComponent,
+} from '@shared/components/prev-next-navigator';
 
 @Component({
   selector: 'app-court-case',
@@ -26,11 +33,14 @@ import { FaqAccordionComponent } from '../../../shared/components/faq-accordion'
     CaseRoutePipe,
     CtaButtonComponent,
     FaqAccordionComponent,
+    PrevNextNavigatorComponent,
   ],
   templateUrl: './court-case.component.html',
   styleUrl: './court-case.component.css',
 })
 export class CourtCaseComponent {
+  private paginationService = inject(CourtCasesPaginationService);
+
   courtCase = input.required<CourtCase>();
   faqItems = COURT_CASE_FAQ;
 
@@ -49,4 +59,23 @@ export class CourtCaseComponent {
     const slugs = this.courtCase().relatedBlogSlugs ?? [];
     return getBlogsBySlug(slugs);
   });
+
+  private neighbours = computed(() =>
+    pickNeighbours(
+      courtCases,
+      this.courtCase().slug,
+      this.paginationService.selectedCategory()
+    )
+  );
+  previousCase = computed(() => toPrevNextItem(this.neighbours().previous));
+  nextCase = computed(() => toPrevNextItem(this.neighbours().next));
+}
+
+function toPrevNextItem(courtCase: CourtCase | null): PrevNextItem | null {
+  return (
+    courtCase && {
+      link: ['/court-cases', courtCase.slug],
+      title: courtCase.title,
+    }
+  );
 }

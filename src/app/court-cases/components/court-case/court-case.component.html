@@ -232,6 +232,15 @@
           кордоном.
         </p>
       </aside>
+
+      <!-- Prev/Next Navigator -->
+      <app-prev-next-navigator
+        [previous]="previousCase()"
+        [next]="nextCase()"
+        previousLabel="Попереднє"
+        nextLabel="Наступне"
+        ariaLabel="Навігація між судовими рішеннями"
+      />
     }
   </div>
 </section>
