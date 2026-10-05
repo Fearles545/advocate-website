@@ -5,6 +5,8 @@ import { DecisionCategorySlug } from '../cases';
   providedIn: 'root',
 })
 export class CourtCasesPaginationService {
+  readonly pageSizeOptions = [5, 10, 15, 20] as const;
+
   pageIndex = signal(0);
   pageSize = signal(10);
   selectedCategory = signal<DecisionCategorySlug | null>(null);

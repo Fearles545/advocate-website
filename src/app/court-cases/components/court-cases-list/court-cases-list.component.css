@@ -223,10 +223,23 @@ app-category-filter {
     color var(--transition-normal);
 }
 
-/* === Paginator === */
-mat-paginator {
-  background: transparent;
-  margin-top: 1.5rem;
+/* === Pagination (the blog list card's footer, as a card of its own) === */
+.pagination-card {
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  background: white;
+  border-radius: var(--card-border-radius);
+  border: 1px solid rgba(201, 165, 92, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 39, 6, 0.08),
+    0 2px 8px rgba(0, 39, 6, 0.04);
+  overflow: hidden;
+}
+
+/* The card's top border stands in for the bar's own divider line */
+.pagination-card app-pagination {
+  display: block;
+  margin-top: -1px;
 }
 
 /* ========================================
@@ -279,7 +292,7 @@ mat-paginator {
     font-size: 1.05rem;
   }
 
-  mat-paginator {
+  .pagination-card {
     margin-top: 2rem;
   }
 }

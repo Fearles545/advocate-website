@@ -64,16 +64,15 @@
         }
       </div>
 
-      @if (filteredCases().length > pageSize()) {
-        <mat-paginator
-          [length]="filteredCases().length"
-          [pageSize]="pageSize()"
+      <div class="pagination-card">
+        <app-pagination
+          [totalItems]="filteredCases().length"
           [pageIndex]="pageIndex()"
-          [hidePageSize]="true"
-          (page)="handlePageEvent($event)"
-          aria-label="Оберіть сторінку"
+          [pageSize]="pageSize()"
+          [pageSizeOptions]="pageSizeOptions"
+          (pageChange)="handlePageChange($event)"
         />
-      }
+      </div>
     }
   </div>
 </section>

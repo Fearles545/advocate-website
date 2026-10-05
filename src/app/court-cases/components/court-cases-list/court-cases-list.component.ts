@@ -2,16 +2,15 @@ import { Component, computed, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DatePipe, Location } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
-import {
-  MatPaginatorIntl,
-  MatPaginatorModule,
-  PageEvent,
-} from '@angular/material/paginator';
 
 import {
   CategoryFilterComponent,
   CategoryOption,
 } from '@shared/components/category-filter';
+import {
+  PageChangeEvent,
+  PaginationComponent,
+} from '@shared/components/pagination';
 import {
   CourtCase,
   courtCases,
@@ -20,7 +19,6 @@ import {
   isDecisionCategorySlug,
 } from '../../cases';
 import { CourtCasesPaginationService } from '../../services/court-cases-pagination.service';
-import { UkrainianPaginatorIntl } from '../../../core/services/ukrainian-paginator-intl.service';
 import { CaseRoutePipe } from '../../pipes/case-route.pipe';
 
 @Component({
@@ -29,11 +27,10 @@ import { CaseRoutePipe } from '../../pipes/case-route.pipe';
     RouterLink,
     MatIcon,
     DatePipe,
-    MatPaginatorModule,
     CaseRoutePipe,
     CategoryFilterComponent,
+    PaginationComponent,
   ],
-  providers: [{ provide: MatPaginatorIntl, useClass: UkrainianPaginatorIntl }],
   templateUrl: './court-cases-list.component.html',
   styleUrl: './court-cases-list.component.css',
 })
@@ -46,6 +43,7 @@ export class CourtCasesListComponent implements OnInit {
 
   readonly pageSize = this.paginationService.pageSize;
   readonly pageIndex = this.paginationService.pageIndex;
+  readonly pageSizeOptions = this.paginationService.pageSizeOptions;
   readonly selectedCategory = computed(() =>
     this.paginationService.selectedCategory()
   );
@@ -84,7 +82,7 @@ export class CourtCasesListComponent implements OnInit {
     this.clampPageIndex();
   }
 
-  handlePageEvent(event: PageEvent) {
+  handlePageChange(event: PageChangeEvent): void {
     this.paginationService.updatePage(event.pageIndex, event.pageSize);
   }
 
