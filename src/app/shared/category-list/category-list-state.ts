@@ -73,15 +73,20 @@ export abstract class CategoryListState<
 
   /**
    * Applies the `?category=` value the list was opened with. A known category
-   * is selected. Without a value, a remembered category is written back into
-   * the URL. The page index then moves to the last page that still exists.
+   * is selected. An unknown one shows the full list on the first page and
+   * leaves the plain list URL. Without a value, a remembered category is
+   * written back into the URL. The page index then moves to the last page
+   * that still exists.
    */
   restoreFromUrl(queryParams: ParamMap): void {
     const value = queryParams.get('category');
 
     if (value && this.config.isCategory(value)) {
       this.setCategory(value);
-    } else if (!value && this.category()) {
+    } else if (value) {
+      this.selectCategory(null);
+      this.index.set(0);
+    } else if (this.category()) {
       this.replaceUrl(this.category());
     }
 
