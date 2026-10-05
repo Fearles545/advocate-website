@@ -3,8 +3,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 
 export interface PrevNextItem {
-  /** Router link commands or URL of the neighbouring page. */
-  link: string | readonly unknown[];
+  /** Router commands of the neighbouring page. */
+  link: readonly string[];
   title: string;
 }
 

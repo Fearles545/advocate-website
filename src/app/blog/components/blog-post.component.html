@@ -69,8 +69,8 @@
 
       <!-- Navigator -->
       <app-prev-next-navigator
-        [previous]="previousArticle()"
-        [next]="nextArticle()"
+        [previous]="navigation().previous"
+        [next]="navigation().next"
         previousLabel="Попередня"
         nextLabel="Наступна"
         ariaLabel="Навігація між статтями"

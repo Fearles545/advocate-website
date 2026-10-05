@@ -23,8 +23,7 @@ import {
   CategoryLinksComponent,
 } from '@shared/components/category-links';
 import {
-  pickNeighbours,
-  PrevNextItem,
+  pickPrevNextItems,
   PrevNextNavigatorComponent,
 } from '@shared/components/prev-next-navigator';
 
@@ -59,7 +58,6 @@ export class BlogPostComponent {
   blog = input.required<Blog>();
 
   isLoading = signal(true);
-  activeCategory = computed(() => this.blogPaginationService.selectedCategory());
 
   categoryLinks = computed<CategoryLink[]>(() =>
     (this.blog().categories ?? []).map((category) => ({
@@ -68,11 +66,14 @@ export class BlogPostComponent {
     }))
   );
 
-  private neighbours = computed(() =>
-    pickNeighbours(blogs, this.blog().slug, this.activeCategory())
+  navigation = computed(() =>
+    pickPrevNextItems(
+      blogs,
+      this.blog().slug,
+      this.blogPaginationService.selectedCategory(),
+      (blog) => ['/blog', blog.slug]
+    )
   );
-  previousArticle = computed(() => toPrevNextItem(this.neighbours().previous));
-  nextArticle = computed(() => toPrevNextItem(this.neighbours().next));
 
   blogHtml = computed(() =>
     this.blog() ? this.getPost(this.blog()?.slug!) : of('')
@@ -92,8 +93,4 @@ export class BlogPostComponent {
         finalize(() => this.isLoading.set(false))
       );
   }
-}
-
-function toPrevNextItem(blog: Blog | null): PrevNextItem | null {
-  return blog && { link: ['/blog', blog.slug], title: blog.title };
 }

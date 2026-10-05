@@ -223,8 +223,8 @@
 
       <!-- Prev/Next Navigator -->
       <app-prev-next-navigator
-        [previous]="previousCase()"
-        [next]="nextCase()"
+        [previous]="navigation().previous"
+        [next]="navigation().next"
         previousLabel="Попереднє"
         nextLabel="Наступне"
         ariaLabel="Навігація між судовими рішеннями"

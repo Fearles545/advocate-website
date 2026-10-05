@@ -13,7 +13,7 @@ import {
   getRelatedCases,
 } from '../../cases';
 import { Blog, getBlogsBySlug } from '../../../blog/blog-posts';
-import { CaseRoutePipe } from '../../pipes/case-route.pipe';
+import { caseRoute, CaseRoutePipe } from '../../pipes/case-route.pipe';
 import { CourtCasesPaginationService } from '../../services/court-cases-pagination.service';
 import { CtaButtonComponent } from '../../../shared/components/cta-button';
 import { FaqAccordionComponent } from '../../../shared/components/faq-accordion';
@@ -22,8 +22,7 @@ import {
   CategoryLinksComponent,
 } from '@shared/components/category-links';
 import {
-  pickNeighbours,
-  PrevNextItem,
+  pickPrevNextItems,
   PrevNextNavigatorComponent,
 } from '@shared/components/prev-next-navigator';
 
@@ -68,22 +67,12 @@ export class CourtCaseComponent {
     return getBlogsBySlug(slugs);
   });
 
-  private neighbours = computed(() =>
-    pickNeighbours(
+  navigation = computed(() =>
+    pickPrevNextItems(
       courtCases,
       this.courtCase().slug,
-      this.paginationService.selectedCategory()
+      this.paginationService.selectedCategory(),
+      (courtCase) => caseRoute(courtCase.slug)
     )
-  );
-  previousCase = computed(() => toPrevNextItem(this.neighbours().previous));
-  nextCase = computed(() => toPrevNextItem(this.neighbours().next));
-}
-
-function toPrevNextItem(courtCase: CourtCase | null): PrevNextItem | null {
-  return (
-    courtCase && {
-      link: ['/court-cases', courtCase.slug],
-      title: courtCase.title,
-    }
   );
 }
