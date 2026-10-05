@@ -6,6 +6,7 @@ export const case_200_7851_25_appeal: CourtCase = {
   title:
     'Пенсія шахтарю за Списком №1 без уточнюючих довідок: апеляційний суд підтвердив зарахування пільгового стажу та отримання допомоги по безробіттю',
   date: '2026-04-10',
+  categories: ['assignment', 'service-credit', 'preferential'],
   tags: ['пільгова пенсія', 'пільговий стаж', 'Список №1', 'стаж по трудовій'],
   registryLinks: [
     {
@@ -47,7 +48,12 @@ export const case_200_7851_25_appeal: CourtCase = {
     'Вам не зараховано до страхового стажу період перебування на обліку в центрі зайнятості з отриманням допомоги по безробіттю',
     'Ви є вихідцем з території, на якій ведуться бойові дії, та не маєте оформленої довідки внутрішньо переміщеної особи (ВПО)',
   ],
-  relatedCaseSlugs: ['460-12796-25', '520-30296-25', '520-26392-25'],
+  relatedCaseSlugs: [
+    '560-12529-26',
+    '460-12796-25',
+    '520-30296-25',
+    '520-26392-25',
+  ],
   relatedBlogSlugs: [
     'iakyi-minimalnyi-rozmir-pensii-shakhtariam-ta-pratsivnykam-zainiatym-ikh-obsluhovuvanniam',
     'iak-zarakhovuietsia-period-navchannia-do-pilhovoho-stazhu',

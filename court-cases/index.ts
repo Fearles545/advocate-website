@@ -4,6 +4,11 @@ export type {
   FaqItem,
 } from './court-case.model';
 export { COURT_CASE_FAQ } from './court-case.model';
+export type { DecisionCategorySlug } from './decision-categories';
+export {
+  DECISION_CATEGORIES,
+  isDecisionCategorySlug,
+} from './decision-categories';
 
 import { CourtCase } from './court-case.model';
 import { case_582_867_21 } from './582-867-21-case';
@@ -29,6 +34,12 @@ import { case_560_8236_26 } from './560-8236-26-case';
 import { case_480_3424_26 } from './480-3424-26-case';
 import { case_380_9255_26 } from './380-9255-26-case';
 import { case_480_3424_26_correction } from './480-3424-26-case-correction';
+import { case_560_12529_26 } from './560-12529-26-case';
+import { case_420_11457_26 } from './420-11457-26-case';
+import { case_300_2859_26 } from './300-2859-26-case';
+import { case_160_14195_26 } from './160-14195-26-case';
+import { case_380_9255_26_appeal } from './380-9255-26-case-appeal';
+import { case_460_12796_25_appeal } from './460-12796-25-case-appeal';
 
 /**
  * All court cases data.
@@ -58,6 +69,12 @@ export const courtCases: CourtCase[] = [
   case_480_3424_26,
   case_380_9255_26,
   case_480_3424_26_correction,
+  case_560_12529_26,
+  case_420_11457_26,
+  case_300_2859_26,
+  case_160_14195_26,
+  case_380_9255_26_appeal,
+  case_460_12796_25_appeal,
 ].sort((a, b) => b.date.localeCompare(a.date));
 
 /**

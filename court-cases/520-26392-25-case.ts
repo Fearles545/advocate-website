@@ -6,6 +6,7 @@ export const case_520_26392_25: CourtCase = {
   title:
     'Суд зарахував до страхового стажу клієнта період роботи за записами трудової книжки попри наявні в ній недоліки',
   date: '2026-04-02',
+  categories: ['assignment', 'service-credit'],
   tags: ['страховий стаж', 'пенсія за віком', 'трудова книжка'],
   registryLinks: [
     {
@@ -32,7 +33,7 @@ export const case_520_26392_25: CourtCase = {
     'Ви вважаєте, що відмова Пенсійного фонду України є необґрунтованою',
     'Ви хочете дізнатися, чи є у Вашому випадку перспектива судового оскарження',
   ],
-  relatedCaseSlugs: ['280-9134-25', '420-22036-25', '200-7851-25'],
+  relatedCaseSlugs: ['420-11457-26', '280-9134-25', '420-22036-25', '200-7851-25'],
   relatedBlogSlugs: [
     'shcho-robyty-iakshcho-pensiinyi-fond-ne-zarakhovuie-periody-roboty-do-strakhovoho-stazhu',
     'yak-zarakhovuietsia-stazh-nabutyi-u-rosiiskiy-federatsii',

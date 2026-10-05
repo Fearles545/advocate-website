@@ -6,6 +6,7 @@ export const case_420_14489_25_appeal: CourtCase = {
   title:
     'Пенсійний фонд програв апеляцію у справі про індексацію пенсії',
   date: '2026-02-27',
+  categories: ['recalculation', 'indexation'],
   tags: ['індексація пенсії', 'пенсія за віком', 'показник середньої зарплати'],
   registryLinks: [
     {

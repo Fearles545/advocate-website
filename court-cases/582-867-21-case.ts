@@ -5,6 +5,7 @@ export const case_582_867_21: CourtCase = {
   caseNumber: '582/867/21',
   title: 'Встановлено факт належності трудової книжки та диплому',
   date: '2025-06-01',
+  categories: ['service-credit', 'other'],
   tags: ['пенсія за віком', 'страховий стаж', 'юридичний факт'],
   registryLinks: [
     {

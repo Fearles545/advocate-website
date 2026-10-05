@@ -6,6 +6,7 @@ export const case_420_14018_25_cassation: CourtCase = {
   title:
     'Індексація пенсії: Верховний Суд відмовив ПФУ у відкритті касаційного провадження',
   date: '2026-01-18',
+  categories: ['recalculation', 'indexation'],
   tags: ['індексація пенсії', 'перерахунок пенсії'],
   registryLinks: [
     { url: 'https://reyestr.court.gov.ua/Review/133149827', label: 'Ухвала Верховного Суду' },

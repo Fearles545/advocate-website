@@ -5,6 +5,11 @@
  * SEO is auto-generated from case data with optional overrides.
  */
 
+import {
+  DecisionCategorySlug,
+  MainDecisionCategorySlug,
+} from './decision-categories';
+
 export interface RegistryLink {
   url: string;
   label?: string; // e.g., "Рішення першої інстанції", "Апеляційне рішення"
@@ -28,7 +33,10 @@ export interface CourtCase {
   date: string; // Publication date (ISO format: YYYY-MM-DD)
 
   // === Classification ===
-  tags: string[]; // Required for filtering and SEO keywords
+  // Decision categories: at least one, a main one first, so 'other' never
+  // stands alone.
+  categories: [MainDecisionCategorySlug, ...DecisionCategorySlug[]];
+  tags: string[]; // SEO keywords (meta and JSON-LD); not displayed
 
   // === Registry Links ===
   registryLinks: RegistryLink[];

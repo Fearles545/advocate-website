@@ -6,6 +6,7 @@ export const case_420_14018_25_appeal: CourtCase = {
   title:
     'Індексація пенсії: апеляція Пенсійного фонду залишена без задоволення',
   date: '2025-12-02',
+  categories: ['recalculation', 'indexation'],
   tags: ['індексація пенсії', 'пенсія за віком', 'показник середньої зарплати'],
   registryLinks: [
     {

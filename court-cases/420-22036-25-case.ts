@@ -5,6 +5,7 @@ export const case_420_22036_25: CourtCase = {
   caseNumber: '420/22036/25',
   title: 'Зарахування пільгового стажу за Списком №2 та призначення пенсії',
   date: '2025-12-02',
+  categories: ['assignment', 'service-credit', 'preferential'],
   tags: ['пільгова пенсія', 'пільговий стаж', 'список №2', 'стаж по трудовій'],
   registryLinks: [
     {

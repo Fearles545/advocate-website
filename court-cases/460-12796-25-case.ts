@@ -6,6 +6,7 @@ export const case_460_12796_25: CourtCase = {
   title:
     'Призначення пенсії за вислугу років медичному працівнику з урахуванням періодів роботи до спецстажу після 11.10.2017: суд став на бік клієнта',
   date: '2026-04-07',
+  categories: ['assignment', 'service-credit', 'other'],
   tags: ['пенсія за вислугу років', 'спеціальний стаж', 'УБД'],
   registryLinks: [
     {
@@ -42,7 +43,12 @@ export const case_460_12796_25: CourtCase = {
     'Ви є учасником бойових дій (УБД) і періоди Вашої участі в бойових діях не зараховано до страхового стажу у потрійному розмірі з розрахунку один місяць служби за три місяці',
     'Ви отримали відмову Пенсійного фонду України та вважаєте її необґрунтованою',
   ],
-  relatedCaseSlugs: ['520-30296-25', '520-26392-25', '280-9134-25'],
+  relatedCaseSlugs: [
+    '460-12796-25-appeal',
+    '520-30296-25',
+    '520-26392-25',
+    '280-9134-25',
+  ],
   relatedBlogSlugs: [
     'nepravylna-indeksatsiia-pensii-pryznachenykh-z-2020-roku-shcho-zminyla-postanova-velykoi-palaty-vs-i-iak-diati-pensioneru',
     'yak-pidvyshchyty-pensiiu-za-vysluhu-rokiv',
