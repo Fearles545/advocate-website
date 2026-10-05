@@ -19,3 +19,7 @@
 - [ ] On a blog article, the «Попередня»/«Наступна» cards look the same. With a category selected they stay inside it. An article outside the selected category shows its neighbours in the full list.
 - [ ] The prerendered HTML of an article still contains links to its neighbours in the full list.
 - [ ] `npm run build:ssg` succeeds with the baseline route count.
+
+## Comments
+
+**2026-10-05, baseline and prerequisite.** Baseline before any batch change (cf86310): `Prerendered 102 static routes`. A prerequisite fix landed first in 847cba0: `DropdownPositionDirective` touched `window` during prerender and broke 67 routes. Since then the build prints no `ERROR` lines, every route writes its `index.html`, and every article's prerendered HTML has its H1 and its prev/next links, so this ticket's prerender criterion can now be checked. A build's route count alone is not proof; see CLAUDE.md "Build Behavior".

@@ -32,3 +32,7 @@ Spec: `.scratch/2026-10-04-batch/spec.md`, section "Articles"; the source locati
   - BreadcrumbList, WebPage and BlogPosting JSON-LD whose headline is the H1.
 - [ ] The sitemap lists the URL, with lastmod set to the commit date.
 - [ ] Checked at ~390 px and ~1280 px: no layout breaks and no horizontal scroll.
+
+## Comments
+
+**2026-10-05, FAQ block.** The FAQ block keeps its shared heading «Часті питання»; the source's «Часті питання по темі» only names the section. FAQ answers are plain text, so bold inside an answer is dropped.

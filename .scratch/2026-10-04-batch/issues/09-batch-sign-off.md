@@ -30,3 +30,7 @@ This ticket is Leo's «готово». Spec: `.scratch/2026-10-04-batch/spec.md`
   - the three open questions from the spec;
   - an FYI on the 130 → 135 грн correction;
   - the note that each article lists four recommended articles but the block shows three.
+
+## Comments
+
+**2026-10-05, expectations.** Expected route count: 102 + 8 = 110, with every route's `index.html` written (CLAUDE.md "Build Behavior"). Since 847cba0 blog posts prerender their full body, which visitors never see (the client re-renders), so check the prerendered HTML of the two new articles directly: H1, body, internal links and images. The message for the advocate also says that the list items of the six new decisions follow the site's format (capital first letter, no trailing «;»).

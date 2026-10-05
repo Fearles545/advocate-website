@@ -22,3 +22,7 @@
 - [ ] The guide and the AI input template describe the required categories field and list the six slugs.
 - [ ] Checked at ~390 px and ~1280 px: the filter, its dropdown and the «Категорії» row are readable, with no horizontal scroll.
 - [ ] `npm run build:ssg` succeeds.
+
+## Comments
+
+**2026-10-05, decided with Leo: client-side SEO for `?category=`.** `RouteSeoService` looks up the SEO config by the last URL segment including the query string, so on the client `/court-cases/?category=…` (and today `/blog/?category=…`) falls back to the default title and canonical `/`. Fix it in this ticket: the lookup ignores the query string and the fragment, so a filtered list keeps the list's title and the canonical `/court-cases/` after the app loads, as the spec requires. The blog gets the same fix.

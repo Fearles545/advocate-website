@@ -16,3 +16,7 @@
 - [ ] The prerendered HTML of a decision page contains plain links to its neighbours in the full list.
 - [ ] At ~390 px the cards stack and stay readable. At ~1280 px they sit side by side, as on the blog.
 - [ ] `npm run build:ssg` succeeds.
+
+## Comments
+
+**2026-10-05, list order on equal dates.** The list keeps registration order for equal dates. On 2026-01-18, 420-14018-25-cassation sits above 280-9134-25, the reverse of the spec's table. Prev/next follow the real list order.

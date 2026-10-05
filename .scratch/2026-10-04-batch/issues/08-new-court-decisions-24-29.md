@@ -27,3 +27,9 @@ Spec: `.scratch/2026-10-04-batch/spec.md`, sections "Court decisions" and "Edits
 - [ ] The sitemap lists the six URLs, with lastmod set to the commit date.
 - [ ] Checked at ~390 px and ~1280 px: no layout breaks and no horizontal scroll.
 - [ ] `npm run build:ssg` succeeds.
+
+## Comments
+
+**2026-10-05, decided with Leo: bullet formatting.** Result and «Кому буде корисним» bullets follow the convention of the 23 existing decisions: plain text starting with a capital letter, with no trailing «;» or «.». The words stay verbatim; the ✔ marks and the bold markup are dropped.
+
+**2026-10-05, source quirk.** In `24.md` the related decisions carry the advocate's own numbers (19, 17, 6), not batch numbers; the URLs decide.
