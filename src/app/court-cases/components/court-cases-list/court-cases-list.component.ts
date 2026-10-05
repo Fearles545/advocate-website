@@ -1,22 +1,17 @@
-import { Component, computed, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { DatePipe, Location } from '@angular/common';
+import { DatePipe } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 
 import {
   CategoryFilterComponent,
   CategoryOption,
 } from '@shared/components/category-filter';
+import { PaginationComponent } from '@shared/components/pagination';
 import {
-  PageChangeEvent,
-  PaginationComponent,
-} from '@shared/components/pagination';
-import {
-  CourtCase,
   courtCases,
   DECISION_CATEGORIES,
   DecisionCategorySlug,
-  isDecisionCategorySlug,
 } from '../../cases';
 import { CourtCasesPaginationService } from '../../services/court-cases-pagination.service';
 import { CaseRoutePipe } from '../../pipes/case-route.pipe';
@@ -35,81 +30,15 @@ import { CaseRoutePipe } from '../../pipes/case-route.pipe';
   styleUrl: './court-cases-list.component.css',
 })
 export class CourtCasesListComponent implements OnInit {
-  private paginationService = inject(CourtCasesPaginationService);
   private route = inject(ActivatedRoute);
-  private location = inject(Location);
+  protected readonly list = inject(CourtCasesPaginationService);
 
   courtCases = courtCases;
 
-  readonly pageSize = this.paginationService.pageSize;
-  readonly pageIndex = this.paginationService.pageIndex;
-  readonly pageSizeOptions = this.paginationService.pageSizeOptions;
-  readonly selectedCategory = computed(() =>
-    this.paginationService.selectedCategory()
-  );
-
   readonly categoryOptions: readonly CategoryOption<DecisionCategorySlug>[] =
     DECISION_CATEGORIES;
-  readonly categoryCounts = countByCategory(courtCases);
-
-  readonly filteredCases = computed(() => {
-    const category = this.selectedCategory();
-    if (!category) {
-      return this.courtCases;
-    }
-    return this.courtCases.filter((courtCase) =>
-      courtCase.categories.includes(category)
-    );
-  });
-
-  readonly paginatedCases = computed(() => {
-    const startIndex = this.pageIndex() * this.pageSize();
-    const endIndex = startIndex + this.pageSize();
-    return this.filteredCases().slice(startIndex, endIndex);
-  });
 
   ngOnInit(): void {
-    const urlCategory = this.route.snapshot.queryParamMap.get('category');
-
-    if (urlCategory && isDecisionCategorySlug(urlCategory)) {
-      this.paginationService.updateCategory(urlCategory);
-    } else if (!urlCategory && this.selectedCategory()) {
-      this.location.replaceState(
-        `/court-cases?category=${this.selectedCategory()}`
-      );
-    }
-
-    this.clampPageIndex();
+    this.list.restoreFromUrl(this.route.snapshot.queryParamMap);
   }
-
-  handlePageChange(event: PageChangeEvent): void {
-    this.paginationService.updatePage(event.pageIndex, event.pageSize);
-  }
-
-  handleCategoryChange(category: DecisionCategorySlug | null): void {
-    this.paginationService.updateCategory(category);
-
-    const url = category ? `/court-cases?category=${category}` : '/court-cases';
-    this.location.replaceState(url);
-  }
-
-  private clampPageIndex(): void {
-    const totalPages = Math.ceil(this.filteredCases().length / this.pageSize());
-    if (totalPages > 0 && this.pageIndex() >= totalPages) {
-      this.paginationService.updatePage(totalPages - 1, this.pageSize());
-    }
-  }
-}
-
-/** A decision counts once in each of its categories. */
-function countByCategory(
-  cases: readonly CourtCase[]
-): Partial<Record<DecisionCategorySlug, number>> {
-  const counts: Partial<Record<DecisionCategorySlug, number>> = {};
-  for (const courtCase of cases) {
-    for (const category of courtCase.categories) {
-      counts[category] = (counts[category] ?? 0) + 1;
-    }
-  }
-  return counts;
 }

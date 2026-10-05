@@ -1,25 +1,26 @@
-import { Injectable, signal } from '@angular/core';
-import { DecisionCategorySlug } from '../cases';
+import { Injectable } from '@angular/core';
 
+import { CategoryListState } from '@shared/category-list';
+import {
+  CourtCase,
+  courtCases,
+  DecisionCategorySlug,
+  isDecisionCategorySlug,
+} from '../cases';
+
+/** The court decisions list's root-provided state: category, page and page size. */
 @Injectable({
   providedIn: 'root',
 })
-export class CourtCasesPaginationService {
-  readonly pageSizeOptions = [5, 10, 15, 20] as const;
-
-  pageIndex = signal(0);
-  pageSize = signal(10);
-  selectedCategory = signal<DecisionCategorySlug | null>(null);
-
-  updatePage(pageIndex: number, pageSize: number): void {
-    this.pageIndex.set(pageIndex);
-    this.pageSize.set(pageSize);
-  }
-
-  updateCategory(category: DecisionCategorySlug | null): void {
-    if (this.selectedCategory() !== category) {
-      this.selectedCategory.set(category);
-      this.pageIndex.set(0);
-    }
+export class CourtCasesPaginationService extends CategoryListState<
+  DecisionCategorySlug,
+  CourtCase
+> {
+  constructor() {
+    super({
+      listPath: '/court-cases',
+      items: courtCases,
+      isCategory: isDecisionCategorySlug,
+    });
   }
 }

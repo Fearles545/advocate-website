@@ -82,6 +82,13 @@ export const ACTIVE_CATEGORIES: BlogCategorySlug[] = [
 ];
 
 /**
+ * Check whether a value, such as a `?category=` value, is an active category
+ */
+export function isActiveCategory(value: string): value is BlogCategorySlug {
+  return (ACTIVE_CATEGORIES as readonly string[]).includes(value);
+}
+
+/**
  * Get display label for a category (uses shortLabel if available)
  */
 export function getCategoryDisplayLabel(slug: BlogCategorySlug): string {

@@ -1,29 +1,18 @@
-import { Injectable, signal } from '@angular/core';
-import { BlogCategorySlug } from '../blog-categories';
+import { Injectable } from '@angular/core';
 
+import { CategoryListState } from '@shared/category-list';
+import { Blog, blogs } from '../blog-posts';
+import { BlogCategorySlug, isActiveCategory } from '../blog-categories';
+
+/** The blog list's root-provided state: category, page and page size. */
 @Injectable({
   providedIn: 'root',
 })
-export class BlogPaginationService {
-  readonly pageSizeOptions = [5, 10, 15, 20] as const;
-
-  pageIndex = signal(0);
-  pageSize = signal(10);
-  selectedCategory = signal<BlogCategorySlug | null>(null);
-
-  updatePage(pageIndex: number, pageSize: number): void {
-    this.pageIndex.set(pageIndex);
-    this.pageSize.set(pageSize);
-  }
-
-  updateCategory(category: BlogCategorySlug | null): void {
-    if (this.selectedCategory() !== category) {
-      this.selectedCategory.set(category);
-      this.pageIndex.set(0);
-    }
-  }
-
-  reset(): void {
-    this.pageIndex.set(0);
+export class BlogPaginationService extends CategoryListState<
+  BlogCategorySlug,
+  Blog
+> {
+  constructor() {
+    super({ listPath: '/blog', items: blogs, isCategory: isActiveCategory });
   }
 }
