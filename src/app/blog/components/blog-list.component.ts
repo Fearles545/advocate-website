@@ -9,11 +9,16 @@ import { BlogPaginationService } from '../services/blog-pagination.service';
 import {
   PageChangeEvent,
   PaginationComponent,
-} from './pagination/pagination.component';
-import { CategoryFilterComponent } from './category-filter/category-filter.component';
+} from '@shared/components/pagination';
+import {
+  CategoryFilterComponent,
+  CategoryOption,
+} from '@shared/components/category-filter';
 import {
   ACTIVE_CATEGORIES,
+  BLOG_CATEGORIES,
   BlogCategorySlug,
+  getCategoryDisplayLabel,
 } from '../blog-categories';
 
 @Component({
@@ -68,6 +73,13 @@ export class BlogListComponent implements OnInit {
   readonly pageSize = this.blogPaginationService.pageSize;
   readonly pageIndex = this.blogPaginationService.pageIndex;
   readonly pageSizeOptions = this.blogPaginationService.pageSizeOptions;
+
+  readonly categoryOptions: readonly CategoryOption<BlogCategorySlug>[] =
+    ACTIVE_CATEGORIES.map((slug) => ({
+      slug,
+      label: getCategoryDisplayLabel(slug),
+      icon: BLOG_CATEGORIES[slug].icon,
+    }));
 
   /**
    * Count posts per category for filter badges

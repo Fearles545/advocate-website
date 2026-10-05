@@ -30,6 +30,7 @@
     @if (hasCategorizedPosts()) {
       <div id="categories">
         <app-category-filter
+          [categories]="categoryOptions"
           [categoryCounts]="categoryCounts()"
           [selectedCategory]="selectedCategory()"
           (categoryChange)="handleCategoryChange($event)"

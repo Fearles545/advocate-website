@@ -1,50 +1,49 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  input,
-} from '@angular/core';
-import { Blog, blogs } from '../../blog-posts';
-import { BlogCategorySlug } from '../../blog-categories';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 
+export interface PrevNextItem {
+  /** Router link commands or URL of the neighbouring page. */
+  link: string | readonly unknown[];
+  title: string;
+}
+
 @Component({
-  selector: 'app-blogs-navigator',
+  selector: 'app-prev-next-navigator',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatIconModule, RouterLink],
   template: `
-    @let prev = previousBlog();
-    @let next = nextBlog();
+    @let prevItem = previous();
+    @let nextItem = next();
 
-    <nav class="blog-nav" aria-label="Навігація між статтями">
-      @if (prev) {
+    <nav class="prev-next-nav" [attr.aria-label]="ariaLabel()">
+      @if (prevItem) {
         <a
-          [routerLink]="['/blog', prev.slug]"
+          [routerLink]="prevItem.link"
           rel="prev"
-          [title]="prev.title"
+          [title]="prevItem.title"
           class="nav-link nav-prev"
         >
           <span class="nav-icon">
             <mat-icon>arrow_back</mat-icon>
           </span>
           <span class="nav-text">
-            <span class="nav-label">Попередня</span>
-            <span class="nav-title">{{ prev.title }}</span>
+            <span class="nav-label">{{ previousLabel() }}</span>
+            <span class="nav-title">{{ prevItem.title }}</span>
           </span>
         </a>
       }
 
-      @if (next) {
+      @if (nextItem) {
         <a
-          [routerLink]="['/blog', next.slug]"
-          [title]="next.title"
+          [routerLink]="nextItem.link"
+          [title]="nextItem.title"
           class="nav-link nav-next"
-          [class.full-width]="!prev"
+          [class.full-width]="!prevItem"
         >
           <span class="nav-text">
-            <span class="nav-label">Наступна</span>
-            <span class="nav-title">{{ next.title }}</span>
+            <span class="nav-label">{{ nextLabel() }}</span>
+            <span class="nav-title">{{ nextItem.title }}</span>
           </span>
           <span class="nav-icon">
             <mat-icon>arrow_forward</mat-icon>
@@ -60,7 +59,7 @@ import { RouterLink } from '@angular/router';
       margin-top: 0;
     }
 
-    .blog-nav {
+    .prev-next-nav {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
@@ -187,7 +186,7 @@ import { RouterLink } from '@angular/router';
 
     /* Responsive */
     @media (max-width: 768px) {
-      .blog-nav {
+      .prev-next-nav {
         grid-template-columns: 1fr;
         gap: 0.75rem;
       }
@@ -255,47 +254,10 @@ import { RouterLink } from '@angular/router';
     }
   `,
 })
-export class BlogsNavigatorComponent {
-  currentBlog = input<Blog>();
-  category = input<BlogCategorySlug | null>(null);
-
-  private filteredBlogs = computed(() => {
-    const cat = this.category();
-    if (!cat) return blogs;
-    return blogs.filter((b) => b.categories?.some((c) => c === cat));
-  });
-
-  previousBlog = computed(() => {
-    if (!this.currentBlog()) {
-      return null;
-    }
-
-    const blogList = this.filteredBlogs();
-    const currentIndex = blogList.findIndex(
-      (blog) => blog.slug === this.currentBlog()!.slug
-    );
-
-    if (currentIndex > 0) {
-      return blogList[currentIndex - 1];
-    }
-
-    return null;
-  });
-
-  nextBlog = computed(() => {
-    if (!this.currentBlog()) {
-      return null;
-    }
-
-    const blogList = this.filteredBlogs();
-    const currentIndex = blogList.findIndex(
-      (blog) => blog.slug === this.currentBlog()!.slug
-    );
-
-    if (currentIndex < blogList.length - 1) {
-      return blogList[currentIndex + 1];
-    }
-
-    return null;
-  });
+export class PrevNextNavigatorComponent {
+  previous = input<PrevNextItem | null>(null);
+  next = input<PrevNextItem | null>(null);
+  previousLabel = input.required<string>();
+  nextLabel = input.required<string>();
+  ariaLabel = input.required<string>();
 }

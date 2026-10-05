@@ -264,7 +264,7 @@ export class PaginationComponent {
   totalItems = input.required<number>();
   pageIndex = input<number>(0);
   pageSize = input<number>(10);
-  pageSizeOptions = input<readonly [5, 10, 15, 20]>([5, 10, 15, 20]);
+  pageSizeOptions = input<readonly number[]>([5, 10, 15, 20]);
 
   pageChange = output<PageChangeEvent>();
 

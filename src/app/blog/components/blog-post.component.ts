@@ -6,14 +6,13 @@ import { finalize, map, of } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { BlogIframeComponent } from './blog-iframe.component';
-import { Blog } from '../blog-posts';
+import { Blog, blogs } from '../blog-posts';
 import { HttpClient } from '@angular/common/http';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { SpinnerComponent } from '@core/components/spinner/spinner.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatMenuModule } from '@angular/material/menu';
 import { SocialShareComponent } from './social-share/social-share.component';
-import { BlogsNavigatorComponent } from './blogs-navigator/blogs-navigator.component';
 import { RelatedArticlesComponent } from './related-articles/related-articles.component';
 import { BlogLinksComponent } from './blog-links/blog-links.component';
 import { BlogFaqComponent } from './blog-faq/blog-faq.component';
@@ -22,6 +21,10 @@ import {
   getCategoryDisplayLabel,
 } from '../blog-categories';
 import { BlogPaginationService } from '../services/blog-pagination.service';
+import {
+  PrevNextItem,
+  PrevNextNavigatorComponent,
+} from '@shared/components/prev-next-navigator';
 
 @Component({
   selector: 'app-blog-post',
@@ -35,7 +38,7 @@ import { BlogPaginationService } from '../services/blog-pagination.service';
     BlogIframeComponent,
     SpinnerComponent,
     SocialShareComponent,
-    BlogsNavigatorComponent,
+    PrevNextNavigatorComponent,
     RelatedArticlesComponent,
     BlogLinksComponent,
     BlogFaqComponent,
@@ -54,6 +57,24 @@ export class BlogPostComponent {
 
   isLoading = signal(true);
   activeCategory = computed(() => this.blogPaginationService.selectedCategory());
+
+  private navigableBlogs = computed(() => {
+    const category = this.activeCategory();
+    if (!category) return blogs;
+    return blogs.filter((b) => b.categories?.some((c) => c === category));
+  });
+
+  previousArticle = computed(() => {
+    const list = this.navigableBlogs();
+    const index = list.findIndex((blog) => blog.slug === this.blog().slug);
+    return index > 0 ? toPrevNextItem(list[index - 1]) : null;
+  });
+
+  nextArticle = computed(() => {
+    const list = this.navigableBlogs();
+    const index = list.findIndex((blog) => blog.slug === this.blog().slug);
+    return index < list.length - 1 ? toPrevNextItem(list[index + 1]) : null;
+  });
 
   blogHtml = computed(() =>
     this.blog() ? this.getPost(this.blog()?.slug!) : of('')
@@ -77,4 +98,8 @@ export class BlogPostComponent {
   getCategoryLabel(slug: BlogCategorySlug): string {
     return getCategoryDisplayLabel(slug);
   }
+}
+
+function toPrevNextItem(blog: Blog): PrevNextItem {
+  return { link: ['/blog', blog.slug], title: blog.title };
 }

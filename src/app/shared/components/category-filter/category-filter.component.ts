@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   ElementRef,
   HostListener,
   inject,
@@ -9,13 +10,13 @@ import {
   signal,
 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { DropdownPositionDirective } from '../../../core/directives/dropdown-position.directive';
-import {
-  ACTIVE_CATEGORIES,
-  BLOG_CATEGORIES,
-  BlogCategorySlug,
-  getCategoryDisplayLabel,
-} from '../../blog-categories';
+import { DropdownPositionDirective } from '@core/directives/dropdown-position.directive';
+
+export interface CategoryOption<TSlug extends string = string> {
+  slug: TSlug;
+  label: string;
+  icon: string;
+}
 
 @Component({
   selector: 'app-category-filter',
@@ -28,7 +29,7 @@ import {
       [dpIsOpen]="isOpen()"
       #position="dropdownPosition"
     >
-      @if (selectedCategory(); as selected) {
+      @if (selectedOption(); as selected) {
         <!-- Active filter chip -->
         <div class="active-filter">
           <button
@@ -37,8 +38,8 @@ import {
             [attr.aria-expanded]="isOpen()"
             aria-haspopup="listbox"
           >
-            <mat-icon>{{ categories[selected].icon }}</mat-icon>
-            <span>{{ getDisplayLabel(selected) }}</span>
+            <mat-icon>{{ selected.icon }}</mat-icon>
+            <span>{{ selected.label }}</span>
             <mat-icon class="dropdown-icon" [class.rotated]="isOpen()"
               >expand_more</mat-icon
             >
@@ -75,26 +76,24 @@ import {
           [class.open-left]="position.openLeft()"
           role="listbox"
         >
-          @for (slug of activeCategories; track slug) {
-            @let category = categories[slug];
-            @let count = categoryCounts()[slug] || 0;
+          @for (category of categories(); track category.slug) {
+            @let count = categoryCounts()[category.slug] || 0;
             @if (count > 0) {
               <button
                 class="dropdown-item"
-                [class.selected]="selectedCategory() === slug"
-                (click)="selectCategory(slug)"
+                [class.selected]="selectedCategory() === category.slug"
+                (click)="selectCategory(category.slug)"
                 role="option"
-                [attr.aria-selected]="selectedCategory() === slug"
+                [attr.aria-selected]="selectedCategory() === category.slug"
               >
                 <mat-icon>{{ category.icon }}</mat-icon>
-                <span class="item-label">{{ getDisplayLabel(slug) }}</span>
+                <span class="item-label">{{ category.label }}</span>
                 <span class="item-count">({{ count }})</span>
               </button>
             }
           }
         </div>
       }
-
     </div>
   `,
   styles: `
@@ -418,15 +417,21 @@ import {
     }
   `,
 })
-export class CategoryFilterComponent {
+export class CategoryFilterComponent<TSlug extends string = string> {
   private elementRef = inject(ElementRef);
 
-  categoryCounts = input.required<Record<BlogCategorySlug, number>>();
-  selectedCategory = input<BlogCategorySlug | null>(null);
-  categoryChange = output<BlogCategorySlug | null>();
+  /** Options in display order; an option with no items is not listed. */
+  categories = input.required<readonly CategoryOption<TSlug>[]>();
+  categoryCounts = input.required<Readonly<Partial<Record<TSlug, number>>>>();
+  selectedCategory = input<TSlug | null>(null);
+  categoryChange = output<TSlug | null>();
 
-  readonly categories = BLOG_CATEGORIES;
-  readonly activeCategories = ACTIVE_CATEGORIES;
+  readonly selectedOption = computed(
+    () =>
+      this.categories().find(
+        (category) => category.slug === this.selectedCategory()
+      ) ?? null
+  );
 
   isOpen = signal(false);
 
@@ -457,11 +462,7 @@ export class CategoryFilterComponent {
     this.isOpen.set(false);
   }
 
-  getDisplayLabel(slug: BlogCategorySlug): string {
-    return getCategoryDisplayLabel(slug);
-  }
-
-  selectCategory(slug: BlogCategorySlug | null): void {
+  selectCategory(slug: TSlug | null): void {
     this.categoryChange.emit(slug);
     this.closeDropdown();
   }

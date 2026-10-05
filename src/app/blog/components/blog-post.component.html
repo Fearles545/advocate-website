@@ -80,7 +80,13 @@
       </article>
 
       <!-- Navigator -->
-      <app-blogs-navigator [currentBlog]="blog()" [category]="activeCategory()" />
+      <app-prev-next-navigator
+        [previous]="previousArticle()"
+        [next]="nextArticle()"
+        previousLabel="Попередня"
+        nextLabel="Наступна"
+        ariaLabel="Навігація між статтями"
+      />
     }
 
     <app-spinner [show]="isLoading()" />
