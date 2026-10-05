@@ -27,6 +27,15 @@
         <p>Судові справи скоро з'являться</p>
       </div>
     } @else {
+      <div id="categories">
+        <app-category-filter
+          [categories]="categoryOptions"
+          [categoryCounts]="categoryCounts"
+          [selectedCategory]="selectedCategory()"
+          (categoryChange)="handleCategoryChange($event)"
+        />
+      </div>
+
       <div class="court-cases-grid">
         @for (courtCase of paginatedCases(); track courtCase.slug) {
           <article class="court-case-card">
@@ -55,9 +64,9 @@
         }
       </div>
 
-      @if (courtCases.length > pageSize()) {
+      @if (filteredCases().length > pageSize()) {
         <mat-paginator
-          [length]="courtCases.length"
+          [length]="filteredCases().length"
           [pageSize]="pageSize()"
           [pageIndex]="pageIndex()"
           [hidePageSize]="true"
