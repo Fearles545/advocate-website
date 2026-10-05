@@ -5,7 +5,12 @@ import { DatePipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
-import { CourtCase, COURT_CASE_FAQ, getRelatedCases } from '../../cases';
+import {
+  CourtCase,
+  COURT_CASE_FAQ,
+  DECISION_CATEGORIES,
+  getRelatedCases,
+} from '../../cases';
 import { Blog, getBlogsBySlug } from '../../../blog/blog-posts';
 import { CaseRoutePipe } from '../../pipes/case-route.pipe';
 import { CtaButtonComponent } from '../../../shared/components/cta-button';
@@ -28,6 +33,12 @@ import { FaqAccordionComponent } from '../../../shared/components/faq-accordion'
 export class CourtCaseComponent {
   courtCase = input.required<CourtCase>();
   faqItems = COURT_CASE_FAQ;
+
+  categories = computed(() =>
+    DECISION_CATEGORIES.filter((category) =>
+      this.courtCase().categories.includes(category.slug)
+    )
+  );
 
   relatedCases = computed<CourtCase[]>(() => {
     const slugs = this.courtCase().relatedCaseSlugs ?? [];
