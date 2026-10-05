@@ -9,6 +9,18 @@
  * SEO is auto-generated from case data (no separate SEO file needed)
  */
 
+// Decision categories, in display order (the list filter and the «Категорії»
+// row). Take them from the advocate's category lists.
+type DecisionCategory =
+  | 'assignment' // Призначення пенсії
+  | 'recalculation' // Перерахунок пенсії
+  | 'service-credit' // Зарахування стажу
+  | 'indexation' // Індексація пенсії
+  | 'preferential' // Пільгові пенсії
+  | 'other'; // Інші пенсійні спори: always next to a main category
+
+type MainDecisionCategory = Exclude<DecisionCategory, 'other'>;
+
 // Common tags for consistency
 type CommonTag =
   | 'пенсія за віком'
@@ -41,7 +53,9 @@ interface CourtCaseInput {
   title: string; // Main headline describing outcome
   date: string; // Publication date: YYYY-MM-DD
 
-  tags: CommonTag[]; // For filtering and SEO keywords
+  categories: [MainDecisionCategory, ...DecisionCategory[]]; // Required, 1+, a main one first
+
+  tags: CommonTag[]; // SEO keywords only, not displayed («Категорія справи» in the sources)
 
   registryLinks: RegistryLink[]; // Court registry URL(s)
 
@@ -69,6 +83,8 @@ export const courtCaseInput: CourtCaseInput = {
   title: 'Заголовок справи, що описує результат',
 
   date: '2026-01-18', // YYYY-MM-DD
+
+  categories: ['assignment', 'service-credit'],
 
   tags: ['пенсія за віком', 'страховий стаж'],
 
