@@ -1,4 +1,5 @@
 import { PageSEO } from '@core/services/seo.service';
+import { navishcho_pereviriaty_pensiinu_spravu_pislia_pryznachennia_pensii } from './blog-posts/posts/navishcho-pereviriaty-pensiinu-spravu-pislia-pryznachennia-pensii.seo';
 import { skoro_pensiia_za_vikom_shcho_potribno_zrobyty_do_zvernennia_v_pensiinyi_fond_ukrainy } from './blog-posts/posts/skoro-pensiia-za-vikom-shcho-potribno-zrobyty-do-zvernennia-v-pensiinyi-fond-ukrainy.seo';
 import { postanova_kmu_821_skasovana_shcho_tse_oznachaie_dlia_pensioneriv } from './blog-posts/posts/postanova-kmu-821-skasovana-shcho-tse-oznachaie-dlia-pensioneriv.seo';
 import { zarakhuvannia_periodu_dohliadu_do_strakhovoho_stazhu } from './blog-posts/posts/zarakhuvannia-periodu-dohliadu-do-strakhovoho-stazhu.seo';
@@ -60,6 +61,7 @@ import { koly_dotsilnishe_podavaty_zaiavu_na_pryznachennia_pensii_iakscho_den_na
 import { shcho_oznachaie_status_do_atrybutuvannia_pid_chas_zvernennia_do_pensiinoho_fondu_ukrainy } from './blog-posts/posts/shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
+  ...navishcho_pereviriaty_pensiinu_spravu_pislia_pryznachennia_pensii,
   ...skoro_pensiia_za_vikom_shcho_potribno_zrobyty_do_zvernennia_v_pensiinyi_fond_ukrainy,
   ...postanova_kmu_821_skasovana_shcho_tse_oznachaie_dlia_pensioneriv,
   ...zarakhuvannia_periodu_dohliadu_do_strakhovoho_stazhu,
