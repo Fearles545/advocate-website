@@ -736,10 +736,6 @@ mat-dialog-content.mat-mdc-dialog-content {
   max-height: inherit;
 }
 
-mat-paginator div.mat-mdc-paginator-range-label {
-  margin: 0;
-}
-
 .mdc-dialog--open .mat-mdc-dialog-surface {
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
