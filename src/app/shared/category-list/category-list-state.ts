@@ -99,6 +99,14 @@ export abstract class CategoryListState<
     this.size.set(pageSize);
   }
 
+  /**
+   * A link to the list filtered by `category`, scrolled to the `categories`
+   * anchor around the list's category filter.
+   */
+  categoryLink(category: TSlug): UrlTree {
+    return this.listUrl(category, 'categories');
+  }
+
   /** A category change returns to the first page. */
   private setCategory(category: TSlug | null): void {
     if (this.category() !== category) {
@@ -120,9 +128,10 @@ export abstract class CategoryListState<
     );
   }
 
-  private listUrl(category: TSlug | null): UrlTree {
+  private listUrl(category: TSlug | null, fragment?: string): UrlTree {
     return this.router.createUrlTree([this.config.listPath], {
       queryParams: { category },
+      fragment,
     });
   }
 }

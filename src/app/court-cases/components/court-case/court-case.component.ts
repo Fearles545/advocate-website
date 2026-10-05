@@ -18,6 +18,10 @@ import { CourtCasesPaginationService } from '../../services/court-cases-paginati
 import { CtaButtonComponent } from '../../../shared/components/cta-button';
 import { FaqAccordionComponent } from '../../../shared/components/faq-accordion';
 import {
+  CategoryLink,
+  CategoryLinksComponent,
+} from '@shared/components/category-links';
+import {
   pickNeighbours,
   PrevNextItem,
   PrevNextNavigatorComponent,
@@ -33,6 +37,7 @@ import {
     CaseRoutePipe,
     CtaButtonComponent,
     FaqAccordionComponent,
+    CategoryLinksComponent,
     PrevNextNavigatorComponent,
   ],
   templateUrl: './court-case.component.html',
@@ -44,10 +49,13 @@ export class CourtCaseComponent {
   courtCase = input.required<CourtCase>();
   faqItems = COURT_CASE_FAQ;
 
-  categories = computed(() =>
+  categoryLinks = computed<CategoryLink[]>(() =>
     DECISION_CATEGORIES.filter((category) =>
       this.courtCase().categories.includes(category.slug)
-    )
+    ).map((category) => ({
+      label: category.label,
+      url: this.paginationService.categoryLink(category.slug),
+    }))
   );
 
   relatedCases = computed<CourtCase[]>(() => {

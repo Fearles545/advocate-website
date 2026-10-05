@@ -35,19 +35,7 @@
           <!-- Row 2: Categories -->
           @if (blog().categories?.length) {
             <div class="meta-row meta-row-categories">
-              <div class="categories-list">
-                <span class="categories-label">Категорії</span>
-                @for (cat of blog().categories; track cat) {
-                  <a
-                    [routerLink]="['/blog']"
-                    [queryParams]="{ category: cat }"
-                    fragment="categories"
-                    class="category-tag"
-                  >
-                    {{ getCategoryLabel(cat) }}
-                  </a>
-                }
-              </div>
+              <app-category-links [categories]="categoryLinks()" />
             </div>
           }
         </div>

@@ -33,19 +33,7 @@
 
           <!-- Row 2: Decision categories -->
           <div class="meta-row meta-row-categories">
-            <div class="categories-list">
-              <span class="categories-label">Категорії</span>
-              @for (category of categories(); track category.slug) {
-                <a
-                  [routerLink]="['/court-cases']"
-                  [queryParams]="{ category: category.slug }"
-                  fragment="categories"
-                  class="category-tag"
-                >
-                  {{ category.label }}
-                </a>
-              }
-            </div>
+            <app-category-links [categories]="categoryLinks()" />
           </div>
 
           <!-- Row 3: Registry Links -->

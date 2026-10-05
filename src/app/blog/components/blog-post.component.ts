@@ -16,11 +16,12 @@ import { SocialShareComponent } from './social-share/social-share.component';
 import { RelatedArticlesComponent } from './related-articles/related-articles.component';
 import { BlogLinksComponent } from './blog-links/blog-links.component';
 import { BlogFaqComponent } from './blog-faq/blog-faq.component';
-import {
-  BlogCategorySlug,
-  getCategoryDisplayLabel,
-} from '../blog-categories';
+import { getCategoryDisplayLabel } from '../blog-categories';
 import { BlogPaginationService } from '../services/blog-pagination.service';
+import {
+  CategoryLink,
+  CategoryLinksComponent,
+} from '@shared/components/category-links';
 import {
   pickNeighbours,
   PrevNextItem,
@@ -39,6 +40,7 @@ import {
     BlogIframeComponent,
     SpinnerComponent,
     SocialShareComponent,
+    CategoryLinksComponent,
     PrevNextNavigatorComponent,
     RelatedArticlesComponent,
     BlogLinksComponent,
@@ -58,6 +60,13 @@ export class BlogPostComponent {
 
   isLoading = signal(true);
   activeCategory = computed(() => this.blogPaginationService.selectedCategory());
+
+  categoryLinks = computed<CategoryLink[]>(() =>
+    (this.blog().categories ?? []).map((category) => ({
+      label: getCategoryDisplayLabel(category),
+      url: this.blogPaginationService.categoryLink(category),
+    }))
+  );
 
   private neighbours = computed(() =>
     pickNeighbours(blogs, this.blog().slug, this.activeCategory())
@@ -82,10 +91,6 @@ export class BlogPostComponent {
         map((html) => this.sanitizer.bypassSecurityTrustHtml(html)),
         finalize(() => this.isLoading.set(false))
       );
-  }
-
-  getCategoryLabel(slug: BlogCategorySlug): string {
-    return getCategoryDisplayLabel(slug);
   }
 }
 
