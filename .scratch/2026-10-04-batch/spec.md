@@ -1,6 +1,6 @@
 # Spec: October 2026 content batch and court decision navigation
 
-Status: ready-for-agent
+Status: resolved
 
 ## Problem Statement
 
