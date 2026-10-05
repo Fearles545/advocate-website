@@ -57,10 +57,12 @@ export interface CategoryLink {
       border-radius: 0.25rem;
       letter-spacing: 0.02em;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition:
+        background-color var(--transition-normal),
+        color var(--transition-normal);
 
       &:hover {
-        background: rgba(201, 165, 92, 0.25);
+        background: var(--gold-alpha-20);
         color: var(--color-green);
       }
     }

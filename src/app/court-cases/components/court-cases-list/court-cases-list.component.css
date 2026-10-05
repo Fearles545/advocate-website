@@ -229,10 +229,10 @@ app-category-filter {
   margin: 1.5rem auto 0;
   background: white;
   border-radius: var(--card-border-radius);
-  border: 1px solid rgba(201, 165, 92, 0.2);
+  border: var(--card-border);
   box-shadow:
-    0 8px 32px rgba(0, 39, 6, 0.08),
-    0 2px 8px rgba(0, 39, 6, 0.04);
+    0 8px 32px var(--green-alpha-08),
+    0 2px 8px var(--green-alpha-04);
   overflow: hidden;
 }
 
