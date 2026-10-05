@@ -145,31 +145,21 @@ When creating new sections or components, **always reference the design system**
 
 ## Build Behavior
 
-Run `npm run build:ssg` as often as you need: it is the only check that every route still prerenders. The output is long, so filter out the `NotYetImplemented` noise described below and read the `Prerendered N static routes` line.
+Run `npm run build:ssg` as often as you need: it is the only check that every route still prerenders. A clean build prints no `ERROR` lines and ends with `Prerendered N static routes`.
+
+That count is not proof on its own. When a component throws during prerender, the build still counts its route and exits 0, but writes no `index.html` for it, so the live page returns 404. After every build, confirm each route was written:
+
+```bash
+node -e "const fs=require('fs');const d='dist/advocate-website';const r=Object.keys(require('./'+d+'/prerendered-routes.json').routes);const m=r.filter(x=>!fs.existsSync(d+'/browser'+(x==='/'?'':x)+'/index.html'));console.log(m.length?'MISSING: '+m.join(' '):'all '+r.length+' routes written')"
+```
+
+The usual cause is a browser-only global (`window`, `document`, `localStorage`) touched during construction. Guard it with `isPlatformBrowser(inject(PLATFORM_ID))`, as in `core/directives/dropdown-position.directive.ts`, or move the code into `afterNextRender`.
 
 For a quick type check between builds, use:
 
 ```bash
 npx tsc --noEmit
 ```
-
-### Known SSG Warnings (IGNORE THESE)
-
-During the build, you'll see many `NotYetImplemented` errors like:
-
-```
-ERROR Error: NotYetImplemented
-    at Ne.nyi (...)
-    at hu.setProperty (...)
-```
-
-**These are harmless.** They occur because:
-
-- Angular's SSR uses `domino` (a DOM emulator for Node.js)
-- `domino` doesn't implement `CSSStyleDeclaration.setProperty()`
-- Angular Material internally calls this method
-
-The build **succeeds despite these warnings** - every route is prerendered correctly. This is a known Angular limitation with no official fix. Do not attempt to fix or suppress these errors.
 
 ## Updating Angular
 

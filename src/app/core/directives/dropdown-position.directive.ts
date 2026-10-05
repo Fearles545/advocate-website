@@ -7,8 +7,10 @@ import {
   inject,
   Injector,
   input,
+  PLATFORM_ID,
   signal,
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { debounceTime, fromEvent } from 'rxjs';
 
@@ -34,6 +36,7 @@ export class DropdownPositionDirective {
   private elementRef = inject(ElementRef);
   private injector = inject(Injector);
   private destroyRef = inject(DestroyRef);
+  private platformId = inject(PLATFORM_ID);
 
   /** Whether the dropdown is currently open */
   dpIsOpen = input<boolean>(false);
@@ -59,14 +62,16 @@ export class DropdownPositionDirective {
       }
     });
 
-    // Recalculate on resize
-    fromEvent(window, 'resize')
-      .pipe(debounceTime(100), takeUntilDestroyed(this.destroyRef))
-      .subscribe(() => {
-        if (this.dpIsOpen()) {
-          this.calculatePosition();
-        }
-      });
+    // Recalculate on resize (browser only: there is no window during prerender)
+    if (isPlatformBrowser(this.platformId)) {
+      fromEvent(window, 'resize')
+        .pipe(debounceTime(100), takeUntilDestroyed(this.destroyRef))
+        .subscribe(() => {
+          if (this.dpIsOpen()) {
+            this.calculatePosition();
+          }
+        });
+    }
   }
 
   private resetPosition(): void {
