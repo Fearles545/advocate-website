@@ -6,6 +6,7 @@ export const case_200_5966_25: CourtCase = {
   title:
     'Зарахували період військової служби в особливий період до пільгового стажу шахтаря',
   date: '2025-10-10',
+  categories: ['service-credit', 'preferential', 'other'],
   tags: ['пільгова пенсія', 'пільговий стаж', 'Список №1', 'військова служба'],
   registryLinks: [
     {

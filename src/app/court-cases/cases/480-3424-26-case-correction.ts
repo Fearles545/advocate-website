@@ -5,6 +5,7 @@ export const case_480_3424_26_correction: CourtCase = {
   caseNumber: '480/3424/26',
   title: 'Суд виправив описки у рішенні про пільгову пенсію за заявою адвоката',
   date: '2026-08-05',
+  categories: ['assignment', 'preferential', 'other'],
   tags: [
     'пільгова пенсія',
     'пільговий стаж',

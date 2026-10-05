@@ -5,6 +5,7 @@ export const case_560_8236_26: CourtCase = {
   caseNumber: '560/8236/26',
   title: "Занижена індексація пенсії: суд зобов'язав ПФУ провести перерахунок",
   date: '2026-07-16',
+  categories: ['recalculation', 'indexation'],
   tags: ['індексація пенсії', 'пенсія за віком', 'показник середньої зарплати'],
   registryLinks: [
     {

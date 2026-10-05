@@ -6,6 +6,7 @@ export const case_500_5783_25_appeal: CourtCase = {
   title:
     'Неправильний показник середньої зарплати при індексації: суд став на бік клієнта',
   date: '2026-03-31',
+  categories: ['recalculation', 'indexation', 'other'],
   tags: ['індексація пенсії', 'пенсія за віком', 'показник середньої зарплати'],
   registryLinks: [
     {

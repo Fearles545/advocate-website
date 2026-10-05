@@ -4,6 +4,11 @@ export type {
   FaqItem,
 } from './court-case.model';
 export { COURT_CASE_FAQ } from './court-case.model';
+export type { DecisionCategorySlug } from './decision-categories';
+export {
+  DECISION_CATEGORIES,
+  isDecisionCategorySlug,
+} from './decision-categories';
 
 import { CourtCase } from './court-case.model';
 import { case_582_867_21 } from './582-867-21-case';

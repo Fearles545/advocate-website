@@ -6,6 +6,7 @@ export const case_200_7851_25: CourtCase = {
   title:
     'Вибороли право на пенсію за Списком №1 із зарахуванням пільгового стажу та страхових періодів',
   date: '2025-11-20',
+  categories: ['assignment', 'service-credit', 'preferential'],
   tags: ['пільгова пенсія', 'пільговий стаж', 'список №1', 'стаж по трудовій'],
   registryLinks: [
     {
