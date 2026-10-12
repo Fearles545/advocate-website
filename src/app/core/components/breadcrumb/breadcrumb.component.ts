@@ -19,6 +19,7 @@ interface BreadcrumbItem {
 const ROUTE_LABELS: Record<string, string> = {
   'about-me': 'Про мене',
   services: 'Послуги',
+  prices: 'Вартість послуг',
   documents: 'Документи',
   blog: 'Блог',
   'court-cases': 'Судові справи',

@@ -8,6 +8,7 @@ import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { PrivacyPolicyComponent } from './legal/privacy-policy.component';
 import { PublicOfferComponent } from './legal/public-offer.component';
 import { MainComponent } from './main/main.component';
+import { PricesComponent } from './prices/prices.component';
 import { ServicesComponent } from './services/services.component';
 
 export const routes: Routes = [
@@ -22,6 +23,10 @@ export const routes: Routes = [
   {
     path: 'services',
     component: ServicesComponent,
+  },
+  {
+    path: 'prices',
+    component: PricesComponent,
   },
   {
     path: 'documents',

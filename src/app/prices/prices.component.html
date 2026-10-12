@@ -1,0 +1,114 @@
+<section class="page-bg-pattern">
+  <div class="page-content">
+    <header class="page-header">
+      <div class="page-header-badge">
+        <mat-icon>payments</mat-icon>
+      </div>
+
+      <h1>Вартість послуг пенсійного адвоката</h1>
+
+      <p class="page-intro">
+        Надаю юридичну допомогу з питань призначення та перерахунку пенсії,
+        підтвердження страхового, пільгового і спеціального стажу, підготовки
+        документів та заяв до Пенсійного фонду України, а також судового захисту
+        пенсійних прав.
+      </p>
+      <p class="page-intro secondary">
+        Нижче зазначена орієнтовна вартість основних послуг.
+      </p>
+      <p class="page-intro secondary">
+        Остаточна вартість визначається індивідуально після ознайомлення із
+        ситуацією та документами і залежить від складності питання, обсягу
+        необхідної роботи та кількості документів, які потрібно опрацювати.
+      </p>
+      <p class="page-intro secondary">
+        До початку надання послуги погоджуються її обсяг та вартість.
+      </p>
+      <p class="page-intro secondary prices-year">
+        Ціни актуальні станом на {{ priceList.year }} рік
+      </p>
+    </header>
+
+    <section class="price-list">
+      <div class="section-header">
+        <h2>Вартість юридичних послуг з пенсійних питань</h2>
+      </div>
+
+      @for (group of priceList.groups; track group.id) {
+        <section class="price-group">
+          <h3 class="price-group-title" [id]="group.id">{{ group.title }}</h3>
+
+          <div class="price-rows">
+            @for (service of group.services; track service.id) {
+              <details class="price-row" [id]="service.id">
+                <summary class="price-row-summary">
+                  <h4 class="price-row-title">{{ service.title }}</h4>
+                  <span class="price-row-price">
+                    <span class="price-amount">{{
+                      service.price | price
+                    }}</span>
+                    @if (service.price.kind === 'range') {
+                      <span class="price-caption">орієнтовно</span>
+                    }
+                  </span>
+                  <svg
+                    class="price-row-chevron"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </summary>
+
+                <div class="price-row-body">
+                  @for (paragraph of service.intro; track $index) {
+                    <p [innerHTML]="paragraph"></p>
+                  }
+
+                  @if (service.includes; as includes) {
+                    <p class="price-row-label">
+                      <strong>{{ includes.label }}</strong>
+                    </p>
+                    <ul class="price-row-items">
+                      @for (item of includes.items; track $index) {
+                        <li [innerHTML]="item"></li>
+                      }
+                    </ul>
+                  }
+
+                  <p class="price-row-result" [innerHTML]="service.result"></p>
+
+                  @for (note of service.notes; track $index) {
+                    <p class="price-row-note" [innerHTML]="note"></p>
+                  }
+
+                  @if (service.costDependsOn; as costDependsOn) {
+                    <p class="price-row-cost" [innerHTML]="costDependsOn"></p>
+                  }
+
+                  <a routerLink="/consultation/" class="price-row-link">
+                    Обговорити цю послугу
+                    <mat-icon>arrow_forward</mat-icon>
+                  </a>
+                </div>
+              </details>
+            }
+          </div>
+        </section>
+      }
+
+      <div
+        class="other-services highlight-box"
+        [id]="priceList.otherServices.id"
+      >
+        <h3>{{ priceList.otherServices.title }}</h3>
+        @for (paragraph of priceList.otherServices.paragraphs; track $index) {
+          <p [innerHTML]="paragraph"></p>
+        }
+      </div>
+    </section>
+  </div>
+</section>
