@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { courtCases } from '../court-cases/cases';
+import { NAV_ITEMS, type NavItem } from '../core/config/nav-items.config';
 import { SocialIconData } from '../core/icons.data';
 import { schedule } from '../core/config/schedule.config';
 import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.component';
@@ -22,6 +23,7 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
 })
 export class FooterComponent {
   readonly schedule = schedule;
+  readonly navItems: NavItem[] = NAV_ITEMS;
   iconsData = input.required<SocialIconData[]>();
 
   readonly currentYear = new Date().getFullYear();

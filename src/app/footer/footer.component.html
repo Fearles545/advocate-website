@@ -88,13 +88,11 @@
           <h4 class="footer-column-title">Навігація</h4>
 
           <ul class="footer-nav-list">
-            <li><a routerLink="/">Головна</a></li>
-            <li><a routerLink="/services/">Послуги</a></li>
-            <li><a routerLink="/court-cases/">Судові рішення</a></li>
-            <li><a routerLink="/feedbacks/">Відгуки</a></li>
-            <li><a routerLink="/blog/">Блог</a></li>
-            <li><a routerLink="/documents/">Документи</a></li>
-            <li><a routerLink="/contacts/">Контакти</a></li>
+            @for (navItem of navItems; track navItem.route) {
+              <li>
+                <a [routerLink]="navItem.route">{{ navItem.label }}</a>
+              </li>
+            }
           </ul>
         </nav>
 
