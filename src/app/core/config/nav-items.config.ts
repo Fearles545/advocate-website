@@ -26,6 +26,10 @@ export const NAV_ITEMS: NavItem[] = [
     route: '/services/',
   },
   {
+    label: 'Вартість',
+    route: '/prices/',
+  },
+  {
     label: 'Судові рішення',
     route: '/court-cases/',
   },
