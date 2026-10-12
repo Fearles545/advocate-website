@@ -155,6 +155,12 @@ node -e "const fs=require('fs');const d='dist/advocate-website';const r=Object.k
 
 The usual cause is a browser-only global (`window`, `document`, `localStorage`) touched during construction. Guard it with `isPlatformBrowser(inject(PLATFORM_ID))`, as in `core/directives/dropdown-position.directive.ts`, or move the code into `afterNextRender`.
 
+Then confirm every internal fragment link resolves. The check scans every built page and the article fragments in `posts/`, and requires each `href="/path/#id"` (with or without the slash, query ignored) to find `id="id"` in that path's `index.html`. It prints `all N fragment links resolve`, or exits 1 listing each broken link, typically after an anchor id was renamed:
+
+```bash
+node -e "const fs=require('fs');const d='dist/advocate-website/browser';const ids={};const idsOf=t=>ids[t]??=new Set(fs.existsSync(t)?[...fs.readFileSync(t,'utf8').matchAll(/\sid=\"([^\"]+)\"/g)].map(m=>m[1]):[]);const bad=new Set();let n=0;for(const f of fs.readdirSync(d,{recursive:true}).filter(f=>f.endsWith('.html')))for(const[,p,id]of fs.readFileSync(d+'/'+f,'utf8').matchAll(/href=\"(\/[^\"#]*)#([^\"]+)\"/g)){n++;idsOf(d+p.split('?')[0].replace(/\/$/,'')+'/index.html').has(id)||bad.add(f+' -> '+p+'#'+id)}if(bad.size){console.error('BROKEN:\n'+[...bad].join('\n'));process.exit(1)}console.log('all '+n+' fragment links resolve')"
+```
+
 For a quick type check between builds, use:
 
 ```bash
