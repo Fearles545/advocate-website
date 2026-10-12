@@ -1,5 +1,5 @@
 import { PageSEO } from '@core/services/seo.service';
-import { PriceList } from '../data';
+import { buildPriceFaq, formatPrice, Price, PriceList } from '../data';
 
 const BASE_URL = 'https://www.advocate-pensia.com.ua';
 const PAGE_PATH = '/prices/';
@@ -16,6 +16,45 @@ const HEADINGS = [
 
 function lowerFirst(text: string): string {
   return text.charAt(0).toLowerCase() + text.slice(1);
+}
+
+function priceSpecification(price: Price) {
+  const amount =
+    price.kind === 'fixed'
+      ? { price: price.amount }
+      : { minPrice: price.min, maxPrice: price.max };
+  return { '@type': 'PriceSpecification', priceCurrency: 'UAH', ...amount };
+}
+
+function offerCatalog(priceList: PriceList) {
+  const services = priceList.groups.flatMap((group) => group.services);
+  return {
+    '@type': 'OfferCatalog',
+    '@id': `${PAGE_URL}#offer-catalog`,
+    name: HEADINGS[1],
+    url: PAGE_URL,
+    numberOfItems: services.length,
+    itemListElement: services.map((service) => ({
+      '@type': 'Offer',
+      url: `${PAGE_URL}#${service.id}`,
+      offeredBy: { '@id': `${BASE_URL}/#org` },
+      itemOffered: { '@type': 'Service', name: service.title },
+      priceSpecification: priceSpecification(service.price),
+    })),
+  };
+}
+
+function faqPage(priceList: PriceList) {
+  return {
+    '@type': 'FAQPage',
+    '@id': `${PAGE_URL}#faq`,
+    inLanguage: 'uk-UA',
+    mainEntity: buildPriceFaq(priceList, formatPrice).map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  };
 }
 
 export function generatePricesSeo(priceList: PriceList): PageSEO {
@@ -68,6 +107,8 @@ export function generatePricesSeo(priceList: PriceList): PageSEO {
           about: { '@id': `${BASE_URL}/#org` },
           breadcrumb: { '@id': `${PAGE_URL}#breadcrumbs` },
         },
+        offerCatalog(priceList),
+        faqPage(priceList),
       ],
     },
   };
