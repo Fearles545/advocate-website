@@ -238,7 +238,7 @@
   margin-top: 0.25rem;
 }
 
-.price-row-items {
+.check-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -366,5 +366,79 @@
 @media (min-width: 640px) {
   .other-services {
     padding: 1.5rem 1.75rem 1.75rem;
+  }
+}
+
+/* ========================================
+   COST FACTORS SECTION
+   ======================================== */
+
+.cost-factors-section-bg {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f6f2 100%);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gold-separator);
+  }
+}
+
+.cost-factors-section {
+  max-width: var(--section-max-width-narrow);
+  margin: 0 auto;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: -1.5rem auto 2.5rem;
+  font-size: var(--section-intro-font-size);
+  line-height: 1.6;
+  color: var(--text-color-primary);
+}
+
+.cost-factors-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: white;
+  border: var(--card-border);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-box-shadow);
+
+  p {
+    margin: 0;
+    font-size: var(--font-size-body);
+    line-height: 1.65;
+  }
+}
+
+.cost-factors-label {
+  font-weight: var(--weight-semibold);
+  color: var(--color-green);
+}
+
+.cost-factors-closing {
+  padding-top: 1rem;
+  border-top: 1px solid var(--gold-alpha-15);
+  color: var(--color-green);
+}
+
+@media (min-width: 768px) {
+  .cost-factors-card {
+    padding: 1.75rem 2rem;
+  }
+
+  .cost-factors-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem 2rem;
   }
 }
