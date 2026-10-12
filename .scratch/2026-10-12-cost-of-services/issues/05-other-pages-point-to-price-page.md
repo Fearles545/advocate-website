@@ -11,7 +11,7 @@ Spec: `.scratch/2026-10-12-cost-of-services/spec.md`, sections "Shared FAQ accor
 
 **Blocked by:** 02
 
-**Status:** ready-for-agent
+**Status:** resolved
 
 - [x] Before any change, take screenshots at ~390 px of the FAQ accordion on four pages, for comparison:
   - the services page;
@@ -87,3 +87,5 @@ Spec: `.scratch/2026-10-12-cost-of-services/spec.md`, sections "Shared FAQ accor
 - **Screenshots** in `/private/tmp/claude-504/-Users-Leo-Documents-L-Angular-advocate-website/a4e0c721-b60c-4ee4-8390-645c896b41ab/scratchpad/shots/05/`:
   - three places, before and after: `before-services-390.png`, `before-services-1280.png`, `after-services-390.png`, `after-services-1280.png`, `before-home-390.png`, `before-home-1280.png`, `after-home-390.png`, `after-home-1280.png`, `before-faq-390.png`, `before-faq-1280.png`, `after-faq-390.png`, `after-faq-1280.png`
   - accordions: `before/`, `before-rerun/`, `after-final/`, `before-prices/`, `after-final-prices/` (each holds `<page>-closed.png`, `<page>-open-<i>.png`, `panels.json`), and the first pre-change capture `before-unaligned/`
+
+**2026-10-12, resolved.** Commits: faac875, 2d5f816, 5c0f862, 2479c9e. Independent check on the final build (83d42ca): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 rows of the prerendered `/prices/` match the spec table in order, id, title, price and «орієнтовно» caption; 248 lines of the advocate's draft were found in the prerendered page, the only misses being headings markers, the per-service price lines the spec moves into the row, the draft's notes and the agreed «;» → «.» fix.

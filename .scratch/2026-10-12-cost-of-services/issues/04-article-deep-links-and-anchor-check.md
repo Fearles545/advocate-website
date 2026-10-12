@@ -15,7 +15,7 @@ Spec: `.scratch/2026-10-12-cost-of-services/spec.md`, sections:
 
 **Blocked by:** 02
 
-**Status:** ready-for-agent
+**Status:** resolved
 
 - [x] Entering `/prices/#<service id>` opens that service and scrolls it fully into view below the fixed header. This holds on a fresh load (fragment typed into the address bar) and on in-app navigation.
 - [x] Entering `/prices/#<group id>` scrolls the group heading into view below the fixed header and opens nothing.
@@ -91,3 +91,5 @@ Spec: `.scratch/2026-10-12-cost-of-services/spec.md`, sections:
   - each sentence in its article: `article-pryznachennia-pensii-390.png`, `article-pryznachennia-pensii-1280.png`, `article-audyt-pensiinoi-spravy-390.png`, `article-audyt-pensiinoi-spravy-1280.png`
   - where each link lands: `landing-pryznachennia-pensii-390.png`, `landing-pryznachennia-pensii-1280.png`, `landing-audyt-pensiinoi-spravy-390.png`, `landing-audyt-pensiinoi-spravy-1280.png`
   - fresh load and in-app: `fresh-service-390.png`, `fresh-service-1280.png`, `inapp-group-390.png`, `inapp-group-1280.png`, `inapp-service-390.png`, `inapp-service-1280.png`
+
+**2026-10-12, resolved.** Commits: a9bff9e, 47aa037, 7e32935. Back navigation into `/prices/#id` lands at the top of the page (app-wide `scrollPositionRestoration: 'top'`); Leo chose to keep it. The anchor check was also confirmed to exit 1 and name the link after one built article link was misspelled, and to pass after restoring it. Independent check on the final build (83d42ca): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 rows of the prerendered `/prices/` match the spec table in order, id, title, price and «орієнтовно» caption; 248 lines of the advocate's draft were found in the prerendered page, the only misses being headings markers, the per-service price lines the spec moves into the row, the draft's notes and the agreed «;» → «.» fix.

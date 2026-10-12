@@ -4,7 +4,7 @@
 
 **Blocked by:** None (can start immediately)
 
-**Status:** ready-for-agent
+**Status:** resolved
 
 - [x] Before any change, run `npm run build:ssg` and record the prerendered route count in this ticket's Comments. It is the baseline for ticket 06.
 - [x] Before any change, take screenshots of the footer at ~390 px and ~1280 px, for comparison.
@@ -52,3 +52,5 @@
 - **Screenshots** in `/private/tmp/claude-504/-Users-Leo-Documents-L-Angular-advocate-website/a4e0c721-b60c-4ee4-8390-645c896b41ab/scratchpad/shots/01/`:
   - `before-390.png`, `before-1280.png`, `after-390.png`, `after-1280.png`: the whole footer
   - `after-nav-services-320.png`, `after-nav-services-360.png`, `after-nav-services-700.png`
+
+**2026-10-12, resolved.** Commits: 8e3df3e, f09f6a9; review fix 2f16d68 (the two-column rule rewritten mobile-first, identical rendering at nine widths). Known and accepted: below 768px, hovering the first link of the second column grows the footer 6–22px. Independent check on the final build (83d42ca): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 rows of the prerendered `/prices/` match the spec table in order, id, title, price and «орієнтовно» caption; 248 lines of the advocate's draft were found in the prerendered page, the only misses being headings markers, the per-service price lines the spec moves into the row, the draft's notes and the agreed «;» → «.» fix.

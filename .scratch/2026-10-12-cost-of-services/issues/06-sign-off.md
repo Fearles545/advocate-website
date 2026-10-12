@@ -8,7 +8,7 @@ This ticket is Leo's «готово». Spec: `.scratch/2026-10-12-cost-of-servic
 
 **Blocked by:** 03, 04, 05
 
-**Status:** ready-for-agent
+**Status:** ready-for-human
 
 - [x] lastmod is set to the commit date for:
   - the home page;
@@ -185,3 +185,7 @@ All in `/private/tmp/claude-504/-Users-Leo-Documents-L-Angular-advocate-website/
 - **edited pages:** `services-cost-<w>.png`, `home-cost-<w>.png`, `faq-cost-<w>.png`
 - **throttled:** `throttle-{slow-4g,3g}-before-angular.png` (the loader), `throttle-{slow-4g,3g}-after-angular.png`, `throttle-{slow-4g,3g}-fresh-{audyt-pensiinoi-spravy,pryznachennia-pensii}.png`
 - **regression captures:** `accordions/` and `footer-nav/`
+
+**2026-10-12, waiting on Leo.** Commit: b502c24. Everything an agent can check passed (see the report above and the independent check recorded in tickets 01–05). Two items remain for Leo:
+- Manual check in Chrome: on `/prices/` with every row closed, Cmd+F «архівні довідки» should open «Комплексний супровід звернення за призначенням пенсії».
+- The four HTTP failures are older SEO defects, untouched by this work: `/privacy-policy/` and `/public-offer/` have no SEO entry and fall back to the home page's title, description and canonical; five articles have the domain twice in their canonical; two articles have a canonical without a trailing slash. They need their own ticket.

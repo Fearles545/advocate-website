@@ -20,7 +20,7 @@ Spec: `.scratch/2026-10-12-cost-of-services/spec.md`, sections:
 
 **Blocked by:** 01
 
-**Status:** ready-for-agent
+**Status:** resolved
 
 - [x] The navigation config has «Вартість» → `/prices/` right after «Послуги».
   - The desktop menu shows it in that place and keeps «Документи», «Інструкції» and «FAQ» under «Ще».
@@ -138,3 +138,5 @@ Spec: `.scratch/2026-10-12-cost-of-services/spec.md`, sections:
   - `prices-390-first-screen.png`, `prices-1280-list-screen.png`
   - menu: `menu-900.png`, `menu-1280.png`
   - slide-out menu and footer: `drawer-390.png`, `footer-390.png`
+
+**2026-10-12, resolved.** Commits: 6d15fb3, 668bc9a, 2df8771, 99157a1; review fixes 8dee280, c87c777, afa2e1c, 1eaeadd. The Chrome find-in-page box moved to ticket 06's manual check, because headless Chromium cannot drive it. Independent check on the final build (83d42ca): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 rows of the prerendered `/prices/` match the spec table in order, id, title, price and «орієнтовно» caption; 248 lines of the advocate's draft were found in the prerendered page, the only misses being headings markers, the per-service price lines the spec moves into the row, the draft's notes and the agreed «;» → «.» fix.

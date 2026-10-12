@@ -13,7 +13,7 @@ Spec: `.scratch/2026-10-12-cost-of-services/spec.md`, sections "Price page" (cos
 
 **Blocked by:** 02
 
-**Status:** ready-for-agent
+**Status:** resolved
 
 - [x] The section «Від чого залежить вартість юридичних послуг» (H2) carries:
   - the advocate's lead paragraph;
@@ -102,3 +102,5 @@ Spec: `.scratch/2026-10-12-cost-of-services/spec.md`, sections "Price page" (cos
   - FAQ with the court answer open: `faq-390-court-open.png`, `faq-1280-court-open.png`
   - closing section: `prices-390-cta.png`, `prices-1280-cta.png`
   - whole page: `prices-390-full.png`, `prices-1280-full.png`
+
+**2026-10-12, resolved.** Commits: b5ca12d, 7946ea2, 42695db, 642f20c. `offeredBy: #org` sits on each Offer rather than on the OfferCatalog, because schema.org defines it on Offer; the catalogue is a standalone node with its own `@id`. Independent check on the final build (83d42ca): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 rows of the prerendered `/prices/` match the spec table in order, id, title, price and «орієнтовно» caption; 248 lines of the advocate's draft were found in the prerendered page, the only misses being headings markers, the per-service price lines the spec moves into the row, the draft's notes and the agreed «;» → «.» fix.
