@@ -8,6 +8,7 @@ Canonical design patterns for the advocate-pensia.com.ua website.
 - [`design-system/audit-report.md`](design-system/audit-report.md) — Initial design consistency audit
 - [`design-system/normalization-log.md`](design-system/normalization-log.md) — Implementation tracking
 - [`design-system/visual-review-desktop.md`](design-system/visual-review-desktop.md) — Desktop visual QA (1480px)
+- [`design-system/audit-report-2026-10.md`](design-system/audit-report-2026-10.md) — Whole-site audit, October 2026: doc vs tokens vs rendered pages
 
 ---
 
