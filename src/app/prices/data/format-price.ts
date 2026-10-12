@@ -1,8 +1,8 @@
 import { Price } from './price-list.model';
 
-const NBSP = ' ';
-const EN_DASH = '–';
-const WORD_JOINER = '⁠';
+const NBSP = '\u00a0';
+const EN_DASH = '\u2013';
+const WORD_JOINER = '\u2060';
 
 export function formatAmount(amount: number): string {
   return String(amount).replace(/\B(?=(\d{3})+(?!\d))/g, NBSP);
