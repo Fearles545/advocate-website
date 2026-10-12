@@ -24,6 +24,7 @@ import { SocialIconLinkComponent } from '../social-icon-link/social-icon-link.co
 export class FooterComponent {
   readonly schedule = schedule;
   readonly navItems: NavItem[] = NAV_ITEMS;
+  readonly navRows = Math.ceil(NAV_ITEMS.length / 2);
   iconsData = input.required<SocialIconData[]>();
 
   readonly currentYear = new Date().getFullYear();

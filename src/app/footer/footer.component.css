@@ -596,6 +596,26 @@
 }
 
 /* ==========================================================================
+   RESPONSIVE: NAVIGATION BESIDE SERVICES (<768px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .footer-nav-services {
+    grid-template-columns: auto 1fr;
+  }
+
+  .footer-nav-list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(var(--footer-nav-rows), auto);
+    gap: 0.6rem 1rem;
+  }
+
+  .footer-nav-list li a:hover {
+    margin-right: -16px;
+  }
+}
+
+/* ==========================================================================
    RESPONSIVE: SMALL DESKTOP (768px+)
    ========================================================================== */
 @media (min-width: 768px) {
