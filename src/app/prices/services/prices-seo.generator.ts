@@ -15,10 +15,8 @@ const BREADCRUMB_LABEL = 'Вартість послуг';
 const TITLE = 'Вартість послуг пенсійного адвоката | Адвокат Поддяча Юлія';
 const DESCRIPTION =
   'Орієнтовна вартість послуг пенсійного адвоката: консультації, перевірка стажу та документів, призначення і перерахунок пенсії, звернення до ПФУ та судовий супровід.';
-const HEADINGS = [
-  'Вартість послуг пенсійного адвоката',
-  'Вартість юридичних послуг з пенсійних питань',
-];
+const PAGE_HEADING = 'Вартість послуг пенсійного адвоката';
+const PRICE_LIST_HEADING = 'Вартість юридичних послуг з пенсійних питань';
 
 function lowerFirst(text: string): string {
   return text.charAt(0).toLowerCase() + text.slice(1);
@@ -37,7 +35,7 @@ function offerCatalog(priceList: PriceList) {
   return {
     '@type': 'OfferCatalog',
     '@id': `${PAGE_URL}#offer-catalog`,
-    name: HEADINGS[1],
+    name: PRICE_LIST_HEADING,
     url: PAGE_URL,
     numberOfItems: services.length,
     itemListElement: services.map((service) => ({
@@ -71,7 +69,9 @@ export function generatePricesSeo(priceList: PriceList): PageSEO {
   return {
     title: TITLE,
     description: DESCRIPTION,
-    keywords: [...HEADINGS, ...serviceTitles].map(lowerFirst).join(', '),
+    keywords: [PAGE_HEADING, PRICE_LIST_HEADING, ...serviceTitles]
+      .map(lowerFirst)
+      .join(', '),
     canonical: PAGE_PATH,
     schema: {
       '@context': 'https://schema.org',
