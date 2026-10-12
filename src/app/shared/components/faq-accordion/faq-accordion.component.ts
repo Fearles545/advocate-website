@@ -1,15 +1,23 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIcon } from '@angular/material/icon';
+
+export interface FaqLink {
+  label: string;
+  route: string;
+}
 
 export interface FaqItem {
   question: string;
   answer: string;
+  link?: FaqLink;
 }
 
 @Component({
   selector: 'app-faq-accordion',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatExpansionModule],
+  imports: [MatExpansionModule, RouterLink, MatIcon],
   template: `
     <mat-accordion class="faq-accordion">
       @for (faq of items(); track faq.question) {
@@ -18,6 +26,12 @@ export interface FaqItem {
             <mat-panel-title>{{ faq.question }}</mat-panel-title>
           </mat-expansion-panel-header>
           <p>{{ faq.answer }}</p>
+          @if (faq.link; as link) {
+            <a class="faq-link" [routerLink]="link.route">
+              {{ link.label }}
+              <mat-icon>arrow_forward</mat-icon>
+            </a>
+          }
         </mat-expansion-panel>
       }
     </mat-accordion>
@@ -102,6 +116,34 @@ export interface FaqItem {
       color: #374151;
     }
 
+    .faq-link {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      width: fit-content;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-gold-accent);
+      text-decoration: none;
+      transition: color var(--transition-normal);
+    }
+
+    .faq-link mat-icon {
+      font-size: 1rem;
+      width: 1rem;
+      height: 1rem;
+      transition: transform 0.3s var(--ease-bounce);
+    }
+
+    .faq-link:hover {
+      color: var(--color-green);
+    }
+
+    .faq-link:hover mat-icon {
+      transform: translateX(4px);
+    }
+
     /* Tablet and up */
     @media (min-width: 600px) {
       .faq-accordion ::ng-deep .mat-expansion-panel-header {
@@ -118,6 +160,10 @@ export interface FaqItem {
 
       .faq-accordion p {
         font-size: 1rem;
+      }
+
+      .faq-link {
+        font-size: 0.95rem;
       }
     }
   `,
