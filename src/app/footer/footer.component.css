@@ -305,7 +305,7 @@
    ========================================================================== */
 .footer-nav-services {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   gap: 1.5rem;
 }
 
@@ -313,9 +313,10 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(var(--footer-nav-rows), auto);
+  gap: 0.6rem 1rem;
 }
 
 .footer-nav-list li a {
@@ -342,6 +343,7 @@
 .footer-nav-list li a:hover {
   color: var(--color-gold);
   padding-left: 16px;
+  margin-right: -16px;
 }
 
 .footer-nav-list li a:hover::before {
@@ -579,7 +581,6 @@
 
   .footer-nav-services {
     grid-column: span 2;
-    grid-template-columns: 1fr 1fr;
     gap: 3rem;
   }
 
@@ -592,26 +593,6 @@
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
-  }
-}
-
-/* ==========================================================================
-   RESPONSIVE: NAVIGATION BESIDE SERVICES (<768px)
-   ========================================================================== */
-@media (max-width: 767px) {
-  .footer-nav-services {
-    grid-template-columns: auto 1fr;
-  }
-
-  .footer-nav-list {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(var(--footer-nav-rows), auto);
-    gap: 0.6rem 1rem;
-  }
-
-  .footer-nav-list li a:hover {
-    margin-right: -16px;
   }
 }
 
@@ -632,6 +613,16 @@
     grid-column: span 1;
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-nav-list li a:hover {
+    margin-right: 0;
   }
 
   .footer-brand {
