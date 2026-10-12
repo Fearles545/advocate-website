@@ -1,5 +1,11 @@
 import { PageSEO } from '@core/services/seo.service';
-import { buildPriceFaq, formatPrice, Price, PriceList } from '../data';
+import {
+  buildPriceFaq,
+  formatPrice,
+  Price,
+  PriceList,
+  priceListServices,
+} from '../data';
 
 const BASE_URL = 'https://www.advocate-pensia.com.ua';
 const PAGE_PATH = '/prices/';
@@ -27,7 +33,7 @@ function priceSpecification(price: Price) {
 }
 
 function offerCatalog(priceList: PriceList) {
-  const services = priceList.groups.flatMap((group) => group.services);
+  const services = priceListServices(priceList);
   return {
     '@type': 'OfferCatalog',
     '@id': `${PAGE_URL}#offer-catalog`,
@@ -58,8 +64,8 @@ function faqPage(priceList: PriceList) {
 }
 
 export function generatePricesSeo(priceList: PriceList): PageSEO {
-  const serviceTitles = priceList.groups.flatMap((group) =>
-    group.services.map((service) => service.title)
+  const serviceTitles = priceListServices(priceList).map(
+    (service) => service.title
   );
 
   return {

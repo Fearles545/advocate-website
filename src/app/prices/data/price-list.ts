@@ -446,5 +446,8 @@ export const PRICE_LIST: PriceList = {
   },
 };
 
-export const PRICE_LIST_SERVICES: readonly PriceListService[] =
-  PRICE_LIST.groups.flatMap((group) => group.services);
+export function priceListServices(
+  priceList: PriceList
+): readonly PriceListService[] {
+  return priceList.groups.flatMap((group) => group.services);
+}

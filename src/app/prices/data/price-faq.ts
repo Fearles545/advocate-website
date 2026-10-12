@@ -1,10 +1,11 @@
 import { FaqItem } from '@shared/components/faq-accordion/faq-accordion.component';
+import { priceListServices } from './price-list';
 import { Price, PriceList } from './price-list.model';
 
 function servicePrice(priceList: PriceList, serviceId: string): Price {
-  const service = priceList.groups
-    .flatMap((group) => group.services)
-    .find((candidate) => candidate.id === serviceId);
+  const service = priceListServices(priceList).find(
+    (candidate) => candidate.id === serviceId
+  );
   if (!service) {
     throw new Error(`Price list has no service with id "${serviceId}"`);
   }
