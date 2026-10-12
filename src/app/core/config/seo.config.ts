@@ -1,6 +1,7 @@
 import { BLOG_SEO_DATA } from '../../blog/blog-seo.config';
 import { COURT_CASES_SEO_DATA } from '../../court-cases/court-cases-seo.config';
 import { INSTRUCTIONS_SEO_DATA } from '../../instructions/instructions-seo.config';
+import { PRICES_SEO_DATA } from '../../prices/prices-seo.config';
 import { PageSEO } from '../services/seo.service';
 
 /**
@@ -689,4 +690,5 @@ export const GLOBAL_SEO_CONFIG: { [key: string]: PageSEO } = {
   ...BLOG_SEO_DATA,
   ...COURT_CASES_SEO_DATA,
   ...INSTRUCTIONS_SEO_DATA,
+  ...PRICES_SEO_DATA,
 };
