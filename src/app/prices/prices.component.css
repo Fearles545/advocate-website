@@ -442,3 +442,28 @@
     gap: 0.75rem 2rem;
   }
 }
+
+/* ========================================
+   FAQ SECTION
+   ======================================== */
+
+.faq-section-bg {
+  background: linear-gradient(180deg, #f8f6f2 0%, #ffffff 100%);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gold-separator);
+  }
+}
+
+.faq-section {
+  max-width: var(--section-max-width-narrow);
+  margin: 0 auto;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
