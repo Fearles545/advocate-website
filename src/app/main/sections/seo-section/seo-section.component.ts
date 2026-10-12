@@ -1,10 +1,11 @@
 import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { CtaButtonComponent } from '@shared/components/cta-button';
 
 @Component({
   selector: 'app-seo-section',
-  imports: [MatIcon, CtaButtonComponent],
+  imports: [RouterLink, MatIcon, CtaButtonComponent],
   templateUrl: './seo-section.component.html',
   styleUrl: './seo-section.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

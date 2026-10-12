@@ -187,6 +187,32 @@
   margin-top: 0.5rem;
 }
 
+.block-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-gold-accent);
+  text-decoration: none;
+  transition: color var(--transition-normal);
+
+  mat-icon {
+    font-size: 1rem;
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s var(--ease-bounce);
+  }
+
+  &:hover {
+    color: var(--color-green);
+
+    mat-icon {
+      transform: translateX(4px);
+    }
+  }
+}
+
 .cta-block {
   background: var(--green-gradient);
   border-radius: var(--card-border-radius);
