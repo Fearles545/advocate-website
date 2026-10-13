@@ -518,8 +518,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 1.75rem;
+  gap: 1.25rem;
+}
+
+.final-cta-note {
+  margin: 0;
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  color: rgba(224, 214, 193, 0.8);
+  font-style: italic;
 }
 
 .final-cta-free {
