@@ -259,7 +259,8 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
     },
   },
   consultation: {
-    title: 'Запис на консультацію з пенсійних питань | Адвокат Поддяча Юлія',
+    title:
+      'Звернення за консультацією з пенсійних питань | Адвокат Поддяча Юлія',
     description:
       "Заповніть форму для запису на консультацію з адвокатом по пенсіях. Швидкий зворотний зв'язок, консультації онлайн по всій Україні та за кордоном.",
     keywords:
@@ -297,7 +298,7 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
         {
           '@type': 'ContactPage',
           '@id': 'https://www.advocate-pensia.com.ua/consultation/#webpage',
-          name: 'Запис на консультацію | Адвокат Поддяча Юлія Юріївна',
+          name: 'Звернення за консультацією | Адвокат Поддяча Юлія Юріївна',
           url: 'https://www.advocate-pensia.com.ua/consultation/',
           inLanguage: 'uk-UA',
           isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
