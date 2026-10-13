@@ -60,7 +60,7 @@ Spec: `.scratch/2026-10-12-cost-of-services/spec.md`, sections:
   The price is not repeated inside.
 - [x] «Інші послуги» is a card or highlight box, not a disclosure row, and has no price.
 - [x] The list is one column at the narrow section width, with no group navigation above it. It uses the design system's card tokens and colours and reads as a price list. Nothing scrolls sideways at ~390 px.
-- [ ] In Chrome, find-in-page for a word inside a collapsed row reveals that row.
+- [x] In Chrome, find-in-page for a word inside a collapsed row reveals that row.
 - [x] The prerendered HTML of `/prices/` contains every service's full text and every group and service id.
 - [x] The page's SEO entry is generated from the price-list data and registered under `prices`, and contains:
   - title «Вартість послуг пенсійного адвоката | Адвокат Поддяча Юлія»;
@@ -140,3 +140,5 @@ Spec: `.scratch/2026-10-12-cost-of-services/spec.md`, sections:
   - slide-out menu and footer: `drawer-390.png`, `footer-390.png`
 
 **2026-10-12, resolved.** Commits: 6d15fb3, 668bc9a, 2df8771, 99157a1; review fixes 8dee280, c87c777, afa2e1c, 1eaeadd. The Chrome find-in-page box moved to ticket 06's manual check, because headless Chromium cannot drive it. Independent check on the final build (83d42ca): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 rows of the prerendered `/prices/` match the spec table in order, id, title, price and «орієнтовно» caption; 248 lines of the advocate's draft were found in the prerendered page, the only misses being headings markers, the per-service price lines the spec moves into the row, the draft's notes and the agreed «;» → «.» fix.
+
+**2026-10-13, find-in-page.** Leo checked it by hand in Chrome: with every row closed, Cmd+F «архівні довідки» opened «Комплексний супровід звернення за призначенням пенсії».
