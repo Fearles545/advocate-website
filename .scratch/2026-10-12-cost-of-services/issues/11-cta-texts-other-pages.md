@@ -4,7 +4,7 @@
 
 **Blocked by:** 09 (both touch the contacts page)
 
-**Status:** ready-for-agent
+**Status:** resolved
 
 - [x] Before any change, screenshots at ~390 px and ~1280 px of every block this ticket touches (one court decision page is enough for the template).
 - [x] Court decision pages, block «Маєте подібну пенсійну ситуацію?»: text and text under the button are the spec's, on every decision page.
@@ -59,3 +59,5 @@
   - `about-final-cta`: «Готові обговорити вашу ситуацію?»;
   - `contacts-cta`: «Дистанційна юридична допомога з пенсійних питань — по всій Україні»;
   - `documents-cta`: «Потрібна юридична допомога?».
+
+**2026-10-13, resolved.** Commits: ef50a73, 123057a, 534344c, f7704c9. The new texts are verbatim on a decision page, `/about-me/`, `/contacts/` and `/documents/`; «проаналізую», «поясню можливі варіанти», «поясню наступні кроки» and «Замовити консультацію» appear in no built file. The borderline wordings the implementer listed (a paid consultation described «з аналізом документів» on `/services/`, «первинна консультація» in the FAQ and the public offer, a processing purpose in the privacy policy) are not promises of a free analysis and stay. Independent check on the final build (5377045): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 price rows match the spec table in order, id, title and price, with no «орієнтовно» caption left.

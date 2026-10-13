@@ -4,7 +4,7 @@
 
 **Blocked by:** None (can start immediately)
 
-**Status:** ready-for-agent
+**Status:** resolved
 
 - [x] Before any change, screenshots of the page header and of the first price group at ~390 px and ~1280 px.
 - [x] The header has no «Надаю юридичну допомогу…» paragraph. Its first two paragraphs are the spec's two texts, each in the size the deleted paragraph had. «До початку надання послуги погоджуються її обсяг та вартість.» follows in the secondary size, then the year badge.
@@ -74,3 +74,5 @@
   - before any change: `before-header-{390,1280}.png` and `before-group1-{390,1280}.png`;
   - after: `after-header-{390,1280}.png` and `after-group1-{390,1280}.png`;
   - with «Усна консультація…» open: `before-open-group1-*.png` and `after-open-group1-*.png`.
+
+**2026-10-13, resolved.** Commits: ac874bc, 9cddedc, 385084a, e447a6d, 829b177. The advocate's new header lines, the removed caption, «Описати свою ситуацію →», the shortened oral-consultation text and «юридичної допомоги» checked verbatim in the prerendered page. Independent check on the final build (5377045): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 price rows match the spec table in order, id, title and price, with no «орієнтовно» caption left.

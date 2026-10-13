@@ -4,7 +4,7 @@
 
 **Blocked by:** None (can start immediately)
 
-**Status:** ready-for-agent
+**Status:** resolved
 
 - [x] Before any change, screenshots of the page at ~390 px and ~1280 px.
 - [x] H1, primary intro, the text before the submit button and the consent label are the spec's texts, verbatim. The secondary intro, the `footer-note`, the success message and every form field stay as they are.
@@ -47,3 +47,5 @@
   - before any change: `before-full-{390,1280}.png`, `before-header-{390,1280}.png`, `before-footer-{390,1280}.png`;
   - after: `after-full-{390,1280}.png`, `after-header-{390,1280}.png`, `after-footer-{390,1280}.png`.
 - **Not changed, outside this ticket:** the historical notes in `docs/new-contact-form-implementation/` still quote the old texts. They are design notes, not site text.
+
+**2026-10-13, resolved.** Commits: 72b46a3, 6a91c9a, 3af50ca, 82cdd93. The four texts are verbatim in the prerendered `/consultation/`; title «Звернення за консультацією з пенсійних питань | Адвокат Поддяча Юлія» (68 characters, Leo's choice) and the new JSON-LD name are in place. Independent check on the final build (5377045): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 price rows match the spec table in order, id, title and price, with no «орієнтовно» caption left.

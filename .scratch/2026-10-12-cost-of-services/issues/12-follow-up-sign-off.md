@@ -4,7 +4,7 @@
 
 **Blocked by:** 07, 08, 09, 10, 11
 
-**Status:** ready-for-agent
+**Status:** resolved
 
 - [x] lastmod is the commit date for every page whose visible text changed in 07–11: `/prices/`, `/consultation/`, `/`, `/services/`, `/faq/`, `/court-cases/`, every court decision page, `/instructions/`, `/about-me/`, `/contacts/`, `/documents/`. No other entry changes.
 - [x] `npm run build:ssg` prints no `ERROR` lines and `Prerendered 111 static routes`; the route and anchor checks in CLAUDE.md pass.
@@ -153,3 +153,5 @@ All in `/private/tmp/claude-504/-Users-Leo-Documents-L-Angular-advocate-website/
   - `services-cost-<w>.png`
   - `home-cost-<w>.png`
   - `faq-cost-<w>.png`
+
+**2026-10-13, resolved.** Commit: 83568d9 (39 lastmod lines: the ten named pages and all 29 decision pages, matching the 29 built decision routes). One in-page fragment change on `/prices/` at 1280 px (`#pryznachennia-pensii` → `#audyt-pensiinoi-spravy`) once stopped 281 px short; it did not reproduce in three reruns and a 30-run probe, and no link on the site produces that in-page change. Independent check on the final build (5377045): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 price rows match the spec table in order, id, title and price, with no «орієнтовно» caption left.

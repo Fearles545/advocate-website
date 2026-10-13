@@ -4,7 +4,7 @@
 
 **Blocked by:** 09 (both touch the home page's SEO section)
 
-**Status:** ready-for-agent
+**Status:** resolved
 
 - [x] Before any change, screenshots at ~390 px and ~1280 px of every block this ticket touches.
 - [x] Home, block «Потрібна юридична допомога з пенсійних питань?»: the button reads «Записатися на консультацію» and the text under it is the spec's text. Heading, intro text, other links and messenger buttons stay.
@@ -58,3 +58,5 @@
   - `services-closing`;
   - `faq-price-answer`: the answer opened;
   - `faq-closing`.
+
+**2026-10-13, resolved.** Commits: 3802604, 88a331a, d30de1f, eaa5627, 9f5c1c0, c841c9a. All 14 new texts on `/`, `/services/` and `/faq/` checked verbatim in the prerendered HTML; the four services cards stay aligned at 1280 px. Independent check on the final build (5377045): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 price rows match the spec table in order, id, title and price, with no «орієнтовно» caption left.

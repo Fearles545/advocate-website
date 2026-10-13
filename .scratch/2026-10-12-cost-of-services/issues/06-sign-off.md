@@ -8,7 +8,7 @@ This ticket is Leo's «готово». Spec: `.scratch/2026-10-12-cost-of-servic
 
 **Blocked by:** 03, 04, 05; closes together with 12
 
-**Status:** ready-for-human
+**Status:** resolved
 
 - [x] lastmod is set to the commit date for:
   - the home page;
@@ -191,3 +191,5 @@ All in `/private/tmp/claude-504/-Users-Leo-Documents-L-Angular-advocate-website/
 - The four HTTP failures are older SEO defects, untouched by this work: `/privacy-policy/` and `/public-offer/` have no SEO entry and fall back to the home page's title, description and canonical; five articles have the domain twice in their canonical; two articles have a canonical without a trailing slash. They need their own ticket.
 
 **2026-10-13, find-in-page passed; ticket stays open.** Leo checked it by hand in Chrome: with every row closed, Cmd+F «архівні довідки» opened «Комплексний супровід звернення за призначенням пенсії». The browser-pass box is still open, because the advocate sent corrections to this work; they are handled in this feature before the final «готово». The older SEO defects behind the open HTTP box moved to `.scratch/2026-10-13-seo-defects/issues/01-canonicals-and-legal-page-seo.md`.
+
+**2026-10-13, resolved.** Closed together with ticket 12, whose pass re-ran this ticket's browser checks on the corrected build. The open HTTP box belongs to the older SEO defects, now `.scratch/2026-10-13-seo-defects/issues/01-canonicals-and-legal-page-seo.md`. Independent check on the final build (5377045): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 price rows match the spec table in order, id, title and price, with no «орієнтовно» caption left.

@@ -4,7 +4,7 @@
 
 **Blocked by:** 07 (it changes the price page's occurrences)
 
-**Status:** ready-for-agent
+**Status:** resolved
 
 - [x] No page in the built site contains «правнич» in visible text, meta tags or JSON-LD. Report the before/after count per page. Markdown notes under `src/` are not touched.
 - [x] Each replaced phrase keeps its grammatical case and sentence capitalisation, e.g. «Правнича допомога спрямована» → «Юридична допомога спрямована».
@@ -56,3 +56,5 @@
   - `contacts-format`: «Формат роботи»;
   - `court-cases-intro`;
   - `instructions-intro`.
+
+**2026-10-13, resolved.** Commits: 4d027bd, 821ab31, e43ade5, 967362b. No file in the built site contains «правнич»; the advocate's name stays bold on `/court-cases/` and `/contacts/`. Independent check on the final build (5377045): `npm run build:ssg` printed 0 `ERROR` lines and `Prerendered 111 static routes`; every route wrote its `index.html`; the anchor check printed `all 223 fragment links resolve`; the 17 price rows match the spec table in order, id, title and price, with no «орієнтовно» caption left.
