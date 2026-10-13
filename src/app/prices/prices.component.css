@@ -7,10 +7,6 @@
    PAGE HEADER
    ======================================== */
 
-.page-intro.secondary + .page-intro.secondary {
-  margin-top: 0.75rem;
-}
-
 .page-intro.secondary + .page-intro.secondary.prices-year {
   display: table;
   margin-top: 1.25rem;
