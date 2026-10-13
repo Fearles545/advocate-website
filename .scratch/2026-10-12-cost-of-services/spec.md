@@ -362,3 +362,35 @@ Only the named texts change; headings, links and other buttons stay.
 ### Sitemap
 
 Every page whose visible text changes in this follow-up gets lastmod on the implementation date, including every court decision page, since their shared block changed.
+
+## Second follow-up: the advocate's corrections (2026-10-13, evening)
+
+After the first follow-up, the advocate sent seven more messages. The export is local only, in the gitignored `tmp/2026-10-13/ChatExport_2026-10-13-2/`; message ids below point into it. Where this section contradicts an earlier one, this section wins.
+
+### «юридичну допомогу» in call-to-action texts
+
+In six texts set by the first follow-up, «яку допомогу можу запропонувати» becomes «яку юридичну допомогу можу запропонувати». Nothing else in them changes:
+
+- **Services page, closing block «Обговоримо вашу пенсійну ситуацію»** (#516826), the text under the button.
+- **About page, block «Готові обговорити вашу ситуацію?»** (#516830), the text under the button.
+- **Documents page, block «Потрібна юридична допомога?»** (#516834), the text above the button.
+- **FAQ page, closing block «Залишилися питання?»** (#516835), the text above the button.
+- **Home, block «Потрібна юридична допомога з пенсійних питань?»** (#516836), the text under the button.
+- **Home, call block in the collapsible SEO section** (#516837), the text beside the button.
+
+Three more texts from the first follow-up carry the same phrase but were not in her screenshots: the contacts page closing block, the text before the submit button on `/consultation/`, and the block «Маєте подібну пенсійну ситуацію?» on every court decision page. Whether they change too is a question to her (pending).
+
+### Price page closing block (#516840)
+
+«Як дізнатися вартість послуги у вашій ситуації?» follows the pattern of the other closing blocks: heading, text, button, then the smaller lines under the button. The order becomes:
+
+1. «Щоб визначити, яка саме послуга потрібна…» in the intro size, as now.
+2. The «Звернутися за консультацією» button.
+3. «Після ознайомлення із ситуацією я повідомлю, який обсяг юридичної допомоги необхідний та яка буде вартість послуги.» in the smaller italic style of the notes under the buttons on the services and about pages.
+4. «Звернення через форму та попереднє визначення вартості — безкоштовні.» in its current gold semibold style.
+
+The texts do not change.
+
+### Sitemap
+
+Every page touched here already has lastmod 2026-10-13 from ticket 12. If the work lands on a later date, those entries move to it.
