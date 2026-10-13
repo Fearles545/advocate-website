@@ -37,14 +37,9 @@
               <details class="price-row" [id]="service.id">
                 <summary class="price-row-summary">
                   <h4 class="price-row-title">{{ service.title }}</h4>
-                  <span class="price-row-price">
-                    <span class="price-amount">{{
-                      service.price | price
-                    }}</span>
-                    @if (service.price.kind === 'range') {
-                      <span class="price-caption">орієнтовно</span>
-                    }
-                  </span>
+                  <span class="price-row-price">{{
+                    service.price | price
+                  }}</span>
                   <svg
                     class="price-row-chevron"
                     viewBox="0 0 24 24"
