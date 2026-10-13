@@ -369,7 +369,7 @@ After the first follow-up, the advocate sent seven more messages. The export is 
 
 ### «юридичну допомогу» in call-to-action texts
 
-In six texts set by the first follow-up, «яку допомогу можу запропонувати» becomes «яку юридичну допомогу можу запропонувати». Nothing else in them changes:
+In the nine texts set by the first follow-up that carry it, «яку допомогу можу запропонувати» becomes «яку юридичну допомогу можу запропонувати». Nothing else in them changes. Six were in her screenshots:
 
 - **Services page, closing block «Обговоримо вашу пенсійну ситуацію»** (#516826), the text under the button.
 - **About page, block «Готові обговорити вашу ситуацію?»** (#516830), the text under the button.
@@ -378,7 +378,7 @@ In six texts set by the first follow-up, «яку допомогу можу за
 - **Home, block «Потрібна юридична допомога з пенсійних питань?»** (#516836), the text under the button.
 - **Home, call block in the collapsible SEO section** (#516837), the text beside the button.
 
-Three more texts from the first follow-up carry the same phrase but were not in her screenshots: the contacts page closing block, the text before the submit button on `/consultation/`, and the block «Маєте подібну пенсійну ситуацію?» on every court decision page. Whether they change too is a question to her (pending).
+Three more texts from the first follow-up carry the same phrase but were not in her screenshots: the contacts page closing block, the text before the submit button on `/consultation/`, and the block «Маєте подібну пенсійну ситуацію?» on every court decision page. They change the same way (her answer 1а).
 
 ### Price page closing block (#516840)
 
