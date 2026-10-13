@@ -218,7 +218,6 @@
   font-weight: 600;
   color: var(--color-gold-accent);
   text-decoration: none;
-  margin-top: auto;
   transition: color var(--transition-normal);
 
   mat-icon {

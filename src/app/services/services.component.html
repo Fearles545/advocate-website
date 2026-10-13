@@ -48,37 +48,33 @@
                 касаційної інстанцій.
               </p>
               <a routerLink="/court-cases/" class="service-cta-link">
-                {{ service.ctaText }}
+                Переглянути судові рішення
                 <mat-icon>arrow_forward</mat-icon>
               </a>
-            } @else {
-              @if (service.id === 'pererahunok-pensiyi') {
-                <p class="service-note">
-                  Я здійснюю юридичний аналіз пенсійної справи та супроводжую
-                  процедуру перерахунку пенсії, у тому числі шляхом судового
-                  захисту.
-                </p>
-              }
-              @if (service.id === 'priznannya-pensiyi') {
-                <p class="service-note">
-                  Послуга включає аналіз документів, перевірку стажу, підготовку
-                  заяв та взаємодію з органами Пенсійного фонду України.
-                </p>
-              }
-              @if (service.id === 'oskarzhennya-rishen') {
-                <p class="service-note">
-                  Оскарження можливе в адміністративному порядку або в суді —
-                  залежно від обставин справи.
-                </p>
-              }
-              <a
-                routerLink="/consultation/"
-                class="service-cta-btn"
-              >
-                <mat-icon>calendar_today</mat-icon>
-                {{ service.ctaText }}
-              </a>
             }
+            @if (service.id === 'pererahunok-pensiyi') {
+              <p class="service-note">
+                Я здійснюю юридичний аналіз пенсійної справи та супроводжую
+                процедуру перерахунку пенсії, у тому числі шляхом судового
+                захисту.
+              </p>
+            }
+            @if (service.id === 'priznannya-pensiyi') {
+              <p class="service-note">
+                Послуга включає аналіз документів, перевірку стажу, підготовку
+                заяв та взаємодію з органами Пенсійного фонду України.
+              </p>
+            }
+            @if (service.id === 'oskarzhennya-rishen') {
+              <p class="service-note">
+                Оскарження можливе в адміністративному порядку або в суді —
+                залежно від обставин справи.
+              </p>
+            }
+            <a routerLink="/consultation/" class="service-cta-btn">
+              <mat-icon>calendar_today</mat-icon>
+              {{ service.ctaText }}
+            </a>
           </article>
         }
       </div>
