@@ -6,7 +6,7 @@
 
 This ticket is Leo's «готово». Spec: `.scratch/2026-10-12-cost-of-services/spec.md`, sections "SEO" (sitemap) and "Testing Decisions".
 
-**Blocked by:** 03, 04, 05
+**Blocked by:** 03, 04, 05; closes together with 12
 
 **Status:** ready-for-human
 

@@ -312,3 +312,53 @@ A new page at `/prices/`, labelled «Вартість» in the main menu, right 
   - Anchors in article HTML depend on the fixed ids. The build check is what keeps them honest.
 - **Glossary.** The terms used here (послуга, напрям, група послуг, орієнтовна вартість, судовий збір, попереднє визначення вартості, усна консультація) are defined in the root glossary.
 - **Commits.** Make separate conventional commits per logical block, directly on `main`, with no feature branch. Push only on Leo's command, because a push to `main` is a production deploy.
+
+## Follow-up: the advocate's corrections (2026-10-13)
+
+After seeing the built page on 2026-10-12, the advocate sent corrections in a Telegram chat. The export is local only, in the gitignored `tmp/2026-10-13/ChatExport_2026-10-13/` (`result.json` plus `photos/`); message ids below point into it. Most corrections reach beyond the price page: across the site she removes every promise that a request through the form gets a free analysis of the visitor's situation, in line with the paid усна консультація and the free попереднє визначення вартості. The Ukrainian texts below are verbatim and replace the current ones exactly. Where this section contradicts an earlier one, this section wins.
+
+### Price page
+
+- **Header** (#516751–516759, her answer 1а). The paragraph «Надаю юридичну допомогу з питань призначення та перерахунку пенсії, …» is deleted. The primary intro, in the large size the deleted paragraph had, becomes two paragraphs:
+  - «Нижче зазначена орієнтовна вартість юридичних послуг з пенсійних питань.»
+  - «Остаточна вартість визначається індивідуально після ознайомлення із ситуацією та документами і залежить від складності питання, обсягу необхідної роботи та кількості документів, які потрібно опрацювати.»
+
+  «До початку надання послуги погоджуються її обсяг та вартість.» stays in the small secondary size. The «Ціни актуальні станом на 2026 рік» badge stays.
+- **«орієнтовно»** (#516762–516764): the caption under range prices is removed everywhere. Ranges and fixed prices look alike apart from the amount.
+- **Row link** (#516765–516766): «Обговорити цю послугу →» becomes «Описати свою ситуацію →», still to the consultation form.
+- **Oral consultation** (#516767, her answer 2а): in «Усна консультація з пенсійного питання» the sentence «Тривалість консультації — до 50 хвилин.» is removed; «Консультація проводиться за попереднім записом у погоджений день і час.» stays, with its bold.
+- **Wording** (#516768): «правничої допомоги» becomes «юридичної допомоги» everywhere on the page, including the FAQ answers and their JSON-LD.
+
+### Wording and emphasis elsewhere
+
+- «правнич…» becomes «юридич…» across the site (#516768): «правничої допомоги» → «юридичної допомоги», «Правнича допомога» → «Юридична допомога», «правничу допомогу» → «юридичну допомогу». Today that is the home page's SEO section (three places) and the contacts page (two places). Markdown notes under `src/` are not site text and stay.
+- Court decisions list intro (#516760, her answer 5): «судові рішення у спорах з Пенсійним фондом України» loses its bold; «Поддячою Юлією Юріївною» keeps it.
+- Instructions list intro (#516769): «електронний підпис (КЕП)» loses its bold.
+- The contacts page intro keeps its bold name (her answer 5).
+
+### Consultation page `/consultation/` (#516766)
+
+- H1: «Звернення за консультацією».
+- Primary intro: «Заповніть коротку форму та опишіть своє пенсійне питання. Я ознайомлюся з вашою ситуацією та запропоную відповідну послугу, повідомлю її вартість і порядок надання.» The secondary intro stays.
+- Text before the submit button (`footer-text`): «Після отримання звернення я ознайомлюся з наданою інформацією та зв'яжуся з вами, щоб повідомити, яку допомогу можу запропонувати, її вартість та подальший порядок дій.» The `footer-note` stays.
+- Consent label: «Я погоджуюся на обробку персональних даних з метою розгляду мого звернення та подальшого зв'язку зі мною.» The worker receives consent as a boolean, so nothing else changes.
+- SEO (Leo's answer 2a): title «Звернення за консультацією з пенсійних питань | Адвокат Поддяча Юлія», accepted at 68 characters; the WebPage `name` in its JSON-LD becomes «Звернення за консультацією | Адвокат Поддяча Юлія Юріївна». The description stays.
+
+### Call-to-action texts
+
+Only the named texts change; headings, links and other buttons stay.
+
+- **Home, block «Потрібна юридична допомога з пенсійних питань?»** (#516770, her answer 4а): the button «Замовити консультацію» becomes «Записатися на консультацію»; the text under it becomes «Після отримання звернення я ознайомлюся з наданою інформацією та зв'яжуся з вами, щоб повідомити, яку допомогу можу запропонувати, її вартість та подальший порядок дій.»
+- **Home, call block in the collapsible SEO section** (#516772): heading «Потрібна консультація адвоката з пенсійних питань?»; text «Зателефонуйте, щоб коротко описати своє питання. Я повідомлю, яку допомогу можу запропонувати, її вартість та порядок надання.»; note «Консультації проводяться дистанційно, у зручному для вас форматі.» The «Зателефонувати» button stays.
+- **Services page, main service cards** (#516773, her answer 3б): the three buttons become «Звернутися щодо призначення пенсії», «Звернутися щодо перерахунку пенсії», «Звернутися щодо оскарження рішення ПФУ». The fourth card, «Судовий захист пенсійних прав», keeps its note and its «Переглянути судові рішення →» link and gains the same consultation button as the other three, labelled «Звернутися щодо судового захисту».
+- **Services page, closing block «Обговоримо вашу пенсійну ситуацію»** (#516774): text «Якщо вам потрібна допомога з призначенням, перерахунком пенсії або оскарженням рішень Пенсійного фонду, заповніть коротку форму та опишіть свою ситуацію.»; the button «Записатися на консультацію» stays; the text under it becomes «Після отримання звернення я ознайомлюся з наданою інформацією та повідомлю, яку допомогу можу запропонувати, її вартість і порядок надання.»
+- **FAQ page, answer «Скільки коштують послуги адвоката?»** (#516775, Leo's answer 1a): «Орієнтовна вартість основних юридичних послуг зазначена в розділі «Вартість послуг». Конкретна вартість залежить від складності питання, обсягу документів та необхідних дій і узгоджується з клієнтом перед наданням послуги.» The answer stays plain text; the arrow link «Переглянути вартість послуг» under it stays. The JSON-LD copy gets the same text.
+- **FAQ page, closing block «Залишилися питання?»** (#516776): text «Якщо у вас виникло питання щодо призначення, перерахунку пенсії або оскарження рішення Пенсійного фонду, заповніть коротку форму. Я ознайомлюся з вашим зверненням та повідомлю, яку допомогу можу запропонувати, її вартість і порядок надання.»
+- **Court decision page, block «Маєте подібну пенсійну ситуацію?»** (#516777; one template for every decision): text «Якщо вам не зарахували пільговий або страховий стаж чи ви отримали відмову у призначенні або перерахунку пенсії, заповніть коротку форму та опишіть свою ситуацію. Я ознайомлюся зі зверненням і повідомлю, яку допомогу можу запропонувати.»; under the button «Після отримання звернення я повідомлю про можливі послуги, їхню вартість та порядок надання.»
+- **About page, block «Готові обговорити вашу ситуацію?»** (#516778): under the button «Після отримання звернення я ознайомлюся з вашою ситуацією та повідомлю, яку допомогу можу запропонувати, її вартість і порядок надання.»
+- **Contacts page, block «Дистанційна юридична допомога з пенсійних питань — по всій Україні»** (#516779): text «Заповніть коротку форму та опишіть своє пенсійне питання. Я ознайомлюся зі зверненням і повідомлю, яку допомогу можу запропонувати.»; under the button «Після отримання звернення я повідомлю вартість запропонованої послуги та порядок її надання.»
+- **Documents page, block «Потрібна юридична допомога?»** (#516780): text «Заповніть коротку форму та опишіть своє пенсійне питання. Я ознайомлюся з вашим зверненням і повідомлю, яку допомогу можу запропонувати.»; the button «Замовити консультацію» becomes «Записатися на консультацію»; under it «Після отримання звернення я повідомлю вартість запропонованої послуги та порядок її надання.»
+
+### Sitemap
+
+Every page whose visible text changes in this follow-up gets lastmod on the implementation date, including every court decision page, since their shared block changed.
