@@ -26,7 +26,7 @@ export const NAV_ITEMS: NavItem[] = [
     route: '/services/',
   },
   {
-    label: 'Вартість',
+    label: 'Вартість послуг',
     route: '/prices/',
   },
   {
