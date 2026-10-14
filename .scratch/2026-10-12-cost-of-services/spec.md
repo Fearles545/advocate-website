@@ -394,3 +394,7 @@ The texts do not change.
 ### Sitemap
 
 Every page touched here already has lastmod 2026-10-13 from ticket 12. If the work lands on a later date, those entries move to it.
+
+## Third follow-up: menu label (2026-10-14)
+
+After the release, the advocate asked (relayed by Leo, no export) for the menu item «Вартість» to read «Вартість послуг». The label lives once in the navigation config, so the desktop menu, the slide-out menu and the footer's «Навігація» all change; the route and order stay. Wherever earlier sections name the menu item «Вартість», read «Вартість послуг». The sitemap does not change: the menu is page chrome, not page content.
