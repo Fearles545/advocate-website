@@ -12,7 +12,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_1_dlia_cholovikiv_porivnial
         publishedTime: '2025-11-26T09:00:00+02:00',
         modifiedTime: '2025-11-26T09:00:00+02:00',
         canonical:
-          'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv',
+          '/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-1-dlia-cholovikiv-porivnialnyi-analiz-zakoniv-1788-xii-ta-1058-iv/',
         schema: {
           '@context': 'https://schema.org',
           '@graph': [
