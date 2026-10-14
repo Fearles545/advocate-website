@@ -12,14 +12,14 @@ export const iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_staz
       publishedTime: '2025-11-27T09:00:00+02:00',
       modifiedTime: '2025-11-27T09:00:00+02:00',
       canonical:
-        '/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
+        '/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu/',
       schema: {
         '@context': 'https://schema.org',
         '@graph': [
           {
             '@type': 'BreadcrumbList',
             '@id':
-              'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu#breadcrumbs',
+              'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu/#breadcrumbs',
             itemListElement: [
               {
                 '@type': 'ListItem',
@@ -31,7 +31,7 @@ export const iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_staz
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Блог',
-                item: 'https://www.advocate-pensia.com.ua/blog',
+                item: 'https://www.advocate-pensia.com.ua/blog/',
               },
               {
                 '@type': 'ListItem',
@@ -40,7 +40,7 @@ export const iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_staz
                 item: {
                   '@type': 'WebPage',
                   '@id':
-                    'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
+                    'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu/',
                   name: 'Як зараховуються періоди роботи за Списком №1',
                 },
               },
@@ -49,8 +49,8 @@ export const iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_staz
           {
             '@type': 'WebPage',
             '@id':
-              'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu#webpage',
-            url: 'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
+              'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu/#webpage',
+            url: 'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu/',
             name: 'Як зараховуються періоди роботи за Списком №1 | Адвокат Поддяча Юлія Юріївна',
             description:
               'Механізм додаткового зарахування стажу для працівників, зайнятих на роботах із особливо шкідливими умовами праці за Списком №1. Умови та вплив на розмір пенсії.',
@@ -60,13 +60,13 @@ export const iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_staz
             dateModified: '2025-11-27T09:00:00+02:00',
             breadcrumb: {
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu#breadcrumbs',
+                'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu/#breadcrumbs',
             },
           },
           {
             '@type': 'BlogPosting',
             '@id':
-              'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu#article',
+              'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu/#article',
             headline:
               'Як зараховуються періоди роботи за Списком № 1 до страхового стажу?',
             description:
@@ -76,7 +76,7 @@ export const iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_staz
             author: {
               '@type': 'Person',
               name: 'Поддяча Юлія Юріївна',
-              url: 'https://www.advocate-pensia.com.ua/about-me',
+              url: 'https://www.advocate-pensia.com.ua/about-me/',
             },
             publisher: {
               '@type': 'Organization',
@@ -90,7 +90,7 @@ export const iak_zarakhovuiutsia_periody_roboty_za_spyskom_1_do_strakhovoho_staz
             mainEntityOfPage: {
               '@type': 'WebPage',
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu',
+                'https://www.advocate-pensia.com.ua/blog/iak-zarakhovuiutsia-periody-roboty-za-spyskom-1-do-strakhovoho-stazhu/',
             },
             keywords: [
               'Список 1',

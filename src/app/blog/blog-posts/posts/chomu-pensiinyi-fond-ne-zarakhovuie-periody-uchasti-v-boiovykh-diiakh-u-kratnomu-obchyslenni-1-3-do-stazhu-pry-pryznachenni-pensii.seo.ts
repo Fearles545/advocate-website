@@ -15,14 +15,14 @@ export const chomu_pensiinyi_fond_ne_zarakhovuie_periody_uchasti_v_boiovykh_diia
           modifiedTime: '2025-11-27T09:00:00+02:00',
         },
         canonical:
-          'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii',
+          '/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii/',
         schema: {
           '@context': 'https://schema.org',
           '@graph': [
             {
               '@type': 'BreadcrumbList',
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii#breadcrumbs',
+                'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii/#breadcrumbs',
               itemListElement: [
                 {
                   '@type': 'ListItem',
@@ -34,21 +34,21 @@ export const chomu_pensiinyi_fond_ne_zarakhovuie_periody_uchasti_v_boiovykh_diia
                   '@type': 'ListItem',
                   position: 2,
                   name: 'Блог',
-                  item: 'https://www.advocate-pensia.com.ua/blog',
+                  item: 'https://www.advocate-pensia.com.ua/blog/',
                 },
                 {
                   '@type': 'ListItem',
                   position: 3,
                   name: 'Чому ПФУ не зараховує бойові дії у кратності 1:3',
-                  item: 'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii',
+                  item: 'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii/',
                 },
               ],
             },
             {
               '@type': 'WebPage',
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii',
-              url: 'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii',
+                'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii/',
+              url: 'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii/',
               name: 'Чому ПФУ не зараховує бойові дії у кратності 1:3 | Адвокат Поддяча Юлія Юріївна',
               description:
                 'Причини відмов Пенсійного фонду в зарахуванні періодів участі в бойових діях у кратному обчисленні 1:3 до стажу. Законодавство, судова практика та шляхи вирішення.',
@@ -57,7 +57,7 @@ export const chomu_pensiinyi_fond_ne_zarakhovuie_periody_uchasti_v_boiovykh_diia
               dateModified: '2025-11-27T09:00:00+02:00',
               breadcrumb: {
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii#breadcrumbs',
+                  'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii/#breadcrumbs',
               },
             },
             {
@@ -71,7 +71,7 @@ export const chomu_pensiinyi_fond_ne_zarakhovuie_periody_uchasti_v_boiovykh_diia
               author: {
                 '@type': 'Person',
                 name: 'Поддяча Юлія Юріївна',
-                url: 'https://www.advocate-pensia.com.ua/about-me',
+                url: 'https://www.advocate-pensia.com.ua/about-me/',
               },
               publisher: {
                 '@type': 'Organization',
@@ -85,7 +85,7 @@ export const chomu_pensiinyi_fond_ne_zarakhovuie_periody_uchasti_v_boiovykh_diia
               mainEntityOfPage: {
                 '@type': 'WebPage',
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii',
+                  'https://www.advocate-pensia.com.ua/blog/chomu-pensiinyi-fond-ne-zarakhovuie-periody-uchasti-v-boiovykh-diiakh-u-kratnomu-obchyslenni-1-3-do-stazhu-pry-pryznachenni-pensii/',
               },
               keywords: [
                 'бойові дії',

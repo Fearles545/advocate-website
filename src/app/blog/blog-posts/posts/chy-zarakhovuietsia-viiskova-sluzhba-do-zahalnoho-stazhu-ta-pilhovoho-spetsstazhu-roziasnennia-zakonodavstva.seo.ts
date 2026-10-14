@@ -15,14 +15,14 @@ export const chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovo
           modifiedTime: '2025-11-27T09:00:00+02:00',
         },
         canonical:
-          'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva',
+          '/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva/',
         schema: {
           '@context': 'https://schema.org',
           '@graph': [
             {
               '@type': 'BreadcrumbList',
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva#breadcrumbs',
+                'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva/#breadcrumbs',
               itemListElement: [
                 {
                   '@type': 'ListItem',
@@ -34,21 +34,21 @@ export const chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovo
                   '@type': 'ListItem',
                   position: 2,
                   name: 'Блог',
-                  item: 'https://www.advocate-pensia.com.ua/blog',
+                  item: 'https://www.advocate-pensia.com.ua/blog/',
                 },
                 {
                   '@type': 'ListItem',
                   position: 3,
                   name: 'Чи зараховується військова служба до пільгового стажу',
-                  item: 'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva',
+                  item: 'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva/',
                 },
               ],
             },
             {
               '@type': 'WebPage',
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva',
-              url: 'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva',
+                'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva/',
+              url: 'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva/',
               name: 'Чи зараховується військова служба до пільгового стажу | Адвокат Поддяча Юлія Юріївна',
               description:
                 "Роз'яснення законодавства щодо зарахування військової служби до страхового та пільгового стажу. Умови, обмеження та особливості для військовослужбовців.",
@@ -57,7 +57,7 @@ export const chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovo
               dateModified: '2025-11-27T09:00:00+02:00',
               breadcrumb: {
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva#breadcrumbs',
+                  'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva/#breadcrumbs',
               },
             },
             {
@@ -71,7 +71,7 @@ export const chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovo
               author: {
                 '@type': 'Person',
                 name: 'Поддяча Юлія Юріївна',
-                url: 'https://www.advocate-pensia.com.ua/about-me',
+                url: 'https://www.advocate-pensia.com.ua/about-me/',
               },
               publisher: {
                 '@type': 'Organization',
@@ -85,7 +85,7 @@ export const chy_zarakhovuietsia_viiskova_sluzhba_do_zahalnoho_stazhu_ta_pilhovo
               mainEntityOfPage: {
                 '@type': 'WebPage',
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva',
+                  'https://www.advocate-pensia.com.ua/blog/chy-zarakhovuietsia-viiskova-sluzhba-do-zahalnoho-stazhu-ta-pilhovoho-spetsstazhu-roziasnennia-zakonodavstva/',
               },
               keywords: [
                 'військова служба',

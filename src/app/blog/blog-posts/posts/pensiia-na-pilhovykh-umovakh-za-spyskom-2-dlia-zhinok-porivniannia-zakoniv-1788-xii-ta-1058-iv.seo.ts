@@ -15,14 +15,14 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_
           modifiedTime: '2025-11-27T09:00:00+02:00',
         },
         canonical:
-          'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv',
+          '/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv/',
         schema: {
           '@context': 'https://schema.org',
           '@graph': [
             {
               '@type': 'BreadcrumbList',
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv#breadcrumbs',
+                'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv/#breadcrumbs',
               itemListElement: [
                 {
                   '@type': 'ListItem',
@@ -34,21 +34,21 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_
                   '@type': 'ListItem',
                   position: 2,
                   name: 'Блог',
-                  item: 'https://www.advocate-pensia.com.ua/blog',
+                  item: 'https://www.advocate-pensia.com.ua/blog/',
                 },
                 {
                   '@type': 'ListItem',
                   position: 3,
                   name: 'Пенсія на пільгових умовах за Списком №2 для жінок',
-                  item: 'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv',
+                  item: 'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv/',
                 },
               ],
             },
             {
               '@type': 'WebPage',
               '@id':
-                'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv',
-              url: 'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv',
+                'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv/',
+              url: 'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv/',
               name: 'Пенсія на пільгових умовах за Списком №2 для жінок | Адвокат Поддяча Юлія Юріївна',
               description:
                 'Порівняння законів №1788-XII та №1058-IV щодо призначення пільгової пенсії за Списком №2 для жінок. Умови, відмінності та судова практика.',
@@ -57,7 +57,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_
               dateModified: '2025-11-27T09:00:00+02:00',
               breadcrumb: {
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv#breadcrumbs',
+                  'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv/#breadcrumbs',
               },
             },
             {
@@ -71,7 +71,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_
               author: {
                 '@type': 'Person',
                 name: 'Поддяча Юлія Юріївна',
-                url: 'https://www.advocate-pensia.com.ua/about-me',
+                url: 'https://www.advocate-pensia.com.ua/about-me/',
               },
               publisher: {
                 '@type': 'Organization',
@@ -85,7 +85,7 @@ export const pensiia_na_pilhovykh_umovakh_za_spyskom_2_dlia_zhinok_porivniannia_
               mainEntityOfPage: {
                 '@type': 'WebPage',
                 '@id':
-                  'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv',
+                  'https://www.advocate-pensia.com.ua/blog/pensiia-na-pilhovykh-umovakh-za-spyskom-2-dlia-zhinok-porivniannia-zakoniv-1788-xii-ta-1058-iv/',
               },
               keywords: [
                 'пільгова пенсія жінки',
