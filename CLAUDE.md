@@ -161,6 +161,12 @@ Then confirm every internal fragment link resolves. The check scans every built 
 node -e "const fs=require('fs');const d='dist/advocate-website/browser';const ids={};const idsOf=t=>ids[t]??=new Set(fs.existsSync(t)?[...fs.readFileSync(t,'utf8').matchAll(/\sid=\"([^\"]+)\"/g)].map(m=>m[1]):[]);const bad=new Set();let n=0;for(const f of fs.readdirSync(d,{recursive:true}).filter(f=>f.endsWith('.html')))for(const[,p,id]of fs.readFileSync(d+'/'+f,'utf8').matchAll(/href=\"(\/[^\"#]*)#([^\"]+)\"/g)){n++;idsOf(d+p.split('?')[0].replace(/\/$/,'')+'/index.html').has(id)||bad.add(f+' -> '+p+'#'+id)}if(bad.size){console.error('BROKEN:\n'+[...bad].join('\n'));process.exit(1)}console.log('all '+n+' fragment links resolve')"
 ```
 
+Then confirm every page in the sitemap names itself. The check reads the built `sitemap.xml` and requires each URL's `index.html` to carry a `<link rel="canonical">` equal to that URL and a `<title>` that no other sitemap URL shares. It prints `all N sitemap URLs have their own canonical and title`, or exits 1 listing each offender. The usual causes are a `canonical` that is absolute (`SeoService` prepends the site URL) or lacks the trailing slash, and a page with no SEO entry, which falls back to the home page's title and canonical:
+
+```bash
+node -e "const fs=require('fs');const d='dist/advocate-website/browser';const b='https://www.advocate-pensia.com.ua';const urls=[...fs.readFileSync(d+'/sitemap.xml','utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]);const byTitle={};const bad=[];for(const u of urls){const f=d+u.slice(b.length)+'index.html';if(!fs.existsSync(f)){bad.push(u+' -> no index.html');continue}const h=fs.readFileSync(f,'utf8');const c=(h.match(/<link rel=\"canonical\" href=\"([^\"]*)\"/)||[])[1];if(c!==u)bad.push(u+' -> canonical '+c);const t=(h.match(/<title>([^<]*)<\/title>/)||[])[1];(byTitle[t]??=[]).push(u)}for(const[t,us]of Object.entries(byTitle))if(us.length>1)bad.push('same title on '+us.join(' ')+' -> '+t);if(bad.length){console.error('SEO:\n'+bad.join('\n'));process.exit(1)}console.log('all '+urls.length+' sitemap URLs have their own canonical and title')"
+```
+
 For a quick type check between builds, use:
 
 ```bash
