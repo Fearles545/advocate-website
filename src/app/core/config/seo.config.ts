@@ -674,6 +674,111 @@ export const SEO_DATA: { [key: string]: PageSEO } = {
       ],
     },
   },
+  'privacy-policy': {
+    title: 'Політика конфіденційності сайту | Адвокат Поддяча Юлія',
+    description:
+      'Політика конфіденційності сайту адвоката Поддячої Юлії Юріївни: які персональні дані збираються, для чого обробляються, як захищаються та скільки зберігаються.',
+    keywords:
+      'політика конфіденційності, захист персональних даних, обробка персональних даних, згода на обробку даних, адвокат Поддяча Юлія Юріївна',
+    canonical: '/privacy-policy/',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          '@id':
+            'https://www.advocate-pensia.com.ua/privacy-policy/#breadcrumbs',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Політика конфіденційності',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/privacy-policy/',
+                name: 'Політика конфіденційності',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id': 'https://www.advocate-pensia.com.ua/privacy-policy/#webpage',
+          name: 'Політика конфіденційності | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/privacy-policy/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+          breadcrumb: {
+            '@id':
+              'https://www.advocate-pensia.com.ua/privacy-policy/#breadcrumbs',
+          },
+        },
+      ],
+    },
+  },
+  'public-offer': {
+    title: 'Публічна оферта на юридичні послуги | Адвокат Поддяча Юлія',
+    description:
+      "Публічна оферта адвоката Поддячої Юлії Юріївни щодо надання юридичних послуг з пенсійних питань: предмет, формат і вартість послуг, права та обов'язки сторін.",
+    keywords:
+      'публічна оферта, умови надання юридичних послуг, юридичні послуги з пенсійних питань, вартість юридичних послуг, адвокат Поддяча Юлія Юріївна',
+    canonical: '/public-offer/',
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          '@id': 'https://www.advocate-pensia.com.ua/public-offer/#breadcrumbs',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Головна',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/',
+                name: 'Головна',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Публічна оферта',
+              item: {
+                '@type': 'WebPage',
+                '@id': 'https://www.advocate-pensia.com.ua/public-offer/',
+                name: 'Публічна оферта',
+              },
+            },
+          ],
+        },
+        {
+          '@type': 'WebPage',
+          '@id': 'https://www.advocate-pensia.com.ua/public-offer/#webpage',
+          name: 'Публічна оферта | Адвокат Поддяча Юлія Юріївна',
+          url: 'https://www.advocate-pensia.com.ua/public-offer/',
+          inLanguage: 'uk-UA',
+          isPartOf: { '@id': 'https://www.advocate-pensia.com.ua/#website' },
+          about: { '@id': 'https://www.advocate-pensia.com.ua/#org' },
+          breadcrumb: {
+            '@id':
+              'https://www.advocate-pensia.com.ua/public-offer/#breadcrumbs',
+          },
+        },
+      ],
+    },
+  },
 };
 
 export const DEFAULT_SEO_CONFIG: PageSEO = {
