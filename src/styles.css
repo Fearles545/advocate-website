@@ -547,6 +547,37 @@ a {
     }
   }
 
+  /* Table — scrolls inside its wrapper on narrow screens */
+  .blog-table {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  th,
+  td {
+    padding: 0.625rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(201, 165, 92, 0.2);
+  }
+
+  thead th {
+    font-weight: 700;
+    color: var(--color-green);
+    background: rgba(201, 165, 92, 0.08);
+    border-bottom: 2px solid var(--color-gold);
+  }
+
+  tbody th {
+    font-weight: 700;
+    color: var(--color-green);
+  }
+
   /* Aside — supplementary info (green accent, distinct from gold blockquote) */
   aside {
     padding: 1rem 1.25rem;
@@ -673,6 +704,15 @@ a {
         font-size: 2rem;
         left: 0.5rem;
       }
+    }
+
+    table {
+      font-size: 0.875rem;
+    }
+
+    th,
+    td {
+      padding: 0.5rem;
     }
 
     figure img {

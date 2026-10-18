@@ -150,6 +150,7 @@ type BlogCategorySlug =
 | `<aside>` | Supplementary info (green left border) |
 | `<aside class="blog-warning">` | Warning/attention notice (gold left border) |
 | `<figure>` + `<img>` + `<figcaption>` | Image with caption (centered, max 300px) |
+| `<div class="blog-table">` + `<table>` | Data table; the wrapper scrolls it sideways on narrow screens. Use `<th scope="col">` in `<thead>` and `<th scope="row">` for the first cell of each body row |
 | `<strong>` | Critical information |
 | `<footer>` | Professional help CTA |
 
