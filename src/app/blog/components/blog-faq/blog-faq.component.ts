@@ -31,7 +31,7 @@ import { getFaqForCategory, FaqItem } from '../../blog-faq-data';
             <div
               class="faq-item"
               [class.expanded]="expandedIndex() === i"
-              (click)="toggleItem(i)"
+              (click)="onItemClick($event, i)"
             >
               <button class="faq-question" type="button">
                 <span>{{ item.question }}</span>
@@ -41,7 +41,7 @@ import { getFaqForCategory, FaqItem } from '../../blog-faq-data';
               </button>
               @if (expandedIndex() === i) {
                 <div class="faq-answer">
-                  <p>{{ item.answer }}</p>
+                  <p [innerHTML]="item.answer"></p>
                 </div>
               }
             </div>
@@ -168,6 +168,19 @@ import { getFaqForCategory, FaqItem } from '../../blog-faq-data';
       }
     }
 
+    .faq-answer ::ng-deep a {
+      color: var(--color-gold-accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(201, 165, 92, 0.4);
+      text-underline-offset: 2px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: var(--color-green);
+        text-decoration-color: var(--color-green);
+      }
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -288,6 +301,11 @@ export class BlogFaqComponent {
     });
   }
 
+  onItemClick(event: MouseEvent, index: number): void {
+    if ((event.target as Element).closest('a')) return;
+    this.toggleItem(index);
+  }
+
   toggleItem(index: number): void {
     this.expandedIndex.update((current) => (current === index ? null : index));
   }
@@ -306,7 +324,7 @@ export class BlogFaqComponent {
         name: item.question,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: item.answer,
+          text: item.answer.replace(/<[^>]+>/g, ''),
         },
       })),
     };

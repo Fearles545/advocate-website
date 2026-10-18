@@ -455,6 +455,7 @@ faq: [
 - If `faq` is provided → shows custom FAQ items
 - If not provided → shows category-based FAQ from `blog-faq-data.ts`
 - FAQ generates JSON-LD FAQPage schema automatically
+- An answer may link another article inline with a plain `<a href="/blog/{slug}/">`; the answer renders as HTML and the JSON-LD gets it with the tags stripped. Escape a literal `<` or `&` as `&lt;` or `&amp;`
 
 ---
 
