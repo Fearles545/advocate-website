@@ -23,7 +23,7 @@ import { vytiagMisceProzhyvanniaDiia } from './vytiag-misce-prozhyvannia-diia';
 import { dovidkaDokhodyPortalPfu } from './dovidka-dokhody-portal-pfu';
 import { dovidkaVyplataPensiiPrivat24 } from './dovidka-vyplata-pensii-privat24';
 import { dovidkaVyplataPensiiMonobank } from './dovidka-vyplata-pensii-monobank';
-import { oplataRekvizytamyPrivat24 } from './oplata-rekvizytamy-privat24';
+import { oplataZaRekvizytamyPrivat24 } from './oplata-za-rekvizytamy-privat24';
 
 const allInstructions: Instruction[] = [
   kepPrivatbank,
@@ -33,12 +33,14 @@ const allInstructions: Instruction[] = [
   dovidkaDokhodyPortalPfu,
   dovidkaVyplataPensiiPrivat24,
   dovidkaVyplataPensiiMonobank,
-  oplataRekvizytamyPrivat24,
+  oplataZaRekvizytamyPrivat24,
 ];
 
 export const instructions: Instruction[] = allInstructions.sort((a, b) =>
   a.category.localeCompare(b.category)
 );
+
+const listedInstructions = instructions.filter((i) => !i.unlisted);
 
 export function findBySlug(slug: string): Instruction | undefined {
   return instructions.find((i) => i.slug === slug);
@@ -46,14 +48,14 @@ export function findBySlug(slug: string): Instruction | undefined {
 
 export function getRelatedInstructions(slugs: string[]): Instruction[] {
   return slugs
-    .map((slug) => findBySlug(slug))
+    .map((slug) => listedInstructions.find((i) => i.slug === slug))
     .filter((i): i is Instruction => i !== undefined);
 }
 
 export function instructionsByCategory(): Map<InstructionCategory, Instruction[]> {
   const grouped = new Map<InstructionCategory, Instruction[]>();
   for (const category of CATEGORY_ORDER) {
-    const items = instructions.filter((i) => i.category === category);
+    const items = listedInstructions.filter((i) => i.category === category);
     if (items.length > 0) {
       grouped.set(category, items);
     }

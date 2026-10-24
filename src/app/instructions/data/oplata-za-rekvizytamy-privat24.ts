@@ -1,11 +1,12 @@
 import { Instruction } from './instruction.model';
 
-export const oplataRekvizytamyPrivat24: Instruction = {
-  slug: 'oplata-rekvizytamy-privat24',
+export const oplataZaRekvizytamyPrivat24: Instruction = {
+  slug: 'oplata-za-rekvizytamy-privat24',
   title:
     'Як оплатити за реквізитами через Приват24 — покрокова інструкція',
   shortTitle: 'Оплата за реквізитами через Приват24',
   category: 'oplata',
+  unlisted: true,
   date: '2026-04-12',
   estimatedTime: '5 хвилин',
   prerequisites: [
@@ -19,49 +20,49 @@ export const oplataRekvizytamyPrivat24: Instruction = {
       description:
         'Відкрийте додаток Приват24. На головному екрані натисніть кнопку «Платежі» (іконка з символом гривні).',
       image:
-        '/assets/images/instructions/oplata-rekvizytamy-privat24/step-1.webp',
+        '/assets/images/instructions/oplata-za-rekvizytamy-privat24/step-1.webp',
     },
     {
       title: 'Натисніть «+ Новий платіж»',
       description:
         'На екрані «Пошук отримувача» натисніть зелену кнопку «+ Новий платіж» у нижній частині екрана.',
       image:
-        '/assets/images/instructions/oplata-rekvizytamy-privat24/step-2.webp',
+        '/assets/images/instructions/oplata-za-rekvizytamy-privat24/step-2.webp',
     },
     {
       title: 'Введіть IBAN або ЄДРПОУ отримувача',
       description:
         'На екрані «Створити новий платіж» введіть у рядок пошуку розрахунковий рахунок (IBAN) — UA923220010000026007360044447.',
       image:
-        '/assets/images/instructions/oplata-rekvizytamy-privat24/step-3.webp',
+        '/assets/images/instructions/oplata-za-rekvizytamy-privat24/step-3.webp',
     },
     {
       title: 'Натисніть «Платіж за реквізитами»',
       description:
         'Якщо з\'явиться повідомлення «Отримувачів за вашим запитом не знайдено» — не хвилюйтесь, це нормально. Натисніть кнопку «Платіж за реквізитами».',
       image:
-        '/assets/images/instructions/oplata-rekvizytamy-privat24/step-4.webp',
+        '/assets/images/instructions/oplata-za-rekvizytamy-privat24/step-4.webp',
     },
     {
       title: 'Заповніть реквізити отримувача',
       description:
         'Заповніть усі поля форми «Платіж за реквізитами»: Найменування отримувача — ФОП Поддяча Юлія Юріївна, ІПН/ЄДРПОУ одержувача — 3427504947, Розрахунковий рахунок — підтягнеться автоматично, ПІБ за кого платять — Ваше прізвище, ім\'я, по батькові.',
       image:
-        '/assets/images/instructions/oplata-rekvizytamy-privat24/step-5.webp',
+        '/assets/images/instructions/oplata-za-rekvizytamy-privat24/step-5.webp',
     },
     {
       title: 'Вкажіть призначення платежу та суму',
       description:
         'Прокрутіть екран нижче та заповніть: Призначення — «Сплата за юридичні послуги», Сума — введіть суму оплати в гривнях. Оберіть картку, з якої буде здійснено оплату. Натисніть зелену кнопку «Продовжити».',
       image:
-        '/assets/images/instructions/oplata-rekvizytamy-privat24/step-6.webp',
+        '/assets/images/instructions/oplata-za-rekvizytamy-privat24/step-6.webp',
     },
     {
       title: 'Перевірте дані та підтвердіть оплату',
       description:
         'На екрані «Підтвердження» перевірте всі дані платежу. Натисніть стрілочку (˅), щоб розгорнути деталі та побачити повну інформацію: найменування, ЄДРПОУ, розрахунковий рахунок, картку списання. Після перевірки усіх даних натисніть зелену кнопку «Оплатити».',
       image:
-        '/assets/images/instructions/oplata-rekvizytamy-privat24/step-7.webp',
+        '/assets/images/instructions/oplata-za-rekvizytamy-privat24/step-7.webp',
     },
   ],
   relatedInstructionSlugs: ['dovidka-vyplata-pensii-privat24', 'kep-privatbank', 'kep-monobank'],

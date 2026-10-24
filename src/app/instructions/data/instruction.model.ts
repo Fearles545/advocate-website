@@ -31,6 +31,7 @@ export interface Instruction {
   relatedInstructionSlugs?: string[];
   relatedBlogSlugs?: string[];
   seo?: InstructionSeoOverrides;
+  unlisted?: boolean;
 }
 
 export const CATEGORY_LABELS: Record<InstructionCategory, string> = {

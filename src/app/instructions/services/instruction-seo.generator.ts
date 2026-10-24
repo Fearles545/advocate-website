@@ -45,6 +45,7 @@ export function generateInstructionSeo(instruction: Instruction): PageSEO {
     keywords: keywordsString,
     type: 'article',
     canonical: canonicalPath,
+    ...(instruction.unlisted ? { robots: 'noindex,follow' } : {}),
     publishedTime: isoDate,
     modifiedTime: isoDate,
     schema: {
