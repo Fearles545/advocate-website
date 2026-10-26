@@ -1,4 +1,5 @@
 import { PageSEO } from '@core/services/seo.service';
+import { minimalna_pensiya_2026 } from './blog-posts/posts/minimalna-pensiya-2026.seo';
 import { skilky_stazhu_potribno_dlia_pensii_u_2027_rotsi } from './blog-posts/posts/skilky-stazhu-potribno-dlia-pensii-u-2027-rotsi.seo';
 import { navishcho_pereviriaty_pensiinu_spravu_pislia_pryznachennia_pensii } from './blog-posts/posts/navishcho-pereviriaty-pensiinu-spravu-pislia-pryznachennia-pensii.seo';
 import { skoro_pensiia_za_vikom_shcho_potribno_zrobyty_do_zvernennia_v_pensiinyi_fond_ukrainy } from './blog-posts/posts/skoro-pensiia-za-vikom-shcho-potribno-zrobyty-do-zvernennia-v-pensiinyi-fond-ukrainy.seo';
@@ -62,6 +63,7 @@ import { koly_dotsilnishe_podavaty_zaiavu_na_pryznachennia_pensii_iakscho_den_na
 import { shcho_oznachaie_status_do_atrybutuvannia_pid_chas_zvernennia_do_pensiinoho_fondu_ukrainy } from './blog-posts/posts/shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
+  ...minimalna_pensiya_2026,
   ...skilky_stazhu_potribno_dlia_pensii_u_2027_rotsi,
   ...navishcho_pereviriaty_pensiinu_spravu_pislia_pryznachennia_pensii,
   ...skoro_pensiia_za_vikom_shcho_potribno_zrobyty_do_zvernennia_v_pensiinyi_fond_ukrainy,

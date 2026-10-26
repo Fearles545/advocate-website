@@ -93,7 +93,7 @@
   <!-- Blog List Page -->
   <url>
     <loc>https://www.advocate-pensia.com.ua/blog/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -335,6 +335,12 @@
   </url>
 
   <!-- Blog Posts -->
+  <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/minimalna-pensiya-2026/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.advocate-pensia.com.ua/blog/skilky-stazhu-potribno-dlia-pensii-u-2027-rotsi/</loc>
     <lastmod>2026-10-18</lastmod>
