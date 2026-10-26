@@ -284,7 +284,7 @@ export class BlogFaqComponent {
     const custom = this.customFaq();
     if (custom?.length) {
       return {
-        title: 'Часті питання',
+        title: 'Поширені запитання',
         items: custom as FaqItem[],
       };
     }

@@ -17,7 +17,7 @@ export interface CategoryFaq {
  */
 export const CATEGORY_FAQ: Partial<Record<BlogCategorySlug, CategoryFaq>> = {
   'pension-by-age': {
-    title: 'Часті питання щодо призначення пенсії за віком',
+    title: 'Поширені запитання щодо призначення пенсії за віком',
     items: [
       {
         question: 'Коли можна подавати заяву на призначення пенсії за віком?',
@@ -44,7 +44,7 @@ export const CATEGORY_FAQ: Partial<Record<BlogCategorySlug, CategoryFaq>> = {
   },
 
   'service-record': {
-    title: 'Часті питання щодо стажу та перерахунку пенсії',
+    title: 'Поширені запитання щодо стажу та перерахунку пенсії',
     items: [
       {
         question: 'У яких випадках можна вимагати перерахунок пенсії?',
@@ -69,7 +69,7 @@ export const CATEGORY_FAQ: Partial<Record<BlogCategorySlug, CategoryFaq>> = {
   },
 
   preferential: {
-    title: 'Часті питання щодо пільгової пенсії',
+    title: 'Поширені запитання щодо пільгової пенсії',
     items: [
       {
         question: 'Хто має право на пільгову пенсію?',
@@ -95,7 +95,7 @@ export const CATEGORY_FAQ: Partial<Record<BlogCategorySlug, CategoryFaq>> = {
   },
 
   general: {
-    title: 'Часті питання щодо пенсійних справ',
+    title: 'Поширені запитання щодо пенсійних справ',
     items: [
       {
         question: 'Чи законна відмова Пенсійного фонду у призначенні пенсії?',
@@ -121,7 +121,7 @@ export const CATEGORY_FAQ: Partial<Record<BlogCategorySlug, CategoryFaq>> = {
   },
 
   'early-retirement': {
-    title: 'Часті питання щодо дострокової пенсії',
+    title: 'Поширені запитання щодо дострокової пенсії',
     items: [
       {
         question: 'Хто має право на дострокову пенсію?',
@@ -148,7 +148,7 @@ export const CATEGORY_FAQ: Partial<Record<BlogCategorySlug, CategoryFaq>> = {
   },
 
   'service-years': {
-    title: 'Часті питання щодо пенсії за вислугу років',
+    title: 'Поширені запитання щодо пенсії за вислугу років',
     items: [
       {
         question: 'Хто має право на пенсію за вислугу років?',
