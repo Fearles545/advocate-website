@@ -1,4 +1,5 @@
 import { PageSEO } from '@core/services/seo.service';
+import { yak_ponovyty_vyplatu_pensii } from './blog-posts/posts/yak-ponovyty-vyplatu-pensii.seo';
 import { minimalna_pensiya_2026 } from './blog-posts/posts/minimalna-pensiya-2026.seo';
 import { skilky_stazhu_potribno_dlia_pensii_u_2027_rotsi } from './blog-posts/posts/skilky-stazhu-potribno-dlia-pensii-u-2027-rotsi.seo';
 import { navishcho_pereviriaty_pensiinu_spravu_pislia_pryznachennia_pensii } from './blog-posts/posts/navishcho-pereviriaty-pensiinu-spravu-pislia-pryznachennia-pensii.seo';
@@ -63,6 +64,7 @@ import { koly_dotsilnishe_podavaty_zaiavu_na_pryznachennia_pensii_iakscho_den_na
 import { shcho_oznachaie_status_do_atrybutuvannia_pid_chas_zvernennia_do_pensiinoho_fondu_ukrainy } from './blog-posts/posts/shcho-oznachaie-status-do-atrybutuvannia-pid-chas-zvernennia-do-pensiinoho-fondu-ukrainy.seo';
 
 export const BLOG_SEO_DATA: { [key: string]: PageSEO } = {
+  ...yak_ponovyty_vyplatu_pensii,
   ...minimalna_pensiya_2026,
   ...skilky_stazhu_potribno_dlia_pensii_u_2027_rotsi,
   ...navishcho_pereviriaty_pensiinu_spravu_pislia_pryznachennia_pensii,

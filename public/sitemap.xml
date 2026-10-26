@@ -336,6 +336,12 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://www.advocate-pensia.com.ua/blog/yak-ponovyty-vyplatu-pensii/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.advocate-pensia.com.ua/blog/minimalna-pensiya-2026/</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
